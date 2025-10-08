@@ -1,0 +1,114 @@
+/* rtl.css */
+p, li, ul, h1, h2, h3, h4 {
+    direction: rtl; 
+    text-align: right;
+}
+
+/* .cell:has(img) {
+    direction: rtl;
+} */
+
+:root {
+    --pst-font-family-base: "Alef", sans-serif; /* optional: Hebrew font */
+}
+
+/*
+ .bd-article-container {
+    min-width: 59vw; 
+}
+*/
+/* .bd-container__inner {
+  min-width: 100vw;
+} */
+.bd-container__inner {
+  width: 100%;
+  max-width: 100%;
+  min-width: auto; /* removes the over-stretching */
+}
+
+/* .bd-sidebar-secondary {
+  min-width: 17vw;
+} */
+
+.section-nav {
+  padding-right: 0;
+}
+
+.Quiz {
+        direction: rtl !important;
+        text-align:right !important;
+}
+
+/* Change admonition title font */
+.admonition-title {
+    font-family: inherit !important;
+    font-weight: normal !important;   /* don't force all bold */
+}
+
+/* Only bold spans (from markdown **…**) should get bold */
+.admonition-title strong,
+.admonition-title b {
+    font-weight: bold;
+}
+
+/* Fix tables for RTL (Hebrew / Arabic) content */
+table.docutils,
+div.table-wrapper,
+table {
+  direction: rtl;         /* Make table RTL */
+  text-align: right;      /* Align text properly */
+}
+
+/* /* keep toolbar visible but hide the section outline only 
+.bd-sidebar-secondary {
+  width: auto !important;
+  min-width: auto !important;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.bd-sidebar-secondary .bd-toc {
+  display: none !important;   /* hide the "On this page" headings 
+} */
+
+@media (min-width: 992px) {
+  /* Remove secondary column entirely */
+  :root {
+    --pst-sidebar-secondary: 0px;
+    --sidebarW: var(--pst-sidebar-primary, 18rem);
+  }
+  .bd-sidebar-secondary { display: none !important; width:0 !important; }
+
+  /* FIXED right sidebar */
+  .bd-sidebar-primary {
+    position: fixed !important;
+    top: 0;              /* if a sticky header overlaps, change to the header height */
+    right: 0 !important; /* stick to the right edge */
+    left: auto !important;
+    height: 100vh;
+    width: var(--sidebarW);
+    overflow: auto;
+    border-left: 1px solid var(--pst-color-border);
+    border-right: 0;
+    box-shadow: -2px 0 5px rgba(0,0,0,.05);
+    background: var(--pst-color-background);
+    z-index: 1020;       /* above content */
+  }
+
+  /* Content uses viewport minus sidebar width (no gap possible) */
+  .bd-container, .bd-page-width, .bd-container__inner, .bd-main {
+    max-width: none !important;
+    width: calc(100vw - var(--sidebarW)) !important;
+    margin: 0 !important;
+    padding-right: 1rem !important;  /* breathing room near sidebar */
+    padding-left: 0 !important;
+  }
+
+
+  .bd-main .bd-content,
+  .bd-main .bd-content .bd-article-container {
+    max-width: 100% !important;
+  }
+
+html, body { overflow-x: hidden; }
