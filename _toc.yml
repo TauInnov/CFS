@@ -1,0 +1,125 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: מבוא
+  chapters:
+    - file: 0_0_objectives.ipynb
+    - file: 0_1_hardware-to-software.ipynb
+    - file: 0_2_python.ipynb
+    - file: 0_3_variables-and-assignments.ipynb
+- caption: טיפוסים
+  chapters: 
+    - file: 1_0_intro_types.ipynb
+    - file: 1_1_numerical_types.ipynb
+    - file: 1_2_booleans.ipynb
+    - file: 1_3_strings.ipynb
+    - file: 1_4_conversion.ipynb
+- caption: תנאים
+  chapters:  
+    - file: 2_0_intro-conditions.ipynb
+    - file: 2_1_if-else-statements.ipynb
+    - file: 2_2_nested-ifs.ipynb
+    - file: 2_3_elif.ipynb
+    - file: 2_4_logical-operators-in-ifs.ipynb
+- caption: פונקציות
+  chapters: 
+    - file: 3_0_intro-functions.ipynb
+    - file: 3_1_builtin-functions.ipynb
+    - file: 3_2_building-functions.ipynb
+    - file: 3_3_formal-and-actual-variables.ipynb
+    - file: 3_4_advanced-examples.ipynb
+    - file: 3_5_caller-callee.ipynb
+- caption: רשימות
+  chapters:
+    - file: 4_0_intro-list.ipynb
+    - file: 4_1_list-operators-indices.ipynb
+    - file: 4_2_built-in-functions-in-list.ipynb
+    - file: 4_3_list-methods.ipynb
+    - file: 4_4_nested_lists.ipynb
+    - file: 4_5_list-examples.ipynb
+- caption: מבוא ללולאות
+  chapters:
+    - file: 5_0_intro-loops.ipynb
+- caption: לולאות for
+  chapters:
+    - file: 6_0_for_loops.ipynb
+    - file: 6_1_ranges-and-for.ipynb
+    - file: 6_2_for-examples.ipynb
+    - file: 6_3_for-summary.ipynb
+- caption: לולאות while
+  chapters:
+    - file: 7_0_while_loops.ipynb
+    - file: 7_1_while-examples.ipynb
+- caption: נושאים מתקדמים בלולאות
+  chapters: 
+    - file: 8_0_while_vs_for.ipynb
+    - file: 8_1_break_and_continue.ipynb
+    - file: 8_2_nested_loops.ipynb
+    - file: 8_3_list-comprehensions.ipynb
+- caption: מבוא לסיבוכיות
+  chapters: 
+    - file: 9_0_intro-complexity.ipynb
+- caption:  זכרון בפונקציות
+  chapters:  
+    - file: 10_0_mutable-vs-immutable.ipynb
+    - file: 10_1_memory-in-functions.ipynb
+- caption:  נושאים מתקדמים בפונקציות
+  chapters: 
+    - file: 11_0_advanced_function_usage.ipynb
+- caption:  מבני נתונים
+  chapters: 
+    - file: 12_0_data_structures.ipynb
+    - file: 12_1_tuples.ipynb
+    - file: 12_2_dicts.ipynb
+- caption: ערכים טקסט ועבודה עם קבצים
+  chapters:  
+    - file: 13_0_string-formats.ipynb
+    - file: 13_1_files.ipynb
+- caption: תרגול אמצע - שאלות ממבחני עבר
+  chapters: 
+    - file: 14_0_questions-from-exams.ipynb
+- caption: אלגוריתמים יסודיים
+  chapters: 
+    - file: 15_0_algorithms-intro.ipynb
+    - file: 15_1_search.ipynb
+    - file: 15_2_sort.ipynb
+- caption: רקורסיות
+  chapters: 
+    - file: 16_0_recursion-intro.ipynb
+    - file: 16_1_basic-exercises.ipynb
+    - file: 16_2_merge-sort.ipynb
+    - file: 16_3_knapsack.ipynb
+    - file: 16_4_lcs.ipynb
+    - file: 16_5_questions-from-exams.ipynb
+- caption: תכנות מונחה עצמים
+  chapters: 
+    - file: 17_0_oop-intro.ipynb
+    - file: 17_1_oop-implementation.ipynb
+    - file: 17_2_magic-methods.ipynb
+    - file: 17_3_operator-overload.ipynb
+    - file: 17_4_questions-from-exams.ipynb
+- caption: ספרית Numpy
+  chapters: 
+    - file: 18_0_numpy-intro.ipynb
+    - file: 18_1_create-array.ipynb
+    - file: 18_1_image-representation.ipynb
+    - file: 18_2_basic-operations.ipynb
+    - file: 18_3_image-processing.ipynb
+    - file: 18_4_common-functions.ipynb
+    - file: 18_5_questions-from-exams.ipynb
+- caption: ספרית Pandas
+  chapters: 
+    - file: 19_1_pandas-intro.ipynb
+    - file: 19_2_create-df.ipynb
+    - file: 19_3_access-df.ipynb
+    - file: 19_4_basic_editing.ipynb
+    - file: 19_5_advanced_editing.ipynb
+    - file: 19_6_combine_dfs.ipynb
+    - file: 19_7_basic-quering.ipynb
+    - file: 19_8_advanced-quering-groupby.ipynb
+    - file: 19_9_data-visualization.ipynb
+    - file: 19_10_common-functions.ipynb
+    - file: 19_11_questions-from-exams.ipynb
