@@ -1,0 +1,3250 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>פונקציות &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/3_0_intro-functions';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/tau.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Weeks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course/weeks/week_1.html">1. שבוע 1 - טיפוסים ותנאים</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/vendor/virtual-pyprog/3_0_intro-functions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/vendor/virtual-pyprog/3_0_intro-functions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fvendor/virtual-pyprog/3_0_intro-functions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/vendor/virtual-pyprog/3_0_intro-functions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>פונקציות</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">אג’נדה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">מהי פונקציה?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">אז למה צריך פונקציות בכלל?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">איך נחשב את ההיקף של שלושה מלבנים?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בעיה ראשונה - כפילות בקוד</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">למה פונקציות?</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>פונקציות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>אג’נדה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>מהן פונקציות ולמה כדאי להשתמש בהן.</p></li>
+<li><p>פונקציות מובנות של פייתון</p></li>
+<li><p>מימוש פונקציות בעצמכם</p></li>
+</ul>
+<p>עד עכשיו פגשנו פונקציות “מוכנות מראש” - כמו <code class="docutils literal notranslate"><span class="pre">len</span></code> ו-<code class="docutils literal notranslate"><span class="pre">type</span></code>, שעובדות על מגוון טיפוסי נתונים, ומתודות של מחרוזות כמו <code class="docutils literal notranslate"><span class="pre">find</span></code> ו<code class="docutils literal notranslate"><span class="pre">lower</span></code>. ראינו איך הן מקבלות ערך (למשל המחרוזת) ומחזירות תוצאה (כמו מספר או מחרוזת אחרת). אבל מה קורה אם אנחנו רוצים לבצע פעולה שאין לה פונקציה מוכנה? בדיוק בשביל זה נלמד איך לכתוב פונקציות משלנו: נבין איך מגדירים אותן, איך משתמשים בהן, ואיך גורמים להן להחזיר תוצאה שנוכל להשתמש בה בהמשך הקוד.</p>
+<div class="error admonition">
+<p class="admonition-title"><strong>שימו לב</strong></p>
+<p>בסרטון הקרוב מוזכרת המילה “רשימה” - זהו שם של טיפוס נתונים חדש שעדיין לא למדנו.
+אל דאגה! נלמד על רשימות ממש בקרוב. כרגע כל מה שצריך הוא להבין את הרעיון של פונקציות.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/zSpwiy63qAE?si=ktisCRum6tLqjGq5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+</div>
+</section>
+<section id="id3">
+<h2>מהי פונקציה?<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>הגדרה: פונקציה היא רצף פקודות עם שם, שמבצע משימה מסוימת – באופן עצמאי משאר הקוד.</p>
+<p>לפונקציה יש שני מרכיבים מרכזיים: <strong>קלט</strong> (Input) ו<strong>פלט</strong> (Output). ה<strong>קלט</strong> מורכב מערכים שהפונקציה מקבלת כדי לבצע את המשימה שלה (נקראים גם פרמטרים - Parameters או ארגומנטים - Arguments), וה<strong>פלט</strong> הוא התוצאה שהפונקציה מחזירה בחזרה. במילים אחרות, אנחנו “מזינים” לפונקציה נתונים, והיא מעבדת אותם ומחזירה לנו תשובה בהתאם.</p>
+<img width=300 height=200 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbwAAAGnCAMAAAD7fxK1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURf///wAAAPf39+/m7xAQEBkQGQAACM7Ozs7WziEhISkpKd7m5pylpUJCSrWttVpaY729vUI6OjE6Ot7W3sW9xYyMjFJKSpSclJSUlCkxMXtze1paUmtrY3uEhHNza62tpaXmrYyESr0ZjIQZjL2EGb0ZWoQZWr0ZvYQZvRAZY7UZEHMZEL1KjL2ESoRKjDpKGb1KWoRKWr1KvYRKvb0Z74QZ763O5u9ape9aQu8Zpe8ZQu+cpe+cQu9ac+9aEO8Zc+8ZEO+cc++cELVKEHNKELUZMXMZMbWt3r1K7+/epe/eQoRK7+/ec+/eEIzmWozmEIy1Woy1EO863u8Q3u9j3hB7a72EnK3v5hkZ7xkZrRkZzhkZjHuEGbVKMXNKMVohYzoQEL3mWr3mEL21Wr21EBBKEFLvWlql5lJ7OlLvEBCl5hnvWlqlrRl7OhnvEBClraWE71LFWlp75lJ7EFLFEBB75hnFWlp7rRl7EBnFEBB7raWExVrO5hDO5lrOrRDOrYzme4zmMRlK7xlKrYy1e4y1MUoZ70oZrRlKzhlKjEoZzkoZjO+E3hCcazF7a87mrZyEGb3me0pK773mMUpKrb21e721MUpKzkpKjBBKMVLve8WEe1qUe3ul5lKcOlLvMTGl5jopYxnve3ulrRmcOhnvMTGlrcWE7ylSY++171LFe3t75lKcEFLFMTF75hnFe3t7rRmcEBnFMTF7rcWExVrv5hDv5lrvrRDvrXvO5jHO5nvOrTHOraWEe1qUWjoIYwhSY++1zjGca3vv5jHv5nvvrTHvrToQOu//Ou//vRAAKc7m78WtnEJSY0IpEKW9pRAQMffv1u/W7xAhMVpre4xzewghEJR7nM7F5s69pXuMc+/WzlJrWlpKazFSOkpSOsWttd7vzpyttYyUc87vzqW9vVpac+bv95ytlEIxOhkQCAAQCCkpEBAAAPfm9yEhCPfv7xkACJSUpUJaSggQGd7v797Wzub//5ScpRAQAM69zv/39wAIAO/37/f3/wAAACKKihsAAAEAdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wBT9wclAAAACXBIWXMAABcRAAAXEQHKJvM/AABv8klEQVR4Xu29e0/bShc+SmQHx0mcGBvHbezib/X7tuczIMpFVdk65w+EgMNBBCEI1LJ0nmetGdvh0r13yW7pWz+QxB6Px+NZs25z3fBd189DZ4NwvCToAf3sPJYAIi4C152lJsCbR26vh3sIHOE4SDxccLw0cP3prqZkMCpyn9fjcB7pXa7cw2Pi0u1HWWqe3kL1JORZhA4C13ejfCKlUznhCcq41/ODDzXxnBGJkqVfKjkN50P3sR8F2TTPsiDy3aujizlL3wmTraYaGMTF1BAvzYIgmGXBjPfwCTgiZnlSmKRbaBJxNuqLdaDzLP6fCjCDn59qwdx5h9FVz+25/nzXWUrQxsZxmrlukHoSpQIL3YDayRhI0w95sH/j36YDlCi49hnnxRNw3sWJN4q/FUkqSOaZ714Hh7hbMJ54e3KP85TdnsH5B3H+LAjnKb84e9ufInfTPXL72Yf7z1q/l/GDcJ63J1HAeZcg5f3x5xH+IQ63Hi8jsp7jnUTuMP/WLt0q3lXOG1XO6HgUx7Ezui8OLhAvHB078XEcH985Uk0qYSd8kULKbU5VLjfK5QKf0nEqhIF2jNDBQjhvooS6Cz9dQAsN3ZvhQXFvSuk4nVHnfbuTM3Ce62ZjW4JUajf9WTpwRuC8PsTmSMLNdeG8KFGuVYBDI3B2o1MtQJiSv8sSVB7EDu5Z4A8ondjzvBEkaOWUmtMOArdPnadVHXwF7glm/qU7S4z2Wsaq86zY/DqEiTLeM0K19D4FR/3gZHs0AhP64GF7hVgeTyAjwXkt4lXhTtTz5xC0bZDBiGqjXDiDyXlahCAWyLYBgjqD3SQpPOE6pg5OlMgdyHlTJVR5B4MFpMwDhhmDsyTxqPO0ykMrPrpbyRdItwUK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"><div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">example</span> <span class="o">=</span> \
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="w"> </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="sd">    [{</span>
+<span class="sd">   (...)     25     }]</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span><span class="sd"> &#39;&#39;&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jupyterquiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="ydafaJytsHTD" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ydafaJytsHTD {
+   --jq-multiple-choice-bg: #6f78ffff;
+   --jq-mc-button-bg: #fafafa;
+   --jq-mc-button-border: #e0e0e0e0;
+   --jq-mc-button-inset-shadow: #555555;
+   --jq-many-choice-bg: #f75c03ff;
+   --jq-numeric-bg: #392061ff;
+   --jq-numeric-input-bg: #c0c0c0;
+   --jq-numeric-input-label: #101010;
+   --jq-numeric-input-shadow: #999999;
+   --jq-string-bg: #4c1a57;
+   --jq-incorrect-color: #c80202;
+   --jq-correct-color: #009113;
+   --jq-text-color: #fafafa;
+}
+
+.Quiz {
+    max-width: 600px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
+    padding-top: 4px;
+    line-height: 1.1;
+    font-size: 16pt;
+    border-radius: inherit;
+}
+
+.QuizCode {
+    font-size: 14pt;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.QuizCode>pre {
+    padding: 4px;
+}
+
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
+.Answer {
+    border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.Feedback {
+    font-size: 16pt;
+    text-align: center;
+/*    min-height: 2em;*/
+}
+
+.Input {
+    align: left;
+    font-size: 20pt;
+}
+
+.Input-text {
+    display: block;
+    margin: 10px;
+    color: inherit;
+    width: unset;
+    min-width: 140px;
+    max-width: 93%;
+    field-sizing: content;
+    background-color: var(--jq-numeric-input-bg);
+    color: var(--jq-text-color);
+    padding: 5px;
+    padding-left: 10px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: 20pt;
+    border: none;
+    border-radius: 0.2rem;
+    transition: box-shadow 0.1s);
+}
+
+.Input-text:focus {
+    /*outline: none;*/
+    background-color: var(--jq-numeric-input-bg);
+    box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
+}
+
+.MCButton {
+    background: var(--jq-mc-button-bg);
+    border: 1px solid var(--jq-mc-button-border);
+    border-radius: inherit;
+    color: #333333;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.MCButton p {
+    color: inherit;
+}
+
+.MultipleChoiceQn {
+    padding: 10px;
+    background: var(--jq-multiple-choice-bg);
+    color: var(--jq-text-color);
+    border-radius: inherit;
+}
+
+.ManyChoiceQn {
+    padding: 10px;
+    background: var(--jq-many-choice-bg);
+    color: var(--jq-text-color);
+    border-radius: inherit;
+}
+
+.NumericQn {
+    background: var(--jq-numeric-bg);
+    border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
+}
+
+.NumericQn p {
+    color: inherit;
+}
+
+.StringQn {
+    background: var(--jq-string-bg);
+    border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
+}
+
+.StringQn p {
+    color: inherit;
+}
+
+
+.InpLabel {
+    color: var(--jq-numeric-input-label);
+    float: left;
+    font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
+}
+
+.incorrect {
+    color: var(--jq-incorrect-color);
+}
+
+.correct {
+    color: var(--jq-correct-color);
+}
+
+.correctButton {
+    /*
+    background: var(--jq-correct-color);
+   */
+    animation: correct-anim 0.6s ease;
+    animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
+    color: var(--jq-text-color);
+    /*outline: none;*/
+}
+
+.incorrectButton {
+    animation: incorrect-anim 0.8s ease;
+    animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
+    color: var(--jq-text-color);
+    /*outline: none;*/
+}
+
+@keyframes incorrect-anim {
+    100% {
+        background-color: var(--jq-incorrect-color);
+    }
+}
+
+@keyframes correct-anim {
+    100% {
+        background-color: var(--jq-correct-color);
+    }
+}
+</style></div><script type="application/javascript">var questionsydafaJytsHTD=[{"question": "\u05de\u05d4 \u05e1\u05d5\u05d2 \u05d4\u05e4\u05dc\u05d8 \u05e9\u05dc \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 len?", "type": "many_choice", "answers": [{"answer": "\u05de\u05d7\u05e8\u05d5\u05d6\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "int", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05d0\u05d5\u05e8\u05da \u05d4\u05de\u05d7\u05e8\u05d5\u05d6\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+
+if (typeof Question === 'undefined') {
+// Make a random ID
+function makeid(length) {
+    var result = [];
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+    }
+    return result.join('');
+}
+// Convert LaTeX delimiters and markdown links to HTML
+function jaxify(string) {
+    let mystring = string;
+    let count = 0, count2 = 0;
+    let loc = mystring.search(/([^\\]|^)(\$)/);
+    let loc2 = mystring.search(/([^\\]|^)(\$\$)/);
+    while (loc >= 0 || loc2 >= 0) {
+        if (loc2 >= 0) {
+            mystring = mystring.replace(/([^\\]|^)(\$\$)/, count2 % 2 ? '$1\\]' : '$1\\[');
+            count2++;
+        } else {
+            mystring = mystring.replace(/([^\\]|^)(\$)/, count % 2 ? '$1\\)' : '$1\\(');
+            count++;
+        }
+        loc = mystring.search(/([^\\]|^)(\$)/);
+        loc2 = mystring.search(/([^\\]|^)(\$\$)/);
+    }
+    // Replace markdown links
+    mystring = mystring.replace(/<http(.*?)>/g, '<a href="http$1" target="_blank" class="Link">http$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="Link">$1</a>');
+    return mystring;
+}
+
+// Base class for question types
+class Question {
+    static registry = {};
+    static register(type, cls) {
+        Question.registry[type] = cls;
+    }
+    static create(qa, id, index, options, rootDiv) {
+        const Cls = Question.registry[qa.type];
+        if (!Cls) {
+            console.error(`No question class registered for type "${qa.type}"`);
+            return;
+        }
+        const q = new Cls(qa, id, index, options, rootDiv);
+        q.render();
+    }
+
+    constructor(qa, id, index, options, rootDiv) {
+        this.qa = qa;
+        this.id = id;
+        this.index = index;
+        this.options = options;
+        this.rootDiv = rootDiv;
+        // wrapper
+        this.wrapper = document.createElement('div');
+        this.wrapper.id = `quizWrap${id}`;
+        this.wrapper.className = 'Quiz';
+        this.wrapper.dataset.qnum = index;
+        this.wrapper.style.maxWidth = `${options.maxWidth}px`;
+        rootDiv.appendChild(this.wrapper);
+        // question container
+        this.outerqDiv = document.createElement('div');
+        this.outerqDiv.id = `OuterquizQn${id}${index}`;
+        this.wrapper.appendChild(this.outerqDiv);
+        // question text
+        this.qDiv = document.createElement('div');
+        this.qDiv.id = `quizQn${id}${index}`;
+        if (qa.question) {
+            this.qDiv.innerHTML = jaxify(qa.question);
+            this.outerqDiv.appendChild(this.qDiv);
+        }
+        // code block
+        if (qa.code) {
+            const codeDiv = document.createElement('div');
+            codeDiv.id = `code${id}${index}`;
+            codeDiv.className = 'QuizCode';
+            const pre = document.createElement('pre');
+            const codeEl = document.createElement('code');
+            codeEl.innerHTML = qa.code;
+            pre.appendChild(codeEl);
+            codeDiv.appendChild(pre);
+            this.outerqDiv.appendChild(codeDiv);
+        }
+        // answer container
+        this.aDiv = document.createElement('div');
+        this.aDiv.id = `quizAns${id}${index}`;
+        this.aDiv.className = 'Answer';
+        this.wrapper.appendChild(this.aDiv);
+        // feedback container (append after answers)
+        this.fbDiv = document.createElement('div');
+        this.fbDiv.id = `fb${id}`;
+        this.fbDiv.className = 'Feedback';
+        this.fbDiv.dataset.answeredcorrect = 0;
+    }
+
+    render() {
+        throw new Error('render() not implemented');
+    }
+
+    preserveResponse(val) {
+        if (!this.options.preserveResponses) return;
+        const resp = document.getElementById(`responses${this.rootDiv.id}`);
+        if (!resp) return;
+        const arr = JSON.parse(resp.dataset.responses);
+        arr[this.index] = val;
+        resp.dataset.responses = JSON.stringify(arr);
+        printResponses(resp);
+    }
+
+    typeset(container) {
+        if (typeof MathJax !== 'undefined') {
+            const v = MathJax.version;
+            if (v[0] === '2') {
+                MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+            } else {
+                MathJax.typeset([container]);
+            }
+        }
+    }
+}
+
+// Choose a random subset of an array. Can also be used to shuffle the array
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
+
+function printResponses(responsesContainer) {
+    var responses=JSON.parse(responsesContainer.dataset.responses);
+    var stringResponses='<B>IMPORTANT!</B>To preserve this answer sequence for submission, when you have finalized your answers: <ol> <li> Copy the text in this cell below "Answer String"</li> <li> Double click on the cell directly below the Answer String, labeled "Replace Me"</li> <li> Select the whole "Replace Me" text</li> <li> Paste in your answer string and press shift-Enter.</li><li>Save the notebook using the save icon or File->Save Notebook menu item</li></ul><br><br><br><b>Answer String:</b><br> ';
+    console.log(responses);
+    responses.forEach((response, index) => {
+        if (response) {
+            console.log(index + ': ' + response);
+            stringResponses+= index + ': ' + response +"<BR>";
+        }
+    });
+    responsesContainer.innerHTML=stringResponses;
+}
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
+function check_mc() {
+    var id = this.id.split('-')[0];
+    //var response = this.id.split('-')[1];
+    //console.log(response);
+    //console.log("In check_mc(), id="+id);
+    //console.log(event.srcElement.id)           
+    //console.log(event.srcElement.dataset.correct)   
+    //console.log(event.srcElement.dataset.feedback)
+
+    var label = event.srcElement;
+    //console.log(label, label.nodeName);
+    var depth = 0;
+    while ((label.nodeName != "LABEL") && (depth < 20)) {
+        label = label.parentElement;
+        console.log(depth, label);
+        depth++;
+    }
+
+
+
+    var answers = label.parentElement.children;
+    //console.log(answers);
+
+    // Split behavior based on multiple choice vs many choice:
+    var fb = document.getElementById("fb" + id);
+
+
+
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
+        // What follows is for the saved responses stuff
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            //console.log(responsesContainer);
+            var response = label.firstChild.innerText;
+            if (label.querySelector(".QuizCode")){
+                response+= label.querySelector(".QuizCode").firstChild.innerText;
+            }
+            console.log(response);
+            //console.log(document.getElementById("quizWrap"+id));
+            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
+            console.log("Question " + qnum);
+            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+            var responses=JSON.parse(responsesContainer.dataset.responses);
+            console.log(responses);
+            responses[qnum]= response;
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+        // End code to preserve responses
+
+        for (var i = 0; i < answers.length; i++) {
+            var child = answers[i];
+            //console.log(child);
+            child.className = "MCButton";
+        }
+
+
+
+        if (label.dataset.correct == "true") {
+            // console.log("Correct action");
+            if ("feedback" in label.dataset) {
+                fb.innerHTML = jaxify(label.dataset.feedback);
+            } else {
+                fb.innerHTML = "Correct!";
+            }
+            label.classList.add("correctButton");
+
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+
+        } else {
+            if ("feedback" in label.dataset) {
+                fb.innerHTML = jaxify(label.dataset.feedback);
+            } else {
+                fb.innerHTML = "Incorrect -- try again.";
+            }
+            //console.log("Error action");
+            label.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+    }
+    else { /* Many choice (more than 1 correct answer) */
+        var reset = false;
+        var feedback;
+         if (label.dataset.correct == "true") {
+            if ("feedback" in label.dataset) {
+                feedback = jaxify(label.dataset.feedback);
+            } else {
+                feedback = "Correct!";
+            }
+            if (label.dataset.answered <= 0) {
+                if (fb.dataset.answeredcorrect < 0) {
+                    fb.dataset.answeredcorrect = 1;
+                    reset = true;
+                } else {
+                    fb.dataset.answeredcorrect++;
+                }
+                if (reset) {
+                    for (var i = 0; i < answers.length; i++) {
+                        var child = answers[i];
+                        child.className = "MCButton";
+                        child.dataset.answered = 0;
+                    }
+                }
+                label.classList.add("correctButton");
+                label.dataset.answered = 1;
+                fb.className = "Feedback";
+                fb.classList.add("correct");
+
+            }
+        } else {
+            if ("feedback" in label.dataset) {
+                feedback = jaxify(label.dataset.feedback);
+            } else {
+                feedback = "Incorrect -- try again.";
+            }
+            if (fb.dataset.answeredcorrect > 0) {
+                fb.dataset.answeredcorrect = -1;
+                reset = true;
+            } else {
+                fb.dataset.answeredcorrect--;
+            }
+
+            if (reset) {
+                for (var i = 0; i < answers.length; i++) {
+                    var child = answers[i];
+                    child.className = "MCButton";
+                    child.dataset.answered = 0;
+                }
+            }
+            label.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+        // What follows is for the saved responses stuff
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            //console.log(responsesContainer);
+            var response = label.firstChild.innerText;
+            if (label.querySelector(".QuizCode")){
+                response+= label.querySelector(".QuizCode").firstChild.innerText;
+            }
+            console.log(response);
+            //console.log(document.getElementById("quizWrap"+id));
+            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
+            console.log("Question " + qnum);
+            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+            var responses=JSON.parse(responsesContainer.dataset.responses);
+            if (label.dataset.correct == "true") {
+                if (typeof(responses[qnum]) == "object"){
+                    if (!responses[qnum].includes(response))
+                        responses[qnum].push(response);
+                } else{
+                    responses[qnum]= [ response ];
+                }
+            } else {
+                responses[qnum]= response;
+            }
+            console.log(responses);
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+        // End save responses stuff
+
+
+
+        var numcorrect = fb.dataset.numcorrect;
+        var answeredcorrect = fb.dataset.answeredcorrect;
+        if (answeredcorrect >= 0) {
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+        } else {
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
+        }
+
+
+    }
+
+    if (typeof MathJax != 'undefined') {
+        var version = MathJax.version;
+        console.log('MathJax version', version);
+        if (version[0] == "2") {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset([fb]);
+        }
+    } else {
+        console.log('MathJax not detected');
+    }
+
+}
+
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
+function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
+    var shuffled;
+    if (shuffle_answers == true) {
+        //console.log(shuffle_answers+" read as true");
+        shuffled = getRandomSubarray(qa.answers, qa.answers.length);
+    } else {
+        //console.log(shuffle_answers+" read as false");
+        shuffled = qa.answers;
+    }
+
+
+    var num_correct = 0;
+
+    shuffled.forEach((item, index, ans_array) => {
+        //console.log(answer);
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type = "radio";
+        inp.id = "quizo" + id + index;
+        inp.style = "display:none;";
+        aDiv.append(inp);
+
+        //Make label for input element
+        var lab = document.createElement("label");
+        lab.className = "MCButton";
+        lab.id = id + '-' + index;
+        lab.onclick = check_mc;
+        var aSpan = document.createElement('span');
+        aSpan.classsName = "";
+        //qDiv.id="quizQn"+id+index;
+        if ("answer" in item) {
+            aSpan.innerHTML = jaxify(item.answer);
+            //aSpan.innerHTML=item.answer;
+        }
+        lab.append(aSpan);
+
+        // Create div for code inside question
+        var codeSpan;
+        if ("code" in item) {
+            codeSpan = document.createElement('span');
+            codeSpan.id = "code" + id + index;
+            codeSpan.className = "QuizCode";
+            var codePre = document.createElement('pre');
+            codeSpan.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML = item.code;
+            lab.append(codeSpan);
+            //console.log(codeSpan);
+        }
+
+        //lab.textContent=item.answer;
+
+        // Set the data attributes for the answer
+        lab.setAttribute('data-correct', item.correct);
+        if (item.correct) {
+            num_correct++;
+        }
+        if ("feedback" in item) {
+            lab.setAttribute('data-feedback', item.feedback);
+        }
+        lab.setAttribute('data-answered', 0);
+
+        aDiv.append(lab);
+
+    });
+
+    if (num_correct > 1) {
+        outerqDiv.className = "ManyChoiceQn";
+    } else {
+        outerqDiv.className = "MultipleChoiceQn";
+    }
+
+    return num_correct;
+
+}
+// Object-oriented wrapper for MC/MANY choice
+class MCQuestion extends Question {
+    constructor(qa, id, idx, opts, rootDiv) { super(qa, id, idx, opts, rootDiv); }
+    render() {
+        //console.log("options.shuffleAnswers " + this.options.shuffleAnswers);
+        const numCorrect = make_mc(
+            this.qa,
+            this.options.shuffleAnswers,
+            this.outerqDiv,
+            this.qDiv,
+            this.aDiv,
+            this.id
+        );
+        if ('answer_cols' in this.qa) {
+            this.aDiv.style.gridTemplateColumns =
+                'repeat(' + this.qa.answer_cols + ', 1fr)';
+        }
+        this.fbDiv.dataset.numcorrect = numCorrect;
+        this.wrapper.appendChild(this.fbDiv);
+    }
+}
+Question.register('multiple_choice', MCQuestion);
+Question.register('many_choice', MCQuestion);
+function check_numeric(ths, event) {
+
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id = ths.id.split('-')[0];
+
+        var submission = ths.value;
+        if (submission.indexOf('/') != -1) {
+            var sub_parts = submission.split('/');
+            //console.log(sub_parts);
+            submission = sub_parts[0] / sub_parts[1];
+        }
+        //console.log("Reader entered", submission);
+
+        if ("precision" in ths.dataset) {
+            var precision = ths.dataset.precision;
+            submission = Number(Number(submission).toPrecision(precision));
+        }
+
+
+        //console.log("In check_numeric(), id="+id);
+        //console.log(event.srcElement.id)           
+        //console.log(event.srcElement.dataset.feedback)
+
+        var fb = document.getElementById("fb" + id);
+        fb.style.display = "none";
+        fb.innerHTML = "Incorrect -- try again.";
+
+        var answers = JSON.parse(ths.dataset.answers);
+        //console.log(answers);
+
+        var defaultFB = "Incorrect. Try again.";
+        var correct;
+        var done = false;
+        answers.every(answer => {
+            //console.log(answer.type);
+
+            correct = false;
+            // if (answer.type=="value"){
+            if ('value' in answer) {
+                var value;
+                if ("precision" in ths.dataset) {
+                    value = answer.value.toPrecision(ths.dataset.precision);
+                } else {
+                    value = answer.value;
+                }
+                if (submission == value) {
+                    if ("feedback" in answer) {
+                        fb.innerHTML = jaxify(answer.feedback);
+                    } else {
+                        fb.innerHTML = jaxify("Correct");
+                    }
+                    correct = answer.correct;
+                    //console.log(answer.correct);
+                    done = true;
+                }
+
+                // } else if (answer.type=="range") {
+            } else if ('range' in answer) {
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
+                if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
+                    fb.innerHTML = jaxify(answer.feedback);
+                    correct = answer.correct;
+                    console.log(answer.correct);
+                    done = true;
+                }
+            } else if (answer.type == "default") {
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
+            }
+            if (done) {
+                return false; // Break out of loop if this has been marked correct
+            } else {
+                return true; // Keep looking for case that includes this as a correct answer
+            }
+        });
+        console.log("done:", done);
+
+        if ((!done) && (defaultFB != "")) {
+            fb.innerHTML = jaxify(defaultFB);
+            //console.log("Default feedback", defaultFB);
+        }
+
+        fb.style.display = "block";
+        if (correct) {
+            ths.className = "Input-text";
+            ths.classList.add("correctButton");
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className = "Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+
+        // What follows is for the saved responses stuff
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            console.log(submission);
+            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
+            //console.log("Question " + qnum);
+            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+            var responses=JSON.parse(responsesContainer.dataset.responses);
+            console.log(responses);
+            if (submission == ths.value){
+                responses[qnum]= submission;
+            } else {
+                responses[qnum]= ths.value + "(" + submission +")";
+            }
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+        // End code to preserve responses
+
+        if (typeof MathJax != 'undefined') {
+            var version = MathJax.version;
+            console.log('MathJax version', version);
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset([fb]);
+            }
+        } else {
+            console.log('MathJax not detected');
+        }
+        // After correct answer, if next JupyterQuiz question exists and has a text input, scroll by current question height
+        if (correct) {
+            // find the current question wrapper
+            var wrapper = ths.closest('.Quiz');
+            if (wrapper) {
+                var nextWrapper = wrapper.nextElementSibling;
+                if (nextWrapper && nextWrapper.classList.contains('Quiz')) {
+                    var nextInput = nextWrapper.querySelector('input.Input-text');
+                    if (nextInput) {
+                        var height = wrapper.getBoundingClientRect().height;
+                        console.log(height);
+                        nextInput.focus();
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+}
+// Object-oriented wrapper for numeric questions
+class NumericQuestion extends Question {
+    constructor(qa, id, idx, opts, rootDiv) {
+        super(qa, id, idx, opts, rootDiv);
+    }
+    render() {
+        make_numeric(this.qa, this.outerqDiv, this.qDiv, this.aDiv, this.id);
+        this.wrapper.appendChild(this.fbDiv);
+    }
+}
+Question.register('numeric', NumericQuestion);
+
+function isValid(el, charC) {
+    //console.log("Input char: ", charC);
+    if (charC == 46) {
+        if (el.value.indexOf('.') === -1) {
+            return true;
+        } else if (el.value.indexOf('/') != -1) {
+            var parts = el.value.split('/');
+            if (parts[1].indexOf('.') === -1) {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    } else if (charC == 47) {
+        if (el.value.indexOf('/') === -1) {
+            if ((el.value != "") && (el.value != ".")) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else if (charC == 45) {
+        var edex = el.value.indexOf('e');
+        if (edex == -1) {
+            edex = el.value.indexOf('E');
+        }
+
+        if (el.value == "") {
+            return true;
+        } else if (edex == (el.value.length - 1)) { // If just after e or E
+            return true;
+        } else {
+            return false;
+        }
+    } else if (charC == 101) { // "e"
+        if ((el.value.indexOf('e') === -1) && (el.value.indexOf('E') === -1) && (el.value.indexOf('/') == -1)) {
+            // Prev symbol must be digit or decimal point:
+            if (el.value.slice(-1).search(/\d/) >= 0) {
+                return true;
+            } else if (el.value.slice(-1).search(/\./) >= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        if (charC > 31 && (charC < 48 || charC > 57))
+            return false;
+    }
+    return true;
+}
+
+function numeric_keypress(evnt) {
+    var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC == 13) {
+        check_numeric(this, evnt);
+    } else {
+        return isValid(this, charC);
+    }
+}
+
+
+
+
+
+function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
+
+
+
+    //console.log(answer);
+
+
+    outerqDiv.className = "NumericQn";
+    aDiv.style.display = 'block';
+
+    var lab = document.createElement("label");
+    lab.className = "InpLabel";
+    lab.innerHTML = "Type numeric answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type = "text";
+    //inp.id="input-"+id;
+    inp.id = id + "-0";
+    inp.className = "Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers));
+    if ("precision" in qa) {
+        inp.setAttribute('data-precision', qa.precision);
+    }
+    aDiv.append(inp);
+    //console.log(inp);
+
+    //inp.addEventListener("keypress", check_numeric);
+    //inp.addEventListener("keypress", numeric_keypress);
+    /*
+    inp.addEventListener("keypress", function(event) {
+        return numeric_keypress(this, event);
+    }
+                        );
+                        */
+    //inp.onkeypress="return numeric_keypress(this, event)";
+    inp.onkeypress = numeric_keypress;
+    inp.onpaste = event => false;
+
+    inp.addEventListener("focus", function (event) {
+        this.value = "";
+        return false;
+    }
+    );
+
+
+}
+// Override show_questions to use object-oriented Question API
+function show_questions(json, container) {
+    // Accept container element or element ID
+    if (typeof container === 'string') {
+        container = document.getElementById(container);
+    }
+    if (!container) {
+        console.error('show_questions: invalid container', container);
+        return;
+    }
+
+    const shuffleQuestions = container.dataset.shufflequestions === 'True';
+    const shuffleAnswers = container.dataset.shuffleanswers === 'True';
+    const preserveResponses = container.dataset.preserveresponses === 'true';
+    const maxWidth = parseInt(container.dataset.maxwidth, 10) || 0;
+    let numQuestions = parseInt(container.dataset.numquestions, 10) || json.length;
+    if (numQuestions > json.length) numQuestions = json.length;
+
+    let questions = json;
+    if (shuffleQuestions || numQuestions < json.length) {
+        questions = getRandomSubarray(json, numQuestions);
+    }
+
+    questions.forEach((qa, index) => {
+        const id = makeid(8);
+        const options = {
+            shuffleAnswers: shuffleAnswers,
+            preserveResponses: preserveResponses,
+            maxWidth: maxWidth
+        };
+        Question.create(qa, id, index, options, container);
+    });
+
+    if (preserveResponses) {
+        const respDiv = document.createElement('div');
+        respDiv.id = 'responses' + container.id;
+        respDiv.className = 'JCResponses';
+        respDiv.dataset.responses = JSON.stringify([]);
+        respDiv.innerHTML = '<b>Select your answers and then follow the directions that will appear here.</b>';
+        container.appendChild(respDiv);
+    }
+
+    // Trigger MathJax typesetting if available
+    if (typeof MathJax != 'undefined') {
+        console.log("MathJax version", MathJax.version);
+        var version = MathJax.version;
+        setTimeout(function(){
+            var version = MathJax.version;
+            console.log('After sleep, MathJax version', version);
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([container]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
+            }
+        }, 500);
+if (typeof version == 'undefined') {
+        } else
+        {
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([container]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
+            } else {
+                console.log("MathJax not found");
+            }
+        }
+    }
+    // if (typeof MathJax !== 'undefined') {
+    //     const v = MathJax.version;
+    //     if (v[0] === '2') {
+    //         MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+    //     } else if (v[0] === '3') {
+    //         MathJax.typeset([container]);
+    //     }
+    // }
+
+    // Prevent link clicks from bubbling up
+    Array.from(container.getElementsByClassName('Link')).forEach(link => {
+        link.addEventListener('click', e => e.stopPropagation());
+    });
+}
+function levenshteinDistance(a, b) {
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+
+    const matrix = Array(b.length + 1).fill(null).map(() => Array(a.length + 1).fill(null));
+
+    for (let i = 0; i <= a.length; i++) {
+        matrix[0][i] = i;
+    }
+
+    for (let j = 0; j <= b.length; j++) {
+        matrix[j][0] = j;
+    }
+
+    for (let j = 1; j <= b.length; j++) {
+        for (let i = 1; i <= a.length; i++) {
+            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            matrix[j][i] = Math.min(
+                matrix[j - 1][i] + 1, // Deletion
+                matrix[j][i - 1] + 1, // Insertion
+                matrix[j - 1][i - 1] + cost // Substitution
+            );
+        }
+    }
+    return matrix[b.length][a.length];
+}
+// Object-oriented wrapper for string input questions
+class StringQuestion extends Question {
+    constructor(qa, id, idx, opts, rootDiv) {
+        super(qa, id, idx, opts, rootDiv);
+    }
+    render() {
+        make_string(this.qa, this.outerqDiv, this.qDiv, this.aDiv, this.id);
+        this.wrapper.appendChild(this.fbDiv);
+    }
+}
+Question.register('string', StringQuestion);
+
+function check_string(ths, event) {
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id = ths.id.split('-')[0];
+        var submission = ths.value.trim();
+        var fb = document.getElementById("fb" + id);
+        fb.style.display = "none";
+        fb.innerHTML = "Incorrect -- try again.";
+
+        var answers = JSON.parse(ths.dataset.answers);
+        var defaultFB = "Incorrect. Try again.";
+        var correct;
+        var done = false;
+
+        // Handle default answer pattern: filter out and capture default feedback
+        var filteredAnswers = [];
+        answers.forEach(answer => {
+            if (answer.type === "default") {
+                defaultFB = answer.feedback;
+            } else {
+                filteredAnswers.push(answer);
+            }
+        });
+        answers = filteredAnswers;
+
+        answers.every(answer => {
+            correct = false;
+
+            let match = false;
+            if (answer.match_case) {
+                match = submission === answer.answer;
+            } else {
+                match = submission.toLowerCase() === answer.answer.toLowerCase();
+            }
+            console.log(submission);
+            console.log(answer.answer);
+            console.log(match);
+
+            if (match) {
+                if ("feedback" in answer) {
+                    fb.innerHTML = jaxify(answer.feedback);
+                } else {
+                    fb.innerHTML = jaxify("Correct");
+                }
+                correct = answer.correct;
+                done = true;
+            } else if (answer.fuzzy_threshold) {
+                var max_length = Math.max(submission.length, answer.answer.length);
+                var ratio;
+                if (answer.match_case) {
+                    ratio = 1- (levenshteinDistance(submission, answer.answer) / max_length);
+                } else {
+                    ratio = 1- (levenshteinDistance(submission.toLowerCase(),
+                                                    answer.answer.toLowerCase()) / max_length);
+                }
+                if (ratio >= answer.fuzzy_threshold) {
+                    if ("feedback" in answer) {
+                        fb.innerHTML = jaxify("(Fuzzy) " + answer.feedback);
+                    } else {
+                        fb.innerHTML = jaxify("Correct");
+                    }
+                    correct = answer.correct;
+                    done = true;
+                }
+
+            }
+
+            if (done) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+
+        if ((!done) && (defaultFB != "")) {
+            fb.innerHTML = jaxify(defaultFB);
+        }
+
+        fb.style.display = "block";
+        if (correct) {
+            ths.className = "Input-text";
+            ths.classList.add("correctButton");
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className = "Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            var qnum = document.getElementById("quizWrap" + id).dataset.qnum;
+            var responses = JSON.parse(responsesContainer.dataset.responses);
+            responses[qnum] = submission;
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+
+        if (typeof MathJax != 'undefined') {
+            var version = MathJax.version;
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset([fb]);
+            }
+        } else {
+            console.log('MathJax not detected');
+        }
+        // After correct answer, if next JupyterQuiz question exists and has a text input, scroll by current question height
+        if (correct) {
+            var wrapper = ths.closest('.Quiz');
+            if (wrapper) {
+                var nextWrapper = wrapper.nextElementSibling;
+                if (nextWrapper && nextWrapper.classList.contains('Quiz')) {
+                    var nextInput = nextWrapper.querySelector('input.Input-text');
+                    if (nextInput) {
+                        var height = wrapper.getBoundingClientRect().height;
+                        nextInput.focus();
+                    }
+                }
+            }
+        }
+        return false;
+    }
+}
+
+function string_keypress(evnt) {
+    var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC == 13) {
+        check_string(this, evnt);
+    } 
+}
+
+
+function make_string(qa, outerqDiv, qDiv, aDiv, id) {
+    outerqDiv.className = "StringQn";
+    aDiv.style.display = 'block';
+
+    var lab = document.createElement("label");
+    lab.className = "InpLabel";
+    lab.innerHTML = "Type your answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type = "text";
+    inp.id = id + "-0";
+    inp.className = "Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers));
+    // Apply optional input width (approx. number of characters, in em units)
+    if (qa.input_width != null) {
+        inp.style['min-width'] = qa.input_width + 'em';
+    }
+    aDiv.append(inp);
+
+    inp.onkeypress = string_keypress;
+    inp.onpaste = event => false;
+
+    inp.addEventListener("focus", function (event) {
+        this.value = "";
+        return false;
+    });
+}
+/*
+ * Handle asynchrony issues when re-running quizzes in Jupyter notebooks.
+ * Ensures show_questions is called after the container div is in the DOM.
+ */
+function try_show() {
+  if (document.getElementById("ydafaJytsHTD")) {
+    show_questions(questionsydafaJytsHTD, ydafaJytsHTD);
+  } else {
+    setTimeout(try_show, 200);
+  }
+};
+// Invoke immediately
+{
+  try_show();
+}
+}
+</script></div>
+</div>
+</section>
+<section id="id4">
+<h2>אז למה צריך פונקציות בכלל?<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>איך נחשב את ההיקף של שלושה מלבנים?<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<img width=800 height=300 src="data:image/png;base64,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"><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+<span class="n">c2</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+<span class="n">c3</span><span class="o">=</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>עכשיו שנו את הקוד כדי לחשב את <strong>שטח</strong> המלבנים.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="sSQAcAmaIiIl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#sSQAcAmaIiIl {
+   --jq-multiple-choice-bg: #6f78ffff;
+   --jq-mc-button-bg: #fafafa;
+   --jq-mc-button-border: #e0e0e0e0;
+   --jq-mc-button-inset-shadow: #555555;
+   --jq-many-choice-bg: #f75c03ff;
+   --jq-numeric-bg: #392061ff;
+   --jq-numeric-input-bg: #c0c0c0;
+   --jq-numeric-input-label: #101010;
+   --jq-numeric-input-shadow: #999999;
+   --jq-string-bg: #4c1a57;
+   --jq-incorrect-color: #c80202;
+   --jq-correct-color: #009113;
+   --jq-text-color: #fafafa;
+}
+
+.Quiz {
+    max-width: 600px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
+    padding-top: 4px;
+    line-height: 1.1;
+    font-size: 16pt;
+    border-radius: inherit;
+}
+
+.QuizCode {
+    font-size: 14pt;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.QuizCode>pre {
+    padding: 4px;
+}
+
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+
+
+.Answer {
+    border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.Feedback {
+    font-size: 16pt;
+    text-align: center;
+/*    min-height: 2em;*/
+}
+
+.Input {
+    align: left;
+    font-size: 20pt;
+}
+
+.Input-text {
+    display: block;
+    margin: 10px;
+    color: inherit;
+    width: unset;
+    min-width: 140px;
+    max-width: 93%;
+    field-sizing: content;
+    background-color: var(--jq-numeric-input-bg);
+    color: var(--jq-text-color);
+    padding: 5px;
+    padding-left: 10px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: 20pt;
+    border: none;
+    border-radius: 0.2rem;
+    transition: box-shadow 0.1s);
+}
+
+.Input-text:focus {
+    /*outline: none;*/
+    background-color: var(--jq-numeric-input-bg);
+    box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
+}
+
+.MCButton {
+    background: var(--jq-mc-button-bg);
+    border: 1px solid var(--jq-mc-button-border);
+    border-radius: inherit;
+    color: #333333;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.MCButton p {
+    color: inherit;
+}
+
+.MultipleChoiceQn {
+    padding: 10px;
+    background: var(--jq-multiple-choice-bg);
+    color: var(--jq-text-color);
+    border-radius: inherit;
+}
+
+.ManyChoiceQn {
+    padding: 10px;
+    background: var(--jq-many-choice-bg);
+    color: var(--jq-text-color);
+    border-radius: inherit;
+}
+
+.NumericQn {
+    background: var(--jq-numeric-bg);
+    border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
+}
+
+.NumericQn p {
+    color: inherit;
+}
+
+.StringQn {
+    background: var(--jq-string-bg);
+    border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
+}
+
+.StringQn p {
+    color: inherit;
+}
+
+
+.InpLabel {
+    color: var(--jq-numeric-input-label);
+    float: left;
+    font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
+}
+
+.incorrect {
+    color: var(--jq-incorrect-color);
+}
+
+.correct {
+    color: var(--jq-correct-color);
+}
+
+.correctButton {
+    /*
+    background: var(--jq-correct-color);
+   */
+    animation: correct-anim 0.6s ease;
+    animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
+    color: var(--jq-text-color);
+    /*outline: none;*/
+}
+
+.incorrectButton {
+    animation: incorrect-anim 0.8s ease;
+    animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
+    color: var(--jq-text-color);
+    /*outline: none;*/
+}
+
+@keyframes incorrect-anim {
+    100% {
+        background-color: var(--jq-incorrect-color);
+    }
+}
+
+@keyframes correct-anim {
+    100% {
+        background-color: var(--jq-correct-color);
+    }
+}
+</style></div><script type="application/javascript">var questionssSQAcAmaIiIl=[{"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05e7\u05d5\u05d3 \u05e0\u05d3\u05e8\u05e9\u05ea \u05dc\u05e9\u05e0\u05d5\u05ea?", "type": "numeric", "answers": [{"type": "value", "value": 3, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"type": "default", "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+
+if (typeof Question === 'undefined') {
+// Make a random ID
+function makeid(length) {
+    var result = [];
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+    }
+    return result.join('');
+}
+// Convert LaTeX delimiters and markdown links to HTML
+function jaxify(string) {
+    let mystring = string;
+    let count = 0, count2 = 0;
+    let loc = mystring.search(/([^\\]|^)(\$)/);
+    let loc2 = mystring.search(/([^\\]|^)(\$\$)/);
+    while (loc >= 0 || loc2 >= 0) {
+        if (loc2 >= 0) {
+            mystring = mystring.replace(/([^\\]|^)(\$\$)/, count2 % 2 ? '$1\\]' : '$1\\[');
+            count2++;
+        } else {
+            mystring = mystring.replace(/([^\\]|^)(\$)/, count % 2 ? '$1\\)' : '$1\\(');
+            count++;
+        }
+        loc = mystring.search(/([^\\]|^)(\$)/);
+        loc2 = mystring.search(/([^\\]|^)(\$\$)/);
+    }
+    // Replace markdown links
+    mystring = mystring.replace(/<http(.*?)>/g, '<a href="http$1" target="_blank" class="Link">http$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="Link">$1</a>');
+    return mystring;
+}
+
+// Base class for question types
+class Question {
+    static registry = {};
+    static register(type, cls) {
+        Question.registry[type] = cls;
+    }
+    static create(qa, id, index, options, rootDiv) {
+        const Cls = Question.registry[qa.type];
+        if (!Cls) {
+            console.error(`No question class registered for type "${qa.type}"`);
+            return;
+        }
+        const q = new Cls(qa, id, index, options, rootDiv);
+        q.render();
+    }
+
+    constructor(qa, id, index, options, rootDiv) {
+        this.qa = qa;
+        this.id = id;
+        this.index = index;
+        this.options = options;
+        this.rootDiv = rootDiv;
+        // wrapper
+        this.wrapper = document.createElement('div');
+        this.wrapper.id = `quizWrap${id}`;
+        this.wrapper.className = 'Quiz';
+        this.wrapper.dataset.qnum = index;
+        this.wrapper.style.maxWidth = `${options.maxWidth}px`;
+        rootDiv.appendChild(this.wrapper);
+        // question container
+        this.outerqDiv = document.createElement('div');
+        this.outerqDiv.id = `OuterquizQn${id}${index}`;
+        this.wrapper.appendChild(this.outerqDiv);
+        // question text
+        this.qDiv = document.createElement('div');
+        this.qDiv.id = `quizQn${id}${index}`;
+        if (qa.question) {
+            this.qDiv.innerHTML = jaxify(qa.question);
+            this.outerqDiv.appendChild(this.qDiv);
+        }
+        // code block
+        if (qa.code) {
+            const codeDiv = document.createElement('div');
+            codeDiv.id = `code${id}${index}`;
+            codeDiv.className = 'QuizCode';
+            const pre = document.createElement('pre');
+            const codeEl = document.createElement('code');
+            codeEl.innerHTML = qa.code;
+            pre.appendChild(codeEl);
+            codeDiv.appendChild(pre);
+            this.outerqDiv.appendChild(codeDiv);
+        }
+        // answer container
+        this.aDiv = document.createElement('div');
+        this.aDiv.id = `quizAns${id}${index}`;
+        this.aDiv.className = 'Answer';
+        this.wrapper.appendChild(this.aDiv);
+        // feedback container (append after answers)
+        this.fbDiv = document.createElement('div');
+        this.fbDiv.id = `fb${id}`;
+        this.fbDiv.className = 'Feedback';
+        this.fbDiv.dataset.answeredcorrect = 0;
+    }
+
+    render() {
+        throw new Error('render() not implemented');
+    }
+
+    preserveResponse(val) {
+        if (!this.options.preserveResponses) return;
+        const resp = document.getElementById(`responses${this.rootDiv.id}`);
+        if (!resp) return;
+        const arr = JSON.parse(resp.dataset.responses);
+        arr[this.index] = val;
+        resp.dataset.responses = JSON.stringify(arr);
+        printResponses(resp);
+    }
+
+    typeset(container) {
+        if (typeof MathJax !== 'undefined') {
+            const v = MathJax.version;
+            if (v[0] === '2') {
+                MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+            } else {
+                MathJax.typeset([container]);
+            }
+        }
+    }
+}
+
+// Choose a random subset of an array. Can also be used to shuffle the array
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
+
+function printResponses(responsesContainer) {
+    var responses=JSON.parse(responsesContainer.dataset.responses);
+    var stringResponses='<B>IMPORTANT!</B>To preserve this answer sequence for submission, when you have finalized your answers: <ol> <li> Copy the text in this cell below "Answer String"</li> <li> Double click on the cell directly below the Answer String, labeled "Replace Me"</li> <li> Select the whole "Replace Me" text</li> <li> Paste in your answer string and press shift-Enter.</li><li>Save the notebook using the save icon or File->Save Notebook menu item</li></ul><br><br><br><b>Answer String:</b><br> ';
+    console.log(responses);
+    responses.forEach((response, index) => {
+        if (response) {
+            console.log(index + ': ' + response);
+            stringResponses+= index + ': ' + response +"<BR>";
+        }
+    });
+    responsesContainer.innerHTML=stringResponses;
+}
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
+function check_mc() {
+    var id = this.id.split('-')[0];
+    //var response = this.id.split('-')[1];
+    //console.log(response);
+    //console.log("In check_mc(), id="+id);
+    //console.log(event.srcElement.id)           
+    //console.log(event.srcElement.dataset.correct)   
+    //console.log(event.srcElement.dataset.feedback)
+
+    var label = event.srcElement;
+    //console.log(label, label.nodeName);
+    var depth = 0;
+    while ((label.nodeName != "LABEL") && (depth < 20)) {
+        label = label.parentElement;
+        console.log(depth, label);
+        depth++;
+    }
+
+
+
+    var answers = label.parentElement.children;
+    //console.log(answers);
+
+    // Split behavior based on multiple choice vs many choice:
+    var fb = document.getElementById("fb" + id);
+
+
+
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
+        // What follows is for the saved responses stuff
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            //console.log(responsesContainer);
+            var response = label.firstChild.innerText;
+            if (label.querySelector(".QuizCode")){
+                response+= label.querySelector(".QuizCode").firstChild.innerText;
+            }
+            console.log(response);
+            //console.log(document.getElementById("quizWrap"+id));
+            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
+            console.log("Question " + qnum);
+            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+            var responses=JSON.parse(responsesContainer.dataset.responses);
+            console.log(responses);
+            responses[qnum]= response;
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+        // End code to preserve responses
+
+        for (var i = 0; i < answers.length; i++) {
+            var child = answers[i];
+            //console.log(child);
+            child.className = "MCButton";
+        }
+
+
+
+        if (label.dataset.correct == "true") {
+            // console.log("Correct action");
+            if ("feedback" in label.dataset) {
+                fb.innerHTML = jaxify(label.dataset.feedback);
+            } else {
+                fb.innerHTML = "Correct!";
+            }
+            label.classList.add("correctButton");
+
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+
+        } else {
+            if ("feedback" in label.dataset) {
+                fb.innerHTML = jaxify(label.dataset.feedback);
+            } else {
+                fb.innerHTML = "Incorrect -- try again.";
+            }
+            //console.log("Error action");
+            label.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+    }
+    else { /* Many choice (more than 1 correct answer) */
+        var reset = false;
+        var feedback;
+         if (label.dataset.correct == "true") {
+            if ("feedback" in label.dataset) {
+                feedback = jaxify(label.dataset.feedback);
+            } else {
+                feedback = "Correct!";
+            }
+            if (label.dataset.answered <= 0) {
+                if (fb.dataset.answeredcorrect < 0) {
+                    fb.dataset.answeredcorrect = 1;
+                    reset = true;
+                } else {
+                    fb.dataset.answeredcorrect++;
+                }
+                if (reset) {
+                    for (var i = 0; i < answers.length; i++) {
+                        var child = answers[i];
+                        child.className = "MCButton";
+                        child.dataset.answered = 0;
+                    }
+                }
+                label.classList.add("correctButton");
+                label.dataset.answered = 1;
+                fb.className = "Feedback";
+                fb.classList.add("correct");
+
+            }
+        } else {
+            if ("feedback" in label.dataset) {
+                feedback = jaxify(label.dataset.feedback);
+            } else {
+                feedback = "Incorrect -- try again.";
+            }
+            if (fb.dataset.answeredcorrect > 0) {
+                fb.dataset.answeredcorrect = -1;
+                reset = true;
+            } else {
+                fb.dataset.answeredcorrect--;
+            }
+
+            if (reset) {
+                for (var i = 0; i < answers.length; i++) {
+                    var child = answers[i];
+                    child.className = "MCButton";
+                    child.dataset.answered = 0;
+                }
+            }
+            label.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+        // What follows is for the saved responses stuff
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            //console.log(responsesContainer);
+            var response = label.firstChild.innerText;
+            if (label.querySelector(".QuizCode")){
+                response+= label.querySelector(".QuizCode").firstChild.innerText;
+            }
+            console.log(response);
+            //console.log(document.getElementById("quizWrap"+id));
+            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
+            console.log("Question " + qnum);
+            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+            var responses=JSON.parse(responsesContainer.dataset.responses);
+            if (label.dataset.correct == "true") {
+                if (typeof(responses[qnum]) == "object"){
+                    if (!responses[qnum].includes(response))
+                        responses[qnum].push(response);
+                } else{
+                    responses[qnum]= [ response ];
+                }
+            } else {
+                responses[qnum]= response;
+            }
+            console.log(responses);
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+        // End save responses stuff
+
+
+
+        var numcorrect = fb.dataset.numcorrect;
+        var answeredcorrect = fb.dataset.answeredcorrect;
+        if (answeredcorrect >= 0) {
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+        } else {
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
+        }
+
+
+    }
+
+    if (typeof MathJax != 'undefined') {
+        var version = MathJax.version;
+        console.log('MathJax version', version);
+        if (version[0] == "2") {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset([fb]);
+        }
+    } else {
+        console.log('MathJax not detected');
+    }
+
+}
+
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
+function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
+    var shuffled;
+    if (shuffle_answers == true) {
+        //console.log(shuffle_answers+" read as true");
+        shuffled = getRandomSubarray(qa.answers, qa.answers.length);
+    } else {
+        //console.log(shuffle_answers+" read as false");
+        shuffled = qa.answers;
+    }
+
+
+    var num_correct = 0;
+
+    shuffled.forEach((item, index, ans_array) => {
+        //console.log(answer);
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type = "radio";
+        inp.id = "quizo" + id + index;
+        inp.style = "display:none;";
+        aDiv.append(inp);
+
+        //Make label for input element
+        var lab = document.createElement("label");
+        lab.className = "MCButton";
+        lab.id = id + '-' + index;
+        lab.onclick = check_mc;
+        var aSpan = document.createElement('span');
+        aSpan.classsName = "";
+        //qDiv.id="quizQn"+id+index;
+        if ("answer" in item) {
+            aSpan.innerHTML = jaxify(item.answer);
+            //aSpan.innerHTML=item.answer;
+        }
+        lab.append(aSpan);
+
+        // Create div for code inside question
+        var codeSpan;
+        if ("code" in item) {
+            codeSpan = document.createElement('span');
+            codeSpan.id = "code" + id + index;
+            codeSpan.className = "QuizCode";
+            var codePre = document.createElement('pre');
+            codeSpan.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML = item.code;
+            lab.append(codeSpan);
+            //console.log(codeSpan);
+        }
+
+        //lab.textContent=item.answer;
+
+        // Set the data attributes for the answer
+        lab.setAttribute('data-correct', item.correct);
+        if (item.correct) {
+            num_correct++;
+        }
+        if ("feedback" in item) {
+            lab.setAttribute('data-feedback', item.feedback);
+        }
+        lab.setAttribute('data-answered', 0);
+
+        aDiv.append(lab);
+
+    });
+
+    if (num_correct > 1) {
+        outerqDiv.className = "ManyChoiceQn";
+    } else {
+        outerqDiv.className = "MultipleChoiceQn";
+    }
+
+    return num_correct;
+
+}
+// Object-oriented wrapper for MC/MANY choice
+class MCQuestion extends Question {
+    constructor(qa, id, idx, opts, rootDiv) { super(qa, id, idx, opts, rootDiv); }
+    render() {
+        //console.log("options.shuffleAnswers " + this.options.shuffleAnswers);
+        const numCorrect = make_mc(
+            this.qa,
+            this.options.shuffleAnswers,
+            this.outerqDiv,
+            this.qDiv,
+            this.aDiv,
+            this.id
+        );
+        if ('answer_cols' in this.qa) {
+            this.aDiv.style.gridTemplateColumns =
+                'repeat(' + this.qa.answer_cols + ', 1fr)';
+        }
+        this.fbDiv.dataset.numcorrect = numCorrect;
+        this.wrapper.appendChild(this.fbDiv);
+    }
+}
+Question.register('multiple_choice', MCQuestion);
+Question.register('many_choice', MCQuestion);
+function check_numeric(ths, event) {
+
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id = ths.id.split('-')[0];
+
+        var submission = ths.value;
+        if (submission.indexOf('/') != -1) {
+            var sub_parts = submission.split('/');
+            //console.log(sub_parts);
+            submission = sub_parts[0] / sub_parts[1];
+        }
+        //console.log("Reader entered", submission);
+
+        if ("precision" in ths.dataset) {
+            var precision = ths.dataset.precision;
+            submission = Number(Number(submission).toPrecision(precision));
+        }
+
+
+        //console.log("In check_numeric(), id="+id);
+        //console.log(event.srcElement.id)           
+        //console.log(event.srcElement.dataset.feedback)
+
+        var fb = document.getElementById("fb" + id);
+        fb.style.display = "none";
+        fb.innerHTML = "Incorrect -- try again.";
+
+        var answers = JSON.parse(ths.dataset.answers);
+        //console.log(answers);
+
+        var defaultFB = "Incorrect. Try again.";
+        var correct;
+        var done = false;
+        answers.every(answer => {
+            //console.log(answer.type);
+
+            correct = false;
+            // if (answer.type=="value"){
+            if ('value' in answer) {
+                var value;
+                if ("precision" in ths.dataset) {
+                    value = answer.value.toPrecision(ths.dataset.precision);
+                } else {
+                    value = answer.value;
+                }
+                if (submission == value) {
+                    if ("feedback" in answer) {
+                        fb.innerHTML = jaxify(answer.feedback);
+                    } else {
+                        fb.innerHTML = jaxify("Correct");
+                    }
+                    correct = answer.correct;
+                    //console.log(answer.correct);
+                    done = true;
+                }
+
+                // } else if (answer.type=="range") {
+            } else if ('range' in answer) {
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
+                if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
+                    fb.innerHTML = jaxify(answer.feedback);
+                    correct = answer.correct;
+                    console.log(answer.correct);
+                    done = true;
+                }
+            } else if (answer.type == "default") {
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
+            }
+            if (done) {
+                return false; // Break out of loop if this has been marked correct
+            } else {
+                return true; // Keep looking for case that includes this as a correct answer
+            }
+        });
+        console.log("done:", done);
+
+        if ((!done) && (defaultFB != "")) {
+            fb.innerHTML = jaxify(defaultFB);
+            //console.log("Default feedback", defaultFB);
+        }
+
+        fb.style.display = "block";
+        if (correct) {
+            ths.className = "Input-text";
+            ths.classList.add("correctButton");
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className = "Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+
+        // What follows is for the saved responses stuff
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            console.log(submission);
+            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
+            //console.log("Question " + qnum);
+            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+            var responses=JSON.parse(responsesContainer.dataset.responses);
+            console.log(responses);
+            if (submission == ths.value){
+                responses[qnum]= submission;
+            } else {
+                responses[qnum]= ths.value + "(" + submission +")";
+            }
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+        // End code to preserve responses
+
+        if (typeof MathJax != 'undefined') {
+            var version = MathJax.version;
+            console.log('MathJax version', version);
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset([fb]);
+            }
+        } else {
+            console.log('MathJax not detected');
+        }
+        // After correct answer, if next JupyterQuiz question exists and has a text input, scroll by current question height
+        if (correct) {
+            // find the current question wrapper
+            var wrapper = ths.closest('.Quiz');
+            if (wrapper) {
+                var nextWrapper = wrapper.nextElementSibling;
+                if (nextWrapper && nextWrapper.classList.contains('Quiz')) {
+                    var nextInput = nextWrapper.querySelector('input.Input-text');
+                    if (nextInput) {
+                        var height = wrapper.getBoundingClientRect().height;
+                        console.log(height);
+                        nextInput.focus();
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+}
+// Object-oriented wrapper for numeric questions
+class NumericQuestion extends Question {
+    constructor(qa, id, idx, opts, rootDiv) {
+        super(qa, id, idx, opts, rootDiv);
+    }
+    render() {
+        make_numeric(this.qa, this.outerqDiv, this.qDiv, this.aDiv, this.id);
+        this.wrapper.appendChild(this.fbDiv);
+    }
+}
+Question.register('numeric', NumericQuestion);
+
+function isValid(el, charC) {
+    //console.log("Input char: ", charC);
+    if (charC == 46) {
+        if (el.value.indexOf('.') === -1) {
+            return true;
+        } else if (el.value.indexOf('/') != -1) {
+            var parts = el.value.split('/');
+            if (parts[1].indexOf('.') === -1) {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    } else if (charC == 47) {
+        if (el.value.indexOf('/') === -1) {
+            if ((el.value != "") && (el.value != ".")) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else if (charC == 45) {
+        var edex = el.value.indexOf('e');
+        if (edex == -1) {
+            edex = el.value.indexOf('E');
+        }
+
+        if (el.value == "") {
+            return true;
+        } else if (edex == (el.value.length - 1)) { // If just after e or E
+            return true;
+        } else {
+            return false;
+        }
+    } else if (charC == 101) { // "e"
+        if ((el.value.indexOf('e') === -1) && (el.value.indexOf('E') === -1) && (el.value.indexOf('/') == -1)) {
+            // Prev symbol must be digit or decimal point:
+            if (el.value.slice(-1).search(/\d/) >= 0) {
+                return true;
+            } else if (el.value.slice(-1).search(/\./) >= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        if (charC > 31 && (charC < 48 || charC > 57))
+            return false;
+    }
+    return true;
+}
+
+function numeric_keypress(evnt) {
+    var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC == 13) {
+        check_numeric(this, evnt);
+    } else {
+        return isValid(this, charC);
+    }
+}
+
+
+
+
+
+function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
+
+
+
+    //console.log(answer);
+
+
+    outerqDiv.className = "NumericQn";
+    aDiv.style.display = 'block';
+
+    var lab = document.createElement("label");
+    lab.className = "InpLabel";
+    lab.innerHTML = "Type numeric answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type = "text";
+    //inp.id="input-"+id;
+    inp.id = id + "-0";
+    inp.className = "Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers));
+    if ("precision" in qa) {
+        inp.setAttribute('data-precision', qa.precision);
+    }
+    aDiv.append(inp);
+    //console.log(inp);
+
+    //inp.addEventListener("keypress", check_numeric);
+    //inp.addEventListener("keypress", numeric_keypress);
+    /*
+    inp.addEventListener("keypress", function(event) {
+        return numeric_keypress(this, event);
+    }
+                        );
+                        */
+    //inp.onkeypress="return numeric_keypress(this, event)";
+    inp.onkeypress = numeric_keypress;
+    inp.onpaste = event => false;
+
+    inp.addEventListener("focus", function (event) {
+        this.value = "";
+        return false;
+    }
+    );
+
+
+}
+// Override show_questions to use object-oriented Question API
+function show_questions(json, container) {
+    // Accept container element or element ID
+    if (typeof container === 'string') {
+        container = document.getElementById(container);
+    }
+    if (!container) {
+        console.error('show_questions: invalid container', container);
+        return;
+    }
+
+    const shuffleQuestions = container.dataset.shufflequestions === 'True';
+    const shuffleAnswers = container.dataset.shuffleanswers === 'True';
+    const preserveResponses = container.dataset.preserveresponses === 'true';
+    const maxWidth = parseInt(container.dataset.maxwidth, 10) || 0;
+    let numQuestions = parseInt(container.dataset.numquestions, 10) || json.length;
+    if (numQuestions > json.length) numQuestions = json.length;
+
+    let questions = json;
+    if (shuffleQuestions || numQuestions < json.length) {
+        questions = getRandomSubarray(json, numQuestions);
+    }
+
+    questions.forEach((qa, index) => {
+        const id = makeid(8);
+        const options = {
+            shuffleAnswers: shuffleAnswers,
+            preserveResponses: preserveResponses,
+            maxWidth: maxWidth
+        };
+        Question.create(qa, id, index, options, container);
+    });
+
+    if (preserveResponses) {
+        const respDiv = document.createElement('div');
+        respDiv.id = 'responses' + container.id;
+        respDiv.className = 'JCResponses';
+        respDiv.dataset.responses = JSON.stringify([]);
+        respDiv.innerHTML = '<b>Select your answers and then follow the directions that will appear here.</b>';
+        container.appendChild(respDiv);
+    }
+
+    // Trigger MathJax typesetting if available
+    if (typeof MathJax != 'undefined') {
+        console.log("MathJax version", MathJax.version);
+        var version = MathJax.version;
+        setTimeout(function(){
+            var version = MathJax.version;
+            console.log('After sleep, MathJax version', version);
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([container]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
+            }
+        }, 500);
+if (typeof version == 'undefined') {
+        } else
+        {
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([container]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
+            } else {
+                console.log("MathJax not found");
+            }
+        }
+    }
+    // if (typeof MathJax !== 'undefined') {
+    //     const v = MathJax.version;
+    //     if (v[0] === '2') {
+    //         MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+    //     } else if (v[0] === '3') {
+    //         MathJax.typeset([container]);
+    //     }
+    // }
+
+    // Prevent link clicks from bubbling up
+    Array.from(container.getElementsByClassName('Link')).forEach(link => {
+        link.addEventListener('click', e => e.stopPropagation());
+    });
+}
+function levenshteinDistance(a, b) {
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+
+    const matrix = Array(b.length + 1).fill(null).map(() => Array(a.length + 1).fill(null));
+
+    for (let i = 0; i <= a.length; i++) {
+        matrix[0][i] = i;
+    }
+
+    for (let j = 0; j <= b.length; j++) {
+        matrix[j][0] = j;
+    }
+
+    for (let j = 1; j <= b.length; j++) {
+        for (let i = 1; i <= a.length; i++) {
+            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            matrix[j][i] = Math.min(
+                matrix[j - 1][i] + 1, // Deletion
+                matrix[j][i - 1] + 1, // Insertion
+                matrix[j - 1][i - 1] + cost // Substitution
+            );
+        }
+    }
+    return matrix[b.length][a.length];
+}
+// Object-oriented wrapper for string input questions
+class StringQuestion extends Question {
+    constructor(qa, id, idx, opts, rootDiv) {
+        super(qa, id, idx, opts, rootDiv);
+    }
+    render() {
+        make_string(this.qa, this.outerqDiv, this.qDiv, this.aDiv, this.id);
+        this.wrapper.appendChild(this.fbDiv);
+    }
+}
+Question.register('string', StringQuestion);
+
+function check_string(ths, event) {
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id = ths.id.split('-')[0];
+        var submission = ths.value.trim();
+        var fb = document.getElementById("fb" + id);
+        fb.style.display = "none";
+        fb.innerHTML = "Incorrect -- try again.";
+
+        var answers = JSON.parse(ths.dataset.answers);
+        var defaultFB = "Incorrect. Try again.";
+        var correct;
+        var done = false;
+
+        // Handle default answer pattern: filter out and capture default feedback
+        var filteredAnswers = [];
+        answers.forEach(answer => {
+            if (answer.type === "default") {
+                defaultFB = answer.feedback;
+            } else {
+                filteredAnswers.push(answer);
+            }
+        });
+        answers = filteredAnswers;
+
+        answers.every(answer => {
+            correct = false;
+
+            let match = false;
+            if (answer.match_case) {
+                match = submission === answer.answer;
+            } else {
+                match = submission.toLowerCase() === answer.answer.toLowerCase();
+            }
+            console.log(submission);
+            console.log(answer.answer);
+            console.log(match);
+
+            if (match) {
+                if ("feedback" in answer) {
+                    fb.innerHTML = jaxify(answer.feedback);
+                } else {
+                    fb.innerHTML = jaxify("Correct");
+                }
+                correct = answer.correct;
+                done = true;
+            } else if (answer.fuzzy_threshold) {
+                var max_length = Math.max(submission.length, answer.answer.length);
+                var ratio;
+                if (answer.match_case) {
+                    ratio = 1- (levenshteinDistance(submission, answer.answer) / max_length);
+                } else {
+                    ratio = 1- (levenshteinDistance(submission.toLowerCase(),
+                                                    answer.answer.toLowerCase()) / max_length);
+                }
+                if (ratio >= answer.fuzzy_threshold) {
+                    if ("feedback" in answer) {
+                        fb.innerHTML = jaxify("(Fuzzy) " + answer.feedback);
+                    } else {
+                        fb.innerHTML = jaxify("Correct");
+                    }
+                    correct = answer.correct;
+                    done = true;
+                }
+
+            }
+
+            if (done) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+
+        if ((!done) && (defaultFB != "")) {
+            fb.innerHTML = jaxify(defaultFB);
+        }
+
+        fb.style.display = "block";
+        if (correct) {
+            ths.className = "Input-text";
+            ths.classList.add("correctButton");
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className = "Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            var qnum = document.getElementById("quizWrap" + id).dataset.qnum;
+            var responses = JSON.parse(responsesContainer.dataset.responses);
+            responses[qnum] = submission;
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+
+        if (typeof MathJax != 'undefined') {
+            var version = MathJax.version;
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset([fb]);
+            }
+        } else {
+            console.log('MathJax not detected');
+        }
+        // After correct answer, if next JupyterQuiz question exists and has a text input, scroll by current question height
+        if (correct) {
+            var wrapper = ths.closest('.Quiz');
+            if (wrapper) {
+                var nextWrapper = wrapper.nextElementSibling;
+                if (nextWrapper && nextWrapper.classList.contains('Quiz')) {
+                    var nextInput = nextWrapper.querySelector('input.Input-text');
+                    if (nextInput) {
+                        var height = wrapper.getBoundingClientRect().height;
+                        nextInput.focus();
+                    }
+                }
+            }
+        }
+        return false;
+    }
+}
+
+function string_keypress(evnt) {
+    var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC == 13) {
+        check_string(this, evnt);
+    } 
+}
+
+
+function make_string(qa, outerqDiv, qDiv, aDiv, id) {
+    outerqDiv.className = "StringQn";
+    aDiv.style.display = 'block';
+
+    var lab = document.createElement("label");
+    lab.className = "InpLabel";
+    lab.innerHTML = "Type your answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type = "text";
+    inp.id = id + "-0";
+    inp.className = "Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers));
+    // Apply optional input width (approx. number of characters, in em units)
+    if (qa.input_width != null) {
+        inp.style['min-width'] = qa.input_width + 'em';
+    }
+    aDiv.append(inp);
+
+    inp.onkeypress = string_keypress;
+    inp.onpaste = event => false;
+
+    inp.addEventListener("focus", function (event) {
+        this.value = "";
+        return false;
+    });
+}
+/*
+ * Handle asynchrony issues when re-running quizzes in Jupyter notebooks.
+ * Ensures show_questions is called after the container div is in the DOM.
+ */
+function try_show() {
+  if (document.getElementById("sSQAcAmaIiIl")) {
+    show_questions(questionssSQAcAmaIiIl, sSQAcAmaIiIl);
+  } else {
+    setTimeout(try_show, 200);
+  }
+};
+// Invoke immediately
+{
+  try_show();
+}
+}
+</script></div>
+</div>
+</section>
+<section id="id6">
+<h3>בעיה ראשונה - כפילות בקוד<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>כפילות בקוד היא אחת הבעיות הנפוצות ביותר בתכנות. כאשר אנחנו כותבים שוב ושוב את אותו מקטע קוד, כל שינוי או תיקון באג דורש מאיתנו לעבור על כל ההעתקים, מה שמעלה את הסיכון לטעויות. בנוסף, הקוד נעשה ארוך, מסורבל וקשה לתחזוקה.</p>
+<p>הפתרון הוא לרכז את הלוגיקה שחוזרת על עצמה בתוך פונקציה – כך כותבים את הקוד פעם אחת בלבד, ומשתמשים בו בכל מקום שבו נדרש.</p>
+</section>
+<section id="id7">
+<h3>למה פונקציות?<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>פונקציות הן אחד הכלים המרכזיים בתכנות מודרני. הן מאפשרות לנו לכתוב קוד יעיל, מסודר וקל לתחזוקה. כמעט כל תוכנית רצינית מורכבת מעשרות עד מאות פונקציות.
+פונקציות מאפשרות לנו:</p>
+<ul class="simple">
+<li><p>מודולריות – נחלק את המשימה הגדולה למשימות קטנות, שכל אחת מהן פותרת בעיה קלה יותר. זה לדוגמה מאפשר עבודה בצוות - כל אחד עובד חלק מהפונקציות.</p></li>
+<li><p>הפשטה – ברגע שיש לי פונקציה מוכנה, אפשר להשתמש בה כ”קופסה שחורה” ולהשתמש בה בלי לזכור או לדעת איך היא עובדת. אתם לדוגמה השתמשתם בפונקציה int() שיודעת להמיר מחרוזת או float לint. אבל אתם לא צריכים לדעת איך היא עושה זאת כדי להשתמש בה.</p></li>
+<li><p>תחזוקה – אם גיליתם טעות (באג) בקוד שלכם, תוכלו לתקן אותה במקום אחד, והם משפיעים אוטומטית על כל השימושים בפונקציה.</p></li>
+<li><p>קריאות – הקוד הראשי נשאר קצר וברור, ומציג את זרימת הלוגיקה בצורה מובנת.</p></li>
+<li><p>טווח משתנים מוגבל – משתנים פנימיים של הפונקציה אינם מתערבבים עם שאר הקוד, מה שמפחית שגיאות. לנקודה זו נתייחס מאוחר יותר בקורס.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./vendor/virtual-pyprog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">אג’נדה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">מהי פונקציה?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">אז למה צריך פונקציות בכלל?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">איך נחשב את ההיקף של שלושה מלבנים?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בעיה ראשונה - כפילות בקוד</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">למה פונקציות?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

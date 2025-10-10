@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>מתודות קסם &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/17_2_magic-methods';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/tau.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Weeks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course/weeks/week_1.html">1. שבוע 1 - טיפוסים ותנאים</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/vendor/virtual-pyprog/17_2_magic-methods.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/vendor/virtual-pyprog/17_2_magic-methods.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fvendor/virtual-pyprog/17_2_magic-methods.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/vendor/virtual-pyprog/17_2_magic-methods.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>מתודות קסם</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lud-least-used-dictionary">הבעית ה-LUD – Least Used Dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">הסבר על המימוש, שלב אחר שלב:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>מתודות קסם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>כבר מהשלבים הראשונים בלימוד פייתון ראינו שטיפוסים קיימים בפייתון כמו int, str, ו־list מתנהגים בצורה מאוד טבעית: אנחנו יכולים להשתמש בהם באופרטורים (+, *, ==), להדפיס אותם ישירות עם <code class="docutils literal notranslate"><span class="pre">print</span></code>, לחשב את אורכם עם <code class="docutils literal notranslate"><span class="pre">len</span></code> או לבדוק הכלה בעזרת <code class="docutils literal notranslate"><span class="pre">in</span></code>. למשל, הפקודה <code class="docutils literal notranslate"><span class="pre">len([1,2,3])</span></code> מחזירה את אורך הרשימה. טיפוסים הקיימים בפייתון עובדים בצורה טבעית עם פונקציות מובנות מבלי שנצטרך לחשוב מה מתרחש “מאחורי הקלעים”.</p>
+<p>הסיבה לכך שהפונקציות המובנות עובדות כך היא שבפייתון ניתן לכתוב עבור כל מחלקה <strong>מתודות קסם, או dunder methods</strong>, שמאפשרות לטיפוסים להתנהג כאילו היו חלק מובנה מהשפה. מתודות אלו מגדירות כיצד האובייקט מגיב למצבים שונים: יצירה, הדפסה, בדיקות אורך או בדיקת הכלה. כשאנחנו מגדירים מחלקה משלנו, אנחנו יכולים לממש את אותן מתודות ובכך לגרום לאובייקטים מותאמים אישית להתנהג באותה הצורה הטבעית שראינו עם טיפוסים מובנים.<br />
+למעשה, מאחורי הקלעים <strong>הפונקציות המובנות נעזרות במתודות הקסם על מנת לבצע את פעולתן</strong>.</p>
+<p>קיים מספר רב של מתודות קסם. ביחידה זו נתמקד בשלוש:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__repr__(self)</span></code></p>
+<ul>
+<li><p>מחזירה מחרוזת שמייצגת את האובייקט.</p></li>
+<li><p>משמשת בין השאר את הפונקציה <code class="docutils literal notranslate"><span class="pre">print</span></code> כדי לקבל מחרוזת שניתן להדפיס.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__len__(self)</span></code></p>
+<ul>
+<li><p>מחזירה מספר שלם המייצג את האורך של האובייקט.</p></li>
+<li><p>מופעלת כאשר משתמשים בפונקציה המובנית <code class="docutils literal notranslate"><span class="pre">len(obj)</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__contains__(self,</span> <span class="pre">item)</span></code></p>
+<ul>
+<li><p>קובעת האם איבר מסוים נמצא בתוך האובייקט.</p></li>
+<li><p>מופעלת כאשר משתמשים באופרטור <code class="docutils literal notranslate"><span class="pre">in</span></code> (למשל: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">obj</span></code>).</p></li>
+<li><p>מחזירה <code class="docutils literal notranslate"><span class="pre">True</span></code> או <code class="docutils literal notranslate"><span class="pre">False</span></code> בהתאם לתוצאה.</p></li>
+</ul>
+</li>
+</ul>
+<p>בבעיה הבאה שנציג, נדגים את השימוש בשלושת המתודות המיוחדות הללו</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>כדאי  לדעת</strong></p>
+<p>גם <code class="docutils literal notranslate"><span class="pre">__init__</span></code> (הבנאי) היא למעשה סוג של מתודת קסם מיוחדת, אשר נקראת בכל פעם שאנו קוראים למחלקה עם סוגריים עגולים</p>
+</div>
+<section id="lud-least-used-dictionary">
+<h2>הבעית ה-LUD – Least Used Dictionary<a class="headerlink" href="#lud-least-used-dictionary" title="Link to this heading">#</a></h2>
+<p>LUD הוא מילון מיוחד בגודל מוגבל, שמנהל לא רק זוגות של מפתחות וערכים אלא גם עוקב אחרי מספר הפעמים שכל מפתח נשלף ממנו. כלומר, בכל פעם שניגשים לערך באמצעות get(key), המילון מעלה את מונה הגישות לאותו מפתח. בדרך זו נשמרת היסטוריה של תדירות השימוש בכל ערך במבנה.</p>
+<p>כאשר המילון מגיע לגודל המקסימלי שלו, והמשתמש מנסה להוסיף זוג חדש של מפתח-ערך, המילון חייב “לזרוק” זוג מפתח-ערך קיים על מנת לשמור את הזוג החדש. המילון יבחור איזה מפתח לזרוק לפי <strong>תדירות הגישה למפתח-ערך</strong>: הזוג שהיה בשימוש המועט ביותר (כלומר בעל מספר הגישות הנמוך ביותר) יוסר מהמילון, ורק לאחר מכן יתווסף את הזוג החדש. כך מבטיחים שמצד אחד המילון ישמור על גודל מוגבל, אך גם יכיל את הערכים השימושיים ביותר, ויפנה מקום באופן חכם כאשר נדרשת הוספה של פריטים חדשים.</p>
+<p>נבחן כעת מחלקה המממשת את LUD, אשר תכיל את המתודות הבאות:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__(self,</span> <span class="pre">memory_size)</span></code>:</p>
+<ul>
+<li><p>מאתחלת את המילון וקובעת את הגודל המקסימלי שלו ל־<code class="docutils literal notranslate"><span class="pre">memory_size</span></code>.</p></li>
+<li><p>אם הערך של <code class="docutils literal notranslate"><span class="pre">memory_size</span></code> קטן מ־1, תודפס אזהרה: <code class="docutils literal notranslate"><span class="pre">&quot;Error</span> <span class="pre">in</span> <span class="pre">memory</span> <span class="pre">size&quot;</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__len__(self)</span></code>:</p>
+<ul>
+<li><p>מחזירה את מספר האיברים שנמצאים כרגע במילון LUD.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__contains__(self,</span> <span class="pre">key)</span></code>:</p>
+<ul>
+<li><p>מחזירה <code class="docutils literal notranslate"><span class="pre">True</span></code> אם המפתח נמצא במילון, אחרת <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__repr__(self)</span></code>:</p>
+<ul>
+<li><p>מחזירה מחרוזת המכילה את כל מפתחות המילון מופרדים ע”י מקף.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get(self,</span> <span class="pre">key)</span></code>:</p>
+<ul>
+<li><p>מחזירה את הערך המתאים למפתח. בנוסף, הפעולה מעדכנת את מונה הגישות לאותו מפתח.</p></li>
+<li><p>אם המפתח לא קיים במילון, המתודה מחזירה <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">put(self,</span> <span class="pre">key,</span> <span class="pre">value)</span></code>:</p>
+<ul>
+<li><p>מוסיפה זוג חדש של מפתח וערך למילון.</p></li>
+</ul>
+</li>
+</ul>
+<section id="id2">
+<h3>הסבר על המימוש, שלב אחר שלב:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">memory_size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error memory size&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory_size</span> <span class="o">=</span> <span class="n">memory_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">usage</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>הבנאי (<code class="docutils literal notranslate"><span class="pre">__init__</span></code>)  מתבצע אתחול של האובייקט: אם המשתמש העביר גודל זיכרון קטן מ־1, תודפס הודעת שגיאה. לאחר מכן נשמר הערך של <code class="docutils literal notranslate"><span class="pre">memory_size</span></code> ומאותחלים שני מילונים פנימיים: <code class="docutils literal notranslate"><span class="pre">data</span></code> לשמירת המפתחות והערכים בפועל, ו-<code class="docutils literal notranslate"><span class="pre">usage</span></code> למעקב אחר מספר הפעמים שכל מפתח נשלף.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>מתודה זו מחזירה את מספר האיברים במילון, על ידי קריאה לפונקציה len על המילון data. בצורה זו יאפשר לנו בהמשך להשתמש בפונקציה המובנית <code class="docutils literal notranslate"><span class="pre">len</span></code> ישירות על אובייקטים מטיפוס LUD.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+<p>מתודה זו מתבצעת בדיקת שייכות: האם מפתח מסוים מוכל במילון. זה יאפשר לנו בהמשך להשתמש בתחביר הטבעי <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">in</span> <span class="pre">lud</span></code> במקום לקרוא לפונקציה נפרדת.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>מתודה זו מחזירה מחרוזת שמייצגת את המילון – כאן נעשה שימוש פשוט שמחבר את המפתחות בעזרת מקפים, כך שהאובייקט יודפס בצורה קריאה ולא ככתובת בזיכרון.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">usage</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">val</span>
+</pre></div>
+</div>
+<p>מתודה זו אחראית להחזרת הערך השייך למפתח. היא משתמשת במתודת <code class="docutils literal notranslate"><span class="pre">get</span></code> של מילון רגיל, ואם הערך נמצא, מגדילה ב־1 את מונה הגישות לאותו מפתח במילון usage. אם המפתח לא קיים, מוחזר <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">memory_size</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">mkey</span><span class="p">,</span> <span class="n">mval</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">key_value</span><span class="p">:</span> <span class="n">key_value</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">mkey</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">mkey</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">usage</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>מתודה זו מוסיפה זוג מפתח-ערך חדש.</p>
+<p>תחילה, מתבצעת בדיקה אם המילון כבר הגיע לגודל המקסימלי והמפתח החדש עדיין לא קיים: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">len(self)</span> <span class="pre">==</span> <span class="pre">self.memory_size</span> <span class="pre">and</span> <span class="pre">key</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">self</span></code>.<br />
+שימו לב כי הפקודות <code class="docutils literal notranslate"><span class="pre">len</span></code> ו<code class="docutils literal notranslate"><span class="pre">in</span></code> מופעלות ישירות על <code class="docutils literal notranslate"><span class="pre">self</span></code>. דבר זה מתאפשר בזכות המימוש שכתבנו למתודות הקסם שכתבנו: <code class="docutils literal notranslate"><span class="pre">__len__</span></code> ו-<code class="docutils literal notranslate"><span class="pre">__contains__</span></code>.</p>
+<p>במידה והמילון כבר הגיע למקסימום זוגות מפתח-ערך שהוא יכול להכיל (לפי <code class="docutils literal notranslate"><span class="pre">memory_size</span></code>), יש להסיר משני המילונים (<code class="docutils literal notranslate"><span class="pre">data</span></code> ו-<code class="docutils literal notranslate"><span class="pre">usage</span></code>) את המפתח שהשתמשו בו הכי מעט.<br />
+על מנת לגלות מי המפתח בו השתמשו הכי מעט משתמשים ב-<code class="docutils literal notranslate"><span class="pre">mkey,</span> <span class="pre">mval</span> <span class="pre">=</span> <span class="pre">min(self.usage.items(),</span> <span class="pre">key=lambda</span> <span class="pre">key_value:</span> <span class="pre">key_value[1])</span></code>.</p>
+<p>נסביר פקודה זו מעט בהרחבה:<br />
+זכרו כי <code class="docutils literal notranslate"><span class="pre">()dict.items</span></code> מחזירה אובייקט איטרציה של זוגות (key, value) — כלומר צדים של מפתח-ערך.<br />
+אנו עושים שימוש בפרמטר <code class="docutils literal notranslate"><span class="pre">key</span></code>, אשר מגדיר יחס סדר חדש לפונקציה <code class="docutils literal notranslate"><span class="pre">min</span></code>. יחס סדר ,תלוי בערך של כל מפתח (שהוא האיבר השני בכל tuple): <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">key_value:</span> <span class="pre">key_value[1]</span></code>, כלומר עבור כל זוג (key, count) נסתכל דווקא על האיבר השני — מונה השימוש — ונבחר את המינימום על פי הערך הזה.<br />
+התוצאה של <code class="docutils literal notranslate"><span class="pre">min</span></code> היא הזוג מפתח-ערך עם הערך המינימלי. במקרה שלנו, הערך הוא מספר הפעמים שניגשו למפתח זה.<br />
+את הזוג מפתח-ערך, ואנחנו מפרקים אותו ל־mkey (המפתח להסרה) ו־mval (מספר הגישות שלו).</p>
+<p>לאחר שחילצנו את המפתח בעל מספר הגישות המינימלי, נסיר אותו משני המילונים שלנו (<code class="docutils literal notranslate"><span class="pre">data</span></code> ו-<code class="docutils literal notranslate"><span class="pre">usage</span></code>), ונוסיף את מפתח החדש נוסף עם הערך המתאים, ובמקביל מאופס מונה השימוש שלו (0).</p>
+<p>בצורה זו מובטחת התנהגות של Least Used Dictionary – בכל הוספה כשהמילון מלא, המפתח בעל השימוש המועט ביותר מוסר.</p>
+<div class="info admonition">
+<p class="admonition-title"><strong>הרחבה</strong></p>
+<p>ברירת המחדל של min היא להשוות ישירות בין הזוגות (טאפלים). בפייתון, ההשוואה בין טאפלים נעשית בצורה לקסיקוגרפית:
+קודם משווים את האיבר הראשון (המפתח).
+אם הם שונים – ההשוואה מוכרעת לפי המפתחות.
+אם הם שווים – רק אז משווים את האיבר השני (הערך).</p>
+</div>
+<p>כעת נצרף את כלל המימושים למחלקה שלמה:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LUD</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">memory_size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error memory size&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory_size</span> <span class="o">=</span> <span class="n">memory_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">usage</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> 
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">usage</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">val</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">memory_size</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">mkey</span><span class="p">,</span> <span class="n">mval</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">key_value</span><span class="p">:</span> <span class="n">key_value</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">mkey</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">mkey</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">usage</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>כעת, לאחר שמימשנו את המחלקה, נדגים את השימוש בה.<br />
+נסו להוסיף ולשנות קריאות למחלקה, ולראות את אתם התוצאה שהתקבלה היא מה שאתם מצפים לראות</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lud_dict</span> <span class="o">=</span> <span class="n">LUD</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lud_dict</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">lud_dict</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;Bye&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lud_dict</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">lud_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="p">)</span>
+<span class="n">lud_dict</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;Hi again&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bye&#39;</span> <span class="ow">in</span> <span class="n">lud_dict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span> <span class="ow">in</span> <span class="n">lud_dict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lud_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hi-Bye
+False
+True
+Hi-Hi again
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./vendor/virtual-pyprog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lud-least-used-dictionary">הבעית ה-LUD – Least Used Dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">הסבר על המימוש, שלב אחר שלב:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

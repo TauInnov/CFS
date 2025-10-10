@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>break ו continue &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/8_1_break_and_continue';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/tau.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Weeks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course/weeks/week_1.html">1. שבוע 1 - טיפוסים ותנאים</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/vendor/virtual-pyprog/8_1_break_and_continue.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/vendor/virtual-pyprog/8_1_break_and_continue.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fvendor/virtual-pyprog/8_1_break_and_continue.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/vendor/virtual-pyprog/8_1_break_and_continue.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>break ו continue</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break">מילת המפתח <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue">מילת המפתח <code class="docutils literal notranslate"><span class="pre">continue</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">תרגול מסכם</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="break-continue">
+<h1><code class="docutils literal notranslate"><span class="pre">break</span></code> ו <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-continue" title="Link to this heading">#</a></h1>
+<section id="break">
+<h2>מילת המפתח <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#break" title="Link to this heading">#</a></h2>
+<p>לפעמים אנחנו רוצים להפסיק לולאה עוד לפני שהיא סיימה את כל האיטרציות שלה. בדיוק בשביל זה קיימת מילת המפתח <code class="docutils literal notranslate"><span class="pre">break</span></code>.<br />
+כשמופיעה הפקודה <code class="docutils literal notranslate"><span class="pre">break</span></code> בתוך לולאה, היא גורמת ליציאה מיידית מהלולאה הקרובה ביותר, בלי להמשיך להריץ את שאר הפקודות שלה ובלי להמשיך לאיטרציות נוספות.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">elem</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First negative number is&quot;</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;current number is: &quot;</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>current number is:  4
+current number is:  2
+First negative number is -6
+done
+</pre></div>
+</div>
+</div>
+</div>
+<p>אפשר לראות שלא הדפסנו את השורה “current number is: -6”, ולא עברנו על המשך הרשימה. במקום זאת, הקוד סיים את הלולאה ולכן עבר לפקודה <code class="docutils literal notranslate"><span class="pre">print(&quot;done&quot;)</span></code>.</p>
+<p><strong>דוגמא:</strong> שימוש ב־ <code class="docutils literal notranslate"><span class="pre">break</span></code> בלולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> לבדיקה אם מספר הוא ראשוני. שימו לב להזחות!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">25</span>
+<span class="k">for</span> <span class="n">div</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># Note the +1!</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">div</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">div</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;is not prime&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;is prime&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25 is not prime
+</pre></div>
+</div>
+</div>
+</div>
+<p>בקטע הקוד הזה אנחנו מנסים לבדוק האם המספר <code class="docutils literal notranslate"><span class="pre">n</span></code> הוא ראשוני. הרעיון הוא לעבור על כל המספרים מ־2 ועד השורש הריבועי של <code class="docutils literal notranslate"><span class="pre">n</span></code> (כולל). אם נמצא מספר שמחלק את <code class="docutils literal notranslate"><span class="pre">n</span></code> בלי שארית, סימן ש־<code class="docutils literal notranslate"><span class="pre">n</span></code> איננו ראשוני.</p>
+<p>כדי לעצור את החיפוש ברגע שמצאנו מחלק מתאים, אנחנו משתמשים ב־<code class="docutils literal notranslate"><span class="pre">break</span></code>. כלומר:</p>
+<p>אם נכנסנו לתוך ה־<code class="docutils literal notranslate"><span class="pre">if</span></code>, סימן שמצאנו מחלק, ואז אנחנו יוצאים מהלולאה מידית.</p>
+<p>אחרי הלולאה אנחנו בודקים שוב: אם המספר האחרון שנבדק (<code class="docutils literal notranslate"><span class="pre">div</span></code>) באמת חילק את <code class="docutils literal notranslate"><span class="pre">n</span></code>, נכריז ש־<code class="docutils literal notranslate"><span class="pre">n</span></code> איננו ראשוני. אחרת, הלולאה הסתיימה בלי שמצאנו מחלק, ולכן <code class="docutils literal notranslate"><span class="pre">n</span></code> הוא ראשוני.</p>
+<p>ניתן לראות כי השימוש ב־<code class="docutils literal notranslate"><span class="pre">break</span></code> משנה את זרימת הבקרה: הלולאה לא בהכרח תרוץ על כל הטווח, אלא תיעצר ברגע שנמצא מחלק. לכן השורה האחרונה בודקת שוב את <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">div</span> <span class="pre">==</span> <span class="pre">0</span></code> כדי להבחין בין שני המצבים – יציאה בגלל <code class="docutils literal notranslate"><span class="pre">break</span></code> לעומת סיום רגיל של הלולאה.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">example</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s1"> [</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s1">   {</span>
+<span class="s1">   (...)     32 ]</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="s1"> &#39;&#39;&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jupyterquiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="continue">
+<h2>מילת המפתח <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#continue" title="Link to this heading">#</a></h2>
+<p>לפעמים לא נרצה לעצור לגמרי את הלולאה, אלא פשוט לדלג על האיטרציה הנוכחית ולהמשיך מיד לזו הבאה. בדיוק בשביל זה יש את מילת המפתח <code class="docutils literal notranslate"><span class="pre">continue</span></code>.</p>
+<p>כאשר פוגשים ב־<code class="docutils literal notranslate"><span class="pre">continue</span></code>, פייתון מפסיק להריץ את שאר הפקודות של אותה איטרציה, וקופץ ישר להתחלת האיטרציה הבאה.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">elem</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First negative number is&quot;</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;current number is: &quot;</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>current number is:  4
+current number is:  2
+First negative number is -6
+current number is:  3
+First negative number is -9
+done
+</pre></div>
+</div>
+</div>
+</div>
+<p>אפשר לראות שלא הדפסנו את השורה “current number is: -6” או הדפסה דומה עבור -9, אבל כן המשכנו לעבור על הרשימה.</p>
+<p>נראה כעת דוגמא נוספת לשימוש ב<code class="docutils literal notranslate"><span class="pre">continue</span></code>: למטה מופיע מימוש של הפונקציה <code class="docutils literal notranslate"><span class="pre">unique_list</span></code>, המקבלת רשימה (<code class="docutils literal notranslate"><span class="pre">lst</span></code>), ומחזירה רשימה חדשה שבה הערכים ייחודיים (בלי חזרות).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">unique_list</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="n">uniques</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">uniques</span><span class="p">:</span> <span class="c1"># If already in list, don&#39;t add again</span>
+            <span class="k">continue</span> 
+        <span class="n">uniques</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">uniques</span>
+
+<span class="n">unique_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>כאשר אנחנו נתקלים באיבר שכבר הוספנו בעבר לרשימת הייחודיים, אנחנו לא רוצים להוסיף אותו שוב. לכן, ברגע שהתנאי מתקיים, מופעלת הפקודה <code class="docutils literal notranslate"><span class="pre">continue</span></code>, שמדלגת על שאר הפקודות בתוך גוף הלולאה וממשיכה ישר לאיבר הבא ברשימה. בצורה זו אנחנו מוודאים שהתוספת לרשימת <code class="docutils literal notranslate"><span class="pre">uniques</span></code> מתבצעת רק עבור איברים חדשים, וכל כפילות מתעלמת באופן אוטומטי.</p>
+<p>סיכום: <code class="docutils literal notranslate"><span class="pre">break</span></code> ו-<code class="docutils literal notranslate"><span class="pre">continue</span></code></p>
+<p>לסיכום, הכרנו שתי פקודות המאפשרות שליטה מדויקת יותר בלולאות - <code class="docutils literal notranslate"><span class="pre">break</span></code> ו־<code class="docutils literal notranslate"><span class="pre">continue</span></code>.
+<code class="docutils literal notranslate"><span class="pre">break</span></code> עוצרת את הלולאה לחלוטין ברגע שהתנאי מתקיים וממשיכה מיד אחרי הלולאה, בעוד ש־<code class="docutils literal notranslate"><span class="pre">continue</span></code> רק מדלגת על שאר הפקודות באיטרציה הנוכחית וממשיכה לאיבר הבא בלולאה. כלומר, <code class="docutils literal notranslate"><span class="pre">break</span></code>  “שוברת” את הלולאה, ו־<code class="docutils literal notranslate"><span class="pre">continue</span></code> “ממשיכה הלאה” בלי לעצור את הלולאה עצמה.</p>
+<section id="id1">
+<h3>תרגול מסכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>בתרגילים הבאים תצטרכו להחליט האם להשתמש ב<code class="docutils literal notranslate"><span class="pre">break</span></code> או ב<code class="docutils literal notranslate"><span class="pre">continue</span></code> וכיצד.</p>
+<ol class="arabic simple">
+<li><p>כתבו את הפונקציה <code class="docutils literal notranslate"><span class="pre">has_negative</span></code> שמקבלת רשימה של מספרים (<code class="docutils literal notranslate"><span class="pre">lst</span></code>) ומחזירה <code class="docutils literal notranslate"><span class="pre">True</span></code> אם יש ברשימה מספר שלילי, ו-<code class="docutils literal notranslate"><span class="pre">False</span></code> אחרת.</p></li>
+</ol>
+<div class="dropdown tip admonition">
+<p class="admonition-title"><strong>רמז</strong></p>
+<p>אם כבר מצאתם מספר שלילי, האם יש צורך להמשיך לבדוק את שאר הרשימה? באיזה פקודה כדאי להשתמש בתוך הלולאה – <code class="docutils literal notranslate"><span class="pre">break</span></code> או <code class="docutils literal notranslate"><span class="pre">continue</span></code>?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">has_negative</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="c1"># Write your code here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>בעיה פתוחה במתמטיקה - בעיית ההגעה לפלינדרום</strong></p></li>
+</ol>
+<p>בהינתן מספר, ניתן להפוך את סדר ספרותיו, ולחבר אותו לעצמו. ניתן לחזור על כך עד לקבלת פלינדרום.
+לדוגמה, עבור המספר 426:<br />
+מאחר ש426 אינו פלינדרום, נחבר אותו למספר ההופכי שלו - 624. ונקבל 1050.<br />
+מאחר ש1050 אינו פלינדרום, נחבר אותו למספר ההופכי שלו - 501. ונקבל 1551.<br />
+המספר הזה הוא פלינדרום, ולכן סיימנו לאחר שתי איטרציות.</p>
+<p>עם זאת, קיימים מספרים עבורם לא ברור לנו אם נצליח להגיע ככה לפלינדרום. לדוגמא, המספר 196:<br />
+196 + 691 = 887<br />
+887 + 788 = 1675<br />
+1675 + 5761 = 7536<br />
+וכן הלאה. אם תמשיכו להריץ את האלגוריתם, תראו שאנחנו מגיעים למספרים מאוד גדולים, אבל לא ברור מתי (ואם בכלל) נגיע לפלינדרום.</p>
+<p>כתבו את הפונקציה <code class="docutils literal notranslate"><span class="pre">is_palindrome_10</span></code> שמקבלת מספר שלם <code class="docutils literal notranslate"><span class="pre">a</span></code>.
+הפונקציה תחזיר אם המספר <code class="docutils literal notranslate"><span class="pre">a</span></code> מגיע לפלינדרום לאחר לכל היותר 10 איטרציות.</p>
+<p>נסו את הפונקציה שלכם על מספרים אשר אתם יודעים שמגיעים לתשובה תוך פחות מ10 איטרציות, ועל מספרים שאתם יודעים שלא מגיעים לתשובה במספר האיטרציות הזה.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome_10</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="c1"># Write your code here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./vendor/virtual-pyprog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break">מילת המפתח <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue">מילת המפתח <code class="docutils literal notranslate"><span class="pre">continue</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">תרגול מסכם</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

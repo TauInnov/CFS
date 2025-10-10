@@ -1,0 +1,962 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>שימוש מתקדם בפונקציות &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/11_0_advanced_function_usage';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/tau.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Weeks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course/weeks/week_1.html">1. שבוע 1 - טיפוסים ותנאים</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/vendor/virtual-pyprog/11_0_advanced_function_usage.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/vendor/virtual-pyprog/11_0_advanced_function_usage.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fvendor/virtual-pyprog/11_0_advanced_function_usage.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/vendor/virtual-pyprog/11_0_advanced_function_usage.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>שימוש מתקדם בפונקציות</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">אג’נדה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">פרמטרים לפונקציות עם ערכי ברירת מחדל</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמאות</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">פונקציה כפרמטר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">פונקציות אנונימיות (<code class="docutils literal notranslate"><span class="pre">lambda</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">דוגמא: מחשבון</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key">שימוש בפרמטר <code class="docutils literal notranslate"><span class="pre">key</span></code> על מנת להגדיר יחס סדר בפונקציות מובנות</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>שימוש מתקדם בפונקציות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>אג’נדה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>ערכי ברירת מחדל לפונקציות</p></li>
+<li><p>פונקציות שמקבלות פונקציות</p></li>
+<li><p>פונקציות אנונימיות (<code class="docutils literal notranslate"><span class="pre">lambda</span></code>)</p></li>
+</ul>
+<p>עד כה הרחבנו את ההבנה שלנו באיך פונקציות מתנהלות מאחורי הקלעים. בחלק זה נרחיב את היכרותנו עם פרמטרים בפונקציות, מעבר לשימושים הבסיסיים שכבר פגשנו. האפשרויות המתקדמות שנלמד יאפשרו לכתוב פונקציות גמישות ועוצמתיות יותר: פרמטרים עם ערכי ברירת מחדל, קבלת פונקציה כפרמטר, ושימוש בפונקציות אנונימיות. כל אלה יאפשרו לנו להתאים את הפונקציות לצרכים מגוונים ולצמצם חזרתיות בקוד.</p>
+</section>
+<section id="id3">
+<h2>פרמטרים לפונקציות עם ערכי ברירת מחדל<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>לפעמים נרצה להגדיר לפונקציה ערכי ברירת מחדל לפרמטרים שלה - כלומר, ערכים שהפונקציה תשתמש בהם באופן אוטומטי אם המשתמש לא מספק ערך אחר בזמן הקריאה. ברגע שכן מועבר ערך, הוא “מחליף” את ברירת המחדל.</p>
+<p><strong>שימו לב</strong>: פרמטרים עם ערכי ברירת מחדל תמיד צריכים להופיע אחרי פרמטרים רגילים (בלי ברירת מחדל). אחרת פייתון לא ידע איזה ערך לשייך למה.</p>
+<section id="id4">
+<h3>דוגמאות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p><strong>דוגמה:</strong> לפונקציה f1 יש שני משתנים פורמליים.<br />
+הפרמטר x הוא משתנה ללא ערך ברירת מחדל, ולכן בכל קריאה לf1 המשתמש יצטרך לתת לx ערך.<br />
+לפרמטר y יש ערך ברירת מחדל של 1. אם המשתמש יקרא לפונקציה בלי להגדיר ערך לy, ההצבה בהתחלה תשים בy את הערך 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>במקרה הזה, המשתמש דורס את ערך ברירת המחדל של y, ולכן y יהיה שווה 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>במקרה הזה המשתמש לא הגדיר ערך לy, ולכן y יקבל את ערך ברירת המחדל 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>מאחר שלx אין ערך ברירת מחדל, לא ניתן לקרוא לפונקציה f1 מבלי לספק ערך לx.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f1</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: f1() missing 1 required positional argument: &#39;x&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>דוגמה:</strong> הפעם לכל המשתנים הפורמליים יש ערך ברירת מחדל!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>זאת אומרת שניתן לא לתת לפונקציה אף משתנה אקטואלי, והיא תציב ערכי ברירת מחדל לכל אחד מהמשתנים.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>ומה אם היינו רוצים לדרוס רק את הערך של y? מה היה קורה אם נקרא לפונקציה עם ערך אחד?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<p>פייתון (עדיין) לא קורא מחשבות. אם מוצב רק ערך אחד, הוא יניח שאנחנו מתכוונים לדרוס את המשתנה <strong>הראשון</strong> של הפונקציה.
+כדי לשנות ערכים אחרים ניתן להגדיר מפורשות איזה מהערכים אנחנו מציבים, בצורה הבאה:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>   <span class="c1"># in this call: x = 1, y = 5, z = 3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<p>אגב, ניתן להשתמש בהצבה הישירה הזו גם עבור משתנים ללא ערך ברירת מחדל. זה יכול להפוך את הקוד ליותר קריא כשקוראים לפונקציה עם הרבה פרמטרים.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># x does not have a default value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>דוגמה:</strong> זוכרים שאמרנו שפרמטרים עם ערכי ברירת מחדל תמיד צריכים להופיע אחרי פרמטרים רגילים? האם פייתון ירשה לנו לשבור את החוקים?</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>   <span class="c1"># Invalid syntax</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>   <span class="c1"># Invalid syntax</span>
+                <span class="o">^</span>
+<span class="ne">SyntaxError</span>: parameter without a default follows parameter with a default
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>פונקציה כפרמטר<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>בפייתון, פונקציות הן אובייקטים לכל דבר - אפשר לשמור אותן במשתנים, להעביר אותן לפונקציות אחרות, ואפילו להחזיר אותן כתוצאה. זה שימושי במיוחד כשאנחנו רוצים לכתוב קוד כללי וגמיש, שמבצע פעולה מסוימת אך מאפשר למשתמש לבחור את האופן המדויק שבו הפעולה תתבצע. במקום “לקבע” את הלוגיקה בתוך הפונקציה, אנחנו נותנים לה לקבל פונקציה אחרת שתגדיר מה לעשות.</p>
+<p>בואו נסתכל על דוגמה: אנחנו רוצים לכתוב פונקציה כללית שמקבלת רשימה של מספרים, ומבצעת על כל זוג שכנים פעולה מסוימת - כפל או חיבור.
+השלב הראשון זה להגדיר מראש את פונקציות העזר שלנו - שמבצעות את הפעולה עבור שני מספרים. קל למימוש:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>עכשיו נרצה לממש את הפונקציה הכללית שלנו. דרך שיכולנו לעשות זאת עד כה, היה להעביר לפונקציה משתנה שמסמן לה איזה פעולה רצינו לעשות.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pairs_op_long</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="s2">&quot;add&quot;</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">op</span> <span class="o">==</span> <span class="s2">&quot;multiply&quot;</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">multiply</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not legal operation&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>להלן דוגמא לשימוש בפונקציה זו:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pairs_op_long</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="s2">&quot;add&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pairs_op_long</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="s2">&quot;multiply&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 5, 7]
+[2, 6, 12]
+</pre></div>
+</div>
+</div>
+</div>
+<p>זה עובד, אבל יש לזה כמה חסרונות. קודם כול, הקוד יוצא ארוך ומסורבל. אם נרצה להוסיף פעולה נוספת, כמו למשל לקחת את הערך המקסימלי של כל זוג, נצטרך להוסיף עוד קוד ייעודי. ככל שנוסיף עוד ועוד פעולות, הפונקציה תתנפח ותהיה קשה יותר לתחזוקה. נוסף על כך, אם נרצה לשנות משהו קטן בלוגיקה של מעבר על הרשימה – למשל לעבור בקפיצות של 2 במקום בקפיצות של 1 – נצטרך לשכפל את השינוי הזה בכל אחת מהפונקציות, מה שמגביר את הסיכוי לטעויות.</p>
+<p>כדי לפתור את הבעיה, נשתמש בגישה הרבה יותר אלגנטית: במקום להעביר את <strong>השם</strong> של הפעולה שאנו רוצים, ולהפריד בין המקרים ע”י השוואה בין מחרוזות, <strong>נעביר את הפונקציה הרצויה כפרמטר</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pairs_op</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>עכשיו הפונקציה שלנו קצרה, גמישה ויעילה. היא לא צריכה לדעת שום דבר על סוג הפעולה - כל עוד מדובר בפונקציה שמקבלת שני מספרים ומחזירה תוצאה, היא תעבוד.</p>
+<p>מה שעשינו כאן הוא גם <strong>הפרדה של תחומי אחריות</strong> - הפונקציה שמבצעת פעולה מסוימת על שני איברים לא יודעת כלום על הרשימה, והפונקציה שמריצה פעולות על כל הזוגות ברשימה לא יודעת מהי הפעולה. כל אחת מהפונקציות יכולה לפעול באופן עצמאי, בלי “לדאוג” או להיות תלויה במה שהפונקציה השנייה עושה.</p>
+<p>כדי לקרוא לפונקציות כאלה, חשוב לזכור: מעבירים את שם הפונקציה בלבד כפרמטר. אם נצמיד לסוגריים את שם הפונקציה, זה אומר שאנחנו מפעילים אותה ברגע זה. כאן אנחנו לא רוצים את זה, אלא רק להעביר את הפונקציה עצמה כדי שהקוד יקרא לה מאוחר יותר.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pairs_op</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">add</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pairs_op</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">multiply</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 5, 7]
+[2, 6, 12]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lambda">
+<h2>פונקציות אנונימיות (<code class="docutils literal notranslate"><span class="pre">lambda</span></code>)<a class="headerlink" href="#lambda" title="Link to this heading">#</a></h2>
+<p>פונקציות אנונימיות, או פונקציות <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, הן פונקציות קצרות שאין להן שם רשמי. הן שימושיות במצב שבו אנחנו צריכים פונקציה של שורה לשימוש חד פעמי, וככה לא צריך לבזבז מלא מקום עם <code class="docutils literal notranslate"><span class="pre">def</span></code> ורווחים.
+התחביר שלהן פשוט:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">params</span><span class="p">:</span> <span class="n">the_return_value</span>
+</pre></div>
+</div>
+<p>כך אנחנו חוסכים גם ירידות שורה, אבל אפילו את הפקודה <code class="docutils literal notranslate"><span class="pre">return</span></code>!</p>
+<section id="id6">
+<h3>דוגמא: מחשבון<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>הפעם נגדיר את הפונקציות <code class="docutils literal notranslate"><span class="pre">add</span></code> ו<code class="docutils literal notranslate"><span class="pre">multiply</span></code> בתור פונקציות <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. עדיין ניתן לתת לפונקציות הללו שם - על-ידי השמה.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multiply</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+<span class="n">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>ונניח שהיינו רוצים באופן חד פעמי לקרוא לפונקציה <code class="docutils literal notranslate"><span class="pre">pairs_op</span></code> עם פונקציית חיסור. במקום לרשום עכשיו את כל ההגדרה, יכולנו פשוט להעביר את הפונקציה ללא השם בכלל.</p>
+<p>תזכורת לפונקציה <code class="docutils literal notranslate"><span class="pre">pairs_op</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pairs_op</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>עכשיו נעביר לה פונקציה אשר מחסרת בין שני איברים, <strong>הפעם מבלי לתת לה שם</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs_op</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1, -1, -1]
+</pre></div>
+</div>
+</div>
+</div>
+<p>החיסרון המרכזי בשימוש בפונקציות אנונימיות הוא שהן עלולות להקשות על הקריאה וההבנה של הקוד, במיוחד אם הביטוי מורכב או ארוך. עם זאת, בעולם התכנות לעיתים נדרש איזון בין קריאות הקוד לבין קיצורו ויעילותו, ופונקציות <code class="docutils literal notranslate"><span class="pre">lambda</span></code> מספקות כלי נוח מאוד במצבים כאלה, כאשר רוצים להגדיר פונקציה קטנה ומהירה לשימוש רגעי.</p>
+</section>
+<section id="key">
+<h3>שימוש בפרמטר <code class="docutils literal notranslate"><span class="pre">key</span></code> על מנת להגדיר יחס סדר בפונקציות מובנות<a class="headerlink" href="#key" title="Link to this heading">#</a></h3>
+<p>עד כה ראינו מספר דוגמאות לפנוקציות מובנות בשפת פייתון המשתמשות ביחס סדר על איברים באוסף על מנת להחזיר תוצאה. לדוגמא, הפונקציה <code class="docutils literal notranslate"><span class="pre">sorted</span></code> משתמשת ביחס הסדר בין האיברים כדי להחזירם באופן סדור.<br />
+דוגמא נוספת היא הפונקציה <code class="docutils literal notranslate"><span class="pre">max</span></code>, המחזירה את האיבר המקסימלי, כלומר, האיבר שמבחינת הסדר שהוגדר, הוא גדול (או שווה) ביחס לשאר האיברים באוסף.</p>
+<p>נתחיל מלבחון את הפונקציה <code class="docutils literal notranslate"><span class="pre">sorted</span></code>. עד עכשיו השתמשנו בה בסדר פשוט, לדוגמא:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">sorted_numbers</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 7, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<p>כפי שראינו, <code class="docutils literal notranslate"><span class="pre">sorted</span></code> מחזירה רשימה ממוינת מהקטן לגדול.</p>
+<p>אבל מה אם נרצה למיין רשימה של מחרוזות לפי יחס סדר אחר? לדוגמא, במקום מיון לקסיקוגרפי, נרצה למיין את הרשימה לפי <strong>אורך המחרוזות</strong>? כאן נכנס שימוש בארגומנט <code class="docutils literal notranslate"><span class="pre">key</span></code>, שיכול לקבל פונקציה שמגדירה את יחס הסדר בין האיברים, או את <strong>קריטריון המיון</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;kiwi&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;fig&quot;</span><span class="p">]</span>
+<span class="n">sorted_words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># Notice that we don&#39;t give &quot;len()&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fig&#39;, &#39;kiwi&#39;, &#39;apple&#39;, &#39;banana&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>כאן העברנו פונקצית <code class="docutils literal notranslate"><span class="pre">lambda</span></code> כפרמטר ל-<code class="docutils literal notranslate"><span class="pre">key</span></code>.
+עבור כל איבר ברשימה פונקצית ה<code class="docutils literal notranslate"><span class="pre">lambda</span></code> תשתמש בפונקציה <code class="docutils literal notranslate"><span class="pre">len</span></code> כדי להחזיר או אורכו, והמיון מתבצע לפי ערכים האלו.</p>
+<p>באופן דומה, ניתן להשתמש בפרמטר <code class="docutils literal notranslate"><span class="pre">key</span></code> כדי להגדיר יחס סדר עבור הפונקציות <code class="docutils literal notranslate"><span class="pre">min</span></code> ו-<code class="docutils literal notranslate"><span class="pre">max</span></code>.<br />
+בנוסף, שימו לב שמכיוון ש-<code class="docutils literal notranslate"><span class="pre">len</span></code> מקבלת פרמטר אחד בלבד (בדיוק כמו פונקצית הlambda שהגדרנו למעלה) ניתן להעבירה ישירות כפונקציה ל-<code class="docutils literal notranslate"><span class="pre">key</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fig
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>banana
+</pre></div>
+</div>
+</div>
+</div>
+<p>נסו כעת לכתוב שורת קוד בודדת, המדפיסה את האיבר ה<strong>מינימלי</strong> מבחינה לקסיקוגרפית, תוך שימוש בפונקציה המובנית <code class="docutils literal notranslate"><span class="pre">max</span></code> (זו לא טעות!) עם הארגומנט <code class="docutils literal notranslate"><span class="pre">key</span></code>:</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>רמז</strong></p>
+<p>השתמשו בlambda על מנת להגדיר פונקציה חדשה אשר מבצעת את הנדרש בעזרת הפונקציה <code class="docutils literal notranslate"><span class="pre">len</span></code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;kiwi&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;fig&quot;</span><span class="p">]</span>
+<span class="c1">## Write your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./vendor/virtual-pyprog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">אג’נדה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">פרמטרים לפונקציות עם ערכי ברירת מחדל</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמאות</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">פונקציה כפרמטר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">פונקציות אנונימיות (<code class="docutils literal notranslate"><span class="pre">lambda</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">דוגמא: מחשבון</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key">שימוש בפרמטר <code class="docutils literal notranslate"><span class="pre">key</span></code> על מנת להגדיר יחס סדר בפונקציות מובנות</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

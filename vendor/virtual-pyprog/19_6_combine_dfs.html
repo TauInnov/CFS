@@ -1,0 +1,2050 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>חיבור בין טבלאות &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/19_6_combine_dfs';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/tau.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Weeks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course/weeks/week_1.html">1. שבוע 1 - טיפוסים ותנאים</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/vendor/virtual-pyprog/19_6_combine_dfs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/vendor/virtual-pyprog/19_6_combine_dfs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fvendor/virtual-pyprog/19_6_combine_dfs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/vendor/virtual-pyprog/19_6_combine_dfs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>חיבור בין טבלאות</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">תרגיל</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concat-by-columns-axis-1"><code class="docutils literal notranslate"><span class="pre">concat</span></code>  by columns (axis=1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1. שינוי השמות כך שיותאמו לשמות הסטודנטים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">2. שימוש במתודה <code class="docutils literal notranslate"><span class="pre">merge</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">תרגול</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>חיבור בין טבלאות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>בפנדס קיימות שתי פונקציות נפוצות לחיבור בין טבלאות - <code class="docutils literal notranslate"><span class="pre">concat</span></code> ו־<code class="docutils literal notranslate"><span class="pre">merge</span></code>.</p>
+<p>ב<code class="docutils literal notranslate"><span class="pre">concat</span></code> כבר נתקלנו בעת שלמדנו להוסיף שורה ועמודה לטבלה.</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>תזכורת</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">concat</span></code> מחברת בין טבלאות לפי:</p>
+<ul class="simple">
+<li><p>שמות העמודות - במקרה של הוספת שורות/<code class="docutils literal notranslate"><span class="pre">axis=0</span></code></p></li>
+<li><p>שמות שורות - במקרה של הוספת עמודות/<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>.</p></li>
+</ul>
+<p>לדוגמא, מקודם ראינו כי כך מוסיפים שורה חדשה לטבלה:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_student</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Dana&quot;</span><span class="p">,</span><span class="s1">&#39;Programming&#39;</span><span class="p">:</span><span class="mf">76.0</span><span class="p">,</span><span class="s1">&#39;Marine Biology&#39;</span><span class="p">:</span><span class="mf">65.0</span><span class="p">,</span><span class="s1">&#39;Stellar Cartography&#39;</span><span class="p">:</span><span class="mf">98.0</span><span class="p">,</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mf">8.07</span><span class="p">,</span>
+                <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mf">65.0</span><span class="p">,</span><span class="s1">&#39;Planet Survival&#39;</span><span class="p">:</span><span class="mf">89.0</span><span class="p">,</span><span class="s1">&#39;Art&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">}]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_student</span><span class="p">)</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_student</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>בדוגמא לעיל הוספנו <strong>שורה</strong> לטבלה, או המילים אחרות, ביצענו <strong>חיבור אנכי</strong>.<br />
+באופן אינטואיטיבי, כפי שחיברנו טבלה בעלת שורה בודדת לטבלה אחרת, <strong>ניתן לחבר גם טבלה בעלת מספר שורות</strong>.<br />
+יתרה מכך, ניתן אף לחבר <strong>מספר טבלאות</strong>. כל מה שצריך זה להעביר בארגומנט הראשון טאפל או רשימה המכילים מספר טבלאות בעלות אותן עמודות (אחרת נקבל תאים ריקים, או <code class="docutils literal notranslate"><span class="pre">NaN</span></code>ים).</p>
+<div class="warning admonition">
+<p class="admonition-title"><strong>שימו לב</strong></p>
+<p>גם פה יש להקפחיד להעביר ל<code class="docutils literal notranslate"><span class="pre">concat</span></code> את הפרמטר <code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code>, אחרת נקבל שמות שורות כפולים</p>
+</div>
+<p>להלן דוגמא לחיבור טבלאות:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputFileName</span> <span class="o">=</span> <span class="s2">&quot;files/StudentsGrades.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">inputFileName</span><span class="p">)</span>
+<span class="c1"># df=df.head(3) # For simplicity, we take only the first three rows of the table</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Yael</td>
+      <td>50</td>
+      <td>56</td>
+      <td>70</td>
+      <td>60</td>
+      <td>87</td>
+      <td>65</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Nadav</td>
+      <td>61</td>
+      <td>77</td>
+      <td>75</td>
+      <td>75</td>
+      <td>63</td>
+      <td>52</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Tom</td>
+      <td>98</td>
+      <td>76</td>
+      <td>98</td>
+      <td>100</td>
+      <td>98</td>
+      <td>92</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Adi</td>
+      <td>76</td>
+      <td>87</td>
+      <td>34</td>
+      <td>90</td>
+      <td>88</td>
+      <td>84</td>
+      <td>70</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 8 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst_staff</span> <span class="o">=</span> \
+        <span class="p">[{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Shahar&quot;</span><span class="p">,</span><span class="s1">&#39;Programming&#39;</span><span class="p">:</span><span class="mf">45.0</span><span class="p">,</span><span class="s1">&#39;Marine Biology&#39;</span><span class="p">:</span><span class="mf">15.0</span><span class="p">,</span><span class="s1">&#39;Stellar Cartography&#39;</span><span class="p">:</span><span class="mf">87.0</span><span class="p">,</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mf">81.0</span><span class="p">,</span>
+          <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s1">&#39;Planet Survival&#39;</span><span class="p">:</span><span class="mf">82.0</span><span class="p">,</span><span class="s1">&#39;Art&#39;</span><span class="p">:</span><span class="mf">24.0</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Hagai&quot;</span><span class="p">,</span><span class="s1">&#39;Programming&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s1">&#39;Marine Biology&#39;</span><span class="p">:</span><span class="mf">62.0</span><span class="p">,</span><span class="s1">&#39;Stellar Cartography&#39;</span><span class="p">:</span><span class="mf">78.0</span><span class="p">,</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span>
+          <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mf">62.0</span><span class="p">,</span><span class="s1">&#39;Planet Survival&#39;</span><span class="p">:</span><span class="mf">69.0</span><span class="p">,</span><span class="s1">&#39;Art&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Inbal&quot;</span><span class="p">,</span><span class="s1">&#39;Programming&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s1">&#39;Marine Biology&#39;</span><span class="p">:</span><span class="mf">25.0</span><span class="p">,</span><span class="s1">&#39;Stellar Cartography&#39;</span><span class="p">:</span><span class="mf">84.0</span><span class="p">,</span><span class="s1">&#39;Math&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span>
+          <span class="s1">&#39;History&#39;</span><span class="p">:</span><span class="mf">95.0</span><span class="p">,</span><span class="s1">&#39;Planet Survival&#39;</span><span class="p">:</span><span class="mf">99.0</span><span class="p">,</span><span class="s1">&#39;Art&#39;</span><span class="p">:</span><span class="mf">30.0</span><span class="p">}]</span>
+<span class="n">df_staff</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lst_staff</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_staff</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Shahar</td>
+      <td>45.0</td>
+      <td>15.0</td>
+      <td>87.0</td>
+      <td>81.0</td>
+      <td>100.0</td>
+      <td>82.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Hagai</td>
+      <td>100.0</td>
+      <td>62.0</td>
+      <td>78.0</td>
+      <td>10.0</td>
+      <td>62.0</td>
+      <td>69.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Inbal</td>
+      <td>100.0</td>
+      <td>25.0</td>
+      <td>84.0</td>
+      <td>100.0</td>
+      <td>95.0</td>
+      <td>99.0</td>
+      <td>30.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">df_staff</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># ignores the original indices to avoid duplicated indices</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Yael</td>
+      <td>50.0</td>
+      <td>56.0</td>
+      <td>70.0</td>
+      <td>60.0</td>
+      <td>87.0</td>
+      <td>65.0</td>
+      <td>91.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Nadav</td>
+      <td>61.0</td>
+      <td>77.0</td>
+      <td>75.0</td>
+      <td>75.0</td>
+      <td>63.0</td>
+      <td>52.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Hagai</td>
+      <td>100.0</td>
+      <td>62.0</td>
+      <td>78.0</td>
+      <td>10.0</td>
+      <td>62.0</td>
+      <td>69.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Inbal</td>
+      <td>100.0</td>
+      <td>25.0</td>
+      <td>84.0</td>
+      <td>100.0</td>
+      <td>95.0</td>
+      <td>99.0</td>
+      <td>30.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>16 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>בעת עבודה עם נתונים בטבלה, ניתקל לעיתים בערכים חסרים (<code class="docutils literal notranslate"><span class="pre">NaN</span></code> – Not a Number), שמציינים מידע שלא קיים או שלא נמדד. ערכים אלו עלולים להשפיע על חישובים, גרפים וניתוחים סטטיסטיים, ולכן חשוב לזהות ולטפל בהם באופן מושכל לפני המשך העיבוד.</p>
+<p>בקוד שלהלן ניסו לחבר לטבלת הציונים שלנו טבלת ציונים נוספת של סטונדטים מהטכניון, והתקבלו תאים ריקים (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>ים)</p>
+<p>ודאו כי אתם מבינים מדוע הופיעו ערכי <code class="docutils literal notranslate"><span class="pre">NaN</span></code> בתאים בהם בטבלה המאוחדת (האחרונה שמודפסת).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst_grades_from_technion</span> <span class="o">=</span> \
+        <span class="p">[{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Shahar&quot;</span><span class="p">,</span> <span class="s1">&#39;Machine Learning&#39;</span><span class="p">:</span><span class="mf">96.0</span><span class="p">,</span><span class="s1">&#39;Spanish&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s1">&#39;Karting&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span> <span class="s1">&#39;Yoga&#39;</span><span class="p">:</span> <span class="mf">97.0</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Hagai&quot;</span><span class="p">,</span> <span class="s1">&#39;Machine Learning&#39;</span><span class="p">:</span><span class="mf">98.0</span><span class="p">,</span><span class="s1">&#39;Spanish&#39;</span><span class="p">:</span><span class="mf">65.0</span><span class="p">,</span><span class="s1">&#39;Karting&#39;</span><span class="p">:</span><span class="mf">87.0</span><span class="p">,</span> <span class="s1">&#39;Yoga&#39;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Inbal&quot;</span><span class="p">,</span> <span class="s1">&#39;Machine Learning&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s1">&#39;Spanish&#39;</span><span class="p">:</span><span class="mf">92.0</span><span class="p">,</span><span class="s1">&#39;Karting&#39;</span><span class="p">:</span><span class="mf">95.0</span><span class="p">,</span> <span class="s1">&#39;Yoga&#39;</span><span class="p">:</span> <span class="mf">86.0</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Rotem&quot;</span><span class="p">,</span> <span class="s1">&#39;Machine Learning&#39;</span><span class="p">:</span><span class="mf">80.0</span><span class="p">,</span><span class="s1">&#39;Spanish&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s1">&#39;Karting&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span> <span class="s1">&#39;Yoga&#39;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">},</span>
+        <span class="p">]</span>
+<span class="n">df_from_technion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lst_grades_from_technion</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_from_technion</span><span class="p">)</span>
+
+<span class="n">df_after_concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">df_from_technion</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_after_concat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Yael</td>
+      <td>50</td>
+      <td>56</td>
+      <td>70</td>
+      <td>60</td>
+      <td>87</td>
+      <td>65</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Nadav</td>
+      <td>61</td>
+      <td>77</td>
+      <td>75</td>
+      <td>75</td>
+      <td>63</td>
+      <td>52</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Tom</td>
+      <td>98</td>
+      <td>76</td>
+      <td>98</td>
+      <td>100</td>
+      <td>98</td>
+      <td>92</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Adi</td>
+      <td>76</td>
+      <td>87</td>
+      <td>34</td>
+      <td>90</td>
+      <td>88</td>
+      <td>84</td>
+      <td>70</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 8 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Machine Learning</th>
+      <th>Spanish</th>
+      <th>Karting</th>
+      <th>Yoga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Shahar</td>
+      <td>96.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Hagai</td>
+      <td>98.0</td>
+      <td>65.0</td>
+      <td>87.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Inbal</td>
+      <td>100.0</td>
+      <td>92.0</td>
+      <td>95.0</td>
+      <td>86.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Rotem</td>
+      <td>80.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+      <th>Machine Learning</th>
+      <th>Spanish</th>
+      <th>Karting</th>
+      <th>Yoga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Yael</td>
+      <td>50.0</td>
+      <td>56.0</td>
+      <td>70.0</td>
+      <td>60.0</td>
+      <td>87.0</td>
+      <td>65.0</td>
+      <td>91.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Nadav</td>
+      <td>61.0</td>
+      <td>77.0</td>
+      <td>75.0</td>
+      <td>75.0</td>
+      <td>63.0</td>
+      <td>52.0</td>
+      <td>88.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Inbal</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>100.0</td>
+      <td>92.0</td>
+      <td>95.0</td>
+      <td>86.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Rotem</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>80.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>17 rows × 12 columns</p>
+</div></div></div>
+</div>
+<p>באופן אנלוגי, <strong>ניתן לחבר גם מספר טבלאות באופן אופקי</strong> כלומר, במקום לשרשר שורות, <strong>לשרשר עמודות</strong>. נעשה זאת ע”י העברת הפרמטר <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> בעת הקריאה ל<code class="docutils literal notranslate"><span class="pre">concat</span></code>.<br />
+פה יש להקפיד כי לטבלאות יהיו שמות שורות זהים (אחרת נקבל תאים ריקים, או <code class="docutils literal notranslate"><span class="pre">NaN</span></code>ים).</p>
+<section id="id2">
+<h2>תרגיל<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>בקוד שלהלן ניסו לחבר לטבלת הציונים שלנו טבלת ציונים נוספת של סטונדטים <strong>שעברו מהטכניון לתל אביב</strong>’ כלומר, יש להם ציונים בקורסים הנלמדים ב2 המוסדות. נניח גם כי שמות המשפחה יחודיים.<br />
+קבעו מדוע מופיעים תאים ריקים (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>ים) בטבלה המאוחדת (האחרונה שמודפסת).</p>
+</section>
+<section id="concat-by-columns-axis-1">
+<h2><code class="docutils literal notranslate"><span class="pre">concat</span></code>  by columns (axis=1)<a class="headerlink" href="#concat-by-columns-axis-1" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst_grades_from_technion</span> <span class="o">=</span> \
+        <span class="p">[{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s1">&#39;Machine Learning&#39;</span><span class="p">:</span><span class="mf">96.0</span><span class="p">,</span><span class="s1">&#39;Spanish&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s1">&#39;Karting&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span> <span class="s1">&#39;Yoga&#39;</span><span class="p">:</span> <span class="mf">97.0</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Adi&quot;</span><span class="p">,</span> <span class="s1">&#39;Machine Learning&#39;</span><span class="p">:</span><span class="mf">98.0</span><span class="p">,</span><span class="s1">&#39;Spanish&#39;</span><span class="p">:</span><span class="mf">65.0</span><span class="p">,</span><span class="s1">&#39;Karting&#39;</span><span class="p">:</span><span class="mf">87.0</span><span class="p">,</span> <span class="s1">&#39;Yoga&#39;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">}</span>
+        <span class="p">]</span>
+<span class="n">df_from_technion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lst_grades_from_technion</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_from_technion</span><span class="p">)</span>
+
+<span class="n">df_after_concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">df_from_technion</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_after_concat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Yael</td>
+      <td>50</td>
+      <td>56</td>
+      <td>70</td>
+      <td>60</td>
+      <td>87</td>
+      <td>65</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Nadav</td>
+      <td>61</td>
+      <td>77</td>
+      <td>75</td>
+      <td>75</td>
+      <td>63</td>
+      <td>52</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Tom</td>
+      <td>98</td>
+      <td>76</td>
+      <td>98</td>
+      <td>100</td>
+      <td>98</td>
+      <td>92</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Adi</td>
+      <td>76</td>
+      <td>87</td>
+      <td>34</td>
+      <td>90</td>
+      <td>88</td>
+      <td>84</td>
+      <td>70</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 8 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Machine Learning</th>
+      <th>Spanish</th>
+      <th>Karting</th>
+      <th>Yoga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Tom</td>
+      <td>96.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adi</td>
+      <td>98.0</td>
+      <td>65.0</td>
+      <td>87.0</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+      <th>Name</th>
+      <th>Machine Learning</th>
+      <th>Spanish</th>
+      <th>Karting</th>
+      <th>Yoga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Yael</td>
+      <td>50</td>
+      <td>56</td>
+      <td>70</td>
+      <td>60</td>
+      <td>87</td>
+      <td>65</td>
+      <td>91</td>
+      <td>Tom</td>
+      <td>96.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Nadav</td>
+      <td>61</td>
+      <td>77</td>
+      <td>75</td>
+      <td>75</td>
+      <td>63</td>
+      <td>52</td>
+      <td>88</td>
+      <td>Adi</td>
+      <td>98.0</td>
+      <td>65.0</td>
+      <td>87.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Tom</td>
+      <td>98</td>
+      <td>76</td>
+      <td>98</td>
+      <td>100</td>
+      <td>98</td>
+      <td>92</td>
+      <td>80</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Adi</td>
+      <td>76</td>
+      <td>87</td>
+      <td>34</td>
+      <td>90</td>
+      <td>88</td>
+      <td>84</td>
+      <td>70</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>מה הבעיה בטבלה לעיל?</p>
+<p>בטבלה המאוחדת (האחרונה שמודפסת) הסטודנטים שעברו מהטכניון הוצלבו עם השורות הלא נכונות. זאת מכיוום שההצלבה נעשתה לפי שם השורה (0,1,2) ולא לפי  שמות הסטודנטים (Tom, Adi)</p>
+<p>ניתן לתקן זאת ב2 דרכים:</p>
+<section id="id3">
+<h3>1. שינוי השמות כך שיותאמו לשמות הסטודנטים<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+<span class="n">df_from_technion</span><span class="o">.</span><span class="n">index</span><span class="o">=</span><span class="n">df_from_technion</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">df_from_technion</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+      <th>Name</th>
+      <th>Machine Learning</th>
+      <th>Spanish</th>
+      <th>Karting</th>
+      <th>Yoga</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Yael</th>
+      <td>Yael</td>
+      <td>50</td>
+      <td>56</td>
+      <td>70</td>
+      <td>60</td>
+      <td>87</td>
+      <td>65</td>
+      <td>91</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Nadav</th>
+      <td>Nadav</td>
+      <td>61</td>
+      <td>77</td>
+      <td>75</td>
+      <td>75</td>
+      <td>63</td>
+      <td>52</td>
+      <td>88</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Tom</th>
+      <td>Tom</td>
+      <td>98</td>
+      <td>76</td>
+      <td>98</td>
+      <td>100</td>
+      <td>98</td>
+      <td>92</td>
+      <td>80</td>
+      <td>Tom</td>
+      <td>96.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>Adi</th>
+      <td>Adi</td>
+      <td>76</td>
+      <td>87</td>
+      <td>34</td>
+      <td>90</td>
+      <td>88</td>
+      <td>84</td>
+      <td>70</td>
+      <td>Adi</td>
+      <td>98.0</td>
+      <td>65.0</td>
+      <td>87.0</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>פתרון זה לכאורה עובד, אך הוא בעיתי מ2 סיבות:</p>
+<ul class="simple">
+<li><p>עבור על פעולת <code class="docutils literal notranslate"><span class="pre">concat</span></code> עלינו לשנות את שמות השורות למפתח לפיו נרצה לעשות את האיחוד (ואף לנו הבטחה שאין בו כפילויות)</p></li>
+<li><p>עדיין צריך לטפל בעמודת <code class="docutils literal notranslate"><span class="pre">Name</span></code> שמופיעו כעת פעמיים (פעם נוספת באינדקס השורות).</p></li>
+</ul>
+</section>
+<section id="merge">
+<h3>2. שימוש במתודה <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#merge" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">merge</span></code> מחברות <strong>זוג טבלאות</strong> ובחיבור אופקי בלבד (כלומר, חיבור עמודות). הייחודיות של <code class="docutils literal notranslate"><span class="pre">merge</span></code> היא האםשרות לבצע חיבור טבלאות על בסיס עמודה, או מספר עמודות בעלות ערכים תואמים. כלומר, <code class="docutils literal notranslate"><span class="pre">merge</span></code> יותר גישה ביצירת המפתח המשותף על פיו מחברים את הטבלאות.</p>
+<p>ההבדל העיקרי הוא אם החיבור מתבצע בצורה ישירה (כמו חיבור רשימות) באמצעות <code class="docutils literal notranslate"><span class="pre">concat</span></code>, או בהתאמה חכמה בין שורות באמצעות <code class="docutils literal notranslate"><span class="pre">merge</span></code>. הבחירה בין השתיים תלויה בשאלה האם מדובר בטבלאות “באותו מבנה” או בטבלאות שונות שצריך לקשר ביניהן דרך ערכים משותפים.</p>
+<p>לפונקציה <code class="docutils literal notranslate"><span class="pre">merge</span></code> קיימים 2 פרמטרים חשובים:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">on</span></code>: מגדיר את העמודה או העמודות שעל פיהן יתבצע החיבור. עמודה או עמודות אלו נקראות גם לעיתים <strong>מפתח</strong>.<br />
+אם מציינים <code class="docutils literal notranslate"><span class="pre">on='x'</span></code>, החיבור ייעשה לפי ערכים תואמים בעמודה <code class="docutils literal notranslate"><span class="pre">x</span></code> בלבד. אם מציינים רשימה כמו <code class="docutils literal notranslate"><span class="pre">on=['x','y']</span></code>, החיבור ייעשה רק במקומות שבהם יש התאמה גם בעמודה <code class="docutils literal notranslate"><span class="pre">x</span></code> וגם בעמודה <code class="docutils literal notranslate"><span class="pre">y</span></code>. כך ניתן לשלוט בדיוק באילו תנאים טבלאות יתחברו.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">how</span></code>: מגדיר את אופן החיבור בין הטבלאות. כאשר בוחרים <code class="docutils literal notranslate"><span class="pre">how='inner'</span></code>, התוצאה כוללת רק את השורות שיש להן ערכים תואמים בעמודות שעליהן מתבצע החיבור – כלומר חיתוך (intersection). לעומת זאת, אם בוחרים <code class="docutils literal notranslate"><span class="pre">how='outer'</span></code>, התוצאה כוללת את כל השורות משתי הטבלאות, גם אם אין להן התאמה, כך שמתקבל איחוד (union) מלא עם ערכי <code class="docutils literal notranslate"><span class="pre">NaN</span></code> במקום שאין התאמה.<br />
+2 ערכים אפשריים נוספים לפרמטר <code class="docutils literal notranslate"><span class="pre">how</span></code> הם <code class="docutils literal notranslate"><span class="pre">left</span></code> ו<code class="docutils literal notranslate"><span class="pre">right</span></code>. עבור <code class="docutils literal notranslate"><span class="pre">how='left'</span></code>, התוצאה שומרת את כל השורות מהטבלה השמאלית (הראשונה שהועברה ל־<code class="docutils literal notranslate"><span class="pre">merge</span></code>) ומוסיפה להן נתונים מהטבלה הימנית רק במקומות שבהם יש התאמה. כאשר <code class="docutils literal notranslate"><span class="pre">how='right'</span></code>, המצב הפוך – כל השורות מהטבלה הימנית נשמרות, ואליהן מצורפים נתונים מהטבלה השמאלית רק כאשר יש התאמה.</p></li>
+</ul>
+<p>נחזור לדוגמא שלנו, תחילה נטעמן מחדש את הטבלאות (עשיונ עליהם יותר מידי שינויים עד לנקודה זו):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputFileName</span> <span class="o">=</span> <span class="s2">&quot;files/StudentsGrades.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">inputFileName</span><span class="p">)</span>
+
+<span class="n">lst_grades_from_technion</span> <span class="o">=</span> \
+        <span class="p">[{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="s1">&#39;Machine Learning&#39;</span><span class="p">:</span><span class="mf">96.0</span><span class="p">,</span><span class="s1">&#39;Spanish&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span><span class="s1">&#39;Karting&#39;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span> <span class="s1">&#39;Yoga&#39;</span><span class="p">:</span> <span class="mf">97.0</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Adi&quot;</span><span class="p">,</span> <span class="s1">&#39;Machine Learning&#39;</span><span class="p">:</span><span class="mf">98.0</span><span class="p">,</span><span class="s1">&#39;Spanish&#39;</span><span class="p">:</span><span class="mf">65.0</span><span class="p">,</span><span class="s1">&#39;Karting&#39;</span><span class="p">:</span><span class="mf">87.0</span><span class="p">,</span> <span class="s1">&#39;Yoga&#39;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">}</span>
+        <span class="p">]</span>
+<span class="n">df_from_technion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lst_grades_from_technion</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>כעת, אם נרצה <strong>רק את הסטודנטים שהיו בשני המוסדות</strong>, נשתמש ב<code class="docutils literal notranslate"><span class="pre">how='inner'</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_from_technion</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+      <th>Machine Learning</th>
+      <th>Spanish</th>
+      <th>Karting</th>
+      <th>Yoga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Tom</td>
+      <td>98</td>
+      <td>76</td>
+      <td>98</td>
+      <td>100</td>
+      <td>98</td>
+      <td>92</td>
+      <td>80</td>
+      <td>96.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>97.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adi</td>
+      <td>76</td>
+      <td>87</td>
+      <td>34</td>
+      <td>90</td>
+      <td>88</td>
+      <td>84</td>
+      <td>70</td>
+      <td>98.0</td>
+      <td>65.0</td>
+      <td>87.0</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df_after_merge_outer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">df_after_merge_outer</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;df_after_merge_outer&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>לעומת זאת, אם נרצה את הטבלה המאוחדת עם <strong>כל הסטונדטים</strong>, נשתמש ב<code class="docutils literal notranslate"><span class="pre">merge</span></code> עם <code class="docutils literal notranslate"><span class="pre">how='outer'</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_from_technion</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_merged</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+      <th>Machine Learning</th>
+      <th>Spanish</th>
+      <th>Karting</th>
+      <th>Yoga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adi</td>
+      <td>76</td>
+      <td>87</td>
+      <td>34</td>
+      <td>90</td>
+      <td>88</td>
+      <td>84</td>
+      <td>70</td>
+      <td>98.0</td>
+      <td>65.0</td>
+      <td>87.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Avi</td>
+      <td>78</td>
+      <td>64</td>
+      <td>54</td>
+      <td>88</td>
+      <td>97</td>
+      <td>76</td>
+      <td>100</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Yaniv</td>
+      <td>100</td>
+      <td>64</td>
+      <td>62</td>
+      <td>95</td>
+      <td>61</td>
+      <td>88</td>
+      <td>90</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Yarden</td>
+      <td>63</td>
+      <td>62</td>
+      <td>70</td>
+      <td>74</td>
+      <td>92</td>
+      <td>98</td>
+      <td>94</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 12 columns</p>
+</div></div></div>
+</div>
+<p>כפי שאנו רואים, ישנם הרבה תאים ריקים (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>ים). האם ניתן לטפל בהם בצורה כלשהי?</p>
+<p>בפנדס קיימות שתי דרכים עיקריות לטפל בערכים חסרים:
+<strong>1. החלפת ערכי <code class="docutils literal notranslate"><span class="pre">NaN</span></code> בערכים אחרים.</strong> לדוגמא, נשים קוד ציון מיוחד ציון חסר - 200. ניתן לעשות זאת באמצעות המתודה <code class="docutils literal notranslate"><span class="pre">fillna</span></code>;</p>
+<ul class="simple">
+<li><p>במקצוע כלשה<code class="docutils literal notranslate"><span class="pre">fillna()</span></code>, שמחליפה את הערכים החסרים בערך שנבחר – למשל אפס, ממוצע, או ערך אחר שמייצג בצורה טובה את הנתון החסר. הדרך השנייה היא סינון או הסרה של שורות או עמודות שבהן יש NaN, באמצעות <code class="docutils literal notranslate"><span class="pre">isnull()</span></code> או <code class="docutils literal notranslate"><span class="pre">dropna()</span></code>.</p></li>
+</ul>
+<p>בחירה בין שתי הגישות תלויה באופי הנתונים ובמטרת הניתוח: אם הנתונים החסרים מעטים, ייתכן שכדאי פשוט להסירם; אך אם הם משמעותיים, עדיף למלא אותם בערך מתאים כדי לשמור על עקביות הנתונים.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+      <th>Machine Learning</th>
+      <th>Spanish</th>
+      <th>Karting</th>
+      <th>Yoga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adi</td>
+      <td>76</td>
+      <td>87</td>
+      <td>34</td>
+      <td>90</td>
+      <td>88</td>
+      <td>84</td>
+      <td>70</td>
+      <td>98.0</td>
+      <td>65.0</td>
+      <td>87.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Avi</td>
+      <td>78</td>
+      <td>64</td>
+      <td>54</td>
+      <td>88</td>
+      <td>97</td>
+      <td>76</td>
+      <td>100</td>
+      <td>200.0</td>
+      <td>200.0</td>
+      <td>200.0</td>
+      <td>200.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Yaniv</td>
+      <td>100</td>
+      <td>64</td>
+      <td>62</td>
+      <td>95</td>
+      <td>61</td>
+      <td>88</td>
+      <td>90</td>
+      <td>200.0</td>
+      <td>200.0</td>
+      <td>200.0</td>
+      <td>200.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Yarden</td>
+      <td>63</td>
+      <td>62</td>
+      <td>70</td>
+      <td>74</td>
+      <td>92</td>
+      <td>98</td>
+      <td>94</td>
+      <td>200.0</td>
+      <td>200.0</td>
+      <td>200.0</td>
+      <td>200.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 12 columns</p>
+</div></div></div>
+</div>
+<p>סינון החוצה את כל הסטודנטים שאין להם ציון במקצוע מסוים? לצורך כך, ניתן למשתמש בMasking עם המתודה <code class="docutils literal notranslate"><span class="pre">isnull</span></code>, המחזירה מסיכה (טבלה בוליאנית) המייצגת באמצעות את כל התאים הריקים:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="o">~</span><span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;Karting&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Programming</th>
+      <th>Marine Biology</th>
+      <th>Stellar Cartography</th>
+      <th>Math</th>
+      <th>History</th>
+      <th>Planet Survival</th>
+      <th>Art</th>
+      <th>Machine Learning</th>
+      <th>Spanish</th>
+      <th>Karting</th>
+      <th>Yoga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adi</td>
+      <td>76</td>
+      <td>87</td>
+      <td>34</td>
+      <td>90</td>
+      <td>88</td>
+      <td>84</td>
+      <td>70</td>
+      <td>98.0</td>
+      <td>65.0</td>
+      <td>87.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Tom</td>
+      <td>98</td>
+      <td>76</td>
+      <td>98</td>
+      <td>100</td>
+      <td>98</td>
+      <td>92</td>
+      <td>80</td>
+      <td>96.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>97.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title"><strong>שימו לב</strong></p>
+<p>מכיוון ש<code class="docutils literal notranslate"><span class="pre">isnull</span></code> מחזיר  <code class="docutils literal notranslate"><span class="pre">True</span></code> עבור ערכים ריקים, הפעלנו אופרטור שלילה <code class="docutils literal notranslate"><span class="pre">~</span></code> על מנת להפוך בין הערכים הבוליאניים</p>
+</div>
+</section>
+<section id="id4">
+<h3>תרגול<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>נניח שהייתם רוצים להחליף את את כל ערכים הריקים ב-<code class="docutils literal notranslate"><span class="pre">Karting</span></code> ל-0, ואת הערכים הריקים ב<code class="docutils literal notranslate"><span class="pre">Yoga</span></code> ל-200. כיצד הייתה עושים זאת?</p>
+<div class="tip admonition">
+<p class="admonition-title"><strong>רמז</strong></p>
+<p>השתמשים ב2 פעולות Masking</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./vendor/virtual-pyprog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">תרגיל</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concat-by-columns-axis-1"><code class="docutils literal notranslate"><span class="pre">concat</span></code>  by columns (axis=1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1. שינוי השמות כך שיותאמו לשמות הסטודנטים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">2. שימוש במתודה <code class="docutils literal notranslate"><span class="pre">merge</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">תרגול</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

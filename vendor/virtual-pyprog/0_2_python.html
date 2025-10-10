@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>שפת התכנות פייתון (Python) &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/0_2_python';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/tau.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Weeks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course/weeks/week_1.html">1. שבוע 1 - טיפוסים ותנאים</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/vendor/virtual-pyprog/0_2_python.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/vendor/virtual-pyprog/0_2_python.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fvendor/virtual-pyprog/0_2_python.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/vendor/virtual-pyprog/0_2_python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>שפת התכנות פייתון (Python)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-3-11-x"><strong>שימו לב:</strong> על מנת לשמור על אחידות, נשתמש במהלך הקורס <strong>אך ורק בגרסת פייתון 3.11 (Python 3.11.x</strong>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">סביבות עבודה</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">שיעורים ותרגולים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">מטלות בית</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">התנסות ראשונה בפייתון</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">נסו זאת בעצמכם!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בחנו את עצמכם</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1>שפת התכנות פייתון (Python)<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<p>עד כה למדנו מהן שפות תכנות, ואיך המחשב מתרגם אותן לביטים כדי לבצע פעולות.<br />
+כעת נתחיל להכיר את שפת התכנות שנלמד בקורס - <strong>פייתון</strong>!</p>
+<p>פייתון היא שפת תכנות שהושקה בשנת 1991, וכיום נחשבת לאחת מהנפוצות ביותר בעולם. היא מתאפיינת בפשטות ובקלות הלמידה שלה, מה שמאפשר זמן פיתוח קצר יחסית. פייתון מהירה מספיק עבור רוב היישומים ותומכת במגוון רחב של תחומים, כולל תחזוקת שרתים, פיתוח מערכות מורכבות, ולמידת מכונה (Machine Learning). בנוסף, היא נהנית מקהילה עצומה ושימוש נרחב בתעשייה, מה שהופך אותה לבחירה מועדפת על מתכנתים מתחילים ומנוסים כאחד.</p>
+<div class="note admonition">
+<p class="admonition-title"><strong>מעניין לדעת!</strong></p>
+<p>השפה קרויה על שם נחש החנק, ומקור השם בהתייחסות לקבוצת הקומיקאים הבריטית - מונטי פייתון!</p>
+</div>
+<img width=400 height=180 src="data:image/png;base64,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" />
+<section id="python-3-11-x">
+<h2><strong>שימו לב:</strong> על מנת לשמור על אחידות, נשתמש במהלך הקורס <strong>אך ורק בגרסת פייתון 3.11 (Python 3.11.x</strong>)<a class="headerlink" href="#python-3-11-x" title="Link to this heading">#</a></h2>
+</section>
+<section id="id1">
+<h2>סביבות עבודה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>שיעורים ותרגולים<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>במהלך הקורס נשתמש בסביבת עבודה המוטמעת באתר זה, כך שלא תצטרכו להתקין שום דבר על המחשב האישי שלכם. הסביבה מאפשרת לכם להריץ קוד ישירות מתוך הדפדפן, לשנות אותו ולראות מיד את התוצאות. בדרך זו תוכלו לתרגל את מה שאתם לומדים בצורה אינטראקטיבית, לנסות רעיונות חדשים, ולבנות ביטחון ביכולות התכנות שלכם כבר מהשיעור הראשון. בנוסף, העבודה בענן מבטיחה שהכול יתבצע על אותה גרסה של פייתון וכלי העבודה, כך שלא יהיו בעיות של התאמות טכניות בין מחשבים שונים.</p>
+<p>כדי לאפשר ריצה חיה של קוד, לחצו על כפתור הטיל שנמצא בראש המסך שלכם. כעת תוכלו להריץ שורות קוד על ידי כפתור ה<code class="docutils literal notranslate"><span class="pre">run</span></code>, ולערוך את תוכן הקוד על-ידי כתיבה בחלונית הקוד.</p>
+<p>לפניכם שורת קוד. מה לדעתכם היא עושה? נסו להריץ אותה בעצמכם.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>כפי שבטח שמתם לב, השורה הדפיסה למסך את הטקסט “Hello world!”. זוהי מסורת ותיקה בעולם התכנות – כמעט כל מתכנת מתחיל את דרכו עם תכנית שמדפיסה את המשפט הזה.</p>
+<p>ועכשיו גם אתם הצטרפתם למסורת והרצתם את תכנית המחשב הראשונה שלכם! מזל טוב!<br />
+זה רק הצעד הראשון – במהלך הקורס תריצו עוד הרבה תוכניות, וגם תכתבו בעצמכם המון קוד. ההרפתקה המלאה מתחילה עכשיו!</p>
+</section>
+<section id="id3">
+<h3>מטלות בית<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>כדי לפתור את המטלות שיינתנו במהלך הסמסטר ולהגישן, תצטרכו לעבוד גם עם <strong>סביבת עבודה מקומית</strong> המותקנת על המחשב שלכם.<br />
+הסביבה המקומית תחשוף אתכם להתנסות בסביבת תכנות כמו בעולם האמיתי. ותאפשר לכם שימוש בכלים מתקדמים יותר המשמשים מתכנתים בפועל – כמו כלי איתור שגיאות (debugging), עבודה עם קבצים ועוד.</p>
+<p>הוראות התקנה ושימוש בסביבה זו יספק לכם לסגל הקורס שלכם.</p>
+<p>לאחר שסיימתם להתקין את הסביבה המקומית שלכם, נסו להריץ את שורת הקוד <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">World!&quot;)</span></code> וודאו כי היא רצה באופן תקין.</p>
+<p>לסיום, ענו על השאלה הבאה:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">example</span> <span class="o">=</span> \
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="w"> </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="sd">    [{</span>
+<span class="sd">   (...)     31     }]</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span><span class="sd"> &#39;&#39;&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jupyterquiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>התנסות ראשונה בפייתון<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>בסרטון זה נתחיל ללמוד פעולות בסיסיות שניתן לבצע בפייתון.</p>
+<div class="error admonition">
+<p class="admonition-title"><strong>שימו לב</strong></p>
+<p>בסרטונים תראו פלטפורמה (מערכת לכתיבת קוד) שנקראת Codeboard.
+בקורס שלנו לא נשתמש בה, אך העקרונות והקוד שתראו זהים לחלוטין - תוכלו להריץ אותם בכל סביבת פייתון אחרת שבה נעבוד.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/i9KoiRG9qRE?si=_WnXRCMNISFVosP5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+</div>
+<p>בסרטון זה למדנו על מספר פקודות ועקרונות חשובים בפייתון. ראשית, הכרנו את הפקודה <code class="docutils literal notranslate"><span class="pre">print</span></code>, שמאפשרת לנו כמתכנתים להציג ערכים ותוצאות על המסך. לאחר מכן פגשנו את ה<strong>אופרטורים</strong>, שהם פעולות חשבוניות בסיסיות שניתן לבצע בשפה. בנוסף, למדנו על <strong>הערות בקוד</strong> - טקסט שניתן להוסיף כדי להסביר מה הקוד עושה, ושאינו משפיע על הרצת התכנית, משום שהמחשב מתעלם ממנו בזמן הביצוע.</p>
+<section id="id5">
+<h3>נסו זאת בעצמכם!<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>הנה הקוד שראינו בסרטון. ערכו את הקוד ונסו לענות את השאלות הבאות:</p>
+<ul class="simple">
+<li><p>מה יקרה אם נסמן שורה בסולמית?</p></li>
+<li><p>מה יקרה אם נשנה <code class="docutils literal notranslate"><span class="pre">+</span></code> ל-<code class="docutils literal notranslate"><span class="pre">*</span></code>?</p></li>
+<li><p>מה יקרה אם נוסיף עוד רווחים לפני או אחרי תווים מסוימים?</p></li>
+<li><p>באיזה סדר פייתון יבצע את הפעולה <code class="docutils literal notranslate"><span class="pre">print(17-3</span>&#160; <span class="pre">*</span>&#160; <span class="pre">5)</span></code>?</p></li>
+<li><p>האם פייתון יודע לעבוד עם מספרים שליליים?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span>        <span class="p">(</span><span class="mi">7</span>       <span class="o">-</span>     <span class="mi">4</span>         <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">2.3</span><span class="o">+</span><span class="mf">1.7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">17</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">17</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown caution admonition">
+<p class="admonition-title"><strong>עצרו וחשבו:</strong>  מה יקרה אם נרצה לבצע print(3/0)? הרי למדתם בבית הספר שאי אפשר לחלק ב0.</p>
+<p>בסרטון הבא תלמדו מה קורה כשמבקשים מהמחשב משהו שהוא לא יכול לעשות:</p>
+<iframe width="560" height="315"
+        src="https://www.youtube.com/embed/-aW962IwwkQ?si=HnYD_AweMgFw8ePm"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+</iframe>
+</div>
+</section>
+<section id="id6">
+<h3>בחנו את עצמכם<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>חלונית הקוד שלפניכם מופיעה תוכנית בה חלק מהשורות גורמות לשגיאה. עליכם לתקן את כל השגיאות כך שהתוכנית תרוץ עד סופה (ובפרט, בסוף תודפס המילה “success”). ניתן לתקן את השגיאות בכל דרך שתרצו, אך אסור למחוק את כל השורה של פקודה שגורמת לשגיאה.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">!</span><span class="w"> </span><span class="m">6</span><span class="o">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">12.3</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="p">(</span><span class="mi">12</span> <span class="o">-</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">14</span> <span class="o">/</span> <span class="p">(</span><span class="mi">7</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&lt;h3&gt;success!&lt;/h3&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./vendor/virtual-pyprog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-3-11-x"><strong>שימו לב:</strong> על מנת לשמור על אחידות, נשתמש במהלך הקורס <strong>אך ורק בגרסת פייתון 3.11 (Python 3.11.x</strong>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">סביבות עבודה</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">שיעורים ותרגולים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">מטלות בית</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">התנסות ראשונה בפייתון</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">נסו זאת בעצמכם!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בחנו את עצמכם</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

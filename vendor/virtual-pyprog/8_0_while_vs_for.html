@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>לולאות for לעומת לולאות while &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/8_0_while_vs_for';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/tau.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Weeks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course/weeks/week_1.html">1. שבוע 1 - טיפוסים ותנאים</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/vendor/virtual-pyprog/8_0_while_vs_for.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/vendor/virtual-pyprog/8_0_while_vs_for.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fvendor/virtual-pyprog/8_0_while_vs_for.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/vendor/virtual-pyprog/8_0_while_vs_for.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>לולאות for לעומת לולאות while</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">זיהוי פלינדרום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n">חישוב עצרת (n!)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">מימוש עצרת עם לולאת <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">מימוש עצרת עם לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="for-while">
+<h1>לולאות <code class="docutils literal notranslate"><span class="pre">for</span></code> לעומת לולאות <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#for-while" title="Link to this heading">#</a></h1>
+<p>ביחידה הזו הכרנו את הסוג השני של לולאות בשפת פייתון – לולאות <code class="docutils literal notranslate"><span class="pre">while</span></code>. בואו נסכם מה ראינו עד עכשיו תוך השוואה בין שני סוגי הלולאות.</p>
+<ul class="simple">
+<li><p>לולאות <code class="docutils literal notranslate"><span class="pre">for</span></code>: משמשות לביצוע קטע קוד באופן חזרתי, מספר ידוע מראש של פעמים. לולאות אלו שימושיות למשל לצורך מעבר על תוי מחרוזת (str), אברי רשימה (list), או מספרים בטווח (range). בכל המקרים האלו אכן מספר האיטרציות ידוע מראש. כמו כן, אם פשוט רוצים לבצע פעולה כלשהי מספר פעמים, ניתן לשים את הפעולה בתוך לולאת for מהצורה:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+       <span class="n">do_something</span>
+</pre></div>
+</div>
+<p>כאשר n הוא מספר הפעמים שרוצים לבצע את הפעולה.</p>
+<ul class="simple">
+<li><p>לולאות <code class="docutils literal notranslate"><span class="pre">while</span></code>: משמשות לביצוע קטע קוד באופן חזרתי כל עוד מתקיים תנאי מסויים. לולאות אלו הכרחיות כאשר לא ידוע לנו מראש מספר האיטרציות, כפי שראינו בדוגמת הטלת הקוביה עד להשגת התוצאה 6. יחד עם זאת, אפשר כמובן להשתמש בלולאות <code class="docutils literal notranslate"><span class="pre">while</span></code> גם כאשר ידוע מראש מספר האיטרציות. תמיד אפשר לכתוב למשל לולאה כזו:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">:</span>
+       <span class="n">do_something</span>	
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>לולאה זו למעשה שקולה ללולאת ה-<code class="docutils literal notranslate"><span class="pre">for</span></code> שלעיל, וגם היא מבצעת פעולה מסויימת בדיוק n פעמים.</p>
+<p>לולאות <code class="docutils literal notranslate"><span class="pre">while</span></code> בפייתון דורשות זהירות מסויימת, כי המתכנת אחראי להגדרת הלולאה באופן תקין, שתעצור אחרי מספר סופי של איטרציות (כלומר שלא תיכנס ללולאה אינסופית). הטעות הנפוצה בעניין זה היא לשכוח לקדם את הלולאה אל עבר סיומה. בדוגמה הנ”ל זוהי הפקודה <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i+1</span></code> שדואגת שאכן הלולאה תסתיים, כי בכל פעם i מתקרב ל-n (בהנחה ש-n לא מספר שלילי!). אבל לולאה אינסופית יכולה להיגרם גם מטעות בתנאי הלולאה או מאיתחול לא נכון של משתנה הלולאה (i בדוגמה הנ”ל).</p>
+<p>בחלק הבא נראה עוד שתי דוגמאות מעניינות לשימוש בלולאות (דוגמה אחת לכל סוג לולאה), ונקדיש עוד קצת זמן לתרגול הנושא החשוב הזה.</p>
+<section id="id1">
+<h2>זיהוי פלינדרום<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="dropdown info admonition">
+<p class="admonition-title"><strong>זוכרים מהו פלינדרום?</strong></p>
+<p>את השפה העברית אנחנו כותבים וקוראים בד”כ מימין לשמאל. כך גם בערבית. לעומת זאת בשפות כמו אנגלית, רוסית, צרפתית וגם באמהרית כותבים וקוראים משמאל לימין. בכל השפות האלו ובאחרות ישנן מילים שאפשר לקרוא אותן בשני הכיוונים באותו אופן. למשל, המילה ‘אמא’ בעברית, או המילה radar באנגלית. מילים כאלו נקראות “פלינדרום”.</p>
+<p>כעת ננסח בצורה מעט יותר פורמלית את בעית הפלינדרום. הקלט לבעיה שלנו הוא מחרוזת. אם המחרוזת ניתנת לקריאה בשני הכיוונים באופן זהה הפלט יהיה True.</p>
+</div>
+<p>ראינו בשיעור על מחרוזות פתרון לבעית הפלנידרום. כעת נבחן גישה לפתרון הבעיה באמצעות רשימות.</p>
+<p>הנה אלגוריתם אפשרי: נתחיל משני קצוות המחרוזת ונשווה את התווים המתאימים. אם הם שונים, נוכל כבר ברגע זה להכריז שהמחרוזת היא <strong>לא פלינדרום</strong>. אם הם שווים, נזוז צעד אחד פנימה משני צדי המחרוזת ונבדוק אם שני התווים הבאים שווים.</p>
+<p>למשל, “RADAT” תתגלה כמחרוזת שאיננה פלינדרום כבר בבדיקת זוג התווים הראשון שבקצוות.</p>
+<p>לעומת זאת אם התווים שבקצוות שווים, לא נוכל לדעת דבר בשלב זה. המחרוזת יכולה להיות פלינדרום ויכולה שלא להיות, צריך להמשיך לבדוק. לכן, נזוז צעד אחד פנימה משני קצוות המחרוזת ונבדוק אם שני התווים הבאים שווים. ושוב: אם הם לא שווים, נוכל לסיים ולהכריז שהמחרוזת היא לא פלינדרום.</p>
+<p>אחרת נצטרך להמשיך, וחוזר חלילה.</p>
+<p>מתי נוכל לקבוע בוודאות שמצאנו פלינדרום? התהליך הזה יימשך כל עוד התו הימני שמשווים אכן נמצא מימין לתו השמאלי שמשווים. בפעם הראשונה שתנאי זה לא מתקיים, נוכל להכריז שהמחרוזת הנתונה היא אכן פלינדרום. שימו לב שלא צריך להמשיך לבצע את הבדיקה אחרי שמתקיים התנאי, כי ברגע שנעבור את האמצע נתחיל לבצע השוואות שכבר ביצענו קודם.</p>
+<p>רגע, <strong>אמרנו כל עוד?? אמרנו לולאת <code class="docutils literal notranslate"><span class="pre">while</span></code>!</strong></p>
+<p>הרבה פעמים הדרך שבה אנחנו מנסחים לעצמנו את האלגוריתם במילים מעידה על סוג הלולאה שאותה כדאי לבחור. במקרה הזה טבעי להשתמש בלולאות while, אם כי היה אפשר גם להשתמש בלולאות for.</p>
+<p>לפני שנקפוץ לממש את האלגוריתם הזה בפייתון, בואו נכתוב אותו בפסאודו קוד. נשתמש בשני משתנים שיכילו אינדקסים במחרוזת. הם יאותחלו לקצוות, ויזוזו פנימה בכל איטרציה.</p>
+<p><strong>זיהוי פלינדרום (קלט: המחרוזת st)</strong></p>
+<ol class="arabic simple">
+<li><p>אתחל <code class="docutils literal notranslate"><span class="pre">l=0,</span> <span class="pre">r=len(st)-1</span></code></p></li>
+<li><p>כל עוד <code class="docutils literal notranslate"><span class="pre">l&lt;r</span></code>:<br />
+2.1 אם <code class="docutils literal notranslate"><span class="pre">st[l]</span></code> לא שווה ל-<code class="docutils literal notranslate"><span class="pre">st[r]</span></code>:<br />
+2.1.1. החזר <code class="docutils literal notranslate"><span class="pre">False</span></code> וסיים<br />
+2.2 הגדל את <code class="docutils literal notranslate"><span class="pre">l</span></code> ב- 1 והקטן את <code class="docutils literal notranslate"><span class="pre">r</span></code> ב- 1</p></li>
+<li><p>החזר <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ol>
+<p>בהתחלה נגדיר שני משתנים עם השמות <code class="docutils literal notranslate"><span class="pre">l</span></code> (left) ו-<code class="docutils literal notranslate"><span class="pre">r</span></code> (right) . נאתחל את <code class="docutils literal notranslate"><span class="pre">l</span></code> לאינדקס השמאלי ביותר של המחרוזת, כלומר 0, ואת <code class="docutils literal notranslate"><span class="pre">r</span></code> לימני ביותר, כלומר אורך המחרוזת פחות 1 (פחות 1, כי מתחילים ב-0). ואז נריץ בלולאה כל עוד <code class="docutils literal notranslate"><span class="pre">l&lt;r</span></code>, ונשווה את תווי המחרוזת באינדקסים <code class="docutils literal notranslate"><span class="pre">l</span></code> ו-<code class="docutils literal notranslate"><span class="pre">r</span></code>.<br />
+אם הם שונים אנחנו יודעים בדיוק מה לעשות – לסיים את ריצת האלגוריתם ולהחזיר <code class="docutils literal notranslate"><span class="pre">False</span></code>.<br />
+אם הם שווים, צריך להמשיך בלולאה, אבל לא לפני שנזיז את <code class="docutils literal notranslate"><span class="pre">l</span></code> מקום אחד ימינה, כלומר נגדיל אותו ב-1, ואת <code class="docutils literal notranslate"><span class="pre">r</span></code> נזיז שמאלה, כלומר נקטין אותו ב-1. משורה 2.2 חוזרים לבדוק את התנאי שבשורה 2 פעם נוספת.<br />
+כך ממשיך התהליך עד שקורה אחד משניים: או שמתישהו מגלים תווים מתאימים ששונים זה מזה, ומחזירים <code class="docutils literal notranslate"><span class="pre">False</span></code>, או שהלולאה מסתיימת כי האינדקס <code class="docutils literal notranslate"><span class="pre">l</span></code> כבר לא קטן מהאינדקס <code class="docutils literal notranslate"><span class="pre">r</span></code>, כלומר או שהמשתנים <code class="docutils literal notranslate"><span class="pre">l</span></code> ו-<code class="docutils literal notranslate"><span class="pre">r</span></code> נפגשו, או שהם חלפו זה על פני זה. אחד מהשניים בטוח יקרה בשלב מוקדם או מאוחר. אם הלולאה הסתיימה מהסיבה השניה, אפשר סוף סוף להחזיר <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p><strong>שימו לב:</strong> ניתן לכתוב פונקציה אשר תעבוד עבור מחרוזות ורשימות, בלי שינוי בקוד.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">example</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s1"> [</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s1">   {</span>
+<span class="s1">   (...)     59 ]</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="s1"> &#39;&#39;&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jupyterquiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>בתרגיל זה נכתוב שתי פונקציות - אחת לזיהוי פלינדרום מושלם ואחת לזיהוי פלינדרום “כללי”.</p>
+<p>בואו נתחיל מזיהוי פלינדרום מושלם - הפונקציה שנכתוב נקראת <code class="docutils literal notranslate"><span class="pre">is_palindrome</span></code> ומקבלת כקלט מחרוזת <code class="docutils literal notranslate"><span class="pre">st</span></code>, להלן תזכורת לפסאודו-קוד שתארנו כעת:</p>
+<p><strong>זיהוי פלינדרום (קלט: המחרוזת st)</strong></p>
+<ol class="arabic simple">
+<li><p>אתחל <code class="docutils literal notranslate"><span class="pre">l=0,</span> <span class="pre">r=len(st)-1</span></code></p></li>
+<li><p>כל עוד <code class="docutils literal notranslate"><span class="pre">l&lt;r</span></code>:<br />
+2.1 אם <code class="docutils literal notranslate"><span class="pre">st[l]</span></code> לא שווה ל-<code class="docutils literal notranslate"><span class="pre">st[r]</span></code>:<br />
+2.1.1. החזר <code class="docutils literal notranslate"><span class="pre">False</span></code> וסיים<br />
+2.2 הגדל את <code class="docutils literal notranslate"><span class="pre">l</span></code> ב- 1 והקטן את <code class="docutils literal notranslate"><span class="pre">r</span></code> ב- 1</p></li>
+<li><p>החזר <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ol>
+<p>השלימו את הקוד לפונקציה. הקפידו להשתמש בלולאת <code class="docutils literal notranslate"><span class="pre">while</span></code> ולא בלולאת <code class="docutils literal notranslate"><span class="pre">for</span></code>. כמו כן, הריצו את הפונקציה שלכם על דוגמאות ההרצה הבאות כדי לוודא שהיא עובדת נכון (לפחות עבור מקרים אלו).</p>
+<p>דוגמאות הרצה:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s1">&#39;anna&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s1">&#39;radar radar&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s1">&#39;Anna&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">st</span><span class="p">):</span>
+    <span class="c1"># delete pass and fill in your code below</span>
+    <span class="k">pass</span>
+
+        
+<span class="c1">### TESTS ###</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;********************&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting the test:&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;********************&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking if &#39;anna&#39; is a perfect palindrome&quot;</span><span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="s1">&#39;anna&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ans</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CORRECT: &#39;anna&#39; is a perfect palindrome&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WRONG: &#39;anna&#39; is a perfect palindrome but the code returned&quot;</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;********************&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking if &#39;A man, a plan, a canal, Panama&#39; is a perfect palindrome&quot;</span><span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="s1">&#39;A man, a plan, a canal, Panama&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ans</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CORRECT: &#39;A man, a plan, a canal, Panama&#39; is not a perfect palindrome&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WRONG: &#39;A man, a plan, a canal, Panama&#39; is not a perfect palindrome but the code returned&quot;</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;********************&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking if &#39;a nN.a&#39; is a perfect palindrome&quot;</span><span class="p">)</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">is_palindrome</span><span class="p">(</span><span class="s1">&#39;a nN.a&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">ans</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CORRECT: &#39;a nN.a&#39; is not a perfect palindrome&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WRONG: &#39;a nN.a&#39; is not a perfect palindrome but the code returned&quot;</span><span class="p">,</span> <span class="n">ans</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>********************
+Starting the test:
+********************
+Checking if &#39;anna&#39; is a perfect palindrome
+WRONG: &#39;anna&#39; is a perfect palindrome but the code returned None
+********************
+Checking if &#39;A man, a plan, a canal, Panama&#39; is a perfect palindrome
+WRONG: &#39;A man, a plan, a canal, Panama&#39; is not a perfect palindrome but the code returned None
+********************
+Checking if &#39;a nN.a&#39; is a perfect palindrome
+WRONG: &#39;a nN.a&#39; is not a perfect palindrome but the code returned None
+</pre></div>
+</div>
+</div>
+</div>
+<p>כעת, נכתוב את הפונקציה <code class="docutils literal notranslate"><span class="pre">is_general_palindrome</span></code>, אשר מזהה פלינדרום גם אם אינו מושלם.</p>
+<p>למה הכוונה? בואו נסתכל על המשפט:
+A man, a plan, a canal, Panama.</p>
+<p>משפט זה הוא פלינדרום אך ורק אם מתעלמים מהבדלים של רווחים, סימני פיסוק ושימוש באותיות גדולות או קטנות. נרצה כעת לכתוב פונקציה שתוכל לזהות גם את הפלינדרום הזה.</p>
+<p>למה זה טוב? לפעמים אין לנו שליטה מלאה על הקלט של התוכניות אותן אנו כותבים. מאחר שברצוננו שהתוכנית שלנו תוכל לפעול על מגוון רחב ככל האפשר של קלטים, נרצה לעיתים לבצע התאמות לקלט שלנו לפני הרצת התוכנית.</p>
+<p>השתמשו בכלים שלמדתם בפרק מחרוזות על מנת “לנקות” את המחרוזת!</p>
+<div class="cell tag_remove-input tag_raises-exception docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>********************
+Starting the test:
+********************
+Checking if &#39;anna&#39; is a general palindrome
+WRONG: &#39;anna&#39; is a general palindrome but the code returned None
+********************
+Checking if &#39;A man, a plan, a canal, Panama&#39; is a general palindrome
+WRONG: &#39;A man, a plan, a canal, Panama&#39; is a general palindrome but the code returned None
+********************
+Checking if &#39;a nN.a&#39; is a general palindrome
+WRONG: &#39;a nN.a&#39; is a general palindrome but the code returned None
+********************
+Checking if &#39;radat&#39; is a general palindrome
+WRONG: &#39;radat&#39; is not a general palindrome but the code returned None
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="n">
+<h2>חישוב עצרת (n!)<a class="headerlink" href="#n" title="Link to this heading">#</a></h2>
+<p><strong>הגדרת עצרת:</strong>
+עצרת של מספר n (מסומנת במתמטיקה באמצעות סימן קריאה) היא מכפלת כל המספרים החיוביים הקטנים או שווים לו.</p>
+<p>דוגמאות:<br />
+<span class="math notranslate nohighlight">\(1\cdot2\cdot3=3!\)</span></p>
+<p><span class="math notranslate nohighlight">\(1\cdot2\cdot3\cdot4\cdot5\cdot6=6!\)</span></p>
+<p><span class="math notranslate nohighlight">\(1\cdot2\cdot\dots\cdot(𝑛−1) \cdot 𝑛=𝑛!\)</span></p>
+<p>בשלב זה אתם תממשו את פונקציית העצרת באמצעות שני סוגי הלולאות - <code class="docutils literal notranslate"><span class="pre">while</span></code> ו<code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<section id="while">
+<h3>מימוש עצרת עם לולאת <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#while" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">while_factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input tag_raises-exception docutils container">
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">while_factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fact</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">fact</span> <span class="o">=</span> <span class="n">fact</span> <span class="o">*</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">fact</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="for">
+<h3>מימוש עצרת עם לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#for" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">for_factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input tag_raises-exception docutils container">
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">for_factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">fact</span> <span class="o">=</span> <span class="n">fact</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">fact</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./vendor/virtual-pyprog"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">זיהוי פלינדרום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n">חישוב עצרת (n!)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">מימוש עצרת עם לולאת <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">מימוש עצרת עם לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
