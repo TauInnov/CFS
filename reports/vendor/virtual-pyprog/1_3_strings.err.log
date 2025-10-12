@@ -25,53 +25,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import json
-from jupyterquiz import display_quiz
-example = \
-'''
-   [{
-    
-        "type": "many_choice",
-        "answers": [
-            {
-                "answer": "ab",
-                "correct": false,
-                "feedback": "לא נכון"
-            },
-            {
-                "answer": "abab",
-                "correct": true,
-                "feedback": "נכון!"
-            },
-            {
-                "answer": "2",
-                "correct": false,
-                "feedback": "לא נכון"
-            },
-            {
-                "answer": "מחרוזת ריקה",
-                "correct": false,
-                "feedback": "לא נכון"
-            }
-        ]
-    }]
-'''
-myquiz = json.loads(example)
-display_quiz(myquiz)
+def is_palindrome(text):
+    # Your code here
+
+print(is_palindrome('abba'))
+print(is_palindrome('abbc'))
 ------------------
 
 
-[31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 2[39m
-[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mjson[39;00m
-[32m----> [39m[32m2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mjupyterquiz[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m display_quiz
-[32m      3[39m example = \
-[32m      4[39m [33;03m'''[39;00m
-[32m      5[39m [33;03m   [{[39;00m
-[32m   (...)[39m[32m     30[39m [33;03m    }][39;00m
-[32m     31[39m [33;03m'''[39;00m
-[32m     32[39m myquiz = json.loads(example)
+  [36mCell[39m[36m [39m[32mIn[20][39m[32m, line 4[39m
+[31m    [39m[31mprint(is_palindrome('abba'))[39m
+    ^
+[31mIndentationError[39m[31m:[39m expected an indented block after function definition on line 1
 
-[31mModuleNotFoundError[39m: No module named 'jupyterquiz'
 

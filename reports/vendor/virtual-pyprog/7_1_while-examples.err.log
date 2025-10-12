@@ -91,16 +91,46 @@ display_quiz(myquiz)
 
 
 [31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 2[39m
-[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mjson[39;00m
-[32m----> [39m[32m2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mjupyterquiz[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m display_quiz
+[31mJSONDecodeError[39m                           Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 61[39m
+[32m      2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mjupyterquiz[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m display_quiz
 [32m      4[39m example = [33m'''[39m
 [32m      5[39m [33m[[39m
 [32m      6[39m [33m  [39m[33m{[39m
 [32m   (...)[39m[32m     59[39m [33m][39m
 [32m     60[39m [33m'''[39m
-[32m     61[39m myquiz = json.loads(example)
+[32m---> [39m[32m61[39m myquiz = [43mjson[49m[43m.[49m[43mloads[49m[43m([49m[43mexample[49m[43m)[49m
+[32m     62[39m display_quiz(myquiz)
 
-[31mModuleNotFoundError[39m: No module named 'jupyterquiz'
+[36mFile [39m[32m/usr/local/python/3.12.1/lib/python3.12/json/__init__.py:346[39m, in [36mloads[39m[34m(s, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)[39m
+[32m    341[39m     s = s.decode(detect_encoding(s), [33m'[39m[33msurrogatepass[39m[33m'[39m)
+[32m    343[39m [38;5;28;01mif[39;00m ([38;5;28mcls[39m [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m object_hook [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m
+[32m    344[39m         parse_int [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m parse_float [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m
+[32m    345[39m         parse_constant [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m object_pairs_hook [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m kw):
+[32m--> [39m[32m346[39m     [38;5;28;01mreturn[39;00m [43m_default_decoder[49m[43m.[49m[43mdecode[49m[43m([49m[43ms[49m[43m)[49m
+[32m    347[39m [38;5;28;01mif[39;00m [38;5;28mcls[39m [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m    348[39m     [38;5;28mcls[39m = JSONDecoder
+
+[36mFile [39m[32m/usr/local/python/3.12.1/lib/python3.12/json/decoder.py:337[39m, in [36mJSONDecoder.decode[39m[34m(self, s, _w)[39m
+[32m    332[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mdecode[39m([38;5;28mself[39m, s, _w=WHITESPACE.match):
+[32m    333[39m [38;5;250m    [39m[33;03m"""Return the Python representation of ``s`` (a ``str`` instance[39;00m
+[32m    334[39m [33;03m    containing a JSON document).[39;00m
+[32m    335[39m 
+[32m    336[39m [33;03m    """[39;00m
+[32m--> [39m[32m337[39m     obj, end = [38;5;28;43mself[39;49m[43m.[49m[43mraw_decode[49m[43m([49m[43ms[49m[43m,[49m[43m [49m[43midx[49m[43m=[49m[43m_w[49m[43m([49m[43ms[49m[43m,[49m[43m [49m[32;43m0[39;49m[43m)[49m[43m.[49m[43mend[49m[43m([49m[43m)[49m[43m)[49m
+[32m    338[39m     end = _w(s, end).end()
+[32m    339[39m     [38;5;28;01mif[39;00m end != [38;5;28mlen[39m(s):
+
+[36mFile [39m[32m/usr/local/python/3.12.1/lib/python3.12/json/decoder.py:353[39m, in [36mJSONDecoder.raw_decode[39m[34m(self, s, idx)[39m
+[32m    344[39m [38;5;250m[39m[33;03m"""Decode a JSON document from ``s`` (a ``str`` beginning with[39;00m
+[32m    345[39m [33;03ma JSON document) and return a 2-tuple of the Python[39;00m
+[32m    346[39m [33;03mrepresentation and the index in ``s`` where the document ended.[39;00m
+[32m   (...)[39m[32m    350[39m 
+[32m    351[39m [33;03m"""[39;00m
+[32m    352[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m353[39m     obj, end = [38;5;28;43mself[39;49m[43m.[49m[43mscan_once[49m[43m([49m[43ms[49m[43m,[49m[43m [49m[43midx[49m[43m)[49m
+[32m    354[39m [38;5;28;01mexcept[39;00m [38;5;167;01mStopIteration[39;00m [38;5;28;01mas[39;00m err:
+[32m    355[39m     [38;5;28;01mraise[39;00m JSONDecodeError([33m"[39m[33mExpecting value[39m[33m"[39m, s, err.value) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;28;01mNone[39;00m
+
+[31mJSONDecodeError[39m: Expecting ',' delimiter: line 4 column 44 (char 50)
 

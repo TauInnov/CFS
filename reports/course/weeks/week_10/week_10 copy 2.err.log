@@ -25,55 +25,34 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import json
-from jupyterquiz import display_quiz
+# %%
+# Interpolation demo
+x = np.linspace(0, 10, 11)
+y = np.sin(x) + 0.1*np.cos(3*x)
+f_lin = interpolate.interp1d(x, y, kind="linear")
+f_cub = interpolate.interp1d(x, y, kind="cubic")
 
-quiz_json = \
-'''
-[{
-  "question": "הקוד הבא עושה שימוש בקבועים מתוך scipy.constants:<br><br>from scipy import constants<br>c = constants.c  # מהירות האור (m/s)<br>h = constants.h  # קבוע פלאנק (J·s)<br>kB = constants.Boltzmann  # קבוע בולצמן (J/K)<br><br>מהי התכונה המרכזית של הקבועים הללו וכיצד נשתמש בהם נכון?",
-  "type": "many_choice",
-  "answers": [
-    {
-      "answer": "הקבועים מוגדרים ביחידות SI מדויקות לפי CODATA וניתנים לשימוש ישיר בחישובים פיזיקליים",
-      "correct": true,
-      "feedback": "נכון! scipy.constants מספק ערכים עדכניים ביחידות SI תקניות לשימוש מיידי."
-    },
-    {
-      "answer": "הקבועים ניתנים רק ביחידות לא־SI ויש להמיר אותם תמיד באופן ידני",
-      "correct": false,
-      "feedback": "לא נכון — כברירת מחדל הקבועים ניתנים ביחידות SI. המרה נדרשת רק אם רוצים יחידות אחרות."
-    },
-    {
-      "answer": "הקבועים משתנים בין ריצות ולכן אינם מתאימים לחישובים מדויקים",
-      "correct": false,
-      "feedback": "ממש לא — הערכים קבועים ואחידים לפי ההגדרות הפיזיקליות המקובלות."
-    },
-    {
-      "answer": "הקבועים זמינים ב-numpy אך לא ב-scipy",
-      "correct": false,
-      "feedback": "לא נכון — numpy לא כולל קבועים פיזיקליים; רק scipy.constants מספק אותם."
-    }
-  ]
-}]
-'''
-myquiz = json.loads(quiz_json)
-display_quiz(myquiz)
+xf = np.linspace(0, 10, 400)
+
+fig, ax = plt.subplots(constrained_layout=True)
+ax.plot(x, y, "o", label="samples")
+ax.plot(xf, f_lin(xf), label="linear")
+ax.plot(xf, f_cub(xf), label="cubic")
+ax.set_title("Interpolation: linear vs cubic")
+ax.legend()
+plt.show()
 
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[9][39m[32m, line 2[39m
-[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mjson[39;00m
-[32m----> [39m[32m2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mjupyterquiz[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m display_quiz
-[32m      4[39m quiz_json = \
-[32m      5[39m [33;03m'''[39;00m
-[32m      6[39m [33;03m[{[39;00m
-[32m   (...)[39m[32m     31[39m [33;03m}][39;00m
-[32m     32[39m [33;03m'''[39;00m
-[32m     33[39m myquiz = json.loads(quiz_json)
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[26][39m[32m, line 5[39m
+[32m      3[39m x = np.linspace([32m0[39m, [32m10[39m, [32m11[39m)
+[32m      4[39m y = np.sin(x) + [32m0.1[39m*np.cos([32m3[39m*x)
+[32m----> [39m[32m5[39m f_lin = [43minterpolate[49m.interp1d(x, y, kind=[33m"[39m[33mlinear[39m[33m"[39m)
+[32m      6[39m f_cub = interpolate.interp1d(x, y, kind=[33m"[39m[33mcubic[39m[33m"[39m)
+[32m      8[39m xf = np.linspace([32m0[39m, [32m10[39m, [32m400[39m)
 
-[31mModuleNotFoundError[39m: No module named 'jupyterquiz'
+[31mNameError[39m: name 'interpolate' is not defined
 

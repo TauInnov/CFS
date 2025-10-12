@@ -25,55 +25,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import json
-from jupyterquiz import display_quiz
-
-example = \
-'''
-[{
-    "question": "מה הניתוב האבסולוטי של הקובץ output?",
-    "type": "many_choice",
-    "answers": [
-        {
-            "answer": "C:/Projects/Python/Data/output.txt",
-            "correct": true,
-            "feedback": "נכון!"
-        },
-        {
-            "answer": "C:/Projects/Python/Data",
-            "correct": false,
-            "feedback": "לא נכון"
-        },
-        {
-            "answer": "output.txt",
-            "correct": false,
-            "feedback": "לא נכון"
-        },
-        {
-            "answer": "C:/Projects/Python/Data/output",
-            "correct": false,
-            "feedback": "לא נכון"
-        }
-    ]
-}]
-'''
-myquiz = json.loads(example)
-display_quiz(myquiz)
-
+f = open("not_existing_file.txt", "r")
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 2[39m
-[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mjson[39;00m
-[32m----> [39m[32m2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mjupyterquiz[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m display_quiz
-[32m      4[39m example = \
-[32m      5[39m [33;03m'''[39;00m
-[32m      6[39m [33;03m[{[39;00m
-[32m   (...)[39m[32m     31[39m [33;03m}][39;00m
-[32m     32[39m [33;03m'''[39;00m
-[32m     33[39m myquiz = json.loads(example)
+[31mFileNotFoundError[39m                         Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m f = [38;5;28;43mopen[39;49m[43m([49m[33;43m"[39;49m[33;43mnot_existing_file.txt[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[33;43m"[39;49m[33;43mr[39;49m[33;43m"[39;49m[43m)[49m
 
-[31mModuleNotFoundError[39m: No module named 'jupyterquiz'
+[36mFile [39m[32m~/.local/lib/python3.12/site-packages/IPython/core/interactiveshell.py:343[39m, in [36m_modified_open[39m[34m(file, *args, **kwargs)[39m
+[32m    336[39m [38;5;28;01mif[39;00m file [38;5;129;01min[39;00m {[32m0[39m, [32m1[39m, [32m2[39m}:
+[32m    337[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[32m    338[39m         [33mf[39m[33m"[39m[33mIPython won[39m[33m'[39m[33mt let you open fd=[39m[38;5;132;01m{[39;00mfile[38;5;132;01m}[39;00m[33m by default [39m[33m"[39m
+[32m    339[39m         [33m"[39m[33mas it is likely to crash IPython. If you know what you are doing, [39m[33m"[39m
+[32m    340[39m         [33m"[39m[33myou can use builtins[39m[33m'[39m[33m open.[39m[33m"[39m
+[32m    341[39m     )
+[32m--> [39m[32m343[39m [38;5;28;01mreturn[39;00m [43mio_open[49m[43m([49m[43mfile[49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'not_existing_file.txt'
 

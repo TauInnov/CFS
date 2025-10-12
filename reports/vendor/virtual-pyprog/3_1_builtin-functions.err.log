@@ -25,48 +25,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import json
-from jupyterquiz import display_quiz
-example = \
-'''
-   [{
-        "question": "מתי נרצה לשמור פלט של פונקציה בשם משתנה?",
-        "type": "many_choice",
-        "answers": [
-            {
-                "answer": "תמיד",
-                "correct": false,
-                "feedback": "לא נכון"
-            },
-            {
-                "answer": "אם נשתמש בערך יותר מפעם אחת",
-                "correct": true,
-                "feedback": "נכון!"
-            },
-            {
-                "answer": "אף פעם לא",
-                "correct": false,
-                "feedback": "לא נכון"
-            }
-        ]
-    }]
-'''
-myquiz = json.loads(example)
-display_quiz(myquiz)
+print(3)+print(4)
 ------------------
 
+----- stdout -----
+3
+4
+------------------
 
 [31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 2[39m
-[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mjson[39;00m
-[32m----> [39m[32m2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mjupyterquiz[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m display_quiz
-[32m      3[39m example = \
-[32m      4[39m [33;03m'''[39;00m
-[32m      5[39m [33;03m   [{[39;00m
-[32m   (...)[39m[32m     25[39m [33;03m    }][39;00m
-[32m     26[39m [33;03m'''[39;00m
-[32m     27[39m myquiz = json.loads(example)
+[31mTypeError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[11][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;43mprint[39;49m[43m([49m[32;43m3[39;49m[43m)[49m[43m+[49m[38;5;28;43mprint[39;49m[43m([49m[32;43m4[39;49m[43m)[49m
 
-[31mModuleNotFoundError[39m: No module named 'jupyterquiz'
+[31mTypeError[39m: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 

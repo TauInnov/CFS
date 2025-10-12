@@ -25,45 +25,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import json
-from jupyterquiz import display_quiz
-
-example = \
-'''
-   [{
-    
-        "question": "איך נייצג את המספר 28 בייצוג בינארי?",
-        "type": "numeric",
-        "answers": [
-            {
-                "type": "value",
-                "value": 11100,
-                "correct": true,
-                "feedback": "נכון!"
-            },
-            {
-                "type": "default",
-                "feedback": "לא נכון"
-            }
-        ]
-    }]
-'''
-myquiz = json.loads(example)
-display_quiz(myquiz)
+print( 1 + 2 - 3 * 4 / 5 ! 6)
+print(12.3 * 8 + (12 - 4))
+print(14 / (7 - (4 + 3)))
+print( 2 + 4) * 6)
+print ("<h3>success!</h3>")
 ------------------
 
 
-[31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 2[39m
-[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mjson[39;00m
-[32m----> [39m[32m2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mjupyterquiz[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m display_quiz
-[32m      4[39m example = \
-[32m      5[39m [33;03m'''[39;00m
-[32m      6[39m [33;03m   [{[39;00m
-[32m   (...)[39m[32m     22[39m [33;03m    }][39;00m
-[32m     23[39m [33;03m'''[39;00m
-[32m     24[39m myquiz = json.loads(example)
+  [36mCell[39m[36m [39m[32mIn[11][39m[32m, line 4[39m
+[31m    [39m[31mprint( 2 + 4) * 6)[39m
+                     ^
+[31mSyntaxError[39m[31m:[39m unmatched ')'
 
-[31mModuleNotFoundError[39m: No module named 'jupyterquiz'
 
