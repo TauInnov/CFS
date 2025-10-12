@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>קבועים פיזיקליים &#8212; Computers For physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_1_physical_consts';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
+    <script>document.write(`<img src="../../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/course/weeks/week_10/10_1_physical_consts.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/course/weeks/week_10/10_1_physical_consts.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_10/10_1_physical_consts.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/course/weeks/week_10/10_1_physical_consts.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>קבועים פיזיקליים</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1) חישוב אנרגיית פוטון מאורך גל</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-b-t">2) סקאלת אנרגיה תרמית <span class="math notranslate nohighlight">\(k_B T\)</span> ומתיחות תרמית במתח</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">3) דוגמת Broadcasting: אנרגיה פוטנציאלית כבידתית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4) חוק וין: אורך גל שיא של גוף שחור</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5) הקדמה קצרה: מהירות האור וקבועי היסוד באלקטרומגנטיות</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="id1">
+<h1>קבועים פיזיקליים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p><strong>SciPy</strong> מוסיפה לסביבה של NumPy כלים נומריים מתקדמים: אינטגרציה, פתרון ODEs, אופטימיזציה, אינטרפולציה, FFT, עיבוד אותות, אלגברה ליניארית, סטטיסטיקה ועוד.<br />
+<strong>קבועים פיזיקליים</strong> זמינים ב־<code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>: למשל <span class="math notranslate nohighlight">\(c, h, k_B, G\)</span> וכד’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %%</span>
+<span class="c1"># Constants and quick NumPy recap — EXPANDED</span>
+<span class="c1"># (Safe to run even if previous cells didn&#39;t import constants)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">physical_constants</span>  <span class="c1"># for named constants like Wien&#39;s b</span>
+
+<span class="c1"># --- Core physical constants (SI units) ---</span>
+<span class="n">c</span>   <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">c</span>               <span class="c1"># speed of light (m/s)</span>
+<span class="n">h</span>   <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">h</span>               <span class="c1"># Planck constant (J·s)</span>
+<span class="n">hbar</span><span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">hbar</span>            <span class="c1"># reduced Planck constant (J·s)</span>
+<span class="n">kB</span>  <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">Boltzmann</span>       <span class="c1"># Boltzmann constant (J/K)</span>
+<span class="n">e</span>   <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">e</span>               <span class="c1"># elementary charge (C)</span>
+<span class="n">eV</span>  <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">electron_volt</span>   <span class="c1"># 1 eV in Joule (J)</span>
+<span class="n">NA</span>  <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">N_A</span>             <span class="c1"># Avogadro number (1/mol)</span>
+<span class="n">R</span>   <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">R</span>               <span class="c1"># molar gas constant (J/(mol·K))</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">Stefan_Boltzmann</span>  <span class="c1"># Stefan–Boltzmann constant (W/(m^2·K^4))</span>
+<span class="n">epsilon0</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">epsilon_0</span>  <span class="c1"># vacuum permittivity (F/m)</span>
+<span class="n">mu0</span>     <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">mu_0</span>        <span class="c1"># vacuum permeability (N/A^2)</span>
+<span class="n">G</span>   <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">G</span>               <span class="c1"># gravitational constant (m^3/(kg·s^2))</span>
+<span class="n">g0</span>  <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span>               <span class="c1"># standard gravity (m/s^2)</span>
+
+<span class="c1"># Wien&#39;s wavelength-displacement constant b ≈ 2.897771955e-3 m·K (via CODATA)</span>
+<span class="n">b_wien</span> <span class="o">=</span> <span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;Wien wavelength displacement law constant&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># --- Pretty printing helper (engineering/scientific) ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fmt</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Format a number in scientific notation with a unit.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">val</span><span class="si">:</span><span class="s2">.6e</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Some constants:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  c       =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s2">&quot;m/s&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  h       =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="s2">&quot;J·s&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ħ       =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">hbar</span><span class="p">,</span> <span class="s2">&quot;J·s&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  k_B     =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">kB</span><span class="p">,</span> <span class="s2">&quot;J/K&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  e       =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  1 eV    =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">eV</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  N_A     =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">NA</span><span class="p">,</span> <span class="s2">&quot;1/mol&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  R       =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="s2">&quot;J/(mol·K)&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  σ       =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="s2">&quot;W/(m^2·K^4)&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ε0      =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">epsilon0</span><span class="p">,</span> <span class="s2">&quot;F/m&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  μ0      =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">mu0</span><span class="p">,</span> <span class="s2">&quot;N/A^2&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  G       =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s2">&quot;m^3/(kg·s^2)&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  g0      =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">g0</span><span class="p">,</span> <span class="s2">&quot;m/s^2&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  b_Wien  =&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="n">b_wien</span><span class="p">,</span> <span class="s2">&quot;m·K&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Some constants:
+  c       = 2.997925e+08 m/s
+  h       = 6.626070e-34 J·s
+  ħ       = 1.054572e-34 J·s
+  k_B     = 1.380649e-23 J/K
+  e       = 1.602177e-19 C
+  1 eV    = 1.602177e-19 J
+  N_A     = 6.022141e+23 1/mol
+  R       = 8.314463e+00 J/(mol·K)
+  σ       = 5.670374e-08 W/(m^2·K^4)
+  ε0      = 8.854188e-12 F/m
+  μ0      = 1.256637e-06 N/A^2
+  G       = 6.674300e-11 m^3/(kg·s^2)
+  g0      = 9.806650e+00 m/s^2
+  b_Wien  = 2.897772e-03 m·K
+</pre></div>
+</div>
+</div>
+</div>
+<p>נדגים שימוש באמצעות מספר דוגמאות broadcasting ווקטוריזציה:</p>
+<section id="id2">
+<h2>1) חישוב אנרגיית פוטון מאורך גל<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>האור הוא קרינה אלקטרומגנטית, ובתיאור הקוונטי שלו הוא מורכב מחלקיקים הנקראים <strong>פוטונים</strong>. לכל פוטון אנרגיה בדידה, הפרופורציונית לתדירות הגל: <span class="math notranslate nohighlight">\(E = h f\)</span> (כאשר <span class="math notranslate nohighlight">\(h\)</span> הוא קבוע פלאנק). מאחר שמהירות האור נקבעת על־ידי <span class="math notranslate nohighlight">\(c = \lambda f\)</span>, מתקבל הקשר השימושי</p>
+<p><span class="math notranslate nohighlight">\(E = \dfrac{h c}{\lambda}\)</span>.</p>
+<p>אורך גל קצר יותר (כחול/על־סגול) משמעו אנרגיה גדולה יותר, ואורך גל ארוך יותר (אדום/תת־אדום) משמעו אנרגיה קטנה יותר — עיקרון שמסביר תופעות כמו בליעה/פליטה ספקטרלית, יעילות תאים סולאריים ורגישות הראייה.</p>
+<p>בדוגמה יצרנו וקטור של אורכי גל אופייניים בתחום הנראה (ננומטר), המרנו למטרים, וחישבנו את <span class="math notranslate nohighlight">\(E\)</span> לכל ערך — בבת אחת — באמצעות וקטוריזציה של NumPy (כלומר בלי לולאות מפורשות). לבסוף ביצענו המרות יחידות: מג’ול ל־eV בעזרת <span class="math notranslate nohighlight">\(1\ \mathrm{eV}\)</span> במונחי ג’ול מתוך <code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>. כך מקבלים אינטואיציה: ככל שאורך הגל קצר יותר (<span class="math notranslate nohighlight">\(\lambda\)</span> קטן), האנרגיה גדולה יותר.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1) Photon energy from wavelength: E = h*c/λ (vectorized over λ)</span>
+<span class="n">wavelength_nm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">700</span><span class="p">])</span>           <span class="c1"># nm</span>
+<span class="n">wavelength_m</span>  <span class="o">=</span> <span class="n">wavelength_nm</span> <span class="o">*</span> <span class="mf">1e-9</span>                      <span class="c1"># convert to meters</span>
+<span class="n">E_J</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">c</span> <span class="o">/</span> <span class="n">wavelength_m</span>                                <span class="c1"># Joule</span>
+<span class="n">E_eV</span> <span class="o">=</span> <span class="n">E_J</span> <span class="o">/</span> <span class="n">eV</span>                                           <span class="c1"># electron-volt</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Photon energy for visible wavelengths:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">lam</span><span class="p">,</span> <span class="n">Ej</span><span class="p">,</span> <span class="n">Ev</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">wavelength_nm</span><span class="p">,</span> <span class="n">E_J</span><span class="p">,</span> <span class="n">E_eV</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  λ = </span><span class="si">{</span><span class="n">lam</span><span class="si">:</span><span class="s2">&gt;3.0f</span><span class="si">}</span><span class="s2"> nm  -&gt;  E = </span><span class="si">{</span><span class="n">Ej</span><span class="si">:</span><span class="s2">8.3e</span><span class="si">}</span><span class="s2"> J  = </span><span class="si">{</span><span class="n">Ev</span><span class="si">:</span><span class="s2">7.3f</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Photon energy for visible wavelengths:
+  λ = 400 nm  -&gt;  E = 4.966e-19 J  =   3.100 eV
+  λ = 500 nm  -&gt;  E = 3.973e-19 J  =   2.480 eV
+  λ = 600 nm  -&gt;  E = 3.311e-19 J  =   2.066 eV
+  λ = 700 nm  -&gt;  E = 2.838e-19 J  =   1.771 eV
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="k-b-t">
+<h2>2) סקאלת אנרגיה תרמית <span class="math notranslate nohighlight">\(k_B T\)</span> ומתיחות תרמית במתח<a class="headerlink" href="#k-b-t" title="Link to this heading">#</a></h2>
+<p>במערכות פיזיקליות בטמפרטורה סופית, החלקיקים אינם נחים אלא נעים באנרגיות אקראיות הנובעות מחום. קנה־המידה הטבעי לאנרגיה תרמית הוא <span class="math notranslate nohighlight">\(k_B T\)</span>, כאשר <span class="math notranslate nohighlight">\(k_B\)</span> הוא קבוע בולצמן ו־<span class="math notranslate nohighlight">\(T\)</span> היא הטמפרטורה בקלווין. גודל זה מייצג את האנרגיה הממוצעת של תנודות תרמיות, ומשמש בהבנת תופעות כמו הולכה חשמלית, דיפוזיה ותהליכים סטטיסטיים.<br />
+באלקטרוניקה מקובל להמיר את האנרגיה התרמית למתח אופייני באמצעות <span class="math notranslate nohighlight">\(V_T = \tfrac{k_B T}{e}\)</span>, כאשר <span class="math notranslate nohighlight">\(e\)</span> הוא מטען האלקטרון. מתח זה מהווה קנה־מידה חשוב לקביעת התנהגות של דיודות, טרנזיסטורים ורכיבים מוליכים למחצה, ובטמפרטורת חדר ערכו קרוב ל־<span class="math notranslate nohighlight">\(25\ \mathrm{mV}\)</span>.</p>
+<p>בדוגמה זו חישבנו עבור מספר טמפרטורות אופייניות את <span class="math notranslate nohighlight">\(k_B T\)</span> — סדר־גודל האנרגיות החום־תרמיות במערכת. המרה ל־eV מקלה על ההשוואה לפיזיקה של אלקטרונים ומוליכים למחצה. בנוסף חישבנו את ה״מתח התרמי״ <span class="math notranslate nohighlight">\(V_T = \dfrac{k_B T}{e}\)</span>, קנה־מידה חשוב באלקטרוניקה (כ־<span class="math notranslate nohighlight">\(25\)</span>–<span class="math notranslate nohighlight">\(26\ \mathrm{mV}\)</span> בטמפרטורת חדר). שוב, הכל נעשה על מערך של <span class="math notranslate nohighlight">\(T\)</span>ים בבת אחת (וקטוריזציה).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2) Thermal energy scale: k_B T and thermal voltage (k_B T / e) at a few temperatures</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">77</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">1000</span><span class="p">])</span>                        <span class="c1"># K (LN2, room, hot, very hot)</span>
+<span class="n">kT_J</span> <span class="o">=</span> <span class="n">kB</span> <span class="o">*</span> <span class="n">T</span>
+<span class="n">kT_eV</span> <span class="o">=</span> <span class="n">kT_J</span> <span class="o">/</span> <span class="n">eV</span>
+<span class="n">thermal_voltage</span> <span class="o">=</span> <span class="n">kT_J</span> <span class="o">/</span> <span class="n">e</span>                                <span class="c1"># Volts</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Thermal scales (vectorized over T):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">Ti</span><span class="p">,</span> <span class="n">kTJ</span><span class="p">,</span> <span class="n">kTe</span><span class="p">,</span> <span class="n">Vt</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">kT_J</span><span class="p">,</span> <span class="n">kT_eV</span><span class="p">,</span> <span class="n">thermal_voltage</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  T = </span><span class="si">{</span><span class="n">Ti</span><span class="si">:</span><span class="s2">&gt;4.0f</span><span class="si">}</span><span class="s2"> K  -&gt;  k_B T = </span><span class="si">{</span><span class="n">kTJ</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> J = </span><span class="si">{</span><span class="n">kTe</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> eV,  k_B T / e = </span><span class="si">{</span><span class="n">Vt</span><span class="o">*</span><span class="mf">1e3</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thermal scales (vectorized over T):
+  T =   77 K  -&gt;  k_B T = 1.063e-21 J = 0.0066 eV,  k_B T / e = 6.64 mV
+  T =  300 K  -&gt;  k_B T = 4.142e-21 J = 0.0259 eV,  k_B T / e = 25.85 mV
+  T =  600 K  -&gt;  k_B T = 8.284e-21 J = 0.0517 eV,  k_B T / e = 51.70 mV
+  T = 1000 K  -&gt;  k_B T = 1.381e-20 J = 0.0862 eV,  k_B T / e = 86.17 mV
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="broadcasting">
+<h2>3) דוגמת Broadcasting: אנרגיה פוטנציאלית כבידתית<a class="headerlink" href="#broadcasting" title="Link to this heading">#</a></h2>
+<p>במערכת מכנית פשוטה, אנרגיה פוטנציאלית נגרמת מכוח הכבידה הפועל על מסה <span class="math notranslate nohighlight">\(m\)</span> בגובה <span class="math notranslate nohighlight">\(h\)</span> מעל נקודת ייחוס: <span class="math notranslate nohighlight">\(U = m g h\)</span>, כאשר <span class="math notranslate nohighlight">\(g\)</span> הוא תאוצת הכובד (כ־<span class="math notranslate nohighlight">\(9.8\ \mathrm{m/s^2}\)</span> על פני כדור הארץ). קשר זה חשוב להבנת תהליכים יומיומיים כמו נפילת עצמים, עבודה מכנית והמרת אנרגיה במערכות פיזיקליות. במודלים מתקדמים יותר, עקרון זה מהווה בסיס לחישוב שדות כבידה ולחוקי שימור אנרגיה.</p>
+<p>רצינו את האנרגיה <span class="math notranslate nohighlight">\(U = m g h\)</span> לכל צירוף של כמה מסות וכמה גבהים. שימוש ב־<strong>Broadcasting</strong> מאפשר לחשב מטריצה <span class="math notranslate nohighlight">\(U\)</span> במכה אחת: ממד המסות כעמודות והגבהים כשורות (או להפך) באמצעות הוספת מימד חדש (<code class="docutils literal notranslate"><span class="pre">masses[:,</span> <span class="pre">None]</span></code> ו־<code class="docutils literal notranslate"><span class="pre">heights[None,</span> <span class="pre">:]</span></code>). זו פרקטיקה חשובה לעבודה יעילה עם טבלאות/סריגים בלי לולאות.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3) Broadcasting example: Gravitational potential energy U = m * g0 * h</span>
+<span class="c1">#    masses shape (3,), heights shape (4,) -&gt; U shape (3,4) via broadcasting</span>
+<span class="n">masses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">])</span>                        <span class="c1"># kg</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">])</span>                 <span class="c1"># m</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">masses</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">g0</span> <span class="o">*</span> <span class="n">heights</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>               <span class="c1"># J, shape (3,4)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Gravitational potential energy matrix U[mass, height] = m * g0 * h (J):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gravitational potential energy matrix U[mass, height] = m * g0 * h (J):
+[[  0.980665   1.96133    3.92266   19.6133  ]
+ [  4.903325   9.80665   19.6133    98.0665  ]
+ [ 24.516625  49.03325   98.0665   490.3325  ]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>4) חוק וין: אורך גל שיא של גוף שחור<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>בפיזיקה של תרמודינמיקה וקרינה, <strong>גוף שחור</strong> הוא מודל אידיאלי שקולט את כל הקרינה הפוגעת בו ופולט קרינה אלקטרומגנטית בהתאם לטמפרטורתו בלבד. ספקטרום הפליטה מתואר על־ידי חוק פלאנק, אך מיקום השיא בספקטרום נקבע על־פי <strong>חוק וין להזחת השיא</strong>:<br />
+<span class="math notranslate nohighlight">\(\lambda_{\max} = \dfrac{b}{T}\)</span>,<br />
+כאשר <span class="math notranslate nohighlight">\(b\)</span> הוא קבוע וין ו־<span class="math notranslate nohighlight">\(T\)</span> היא הטמפרטורה בקלווין. החוק מראה שככל שהטמפרטורה גבוהה יותר, אורך הגל של השיא קטן יותר — ולכן עצמים חמים פולטים קרינה בתחומי אור קצרים (כחול/על־סגול), בעוד שעצמים קרים יותר פולטים בעיקר באורכי גל ארוכים (אינפרה־אדום). עיקרון זה מסביר את צבעי הכוכבים ואת שיטות למדידת טמפרטורה באמצעות קרינה.</p>
+<p>חוק וין קובע <span class="math notranslate nohighlight">\(\lambda_{\max} = \dfrac{b}{T}\)</span> עם קבוע <span class="math notranslate nohighlight">\(b\)</span> שנשלף מ־<code class="docutils literal notranslate"><span class="pre">physical_constants</span></code>. חישבנו את <span class="math notranslate nohighlight">\(\lambda_{\max}\)</span> עבור כמה טמפרטורות (חדר, נורת להט, שמש) והמרנו לננומטר לקבלת תחושת סדרי גודל. הדוגמה מראה כיצד לשלב קבועים סטנדרטיים עם חישובים וקטוריים — ובמקביל לחזק אינטואיציה: ככל שהטמפרטורה גבוהה יותר, שיא הקרינה מוסת לכיוון אורכי גל קצרים יותר.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4) Blackbody peak wavelength via Wien&#39;s law: λ_max = b / T (vectorized)</span>
+<span class="n">T_bb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">300</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">5800</span><span class="p">])</span>                  <span class="c1"># K (room, hot, incandescent-ish, Sun ~5800 K)</span>
+<span class="n">lambda_max_m</span> <span class="o">=</span> <span class="n">b_wien</span> <span class="o">/</span> <span class="n">T_bb</span>
+<span class="n">lambda_max_nm</span> <span class="o">=</span> <span class="n">lambda_max_m</span> <span class="o">*</span> <span class="mf">1e9</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Blackbody peak wavelength (Wien&#39;s law):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">Ti</span><span class="p">,</span> <span class="n">lam_m</span><span class="p">,</span> <span class="n">lam_nm</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">T_bb</span><span class="p">,</span> <span class="n">lambda_max_m</span><span class="p">,</span> <span class="n">lambda_max_nm</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  T = </span><span class="si">{</span><span class="n">Ti</span><span class="si">:</span><span class="s2">&gt;4.0f</span><span class="si">}</span><span class="s2"> K  -&gt;  λ_max ≈ </span><span class="si">{</span><span class="n">lam_m</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> m  (~</span><span class="si">{</span><span class="n">lam_nm</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> nm)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Blackbody peak wavelength (Wien&#39;s law):
+  T =  300 K  -&gt;  λ_max ≈ 9.659e-06 m  (~9659 nm)
+  T = 1000 K  -&gt;  λ_max ≈ 2.898e-06 m  (~2898 nm)
+  T = 3000 K  -&gt;  λ_max ≈ 9.659e-07 m  (~966 nm)
+  T = 5800 K  -&gt;  λ_max ≈ 4.996e-07 m  (~500 nm)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>5) הקדמה קצרה: מהירות האור וקבועי היסוד באלקטרומגנטיות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>באלקטרודינמיקה קלאסית (EMT), מהירות התפשטות של גלי אלקטרומגנטיים בוואקום אינה רק גודל ניסיוני אלא נובעת ישירות מקבועי היסוד:<br />
+<span class="math notranslate nohighlight">\(c = \dfrac{1}{\sqrt{\varepsilon_0 \mu_0}}\)</span>,<br />
+כאשר <span class="math notranslate nohighlight">\(\varepsilon_0\)</span> הוא המקדם הדיאלקטרי של הריק (permitivity) ו־<span class="math notranslate nohighlight">\(\mu_0\)</span> הוא המקדם המגנטי של הריק (permeability). קשר זה מדגים כיצד תכונות הוואקום מכתיבות את מהירות האור, ומהווה דוגמה מרתקת לאחדות של חשמל, מגנטיות וקרינה. מעבר לערך עצמו, בדיקה כזו חשובה לאימות עקביות יחידות וחישובים כשעובדים עם קבועים מספריים ממקורות שונים.</p>
+<p>ב־EMT ידוע שבוואקום <span class="math notranslate nohighlight">\(c = \dfrac{1}{\sqrt{\varepsilon_0 \mu_0}}\)</span>. בדוגמה חישבנו את הצד הימני מקבועים פיזיקליים והשווינו למהירות האור <code class="docutils literal notranslate"><span class="pre">constants.c</span></code>. חישוב <strong>שגיאה יחסית</strong> קטן מאשש עקביות יחידות וערכים, ומהווה בדיקת־שפיות שימושית כשעובדים עם קבועים ממקורות שונים.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5) Quick sanity check: c ≈ 1/sqrt(ε0 * μ0)</span>
+<span class="n">c_from_eps_mu</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">epsilon0</span> <span class="o">*</span> <span class="n">mu0</span><span class="p">)</span>
+<span class="n">rel_err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">c_from_eps_mu</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="n">c</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Sanity check: c vs 1/sqrt(ε0 μ0)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  c_from_eps_mu = </span><span class="si">{</span><span class="n">c_from_eps_mu</span><span class="si">:</span><span class="s2">.6e</span><span class="si">}</span><span class="s2"> m/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  relative error = </span><span class="si">{</span><span class="n">rel_err</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sanity check: c vs 1/sqrt(ε0 μ0)
+  c_from_eps_mu = 2.997925e+08 m/s
+  relative error = 5.967e-13
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">quiz_json</span> <span class="o">=</span> \
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="w"> </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="sd"> [{</span>
+<span class="sd">   (...)     31 }]</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span><span class="sd"> &#39;&#39;&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">quiz_json</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jupyterquiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./course/weeks/week_10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1) חישוב אנרגיית פוטון מאורך גל</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-b-t">2) סקאלת אנרגיה תרמית <span class="math notranslate nohighlight">\(k_B T\)</span> ומתיחות תרמית במתח</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">3) דוגמת Broadcasting: אנרגיה פוטנציאלית כבידתית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4) חוק וין: אורך גל שיא של גוף שחור</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5) הקדמה קצרה: מהירות האור וקבועי היסוד באלקטרומגנטיות</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

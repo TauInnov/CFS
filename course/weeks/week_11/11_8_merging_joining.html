@@ -1,0 +1,1186 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>מיזוג וחיבור טבלאות (Merging &amp; Joining) &#8212; Computers For physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_8_merging_joining';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
+    <script>document.write(`<img src="../../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/course/weeks/week_11/11_8_merging_joining.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/course/weeks/week_11/11_8_merging_joining.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_11/11_8_merging_joining.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/course/weeks/week_11/11_8_merging_joining.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>מיזוג וחיבור טבלאות (Merging & Joining)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-types">סוגי מיזוגים (merge types)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suffixes">בחירת מפתחות ו־suffixes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-pitfalls">מלכודות נפוצות (Join Pitfalls)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">תרגילים: Merging &amp; Joining בנתונים פיסיקליים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">תרגיל 1: מיזוג נתוני מדידות עם מידע מטא־דאטה של ניסויים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#margin">תרגיל 2: הוספת טבלת חיישנים וחישוב מרווח בטיחות (Margin)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">תרגיל 3: זיהוי ותיקון מפתחות כפולים לפני מיזוג</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#row-count-assertions">תרגיל 4: אימות ספירת שורות (Row Count Assertions)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="merging-joining">
+<h1>מיזוג וחיבור טבלאות (Merging &amp; Joining)<a class="headerlink" href="#merging-joining" title="Link to this heading">#</a></h1>
+<p>בעת ניתוח נתונים ניסיוניים, לעיתים המידע מפוצל בין כמה טבלאות:<br />
+טבלת <strong>מדידות</strong> (למשל קריאות מתח/זרם), טבלת <strong>מטא־דאטה של ניסויים</strong> (תאריך, קונפיגורציה), וטבלת <strong>חיישנים/חומרים</strong> (כיול, חומר הדגימה).<br />
+כדי לקבל תמונה מלאה, נבצע מיזוגים (join/merge) לפי מפתחות משותפים.</p>
+<section id="merge-types">
+<h2>סוגי מיזוגים (merge types)<a class="headerlink" href="#merge-types" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>inner</strong> — מחזיר רק רשומות עם התאמה בשתי הטבלאות.</p></li>
+<li><p><strong>left</strong> — שומר את כל שורות הטבלה השמאלית, ומשלים נתונים מהימנית אם נמצאה התאמה.</p></li>
+<li><p><strong>right</strong> — אנלוגי ל־left, אך שומר את כל הימנית.</p></li>
+<li><p><strong>outer</strong> — איחוד מלא: כל השורות משתי הטבלאות, עם NaN כאשר אין התאמה.</p></li>
+</ul>
+</section>
+<section id="suffixes">
+<h2>בחירת מפתחות ו־suffixes<a class="headerlink" href="#suffixes" title="Link to this heading">#</a></h2>
+<p>בעת מיזוג, נגדיר את שם/שמות העמודות לשיוך דרך <code class="docutils literal notranslate"><span class="pre">on=</span></code> או <code class="docutils literal notranslate"><span class="pre">left_on</span></code>/<code class="docutils literal notranslate"><span class="pre">right_on</span></code>.<br />
+כאשר יש שמות עמודות חופפים שאינם מפתחות, נשתמש ב־<code class="docutils literal notranslate"><span class="pre">suffixes=(&quot;_meas&quot;,</span> <span class="pre">&quot;_meta&quot;)</span></code> כדי להבדיל בין המקורות.</p>
+</section>
+<section id="join-pitfalls">
+<h2>מלכודות נפוצות (Join Pitfalls)<a class="headerlink" href="#join-pitfalls" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>מפתחות כפולים → התפוצצות שורות</strong>: אם לטבלה אחת יש כמה שורות עם אותו מפתח, ולטבלה השנייה גם — המיזוג יוצר קרוס־מכפלות.</p></li>
+<li><p><strong>ולידציה של יחסי צימוד</strong>: אפשר (וכדאי) להשתמש ב־<code class="docutils literal notranslate"><span class="pre">validate=</span></code> כדי לאכוף יחס קישור צפוי:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'m:1'</span></code> — רבים־לאחד (למשל כמה מדידות לאותו ניסוי).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'1:1'</span></code> — אחד־לאחד (מזהה ייחודי בשתי הטבלאות).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'1:m'</span></code> — אחד־לרבים, וכדומה.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h2>תרגילים: Merging &amp; Joining בנתונים פיסיקליים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>נבצע מיזוג בין <strong>מדידות</strong> לבין <strong>מטא־דאטה של ניסוי</strong> (left join),<br />
+נוסיף טבלת <strong>חיישנים</strong> לחישוב <strong>מרווח בטיחות (margin)</strong> מול סף כיול,<br />
+נשתמש ב־<code class="docutils literal notranslate"><span class="pre">validate='m:1'</span></code> כדי לוודא תקינות, ונזהה/נתקן כפילויות מפתחות לפני המיזוג.</p>
+<section id="id2">
+<h3>תרגיל 1: מיזוג נתוני מדידות עם מידע מטא־דאטה של ניסויים<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>בתרגיל זה נלמד כיצד לבצע <strong>מיזוג (Join)</strong> בין שתי טבלאות — אחת המכילה <strong>נתוני מדידות חשמליות</strong>, והשנייה המכילה <strong>מידע כללי על הניסויים</strong> (מטא־דאטה).<br />
+התרגיל מדגים מקרה קלאסי בניתוח נתונים פיזיקליים, שבו נרצה לשלב את תוצאות הניסוי עם פרטי התנאים שבהם בוצע.</p>
+<p>שלבי העבודה:</p>
+<ol class="arabic simple">
+<li><p><strong>יצירת טבלת מדידות (<code class="docutils literal notranslate"><span class="pre">measurements</span></code>)</strong><br />
+כל שורה מייצגת מדידה אחת, הכוללת מזהה מדידה (<code class="docutils literal notranslate"><span class="pre">measurement_id</span></code>), מזהה ניסוי (<code class="docutils literal notranslate"><span class="pre">experiment_id</span></code>), מדידות של <strong>מתח</strong> ו־<strong>זרם</strong>, וזמן המדידה (<code class="docutils literal notranslate"><span class="pre">timestamp</span></code>).<br />
+נשים לב כי לכל ניסוי עשויות להיות מספר מדידות — כלומר מדובר ביחס <strong>רבים־לאחד</strong> (m:1).</p></li>
+<li><p><strong>יצירת טבלת מטא־דאטה (<code class="docutils literal notranslate"><span class="pre">experiments</span></code>)</strong><br />
+כאן יש שורה אחת לכל ניסוי, עם מידע כללי: תצורת הניסוי (<code class="docutils literal notranslate"><span class="pre">config</span></code>), שם המפעיל (<code class="docutils literal notranslate"><span class="pre">operator</span></code>), וטמפרטורת החדר בזמן הניסוי (<code class="docutils literal notranslate"><span class="pre">room_temp_C</span></code>).</p></li>
+<li><p><strong>ביצוע מיזוג (Left Join)</strong><br />
+נשתמש בפונקציה <code class="docutils literal notranslate"><span class="pre">merge()</span></code> של Pandas עם הפרמטרים:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">on=&quot;experiment_id&quot;</span></code> — כדי למזג לפי מזהה הניסוי המשותף לשתי הטבלאות.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">how=&quot;left&quot;</span></code> — כדי לשמור את כל המדידות גם אם אין להן התאמה במטא־דאטה.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">validate=&quot;m:1&quot;</span></code> — כדי לוודא שכל ניסוי מופיע בדיוק פעם אחת בצד המטא־דאטה, וכך למנוע כפילויות.</p></li>
+</ul>
+</li>
+<li><p><strong>תוצאה</strong><br />
+נקבל טבלה מאוחדת שבה לכל מדידה נוספו הנתונים המתאימים על הניסוי שממנו נלקחה — מה שמאפשר לנתח את התוצאות תוך התחשבות בתנאים הפיזיקליים.</p></li>
+</ol>
+<p>תרגיל זה מהווה שלב חשוב בכל ניתוח ניסויי: שילוב מדידות גולמיות עם נתוני רקע מאפשר להבין כיצד תנאים שונים משפיעים על התוצאות.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Exercise 1: Left join of measurements with experiment metadata ---</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Measurements table: multiple measurements per experiment_id</span>
+<span class="n">measurements</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;measurement_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">105</span><span class="p">],</span>
+    <span class="s2">&quot;experiment_id&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;EXP1&quot;</span><span class="p">,</span> <span class="s2">&quot;EXP1&quot;</span><span class="p">,</span> <span class="s2">&quot;EXP2&quot;</span><span class="p">,</span> <span class="s2">&quot;EXP3&quot;</span><span class="p">,</span> <span class="s2">&quot;EXP3&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;voltage&quot;</span><span class="p">:</span>        <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span>   <span class="mf">4.8</span><span class="p">,</span>   <span class="mf">12.0</span><span class="p">,</span>  <span class="mf">3.2</span><span class="p">,</span>   <span class="mf">3.3</span><span class="p">],</span>
+    <span class="s2">&quot;current&quot;</span><span class="p">:</span>        <span class="p">[</span><span class="mf">0.20</span><span class="p">,</span>  <span class="mf">0.18</span><span class="p">,</span>  <span class="mf">0.55</span><span class="p">,</span>  <span class="mf">0.10</span><span class="p">,</span>  <span class="mf">0.11</span><span class="p">],</span>  <span class="c1"># Amperes</span>
+    <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span>
+        <span class="s2">&quot;2025-01-03 10:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2025-01-03 10:05&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;2025-01-05 14:20&quot;</span><span class="p">,</span> <span class="s2">&quot;2025-01-06 09:10&quot;</span><span class="p">,</span> <span class="s2">&quot;2025-01-06 09:12&quot;</span>
+    <span class="p">])</span>
+<span class="p">})</span>
+
+<span class="c1"># Experiment metadata: one row per experiment_id (intended)</span>
+<span class="n">experiments</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;experiment_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;EXP1&quot;</span><span class="p">,</span> <span class="s2">&quot;EXP2&quot;</span><span class="p">,</span> <span class="s2">&quot;EXP3&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;config&quot;</span><span class="p">:</span>        <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span>    <span class="s2">&quot;B&quot;</span><span class="p">,</span>    <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;operator&quot;</span><span class="p">:</span>      <span class="p">[</span><span class="s2">&quot;Dana&quot;</span><span class="p">,</span> <span class="s2">&quot;Noam&quot;</span><span class="p">,</span> <span class="s2">&quot;Rivka&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;room_temp_C&quot;</span><span class="p">:</span>   <span class="p">[</span><span class="mf">22.3</span><span class="p">,</span>   <span class="mf">21.7</span><span class="p">,</span>   <span class="mf">23.1</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Left join: keep all measurements, add metadata where available</span>
+<span class="n">merged_1</span> <span class="o">=</span> <span class="n">measurements</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">experiments</span><span class="p">,</span>
+    <span class="n">on</span><span class="o">=</span><span class="s2">&quot;experiment_id&quot;</span><span class="p">,</span>
+    <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">validate</span><span class="o">=</span><span class="s2">&quot;m:1&quot;</span>  <span class="c1"># many measurements to one experiment metadata</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Merged measurements with experiment metadata (left join):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">merged_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merged measurements with experiment metadata (left join):
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement_id</th>
+      <th>experiment_id</th>
+      <th>voltage</th>
+      <th>current</th>
+      <th>timestamp</th>
+      <th>config</th>
+      <th>operator</th>
+      <th>room_temp_C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101</td>
+      <td>EXP1</td>
+      <td>5.0</td>
+      <td>0.20</td>
+      <td>2025-01-03 10:00:00</td>
+      <td>A</td>
+      <td>Dana</td>
+      <td>22.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>102</td>
+      <td>EXP1</td>
+      <td>4.8</td>
+      <td>0.18</td>
+      <td>2025-01-03 10:05:00</td>
+      <td>A</td>
+      <td>Dana</td>
+      <td>22.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>103</td>
+      <td>EXP2</td>
+      <td>12.0</td>
+      <td>0.55</td>
+      <td>2025-01-05 14:20:00</td>
+      <td>B</td>
+      <td>Noam</td>
+      <td>21.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>104</td>
+      <td>EXP3</td>
+      <td>3.2</td>
+      <td>0.10</td>
+      <td>2025-01-06 09:10:00</td>
+      <td>C</td>
+      <td>Rivka</td>
+      <td>23.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>105</td>
+      <td>EXP3</td>
+      <td>3.3</td>
+      <td>0.11</td>
+      <td>2025-01-06 09:12:00</td>
+      <td>C</td>
+      <td>Rivka</td>
+      <td>23.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="margin">
+<h3>תרגיל 2: הוספת טבלת חיישנים וחישוב מרווח בטיחות (Margin)<a class="headerlink" href="#margin" title="Link to this heading">#</a></h3>
+<p>נוסיף טבלת <strong>חיישנים</strong> הכוללת סף ייחוס (threshold) להספק.<br />
+נחשב הספק לכל מדידה ( P = V \cdot I ) ונגדיר <strong>מרווח בטיחות</strong> כ־<code class="docutils literal notranslate"><span class="pre">margin</span> <span class="pre">=</span> <span class="pre">P</span> <span class="pre">-</span> <span class="pre">threshold</span></code>.<br />
+נשתמש ב־<code class="docutils literal notranslate"><span class="pre">suffixes</span></code> כדי להבדיל בין עמודות חופפות, ונאכוף יחס <code class="docutils literal notranslate"><span class="pre">'m:1'</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Exercise 2: Add sensors and compute power margins; validate &#39;m:1&#39; ---</span>
+<span class="c1"># Sensors table: one row per config (intended), with a calibration threshold for power (Watts)</span>
+<span class="n">sensors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;config&quot;</span><span class="p">:</span>    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span>  <span class="s2">&quot;B&quot;</span><span class="p">,</span>  <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.90</span><span class="p">,</span> <span class="mf">6.00</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">]</span>   <span class="c1"># Power threshold per configuration (W)</span>
+<span class="p">})</span>
+
+<span class="c1"># Merge previous result with sensors by &#39;config&#39;</span>
+<span class="n">merged_2</span> <span class="o">=</span> <span class="n">merged_1</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">sensors</span><span class="p">,</span>
+    <span class="n">on</span><span class="o">=</span><span class="s2">&quot;config&quot;</span><span class="p">,</span>
+    <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">validate</span><span class="o">=</span><span class="s2">&quot;m:1&quot;</span><span class="p">,</span>              <span class="c1"># many measurements per single config row</span>
+    <span class="n">suffixes</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;_sensor&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Compute power and margin</span>
+<span class="n">merged_2</span><span class="p">[</span><span class="s2">&quot;power_W&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged_2</span><span class="p">[</span><span class="s2">&quot;voltage&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">merged_2</span><span class="p">[</span><span class="s2">&quot;current&quot;</span><span class="p">]</span>
+<span class="n">merged_2</span><span class="p">[</span><span class="s2">&quot;margin_W&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged_2</span><span class="p">[</span><span class="s2">&quot;power_W&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged_2</span><span class="p">[</span><span class="s2">&quot;threshold&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Merged with sensors and computed margins:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">merged_2</span><span class="p">[[</span>
+    <span class="s2">&quot;measurement_id&quot;</span><span class="p">,</span> <span class="s2">&quot;experiment_id&quot;</span><span class="p">,</span> <span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="s2">&quot;voltage&quot;</span><span class="p">,</span> <span class="s2">&quot;current&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;power_W&quot;</span><span class="p">,</span> <span class="s2">&quot;threshold&quot;</span><span class="p">,</span> <span class="s2">&quot;margin_W&quot;</span>
+<span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merged with sensors and computed margins:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement_id</th>
+      <th>experiment_id</th>
+      <th>config</th>
+      <th>voltage</th>
+      <th>current</th>
+      <th>power_W</th>
+      <th>threshold</th>
+      <th>margin_W</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101</td>
+      <td>EXP1</td>
+      <td>A</td>
+      <td>5.0</td>
+      <td>0.20</td>
+      <td>1.000</td>
+      <td>0.9</td>
+      <td>0.100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>102</td>
+      <td>EXP1</td>
+      <td>A</td>
+      <td>4.8</td>
+      <td>0.18</td>
+      <td>0.864</td>
+      <td>0.9</td>
+      <td>-0.036</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>103</td>
+      <td>EXP2</td>
+      <td>B</td>
+      <td>12.0</td>
+      <td>0.55</td>
+      <td>6.600</td>
+      <td>6.0</td>
+      <td>0.600</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>104</td>
+      <td>EXP3</td>
+      <td>C</td>
+      <td>3.2</td>
+      <td>0.10</td>
+      <td>0.320</td>
+      <td>0.4</td>
+      <td>-0.080</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>105</td>
+      <td>EXP3</td>
+      <td>C</td>
+      <td>3.3</td>
+      <td>0.11</td>
+      <td>0.363</td>
+      <td>0.4</td>
+      <td>-0.037</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id3">
+<h3>תרגיל 3: זיהוי ותיקון מפתחות כפולים לפני מיזוג<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>לעיתים בטבלאות המטא־דאטה או החיישנים מופיעות <strong>כפילויות מפתח</strong> (למשל כמה שורות עם אותו <code class="docutils literal notranslate"><span class="pre">config</span></code>).<br />
+אם נמזג כך, נקבל <strong>התפוצצות שורות</strong>.<br />
+נזהה כפילויות, נתקן (למשל איגום/סינון) ואז נבצע מיזוג בטוח.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Exercise 3: Identify and fix duplicate keys before merging ---</span>
+<span class="c1"># Introduce a duplicate on purpose: sensors_dup has two rows for config &#39;B&#39;</span>
+<span class="n">sensors_dup</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;config&quot;</span><span class="p">:</span>    <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span>  <span class="s2">&quot;B&quot;</span><span class="p">,</span>  <span class="s2">&quot;B&quot;</span><span class="p">,</span>  <span class="s2">&quot;C&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.90</span><span class="p">,</span> <span class="mf">6.00</span><span class="p">,</span> <span class="mf">6.10</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># 1) Detect duplicate keys</span>
+<span class="n">dups</span> <span class="o">=</span> <span class="n">sensors_dup</span><span class="p">[</span><span class="s2">&quot;config&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Duplicate keys in sensors_dup:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sensors_dup</span><span class="p">[</span><span class="n">dups</span><span class="p">])</span>
+
+<span class="c1"># 2) Fix duplicates by aggregating to a single threshold per config (e.g., take mean or max)</span>
+<span class="c1">#    Here we choose the stricter threshold by taking the max.</span>
+<span class="n">sensors_fixed</span> <span class="o">=</span> <span class="p">(</span><span class="n">sensors_dup</span>
+                 <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                 <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="s2">&quot;max&quot;</span><span class="p">}))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sensors after fixing duplicates (aggregated by max threshold):&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sensors_fixed</span><span class="p">)</span>
+
+<span class="c1"># 3) Safe merge with validation (now each config is unique)</span>
+<span class="n">merged_safe</span> <span class="o">=</span> <span class="n">merged_1</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+    <span class="n">sensors_fixed</span><span class="p">,</span>
+    <span class="n">on</span><span class="o">=</span><span class="s2">&quot;config&quot;</span><span class="p">,</span>
+    <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="n">validate</span><span class="o">=</span><span class="s2">&quot;m:1&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Compute power &amp; margin again using fixed thresholds</span>
+<span class="n">merged_safe</span><span class="p">[</span><span class="s2">&quot;power_W&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged_safe</span><span class="p">[</span><span class="s2">&quot;voltage&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">merged_safe</span><span class="p">[</span><span class="s2">&quot;current&quot;</span><span class="p">]</span>
+<span class="n">merged_safe</span><span class="p">[</span><span class="s2">&quot;margin_W&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged_safe</span><span class="p">[</span><span class="s2">&quot;power_W&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">merged_safe</span><span class="p">[</span><span class="s2">&quot;threshold&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Merged safely after fixing duplicates:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">merged_safe</span><span class="p">[[</span>
+    <span class="s2">&quot;measurement_id&quot;</span><span class="p">,</span> <span class="s2">&quot;experiment_id&quot;</span><span class="p">,</span> <span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="s2">&quot;power_W&quot;</span><span class="p">,</span> <span class="s2">&quot;threshold&quot;</span><span class="p">,</span> <span class="s2">&quot;margin_W&quot;</span>
+<span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Duplicate keys in sensors_dup:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>config</th>
+      <th>threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B</td>
+      <td>6.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sensors after fixing duplicates (aggregated by max threshold):
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>config</th>
+      <th>threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>0.9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>6.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C</td>
+      <td>0.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merged safely after fixing duplicates:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement_id</th>
+      <th>experiment_id</th>
+      <th>config</th>
+      <th>power_W</th>
+      <th>threshold</th>
+      <th>margin_W</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101</td>
+      <td>EXP1</td>
+      <td>A</td>
+      <td>1.000</td>
+      <td>0.9</td>
+      <td>0.100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>102</td>
+      <td>EXP1</td>
+      <td>A</td>
+      <td>0.864</td>
+      <td>0.9</td>
+      <td>-0.036</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>103</td>
+      <td>EXP2</td>
+      <td>B</td>
+      <td>6.600</td>
+      <td>6.1</td>
+      <td>0.500</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>104</td>
+      <td>EXP3</td>
+      <td>C</td>
+      <td>0.320</td>
+      <td>0.4</td>
+      <td>-0.080</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>105</td>
+      <td>EXP3</td>
+      <td>C</td>
+      <td>0.363</td>
+      <td>0.4</td>
+      <td>-0.037</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="row-count-assertions">
+<h3>תרגיל 4: אימות ספירת שורות (Row Count Assertions)<a class="headerlink" href="#row-count-assertions" title="Link to this heading">#</a></h3>
+<p>לאחר מיזוגים, חשוב לוודא שספירת השורות תואמת לציפיות.<br />
+לדוגמה, במיזוג <strong>רבים־לאחד</strong> (m:1) לא אמורה להיות <strong>עלייה</strong> במספר השורות.<br />
+נבצע בדיקות פשוטות: התאמת מספר השורות לפני ואחרי המיזוג, ושימוש בפרמטר <code class="docutils literal notranslate"><span class="pre">validate</span></code> כקו הגנה ראשון.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Exercise 4: Assert row counts and use validate as guardrail ---</span>
+<span class="n">left_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">merged_1</span><span class="p">)</span>     <span class="c1"># after first left-join (measurements + experiments)</span>
+<span class="n">safe_rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">merged_safe</span><span class="p">)</span>  <span class="c1"># after merging fixed sensors</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Row count after experiments merge: </span><span class="si">{</span><span class="n">left_rows</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Row count after sensors merge (fixed): </span><span class="si">{</span><span class="n">safe_rows</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">safe_rows</span> <span class="o">!=</span> <span class="n">left_rows</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;Row count changed unexpectedly after an m:1 merge!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Row count preserved. Validation and duplicate handling succeeded.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Row count after experiments merge: 5
+Row count after sensors merge (fixed): 5
+✅ Row count preserved. Validation and duplicate handling succeeded.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">סיכום</p>
+<p>בפרק זה למדנו כיצד לבצע <strong>מיזוגים (Merging &amp; Joining)</strong> בצורה נכונה ובטוחה בניתוח נתונים ניסיוניים:</p>
+<ul class="simple">
+<li><p>היכרנו את סוגי המיזוגים העיקריים (<code class="docutils literal notranslate"><span class="pre">inner</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code>, <code class="docutils literal notranslate"><span class="pre">outer</span></code>) ואת השימוש הנפוץ שלהם במצבי <strong>איחוד נתוני מדידות, מטא־דאטה וחיישנים</strong>.</p></li>
+<li><p>הבנו כיצד לבחור <strong>מפתחות (keys)</strong> למיזוג, להשתמש ב־<code class="docutils literal notranslate"><span class="pre">suffixes</span></code> כדי להבדיל בין עמודות זהות, ולוודא <strong>יחסי צימוד תקינים</strong> בעזרת הפרמטר <code class="docutils literal notranslate"><span class="pre">validate</span></code> (כגון <code class="docutils literal notranslate"><span class="pre">'m:1'</span></code> או <code class="docutils literal notranslate"><span class="pre">'1:1'</span></code>).</p></li>
+<li><p>ראינו כיצד מפתחות כפולים עלולים לגרום ל־<strong>התפוצצות שורות (row explosion)</strong>, וכיצד לזהות ולתקן כפילויות לפני מיזוג — למשל באמצעות איגום (<code class="docutils literal notranslate"><span class="pre">groupby</span></code>) או סינון.</p></li>
+<li><p>למדנו לחשב ערכים חדשים לאחר המיזוג, כמו <strong>מרווח בטיחות (margin)</strong> בין ההספק הנמדד לסף הכיול, ולהשתמש ב־assertions לאימות תקינות הנתונים.</p></li>
+</ul>
+<p>באמצעות כלים אלו ניתן לבנות מערכי נתונים מאוחדים ומדויקים —<br />
+שמהם ניתן להמשיך לנתח, לחשב אנרגיות כוללות, לבצע השוואות בין ניסויים שונים,<br />
+ולבסוף להבטיח שהתובנות מבוססות על נתונים נקיים, עקביים ומהימנים.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">quiz_json</span> <span class="o">=</span> \
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="w"> </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="sd"> [{</span>
+<span class="sd">   (...)     31 }]</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span><span class="sd"> &#39;&#39;&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">quiz_json</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jupyterquiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./course/weeks/week_11"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-types">סוגי מיזוגים (merge types)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suffixes">בחירת מפתחות ו־suffixes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-pitfalls">מלכודות נפוצות (Join Pitfalls)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">תרגילים: Merging &amp; Joining בנתונים פיסיקליים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">תרגיל 1: מיזוג נתוני מדידות עם מידע מטא־דאטה של ניסויים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#margin">תרגיל 2: הוספת טבלת חיישנים וחישוב מרווח בטיחות (Margin)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">תרגיל 3: זיהוי ותיקון מפתחות כפולים לפני מיזוג</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#row-count-assertions">תרגיל 4: אימות ספירת שורות (Row Count Assertions)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

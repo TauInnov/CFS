@@ -1,0 +1,856 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>אופטימיזציה, שורשים, והתאמת עקומות &#8212; Computers For physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_3_optimization';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
+    <script>document.write(`<img src="../../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/course/weeks/week_10/10_3_optimization.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/course/weeks/week_10/10_3_optimization.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_10/10_3_optimization.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/course/weeks/week_10/10_3_optimization.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>אופטימיזציה, שורשים, והתאמת עקומות</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">דוגמה: זריקה אנכית למעלה עם רעש מדידה</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-curve-fit">התאמת עקומה והערכת אי־ודאות (<code class="docutils literal notranslate"><span class="pre">optimize.curve_fit</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-root-scalar">מציאת שורש: זמן הפגיעה בקרקע (<code class="docutils literal notranslate"><span class="pre">optimize.root_scalar</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-minimize-scalar">חיפוש מינימום חד־ממדי: זמן הגובה המירבי (<code class="docutils literal notranslate"><span class="pre">optimize.minimize_scalar</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-minimize">מינימיזציה רב־ממדית: כי־בריבוע ידני (<code class="docutils literal notranslate"><span class="pre">optimize.minimize</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">תרגום אי־ודאות לזמן הפגיעה</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">סיכום</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="id1">
+<h1>אופטימיזציה, שורשים, והתאמת עקומות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>פרק הזה מרכז שלושה כלים בסיסיים לניתוח נומרי בפיזיקה ובנתונים: מציאת <strong>שורשים</strong> של פונקציה, חיפוש <strong>מינימום</strong> של פונקציה, ו<strong>התאמת עקומות</strong> לנתוני ניסוי. שלושת הבעיות קרובות זו לזו: לעיתים נוח להמיר חיפוש מינימום למציאת שורש של הנגזרת, ובהתאמה ניסיונית אנחנו ממזערים את סכום השאריות בין המודל לנתונים. נשתמש ב־<code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> כדי לבצע את המשימות הללו בצורה מדויקת ופשוטה, תוך שליטה בגבולות, ניחושי התחלה ואבחון התכנסות.</p>
+<p>בעבודת התאמה חשוב להבין לא רק את הערכים המיטביים של הפרמטרים, אלא גם את <strong>אי־הוודאות</strong> שלהם. <code class="docutils literal notranslate"><span class="pre">optimize.curve_fit</span></code> מחזירה מטריצת covariance שממנה נגזרות שגיאות <span class="math notranslate nohighlight">\(1\sigma\)</span> (שורשי האלכסון), בהנחה של רעש גאוסי וְשקילה נכונה של הנתונים. לפני שנעבור למקרים לא־ליניאריים, נתחיל בדוגמה ישירה לפונקציה ליניארית <span class="math notranslate nohighlight">\(y = ax + b\)</span>, נבצע התאמה, ונראה כיצד מפיקים שגיאות עבור <span class="math notranslate nohighlight">\(a\)</span> ו־<span class="math notranslate nohighlight">\(b\)</span> ומפרשים אותן.</p>
+<section id="id2">
+<h2>דוגמה: זריקה אנכית למעלה עם רעש מדידה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>נבחן תנועה אנכית לפי המודל</p>
+<div class="math notranslate nohighlight">
+\[
+y(t) = h_0 + v_0 t - \tfrac{1}{2} g t^2
+\]</div>
+<p>וניצור נתוני דמה עם רעש. נשתמש בהם כדי:</p>
+<ol class="arabic simple">
+<li><p>להתאים <span class="math notranslate nohighlight">\(g, v_0, h_0\)</span> בעזרת <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>,</p></li>
+<li><p>למצוא <strong>שורש</strong> <span class="math notranslate nohighlight">\(t_\text{impact}\)</span> כך ש־<span class="math notranslate nohighlight">\(y(t_\text{impact})=0\)</span>,</p></li>
+<li><p>למצוא <strong>מקסימום</strong> גובה (מינימום של <span class="math notranslate nohighlight">\(-y\)</span>),</p></li>
+<li><p>לבצע גם <strong>מינימיזציה רב־ממדית</strong> ידנית של פונקציית עלות <span class="math notranslate nohighlight">\(\chi^2\)</span>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span> <span class="k">as</span> <span class="n">opt</span>
+
+<span class="c1"># ----- 1) Model and synthetic data -----</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># &quot;True&quot; parameters (unknown during fitting)</span>
+<span class="n">g_true</span>  <span class="o">=</span> <span class="mf">9.81</span>     <span class="c1"># m/s^2</span>
+<span class="n">v0_true</span> <span class="o">=</span> <span class="mf">18.0</span>     <span class="c1"># m/s</span>
+<span class="n">h0_true</span> <span class="o">=</span> <span class="mf">1.2</span>      <span class="c1"># m</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">height_model</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">h0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">h0</span> <span class="o">+</span> <span class="n">v0</span><span class="o">*</span><span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Measurement times</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># Measurement noise</span>
+<span class="n">sigma_y</span> <span class="o">=</span> <span class="mf">0.10</span>
+<span class="n">y_clean</span> <span class="o">=</span> <span class="n">height_model</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g_true</span><span class="p">,</span> <span class="n">v0_true</span><span class="p">,</span> <span class="n">h0_true</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y_clean</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+<span class="c1"># Plot measurements vs. true model</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Measurement&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y_clean</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;True model&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t [s]&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y [m]&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/4768fb9f28808759e793edcc5da1135fdf86161a48fc32dcaac7933fa7f2c50d.png" src="../../../_images/4768fb9f28808759e793edcc5da1135fdf86161a48fc32dcaac7933fa7f2c50d.png" />
+</div>
+</div>
+<section id="optimize-curve-fit">
+<h3>התאמת עקומה והערכת אי־ודאות (<code class="docutils literal notranslate"><span class="pre">optimize.curve_fit</span></code>)<a class="headerlink" href="#optimize-curve-fit" title="Link to this heading">#</a></h3>
+<p>נתאים את <span class="math notranslate nohighlight">\(g, v_0, h_0\)</span> ע”י מיזעור ריבועי השאריות. נזין את <span class="math notranslate nohighlight">\(\sigma_y\)</span> ונסמן <code class="docutils literal notranslate"><span class="pre">absolute_sigma=True</span></code> כדי שמטריצת ה־covariance תחושב ביחידות פיזיות נכונות. שגיאות <span class="math notranslate nohighlight">\(1\sigma\)</span> הן השורש הריבועי של האיברים על האלכסון.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ----- 2) curve_fit: non-linear fit -----</span>
+<span class="n">p0</span> <span class="o">=</span> <span class="p">(</span><span class="mf">8.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>  <span class="c1"># Initial guess: (g, v0, h0)</span>
+
+<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span>
+    <span class="n">f</span><span class="o">=</span><span class="n">height_model</span><span class="p">,</span> <span class="n">xdata</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">ydata</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="n">p0</span><span class="p">,</span>
+    <span class="n">sigma</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">),</span> <span class="n">absolute_sigma</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">g_fit</span><span class="p">,</span> <span class="n">v0_fit</span><span class="p">,</span> <span class="n">h0_fit</span> <span class="o">=</span> <span class="n">popt</span>
+<span class="n">perr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">pcov</span><span class="p">))</span>  <span class="c1"># 1σ uncertainty per parameter</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;curve_fit results:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;g   = </span><span class="si">{</span><span class="n">g_fit</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">perr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> m/s^2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;v0  = </span><span class="si">{</span><span class="n">v0_fit</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">perr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> m/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;h0  = </span><span class="si">{</span><span class="n">h0_fit</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">perr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot fitted curve</span>
+<span class="n">t_dense</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">y_fit</span> <span class="o">=</span> <span class="n">height_model</span><span class="p">(</span><span class="n">t_dense</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mf">3.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">sigma_y</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Measurement&quot;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_dense</span><span class="p">,</span> <span class="n">y_fit</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Fit (curve_fit)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t [s]&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y [m]&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>curve_fit results:
+g   = 9.811 ± 0.032 m/s^2
+v0  = 18.015 ± 0.063 m/s
+h0  = 1.176 ± 0.051 m
+</pre></div>
+</div>
+<img alt="../../../_images/131f67676e2eda9e820f77f61cf2d4de31abcdb3736fbaab274b79cfa72666a9.png" src="../../../_images/131f67676e2eda9e820f77f61cf2d4de31abcdb3736fbaab274b79cfa72666a9.png" />
+</div>
+</div>
+</section>
+<section id="optimize-root-scalar">
+<h3>מציאת שורש: זמן הפגיעה בקרקע (<code class="docutils literal notranslate"><span class="pre">optimize.root_scalar</span></code>)<a class="headerlink" href="#optimize-root-scalar" title="Link to this heading">#</a></h3>
+<p>נרצה <span class="math notranslate nohighlight">\(t_\text{impact}\)</span> כך ש־<span class="math notranslate nohighlight">\(y(t)=0\)</span>. נשתמש בפרמטרים המותאמים ונפתור <span class="math notranslate nohighlight">\(h_0 + v_0 t - \tfrac{1}{2} g t^2 = 0\)</span>.<br />
+שיטה בטוחה: <strong>Brent</strong> עם מסגרת <code class="docutils literal notranslate"><span class="pre">[a,b]</span></code> שבה הפונקציה מחליפה סימן. אפשר גם <strong>Newton</strong> אם יש נגזרת טובה וניחוש קרוב.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ----- 3) root_scalar: find t where y(t)=0 -----</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">height_fit_only_t</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">height_model</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g_fit</span><span class="p">,</span> <span class="n">v0_fit</span><span class="p">,</span> <span class="n">h0_fit</span><span class="p">)</span>
+
+<span class="c1"># (a) Brent: requires bracket with sign change</span>
+<span class="n">sol_brent</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">root_scalar</span><span class="p">(</span><span class="n">height_fit_only_t</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;brentq&#39;</span><span class="p">)</span>
+<span class="n">t_impact_brent</span> <span class="o">=</span> <span class="n">sol_brent</span><span class="o">.</span><span class="n">root</span>
+
+<span class="c1"># (b) Newton: requires derivative and initial guess</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dheight_dt</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">v0_fit</span> <span class="o">-</span> <span class="n">g_fit</span><span class="o">*</span><span class="n">t</span>
+
+<span class="n">sol_newton</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">root_scalar</span><span class="p">(</span><span class="n">height_fit_only_t</span><span class="p">,</span> <span class="n">fprime</span><span class="o">=</span><span class="n">dheight_dt</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;newton&#39;</span><span class="p">)</span>
+<span class="n">t_impact_newton</span> <span class="o">=</span> <span class="n">sol_newton</span><span class="o">.</span><span class="n">root</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t_impact (Brent)  = </span><span class="si">{</span><span class="n">t_impact_brent</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t_impact (Newton) = </span><span class="si">{</span><span class="n">t_impact_newton</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t_impact (Brent)  = 3.7365 s
+t_impact (Newton) = 3.7365 s
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optimize-minimize-scalar">
+<h3>חיפוש מינימום חד־ממדי: זמן הגובה המירבי (<code class="docutils literal notranslate"><span class="pre">optimize.minimize_scalar</span></code>)<a class="headerlink" href="#optimize-minimize-scalar" title="Link to this heading">#</a></h3>
+<p>הגובה מקסימלי כש־<span class="math notranslate nohighlight">\(\tfrac{d y}{dt}=0\)</span>. במקום לפתור שורש לנגזרת, נוכל למזער את <span class="math notranslate nohighlight">\(-y(t)\)</span> על תחום פיזיקלי סביר.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ----- 4) minimize_scalar: find time of max height -----</span>
+<span class="n">res_min1d</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">tt</span><span class="p">:</span> <span class="o">-</span><span class="n">height_fit_only_t</span><span class="p">(</span><span class="n">tt</span><span class="p">),</span>
+    <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bounded&#39;</span>
+<span class="p">)</span>
+<span class="n">t_peak</span> <span class="o">=</span> <span class="n">res_min1d</span><span class="o">.</span><span class="n">x</span>
+<span class="n">y_peak</span> <span class="o">=</span> <span class="n">height_fit_only_t</span><span class="p">(</span><span class="n">t_peak</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t_peak ≈ </span><span class="si">{</span><span class="n">t_peak</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> s,  y_peak ≈ </span><span class="si">{</span><span class="n">y_peak</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+
+<span class="c1"># Alternative via derivative root:</span>
+<span class="n">sol_dydt0</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">root_scalar</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tt</span><span class="p">:</span> <span class="n">v0_fit</span> <span class="o">-</span> <span class="n">g_fit</span><span class="o">*</span><span class="n">tt</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;brentq&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t_peak via dy/dt=0: </span><span class="si">{</span><span class="n">sol_dydt0</span><span class="o">.</span><span class="n">root</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t_peak ≈ 1.8362 s,  y_peak ≈ 17.715 m
+t_peak via dy/dt=0: 1.8362 s
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optimize-minimize">
+<h3>מינימיזציה רב־ממדית: כי־בריבוע ידני (<code class="docutils literal notranslate"><span class="pre">optimize.minimize</span></code>)<a class="headerlink" href="#optimize-minimize" title="Link to this heading">#</a></h3>
+<p>כאן נבנה פונקציית עלות <span class="math notranslate nohighlight">\(\chi^2(g,v_0,h_0)\)</span> ונמזער אותה ישירות. זה מדגים שימוש ב־<code class="docutils literal notranslate"><span class="pre">minimize</span></code> כחלופה כללית ל־<code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ----- 5) minimize (multi-dimensional) chi^2 -----</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">chi2</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="n">g</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">h0</span> <span class="o">=</span> <span class="n">params</span>
+    <span class="n">y_model</span> <span class="o">=</span> <span class="n">height_model</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">h0</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_model</span><span class="p">)</span> <span class="o">/</span> <span class="n">sigma_y</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">8.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>  <span class="c1"># Initial guess</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)]</span>  <span class="c1"># Reasonable bounds</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;L-BFGS-B&quot;</span><span class="p">)</span>
+<span class="n">g_m</span><span class="p">,</span> <span class="n">v0_m</span><span class="p">,</span> <span class="n">h0_m</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;minimize results (chi^2):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;g   = </span><span class="si">{</span><span class="n">g_m</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, v0 = </span><span class="si">{</span><span class="n">v0_m</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, h0 = </span><span class="si">{</span><span class="n">h0_m</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, chi2 = </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>minimize results (chi^2):
+g   = 9.811, v0 = 18.015, h0 = 1.176, chi2 = 16.88
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>תרגום אי־ודאות לזמן הפגיעה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>ברשותנו <span class="math notranslate nohighlight">\( \mathrm{Cov}(\mathbf{p}) \)</span> עבור <span class="math notranslate nohighlight">\(\mathbf{p}=(g,v_0,h_0)\)</span>. אי־הוודאות של <span class="math notranslate nohighlight">\(t_\text{impact}\)</span> ניתנת בקירוב ע”י:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_{t} \approx \frac{\sqrt{\mathbf{J}_p \, \mathrm{Cov}(\mathbf{p}) \, \mathbf{J}_p^\top}}{\left| \frac{\partial y}{\partial t}(t_\text{impact}) \right|}
+\]</div>
+<p>כאשר <span class="math notranslate nohighlight">\(\mathbf{J}_p = \left[\tfrac{\partial y}{\partial g}, \tfrac{\partial y}{\partial v_0}, \tfrac{\partial y}{\partial h_0}\right]\)</span> מוערכת בנקודת <span class="math notranslate nohighlight">\(t_\text{impact}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ----- 6) Propagate parameter covariance to impact time -----</span>
+<span class="n">t_star</span> <span class="o">=</span> <span class="n">t_impact_brent</span>
+
+<span class="n">Jp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">t_star</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>   <span class="c1"># d y / d g</span>
+     <span class="n">t_star</span><span class="p">,</span>            <span class="c1"># d y / d v0</span>
+     <span class="mf">1.0</span>                <span class="c1"># d y / d h0</span>
+<span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="n">Jp</span> <span class="o">@</span> <span class="n">pcov</span> <span class="o">@</span> <span class="n">Jp</span><span class="o">.</span><span class="n">T</span>
+<span class="n">den</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">v0_fit</span> <span class="o">-</span> <span class="n">g_fit</span><span class="o">*</span><span class="n">t_star</span><span class="p">)</span>  <span class="c1"># |dy/dt| at impact</span>
+<span class="n">sigma_t</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">/</span> <span class="n">den</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t_impact = </span><span class="si">{</span><span class="n">t_star</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">sigma_t</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> s  (≈1σ)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t_impact = 3.7365 ± 0.0026 s  (≈1σ)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_57981/4176238823.py:12: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  sigma_t = float(np.sqrt(num) / den)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>סיכום<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>התאמה (<code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>)</strong> מספקת פרמטרים מיטביים ו־<strong>covariance</strong> להערכת אי־ודאות פיזיקלית.</p></li>
+<li><p><strong>שורשים (<code class="docutils literal notranslate"><span class="pre">root_scalar</span></code>)</strong> מתאימים לחישוב נקודות זמן/מיקום של אירוע (כמו <span class="math notranslate nohighlight">\(y=0\)</span>).</p></li>
+<li><p><strong>מינימום חד־ממדי (<code class="docutils literal notranslate"><span class="pre">minimize_scalar</span></code>)</strong> שימושי למציאת רגעי קיצון או נקודות אופטימליות.</p></li>
+<li><p><strong>מינימום רב־ממדי (<code class="docutils literal notranslate"><span class="pre">minimize</span></code>)</strong> נותן גמישות מלאה בהגדרת פונקציית עלות ואילוצים.</p></li>
+</ul>
+<p>טיפי עבודה: הקפידו על סולמות גודל טובים, מסגרות (<code class="docutils literal notranslate"><span class="pre">bracket</span></code>) לשורשים/מינימום, וניחושי פתיחה הגיוניים. עבור התאמות, ספקו <code class="docutils literal notranslate"><span class="pre">sigma</span></code> אמינה ו־<code class="docutils literal notranslate"><span class="pre">absolute_sigma=True</span></code> כדי לקבל שגיאות בפרמטרים ביחידות הנכונות.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Javascript</span><span class="p">,</span> <span class="n">display</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">quiz_json</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s1"> [</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s1">   {</span>
+<span class="s1">   (...)     85 ]</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span><span class="s1"> &#39;&#39;&#39;</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jupyterquiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./course/weeks/week_10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">דוגמה: זריקה אנכית למעלה עם רעש מדידה</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-curve-fit">התאמת עקומה והערכת אי־ודאות (<code class="docutils literal notranslate"><span class="pre">optimize.curve_fit</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-root-scalar">מציאת שורש: זמן הפגיעה בקרקע (<code class="docutils literal notranslate"><span class="pre">optimize.root_scalar</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-minimize-scalar">חיפוש מינימום חד־ממדי: זמן הגובה המירבי (<code class="docutils literal notranslate"><span class="pre">optimize.minimize_scalar</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimize-minimize">מינימיזציה רב־ממדית: כי־בריבוע ידני (<code class="docutils literal notranslate"><span class="pre">optimize.minimize</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">תרגום אי־ודאות לזמן הפגיעה</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">סיכום</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

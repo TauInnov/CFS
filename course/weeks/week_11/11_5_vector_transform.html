@@ -1,0 +1,1045 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>טרנספורמציות ווקטוריות (Transformations &amp; Vectorization) &#8212; Computers For physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_5_vector_transform';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
+    <script>document.write(`<img src="../../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/course/weeks/week_11/11_5_vector_transform.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/course/weeks/week_11/11_5_vector_transform.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_11/11_5_vector_transform.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/course/weeks/week_11/11_5_vector_transform.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>טרנספורמציות ווקטוריות (Transformations & Vectorization)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply">פעולות ווקטוריות לעומת apply</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-replace-np-where">map, replace, ו־np.where</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">תרגילים: חישובים ווקטוריים, לוגיקה מותנית וסיווג מדידות</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">חישוב אנרגיה פוטנציאלית בעזרת פעולה ווקטורית</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-medium-high">סיווג רמות אנרגיה (“Low”, “Medium”, “High”) בעזרת לוגיקה מותנית</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other">איחוד חומרים נדירים לערך “Other”</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="transformations-vectorization">
+<h1>טרנספורמציות ווקטוריות (Transformations &amp; Vectorization)<a class="headerlink" href="#transformations-vectorization" title="Link to this heading">#</a></h1>
+<p>אחת מהיכולות החזקות ביותר של <strong>Pandas</strong> היא עבודה ווקטורית — כלומר, ביצוע פעולות חישוביות על עמודות שלמות של נתונים ניסיוניים בבת אחת, ללא שימוש בלולאות מפורשות (<code class="docutils literal notranslate"><span class="pre">for</span></code>).<br />
+גישה זו חיונית במיוחד בעיבוד נתונים פיזיקליים, שבהם נדרש לבצע חישובים רבים (כגון אנרגיה, הספק, או שדה חשמלי) על מדידות רבות.<br />
+פעולות ווקטוריות מהירות בהרבה, מנצלות היטב את יכולות <strong>NumPy</strong> הפנימיות, ומקצרות את זמן החישוב.</p>
+<section id="apply">
+<h2>פעולות ווקטוריות לעומת apply<a class="headerlink" href="#apply" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>פעולות <strong>ווקטוריות</strong> (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">np.where</span></code> וכו׳) פועלות ישירות על כל הערכים בעמודה — מהירות ויעילות מאוד, ומתאימות לחישובים פיזיקליים פשוטים כגון <span class="math notranslate nohighlight">\(E = mgh\)</span> או <span class="math notranslate nohighlight">\(P = IV\)</span>.</p></li>
+<li><p>הפונקציה <strong>apply()</strong> מאפשרת הפעלת פונקציה מותאמת אישית על כל שורה או עמודה, אך היא <strong>איטית יותר</strong>, ומתאימה למצבים שבהם נדרש חישוב מורכב או תנאי תלוי־הקשר שלא ניתן לבטא בביטוי מתמטי פשוט.</p></li>
+</ul>
+<p>באופן כללי:</p>
+<ul class="simple">
+<li><p>השתמשו ב־<strong>Vectorized operations</strong> כשניתן לנסח את הפעולה כחישוב מתמטי על כל הנתונים (למשל, חישוב אנרגיה קינטית לכל מדידה).</p></li>
+<li><p>השתמשו ב־<strong>apply()</strong> רק כאשר דרושה לוגיקה מורכבת או שילוב של מספר משתנים בצורה לא ליניארית.</p></li>
+</ul>
+</section>
+<section id="map-replace-np-where">
+<h2>map, replace, ו־np.where<a class="headerlink" href="#map-replace-np-where" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">map()</span></code> — מיפוי ערכים לפי מילון או פונקציה; שימושי למשל להמרת שמות ניסויים לקודים או לסיווגם לפי סוג החומר.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace()</span></code> — החלפת ערכים ישנים בחדשים; לדוגמה, תיקון ערכים חריגים או שינוי יחידות.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.where(condition,</span> <span class="pre">value_if_true,</span> <span class="pre">value_if_false)</span></code> — מאפשר לוגיקה מותנית על כל השורות בבת אחת; למשל, סיווג מדידות כ־”גבוהות” או “נמוכות” לפי סף אנרגיה נתון.</p></li>
+</ul>
+<p>באמצעות כלים אלו ניתן לבצע חישובים פיזיקליים מורכבים (כמו תיקון נתוני מדידה, סיווג לפי עוצמה, או נירמול יחידות)<br />
+—all ללא לולאות וללא ירידה בביצועים.</p>
+</section>
+<section id="id1">
+<h2>תרגילים: חישובים ווקטוריים, לוגיקה מותנית וסיווג מדידות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>לפני שנתחיל בתרגילים, ניצור טבלת נתונים קטנה המדמה ניסוי פיזיקלי פשוט,<br />
+בו נמדדים <strong>מסה (mass)</strong>, <strong>גובה (height)</strong>, ופרמטר נוסף המתאר את <strong>מקדם ההתנגדות של החומר</strong>.<br />
+נתונים אלו ישמשו אותנו לחישוב אנרגיה פוטנציאלית ולביצוע סיווגים שונים של המדידות.</p>
+<p>בתרגילים ניישם שלושה עקרונות חשובים של עבודה ווקטורית:</p>
+<ol class="arabic simple">
+<li><p><strong>חישוב אנרגיה פוטנציאלית (E = mgh):</strong><br />
+נחשב עמודה חדשה של אנרגיה לכל מדידה בעזרת פעולות מתמטיות ישירות על כל הטבלה — ללא לולאות.</p></li>
+<li><p><strong>סיווג רמות אנרגיה (“Low”, “Medium”, “High”):</strong><br />
+נגדיר טווחי אנרגיה ונסווג את כל המדידות בבת אחת באמצעות תנאים ווקטוריים (<code class="docutils literal notranslate"><span class="pre">np.where</span></code>).</p></li>
+<li><p><strong>איחוד חומרים נדירים לערך אחיד (“Other”):</strong><br />
+ננקה את עמודת החומרים כך שחומרים חריגים או נדירים יקובצו יחד תחת ערך כללי אחד.</p></li>
+</ol>
+<p>בתרגילים אלה נראה כיצד ניתן ליישם עקרונות פיזיקליים פשוטים על נתונים אמיתיים<br />
+תוך שימוש ביכולות החישוב הווקטוריות של Pandas — בצורה <strong>מהירה, מדויקת ואלגנטית</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># --- Setup sample data (physics experiment) ---</span>
+<span class="c1"># Simulated dataset: measurements of mass (kg), height (m), and air resistance factor</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;measurement_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="s2">&quot;mass_kg&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span>
+    <span class="s2">&quot;height_m&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span>
+    <span class="s2">&quot;resistance_factor&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>
+    <span class="s2">&quot;material&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Aluminum&quot;</span><span class="p">,</span> <span class="s2">&quot;Copper&quot;</span><span class="p">,</span> <span class="s2">&quot;Copper&quot;</span><span class="p">,</span> <span class="s2">&quot;Steel&quot;</span><span class="p">,</span> <span class="s2">&quot;Plastic&quot;</span><span class="p">,</span> <span class="s2">&quot;Wood&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Raw physical measurements:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Raw physical measurements:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement_id</th>
+      <th>mass_kg</th>
+      <th>height_m</th>
+      <th>resistance_factor</th>
+      <th>material</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>0.10</td>
+      <td>Aluminum</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1.2</td>
+      <td>2.5</td>
+      <td>0.05</td>
+      <td>Copper</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0.8</td>
+      <td>0.8</td>
+      <td>0.15</td>
+      <td>Copper</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1.5</td>
+      <td>3.0</td>
+      <td>0.20</td>
+      <td>Steel</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>0.10</td>
+      <td>Plastic</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>0.6</td>
+      <td>1.2</td>
+      <td>0.05</td>
+      <td>Wood</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="id2">
+<h3>חישוב אנרגיה פוטנציאלית בעזרת פעולה ווקטורית<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>נחשב עמודה חדשה בשם <code class="docutils literal notranslate"><span class="pre">potential_energy_J</span></code>,<br />
+המייצגת את האנרגיה הפוטנציאלית של גוף בגובה נתון לפי הנוסחה הפיזיקלית:<br />
+<span class="math notranslate nohighlight">\(E = mgh\)</span>, כאשר <span class="math notranslate nohighlight">\(g = 9.81\ \text{m/s}^2\)</span>.</p>
+<p>נשתמש בפעולה ווקטורית פשוטה — ללא לולאות.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Compute potential energy (E = m * g * h) using vectorized operation ---</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># gravitational acceleration (m/s²)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;potential_energy_J&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;mass_kg&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;height_m&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame with potential energy:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame with potential energy:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement_id</th>
+      <th>mass_kg</th>
+      <th>height_m</th>
+      <th>resistance_factor</th>
+      <th>material</th>
+      <th>potential_energy_J</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0.5</td>
+      <td>1.0</td>
+      <td>0.10</td>
+      <td>Aluminum</td>
+      <td>4.9050</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1.2</td>
+      <td>2.5</td>
+      <td>0.05</td>
+      <td>Copper</td>
+      <td>29.4300</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0.8</td>
+      <td>0.8</td>
+      <td>0.15</td>
+      <td>Copper</td>
+      <td>6.2784</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1.5</td>
+      <td>3.0</td>
+      <td>0.20</td>
+      <td>Steel</td>
+      <td>44.1450</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>0.10</td>
+      <td>Plastic</td>
+      <td>78.4800</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>0.6</td>
+      <td>1.2</td>
+      <td>0.05</td>
+      <td>Wood</td>
+      <td>7.0632</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="low-medium-high">
+<h3>סיווג רמות אנרגיה (“Low”, “Medium”, “High”) בעזרת לוגיקה מותנית<a class="headerlink" href="#low-medium-high" title="Link to this heading">#</a></h3>
+<p>נגדיר את רמות האנרגיה לפי הערך של <code class="docutils literal notranslate"><span class="pre">potential_energy_J</span></code>:</p>
+<ul class="simple">
+<li><p>Low: מתחת ל־10 J</p></li>
+<li><p>Medium: בין 10 ל־25 J</p></li>
+<li><p>High: מעל 25 J</p></li>
+</ul>
+<p>נשתמש ב־<code class="docutils literal notranslate"><span class="pre">np.where</span></code> (או בשרשרת תנאים) כדי לקטלג את כל המדידות — ללא לולאה.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Categorize energy levels using np.where ---</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;potential_energy_J&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;High&quot;</span><span class="p">,</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;potential_energy_J&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Medium&quot;</span><span class="p">,</span> <span class="s2">&quot;Low&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Measurements categorized by energy level:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;measurement_id&quot;</span><span class="p">,</span> <span class="s2">&quot;potential_energy_J&quot;</span><span class="p">,</span> <span class="s2">&quot;energy_level&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Measurements categorized by energy level:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement_id</th>
+      <th>potential_energy_J</th>
+      <th>energy_level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>4.9050</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>29.4300</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>6.2784</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>44.1450</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>78.4800</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>7.0632</td>
+      <td>Low</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="other">
+<h3>איחוד חומרים נדירים לערך “Other”<a class="headerlink" href="#other" title="Link to this heading">#</a></h3>
+<p>נניח שרק חומרים נפוצים נכללים בניתוח (למשל Aluminum ו־Copper),<br />
+וכל שאר החומרים (כגון Steel, Plastic, Wood) נרצה לקבץ תחת הערך “Other”.<br />
+נשתמש ב־<code class="docutils literal notranslate"><span class="pre">np.where()</span></code> כדי להחליף ערכים בקלות.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Replace rare materials with &#39;Other&#39; ---</span>
+<span class="n">common_materials</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Aluminum&quot;</span><span class="p">,</span> <span class="s2">&quot;Copper&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;material_clean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;material&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">common_materials</span><span class="p">),</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;material&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Other&quot;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After replacing rare materials with &#39;Other&#39;:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="s2">&quot;material_clean&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>After replacing rare materials with &#39;Other&#39;:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>material</th>
+      <th>material_clean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aluminum</td>
+      <td>Aluminum</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Copper</td>
+      <td>Copper</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Copper</td>
+      <td>Copper</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Steel</td>
+      <td>Other</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Plastic</td>
+      <td>Other</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Wood</td>
+      <td>Other</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>:class: tip</p>
+<ul class="simple">
+<li><p>חישבנו עמודה חדשה של אנרגיה פוטנציאלית באמצעות פעולה ווקטורית מהירה ויעילה.</p></li>
+<li><p>סיווגנו את המדידות לפי רמות אנרגיה באמצעות <code class="docutils literal notranslate"><span class="pre">np.where</span></code> ללא שימוש בלולאות.</p></li>
+<li><p>השתמשנו ב־<code class="docutils literal notranslate"><span class="pre">np.where</span></code> כדי לאחד ערכים נדירים בעמודת חומרים לקטגוריה אחת (“Other”).</p></li>
+<li><p>כל הפעולות בוצעו באופן ווקטורי, ללא <code class="docutils literal notranslate"><span class="pre">apply()</span></code>, מה שמדגים את העוצמה של Pandas בעיבוד נתונים פיזיקליים.</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">quiz_json</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s1"> [</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s1">   {</span>
+<span class="s1">   (...)     32 ]</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="s1"> &#39;&#39;&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">quiz_json</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jupyterquiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./course/weeks/week_11"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply">פעולות ווקטוריות לעומת apply</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-replace-np-where">map, replace, ו־np.where</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">תרגילים: חישובים ווקטוריים, לוגיקה מותנית וסיווג מדידות</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">חישוב אנרגיה פוטנציאלית בעזרת פעולה ווקטורית</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#low-medium-high">סיווג רמות אנרגיה (“Low”, “Medium”, “High”) בעזרת לוגיקה מותנית</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other">איחוד חומרים נדירים לערך “Other”</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

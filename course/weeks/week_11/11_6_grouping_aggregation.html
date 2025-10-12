@@ -1,0 +1,1156 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation) &#8212; Computers For physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_6_grouping_aggregation';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
+    <script>document.write(`<img src="../../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/course/weeks/week_11/11_6_grouping_aggregation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/course/weeks/week_11/11_6_grouping_aggregation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_11/11_6_grouping_aggregation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/course/weeks/week_11/11_6_grouping_aggregation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>קיבוץ וצבירה בנתונים ניסיוניים (Grouping & Aggregation)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agg">קיבוץ בסיסי ו־agg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform">שימוש ב־transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-moving-average">ממוצע נע (Rolling / Moving Average)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">תרגילים: קיבוץ, נורמליזציה וחלון נע</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">קיבוץ בסיסי ו־agg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">שימוש ב־transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">ממוצע נע (Rolling / Moving Average)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">תרגילים: קיבוץ, נורמליזציה וחלון נע</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">חישוב אנרגיה מצטברת, ממוצע וספירת מדידות לפי ניסוי וחודש</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">הוספת אחוז התרומה של כל מדידה לסך האנרגיה בניסוי</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">ממוצע נע של אנרגיה לאורך זמן (7 ימים)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="grouping-aggregation">
+<h1>קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)<a class="headerlink" href="#grouping-aggregation" title="Link to this heading">#</a></h1>
+<p>בעת ניתוח נתונים פיזיקליים, לעיתים נבצע סדרת מדידות במועדים שונים ובתנאים מגוונים — לדוגמה, מדידת <strong>אנרגיה ממוצעת</strong>, <strong>טמפרטורה</strong>, או <strong>זרם חשמלי</strong> תחת ניסויים שונים.<br />
+באמצעות <code class="docutils literal notranslate"><span class="pre">groupby</span></code> ו־<code class="docutils literal notranslate"><span class="pre">agg</span></code> נוכל לסכם את הנתונים לפי תנאי הניסוי, לחשב ממוצעים, סכומים וסטיות תקן, ואף להוסיף מדדים מחושבים חדשים.</p>
+<section id="agg">
+<h2>קיבוץ בסיסי ו־agg<a class="headerlink" href="#agg" title="Link to this heading">#</a></h2>
+<p>השיטה <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> מאפשרת לחלק את הנתונים לפי משתנה אחד או יותר (כגון מזהה ניסוי או חודש המדידה)<br />
+ולחשב עבור כל קבוצה מדדים שונים בעזרת <code class="docutils literal notranslate"><span class="pre">.agg()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;experiment&quot;</span><span class="p">)[</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>ניתן גם להגדיר מילון פונקציות:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;experiment&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</section>
+<section id="transform">
+<h2>שימוש ב־transform<a class="headerlink" href="#transform" title="Link to this heading">#</a></h2>
+<p>כאשר נרצה לחשב ערך נורמלי לכל שורה — למשל, את אחוז התרומה של מדידה מסוימת לסך האנרגיה של הניסוי —
+נשתמש ב־<code class="docutils literal notranslate"><span class="pre">transform(&quot;sum&quot;)</span></code> כך שהתוצאה תישמר בגודל זהה למספר השורות במקור.</p>
+</section>
+<section id="rolling-moving-average">
+<h2>ממוצע נע (Rolling / Moving Average)<a class="headerlink" href="#rolling-moving-average" title="Link to this heading">#</a></h2>
+<p>במדידות רציפות לאורך זמן, יש לעיתים תנודות אקראיות.
+ניתן להחליק את הנתונים באמצעות ממוצע נע על פני חלון של מספר ימים או מדידות:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_smooth&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>כך מתקבלת מגמה ברורה ונקייה מרעש מדידה.</p>
+</section>
+<section id="id1">
+<h2>תרגילים: קיבוץ, נורמליזציה וחלון נע<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>ניצור טבלת נתונים שמדמה ניסוי פיזיקלי שבו נמדדה אנרגיה קינטית (בקילו־ג׳ול) לאורך זמן.<br />
+כל מדידה משויכת לניסוי מסוים (A, B או C) ולתאריך ביצוע.</p>
+<p>במהלך התרגילים נבצע שלושה שלבים עיקריים:</p>
+<ol class="arabic simple">
+<li><p><strong>קיבוץ נתונים (groupby &amp; agg):</strong><br />
+נחלק את המדידות לפי ניסוי וחודש, ונחשב לכל קבוצה את סכום האנרגיה, הממוצע ומספר המדידות.</p></li>
+<li><p><strong>נורמליזציה עם transform():</strong><br />
+נחשב לכל מדידה את חלקה היחסי בסך האנרגיה של אותו ניסוי — נשתמש ב־<code class="docutils literal notranslate"><span class="pre">transform(&quot;sum&quot;)</span></code> כדי לשמור את החישוב ברמת השורה.</p></li>
+<li><p><strong>חישוב ממוצע נע (rolling mean):</strong><br />
+נחשב ממוצע נע של האנרגיה לאורך זמן (7 ימים), כדי לזהות מגמות ולהחליק רעשים במדידות.</p></li>
+</ol>
+<p>תרגילים אלו מדגימים כיצד להשתמש בכלים הסטטיסטיים של Pandas כדי לבצע ניתוח כמותי אמיתי על נתוני ניסוי פיזיקלי.</p>
+</section>
+</section>
+<section id="id2">
+<h1>קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<p>בעת ניתוח נתונים פיזיקליים, לעיתים נבצע סדרת מדידות במועדים שונים ובתנאים מגוונים — לדוגמה, מדידת <strong>אנרגיה ממוצעת</strong>, <strong>טמפרטורה</strong>, או <strong>זרם חשמלי</strong> תחת ניסויים שונים.<br />
+באמצעות <code class="docutils literal notranslate"><span class="pre">groupby</span></code> ו־<code class="docutils literal notranslate"><span class="pre">agg</span></code> נוכל לסכם את הנתונים לפי תנאי הניסוי, לחשב ממוצעים, סכומים וסטיות תקן, ואף להוסיף מדדים מחושבים חדשים.</p>
+<section id="id3">
+<h2>קיבוץ בסיסי ו־agg<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>השיטה <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> מאפשרת לחלק את הנתונים לפי משתנה אחד או יותר (כגון מזהה ניסוי או חודש המדידה)<br />
+ולחשב עבור כל קבוצה מדדים שונים בעזרת <code class="docutils literal notranslate"><span class="pre">.agg()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;experiment&quot;</span><span class="p">)[</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>ניתן גם להגדיר מילון פונקציות:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;experiment&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>שימוש ב־transform<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>כאשר נרצה לחשב ערך נורמלי לכל שורה — למשל, את אחוז התרומה של מדידה מסוימת לסך האנרגיה של הניסוי —
+נשתמש ב־<code class="docutils literal notranslate"><span class="pre">transform(&quot;sum&quot;)</span></code> כך שהתוצאה תישמר בגודל זהה למספר השורות במקור.</p>
+</section>
+<section id="id5">
+<h2>ממוצע נע (Rolling / Moving Average)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>במדידות רציפות לאורך זמן, יש לעיתים תנודות אקראיות.
+ניתן להחליק את הנתונים באמצעות ממוצע נע על פני חלון של מספר ימים או מדידות:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_smooth&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>כך מתקבלת מגמה ברורה ונקייה מרעש מדידה.</p>
+</section>
+<section id="id6">
+<h2>תרגילים: קיבוץ, נורמליזציה וחלון נע<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>ניצור טבלת נתונים שמדמה ניסוי פיזיקלי שבו נמדדה אנרגיה קינטית (בקילו־ג׳ול) לאורך זמן.<br />
+כל מדידה משויכת לניסוי מסוים (A, B או C) ולתאריך ביצוע.</p>
+<p>במהלך התרגילים נבצע שלושה שלבים עיקריים:</p>
+<ol class="arabic simple">
+<li><p><strong>קיבוץ נתונים (groupby &amp; agg):</strong><br />
+נחלק את המדידות לפי ניסוי וחודש, ונחשב לכל קבוצה את סכום האנרגיה, הממוצע ומספר המדידות.</p></li>
+<li><p><strong>נורמליזציה עם transform():</strong><br />
+נחשב לכל מדידה את חלקה היחסי בסך האנרגיה של אותו ניסוי — נשתמש ב־<code class="docutils literal notranslate"><span class="pre">transform(&quot;sum&quot;)</span></code> כדי לשמור את החישוב ברמת השורה.</p></li>
+<li><p><strong>חישוב ממוצע נע (rolling mean):</strong><br />
+נחשב ממוצע נע של האנרגיה לאורך זמן (7 ימים), כדי לזהות מגמות ולהחליק רעשים במדידות.</p></li>
+</ol>
+<p>תרגילים אלו מדגימים כיצד להשתמש בכלים הסטטיסטיים של Pandas כדי לבצע ניתוח כמותי אמיתי על נתוני ניסוי פיזיקלי.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># --- Setup: simulated physics experiment data ---</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2025-03-01&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="s2">&quot;experiment&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span> <span class="mi">100</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]),</span>
+    <span class="s2">&quot;energy_kJ&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;month&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_period</span><span class="p">(</span><span class="s2">&quot;M&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Raw experimental data sample:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Raw experimental data sample:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>experiment</th>
+      <th>energy_kJ</th>
+      <th>month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-04-08</td>
+      <td>B</td>
+      <td>11.212800</td>
+      <td>2025-04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-04-21</td>
+      <td>B</td>
+      <td>15.544817</td>
+      <td>2025-04</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-03-29</td>
+      <td>C</td>
+      <td>13.632399</td>
+      <td>2025-03</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-03-15</td>
+      <td>C</td>
+      <td>22.047096</td>
+      <td>2025-03</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-04-12</td>
+      <td>B</td>
+      <td>17.054510</td>
+      <td>2025-04</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="id7">
+<h3>חישוב אנרגיה מצטברת, ממוצע וספירת מדידות לפי ניסוי וחודש<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>נחשב לכל ניסוי את סכום האנרגיה, הממוצע, ומספר המדידות באותו חודש.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Group by experiment and month ---</span>
+<span class="n">energy_summary</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;experiment&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">]})</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy summary by experiment and month:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">energy_summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy summary by experiment and month:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>experiment</th>
+      <th>month</th>
+      <th colspan="3" halign="left">energy_kJ</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>sum</th>
+      <th>mean</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>2025-03</td>
+      <td>362.431879</td>
+      <td>17.258661</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A</td>
+      <td>2025-04</td>
+      <td>392.060613</td>
+      <td>19.603031</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B</td>
+      <td>2025-03</td>
+      <td>386.832572</td>
+      <td>17.583299</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>B</td>
+      <td>2025-04</td>
+      <td>371.218332</td>
+      <td>17.677063</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>C</td>
+      <td>2025-03</td>
+      <td>197.541725</td>
+      <td>19.754172</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>C</td>
+      <td>2025-04</td>
+      <td>121.409078</td>
+      <td>20.234846</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id8">
+<h3>הוספת אחוז התרומה של כל מדידה לסך האנרגיה בניסוי<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>נחשב לכל שורה את חלקה היחסי מסך האנרגיה של הניסוי (<code class="docutils literal notranslate"><span class="pre">energy_kJ</span> <span class="pre">/</span> <span class="pre">Σexperiment</span></code>).<br />
+נשתמש ב־<code class="docutils literal notranslate"><span class="pre">transform(&quot;sum&quot;)</span></code> כדי לשמור על אורך זהה למקור.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Compute each measurement&#39;s share within its experiment ---</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;total_energy_by_exp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;experiment&quot;</span><span class="p">)[</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s2">&quot;sum&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;share_in_experiment&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;total_energy_by_exp&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Share of each measurement in its experiment total:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;experiment&quot;</span><span class="p">,</span> <span class="s2">&quot;energy_kJ&quot;</span><span class="p">,</span> <span class="s2">&quot;share_in_experiment&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Share of each measurement in its experiment total:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>experiment</th>
+      <th>energy_kJ</th>
+      <th>share_in_experiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>B</td>
+      <td>11.212800</td>
+      <td>0.014792</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>15.544817</td>
+      <td>0.020506</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C</td>
+      <td>13.632399</td>
+      <td>0.042741</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>C</td>
+      <td>22.047096</td>
+      <td>0.069124</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>B</td>
+      <td>17.054510</td>
+      <td>0.022498</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id9">
+<h3>ממוצע נע של אנרגיה לאורך זמן (7 ימים)<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>נניח שמדדנו אנרגיה יומית לאורך חודשיים ורוצים להחליק תנודות יומיות.<br />
+נחשב ממוצע נע ל־7 ימים עבור כל ניסוי בנפרד.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Compute 7-day rolling mean of energy for each experiment ---</span>
+<span class="c1"># Sort for proper rolling within each experiment</span>
+<span class="n">df_sorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;experiment&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
+
+<span class="c1"># Apply rolling mean per experiment</span>
+<span class="n">df_sorted</span><span class="p">[</span><span class="s2">&quot;energy_rolling_7d&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df_sorted</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;experiment&quot;</span><span class="p">)[</span><span class="s2">&quot;energy_kJ&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;7-day rolling mean per experiment:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_sorted</span><span class="p">[[</span><span class="s2">&quot;experiment&quot;</span><span class="p">,</span> <span class="s2">&quot;energy_kJ&quot;</span><span class="p">,</span> <span class="s2">&quot;energy_rolling_7d&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7-day rolling mean per experiment:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>experiment</th>
+      <th>energy_kJ</th>
+      <th>energy_rolling_7d</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2025-03-02</th>
+      <td>A</td>
+      <td>18.121720</td>
+      <td>18.121720</td>
+    </tr>
+    <tr>
+      <th>2025-03-02</th>
+      <td>A</td>
+      <td>10.654057</td>
+      <td>14.387888</td>
+    </tr>
+    <tr>
+      <th>2025-03-04</th>
+      <td>A</td>
+      <td>12.638879</td>
+      <td>13.804885</td>
+    </tr>
+    <tr>
+      <th>2025-03-06</th>
+      <td>A</td>
+      <td>24.918258</td>
+      <td>16.583228</td>
+    </tr>
+    <tr>
+      <th>2025-03-07</th>
+      <td>A</td>
+      <td>17.301132</td>
+      <td>16.726809</td>
+    </tr>
+    <tr>
+      <th>2025-03-09</th>
+      <td>A</td>
+      <td>20.814099</td>
+      <td>17.408024</td>
+    </tr>
+    <tr>
+      <th>2025-03-10</th>
+      <td>A</td>
+      <td>11.130194</td>
+      <td>16.511191</td>
+    </tr>
+    <tr>
+      <th>2025-03-11</th>
+      <td>A</td>
+      <td>20.437192</td>
+      <td>16.841973</td>
+    </tr>
+    <tr>
+      <th>2025-03-11</th>
+      <td>A</td>
+      <td>22.875382</td>
+      <td>18.587877</td>
+    </tr>
+    <tr>
+      <th>2025-03-14</th>
+      <td>A</td>
+      <td>12.682341</td>
+      <td>18.594085</td>
+    </tr>
+    <tr>
+      <th>2025-03-14</th>
+      <td>A</td>
+      <td>20.033861</td>
+      <td>17.896314</td>
+    </tr>
+    <tr>
+      <th>2025-03-16</th>
+      <td>A</td>
+      <td>22.844864</td>
+      <td>18.688276</td>
+    </tr>
+    <tr>
+      <th>2025-03-17</th>
+      <td>A</td>
+      <td>22.962513</td>
+      <td>18.995192</td>
+    </tr>
+    <tr>
+      <th>2025-03-18</th>
+      <td>A</td>
+      <td>14.961255</td>
+      <td>19.542487</td>
+    </tr>
+    <tr>
+      <th>2025-03-19</th>
+      <td>A</td>
+      <td>12.260763</td>
+      <td>18.374426</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">סיכום</p>
+<ul class="simple">
+<li><p>השתמשנו ב־<code class="docutils literal notranslate"><span class="pre">groupby()</span></code> ו־<code class="docutils literal notranslate"><span class="pre">agg()</span></code> כדי לחשב מדדים מרכזיים (סכום, ממוצע, ספירה) לכל ניסוי ולכל חודש.</p></li>
+<li><p>בעזרת <code class="docutils literal notranslate"><span class="pre">transform(&quot;sum&quot;)</span></code> חישבנו לכל שורה את אחוז התרומה שלה לסך המדידות של אותו ניסוי.</p></li>
+<li><p>הדגמנו שימוש ב־<code class="docutils literal notranslate"><span class="pre">rolling(window=7)</span></code> כדי לחשב ממוצע נע על פני שבוע במדידות יומיות, ולזהות מגמות לאורך זמן.</p></li>
+<li><p>כל הדוגמאות מתבססות על הקשרים פיזיקליים — ניתוח אנרגיה, ניסויים חוזרים, ומגמות בזמן.</p></li>
+</ul>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">quiz_json</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s1"> [</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s1">   {</span>
+<span class="s1">   (...)     32 ]</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="s1"> &#39;&#39;&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">myquiz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">quiz_json</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;jupyterquiz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./course/weeks/week_11"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agg">קיבוץ בסיסי ו־agg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform">שימוש ב־transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-moving-average">ממוצע נע (Rolling / Moving Average)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">תרגילים: קיבוץ, נורמליזציה וחלון נע</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">קיבוץ בסיסי ו־agg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">שימוש ב־transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">ממוצע נע (Rolling / Moving Average)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">תרגילים: קיבוץ, נורמליזציה וחלון נע</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">חישוב אנרגיה מצטברת, ממוצע וספירת מדידות לפי ניסוי וחודש</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">הוספת אחוז התרומה של כל מדידה לסך האנרגיה בניסוי</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">ממוצע נע של אנרגיה לאורך זמן (7 ימים)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
