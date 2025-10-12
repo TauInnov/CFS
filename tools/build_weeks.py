@@ -2,6 +2,7 @@ import argparse, json, subprocess
 from pathlib import Path
 import nbformat as nbf
 import yaml
+import copy
 
 def git_sha(path):
     try:
@@ -30,22 +31,35 @@ def merge_files(out_path, title, files, src_root):
     nb.cells.append(banner(title, f"Built from {len(files)} upstream notebooks"
                                   + (f" @ {sha}" if sha else "")))
 
-    seen_sources = set()  # optional: de-dup identical code cells
+    seen_sources = set()
     for p in files:
         p = Path(p)
         src_nb = nbf.read(p, as_version=4)
         nb.cells.append(banner(f"From: {p.name}", str(p)))
         for cell in src_nb.cells:
-            # tag origin so you can trace any cell back
-            cell.metadata = dict(cell.metadata) or {}
-            cell.metadata["origin_path"] = str(p)
-            cell.metadata["origin_cell_id"] = cell.get("id")
-            if cell.cell_type == "code":
-                sig = ("code", cell.source.strip())
-                if sig in seen_sources:   # skip exact duplicates
+            # --- preserve ALL metadata (including tags) ---
+            cell_copy = copy.deepcopy(cell)
+
+            meta = getattr(cell_copy, "metadata", {}) or {}
+            # add traceability without clobbering existing keys
+            if "origin_path" not in meta:
+                meta["origin_path"] = str(p)
+            if "origin_cell_id" not in meta:
+                # nbformat ≥4.5 usually has "id"; guard if missing
+                ocid = cell_copy.get("id", None)
+                if ocid is not None:
+                    meta["origin_cell_id"] = ocid
+            cell_copy.metadata = meta
+
+            # optional de-dup of identical code cells
+            if cell_copy.cell_type == "code":
+                sig = ("code", cell_copy.source.strip())
+                if sig in seen_sources:
                     continue
                 seen_sources.add(sig)
-            nb.cells.append(cell)
+
+            # >>> append the *copy*, not the original
+            nb.cells.append(cell_copy)
 
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)

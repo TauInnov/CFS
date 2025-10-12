@@ -1,0 +1,41 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+parts:
+  - caption: מידע כללי
+    chapters:
+      - file: 0_intro
+        title: מנהלות
+
+  - caption: שבועות הלמידה
+    numbered: true
+    chapters:
+      - file: course/weeks/week_1
+        title: שבוע 1 — טיפוסים ותנאים
+      - file: course/weeks/week_2
+        title: שבוע 2 — תנאים ופונקציות
+      - file: course/weeks/week_3
+        title: שבוע 3 — רשימות ולולאות
+      - file: course/weeks/week_4
+        title: שבוע 4 — לולאות וזרימת בקרה
+      - file: course/weeks/week_5
+        title: שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים
+      - file: course/weeks/week_6
+        title: שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע
+      - file: course/weeks/week_7
+        title: שבוע 7 — Numpy
+      - file: course/weeks/week_8
+        title: שבוע 8 — Matplotlib, Probabilities & Histograms
+      - file: course/weeks/week_9
+        title: שבוע 9 — Numpy מתקדם
+      - file: course/weeks/week_10
+        title: שבוע 10 — SciPy
+      - file: course/weeks/week_11
+        title: שבוע 11 — Pandas
+
+
+
+

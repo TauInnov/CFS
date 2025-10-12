@@ -1,0 +1,42 @@
+/* rtl.css */
+p, li, ul, h1, h2, h3, h4 {
+    direction: rtl; 
+    text-align: right;
+}
+
+/* .cell:has(img) {
+    direction: rtl;
+} */
+
+:root {
+    --pst-font-family-base: "Alef", sans-serif; /* optional: Hebrew font */
+}
+
+/*
+ .bd-article-container {
+    min-width: 59vw; 
+}
+*/
+.bd-container__inner {
+  min-width: 100vw;
+}
+
+.bd-sidebar-secondary {
+  min-width: 17vw;
+}
+
+.section-nav {
+  padding-right: 0;
+}
+
+.Quiz {
+        direction: rtl !important;
+        text-align:right !important;
+}
+
+
+/* Optionally widen code/output blocks */
+div.output_area pre {
+    white-space: pre-wrap; /* Prevent horizontal scrolling */
+    word-wrap: break-word;
+}
