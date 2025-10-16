@@ -197,6 +197,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_12.html">12. שבוע 12 — OOP &amp; Unittesting</a></li>
 </ul>
 
     </div>
@@ -580,7 +581,7 @@ Pandas מספקת ממשק נוח לקריאה וכתיבה של קבצי CSV ו
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame loaded:
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_20715/322451142.py:16: UserWarning: The argument &#39;infer_datetime_format&#39; is deprecated and will be removed in a future version. A strict version of it is now the default, see https://pandas.pydata.org/pdeps/0004-consistent-to-datetime-parsing.html. You can safely remove this argument.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_34213/322451142.py:16: UserWarning: The argument &#39;infer_datetime_format&#39; is deprecated and will be removed in a future version. A strict version of it is now the default, see https://pandas.pydata.org/pdeps/0004-consistent-to-datetime-parsing.html. You can safely remove this argument.
   measurements[&quot;timestamp&quot;] = pd.to_datetime(measurements[&quot;timestamp&quot;], errors=&quot;coerce&quot;, infer_datetime_format=True)
 </pre></div>
 </div>
@@ -911,76 +912,70 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">parquet_path</span> <span class="o">=</span> <span class="s2">&quot;data/filtered_measurements.parquet&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">filtered</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">filtered</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">parquet_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved files:&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">csv_path</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved files:
+- data/filtered_measurements.csv
+- data/filtered_measurements.parquet
 
-<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/util/_decorators.py:333,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">333</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/core/frame.py:3118,</span> in <span class="ni">DataFrame.to_parquet</span><span class="nt">(self, path, engine, compression, index, partition_cols, storage_options, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3037</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">3038</span><span class="sd"> Write a DataFrame to the binary parquet format.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3039</span><span class="sd"> </span>
-<span class="sd">   (...)   3114 &gt;&gt;&gt; content = f.read()</span>
-<span class="g g-Whitespace">   </span><span class="mi">3115</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">3116</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.io.parquet</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_parquet</span>
-<span class="ne">-&gt; </span><span class="mi">3118</span> <span class="k">return</span> <span class="n">to_parquet</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3119</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3120</span>     <span class="n">path</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3121</span>     <span class="n">engine</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3122</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3123</span>     <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3124</span>     <span class="n">partition_cols</span><span class="o">=</span><span class="n">partition_cols</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3125</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3126</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3127</span> <span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/io/parquet.py:478,</span> in <span class="ni">to_parquet</span><span class="nt">(df, path, engine, compression, index, storage_options, partition_cols, filesystem, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">partition_cols</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">477</span>     <span class="n">partition_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">partition_cols</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">478</span> <span class="n">impl</span> <span class="o">=</span> <span class="n">get_engine</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span> <span class="n">path_or_buf</span><span class="p">:</span> <span class="n">FilePath</span> <span class="o">|</span> <span class="n">WriteBuffer</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span> <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">path</span>
-<span class="g g-Whitespace">    </span><span class="mi">482</span> <span class="n">impl</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span>     <span class="n">df</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="n">path_or_buf</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">490</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span> <span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.12/site-packages/pandas/io/parquet.py:68,</span> in <span class="ni">get_engine</span><span class="nt">(engine)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span>         <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span>             <span class="n">error_msgs</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> - &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">68</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>         <span class="s2">&quot;Unable to find a usable engine; &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="s2">&quot;tried using: &#39;pyarrow&#39;, &#39;fastparquet&#39;.</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="s2">&quot;A suitable version of &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>         <span class="s2">&quot;pyarrow or fastparquet is required for parquet &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="s2">&quot;support.</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="s2">&quot;Trying to import the above resulted in these errors:&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">error_msgs</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;pyarrow&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="k">return</span> <span class="n">PyArrowImpl</span><span class="p">()</span>
-
-<span class="ne">ImportError</span>: Unable to find a usable engine; tried using: &#39;pyarrow&#39;, &#39;fastparquet&#39;.
-<span class="n">A</span> <span class="n">suitable</span> <span class="n">version</span> <span class="n">of</span> <span class="n">pyarrow</span> <span class="ow">or</span> <span class="n">fastparquet</span> <span class="ow">is</span> <span class="n">required</span> <span class="k">for</span> <span class="n">parquet</span> <span class="n">support</span><span class="o">.</span>
-<span class="n">Trying</span> <span class="n">to</span> <span class="kn">import</span><span class="w"> </span><span class="nn">the</span> <span class="n">above</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="n">these</span> <span class="n">errors</span><span class="p">:</span>
- <span class="o">-</span> <span class="n">Missing</span> <span class="n">optional</span> <span class="n">dependency</span> <span class="s1">&#39;pyarrow&#39;</span><span class="o">.</span> <span class="n">pyarrow</span> <span class="ow">is</span> <span class="n">required</span> <span class="k">for</span> <span class="n">parquet</span> <span class="n">support</span><span class="o">.</span> <span class="n">Use</span> <span class="n">pip</span> <span class="ow">or</span> <span class="n">conda</span> <span class="n">to</span> <span class="n">install</span> <span class="n">pyarrow</span><span class="o">.</span>
- <span class="o">-</span> <span class="n">Missing</span> <span class="n">optional</span> <span class="n">dependency</span> <span class="s1">&#39;fastparquet&#39;</span><span class="o">.</span> <span class="n">fastparquet</span> <span class="ow">is</span> <span class="n">required</span> <span class="k">for</span> <span class="n">parquet</span> <span class="n">support</span><span class="o">.</span> <span class="n">Use</span> <span class="n">pip</span> <span class="ow">or</span> <span class="n">conda</span> <span class="n">to</span> <span class="n">install</span> <span class="n">fastparquet</span><span class="o">.</span>
+Reloaded from Parquet:
 </pre></div>
 </div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement_id</th>
+      <th>timestamp</th>
+      <th>voltage</th>
+      <th>current</th>
+      <th>temperature</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>2025-01-05</td>
+      <td>5.0</td>
+      <td>0.20</td>
+      <td>300.1</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>NaT</td>
+      <td>10.0</td>
+      <td>0.50</td>
+      <td>302.0</td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>NaT</td>
+      <td>4.5</td>
+      <td>0.15</td>
+      <td>297.8</td>
+      <td>?</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">סיכום</p>
@@ -994,8 +989,8 @@ dtype: object
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="HlILtHLmPcEQ" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#HlILtHLmPcEQ {
+<div class="output text_html"><div id="BWoaLzNtMivx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#BWoaLzNtMivx {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1212,7 +1207,7 @@ dtype: object
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsHlILtHLmPcEQ=[{"question": "\u05d1\u05e2\u05ea \u05d8\u05e2\u05d9\u05e0\u05ea \u05e0\u05ea\u05d5\u05e0\u05d9 \u05e0\u05d9\u05e1\u05d5\u05d9 \u05d1\u05d0\u05de\u05e6\u05e2\u05d5\u05ea \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 <code>pd.read_csv()</code>, \u05e0\u05e8\u05e6\u05d4 \u05dc\u05d4\u05d1\u05d8\u05d9\u05d7 \u05e9\u05e2\u05de\u05d5\u05d3\u05ea \u05d6\u05de\u05df \u05d4\u05de\u05d3\u05d9\u05d3\u05d4 \u05ea\u05e4\u05d5\u05e8\u05e9 \u05db\u05e8\u05d0\u05d5\u05d9 \u05d5\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d8\u05e7\u05e1\u05d8 (\u05db\u05de\u05d5 \u05d4\u05e2\u05e8\u05d5\u05ea) \u05d9\u05d9\u05e9\u05de\u05e8\u05d5 \u05d1\u05e4\u05d5\u05e8\u05de\u05d8 \u05e0\u05db\u05d5\u05df.<br><br>\u05d0\u05d9\u05d6\u05d4 \u05e9\u05d9\u05dc\u05d5\u05d1 \u05e9\u05dc \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05db\u05da?", "type": "many_choice", "answers": [{"answer": "parse_dates=['timestamp'], dtype={'notes': 'string', 'experiment_id': 'string'}", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e4\u05e8\u05de\u05d8\u05e8 parse_dates \u05de\u05de\u05d9\u05e8 \u05d0\u05ea \u05e2\u05de\u05d5\u05d3\u05ea \u05d4\u05d6\u05de\u05df \u05dc\u05e4\u05d5\u05e8\u05de\u05d8 datetime64, \u05d5\u05bedtype \u05de\u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05d2\u05d3\u05d9\u05e8 \u05d1\u05de\u05e4\u05d5\u05e8\u05e9 \u05d0\u05ea \u05e1\u05d5\u05d2 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d1\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d8\u05e7\u05e1\u05d8."}, {"answer": "convert_dates=True, data_type='string'", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05dc\u05d5 \u05d0\u05d9\u05e0\u05dd \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05ea\u05e7\u05e4\u05d9\u05dd \u05d1\u05beread_csv. Pandas \u05de\u05e9\u05ea\u05de\u05e9\u05ea \u05d1\u05beparse_dates \u05d5\u05bedtype."}, {"answer": "read_as_text=True, cast_all='object'", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 Pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05db\u05ea \u05d1\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05db\u05d0\u05dc\u05d4 \u05dc\u05d8\u05e2\u05d9\u05e0\u05ea CSV."}, {"answer": "parse_time=True, types={'timestamp': 'datetime'}", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05d0\u05d9\u05df \u05e4\u05e8\u05de\u05d8\u05e8 parse_time \u05d1\u05beread_csv. \u05d9\u05e9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05beparse_dates."}]}];
+</style></div><script type="application/javascript">var questionsBWoaLzNtMivx=[{"question": "\u05d1\u05e2\u05ea \u05d8\u05e2\u05d9\u05e0\u05ea \u05e0\u05ea\u05d5\u05e0\u05d9 \u05e0\u05d9\u05e1\u05d5\u05d9 \u05d1\u05d0\u05de\u05e6\u05e2\u05d5\u05ea \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 <code>pd.read_csv()</code>, \u05e0\u05e8\u05e6\u05d4 \u05dc\u05d4\u05d1\u05d8\u05d9\u05d7 \u05e9\u05e2\u05de\u05d5\u05d3\u05ea \u05d6\u05de\u05df \u05d4\u05de\u05d3\u05d9\u05d3\u05d4 \u05ea\u05e4\u05d5\u05e8\u05e9 \u05db\u05e8\u05d0\u05d5\u05d9 \u05d5\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d8\u05e7\u05e1\u05d8 (\u05db\u05de\u05d5 \u05d4\u05e2\u05e8\u05d5\u05ea) \u05d9\u05d9\u05e9\u05de\u05e8\u05d5 \u05d1\u05e4\u05d5\u05e8\u05de\u05d8 \u05e0\u05db\u05d5\u05df.<br><br>\u05d0\u05d9\u05d6\u05d4 \u05e9\u05d9\u05dc\u05d5\u05d1 \u05e9\u05dc \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05db\u05da?", "type": "many_choice", "answers": [{"answer": "parse_dates=['timestamp'], dtype={'notes': 'string', 'experiment_id': 'string'}", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e4\u05e8\u05de\u05d8\u05e8 parse_dates \u05de\u05de\u05d9\u05e8 \u05d0\u05ea \u05e2\u05de\u05d5\u05d3\u05ea \u05d4\u05d6\u05de\u05df \u05dc\u05e4\u05d5\u05e8\u05de\u05d8 datetime64, \u05d5\u05bedtype \u05de\u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05d2\u05d3\u05d9\u05e8 \u05d1\u05de\u05e4\u05d5\u05e8\u05e9 \u05d0\u05ea \u05e1\u05d5\u05d2 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d1\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d8\u05e7\u05e1\u05d8."}, {"answer": "convert_dates=True, data_type='string'", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05dc\u05d5 \u05d0\u05d9\u05e0\u05dd \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05ea\u05e7\u05e4\u05d9\u05dd \u05d1\u05beread_csv. Pandas \u05de\u05e9\u05ea\u05de\u05e9\u05ea \u05d1\u05beparse_dates \u05d5\u05bedtype."}, {"answer": "read_as_text=True, cast_all='object'", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 Pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05db\u05ea \u05d1\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05db\u05d0\u05dc\u05d4 \u05dc\u05d8\u05e2\u05d9\u05e0\u05ea CSV."}, {"answer": "parse_time=True, types={'timestamp': 'datetime'}", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05d0\u05d9\u05df \u05e4\u05e8\u05de\u05d8\u05e8 parse_time \u05d1\u05beread_csv. \u05d9\u05e9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05beparse_dates."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2275,8 +2270,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("HlILtHLmPcEQ")) {
-    show_questions(questionsHlILtHLmPcEQ, HlILtHLmPcEQ);
+  if (document.getElementById("BWoaLzNtMivx")) {
+    show_questions(questionsBWoaLzNtMivx, BWoaLzNtMivx);
   } else {
     setTimeout(try_show, 200);
   }
