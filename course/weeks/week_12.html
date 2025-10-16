@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>12. שבוע 12 — Pandas &#8212; Computers For physics</title>
+    <title>12. שבוע 12 — תכנות מונחה־עצמים (OOP) ובדיקות יחידה (Unit Testing) בפיזיקה &#8212; Computers For physics</title>
   
   
   
@@ -449,7 +449,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>שבוע 12 —  Pandas</h1>
+    <h1>שבוע 12 — תכנות מונחה־עצמים (OOP) ובדיקות יחידה (Unit Testing) בפיזיקה</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -471,13 +471,41 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1><span class="section-number">12. </span>שבוע 12 —  Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="oop-unit-testing">
+<h1><span class="section-number">12. </span>שבוע 12 — תכנות מונחה־עצמים (OOP) ובדיקות יחידה (Unit Testing) בפיזיקה<a class="headerlink" href="#oop-unit-testing" title="Link to this heading">#</a></h1>
+<p>בשבוע השנים־עשר נשלב בין שני עקרונות יסוד חשובים בתכנות מדעי:<br />
+<strong>תכנות מונחה־עצמים (Object-Oriented Programming)</strong> ו־<strong>בדיקות יחידה (Unit Testing)</strong>.</p>
+<p>בחלק הראשון של השבוע נלמד את עקרונות ה־OOP — אחת מתפיסות היסוד בתכנות מודרני.<br />
+נראה כיצד ניתן לארגן קוד סביב <strong>אובייקטים</strong>, <strong>מחלקות</strong> ו־<strong>ירושה</strong>,<br />
+כדי לייצג תופעות ומכשירים פיזיקליים (למשל מטוטלת, חיישן או מד־טמפרטורה)<br />
+בצורה אינטואיטיבית, הניתנת להרחבה ולשימוש חוזר.<br />
+נלמד בקצרה את המושגים המרכזיים: <strong>הכפסה (Encapsulation)</strong>, <strong>ירושה (Inheritance)</strong> ו־<strong>פולימורפיזם (Polymorphism)</strong><br />
+ונראה כיצד עקרונות אלו תורמים לבניית קוד קריא, ניתן לתחזוקה, ומוכן לבדיקה.</p>
+<p>בחלק השני נצלול לעולם <strong>בדיקות היחידה</strong> בפייתון בעזרת המודול <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.<br />
+נראה כיצד לבדוק את המחלקות והפונקציות שלנו באופן שיטתי:<br />
+נשתמש ב־<code class="docutils literal notranslate"><span class="pre">assertEqual</span></code>, <code class="docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>, <code class="docutils literal notranslate"><span class="pre">assertRaises</span></code> ועוד,<br />
+נגדיר תרחישים עם <code class="docutils literal notranslate"><span class="pre">setUp</span></code> ו־<code class="docutils literal notranslate"><span class="pre">tearDown</span></code>, ונלמד כיצד לבדוק מקרי קצה (Edge Cases).<br />
+בהמשך נתרגל גם בדיקות לקוד פיזיקלי — חישובי אנרגיה, ניסויי מטוטלת, רעש מדידה והמרות יחידות —<br />
+תוך הקפדה על טולרנסים נומריים (<code class="docutils literal notranslate"><span class="pre">delta</span></code>, <code class="docutils literal notranslate"><span class="pre">places</span></code>) וערכים פיזיקליים תקפים בלבד.</p>
+<p>בסוף השבוע תדעו:</p>
+<ul class="simple">
+<li><p>להגדיר וליישם מחלקות (Classes) ואובייקטים (Objects) בפייתון</p></li>
+<li><p>להבין את עקרונות הירושה והפולימורפיזם וליישמם בפרויקטים פיזיקליים</p></li>
+<li><p>לכתוב בדיקות יחידה שיטתיות ומובנות לפי עקרון AAA (Arrange–Act–Assert)</p></li>
+<li><p>להשתמש במחזור החיים של בדיקות (<code class="docutils literal notranslate"><span class="pre">setUp</span></code> / <code class="docutils literal notranslate"><span class="pre">tearDown</span></code>)</p></li>
+<li><p>לבדוק קוד נומרי רגיש בעזרת <code class="docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code> ו־<code class="docutils literal notranslate"><span class="pre">delta</span></code></p></li>
+<li><p>לבדוק מחלקות OOP מורכבות עם <code class="docutils literal notranslate"><span class="pre">mock.patch</span></code> לבידוד תלות חיצונית</p></li>
+<li><p>לפתח חשיבה ביקורתית על אמינות חישובים וניסויים מדעיים באמצעות בדיקות אוטומטיות</p></li>
+</ul>
 <section id="materials">
 <h2><span class="section-number">12.1. </span>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="week_12/12_1_unittesting_intro.html"><span class="doc">11_0 • מבוא לעבודה עם Pandas</span></a></p></li>
-<li><p><a class="reference internal" href="week_12/12_2_setup_teardown_edges.html"><span class="doc">11_0 • מבוא לעבודה עם Pandas</span></a></p></li>
+<li><p><a class="reference internal" href="../../vendor/virtual-pyprog/17_0_oop-intro.html"><span class="doc">17_0 • מבוא לתכנות מונחה־עצמים (OOP)</span></a></p></li>
+<li><p><a class="reference internal" href="../../vendor/virtual-pyprog/17_1_oop-implementation.html"><span class="doc">17_1 • מימוש עקרונות OOP בפייתון</span></a></p></li>
+<li><p><a class="reference internal" href="week_12/12_1_unittesting_intro.html"><span class="doc">12_1 • מבוא ל־Unit Testing</span></a></p></li>
+<li><p><a class="reference internal" href="week_12/12_2_setup_teardown_edges.html"><span class="doc">12_2 • עבודה עם setUp, tearDown ובדיקות שוליים</span></a></p></li>
+<li><p><a class="reference internal" href="week_12/12_3_unittesting_oop.html"><span class="doc">12_3 • בדיקות למחלקות ו־OOP</span></a></p></li>
+<li><p><a class="reference internal" href="week_12/12_4_physicsl_unittesting.html"><span class="doc">12_4 • בדיקות נומריות בפיזיקה</span></a></p></li>
 </ul>
 </section>
 </section>
