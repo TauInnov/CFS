@@ -464,7 +464,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">מדוע יש צורך בבדיקות?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">דוגמאות: קוד לבדיקה</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-values">1. mean(values)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celsius-to-kelvin-c">🌡️ 2. celsius_to_kelvin(c)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celsius-to-kelvin-c">2. celsius_to_kelvin(c)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safe-div-a-b">3. safe_div(a, b)</a></li>
 </ul>
 </li>
@@ -501,8 +501,8 @@ document.write(`
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>הערה: ב־Jupyter נריץ בדיקות עם<br />
-<code class="docutils literal notranslate"><span class="pre">unittest.main(argv=[''],</span> <span class="pre">exit=False)</span></code>
-כדי למנוע יציאה מהקרנל. בפרויקט “אמיתי” מריצים לרוב משורת הפקודה.</p>
+<code class="docutils literal notranslate"><span class="pre">unittest.main(argv=[''],</span> <span class="pre">exit=False)</span></code></p>
+<p>כדי למנוע יציאה מהקרנל. בפרויקט “אמיתי” מריצים לרוב משורת הפקודה.</p>
 </div>
 </section>
 <section id="id2">
@@ -542,7 +542,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">mean(x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">[10,20,30])</span> <span class="pre">==</span> <span class="pre">20</span></code> — לבדוק קלט שהוא איטרטור (לא רשימה).</p></li>
 </ul>
 <p><strong>מטרת הבדיקות:</strong> לוודא שהפונקציה אמינה, מטפלת בקלטים ריקים, ועובדת עם סוגי iterable שונים.</p>
-<div class="cell tag_raises-exception docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute arithmetic mean of a non-empty iterable of numbers.&quot;&quot;&quot;</span>
@@ -565,7 +565,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="tip admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute arithmetic mean of a non-empty iterable of numbers.&quot;&quot;&quot;</span>
@@ -578,7 +578,7 @@ document.write(`
 </div>
 </section>
 <section id="celsius-to-kelvin-c">
-<h3>🌡️ 2. celsius_to_kelvin(c)<a class="headerlink" href="#celsius-to-kelvin-c" title="Link to this heading">#</a></h3>
+<h3>2. celsius_to_kelvin(c)<a class="headerlink" href="#celsius-to-kelvin-c" title="Link to this heading">#</a></h3>
 <p><strong>מטרה:</strong> להמיר טמפרטורה מצֶלזיוס לקלווין.</p>
 <p><strong>מה הפונקציה עושה:</strong></p>
 <ul class="simple">
@@ -593,7 +593,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">celsius_to_kelvin(-274)</span></code> מעלה <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> — בדיקה שהמגבלה הפיזיקלית נשמרת.</p></li>
 </ul>
 <p><strong>מטרת הבדיקות:</strong> לוודא שהחישוב הנומרי מדויק, שהחריגה נזרקת במקרים קיצוניים, ושאין טעויות סימן או יחידות.</p>
-<div class="cell tag_raises-exception docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">celsius_to_kelvin</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Celsius to Kelvin. Physical constraint: K &gt;= 0.&quot;&quot;&quot;</span>
@@ -616,7 +616,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="tip admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">celsius_to_kelvin</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Celsius to Kelvin. Physical constraint: K &gt;= 0.&quot;&quot;&quot;</span>
@@ -643,7 +643,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">safe_div(1,0)</span></code> מעלה <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> — בדיקה שהחריגה נזרקת כנדרש.</p></li>
 </ul>
 <p><strong>מטרת הבדיקות:</strong> לוודא שהפונקציה מזהה מקרים מסוכנים (חלוקה באפס), ומחזירה ערכים מדויקים בשאר המצבים.</p>
-<div class="cell tag_raises-exception docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">safe_div</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Divide a by b, raising ValueError on division by zero.&quot;&quot;&quot;</span>
@@ -665,7 +665,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="tip admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">safe_div</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Divide a by b, raising ValueError on division by zero.&quot;&quot;&quot;</span>
@@ -741,39 +741,58 @@ document.write(`
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
             <span class="n">safe_div</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestBasicFunctions</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_celsius_below_abs_zero_raises (__main__.TestBasicFunctions.test_celsius_below_abs_zero_raises) ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_celsius_to_kelvin_basic (__main__.TestBasicFunctions.test_celsius_to_kelvin_basic) ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_mean_basic (__main__.TestBasicFunctions.test_mean_basic) ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_mean_empty_raises (__main__.TestBasicFunctions.test_mean_empty_raises) ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_safe_div_basic (__main__.TestBasicFunctions.test_safe_div_basic) ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_safe_div_by_zero_raises (__main__.TestBasicFunctions.test_safe_div_by_zero_raises) ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 6 tests in 0.003s
+Ran 6 tests in 0.006s
 
 OK
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.main.TestProgram at 0x7e1266f4eff0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.runner.TextTestResult run=6 errors=0 failures=0&gt;
 </pre></div>
 </div>
 </div>
@@ -852,53 +871,48 @@ OK
         <span class="c1"># TODO: check the expected value with assertEqual</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
 
-<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestMeanExercises</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_mean_iterator_input (__main__.TestMeanExercises.test_mean_iterator_input)
+TODO: Confirm that mean() accepts an iterator as input. ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_mean_large_range (__main__.TestMeanExercises.test_mean_large_range)
+TODO: Verify that mean() works on a large range (1..100). ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_mean_with_negative (__main__.TestMeanExercises.test_mean_with_negative)
+TODO: Check that mean() works correctly with negative numbers. ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 9 tests in 0.004s
+Ran 3 tests in 0.003s
 
 OK
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.main.TestProgram at 0x7e1266184350&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.runner.TextTestResult run=3 errors=0 failures=0&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="tip admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">TestMeanExercises</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_mean_with_negative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -971,48 +985,38 @@ OK
 
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
-<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestMetersToKilometers</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_basic_conversion (__main__.TestMetersToKilometers.test_basic_conversion)
+TODO: Verify that 1000 meters equals 1 kilometer. ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_negative_raises (__main__.TestMetersToKilometers.test_negative_raises)
+TODO: Ensure that negative input raises ValueError. ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FAIL
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_non_numeric_raises (__main__.TestMetersToKilometers.test_non_numeric_raises)
+TODO: Ensure that passing a string raises TypeError. ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FAIL
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_zero (__main__.TestMetersToKilometers.test_zero)
+TODO: Check that 0 meters equals 0.0 km. ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FAIL
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1023,7 +1027,7 @@ ERROR: test_basic_conversion (__main__.TestMetersToKilometers.test_basic_convers
 TODO: Verify that 1000 meters equals 1 kilometer.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/3871079819.py&quot;, line 17, in test_basic_conversion
+  File &quot;/tmp/ipykernel_46904/1108015603.py&quot;, line 17, in test_basic_conversion
     self.assertAlmostEqual(meters_to_kilometers(1000), 1.0, places=6)
   File &quot;/usr/local/python/3.12.1/lib/python3.12/unittest/case.py&quot;, line 918, in assertAlmostEqual
     diff = abs(first - second)
@@ -1036,7 +1040,7 @@ FAIL: test_negative_raises (__main__.TestMetersToKilometers.test_negative_raises
 TODO: Ensure that negative input raises ValueError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/3871079819.py&quot;, line 33, in test_negative_raises
+  File &quot;/tmp/ipykernel_46904/1108015603.py&quot;, line 33, in test_negative_raises
     with self.assertRaises(ValueError):
 AssertionError: ValueError not raised
 </pre></div>
@@ -1046,7 +1050,7 @@ FAIL: test_non_numeric_raises (__main__.TestMetersToKilometers.test_non_numeric_
 TODO: Ensure that passing a string raises TypeError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/3871079819.py&quot;, line 27, in test_non_numeric_raises
+  File &quot;/tmp/ipykernel_46904/1108015603.py&quot;, line 27, in test_non_numeric_raises
     with self.assertRaises(TypeError):
 AssertionError: TypeError not raised
 </pre></div>
@@ -1056,23 +1060,23 @@ FAIL: test_zero (__main__.TestMetersToKilometers.test_zero)
 TODO: Check that 0 meters equals 0.0 km.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/3871079819.py&quot;, line 22, in test_zero
+  File &quot;/tmp/ipykernel_46904/1108015603.py&quot;, line 22, in test_zero
     self.assertEqual(meters_to_kilometers(0), 0.0)
 AssertionError: None != 0.0
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 13 tests in 0.008s
+Ran 4 tests in 0.005s
 
 FAILED (failures=3, errors=1)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.main.TestProgram at 0x7e1266186900&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.runner.TextTestResult run=4 errors=1 failures=3&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="tip admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">meters_to_kilometers</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
@@ -1142,103 +1146,34 @@ FAILED (failures=3, errors=1)
 
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
-<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestNormalizeProbability</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_invalid_values (__main__.TestNormalizeProbability.test_invalid_values)
+TODO: Check that values outside [0, 1] raise ValueError. ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FAIL
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_type_validation (__main__.TestNormalizeProbability.test_type_validation)
+TODO: Ensure that non-numeric input raises TypeError. ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FAIL
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_valid_values (__main__.TestNormalizeProbability.test_valid_values)
+TODO: Verify that valid probabilities are returned unchanged. ... 
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FAIL
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
-ERROR: test_basic_conversion (__main__.TestMetersToKilometers.test_basic_conversion)
-TODO: Verify that 1000 meters equals 1 kilometer.
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/3871079819.py&quot;, line 17, in test_basic_conversion
-    self.assertAlmostEqual(meters_to_kilometers(1000), 1.0, places=6)
-  File &quot;/usr/local/python/3.12.1/lib/python3.12/unittest/case.py&quot;, line 918, in assertAlmostEqual
-    diff = abs(first - second)
-               ~~~~~~^~~~~~~~
-TypeError: unsupported operand type(s) for -: &#39;NoneType&#39; and &#39;float&#39;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
-FAIL: test_negative_raises (__main__.TestMetersToKilometers.test_negative_raises)
-TODO: Ensure that negative input raises ValueError.
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/3871079819.py&quot;, line 33, in test_negative_raises
-    with self.assertRaises(ValueError):
-AssertionError: ValueError not raised
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
-FAIL: test_non_numeric_raises (__main__.TestMetersToKilometers.test_non_numeric_raises)
-TODO: Ensure that passing a string raises TypeError.
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/3871079819.py&quot;, line 27, in test_non_numeric_raises
-    with self.assertRaises(TypeError):
-AssertionError: TypeError not raised
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
-FAIL: test_zero (__main__.TestMetersToKilometers.test_zero)
-TODO: Check that 0 meters equals 0.0 km.
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/3871079819.py&quot;, line 22, in test_zero
-    self.assertEqual(meters_to_kilometers(0), 0.0)
-AssertionError: None != 0.0
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
@@ -1246,7 +1181,7 @@ FAIL: test_invalid_values (__main__.TestNormalizeProbability.test_invalid_values
 TODO: Check that values outside [0, 1] raise ValueError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/1752188912.py&quot;, line 24, in test_invalid_values
+  File &quot;/tmp/ipykernel_46904/3068437329.py&quot;, line 24, in test_invalid_values
     with self.assertRaises(ValueError):
 AssertionError: ValueError not raised
 </pre></div>
@@ -1256,7 +1191,7 @@ FAIL: test_type_validation (__main__.TestNormalizeProbability.test_type_validati
 TODO: Ensure that non-numeric input raises TypeError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/1752188912.py&quot;, line 32, in test_type_validation
+  File &quot;/tmp/ipykernel_46904/3068437329.py&quot;, line 32, in test_type_validation
     with self.assertRaises(TypeError):
 AssertionError: TypeError not raised
 </pre></div>
@@ -1266,23 +1201,23 @@ FAIL: test_valid_values (__main__.TestNormalizeProbability.test_valid_values)
 TODO: Verify that valid probabilities are returned unchanged.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_41650/1752188912.py&quot;, line 17, in test_valid_values
+  File &quot;/tmp/ipykernel_46904/3068437329.py&quot;, line 17, in test_valid_values
     self.assertEqual(normalize_probability(0), 0.0)
 AssertionError: None != 0.0
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 16 tests in 0.011s
+Ran 3 tests in 0.003s
 
-FAILED (failures=6, errors=1)
+FAILED (failures=3)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.main.TestProgram at 0x7e1266186f60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.runner.TextTestResult run=3 errors=0 failures=3&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="tip admonition">
+<div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">normalize_probability</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
@@ -1377,7 +1312,7 @@ FAILED (failures=6, errors=1)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">מדוע יש צורך בבדיקות?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">דוגמאות: קוד לבדיקה</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-values">1. mean(values)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celsius-to-kelvin-c">🌡️ 2. celsius_to_kelvin(c)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celsius-to-kelvin-c">2. celsius_to_kelvin(c)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safe-div-a-b">3. safe_div(a, b)</a></li>
 </ul>
 </li>
