@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>חלק 3 — בדיקות ל־OOP: מחלקות, ירושה, פולימורפיזם ו־patch בסיסי &#8212; Computers For physics</title>
+    <title>בדיקות ל־OOP: מחלקות, ירושה, פולימורפיזם ו־patch בסיסי &#8212; Computers For physics</title>
   
   
   
@@ -450,7 +450,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>חלק 3 — בדיקות ל־OOP: מחלקות, ירושה, פולימורפיזם ו־patch בסיסי</h1>
+    <h1>בדיקות ל־OOP: מחלקות, ירושה, פולימורפיזם ו־patch בסיסי</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -490,7 +490,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="oop-patch">
-<h1>חלק 3 — בדיקות ל־OOP: מחלקות, ירושה, פולימורפיזם ו־patch בסיסי<a class="headerlink" href="#oop-patch" title="Link to this heading">#</a></h1>
+<h1>בדיקות ל־OOP: מחלקות, ירושה, פולימורפיזם ו־patch בסיסי<a class="headerlink" href="#oop-patch" title="Link to this heading">#</a></h1>
 <p>במחברת זו נלמד לבדוק קוד מונחה־עצמים (OOP) בעזרת <code class="docutils literal notranslate"><span class="pre">unittest</span></code>:</p>
 <ul class="simple">
 <li><p>איך בודקים <strong>מצב פנימי (state)</strong> של אובייקט ושינויים בעקבות קריאות למתודות.</p></li>
@@ -560,7 +560,7 @@ document.write(`
     <span class="k">def</span><span class="w"> </span><span class="nf">test_initial_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that a new counter starts at 0.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: use assertEqual to check self.c.value == 0</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_increment_and_decrement</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Test increment and decrement behavior.&quot;&quot;&quot;</span>
@@ -571,20 +571,20 @@ document.write(`
         <span class="c1"># TODO: verify the value increased properly</span>
         <span class="c1"># TODO: call decrement(1)</span>
         <span class="c1"># TODO: verify the value decreased properly</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that reset() sets the counter back to 0.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: increment the counter (e.g., by 10)</span>
         <span class="c1"># TODO: call reset()</span>
         <span class="c1"># TODO: use assertEqual to check the value is 0</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_step_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Ensure that negative steps raise ValueError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: use assertRaises(ValueError) for increment(-1)</span>
         <span class="c1"># TODO: use assertRaises(ValueError) for decrement(-2)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
 <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestCounter</span><span class="p">)</span>
@@ -743,31 +743,31 @@ OK
         <span class="c1"># TODO: create a list with a TempSensor and a PressureSensor</span>
         <span class="c1"># sensors = [...]</span>
         <span class="c1"># TODO: loop through sensors and assert that read() returns a float</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_temp_sensor_kelvin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check that 0°C equals 273.15K.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: create a TempSensor with 0°C</span>
         <span class="c1"># TODO: call read() and use assertAlmostEqual to check 273.15</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_pressure_sensor_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check that PressureSensor returns correct positive values.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: create a PressureSensor with a positive value (e.g., 500)</span>
         <span class="c1"># TODO: call read() and assertAlmostEqual to expected result</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_temp_sensor_below_abs_zero_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that temperature below absolute zero raises ValueError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: create a TempSensor(-274)</span>
         <span class="c1"># TODO: use assertRaises(ValueError) when calling read()</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_pressure_sensor_negative_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that negative pressure raises ValueError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: create a PressureSensor(-1)</span>
         <span class="c1"># TODO: use assertRaises(ValueError) when calling read()</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
@@ -816,7 +816,7 @@ TODO: Check that 0°C equals 273.15K. ...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 5 tests in 0.005s
+Ran 5 tests in 0.004s
 
 OK
 </pre></div>
@@ -952,13 +952,13 @@ OK
         <span class="c1"># TODO: use patch(&quot;time.time&quot;, return_value=1000.0)</span>
         <span class="c1"># TODO: create Stopwatch instance and call start()</span>
         <span class="c1"># TODO: call start() again inside assertRaises(RuntimeError)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_stop_without_start_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Ensure that calling stop() before start() raises RuntimeError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: create Stopwatch instance</span>
         <span class="c1"># TODO: call stop() inside assertRaises(RuntimeError)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
 <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestStopwatch</span><span class="p">)</span>
@@ -992,7 +992,7 @@ TODO: Ensure that calling stop() before start() raises RuntimeError. ...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 3 tests in 0.006s
+Ran 3 tests in 0.003s
 
 OK
 </pre></div>
@@ -1079,24 +1079,24 @@ OK
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Initialize internal storage for measurements.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: create an empty list to hold numeric measurement values</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Validate and record a new measurement.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: check that value is int or float; otherwise raise TypeError</span>
         <span class="c1"># TODO: check that value is non-negative; otherwise raise ValueError</span>
         <span class="c1"># TODO: append value to the internal list</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">history</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Return a COPY of the stored measurements.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: return a copy (not a reference) of the internal list</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Clear all stored measurements.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: empty the internal list</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 </pre></div>
 </div>
 </div>
@@ -1159,7 +1159,7 @@ OK
         <span class="c1"># TODO: record each value in measurements</span>
         <span class="c1"># Assert</span>
         <span class="c1"># TODO: use assertEqual to verify history() == [1.2, 3.4, 5.6]</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_history_is_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Ensure history() returns a copy, not the original list.&quot;&quot;&quot;</span>
@@ -1169,17 +1169,17 @@ OK
         <span class="c1"># TODO: modify h (e.g., h.append(999))</span>
         <span class="c1"># Assert</span>
         <span class="c1"># TODO: verify that calling history() again still returns the original data</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_record_invalid_type_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that non-numeric input raises TypeError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: record(&quot;not a number&quot;) inside assertRaises(TypeError)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_record_negative_value_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that negative measurement raises ValueError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: record(-5) inside assertRaises(ValueError)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that clear() empties the measurement list.&quot;&quot;&quot;</span>
@@ -1189,7 +1189,7 @@ OK
         <span class="c1"># TODO: call clear()</span>
         <span class="c1"># Assert</span>
         <span class="c1"># TODO: verify history() returns an empty list</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
 <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestMeasurementLogger</span><span class="p">)</span>
@@ -1237,7 +1237,7 @@ TODO: Verify that negative measurement raises ValueError. ...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 5 tests in 0.008s
+Ran 5 tests in 0.005s
 
 OK
 </pre></div>

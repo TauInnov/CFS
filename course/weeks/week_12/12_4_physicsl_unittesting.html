@@ -466,9 +466,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assertalmostequal">בדיקה נומרית פשוטה עם assertAlmostEqual</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tolerance">בדיקות טולרנס (Tolerance) לערכים מחושבים</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">ניהול רעש רנדומלי בבדיקות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4️⃣ תרגיל לסטודנטים — בדיקת המרת יחידות אנרגיה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5️⃣ תרגיל נוסף — חישוב אנרגיה פוטנציאלית כבידתית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">💡 הסבר על הקוד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">תרגיל לסטודנטים — בדיקת המרת יחידות אנרגיה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">תרגיל נוסף — חישוב אנרגיה פוטנציאלית כבידתית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">הסבר על הקוד</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">סיכום</a></li>
 </ul>
             </nav>
@@ -498,12 +498,13 @@ document.write(`
 </section>
 <section id="assertalmostequal">
 <h2>בדיקה נומרית פשוטה עם assertAlmostEqual<a class="headerlink" href="#assertalmostequal" title="Link to this heading">#</a></h2>
-<p>הפונקציה <code class="docutils literal notranslate"><span class="pre">kinetic_energy(mass,</span> <span class="pre">velocity)</span></code> מחשבת את האנרגיה הקינטית של גוף לפי הנוסחה הפיזיקלית:
-$<span class="math notranslate nohighlight">\(
+<p>הפונקציה <code class="docutils literal notranslate"><span class="pre">kinetic_energy(mass,</span> <span class="pre">velocity)</span></code> מחשבת את האנרגיה הקינטית של גוף לפי הנוסחה הפיזיקלית:</p>
+<div class="math notranslate nohighlight">
+\[
 E_k = \frac{1}{2} m v^2
-\)</span>$</p>
+\]</div>
 <ul class="simple">
-<li><p>אם המסה שלילית — נזרקת חריגה (<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>), כי מבחינה פיזיקלית אין משמעות למסה שלילית.</p></li>
+<li><p>אם המסה שלילית, נזרקת חריגה (<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>), כי מבחינה פיזיקלית אין משמעות למסה שלילית.</p></li>
 <li><p>הבדיקות בודקות שלושה מצבים:</p>
 <ol class="arabic simple">
 <li><p>חישובים רגילים עם ערכים חיוביים.</p></li>
@@ -522,7 +523,7 @@ E_k = \frac{1}{2} m v^2
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute kinetic energy (Joules).&quot;&quot;&quot;</span>
     <span class="c1"># TODO: if mass is negative → raise ValueError</span>
     <span class="c1"># TODO: return 0.5 * mass * velocity**2</span>
-    <span class="k">pass</span>
+    <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestKineticEnergy</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
@@ -530,18 +531,18 @@ E_k = \frac{1}{2} m v^2
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check typical kinetic energy values.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: verify that kinetic_energy(2.0, 3.0) ≈ 9.0</span>
         <span class="c1"># TODO: verify that kinetic_energy(1.0, 10.0) ≈ 50.0</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_zero_mass_or_velocity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Energy should be zero if mass or velocity is zero.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: test kinetic_energy(0, 5) == 0</span>
         <span class="c1"># TODO: test kinetic_energy(2, 0) == 0</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_mass_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Negative mass should raise ValueError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: use assertRaises(ValueError) for negative mass</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
@@ -643,7 +644,7 @@ g = \frac{4 \pi^2 L}{T^2}
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Estimate g using pendulum formula.&quot;&quot;&quot;</span>
     <span class="c1"># TODO: if L &lt;= 0 or T &lt;= 0 → raise ValueError</span>
     <span class="c1"># TODO: compute and return 4 * math.pi**2 * L / (T**2)</span>
-    <span class="k">pass</span>
+    <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestGravityEstimate</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
@@ -655,13 +656,13 @@ g = \frac{4 \pi^2 L}{T^2}
         <span class="c1"># TODO: call estimate_gravity(L, T)</span>
         <span class="c1"># Assert</span>
         <span class="c1"># TODO: use assertAlmostEqual with delta=0.05</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_invalid_values_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Zero or negative L/T should raise ValueError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: use assertRaises(ValueError) for estimate_gravity(0, 2)</span>
         <span class="c1"># TODO: use assertRaises(ValueError) for estimate_gravity(1, -3)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
@@ -753,7 +754,7 @@ OK
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a value with random uniform noise ±noise_level.&quot;&quot;&quot;</span>
     <span class="c1"># TODO: if noise_level &lt; 0 → raise ValueError</span>
     <span class="c1"># TODO: return true_value + random.uniform(-noise_level, noise_level)</span>
-    <span class="k">pass</span>
+    <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestNoisyMeasurement</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
@@ -765,12 +766,12 @@ OK
         <span class="c1"># Act + Assert</span>
         <span class="c1"># TODO: repeat the measurement multiple times (e.g., 100 iterations)</span>
         <span class="c1"># TODO: use assertTrue to ensure each value is within [true - noise, true + noise]</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_noise_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Ensure that negative noise level raises ValueError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: use assertRaises(ValueError) for noisy_measurement(10, -0.1)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
@@ -798,7 +799,7 @@ TODO: Check that noisy output stays within expected range. ...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 2 tests in 0.003s
+Ran 2 tests in 0.002s
 
 OK
 </pre></div>
@@ -838,17 +839,18 @@ OK
 </div>
 </section>
 <section id="id4">
-<h2>4️⃣ תרגיל לסטודנטים — בדיקת המרת יחידות אנרגיה<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2>תרגיל לסטודנטים — בדיקת המרת יחידות אנרגיה<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>הפונקציה <code class="docutils literal notranslate"><span class="pre">joules_to_calories(joules)</span></code> ממירה אנרגיה מג’ול (J) לקלוריות (cal)<br />
 על פי הקשר הפיזיקלי:</p>
 <div class="math notranslate nohighlight">
 \[
 1 \text{ cal} = 4.184 \text{ J}
 \]</div>
-<p>כלומר:
-$<span class="math notranslate nohighlight">\(
+<p>כלומר:</p>
+<div class="math notranslate nohighlight">
+\[
 \text{calories} = \frac{\text{joules}}{4.184}
-\)</span>$</p>
+\]</div>
 <ul class="simple">
 <li><p>אם הערך שלילי — נזרקת חריגה (<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>), כי אנרגיה שלילית אינה תקפה בהקשר זה.</p></li>
 <li><p>הבדיקות בודקות:</p>
@@ -869,26 +871,26 @@ $<span class="math notranslate nohighlight">\(
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;TODO: Convert Joules to Calories. Validate non-negative input.&quot;&quot;&quot;</span>
     <span class="c1"># TODO: if joules &lt; 0 → raise ValueError</span>
     <span class="c1"># TODO: return joules / 4.184</span>
-    <span class="k">pass</span>
+    <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestEnergyConversion</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_basic_conversion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check conversion accuracy.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: check that joules_to_calories(4.184) == 1.0 (use assertAlmostEqual)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_multiple_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Use subTest to check several values.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: create test cases: [(0,0), (418.4,100), (8.368,2)]</span>
         <span class="c1"># TODO: loop with subTest(joules=...)</span>
         <span class="c1"># TODO: compare using assertAlmostEqual with places=6</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_input_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that negative input raises ValueError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: use assertRaises(ValueError)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
@@ -967,10 +969,10 @@ OK
 </div>
 </section>
 <section id="id5">
-<h2>5️⃣ תרגיל נוסף — חישוב אנרגיה פוטנציאלית כבידתית<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2>תרגיל נוסף — חישוב אנרגיה פוטנציאלית כבידתית<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 </section>
 <section id="id6">
-<h2>💡 הסבר על הקוד<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2>הסבר על הקוד<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>הפונקציה <code class="docutils literal notranslate"><span class="pre">potential_energy(m,</span> <span class="pre">g,</span> <span class="pre">h)</span></code> מחשבת את האנרגיה הפוטנציאלית הכבידתית לפי הנוסחה הפיזיקלית:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -998,24 +1000,24 @@ E_p = mgh
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;TODO: Compute gravitational potential energy (E = mgh).&quot;&quot;&quot;</span>
     <span class="c1"># TODO: validate m, g, h are non-negative</span>
     <span class="c1"># TODO: return m * g * h</span>
-    <span class="k">pass</span>
+    <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestPotentialEnergy</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_physical_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check correct computation for typical values.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: verify that potential_energy(2, 9.81, 10) == 196.2 (use assertAlmostEqual)</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_zero_height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Height 0 should give energy 0.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: verify potential_energy(1, 9.81, 0) == 0</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_values_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Negative mass, g, or height should raise ValueError.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: use assertRaises(ValueError) for negative inputs</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span> <span class="c1"># remove after completing the test</span>
 
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
@@ -1162,9 +1164,9 @@ OK
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assertalmostequal">בדיקה נומרית פשוטה עם assertAlmostEqual</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tolerance">בדיקות טולרנס (Tolerance) לערכים מחושבים</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">ניהול רעש רנדומלי בבדיקות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4️⃣ תרגיל לסטודנטים — בדיקת המרת יחידות אנרגיה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5️⃣ תרגיל נוסף — חישוב אנרגיה פוטנציאלית כבידתית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">💡 הסבר על הקוד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">תרגיל לסטודנטים — בדיקת המרת יחידות אנרגיה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">תרגיל נוסף — חישוב אנרגיה פוטנציאלית כבידתית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">הסבר על הקוד</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">סיכום</a></li>
 </ul>
   </nav></div>
