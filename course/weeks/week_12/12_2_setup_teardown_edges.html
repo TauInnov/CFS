@@ -1,0 +1,1113 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>עבודה נכונה עם setUp, תרחישים ושוליים &#8212; Computers For physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_12/12_2_setup_teardown_edges';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
+    <script>document.write(`<img src="../../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_12.html">12. שבוע 12 — Unittesting</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/course/weeks/week_12/12_2_setup_teardown_edges.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/course/weeks/week_12/12_2_setup_teardown_edges.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_12/12_2_setup_teardown_edges.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/course/weeks/week_12/12_2_setup_teardown_edges.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>עבודה נכונה עם setUp, תרחישים ושוליים</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">מטרות הלמידה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">🔧 setUp ו־tearDown</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">דוגמה בסיסית:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrangeactassert-aaa">דפוס Arrange–Act–Assert (AAA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">דוגמה:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">🔁 שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמה:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-cases">בדיקות שוליים (Edge Cases)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">דוגמה: בדיקות שוליים (Edge Cases)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">תרגול</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">סיכום</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>עבודה נכונה עם setUp, תרחישים ושוליים<a class="headerlink" href="#setup" title="Link to this heading">#</a></h1>
+<p>במחברת זו נעמיק בשיטות עבודה טובות בבדיקות יחידה עם <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.<br />
+נלמד כיצד להכין סביבה לבדיקה (setup), לנקות אותה (teardown), לבדוק תרחישים שונים באותה פונקציה,<br />
+ולהשתמש ב־<code class="docutils literal notranslate"><span class="pre">subTest</span></code> כדי לבחון סדרות של נתונים בקלות.</p>
+<section id="id1">
+<h2>מטרות הלמידה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>להבין את תפקידן של הפונקציות <code class="docutils literal notranslate"><span class="pre">setUp()</span></code> ו־<code class="docutils literal notranslate"><span class="pre">tearDown()</span></code>.</p></li>
+<li><p>לתכנן בדיקות לפי דפוס <strong>AAA</strong> (Arrange → Act → Assert).</p></li>
+<li><p>ללמוד להשתמש ב־<code class="docutils literal notranslate"><span class="pre">subTest</span></code> לבדיקות חוזרות על נתונים שונים.</p></li>
+<li><p>להוסיף בדיקות לקלטים בקצוות (edge cases) ולוודא טיפול נכון בשגיאות.</p></li>
+</ul>
+</section>
+<section id="setup-teardown">
+<h2>🔧 setUp ו־tearDown<a class="headerlink" href="#setup-teardown" title="Link to this heading">#</a></h2>
+<p>במקרים רבים כמה בדיקות משתמשות באותם נתוני התחלה או בהגדרות משותפות.<br />
+במקום לשכפל את הקוד הזה בכל פונקציה, נוכל להשתמש ב־<code class="docutils literal notranslate"><span class="pre">setUp()</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">setUp()</span></code> — רצה <strong>לפני כל בדיקה</strong> (כל מתודת test_).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tearDown()</span></code> — רצה <strong>אחרי כל בדיקה</strong> (גם אם היא נכשלה).<br />
+נשתמש בה בעיקר לניקוי משאבים (למשל סגירת קובץ, מחיקת משתנה זמני).</p></li>
+</ul>
+<section id="id2">
+<h3>דוגמה בסיסית:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>setUp()</strong><br />
+רצה <strong>לפני כל בדיקה (test)</strong> ומגדירה משתנים משותפים — במקרה זה:<br />
+<code class="docutils literal notranslate"><span class="pre">self.length</span></code>, <code class="docutils literal notranslate"><span class="pre">self.width</span></code> ו־<code class="docutils literal notranslate"><span class="pre">self.area</span></code>.<br />
+כך כל בדיקה מתחילה מאותו מצב בסיסי, בלי צורך להגדיר את הערכים מחדש בכל פונקציה.</p></li>
+<li><p><strong>tearDown()</strong><br />
+רצה <strong>אחרי כל בדיקה</strong>, גם אם הבדיקה נכשלה.<br />
+כאן משתמשים בה לניקוי המשתנים (השמה של <code class="docutils literal notranslate"><span class="pre">None</span></code>) או לצורכי ניפוי שגיאות (debugging).</p></li>
+<li><p><strong>test_area_positive()</strong><br />
+בודקת שהשטח המחושב (<code class="docutils literal notranslate"><span class="pre">length</span> <span class="pre">*</span> <span class="pre">width</span></code>) תואם לערך הצפוי שנשמר ב־<code class="docutils literal notranslate"><span class="pre">self.area</span></code>.</p></li>
+<li><p><strong>test_perimeter()</strong><br />
+בודקת את חישוב ההיקף לפי הנוסחה ( P = 2(l + w) ),<br />
+ומוודאת שהתוצאה שווה ל־16 במקרה הנתון (אורך 5 ורוחב 3).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestRectangle</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Create shared test data before each test.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: define two attributes: self.length and self.width</span>
+        <span class="c1">#       for example: self.length = 5, self.width = 3</span>
+        <span class="c1"># TODO: compute the expected area and store it in self.area</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing setup</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Optional cleanup after each test.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: reset attributes to None or print a message for debugging</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing teardown</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_area_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check that the computed area equals the expected one.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: compute the area using self.length and self.width</span>
+        <span class="c1"># result = ...</span>
+        <span class="c1"># TODO: use assertEqual to compare with self.area</span>
+        <span class="c1"># self.assertEqual(..., ...)</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing the test</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check that perimeter calculation is correct.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: compute perimeter = 2 * (length + width)</span>
+        <span class="c1"># perimeter = ...</span>
+        <span class="c1"># TODO: use assertEqual to check the expected value (should be 16)</span>
+        <span class="c1"># self.assertEqual(..., ...)</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing the test</span>
+
+
+<span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestMeanExercises</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">34</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>         <span class="k">pass</span>  <span class="c1"># remove this line after completing the test</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
+<span class="ne">---&gt; </span><span class="mi">34</span> <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestMeanExercises</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;TestMeanExercises&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">TestMeanExercises</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_mean_with_negative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_mean_large_range</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mf">50.5</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_mean_iterator_input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data_iter</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data_iter</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>כאן <code class="docutils literal notranslate"><span class="pre">setUp()</span></code> מבטיח שכל בדיקה תתחיל מאותו מצב,<br />
+גם אם בדיקה אחת משנה משתנים או נכשלת.</p>
+</div>
+</section>
+</section>
+<section id="arrangeactassert-aaa">
+<h2>דפוס Arrange–Act–Assert (AAA)<a class="headerlink" href="#arrangeactassert-aaa" title="Link to this heading">#</a></h2>
+<p>זהו סגנון כתיבה שמסייע לשמור על קריאות הבדיקה:</p>
+<ol class="arabic simple">
+<li><p><strong>Arrange</strong> – הגדרת הנתונים והאובייקטים.</p></li>
+<li><p><strong>Act</strong> – הפעלת הפעולה שאנו בודקים.</p></li>
+<li><p><strong>Assert</strong> – בדיקה שהתוצאה תואמת לציפיות.</p></li>
+</ol>
+<section id="id3">
+<h3>דוגמה:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>בדוגמה זו אנו מדגימים כיצד כותבים בדיקות יחידה בצורה קריאה וברורה בעזרת <strong>דפוס AAA</strong> —<br />
+שלושת השלבים הקלאסיים של כל בדיקה:</p>
+<ol class="arabic simple">
+<li><p><strong>Arrange (הכנה)</strong><br />
+בשלב זה אנחנו מגדירים את נתוני הקלט ואת התוצאה הצפויה — במקרה הזה, בסיס (<code class="docutils literal notranslate"><span class="pre">base</span></code>) וגובה (<code class="docutils literal notranslate"><span class="pre">height</span></code>) של משולש,<br />
+ואת הערך הצפוי של שטחו לפי הנוסחה ( A = \frac{1}{2} \times base \times height ).</p></li>
+<li><p><strong>Act (ביצוע)</strong><br />
+כאן אנחנו מפעילים את הפונקציה הנבדקת (<code class="docutils literal notranslate"><span class="pre">triangle_area</span></code>) עם הנתונים שהכנו,<br />
+ושומרים את התוצאה במשתנה <code class="docutils literal notranslate"><span class="pre">result</span></code>.</p></li>
+<li><p><strong>Assert (בדיקה)</strong><br />
+לבסוף, אנחנו משתמשים בפקודת <code class="docutils literal notranslate"><span class="pre">assertEqual</span></code> כדי לבדוק שהתוצאה שחושבה<br />
+אכן תואמת לערך הצפוי (<code class="docutils literal notranslate"><span class="pre">expected</span></code>).</p></li>
+</ol>
+<p>הבדיקות כוללות שני מקרים:</p>
+<ul class="simple">
+<li><p>בדיקה רגילה של משולש תקין (<code class="docutils literal notranslate"><span class="pre">base=10,</span> <span class="pre">height=5</span></code> → שטח 25).</p></li>
+<li><p>בדיקה של מקרה גבול שבו הבסיס הוא אפס (שטח צפוי 0).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>מבנה AAA הופך את הבדיקות לנהירות ומאורגנות —<br />
+ניתן להבין במבט אחד מה נבדק, איך זה נבדק, ומה התוצאה המצופה.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+
+<span class="c1"># --- TODO: Complete the function implementation ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">triangle_area</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the area of a triangle given base and height.&quot;&quot;&quot;</span>
+    <span class="c1"># TODO: return the correct area using the formula (0.5 * base * height)</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestTriangle</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_triangle_area_basic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify basic area computation for a triangle.&quot;&quot;&quot;</span>
+        <span class="c1"># Arrange</span>
+        <span class="c1"># TODO: define base and height (e.g., base = 10, height = 5)</span>
+        <span class="c1"># TODO: define the expected result (should be 25 for base=10, height=5)</span>
+        <span class="c1"># Act</span>
+        <span class="c1"># TODO: call triangle_area(base, height) and store the result</span>
+        <span class="c1"># Assert</span>
+        <span class="c1"># TODO: use assertEqual to compare result and expected</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing the test</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_triangle_area_zero</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that area is 0 when base or height is 0.&quot;&quot;&quot;</span>
+        <span class="c1"># Arrange</span>
+        <span class="c1"># TODO: define base and height where one of them is 0</span>
+        <span class="c1"># Act</span>
+        <span class="c1"># TODO: call triangle_area and store the result</span>
+        <span class="c1"># Assert</span>
+        <span class="c1"># TODO: verify that the result equals 0</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing the test</span>
+
+
+<span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestTriangle</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">triangle_area</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestTriangle</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_triangle_area_basic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Arrange</span>
+        <span class="n">base</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span>
+        <span class="n">expected</span> <span class="o">=</span> <span class="mi">25</span>
+        <span class="c1"># Act</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">triangle_area</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="c1"># Assert</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_triangle_area_zero</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Arrange</span>
+        <span class="n">base</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span>
+        <span class="c1"># Act</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">triangle_area</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="c1"># Assert</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>הקפדה על מבנה זה הופכת את הקוד לקריא מאוד,<br />
+ומאפשרת לזהות בקלות את שלב הטעות אם הבדיקה נכשלת.</p>
+</div>
+</section>
+</section>
+<section id="subtest">
+<h2>🔁 שימוש ב־subTest לתרחישים מרובים<a class="headerlink" href="#subtest" title="Link to this heading">#</a></h2>
+<p>לעיתים נרצה לבדוק את אותה פונקציה עבור מגוון נתונים שונים.<br />
+במקום לכתוב בדיקה נפרדת לכל מקרה, נוכל להשתמש ב־<code class="docutils literal notranslate"><span class="pre">subTest()</span></code>.</p>
+<section id="id4">
+<h3>דוגמה:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>בדוגמה זו אנו בודקים את הפונקציה <code class="docutils literal notranslate"><span class="pre">square(x)</span></code> שמחזירה את הערך ( x^2 ).<br />
+במקום לכתוב בדיקה נפרדת לכל ערך קלט, אנחנו משתמשים במנגנון <strong><code class="docutils literal notranslate"><span class="pre">subTest()</span></code></strong> של <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.</p>
+<p>כך זה עובד:</p>
+<ul class="simple">
+<li><p>אנו יוצרים רשימה של זוגות <code class="docutils literal notranslate"><span class="pre">(input,</span> <span class="pre">expected)</span></code> — כל אחד מייצג מקרה בדיקה קטן.</p></li>
+<li><p>בתוך לולאה, עבור כל זוג, נשתמש ב־<code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">self.subTest(x=inp):</span></code> כדי ליצור תת־בדיקה נפרדת.</p></li>
+<li><p>בכל <code class="docutils literal notranslate"><span class="pre">subTest</span></code>, נבדוק שהתוצאה של <code class="docutils literal notranslate"><span class="pre">square(inp)</span></code> קרובה לערך הצפוי בעזרת <code class="docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code><br />
+(מתאים במיוחד למספרים עשרוניים).</p></li>
+</ul>
+<p>היתרון:<br />
+אם אחת מהתת־בדיקות נכשלת, הדוח של <code class="docutils literal notranslate"><span class="pre">unittest</span></code> מציין בדיוק איזה ערך קלט גרם לכשל —<br />
+כך קל מאוד לזהות שגיאות ספציפיות בלי לעצור את שאר הבדיקות.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+
+<span class="c1"># --- TODO: Complete the function implementation ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the square of x.&quot;&quot;&quot;</span>
+    <span class="c1"># TODO: return the square of x using the ** operator</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestSquare</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_square_multiple_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check multiple input-output pairs using subTest.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: create a list of tuples (input, expected_output)</span>
+        <span class="c1"># test_cases = [...]</span>
+        <span class="c1"># Example: (0,0), (2,4), (-3,9), (1.5,2.25)</span>
+
+        <span class="c1"># TODO: loop over all test_cases</span>
+        <span class="c1"># for inp, expected in test_cases:</span>
+        <span class="c1">#     with self.subTest(x=inp):</span>
+        <span class="c1">#         use assertAlmostEqual(square(inp), expected, places=6)</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing the code</span>
+
+
+<span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestTriangle</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestSquare</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_square_multiple_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check multiple input-output pairs using subTest.&quot;&quot;&quot;</span>
+        <span class="n">test_cases</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+            <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+            <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.25</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">inp</span><span class="p">,</span> <span class="n">expected</span> <span class="ow">in</span> <span class="n">test_cases</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">subTest</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">inp</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="n">inp</span><span class="p">),</span> <span class="n">expected</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>כל מקרה נבדק כתת־בדיקה נפרדת.<br />
+אם אחד מהם נכשל, הדו”ח יציין בדיוק איזה קלט גרם לכשל — כלי מצוין לבדיקת טווחי נתונים.</p>
+</div>
+</section>
+</section>
+<section id="edge-cases">
+<h2>בדיקות שוליים (Edge Cases)<a class="headerlink" href="#edge-cases" title="Link to this heading">#</a></h2>
+<p>בדיקות טובות לא מסתפקות בערכים “רגילים” —<br />
+צריך לוודא גם שהקוד מתמודד נכון עם קלטים חריגים: אפס, שלילי, None, טיפוסים שגויים וכו’.</p>
+<p>נניח פונקציה שמחשבת שטח מלבן, אבל אוסרת על ערכים שליליים:</p>
+<section id="id5">
+<h3>דוגמה: בדיקות שוליים (Edge Cases)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>בדוגמה זו נבדקת הפונקציה <code class="docutils literal notranslate"><span class="pre">rectangle_area(length,</span> <span class="pre">width)</span></code> שמחשבת את שטח המלבן לפי הנוסחה<br />
+( A = length \times width ), אך מוסיפה תנאי בטיחות — אם אחד הצדדים שלילי, נזרקת חריגה (<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>).</p>
+<p>מחלקת הבדיקות <code class="docutils literal notranslate"><span class="pre">TestRectangleEdges</span></code> בוחנת שלושה סוגי מצבים:</p>
+<ol class="arabic simple">
+<li><p><strong>test_negative_values_raise</strong><br />
+בודקת ששימוש באורך או רוחב שלילי מעלה חריגה (<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>).<br />
+זהו מקרה קצה (edge case) שנועד לוודא שהקוד לא מחשב תוצאה לא הגיונית פיזיקלית.</p></li>
+<li><p><strong>test_zero_dimension</strong><br />
+בודקת שכאשר אחד מהצדדים הוא אפס, התוצאה היא אפס — כפי שצפוי מבחינה מתמטית.</p></li>
+<li><p><strong>test_positive</strong><br />
+מוודאת שהפונקציה עובדת כראוי בערכים תקינים (למשל ‎3×4‎ = ‎12‎).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+
+<span class="c1"># --- TODO: Implement the function ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">rectangle_area</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the area of a rectangle, raising ValueError for negative sides.&quot;&quot;&quot;</span>
+    <span class="c1"># TODO: if either length or width is negative → raise ValueError</span>
+    <span class="c1"># TODO: otherwise return length * width</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestRectangleEdges</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_values_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check that negative dimensions raise ValueError.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: use assertRaises(ValueError) for a negative length</span>
+        <span class="c1"># with self.assertRaises(ValueError):</span>
+        <span class="c1">#     rectangle_area(-1, 2)</span>
+
+        <span class="c1"># TODO: use assertRaises(ValueError) for a negative width</span>
+        <span class="c1"># with self.assertRaises(ValueError):</span>
+        <span class="c1">#     rectangle_area(3, -5)</span>
+        <span class="k">pass</span>  <span class="c1"># remove after completing the test</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_zero_dimension</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check that zero length or width returns 0.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: use assertEqual to verify that rectangle_area(0, 5) == 0</span>
+        <span class="c1"># TODO: use assertEqual to verify that rectangle_area(5, 0) == 0</span>
+        <span class="k">pass</span>  <span class="c1"># remove after completing the test</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify normal case with positive dimensions.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: use assertEqual to check that rectangle_area(3, 4) == 12</span>
+        <span class="k">pass</span>  <span class="c1"># remove after completing the test</span>
+
+
+<span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestRectangleEdges</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rectangle_area</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">length</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">width</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Length and width must be non-negative&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">length</span> <span class="o">*</span> <span class="n">width</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestRectangleEdges</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_values_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check that negative dimensions raise ValueError.&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">rectangle_area</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">rectangle_area</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_zero_dimension</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Zero length or width should return 0.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">rectangle_area</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">rectangle_area</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Normal case for comparison.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">rectangle_area</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>בדיקות כאלה של קלטים קיצוניים ובלתי צפויים נקראות <strong>Edge Cases</strong>,<br />
+והן חיוניות כדי לוודא שהקוד אמין, יציב, ויודע להתמודד גם עם מצבים חריגים.
+תמיד חשוב לכלול בדיקות “שוליים” כאלה — הן מונעות באגים אמיתיים בקוד הפיזיקלי והמתמטי שלנו.</p>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2>תרגול<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>השלימו את הקוד הבא כך שכל הבדיקות יעברו.<br />
+הפונקציה אמורה להחזיר את שטח המעגל לפי הנוסחה ( A = \pi r^2 ),<br />
+אבל עליה לזרוק חריגה אם הרדיוס שלילי.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+
+<span class="c1"># --- TODO: Implement the function ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the area of a circle with non-negative radius.&quot;&quot;&quot;</span>
+    <span class="c1"># TODO: if radius &lt; 0 → raise ValueError</span>
+    <span class="c1"># TODO: otherwise return math.pi * radius ** 2</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare test data before each test.&quot;&quot;&quot;</span>
+        <span class="c1"># A list of (radius, expected_area) tuples</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_cases</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span>
+        <span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_circle_area_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Use subTest to check multiple radius values.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: iterate over self.test_cases</span>
+        <span class="c1"># for radius, expected in self.test_cases:</span>
+        <span class="c1">#     with self.subTest(radius=radius):</span>
+        <span class="c1">#         call circle_area(radius)</span>
+        <span class="c1">#         compare with expected using assertAlmostEqual(..., ..., places=6)</span>
+        <span class="k">pass</span>  <span class="c1"># remove after completing the test</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_radius_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that negative radius raises ValueError.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: use assertRaises(ValueError) when calling circle_area with -1</span>
+        <span class="c1"># with self.assertRaises(ValueError):</span>
+        <span class="c1">#     circle_area(-1)</span>
+        <span class="k">pass</span>  <span class="c1"># remove after completing the test</span>
+
+
+<span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestCircleArea</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the area of a circle with non-negative radius.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">radius</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Radius must be non-negative&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestCircleArea</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare test data before each test.&quot;&quot;&quot;</span>
+        <span class="c1"># List of (radius, expected_area) tuples</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_cases</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span>
+        <span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_circle_area_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check multiple radius values using subTest.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">radius</span><span class="p">,</span> <span class="n">expected</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_cases</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">subTest</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_negative_radius_raises</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Verify that negative radius raises ValueError.&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">circle_area</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>סיכום<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>במחברת זו למדנו:</p>
+<ul class="simple">
+<li><p>כיצד להשתמש ב־<code class="docutils literal notranslate"><span class="pre">setUp()</span></code> ו־<code class="docutils literal notranslate"><span class="pre">tearDown()</span></code> כדי להכין סביבה לבדיקה.</p></li>
+<li><p>כיצד לארגן בדיקות לפי דפוס AAA להגברת קריאות.</p></li>
+<li><p>כיצד לכתוב תרחישים חוזרים בעזרת <code class="docutils literal notranslate"><span class="pre">subTest</span></code>.</p></li>
+<li><p>כיצד לטפל במקרי קצה (Edge Cases) ולהבטיח שהקוד עמיד גם בתנאים לא צפויים.</p></li>
+</ul>
+<p>במחברת הבאה נמשיך לבדוק <strong>מחלקות ומורשות (OOP Testing)</strong> ונכיר את השימוש הבסיסי ב־<code class="docutils literal notranslate"><span class="pre">unittest.mock</span></code>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/computers-for-physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./course/weeks/week_12"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">מטרות הלמידה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">🔧 setUp ו־tearDown</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">דוגמה בסיסית:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrangeactassert-aaa">דפוס Arrange–Act–Assert (AAA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">דוגמה:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">🔁 שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמה:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-cases">בדיקות שוליים (Edge Cases)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">דוגמה: בדיקות שוליים (Edge Cases)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">תרגול</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">סיכום</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

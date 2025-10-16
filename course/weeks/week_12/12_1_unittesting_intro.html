@@ -841,35 +841,37 @@ OK
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestMeanExercises</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">test_mean_with_negative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check that mean() works correctly with negative numbers.&quot;&quot;&quot;</span>
-        <span class="c1"># TODO: create a list that includes at least one negative number</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>  <span class="c1"># example — adjust if needed</span>
-        <span class="c1"># TODO: call mean() and store the result</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="c1"># TODO: use assertEqual to check the expected mean value</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Check that mean() works correctly when list includes negative numbers.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: create a list named data that includes at least one negative number</span>
+        <span class="c1"># data = [...]</span>
+        <span class="c1"># TODO: call mean(data) and store the result in variable &#39;result&#39;</span>
+        <span class="c1"># result = ...</span>
+        <span class="c1"># TODO: use assertEqual to verify the expected mean value (should be 4/3 for [-2, 2, 4])</span>
+        <span class="c1"># self.assertEqual(..., ...)</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing the code</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_mean_large_range</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that mean() works on a large range (1..100).&quot;&quot;&quot;</span>
-        <span class="c1"># TODO: create a list of numbers from 1 to 100</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">))</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Verify that mean() works correctly for numbers 1..100.&quot;&quot;&quot;</span>
+        <span class="c1"># TODO: create a list of numbers from 1 to 100 (inclusive)</span>
+        <span class="c1"># data = ...</span>
         <span class="c1"># TODO: call mean() and store the result</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="c1"># TODO: assert that the mean equals 50.5</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mf">50.5</span><span class="p">)</span>
+        <span class="c1"># result = ...</span>
+        <span class="c1"># TODO: use assertEqual to check that the mean equals 50.5</span>
+        <span class="c1"># self.assertEqual(..., ...)</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing the code</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_mean_iterator_input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;TODO: Confirm that mean() accepts an iterator as input.&quot;&quot;&quot;</span>
-        <span class="c1"># TODO: create an iterator (e.g., generator expression)</span>
-        <span class="n">data_iter</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
-        <span class="c1"># TODO: call mean() and store the result</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">data_iter</span><span class="p">)</span>
-        <span class="c1"># TODO: check the expected value with assertEqual</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+        <span class="c1"># TODO: create an iterator, for example using a generator expression</span>
+        <span class="c1"># data_iter = ...</span>
+        <span class="c1"># TODO: call mean() with this iterator</span>
+        <span class="c1"># result = ...</span>
+        <span class="c1"># TODO: use assertEqual to verify that the result equals 20.0</span>
+        <span class="c1"># self.assertEqual(..., ...)</span>
+        <span class="k">pass</span>  <span class="c1"># remove this line after completing the code</span>
 
 <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestMeanExercises</span><span class="p">)</span>
 <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
@@ -885,14 +887,14 @@ TODO: Confirm that mean() accepts an iterator as input. ...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_mean_large_range (__main__.TestMeanExercises.test_mean_large_range)
-TODO: Verify that mean() works on a large range (1..100). ... 
+TODO: Verify that mean() works correctly for numbers 1..100. ... 
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_mean_with_negative (__main__.TestMeanExercises.test_mean_with_negative)
-TODO: Check that mean() works correctly with negative numbers. ... 
+TODO: Check that mean() works correctly when list includes negative numbers. ... 
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
@@ -1027,7 +1029,7 @@ ERROR: test_basic_conversion (__main__.TestMetersToKilometers.test_basic_convers
 TODO: Verify that 1000 meters equals 1 kilometer.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_46904/1108015603.py&quot;, line 17, in test_basic_conversion
+  File &quot;/tmp/ipykernel_63788/1108015603.py&quot;, line 17, in test_basic_conversion
     self.assertAlmostEqual(meters_to_kilometers(1000), 1.0, places=6)
   File &quot;/usr/local/python/3.12.1/lib/python3.12/unittest/case.py&quot;, line 918, in assertAlmostEqual
     diff = abs(first - second)
@@ -1040,7 +1042,7 @@ FAIL: test_negative_raises (__main__.TestMetersToKilometers.test_negative_raises
 TODO: Ensure that negative input raises ValueError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_46904/1108015603.py&quot;, line 33, in test_negative_raises
+  File &quot;/tmp/ipykernel_63788/1108015603.py&quot;, line 33, in test_negative_raises
     with self.assertRaises(ValueError):
 AssertionError: ValueError not raised
 </pre></div>
@@ -1050,7 +1052,7 @@ FAIL: test_non_numeric_raises (__main__.TestMetersToKilometers.test_non_numeric_
 TODO: Ensure that passing a string raises TypeError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_46904/1108015603.py&quot;, line 27, in test_non_numeric_raises
+  File &quot;/tmp/ipykernel_63788/1108015603.py&quot;, line 27, in test_non_numeric_raises
     with self.assertRaises(TypeError):
 AssertionError: TypeError not raised
 </pre></div>
@@ -1060,13 +1062,13 @@ FAIL: test_zero (__main__.TestMetersToKilometers.test_zero)
 TODO: Check that 0 meters equals 0.0 km.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_46904/1108015603.py&quot;, line 22, in test_zero
+  File &quot;/tmp/ipykernel_63788/1108015603.py&quot;, line 22, in test_zero
     self.assertEqual(meters_to_kilometers(0), 0.0)
 AssertionError: None != 0.0
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 4 tests in 0.005s
+Ran 4 tests in 0.006s
 
 FAILED (failures=3, errors=1)
 </pre></div>
@@ -1181,7 +1183,7 @@ FAIL: test_invalid_values (__main__.TestNormalizeProbability.test_invalid_values
 TODO: Check that values outside [0, 1] raise ValueError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_46904/3068437329.py&quot;, line 24, in test_invalid_values
+  File &quot;/tmp/ipykernel_63788/3068437329.py&quot;, line 24, in test_invalid_values
     with self.assertRaises(ValueError):
 AssertionError: ValueError not raised
 </pre></div>
@@ -1191,7 +1193,7 @@ FAIL: test_type_validation (__main__.TestNormalizeProbability.test_type_validati
 TODO: Ensure that non-numeric input raises TypeError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_46904/3068437329.py&quot;, line 32, in test_type_validation
+  File &quot;/tmp/ipykernel_63788/3068437329.py&quot;, line 32, in test_type_validation
     with self.assertRaises(TypeError):
 AssertionError: TypeError not raised
 </pre></div>
@@ -1201,7 +1203,7 @@ FAIL: test_valid_values (__main__.TestNormalizeProbability.test_valid_values)
 TODO: Verify that valid probabilities are returned unchanged.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_46904/3068437329.py&quot;, line 17, in test_valid_values
+  File &quot;/tmp/ipykernel_63788/3068437329.py&quot;, line 17, in test_valid_values
     self.assertEqual(normalize_probability(0), 0.0)
 AssertionError: None != 0.0
 </pre></div>
