@@ -58,6 +58,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_12/12_2_setup_teardown_edges';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -461,7 +463,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">מטרות הלמידה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">🔧 setUp ו־tearDown</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">setUp ו־tearDown</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">דוגמה בסיסית:</a></li>
 </ul>
 </li>
@@ -469,7 +471,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">דוגמה:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">🔁 שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמה:</a></li>
 </ul>
 </li>
@@ -498,19 +500,19 @@ document.write(`
 <section id="id1">
 <h2>מטרות הלמידה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>להבין את תפקידן של הפונקציות <code class="docutils literal notranslate"><span class="pre">setUp()</span></code> ו־<code class="docutils literal notranslate"><span class="pre">tearDown()</span></code>.</p></li>
+<li><p>להבין את תפקידן של הפונקציות <code class="docutils literal notranslate"><span class="pre">()setUp</span></code> ו־<code class="docutils literal notranslate"><span class="pre">()tearDown</span></code>.</p></li>
 <li><p>לתכנן בדיקות לפי דפוס <strong>AAA</strong> (Arrange → Act → Assert).</p></li>
 <li><p>ללמוד להשתמש ב־<code class="docutils literal notranslate"><span class="pre">subTest</span></code> לבדיקות חוזרות על נתונים שונים.</p></li>
 <li><p>להוסיף בדיקות לקלטים בקצוות (edge cases) ולוודא טיפול נכון בשגיאות.</p></li>
 </ul>
 </section>
 <section id="setup-teardown">
-<h2>🔧 setUp ו־tearDown<a class="headerlink" href="#setup-teardown" title="Link to this heading">#</a></h2>
+<h2>setUp ו־tearDown<a class="headerlink" href="#setup-teardown" title="Link to this heading">#</a></h2>
 <p>במקרים רבים כמה בדיקות משתמשות באותם נתוני התחלה או בהגדרות משותפות.<br />
-במקום לשכפל את הקוד הזה בכל פונקציה, נוכל להשתמש ב־<code class="docutils literal notranslate"><span class="pre">setUp()</span></code>.</p>
+במקום לשכפל את הקוד הזה בכל פונקציה, נוכל להשתמש ב־<code class="docutils literal notranslate"><span class="pre">()setUp</span></code>.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">setUp()</span></code> — רצה <strong>לפני כל בדיקה</strong> (כל מתודת test_).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tearDown()</span></code> — רצה <strong>אחרי כל בדיקה</strong> (גם אם היא נכשלה).<br />
+<li><p><code class="docutils literal notranslate"><span class="pre">()setUp</span></code> — רצה <strong>לפני כל בדיקה</strong> (כל מתודת test_).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">()tearDown</span></code> — רצה <strong>אחרי כל בדיקה</strong> (גם אם היא נכשלה).<br />
 נשתמש בה בעיקר לניקוי משאבים (למשל סגירת קובץ, מחיקת משתנה זמני).</p></li>
 </ul>
 <section id="id2">
@@ -520,12 +522,12 @@ document.write(`
 רצה <strong>לפני כל בדיקה (test)</strong> ומגדירה משתנים משותפים — במקרה זה:<br />
 <code class="docutils literal notranslate"><span class="pre">self.length</span></code>, <code class="docutils literal notranslate"><span class="pre">self.width</span></code> ו־<code class="docutils literal notranslate"><span class="pre">self.area</span></code>.<br />
 כך כל בדיקה מתחילה מאותו מצב בסיסי, בלי צורך להגדיר את הערכים מחדש בכל פונקציה.</p></li>
-<li><p><strong>tearDown()</strong><br />
+<li><p><strong>()tearDown</strong><br />
 רצה <strong>אחרי כל בדיקה</strong>, גם אם הבדיקה נכשלה.<br />
 כאן משתמשים בה לניקוי המשתנים (השמה של <code class="docutils literal notranslate"><span class="pre">None</span></code>) או לצורכי ניפוי שגיאות (debugging).</p></li>
-<li><p><strong>test_area_positive()</strong><br />
+<li><p><strong>()test_area_positive</strong><br />
 בודקת שהשטח המחושב (<code class="docutils literal notranslate"><span class="pre">length</span> <span class="pre">*</span> <span class="pre">width</span></code>) תואם לערך הצפוי שנשמר ב־<code class="docutils literal notranslate"><span class="pre">self.area</span></code>.</p></li>
-<li><p><strong>test_perimeter()</strong><br />
+<li><p><strong>()test_perimeter</strong><br />
 בודקת את חישוב ההיקף לפי הנוסחה ( P = 2(l + w) ),<br />
 ומוודאת שהתוצאה שווה ל־16 במקרה הנתון (אורך 5 ורוחב 3).</p></li>
 </ul>
@@ -564,21 +566,36 @@ document.write(`
 
 
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
-<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestMeanExercises</span><span class="p">)</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestRectangle</span><span class="p">)</span>
 <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">34</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>         <span class="k">pass</span>  <span class="c1"># remove this line after completing the test</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
-<span class="ne">---&gt; </span><span class="mi">34</span> <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestMeanExercises</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_area_positive (__main__.TestRectangle.test_area_positive)
+TODO: Check that the computed area equals the expected one. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_perimeter (__main__.TestRectangle.test_perimeter)
+TODO: Check that perimeter calculation is correct. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
+Ran 2 tests in 0.002s
 
-<span class="ne">NameError</span>: name &#39;TestMeanExercises&#39; is not defined
+OK
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.runner.TextTestResult run=2 errors=0 failures=0&gt;
 </pre></div>
 </div>
 </div>
@@ -683,6 +700,34 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_triangle_area_basic (__main__.TestTriangle.test_triangle_area_basic)
+TODO: Verify basic area computation for a triangle. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_triangle_area_zero (__main__.TestTriangle.test_triangle_area_zero)
+TODO: Verify that area is 0 when base or height is 0. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+OK
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.runner.TextTestResult run=2 errors=0 failures=0&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
@@ -718,13 +763,13 @@ document.write(`
 </section>
 </section>
 <section id="subtest">
-<h2>🔁 שימוש ב־subTest לתרחישים מרובים<a class="headerlink" href="#subtest" title="Link to this heading">#</a></h2>
+<h2>שימוש ב־subTest לתרחישים מרובים<a class="headerlink" href="#subtest" title="Link to this heading">#</a></h2>
 <p>לעיתים נרצה לבדוק את אותה פונקציה עבור מגוון נתונים שונים.<br />
-במקום לכתוב בדיקה נפרדת לכל מקרה, נוכל להשתמש ב־<code class="docutils literal notranslate"><span class="pre">subTest()</span></code>.</p>
+במקום לכתוב בדיקה נפרדת לכל מקרה, נוכל להשתמש ב־<code class="docutils literal notranslate"><span class="pre">()subTest</span></code>.</p>
 <section id="id4">
 <h3>דוגמה:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>בדוגמה זו אנו בודקים את הפונקציה <code class="docutils literal notranslate"><span class="pre">square(x)</span></code> שמחזירה את הערך ( x^2 ).<br />
-במקום לכתוב בדיקה נפרדת לכל ערך קלט, אנחנו משתמשים במנגנון <strong><code class="docutils literal notranslate"><span class="pre">subTest()</span></code></strong> של <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.</p>
+במקום לכתוב בדיקה נפרדת לכל ערך קלט, אנחנו משתמשים במנגנון <strong><code class="docutils literal notranslate"><span class="pre">()subTest</span></code></strong> של <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.</p>
 <p>כך זה עובד:</p>
 <ul class="simple">
 <li><p>אנו יוצרים רשימה של זוגות <code class="docutils literal notranslate"><span class="pre">(input,</span> <span class="pre">expected)</span></code> — כל אחד מייצג מקרה בדיקה קטן.</p></li>
@@ -763,6 +808,34 @@ document.write(`
 <span class="c1"># --- Run tests in Jupyter-friendly mode ---</span>
 <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestTriangle</span><span class="p">)</span>
 <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_triangle_area_basic (__main__.TestTriangle.test_triangle_area_basic)
+TODO: Verify basic area computation for a triangle. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_triangle_area_zero (__main__.TestTriangle.test_triangle_area_zero)
+TODO: Verify that area is 0 when base or height is 0. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.runner.TextTestResult run=2 errors=0 failures=0&gt;
 </pre></div>
 </div>
 </div>
@@ -856,6 +929,41 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_negative_values_raise (__main__.TestRectangleEdges.test_negative_values_raise)
+TODO: Check that negative dimensions raise ValueError. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_positive (__main__.TestRectangleEdges.test_positive)
+TODO: Verify normal case with positive dimensions. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_zero_dimension (__main__.TestRectangleEdges.test_zero_dimension)
+TODO: Check that zero length or width returns 0. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+OK
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.runner.TextTestResult run=3 errors=0 failures=0&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
@@ -895,7 +1003,7 @@ document.write(`
 <section id="id6">
 <h2>תרגול<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>השלימו את הקוד הבא כך שכל הבדיקות יעברו.<br />
-הפונקציה אמורה להחזיר את שטח המעגל לפי הנוסחה ( A = \pi r^2 ),<br />
+הפונקציה אמורה להחזיר את שטח המעגל לפי הנוסחה <span class="math notranslate nohighlight">\( A = \pi r^2 \)</span>,<br />
 אבל עליה לזרוק חריגה אם הרדיוס שלילי.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -943,6 +1051,34 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_circle_area_values (__main__.TestCircleArea.test_circle_area_values)
+TODO: Use subTest to check multiple radius values. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_negative_radius_raises (__main__.TestCircleArea.test_negative_radius_raises)
+TODO: Verify that negative radius raises ValueError. ... 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+OK
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;unittest.runner.TextTestResult run=2 errors=0 failures=0&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
@@ -982,7 +1118,7 @@ document.write(`
 <h2>סיכום<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>במחברת זו למדנו:</p>
 <ul class="simple">
-<li><p>כיצד להשתמש ב־<code class="docutils literal notranslate"><span class="pre">setUp()</span></code> ו־<code class="docutils literal notranslate"><span class="pre">tearDown()</span></code> כדי להכין סביבה לבדיקה.</p></li>
+<li><p>כיצד להשתמש ב־<code class="docutils literal notranslate"><span class="pre">()setUp</span></code> ו־<code class="docutils literal notranslate"><span class="pre">()tearDown</span></code> כדי להכין סביבה לבדיקה.</p></li>
 <li><p>כיצד לארגן בדיקות לפי דפוס AAA להגברת קריאות.</p></li>
 <li><p>כיצד לכתוב תרחישים חוזרים בעזרת <code class="docutils literal notranslate"><span class="pre">subTest</span></code>.</p></li>
 <li><p>כיצד לטפל במקרי קצה (Edge Cases) ולהבטיח שהקוד עמיד גם בתנאים לא צפויים.</p></li>
@@ -1038,7 +1174,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">מטרות הלמידה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">🔧 setUp ו־tearDown</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">setUp ו־tearDown</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">דוגמה בסיסית:</a></li>
 </ul>
 </li>
@@ -1046,7 +1182,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">דוגמה:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">🔁 שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמה:</a></li>
 </ul>
 </li>
