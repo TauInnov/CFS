@@ -25,32 +25,24 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-A = np.array([[2., 1.],
-              [0., 3.]])
-B = np.array([[1., -1.],
-              [4.,  2.]])
+# Batched matrix-vector multiply: shape (batch, n, n) @ (n,)
+batch = 5
+M = rng.normal(size=(batch, 3, 3))
+v = rng.normal(size=3)
 
-AB1 = A @ B            # matrix product via @
-AB2 = np.matmul(A, B)  # same
-AB3 = np.dot(A, B)     # same for 2D
-print("AB1:")
-print(AB1)
-print("AB2:")
-print(AB2)
-print("AB3:")
-print(AB3)
-
+# Broadcasting: each 3x3 in M multiplies the same vector v -> (batch, 3)
+Mv = M @ v
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m A = [43mnp[49m.array([[[32m2.[39m, [32m1.[39m],
-[32m      2[39m               [[32m0.[39m, [32m3.[39m]])
-[32m      3[39m B = np.array([[[32m1.[39m, -[32m1.[39m],
-[32m      4[39m               [[32m4.[39m,  [32m2.[39m]])
-[32m      6[39m AB1 = A @ B            [38;5;66;03m# matrix product via @[39;00m
+[36mCell[39m[36m [39m[32mIn[9][39m[32m, line 3[39m
+[32m      1[39m [38;5;66;03m# Batched matrix-vector multiply: shape (batch, n, n) @ (n,)[39;00m
+[32m      2[39m batch = [32m5[39m
+[32m----> [39m[32m3[39m M = [43mrng[49m.normal(size=(batch, [32m3[39m, [32m3[39m))
+[32m      4[39m v = rng.normal(size=[32m3[39m)
+[32m      6[39m [38;5;66;03m# Broadcasting: each 3x3 in M multiplies the same vector v -> (batch, 3)[39;00m
 
-[31mNameError[39m: name 'np' is not defined
+[31mNameError[39m: name 'rng' is not defined
 

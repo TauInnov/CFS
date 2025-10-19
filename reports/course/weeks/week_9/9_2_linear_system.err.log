@@ -25,26 +25,29 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Solve Ax = b (single RHS)
-A = np.array([[3., 1.],
-              [1., 2.]])
-b = np.array([9., 8.])
+# Synthetic data: y ≈ a + b x
+xdata = np.linspace(0, 1, 50)
+ytrue = 1.5 + 2.0*xdata
+yobs  = ytrue + rng.normal(scale=0.1, size=xdata.size)  # noisy observations
 
-x = np.linalg.solve(A, b)
-residual = A @ x - b
-x, residual
+# Design matrix for linear fit: [1, x]
+A = np.column_stack([np.ones_like(xdata), xdata])
 
+# Least-squares fit
+coef, residuals, rank, s = np.linalg.lstsq(A, yobs, rcond=None)
+
+coef, residuals
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 2[39m
-[32m      1[39m [38;5;66;03m# Solve Ax = b (single RHS)[39;00m
-[32m----> [39m[32m2[39m A = [43mnp[49m.array([[[32m3.[39m, [32m1.[39m],
-[32m      3[39m               [[32m1.[39m, [32m2.[39m]])
-[32m      4[39m b = np.array([[32m9.[39m, [32m8.[39m])
-[32m      6[39m x = np.linalg.solve(A, b)
+[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 4[39m
+[32m      2[39m xdata = np.linspace([32m0[39m, [32m1[39m, [32m50[39m)
+[32m      3[39m ytrue = [32m1.5[39m + [32m2.0[39m*xdata
+[32m----> [39m[32m4[39m yobs  = ytrue + [43mrng[49m.normal(scale=[32m0.1[39m, size=xdata.size)  [38;5;66;03m# noisy observations[39;00m
+[32m      6[39m [38;5;66;03m# Design matrix for linear fit: [1, x][39;00m
+[32m      7[39m A = np.column_stack([np.ones_like(xdata), xdata])
 
-[31mNameError[39m: name 'np' is not defined
+[31mNameError[39m: name 'rng' is not defined
 
