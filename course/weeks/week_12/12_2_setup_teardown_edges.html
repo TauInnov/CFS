@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>עבודה נכונה עם setUp, תרחישים ושוליים &#8212; Computers For physics</title>
+    <title>12.9. עבודה נכונה עם setUp, תרחישים ושוליים &#8212; Computers For physics</title>
   
   
   
@@ -63,6 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_12/12_2_setup_teardown_edges';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="12.10. בדיקות ל־OOP: מחלקות, ירושה, פולימורפיזם ו־patch בסיסי" href="12_3_unittesting_oop.html" />
+    <link rel="prev" title="12.8. יסודות Unit Testing עם unittest" href="12_1_unittesting_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -187,19 +187,140 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_12.html">12. שבוע 12 — OOP &amp; Unittesting</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_0_objectives.html">1.2. מבוא</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_1_hardware-to-software.html">1.3. חומרה, תוכנה והשיטה הבינארית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_2_python.html">1.4. שפת התכנות פייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_3_variables-and-assignments.html">1.5. משתנים והשמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_0_intro_types.html">1.6. מבוא לטיפוסים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_1_numerical_types.html">1.7. טיפוסים נומריים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_2_booleans.html">1.8. משתנים בוליאניים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_3_strings.html">1.9. מחרוזות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_4_conversion.html">1.10. המרות בין טיפוסים</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_0_intro-conditions.html">2.2. מבוא לתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_1_if-else-statements.html">2.3. משפטי תנאי בסיסיים: <code class="docutils literal notranslate"><span class="pre">if</span></code> ו<code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_2_nested-ifs.html">2.6. תנאים מקוננים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_3_elif.html">2.7. elif ותנאים מרובים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_4_logical-operators-in-ifs.html">2.8. אופרטורים לוגיים בתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_0_intro-functions.html">2.9. מבוא לפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.10. פונקציות מובנות בפייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.11. בניית פונקציות משלכם</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.12. פרמטרים וארגומנטים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.13. קריאה הדדית בין פונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.14. דוגמאות מתקדמות</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_0_intro-list.html">3.2. מבוא לרשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_1_list-operators-indices.html">3.3. רשימות: אופרטורים בסיסיים ואינדקסים</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_2_built-in-functions-in-list.html">3.5. פונקציות מובנות לרשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_3_list-methods.html">3.6. מתודות של רשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_4_nested_lists.html">3.7. רשימות מקוננות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_5_list-examples.html">3.8. דוגמאות מעשיות</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/5_0_intro-loops.html">4.2. מבוא ללולאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_0_for_loops.html">4.3. לולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_1_ranges-and-for.html">4.4. range ולולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_2_for-examples.html">4.5. דוגמאות ל־for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_3_for-summary.html">4.6. סיכום לולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_0_while_loops.html">4.7. לולאות while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_1_while-examples.html">4.8. דוגמאות ל־while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_0_while_vs_for.html">4.9. while לעומת for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_1_break_and_continue.html">4.10. break ו־continue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_2_nested_loops.html">4.11. לולאות מקוננות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_3_list-comprehensions.html">4.12. List Comprehensions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/10_0_mutable-vs-immutable.html">5.2. Mutable vs Immutable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/10_1_memory-in-functions.html">5.3. זיכרון והתנהגות בפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/11_0_advanced_function_usage.html">5.4. שימושים מתקדמים בפונקציות</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/12_0_data_structures.html">6.2. מבני נתונים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/12_1_tuples.html">6.3. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/12_2_dicts.html">6.4. מילונים (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/13_0_string-formats.html">6.6. עיצוב מחרוזות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/13_1_files.html">6.7. קריאה וכתיבה לקבצים</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_0_intro_libs.html">7.2. ספריות בפייתון</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_1_arrays.html">7.4. Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_2_arrays_indexing.html">7.5. Arrays — Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_3_datatypes.html">7.6. Datatypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_4_array_math.html">7.7. Array Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_5_broadcasting.html">7.8. Broadcasting</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_1_matplotlib.html">8.2. Matplotlib</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_2_example_matplotlib.html">8.5. דוגמה מסכמת — Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_3_prob_hists.html">8.6. Probabilities &amp; Histograms</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_0_intro.html">9.2. מבוא ל־NumPy מתקדם</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_1_matrix_operations.html">9.3. פעולות מטריציוניות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_2_linear_system.html">9.4. פתרון מערכות ליניאריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_eigen_values.html">9.5. ערכים ווקטורים עצמיים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_SVD.html">9.6. SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_example_image_SVD.html">9.7. דוגמה: דחיסת תמונה באמצעות SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_example_PI_MC.html">9.8. דוגמה: הערכת π בשיטת מונטה־קרלו</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_10/10_1_physical_consts.html">10.2. קבועים פיזיקליים ויחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_10/10_2_integration.html">10.3. אינטגרציה נומרית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_10/10_3_optimization.html">10.4. אופטימיזציה</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_0_intro.html">11.2. מבוא - Pandas</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_1_data_structures.html">11.4. Series ו־DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_2_io.html">11.5. טעינה וכתיבה של נתונים (I/O)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_3_indexing_select_filter.html">11.6. מיון, סינון ואינדוקס נתונים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_4_cleaning_type_handling.html">11.7. ניקוי נתונים וטיפוסים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_5_vector_transform.html">11.8. טרנספורמציות ווקטוריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_6_grouping_aggregation.html">11.9. קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_7_reshaping_dataframes.html">11.11. Reshaping DataFrames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_8_merging_joining.html">11.12. Merging &amp; Joining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_9_time_series.html">11.13. ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_10_exploration_quick_plots.html">11.15. Exploration &amp; Quick Plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_12.html">12. שבוע 12 — OOP &amp; Unittesting</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/17_0_oop-intro.html">12.2. מבוא ל־OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/17_1_oop-implementation.html">12.3. תחביר מחלקה בפייתון</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="12_1_unittesting_intro.html">12.8. מבוא ל־Unit Testing</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">12.9. setUp/tearDown ושוליים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_3_unittesting_oop.html">12.10. בדיקות ל־OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_4_physicsl_unittesting.html">12.11. בדיקות לקוד נומרי בפיזיקה</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -462,25 +583,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">מטרות הלמידה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">setUp ו־tearDown</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">דוגמה בסיסית:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.9.1. מטרות הלמידה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">12.9.2. setUp ו־tearDown</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.9.2.1. דוגמה בסיסית:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrangeactassert-aaa">דפוס Arrange–Act–Assert (AAA)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">דוגמה:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrangeactassert-aaa">12.9.3. דפוס Arrange–Act–Assert (AAA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">12.9.3.1. דוגמה:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמה:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">12.9.4. שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.9.4.1. דוגמה:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-cases">בדיקות שוליים (Edge Cases)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">דוגמה: בדיקות שוליים (Edge Cases)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-cases">12.9.5. בדיקות שוליים (Edge Cases)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.9.5.1. דוגמה: בדיקות שוליים (Edge Cases)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">תרגול</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.9.6. תרגול</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.9.7. סיכום</a></li>
 </ul>
             </nav>
         </div>
@@ -493,12 +614,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="setup">
-<h1>עבודה נכונה עם setUp, תרחישים ושוליים<a class="headerlink" href="#setup" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">12.9. </span>עבודה נכונה עם setUp, תרחישים ושוליים<a class="headerlink" href="#setup" title="Link to this heading">#</a></h1>
 <p>במחברת זו נעמיק בשיטות עבודה טובות בבדיקות יחידה עם <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.<br />
 נלמד כיצד להכין סביבה לבדיקה (setup), לנקות אותה (teardown), לבדוק תרחישים שונים באותה פונקציה,<br />
 ולהשתמש ב־<code class="docutils literal notranslate"><span class="pre">subTest</span></code> כדי לבחון סדרות של נתונים בקלות.</p>
 <section id="id1">
-<h2>מטרות הלמידה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.9.1. </span>מטרות הלמידה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>להבין את תפקידן של הפונקציות <code class="docutils literal notranslate"><span class="pre">()setUp</span></code> ו־<code class="docutils literal notranslate"><span class="pre">()tearDown</span></code>.</p></li>
 <li><p>לתכנן בדיקות לפי דפוס <strong>AAA</strong> (Arrange → Act → Assert).</p></li>
@@ -507,7 +628,7 @@ document.write(`
 </ul>
 </section>
 <section id="setup-teardown">
-<h2>setUp ו־tearDown<a class="headerlink" href="#setup-teardown" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.9.2. </span>setUp ו־tearDown<a class="headerlink" href="#setup-teardown" title="Link to this heading">#</a></h2>
 <p>במקרים רבים כמה בדיקות משתמשות באותם נתוני התחלה או בהגדרות משותפות.<br />
 במקום לשכפל את הקוד הזה בכל פונקציה, נוכל להשתמש ב־<code class="docutils literal notranslate"><span class="pre">()setUp</span></code>.</p>
 <ul class="simple">
@@ -516,7 +637,7 @@ document.write(`
 נשתמש בה בעיקר לניקוי משאבים (למשל סגירת קובץ, מחיקת משתנה זמני).</p></li>
 </ul>
 <section id="id2">
-<h3>דוגמה בסיסית:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.9.2.1. </span>דוגמה בסיסית:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>setUp()</strong><br />
 רצה <strong>לפני כל בדיקה (test)</strong> ומגדירה משתנים משותפים — במקרה זה:<br />
@@ -628,7 +749,7 @@ OK
 </section>
 </section>
 <section id="arrangeactassert-aaa">
-<h2>דפוס Arrange–Act–Assert (AAA)<a class="headerlink" href="#arrangeactassert-aaa" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.9.3. </span>דפוס Arrange–Act–Assert (AAA)<a class="headerlink" href="#arrangeactassert-aaa" title="Link to this heading">#</a></h2>
 <p>זהו סגנון כתיבה שמסייע לשמור על קריאות הבדיקה:</p>
 <ol class="arabic simple">
 <li><p><strong>Arrange</strong> – הגדרת הנתונים והאובייקטים.</p></li>
@@ -636,7 +757,7 @@ OK
 <li><p><strong>Assert</strong> – בדיקה שהתוצאה תואמת לציפיות.</p></li>
 </ol>
 <section id="id3">
-<h3>דוגמה:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.9.3.1. </span>דוגמה:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>בדוגמה זו אנו מדגימים כיצד כותבים בדיקות יחידה בצורה קריאה וברורה בעזרת <strong>דפוס AAA</strong> —<br />
 שלושת השלבים הקלאסיים של כל בדיקה:</p>
 <ol class="arabic simple">
@@ -719,7 +840,7 @@ TODO: Verify that area is 0 when base or height is 0. ...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 2 tests in 0.002s
+Ran 2 tests in 0.004s
 
 OK
 </pre></div>
@@ -763,11 +884,11 @@ OK
 </section>
 </section>
 <section id="subtest">
-<h2>שימוש ב־subTest לתרחישים מרובים<a class="headerlink" href="#subtest" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.9.4. </span>שימוש ב־subTest לתרחישים מרובים<a class="headerlink" href="#subtest" title="Link to this heading">#</a></h2>
 <p>לעיתים נרצה לבדוק את אותה פונקציה עבור מגוון נתונים שונים.<br />
 במקום לכתוב בדיקה נפרדת לכל מקרה, נוכל להשתמש ב־<code class="docutils literal notranslate"><span class="pre">()subTest</span></code>.</p>
 <section id="id4">
-<h3>דוגמה:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.9.4.1. </span>דוגמה:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>בדוגמה זו אנו בודקים את הפונקציה <code class="docutils literal notranslate"><span class="pre">square(x)</span></code> שמחזירה את הערך ( x^2 ).<br />
 במקום לכתוב בדיקה נפרדת לכל ערך קלט, אנחנו משתמשים במנגנון <strong><code class="docutils literal notranslate"><span class="pre">()subTest</span></code></strong> של <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.</p>
 <p>כך זה עובד:</p>
@@ -830,7 +951,7 @@ TODO: Verify that area is 0 when base or height is 0. ...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------
-Ran 2 tests in 0.002s
+Ran 2 tests in 0.005s
 
 OK
 </pre></div>
@@ -869,12 +990,12 @@ OK
 </section>
 </section>
 <section id="edge-cases">
-<h2>בדיקות שוליים (Edge Cases)<a class="headerlink" href="#edge-cases" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.9.5. </span>בדיקות שוליים (Edge Cases)<a class="headerlink" href="#edge-cases" title="Link to this heading">#</a></h2>
 <p>בדיקות טובות לא מסתפקות בערכים “רגילים” —<br />
 צריך לוודא גם שהקוד מתמודד נכון עם קלטים חריגים: אפס, שלילי, None, טיפוסים שגויים וכו’.</p>
 <p>נניח פונקציה שמחשבת שטח מלבן, אבל אוסרת על ערכים שליליים:</p>
 <section id="id5">
-<h3>דוגמה: בדיקות שוליים (Edge Cases)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.9.5.1. </span>דוגמה: בדיקות שוליים (Edge Cases)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>בדוגמה זו נבדקת הפונקציה <code class="docutils literal notranslate"><span class="pre">rectangle_area(length,</span> <span class="pre">width)</span></code> שמחשבת את שטח המלבן לפי הנוסחה<br />
 ( A = length \times width ), אך מוסיפה תנאי בטיחות — אם אחד הצדדים שלילי, נזרקת חריגה (<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>).</p>
 <p>מחלקת הבדיקות <code class="docutils literal notranslate"><span class="pre">TestRectangleEdges</span></code> בוחנת שלושה סוגי מצבים:</p>
@@ -1001,7 +1122,7 @@ OK
 </section>
 </section>
 <section id="id6">
-<h2>תרגול<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.9.6. </span>תרגול<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>השלימו את הקוד הבא כך שכל הבדיקות יעברו.<br />
 הפונקציה אמורה להחזיר את שטח המעגל לפי הנוסחה <span class="math notranslate nohighlight">\( A = \pi r^2 \)</span>,<br />
 אבל עליה לזרוק חריגה אם הרדיוס שלילי.</p>
@@ -1115,7 +1236,7 @@ OK
 </div>
 </section>
 <section id="id7">
-<h2>סיכום<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.9.7. </span>סיכום<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>במחברת זו למדנו:</p>
 <ul class="simple">
 <li><p>כיצד להשתמש ב־<code class="docutils literal notranslate"><span class="pre">()setUp</span></code> ו־<code class="docutils literal notranslate"><span class="pre">()tearDown</span></code> כדי להכין סביבה לבדיקה.</p></li>
@@ -1157,6 +1278,24 @@ OK
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="12_1_unittesting_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">12.8. </span>יסודות Unit Testing עם unittest</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="12_3_unittesting_oop.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12.10. </span>בדיקות ל־OOP: מחלקות, ירושה, פולימורפיזם ו־patch בסיסי</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1173,25 +1312,25 @@ OK
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">מטרות הלמידה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">setUp ו־tearDown</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">דוגמה בסיסית:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.9.1. מטרות הלמידה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-teardown">12.9.2. setUp ו־tearDown</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.9.2.1. דוגמה בסיסית:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrangeactassert-aaa">דפוס Arrange–Act–Assert (AAA)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">דוגמה:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrangeactassert-aaa">12.9.3. דפוס Arrange–Act–Assert (AAA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">12.9.3.1. דוגמה:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמה:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subtest">12.9.4. שימוש ב־subTest לתרחישים מרובים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">12.9.4.1. דוגמה:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-cases">בדיקות שוליים (Edge Cases)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">דוגמה: בדיקות שוליים (Edge Cases)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-cases">12.9.5. בדיקות שוליים (Edge Cases)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">12.9.5.1. דוגמה: בדיקות שוליים (Edge Cases)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">תרגול</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">12.9.6. תרגול</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">12.9.7. סיכום</a></li>
 </ul>
   </nav></div>
 

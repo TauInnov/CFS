@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials) &#8212; Computers For physics</title>
+    <title>11.13. ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials) &#8212; Computers For physics</title>
   
   
   
@@ -61,6 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_9_time_series';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="11.15. חקירה מהירה וגרפים זריזים (Exploration &amp; Quick Plots)" href="11_10_exploration_quick_plots.html" />
+    <link rel="prev" title="11.12. מיזוג וחיבור טבלאות (Merging &amp; Joining)" href="11_8_merging_joining.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -185,19 +185,140 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week_12.html">12. שבוע 12 — OOP &amp; Unittesting</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_0_objectives.html">1.2. מבוא</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_1_hardware-to-software.html">1.3. חומרה, תוכנה והשיטה הבינארית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_2_python.html">1.4. שפת התכנות פייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_3_variables-and-assignments.html">1.5. משתנים והשמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_0_intro_types.html">1.6. מבוא לטיפוסים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_1_numerical_types.html">1.7. טיפוסים נומריים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_2_booleans.html">1.8. משתנים בוליאניים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_3_strings.html">1.9. מחרוזות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_4_conversion.html">1.10. המרות בין טיפוסים</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_0_intro-conditions.html">2.2. מבוא לתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_1_if-else-statements.html">2.3. משפטי תנאי בסיסיים: <code class="docutils literal notranslate"><span class="pre">if</span></code> ו<code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_2_nested-ifs.html">2.6. תנאים מקוננים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_3_elif.html">2.7. elif ותנאים מרובים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_4_logical-operators-in-ifs.html">2.8. אופרטורים לוגיים בתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_0_intro-functions.html">2.9. מבוא לפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.10. פונקציות מובנות בפייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.11. בניית פונקציות משלכם</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.12. פרמטרים וארגומנטים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.13. קריאה הדדית בין פונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.14. דוגמאות מתקדמות</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_0_intro-list.html">3.2. מבוא לרשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_1_list-operators-indices.html">3.3. רשימות: אופרטורים בסיסיים ואינדקסים</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_2_built-in-functions-in-list.html">3.5. פונקציות מובנות לרשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_3_list-methods.html">3.6. מתודות של רשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_4_nested_lists.html">3.7. רשימות מקוננות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_5_list-examples.html">3.8. דוגמאות מעשיות</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/5_0_intro-loops.html">4.2. מבוא ללולאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_0_for_loops.html">4.3. לולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_1_ranges-and-for.html">4.4. range ולולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_2_for-examples.html">4.5. דוגמאות ל־for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_3_for-summary.html">4.6. סיכום לולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_0_while_loops.html">4.7. לולאות while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_1_while-examples.html">4.8. דוגמאות ל־while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_0_while_vs_for.html">4.9. while לעומת for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_1_break_and_continue.html">4.10. break ו־continue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_2_nested_loops.html">4.11. לולאות מקוננות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_3_list-comprehensions.html">4.12. List Comprehensions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/10_0_mutable-vs-immutable.html">5.2. Mutable vs Immutable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/10_1_memory-in-functions.html">5.3. זיכרון והתנהגות בפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/11_0_advanced_function_usage.html">5.4. שימושים מתקדמים בפונקציות</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/12_0_data_structures.html">6.2. מבני נתונים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/12_1_tuples.html">6.3. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/12_2_dicts.html">6.4. מילונים (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/13_0_string-formats.html">6.6. עיצוב מחרוזות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/13_1_files.html">6.7. קריאה וכתיבה לקבצים</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_0_intro_libs.html">7.2. ספריות בפייתון</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_1_arrays.html">7.4. Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_2_arrays_indexing.html">7.5. Arrays — Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_3_datatypes.html">7.6. Datatypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_4_array_math.html">7.7. Array Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_5_broadcasting.html">7.8. Broadcasting</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_1_matplotlib.html">8.2. Matplotlib</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_2_example_matplotlib.html">8.5. דוגמה מסכמת — Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_3_prob_hists.html">8.6. Probabilities &amp; Histograms</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_0_intro.html">9.2. מבוא ל־NumPy מתקדם</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_1_matrix_operations.html">9.3. פעולות מטריציוניות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_2_linear_system.html">9.4. פתרון מערכות ליניאריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_eigen_values.html">9.5. ערכים ווקטורים עצמיים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_SVD.html">9.6. SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_example_image_SVD.html">9.7. דוגמה: דחיסת תמונה באמצעות SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_example_PI_MC.html">9.8. דוגמה: הערכת π בשיטת מונטה־קרלו</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_10/10_1_physical_consts.html">10.2. קבועים פיזיקליים ויחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_10/10_2_integration.html">10.3. אינטגרציה נומרית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_10/10_3_optimization.html">10.4. אופטימיזציה</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="11_0_intro.html">11.2. מבוא - Pandas</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="11_1_data_structures.html">11.4. Series ו־DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_2_io.html">11.5. טעינה וכתיבה של נתונים (I/O)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_3_indexing_select_filter.html">11.6. מיון, סינון ואינדוקס נתונים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_4_cleaning_type_handling.html">11.7. ניקוי נתונים וטיפוסים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_5_vector_transform.html">11.8. טרנספורמציות ווקטוריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_6_grouping_aggregation.html">11.9. קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="11_7_reshaping_dataframes.html">11.11. Reshaping DataFrames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11_8_merging_joining.html">11.12. Merging &amp; Joining</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.13. ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="11_10_exploration_quick_plots.html">11.15. Exploration &amp; Quick Plots</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_12.html">12. שבוע 12 — OOP &amp; Unittesting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/17_0_oop-intro.html">12.2. מבוא ל־OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/17_1_oop-implementation.html">12.3. תחביר מחלקה בפייתון</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_1_unittesting_intro.html">12.8. מבוא ל־Unit Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_2_setup_teardown_edges.html">12.9. setUp/tearDown ושוליים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_3_unittesting_oop.html">12.10. בדיקות ל־OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_4_physicsl_unittesting.html">12.11. בדיקות לקוד נומרי בפיזיקה</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -460,18 +581,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datetimeindex">המרה ויצירת DateTimeIndex</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resampling">דגימה מחדש (Resampling)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ניתוח מגמות מחודש לחודש</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">אזורי זמן ו־GroupBy לפי זמן</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11.13. ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datetimeindex">11.13.1. המרה ויצירת DateTimeIndex</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resampling">11.13.2. דגימה מחדש (Resampling)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.13.3. ניתוח מגמות מחודש לחודש</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">11.13.4. אזורי זמן ו־GroupBy לפי זמן</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">תרגילים: סדרות זמן ניסוייות במערכת אנרגיה סולארית</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">תרגיל 1: עיבוד סדרת זמן וניתוח אנרגיה שבועית במערכת סולארית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#month-over-month-growth">תרגיל 2: חישוב שינויי ייצור חודשיים (Month-over-Month Growth)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">תרגיל 3: התאמה לאזור זמן ובדיקת השפעה על הנתונים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">תרגיל 4: GroupBy מודע לזמן — ניתוח ממוצע יומי לפי יום בשבוע</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.14. תרגילים: סדרות זמן ניסוייות במערכת אנרגיה סולארית</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.14.1. תרגיל 1: עיבוד סדרת זמן וניתוח אנרגיה שבועית במערכת סולארית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#month-over-month-growth">11.14.2. תרגיל 2: חישוב שינויי ייצור חודשיים (Month-over-Month Growth)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.14.3. תרגיל 3: התאמה לאזור זמן ובדיקת השפעה על הנתונים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.14.4. תרגיל 4: GroupBy מודע לזמן — ניתוח ממוצע יומי לפי יום בשבוע</a></li>
 </ul>
 </li>
 </ul>
@@ -487,18 +608,18 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="time-series-essentials">
-<h1>ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)<a class="headerlink" href="#time-series-essentials" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11.13. </span>ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)<a class="headerlink" href="#time-series-essentials" title="Link to this heading">#</a></h1>
 <p>במדידות פיזיקליות, אנו מתמודדים לעיתים קרובות עם <strong>נתונים רציפים בזמן</strong> — כמו זרם, מתח, טמפרטורה או הספק שנמדדים כל כמה שניות, דקות או ימים.<br />
 עיבוד נכון של סדרות זמן מאפשר לנו לחשוף מגמות, תנודות, או חריגות בהתנהגות המערכת לאורך תקופה.</p>
 <p>בפנדס קיימים כלים ייעודיים לעבודה עם נתוני זמן: המרה לפורמט תאריך־ושעה, קביעת אינדקס מבוסס זמן, דגימה מחדש (Resampling), חישוב מגמות מחזוריות, והתמודדות עם אזורי זמן שונים.</p>
 <section id="datetimeindex">
-<h2>המרה ויצירת DateTimeIndex<a class="headerlink" href="#datetimeindex" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.13.1. </span>המרה ויצירת DateTimeIndex<a class="headerlink" href="#datetimeindex" title="Link to this heading">#</a></h2>
 <p>נשתמש ב־<code class="docutils literal notranslate"><span class="pre">pd.to_datetime()</span></code> כדי לוודא שעמודת הזמן מיוצגת כ־<code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>.<br />
 לאחר מכן נגדיר אותה כאינדקס באמצעות <code class="docutils literal notranslate"><span class="pre">set_index(&quot;timestamp&quot;)</span></code> כדי לאפשר ניתוח מבוסס זמן.<br />
 כך נוכל בקלות לחלץ חודשים, שבועות, או ימים, ולבצע חישובי מגמות.</p>
 </section>
 <section id="resampling">
-<h2>דגימה מחדש (Resampling)<a class="headerlink" href="#resampling" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.13.2. </span>דגימה מחדש (Resampling)<a class="headerlink" href="#resampling" title="Link to this heading">#</a></h2>
 <p>פונקציית <code class="docutils literal notranslate"><span class="pre">resample()</span></code> מאפשרת לחשב נתונים מחושבים על פני תקופות זמן — לדוגמה:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">resample('W').mean()</span></code> לחישוב ממוצע שבועי של טמפרטורה או מתח.</p></li>
@@ -507,20 +628,20 @@ document.write(`
 <p>הדגימה מחדש חשובה מאוד לצמצום רעשים ולניתוח מגמות רחבות בזמן.</p>
 </section>
 <section id="id1">
-<h2>ניתוח מגמות מחודש לחודש<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.13.3. </span>ניתוח מגמות מחודש לחודש<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>באמצעות <code class="docutils literal notranslate"><span class="pre">pct_change()</span></code> נוכל לחשב את שיעור השינוי היחסי בין תקופות —<br />
 למשל לבדוק האם ההספק הכולל גדל או ירד ביחס לחודש הקודם.<br />
 נשתמש בכך כדי לזהות חודשים שבהם ייתכן כשל או שינוי בהתנהגות המערכת.</p>
 </section>
 <section id="groupby">
-<h2>אזורי זמן ו־GroupBy לפי זמן<a class="headerlink" href="#groupby" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.13.4. </span>אזורי זמן ו־GroupBy לפי זמן<a class="headerlink" href="#groupby" title="Link to this heading">#</a></h2>
 <p>כאשר המדידות נאספות ממכשירים שונים באזורים שונים,<br />
 נשתמש ב־<code class="docutils literal notranslate"><span class="pre">tz_localize()</span></code> ו־<code class="docutils literal notranslate"><span class="pre">tz_convert()</span></code> כדי לסנכרן בין אזורי זמן.<br />
 ניתן גם להשתמש ב־<code class="docutils literal notranslate"><span class="pre">groupby(df.index.month)</span></code> או <code class="docutils literal notranslate"><span class="pre">groupby(df.index.day_name())</span></code> כדי לחשב ממוצעים תקופתיים.</p>
 </section>
 </section>
 <section id="id2">
-<h1>תרגילים: סדרות זמן ניסוייות במערכת אנרגיה סולארית<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11.14. </span>תרגילים: סדרות זמן ניסוייות במערכת אנרגיה סולארית<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
 <p>בדוגמה הבאה ננתח סדרת זמן מניסוי פיזיקלי במערכת <strong>תאים סולאריים</strong>.<br />
 נניח שהמערכת מודדת את ההספק היומי הכולל (<code class="docutils literal notranslate"><span class="pre">net_power</span></code>) במשך שלושה חודשים.<br />
 נרצה:</p>
@@ -530,7 +651,7 @@ document.write(`
 <li><p>לנתח את <strong>שינויי הצמיחה החודשיים (MoM)</strong> ולזהות ירידות בייצור האנרגיה.</p></li>
 </ol>
 <section id="id3">
-<h2>תרגיל 1: עיבוד סדרת זמן וניתוח אנרגיה שבועית במערכת סולארית<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.14.1. </span>תרגיל 1: עיבוד סדרת זמן וניתוח אנרגיה שבועית במערכת סולארית<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>בתרגיל זה נבצע סימולציה פשוטה של <strong>מערכת סולארית</strong> המודדת את האנרגיה היומית (kWh) לאורך תקופה של שלושה חודשים.<br />
 נשתמש בכלים של Pandas לעיבוד <strong>סדרות זמן (Time Series)</strong> כדי לחשב את <strong>סך האנרגיה השבועית</strong> שהמערכת הפיקה.</p>
 <p>שלבי העבודה:</p>
@@ -665,7 +786,7 @@ document.write(`
 </div>
 </section>
 <section id="month-over-month-growth">
-<h2>תרגיל 2: חישוב שינויי ייצור חודשיים (Month-over-Month Growth)<a class="headerlink" href="#month-over-month-growth" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.14.2. </span>תרגיל 2: חישוב שינויי ייצור חודשיים (Month-over-Month Growth)<a class="headerlink" href="#month-over-month-growth" title="Link to this heading">#</a></h2>
 <p>נחשב את השינוי היחסי בהפקת האנרגיה מחודש לחודש,<br />
 ונזהה חודשים שבהם ייצור החשמל הסולארי ירד — למשל עקב תנאי מזג אוויר או תקלה במערכת.</p>
 <div class="cell docutils container">
@@ -689,7 +810,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Monthly solar energy and growth trends:
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12705/1042207626.py:3: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_18040/1042207626.py:3: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
   monthly_energy = df.resample(&quot;M&quot;).sum()
 </pre></div>
 </div>
@@ -747,7 +868,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2>תרגיל 3: התאמה לאזור זמן ובדיקת השפעה על הנתונים<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.14.3. </span>תרגיל 3: התאמה לאזור זמן ובדיקת השפעה על הנתונים<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>נניח שהמערכת ממוקמת בישראל, אך נתוני הכיול מתקבלים משרת ב־UTC.<br />
 נמיר את אזור הזמן של המדידות (<code class="docutils literal notranslate"><span class="pre">tz_localize</span></code>) ונתאים אותו ל־UTC להשוואה.</p>
 <div class="cell docutils container">
@@ -850,7 +971,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h2>תרגיל 4: GroupBy מודע לזמן — ניתוח ממוצע יומי לפי יום בשבוע<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.14.4. </span>תרגיל 4: GroupBy מודע לזמן — ניתוח ממוצע יומי לפי יום בשבוע<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>נחשב את ממוצע ההפקה היומית של האנרגיה הסולארית לפי יום בשבוע.<br />
 כך נוכל לבדוק האם קיימת השפעה מחזורית — לדוגמה, האם בימי ראשון נמדדים ערכים נמוכים עקב תחזוקה או הצללה.</p>
 <div class="cell docutils container">
@@ -899,8 +1020,8 @@ Name: net_power_kWh, dtype: float64
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="yDiiGUmBIuTZ" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#yDiiGUmBIuTZ {
+<div class="output text_html"><div id="mduhoShYuTnP" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#mduhoShYuTnP {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1117,7 +1238,7 @@ Name: net_power_kWh, dtype: float64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsyDiiGUmBIuTZ=[{"question": "\u05d1\u05de\u05e2\u05e8\u05db\u05ea \u05e0\u05d9\u05e1\u05d5\u05d9\u05d9\u05ea \u05dc\u05de\u05d3\u05d9\u05d3\u05ea \u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e1\u05d5\u05dc\u05d0\u05e8\u05d9\u05ea \u05e0\u05e8\u05e9\u05de\u05d5\u05ea \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d9\u05d5\u05de\u05d9\u05d5\u05ea \u05e9\u05dc \u05d4\u05e1\u05e4\u05e7 \u05db\u05d5\u05dc\u05dc (net_power_kWh).<br><br>\u05db\u05d9\u05e6\u05d3 \u05e0\u05db\u05d5\u05df \u05dc\u05d7\u05e9\u05d1 \u05d0\u05ea \u05e1\u05da \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05d4\u05e9\u05d1\u05d5\u05e2\u05d9\u05ea, \u05d0\u05ea \u05e7\u05e6\u05d1 \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d4\u05d7\u05d5\u05d3\u05e9\u05d9 (MoM), \u05d5\u05dc\u05d6\u05d4\u05d5\u05ea \u05d7\u05d5\u05d3\u05e9\u05d9\u05dd \u05e9\u05d1\u05d4\u05dd \u05d7\u05dc\u05d4 \u05d9\u05e8\u05d9\u05d3\u05d4 \u05d1\u05d9\u05d9\u05e6\u05d5\u05e8?", "type": "many_choice", "answers": [{"answer": "\u05dc\u05d4\u05d2\u05d3\u05d9\u05e8 \u05d0\u05ea \u05e2\u05de\u05d5\u05d3\u05ea \u05d4\u05d6\u05de\u05df \u05db\u05beDateTimeIndex, \u05dc\u05d1\u05e6\u05e2 resample('W').sum() \u05dc\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05d4\u05e9\u05d1\u05d5\u05e2\u05d9\u05ea, \u05d5\u05dc\u05d0\u05d7\u05e8 \u05de\u05db\u05df resample('M').sum().pct_change()\u00d7100 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d4\u05d7\u05d5\u05d3\u05e9\u05d9, \u05d5\u05dc\u05e1\u05de\u05df \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd \u05db\u05d9\u05e8\u05d9\u05d3\u05d4.", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u05de\u05d0\u05d5\u05d3! \u05d6\u05d4\u05d5 \u05ea\u05d4\u05dc\u05d9\u05da \u05de\u05dc\u05d0 \u05e9\u05dc \u05e0\u05d9\u05ea\u05d5\u05d7 \u05e1\u05d3\u05e8\u05ea \u05d6\u05de\u05df: \u05d0\u05d9\u05e0\u05d3\u05d5\u05e7\u05e1 \u05dc\u05e4\u05d9 \u05d6\u05de\u05df, \u05d3\u05d2\u05d9\u05de\u05d4 \u05de\u05d7\u05d3\u05e9 \u05e9\u05d1\u05d5\u05e2\u05d9\u05ea \u05d5\u05d7\u05d5\u05d3\u05e9\u05d9\u05ea, \u05d7\u05d9\u05e9\u05d5\u05d1 \u05d0\u05d7\u05d5\u05d6 \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d7\u05d5\u05d3\u05e9\u05d9 \u05d5\u05d6\u05d9\u05d4\u05d5\u05d9 \u05ea\u05e7\u05d5\u05e4\u05d5\u05ea \u05d9\u05e8\u05d9\u05d3\u05d4."}, {"answer": "\u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05begroupby('month') \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e1\u05da \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4, \u05d5\u05dc\u05d0\u05d7\u05e8 \u05de\u05db\u05df \u05dc\u05d7\u05e9\u05d1 \u05d0\u05ea \u05d4\u05d4\u05e4\u05e8\u05e9 \u05d1\u05d9\u05df \u05d4\u05d7\u05d5\u05d3\u05e9 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05dc\u05d0\u05d7\u05e8\u05d5\u05df \u05d1\u05dc\u05d1\u05d3.", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 groupby \u05d0\u05d9\u05e0\u05d5 \u05de\u05d8\u05e4\u05dc \u05d1\u05e8\u05e6\u05e3 \u05d6\u05de\u05e0\u05d9\u05dd \u05ea\u05e7\u05e0\u05d9 \u05db\u05de\u05d5 resample, \u05d5\u05dc\u05d0 \u05de\u05d0\u05e4\u05e9\u05e8 \u05d7\u05d9\u05e9\u05d5\u05d1 \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9 \u05e9\u05dc \u05e9\u05d9\u05e0\u05d5\u05d9 \u05de\u05d7\u05d5\u05d3\u05e9 \u05dc\u05d7\u05d5\u05d3\u05e9."}, {"answer": "\u05dc\u05d7\u05e9\u05d1 \u05d0\u05ea \u05d4\u05d4\u05e4\u05e8\u05e9 \u05d1\u05d9\u05df \u05db\u05dc \u05e9\u05ea\u05d9 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e2\u05d5\u05e7\u05d1\u05d5\u05ea \u05d5\u05dc\u05d7\u05e4\u05e9 \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd.", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05de\u05d5\u05d3\u05d3 \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d9\u05d5\u05de\u05d9, \u05dc\u05d0 \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d7\u05d5\u05d3\u05e9\u05d9 \u05de\u05e6\u05d8\u05d1\u05e8. \u05d9\u05e9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05beresample \u05d5\u05bepct_change \u05db\u05d3\u05d9 \u05dc\u05de\u05d3\u05d5\u05d3 \u05e9\u05d9\u05e0\u05d5\u05d9\u05d9 \u05de\u05d2\u05de\u05d4 \u05e8\u05d7\u05d1\u05d9\u05dd."}, {"answer": "\u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05berolling(30).mean() \u05db\u05d3\u05d9 \u05dc\u05d7\u05e9\u05d1 \u05d0\u05ea \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05d4\u05d7\u05d5\u05d3\u05e9\u05d9\u05ea \u05d5\u05dc\u05d6\u05d4\u05d5\u05ea \u05d9\u05e8\u05d9\u05d3\u05d5\u05ea \u05dc\u05e4\u05d9 \u05e1\u05d8\u05d9\u05d5\u05ea \u05ea\u05e7\u05df.", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 rolling \u05de\u05d7\u05e9\u05d1\u05ea \u05de\u05de\u05d5\u05e6\u05e2\u05d9\u05dd \u05e0\u05e2\u05d9\u05dd \u05d5\u05dc\u05d0 \u05e1\u05db\u05d5\u05de\u05d9\u05dd \u05d7\u05d5\u05d3\u05e9\u05d9\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05d0\u05d9\u05e0\u05d4 \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d7\u05d5\u05d3\u05e9\u05d9 \u05d9\u05e9\u05d9\u05e8."}]}];
+</style></div><script type="application/javascript">var questionsmduhoShYuTnP=[{"question": "\u05d1\u05de\u05e2\u05e8\u05db\u05ea \u05e0\u05d9\u05e1\u05d5\u05d9\u05d9\u05ea \u05dc\u05de\u05d3\u05d9\u05d3\u05ea \u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e1\u05d5\u05dc\u05d0\u05e8\u05d9\u05ea \u05e0\u05e8\u05e9\u05de\u05d5\u05ea \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d9\u05d5\u05de\u05d9\u05d5\u05ea \u05e9\u05dc \u05d4\u05e1\u05e4\u05e7 \u05db\u05d5\u05dc\u05dc (net_power_kWh).<br><br>\u05db\u05d9\u05e6\u05d3 \u05e0\u05db\u05d5\u05df \u05dc\u05d7\u05e9\u05d1 \u05d0\u05ea \u05e1\u05da \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05d4\u05e9\u05d1\u05d5\u05e2\u05d9\u05ea, \u05d0\u05ea \u05e7\u05e6\u05d1 \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d4\u05d7\u05d5\u05d3\u05e9\u05d9 (MoM), \u05d5\u05dc\u05d6\u05d4\u05d5\u05ea \u05d7\u05d5\u05d3\u05e9\u05d9\u05dd \u05e9\u05d1\u05d4\u05dd \u05d7\u05dc\u05d4 \u05d9\u05e8\u05d9\u05d3\u05d4 \u05d1\u05d9\u05d9\u05e6\u05d5\u05e8?", "type": "many_choice", "answers": [{"answer": "\u05dc\u05d4\u05d2\u05d3\u05d9\u05e8 \u05d0\u05ea \u05e2\u05de\u05d5\u05d3\u05ea \u05d4\u05d6\u05de\u05df \u05db\u05beDateTimeIndex, \u05dc\u05d1\u05e6\u05e2 resample('W').sum() \u05dc\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05d4\u05e9\u05d1\u05d5\u05e2\u05d9\u05ea, \u05d5\u05dc\u05d0\u05d7\u05e8 \u05de\u05db\u05df resample('M').sum().pct_change()\u00d7100 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d4\u05d7\u05d5\u05d3\u05e9\u05d9, \u05d5\u05dc\u05e1\u05de\u05df \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd \u05db\u05d9\u05e8\u05d9\u05d3\u05d4.", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u05de\u05d0\u05d5\u05d3! \u05d6\u05d4\u05d5 \u05ea\u05d4\u05dc\u05d9\u05da \u05de\u05dc\u05d0 \u05e9\u05dc \u05e0\u05d9\u05ea\u05d5\u05d7 \u05e1\u05d3\u05e8\u05ea \u05d6\u05de\u05df: \u05d0\u05d9\u05e0\u05d3\u05d5\u05e7\u05e1 \u05dc\u05e4\u05d9 \u05d6\u05de\u05df, \u05d3\u05d2\u05d9\u05de\u05d4 \u05de\u05d7\u05d3\u05e9 \u05e9\u05d1\u05d5\u05e2\u05d9\u05ea \u05d5\u05d7\u05d5\u05d3\u05e9\u05d9\u05ea, \u05d7\u05d9\u05e9\u05d5\u05d1 \u05d0\u05d7\u05d5\u05d6 \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d7\u05d5\u05d3\u05e9\u05d9 \u05d5\u05d6\u05d9\u05d4\u05d5\u05d9 \u05ea\u05e7\u05d5\u05e4\u05d5\u05ea \u05d9\u05e8\u05d9\u05d3\u05d4."}, {"answer": "\u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05begroupby('month') \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e1\u05da \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4, \u05d5\u05dc\u05d0\u05d7\u05e8 \u05de\u05db\u05df \u05dc\u05d7\u05e9\u05d1 \u05d0\u05ea \u05d4\u05d4\u05e4\u05e8\u05e9 \u05d1\u05d9\u05df \u05d4\u05d7\u05d5\u05d3\u05e9 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05dc\u05d0\u05d7\u05e8\u05d5\u05df \u05d1\u05dc\u05d1\u05d3.", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 groupby \u05d0\u05d9\u05e0\u05d5 \u05de\u05d8\u05e4\u05dc \u05d1\u05e8\u05e6\u05e3 \u05d6\u05de\u05e0\u05d9\u05dd \u05ea\u05e7\u05e0\u05d9 \u05db\u05de\u05d5 resample, \u05d5\u05dc\u05d0 \u05de\u05d0\u05e4\u05e9\u05e8 \u05d7\u05d9\u05e9\u05d5\u05d1 \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9 \u05e9\u05dc \u05e9\u05d9\u05e0\u05d5\u05d9 \u05de\u05d7\u05d5\u05d3\u05e9 \u05dc\u05d7\u05d5\u05d3\u05e9."}, {"answer": "\u05dc\u05d7\u05e9\u05d1 \u05d0\u05ea \u05d4\u05d4\u05e4\u05e8\u05e9 \u05d1\u05d9\u05df \u05db\u05dc \u05e9\u05ea\u05d9 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e2\u05d5\u05e7\u05d1\u05d5\u05ea \u05d5\u05dc\u05d7\u05e4\u05e9 \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd.", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05de\u05d5\u05d3\u05d3 \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d9\u05d5\u05de\u05d9, \u05dc\u05d0 \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d7\u05d5\u05d3\u05e9\u05d9 \u05de\u05e6\u05d8\u05d1\u05e8. \u05d9\u05e9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05beresample \u05d5\u05bepct_change \u05db\u05d3\u05d9 \u05dc\u05de\u05d3\u05d5\u05d3 \u05e9\u05d9\u05e0\u05d5\u05d9\u05d9 \u05de\u05d2\u05de\u05d4 \u05e8\u05d7\u05d1\u05d9\u05dd."}, {"answer": "\u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05berolling(30).mean() \u05db\u05d3\u05d9 \u05dc\u05d7\u05e9\u05d1 \u05d0\u05ea \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05d4\u05d7\u05d5\u05d3\u05e9\u05d9\u05ea \u05d5\u05dc\u05d6\u05d4\u05d5\u05ea \u05d9\u05e8\u05d9\u05d3\u05d5\u05ea \u05dc\u05e4\u05d9 \u05e1\u05d8\u05d9\u05d5\u05ea \u05ea\u05e7\u05df.", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 rolling \u05de\u05d7\u05e9\u05d1\u05ea \u05de\u05de\u05d5\u05e6\u05e2\u05d9\u05dd \u05e0\u05e2\u05d9\u05dd \u05d5\u05dc\u05d0 \u05e1\u05db\u05d5\u05de\u05d9\u05dd \u05d7\u05d5\u05d3\u05e9\u05d9\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05d0\u05d9\u05e0\u05d4 \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d7\u05d5\u05d3\u05e9\u05d9 \u05d9\u05e9\u05d9\u05e8."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2180,8 +2301,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("yDiiGUmBIuTZ")) {
-    show_questions(questionsyDiiGUmBIuTZ, yDiiGUmBIuTZ);
+  if (document.getElementById("mduhoShYuTnP")) {
+    show_questions(questionsmduhoShYuTnP, mduhoShYuTnP);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2226,6 +2347,24 @@ function try_show() {
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="11_8_merging_joining.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">11.12. </span>מיזוג וחיבור טבלאות (Merging &amp; Joining)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="11_10_exploration_quick_plots.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11.15. </span>חקירה מהירה וגרפים זריזים (Exploration &amp; Quick Plots)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -2242,18 +2381,18 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datetimeindex">המרה ויצירת DateTimeIndex</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resampling">דגימה מחדש (Resampling)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ניתוח מגמות מחודש לחודש</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">אזורי זמן ו־GroupBy לפי זמן</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11.13. ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datetimeindex">11.13.1. המרה ויצירת DateTimeIndex</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resampling">11.13.2. דגימה מחדש (Resampling)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.13.3. ניתוח מגמות מחודש לחודש</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">11.13.4. אזורי זמן ו־GroupBy לפי זמן</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">תרגילים: סדרות זמן ניסוייות במערכת אנרגיה סולארית</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">תרגיל 1: עיבוד סדרת זמן וניתוח אנרגיה שבועית במערכת סולארית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#month-over-month-growth">תרגיל 2: חישוב שינויי ייצור חודשיים (Month-over-Month Growth)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">תרגיל 3: התאמה לאזור זמן ובדיקת השפעה על הנתונים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">תרגיל 4: GroupBy מודע לזמן — ניתוח ממוצע יומי לפי יום בשבוע</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.14. תרגילים: סדרות זמן ניסוייות במערכת אנרגיה סולארית</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.14.1. תרגיל 1: עיבוד סדרת זמן וניתוח אנרגיה שבועית במערכת סולארית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#month-over-month-growth">11.14.2. תרגיל 2: חישוב שינויי ייצור חודשיים (Month-over-Month Growth)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.14.3. תרגיל 3: התאמה לאזור זמן ובדיקת השפעה על הנתונים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.14.4. תרגיל 4: GroupBy מודע לזמן — ניתוח ממוצע יומי לפי יום בשבוע</a></li>
 </ul>
 </li>
 </ul>
