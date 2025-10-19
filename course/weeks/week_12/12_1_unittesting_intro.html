@@ -1028,7 +1028,7 @@ ERROR: test_basic_conversion (__main__.TestMetersToKilometers.test_basic_convers
 TODO: Verify that 1000 meters equals 1 kilometer.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_34566/1108015603.py&quot;, line 17, in test_basic_conversion
+  File &quot;/tmp/ipykernel_12846/1108015603.py&quot;, line 17, in test_basic_conversion
     self.assertAlmostEqual(meters_to_kilometers(1000), 1.0, places=6)
   File &quot;/usr/local/python/3.12.1/lib/python3.12/unittest/case.py&quot;, line 918, in assertAlmostEqual
     diff = abs(first - second)
@@ -1041,7 +1041,7 @@ FAIL: test_negative_raises (__main__.TestMetersToKilometers.test_negative_raises
 TODO: Ensure that negative input raises ValueError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_34566/1108015603.py&quot;, line 33, in test_negative_raises
+  File &quot;/tmp/ipykernel_12846/1108015603.py&quot;, line 33, in test_negative_raises
     with self.assertRaises(ValueError):
 AssertionError: ValueError not raised
 </pre></div>
@@ -1051,7 +1051,7 @@ FAIL: test_non_numeric_raises (__main__.TestMetersToKilometers.test_non_numeric_
 TODO: Ensure that passing a string raises TypeError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_34566/1108015603.py&quot;, line 27, in test_non_numeric_raises
+  File &quot;/tmp/ipykernel_12846/1108015603.py&quot;, line 27, in test_non_numeric_raises
     with self.assertRaises(TypeError):
 AssertionError: TypeError not raised
 </pre></div>
@@ -1061,7 +1061,7 @@ FAIL: test_zero (__main__.TestMetersToKilometers.test_zero)
 TODO: Check that 0 meters equals 0.0 km.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_34566/1108015603.py&quot;, line 22, in test_zero
+  File &quot;/tmp/ipykernel_12846/1108015603.py&quot;, line 22, in test_zero
     self.assertEqual(meters_to_kilometers(0), 0.0)
 AssertionError: None != 0.0
 </pre></div>
@@ -1182,7 +1182,7 @@ FAIL: test_invalid_values (__main__.TestNormalizeProbability.test_invalid_values
 TODO: Check that values outside [0, 1] raise ValueError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_34566/3068437329.py&quot;, line 24, in test_invalid_values
+  File &quot;/tmp/ipykernel_12846/3068437329.py&quot;, line 24, in test_invalid_values
     with self.assertRaises(ValueError):
 AssertionError: ValueError not raised
 </pre></div>
@@ -1192,7 +1192,7 @@ FAIL: test_type_validation (__main__.TestNormalizeProbability.test_type_validati
 TODO: Ensure that non-numeric input raises TypeError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_34566/3068437329.py&quot;, line 32, in test_type_validation
+  File &quot;/tmp/ipykernel_12846/3068437329.py&quot;, line 32, in test_type_validation
     with self.assertRaises(TypeError):
 AssertionError: TypeError not raised
 </pre></div>
@@ -1202,7 +1202,7 @@ FAIL: test_valid_values (__main__.TestNormalizeProbability.test_valid_values)
 TODO: Verify that valid probabilities are returned unchanged.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_34566/3068437329.py&quot;, line 17, in test_valid_values
+  File &quot;/tmp/ipykernel_12846/3068437329.py&quot;, line 17, in test_valid_values
     self.assertEqual(normalize_probability(0), 0.0)
 AssertionError: None != 0.0
 </pre></div>

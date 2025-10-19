@@ -462,30 +462,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">פתרון מערכות לינאריות</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">שתי דרכים לפתרון</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condition-number">מספר התניה (Condition Number)</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">פתרון מערכות לינאריות</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">שתי דרכים לפתרון</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">מספר התניה (Condition Number)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">דוגמה: פתרון מערכת לינארית פשוטה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמה: פתרון מערכת לינארית פשוטה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nearly-singular">דוגמה: מערכת כמעט סינגולרית (Nearly Singular)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">דוגמה: פתרון מערכת עם מספר אגפים בצד ימין</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">דוגמה: פתרון מערכת עם מספר אגפים בצד ימין</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#least-squares">שיטת הריבועים הפחותים (Least Squares)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">דוגמה: התאמת קו ישר בשיטת Least Squares</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">בעיה אמיתית: רעש במדידות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">ניסוח מטריציוני</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">דוגמה: התאמת קו ישר בשיטת Least Squares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">בעיה אמיתית: רעש במדידות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">ניסוח מטריציוני</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">הפתרון ב־NumPy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">דוגמה: יצירת נתונים מלאכותיים ובדיקת התאמת קו ישר</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">הצגת תוצאות ההתאמה הגרפית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">דוגמה: יצירת נתונים מלאכותיים ובדיקת התאמת קו ישר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">הצגת תוצאות ההתאמה הגרפית</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -617,130 +608,8 @@ x_2
 <p><strong>אל תחשבו <span class="math notranslate nohighlight">\(A^{-1}\)</span></strong> אלא השתמשו ב-<code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code>, ובדקו את ה-condition number אם אתם חושדים שמדובר במטריצה “כמעט סינגולרית”.</p>
 </div>
 </section>
-</section>
 <section id="id4">
-<h1>פתרון מערכות לינאריות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
-<p>נניח שיש לנו מערכת של משוואות לינאריות (כלומר משוואות שבהן המשתנים מופיעים בחזקה ראשונה בלבד), לדוגמה:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{cases}
-2x_1 + x_2 = 5 \\
-x_1 - x_2 = 1
-\end{cases}
-\end{split}\]</div>
-<p>אפשר לכתוב זאת בצורה מטריציונית קומפקטית:</p>
-<div class="math notranslate nohighlight">
-\[
-A x = b
-\]</div>
-<p>ייצוג מפורש:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A = \begin{bmatrix}
-2 &amp; 1 \\
-1 &amp; -1
-\end{bmatrix},
-\quad
-x = \begin{bmatrix}
-x_1 \\
-x_2
-\end{bmatrix},
-\quad
-b = \begin{bmatrix}
-5 \\
-1
-\end{bmatrix}.
-\end{split}\]</div>
-<p>כאשר:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(A\)</span> היא מטריצה שמכילה את המקדמים של המשוואות,</p></li>
-<li><p><span class="math notranslate nohighlight">\(x\)</span> הוא וקטור המשתנים הבלתי ידועים,</p></li>
-<li><p><span class="math notranslate nohighlight">\(b\)</span> הוא וקטור התוצאות (האגפים הימניים).</p></li>
-</ul>
-<p>כך מקבלים את הכתיבה הקומפקטית:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A x = b
-\quad \Longleftrightarrow \quad
-\begin{bmatrix}
-2 &amp; 1 \\
-1 &amp; -1
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2
-\end{bmatrix}
-=
-\begin{bmatrix}
-5 \\
-1
-\end{bmatrix}.
-\end{split}\]</div>
-<section id="id5">
-<h2>שתי דרכים לפתרון<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>לחשב במפורש את <span class="math notranslate nohighlight">\(A^{-1}\)</span> (המטריצה ההפוכה של <span class="math notranslate nohighlight">\(A\)</span>), ואז להציב:</p>
-<div class="math notranslate nohighlight">
-\[
-   x = A^{-1} b
-   \]</div>
-</li>
-<li><p>להשתמש ישירות באלגוריתם נומרי שמחשב את <span class="math notranslate nohighlight">\(x\)</span> בלי למצוא את <span class="math notranslate nohighlight">\(A^{-1}\)</span>:</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>מדוע לא נחשב את <span class="math notranslate nohighlight">\(A^{-1}\)</span> ישירות?</p>
-<ul class="simple">
-<li><p><strong>חוסר יציבות נומרית</strong>: מחשב עובד עם ספרות מוגבלות (למשל 16 ספרות עשרוניות).
-חישוב המטריצה ההפוכה עלול להגדיל שגיאות קטנות במספרים, במיוחד אם <span class="math notranslate nohighlight">\(A\)</span> קרובה להיות לא הפיכה (סינגולרית).</p></li>
-<li><p><strong>יעילות</strong>: לחשב מטריצה הפוכה זה ארוך ומיותר אם כל מה שאנחנו רוצים זה לפתור את המערכת.
-<code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code> משתמש בשיטות ישירות (כמו פירוק LU) שמגיעות לפתרון מהר יותר ובצורה מדויקת יותר.</p></li>
-</ul>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">סיבוכיות (במה תלוים זמן ומשאבי החישוב)</p>
-<ul class="simple">
-<li><p>אם <span class="math notranslate nohighlight">\(A\)</span> בגודל <span class="math notranslate nohighlight">\(n \times n\)</span>, חישוב <span class="math notranslate nohighlight">\(A^{-1}\)</span> דורש בערך <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span> פעולות,
-ואז צריך גם להכפיל אותה ב־<span class="math notranslate nohighlight">\(b\)</span> שזה <span class="math notranslate nohighlight">\(\mathcal{O}(n^2)\)</span> נוספות.</p></li>
-<li><p>לעומת זאת, <code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code> פותר את המערכת ישירות עם <span class="math notranslate nohighlight">\(\mathcal{O}(n^3)\)</span> פעולות, <strong>בלי</strong> לעשות את הצעד המיותר של חישוב <span class="math notranslate nohighlight">\(A^{-1}\)</span>.</p></li>
-</ul>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">דוגמאות פיסיקליות</p>
-<p>מערכות לינאריות מופיעות כמעט בכל תחום בפיסיקה:</p>
-<ul class="simple">
-<li><p><strong>מעגלים חשמליים</strong>: לפי חוקי אוהם וקירכהוף נוצרת מערכת משוואות לינאריות למציאת מתחים וזרמים.</p></li>
-<li><p><strong>מכניקה קלאסית</strong>: מערכת של מסות מחוברות בקפיצים מתוארת על ידי משוואות לינאריות לכוחות ותזוזות.</p></li>
-<li><p><strong>אנליזת תגובה (response analysis)</strong>: קביעה כיצד מערכת מגיבה לגירוי (לדוגמה שדה חשמלי או כוח חיצוני).</p></li>
-<li><p><strong>חישוב התפתחות בזמן קצר</strong>: בצעד אינטגרציה נומרית של משוואות דיפרנציאליות נדרשת לעיתים קרובות הפתרה של מערכת לינארית בכל צעד.</p></li>
-</ul>
-</div>
-</section>
-<section id="id6">
-<h2>מספר התניה (Condition Number)<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<p>לפעמים המערכת “רגישה” לשינויים קטנים.<br />
-כדי למדוד זאת משתמשים ב־<strong>מספר ההתניה</strong> של <span class="math notranslate nohighlight">\(A\)</span>, שמוגדר כך:</p>
-<div class="math notranslate nohighlight">
-\[
-\kappa(A) = \|A\| \cdot \|A^{-1}\|
-\]</div>
-<p>אם <span class="math notranslate nohighlight">\(\kappa(A)\)</span> קטן, המערכת יציבה — שגיאות קטנות בנתונים לא משפיעות הרבה על התוצאה.<br />
-אם <span class="math notranslate nohighlight">\(\kappa(A)\)</span> גדול, המערכת לא יציבה — טעות קטנה במדידות או בחישובים עלולה לגרום לשינוי גדול מאוד בפתרון.</p>
-<p>ב־NumPy אפשר לחשב את זה בעזרת:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cond</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<h4 class="rubric" id="id7">כלל אצבע</h4>
-<p><strong>אל תחשבו <span class="math notranslate nohighlight">\(A^{-1}\)</span></strong> אלא השתמשו ב-<code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code>, ובדקו את ה-condition number אם אתם חושדים שמדובר במטריצה “כמעט סינגולרית”.</p>
-</div>
-</section>
-<section id="id8">
-<h2>דוגמה: פתרון מערכת לינארית פשוטה<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<h2>דוגמה: פתרון מערכת לינארית פשוטה<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>נגדיר מטריצה <span class="math notranslate nohighlight">\(A\)</span> ווקטור אגף ימין <span class="math notranslate nohighlight">\(b\)</span>, שמייצגים מערכת של שתי משוואות בשני נעלמים.<br />
 נשתמש ב־<code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code> כדי למצוא את הפתרון <span class="math notranslate nohighlight">\(x\)</span> שמקיים את <span class="math notranslate nohighlight">\(Ax = b\)</span>.<br />
 בסוף נחשב את ה־residual (השארית) כלומר <span class="math notranslate nohighlight">\(Ax - b\)</span>, כדי לבדוק עד כמה הפתרון באמת מתאים —
@@ -805,8 +674,8 @@ x_2
 </div>
 </div>
 </section>
-<section id="id9">
-<h2>דוגמה: פתרון מערכת עם מספר אגפים בצד ימין<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h2>דוגמה: פתרון מערכת עם מספר אגפים בצד ימין<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>במקום לפתור את המערכת <span class="math notranslate nohighlight">\(Ax = b\)</span> עבור וקטור אחד של אגף ימין,<br />
 אפשר לפתור בבת אחת עבור כמה וקטורים שונים. במקרה זה נגדיר מטריצה <span class="math notranslate nohighlight">\(B\)</span> שכל עמודה בה היא אגף ימין שונה.</p>
 <p>הפקודה <code class="docutils literal notranslate"><span class="pre">np.linalg.solve(A,</span> <span class="pre">B)</span></code> מחזירה מטריצה <span class="math notranslate nohighlight">\(X\)</span>, כאשר כל עמודה ב־<span class="math notranslate nohighlight">\(X\)</span> היא פתרון מתאים ל־<span class="math notranslate nohighlight">\(Ax = b\)</span> של העמודה המקבילה ב־<span class="math notranslate nohighlight">\(B\)</span>.</p>
@@ -2171,8 +2040,8 @@ x^\ast = \arg \min_x \|Ax - b\|_2
 <li><p>אנליזת רעש: מציאת קירוב הטוב ביותר לנתונים כאשר <span class="math notranslate nohighlight">\(b\)</span> מכיל רעש ניסוי.</p></li>
 </ul>
 </section>
-<section id="id10">
-<h2>דוגמה: התאמת קו ישר בשיטת Least Squares<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h2>דוגמה: התאמת קו ישר בשיטת Least Squares<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>נניח שיש לנו סדרה של נתונים ניסיוניים, למשל נקודות שמייצגות מדידות פיזיקליות במעבדה.<br />
 אנחנו מאמינים שהקשר בין המשתנים הוא בקירוב קו ישר:</p>
 <div class="math notranslate nohighlight">
@@ -2185,8 +2054,8 @@ y \approx a + b x
 <li><p><span class="math notranslate nohighlight">\(b\)</span> הוא השיפוע – כמה <span class="math notranslate nohighlight">\(y\)</span> משתנה עבור שינוי של יחידה אחת ב־<span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 </ul>
 </section>
-<section id="id11">
-<h2>בעיה אמיתית: רעש במדידות<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h2>בעיה אמיתית: רעש במדידות<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>במדידות אמיתיות, הערכים של <span class="math notranslate nohighlight">\(y\)</span> לא נמצאים בדיוק על קו ישר — תמיד יש רעש ושגיאות.<br />
 לכן המטרה שלנו היא למצוא את הקו <span class="math notranslate nohighlight">\(\hat{y} = a^\ast + b^\ast x\)</span> שהוא “הכי קרוב” לנתונים בפועל.</p>
 <p>בשיטת הריבועים הפחותים (least-squares) אנחנו בוחרים את <span class="math notranslate nohighlight">\(a^\ast, b^\ast\)</span> כך שהם מקטינים את סכום ריבועי הסטיות של הנקודות מהקו:</p>
@@ -2209,8 +2078,8 @@ y \approx a + b x
 </div>
 <p>כלומר, הקו לא יעבור דרך כל הנקודות, אלא יהיה זה שמצמצם את השגיאה הכוללת בצורה הטובה ביותר.</p>
 </section>
-<section id="id12">
-<h2>ניסוח מטריציוני<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h2>ניסוח מטריציוני<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <p>נוח לכתוב את הבעיה בצורה של מטריצות ווקטורים:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -3539,8 +3408,8 @@ function try_show() {
 </div>
 </section>
 </section>
-<section id="id13">
-<h2>דוגמה: יצירת נתונים מלאכותיים ובדיקת התאמת קו ישר<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h2>דוגמה: יצירת נתונים מלאכותיים ובדיקת התאמת קו ישר<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <p>כדי להדגים את שיטת הריבועים הפחותים ניצור נתונים מלאכותיים (synthetic data).<br />
 נגדיר קו ישר “אמיתי” עם שיפוע <span class="math notranslate nohighlight">\(b = 2.0\)</span> וחותך <span class="math notranslate nohighlight">\(a = 1.5\)</span>, ואז נוסיף לו רעש אקראי קטן המדמה טעויות במדידה.<br />
 כך נקבל סדרה של נקודות <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> שנראות כמו תוצאות ניסוי אמיתי.</p>
@@ -3571,8 +3440,8 @@ function try_show() {
 </div>
 </div>
 </section>
-<section id="id14">
-<h2>הצגת תוצאות ההתאמה הגרפית<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h2>הצגת תוצאות ההתאמה הגרפית<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <p>כעת נשרטט את הנתונים ואת הקווים להשוואה:</p>
 <ul class="simple">
 <li><p>הנקודות הכחולות הן המדידות (כולל רעש ניסויי).</p></li>
@@ -4940,30 +4809,21 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">פתרון מערכות לינאריות</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">שתי דרכים לפתרון</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condition-number">מספר התניה (Condition Number)</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">פתרון מערכות לינאריות</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">שתי דרכים לפתרון</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">מספר התניה (Condition Number)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">דוגמה: פתרון מערכת לינארית פשוטה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">דוגמה: פתרון מערכת לינארית פשוטה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nearly-singular">דוגמה: מערכת כמעט סינגולרית (Nearly Singular)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">דוגמה: פתרון מערכת עם מספר אגפים בצד ימין</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">דוגמה: פתרון מערכת עם מספר אגפים בצד ימין</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#least-squares">שיטת הריבועים הפחותים (Least Squares)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">דוגמה: התאמת קו ישר בשיטת Least Squares</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">בעיה אמיתית: רעש במדידות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">ניסוח מטריציוני</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">דוגמה: התאמת קו ישר בשיטת Least Squares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">בעיה אמיתית: רעש במדידות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">ניסוח מטריציוני</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">הפתרון ב־NumPy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">דוגמה: יצירת נתונים מלאכותיים ובדיקת התאמת קו ישר</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">הצגת תוצאות ההתאמה הגרפית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">דוגמה: יצירת נתונים מלאכותיים ובדיקת התאמת קו ישר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">הצגת תוצאות ההתאמה הגרפית</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
