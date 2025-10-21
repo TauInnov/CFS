@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11. שבוע 11 — ניתוח נתונים עם Pandas &#8212; Computers For physics</title>
+    <title>11. שבוע 11 — עיבוד וניתוח נתונים עם Pandas (המשך) &#8212; Computers For physics</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="11.2. מבוא - Pandas" href="week_11/11_0_intro.html" />
-    <link rel="prev" title="10.4. אופטימיזציה, שורשים, והתאמת עקומות" href="week_10/10_3_optimization.html" />
+    <link rel="next" title="11.2. אינדוקס, בחירה וסינון נתונים (Indexing, Selecting &amp; Filtering)" href="week_11/11_3_indexing_select_filter.html" />
+    <link rel="prev" title="10.10. טעינת ושמירת נתונים (I/O)" href="week_11/11_2_io.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -286,26 +286,26 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week_10.html">10. שבוע 10 — SciPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="week_10/10_1_physical_consts.html">10.2. קבועים פיזיקליים ויחידות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_10/10_2_integration.html">10.3. אינטגרציה נומרית</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_10/10_3_optimization.html">10.4. אופטימיזציה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_1_physical_consts.html">10.4. קבועים פיזיקליים ויחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_2_integration.html">10.5. אינטגרציה נומרית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_3_optimization.html">10.6. אופטימיזציה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_0_intro.html">10.7. מבוא - Pandas</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_1_data_structures.html">10.9. Series ו־DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_2_io.html">10.10. טעינה וכתיבה של נתונים (I/O)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">11. שבוע 11 — Pandas</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_0_intro.html">11.2. מבוא - Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_3_indexing_select_filter.html">11.2. מיון, סינון ואינדוקס נתונים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_4_cleaning_type_handling.html">11.3. ניקוי נתונים וטיפוסים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_5_vector_transform.html">11.4. טרנספורמציות ווקטוריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_6_grouping_aggregation.html">11.5. קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_1_data_structures.html">11.4. Series ו־DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_2_io.html">11.5. טעינה וכתיבה של נתונים (I/O)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_3_indexing_select_filter.html">11.6. מיון, סינון ואינדוקס נתונים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_4_cleaning_type_handling.html">11.7. ניקוי נתונים וטיפוסים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_5_vector_transform.html">11.8. טרנספורמציות ווקטוריות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_6_grouping_aggregation.html">11.9. קיבוץ וצבירה בנתונים ניסיוניים (Grouping &amp; Aggregation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_7_reshaping_dataframes.html">11.7. Reshaping DataFrames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_8_merging_joining.html">11.8. Merging &amp; Joining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_9_time_series.html">11.9. ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_7_reshaping_dataframes.html">11.11. Reshaping DataFrames</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_8_merging_joining.html">11.12. Merging &amp; Joining</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_9_time_series.html">11.13. ניתוח סדרות זמן בניסויים פיזיקליים (Time Series Essentials)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_10_exploration_quick_plots.html">11.15. Exploration &amp; Quick Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_10_exploration_quick_plots.html">11.11. Exploration &amp; Quick Plots</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week_12.html">12. שבוע 12 — OOP &amp; Unittesting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -573,7 +573,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>שבוע 11 — ניתוח נתונים עם Pandas</h1>
+    <h1>שבוע 11 — עיבוד וניתוח נתונים עם Pandas (המשך)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -596,17 +596,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1><span class="section-number">11. </span>שבוע 11 — ניתוח נתונים עם Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
-<p>בשבוע האחד־עשר נלמד לעבוד עם <strong>Pandas</strong>, הספרייה המרכזית לעיבוד וניתוח נתונים בפייתון.<br />
-זוהי אחת מהמיומנויות החשובות ביותר לכל מי שעוסק במדע נתונים, ניסויים, או ניתוח תוצאות מדידה.<br />
-נלמד כיצד לטעון נתונים מקבצים שונים, לנקותם, למיין ולסנן אותם, ולבצע עליהם פעולות מתקדמות<br />
-כמו קיבוץ, המרה ושרטוט מהיר של תוצאות.</p>
-<p>נבין כיצד להשתמש במבני הנתונים החזקים של הספרייה — <code class="docutils literal notranslate"><span class="pre">Series</span></code> ו־<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>,<br />
-ונראה כיצד הם מאפשרים עבודה מהירה ואינטואיטיבית עם כמויות גדולות של מידע מדעי או ניסויי.</p>
+<h1><span class="section-number">11. </span>שבוע 11 — עיבוד וניתוח נתונים עם Pandas (המשך)<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
+<p>בשבוע האחד־עשר נעמיק בעבודה עם <strong>Pandas</strong> –<br />
+נלמד כיצד למיין, לסנן, לקבץ ולעצב נתונים בצורה יעילה,<br />
+לבצע חישובים וקטוריים, וליצור תובנות ויזואליות מהירות מתוך הנתונים.</p>
+<p>נבין כיצד להשתמש במבני הנתונים של הספרייה כדי לבצע<br />
+טרנספורמציות, חיבורים בין טבלאות, ועיבוד נתוני זמן.</p>
 <p>בסוף השבוע תדעו:</p>
 <ul class="simple">
-<li><p>ליצור ולעבוד עם מבני הנתונים <code class="docutils literal notranslate"><span class="pre">Series</span></code> ו־<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
-<li><p>לייבא ולייצא נתונים מקבצים</p></li>
 <li><p>לבחור, למיין ולסנן נתונים לפי תנאים שונים</p></li>
 <li><p>לנקות נתונים ולזהות סוגי משתנים בצורה יעילה</p></li>
 <li><p>לבצע טרנספורמציות ווקטוריות ולחשב עמודות חדשות</p></li>
@@ -618,17 +615,14 @@ document.write(`
 <section id="materials">
 <h2><span class="section-number">11.1. </span>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="week_11/11_0_intro.html"><span class="doc">0 • מבוא לעבודה עם Pandas</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_1_data_structures.html"><span class="doc">1 • מבני נתונים: Series ו־DataFrame</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_2_io.html"><span class="doc">2 • טעינה וכתיבה של נתונים (I/O)</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_3_indexing_select_filter.html"><span class="doc">3 • מיון, סינון ואינדוקס נתונים</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_4_cleaning_type_handling.html"><span class="doc">4 • ניקוי נתונים וטיפול בסוגי עמודות</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_5_vector_transform.html"><span class="doc">5 • טרנספורמציות וקטוריות</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_6_grouping_aggregation.html"><span class="doc">6 • קיבוץ וצבירה (Grouping &amp; Aggregation)</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_7_reshaping_dataframes.html"><span class="doc">7 • עיצוב מחדש של טבלאות (Reshaping)</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_8_merging_joining.html"><span class="doc">8 • מיזוג וחיבור בין טבלאות (Merging &amp; Joining)</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_9_time_series.html"><span class="doc">9 • עבודה עם סדרות זמן (Time Series)</span></a></p></li>
-<li><p><a class="reference internal" href="week_11/11_10_exploration_quick_plots.html"><span class="doc">10 • חקירת נתונים ושרטוטים מהירים</span></a></p></li>
+<li><p><a class="reference internal" href="week_11/11_3_indexing_select_filter.html"><span class="doc">1 • מיון, סינון ואינדוקס נתונים</span></a></p></li>
+<li><p><a class="reference internal" href="week_11/11_4_cleaning_type_handling.html"><span class="doc">2 • ניקוי נתונים וטיפול בסוגי עמודות</span></a></p></li>
+<li><p><a class="reference internal" href="week_11/11_5_vector_transform.html"><span class="doc">3 • טרנספורמציות וקטוריות</span></a></p></li>
+<li><p><a class="reference internal" href="week_11/11_6_grouping_aggregation.html"><span class="doc">4 • קיבוץ וצבירה (Grouping &amp; Aggregation)</span></a></p></li>
+<li><p><a class="reference internal" href="week_11/11_7_reshaping_dataframes.html"><span class="doc">5 • עיצוב מחדש של טבלאות (Reshaping)</span></a></p></li>
+<li><p><a class="reference internal" href="week_11/11_8_merging_joining.html"><span class="doc">6 • מיזוג וחיבור בין טבלאות (Merging &amp; Joining)</span></a></p></li>
+<li><p><a class="reference internal" href="week_11/11_9_time_series.html"><span class="doc">7 • עבודה עם סדרות זמן (Time Series)</span></a></p></li>
+<li><p><a class="reference internal" href="week_11/11_10_exploration_quick_plots.html"><span class="doc">8 • חקירת נתונים ושרטוטים מהירים</span></a></p></li>
 </ul>
 </section>
 <div class="toctree-wrapper compound">
@@ -666,20 +660,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="week_10/10_3_optimization.html"
+       href="week_11/11_2_io.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10.4. </span>אופטימיזציה, שורשים, והתאמת עקומות</p>
+        <p class="prev-next-title"><span class="section-number">10.10. </span>טעינת ושמירת נתונים (I/O)</p>
       </div>
     </a>
     <a class="right-next"
-       href="week_11/11_0_intro.html"
+       href="week_11/11_3_indexing_select_filter.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11.2. </span>מבוא - Pandas</p>
+        <p class="prev-next-title"><span class="section-number">11.2. </span>אינדוקס, בחירה וסינון נתונים (Indexing, Selecting &amp; Filtering)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
