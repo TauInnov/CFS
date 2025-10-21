@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10.4. קבועים פיזיקליים" href="week_10/10_1_physical_consts.html" />
+    <link rel="next" title="10.2. קבועים פיזיקליים" href="week_10/10_1_physical_consts.html" />
     <link rel="prev" title="9.8. דוגמה מסכמת (2): הערכת מונטה–קרלו של π" href="week_9/9_6_example_PI_MC.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -286,13 +286,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">10. שבוע 10 — SciPy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="week_10/10_1_physical_consts.html">10.4. קבועים פיזיקליים ויחידות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_10/10_2_integration.html">10.5. אינטגרציה נומרית</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_10/10_3_optimization.html">10.6. אופטימיזציה</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_0_intro.html">10.7. מבוא - Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_1_physical_consts.html">10.2. קבועים פיזיקליים ויחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_2_integration.html">10.3. אינטגרציה נומרית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_3_optimization.html">10.4. אופטימיזציה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_0_intro.html">10.5. מבוא - Pandas</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_1_data_structures.html">10.9. Series ו־DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_11/11_2_io.html">10.10. טעינה וכתיבה של נתונים (I/O)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_1_data_structures.html">10.7. Series ו־DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_2_io.html">10.8. טעינה וכתיבה של נתונים (I/O)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week_11.html">11. שבוע 11 — Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -583,9 +583,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy">10.1. חלק א: חישובים מדעיים עם SciPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">10.2. חלק ב: מבוא לעבודה עם Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">10.3. Materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">10.1. Materials</a></li>
 </ul>
             </nav>
         </div>
@@ -601,8 +599,7 @@ document.write(`
 <h1><span class="section-number">10. </span>שבוע 10 — חישובים מדעיים עם SciPy ו־מבוא לעבודה עם Pandas<a class="headerlink" href="#scipy-pandas" title="Link to this heading">#</a></h1>
 <p>בשבוע העשירי נשלב בין עולמות — נצלול אל הספרייה <strong>SciPy</strong>, אחת מאבני היסוד של מדעי הנתונים והחישוב הפיזיקלי בפייתון,<br />
 ונתחיל גם את ההיכרות עם <strong>Pandas</strong>, הכלי המרכזי לעיבוד וניתוח נתונים.</p>
-<section id="scipy">
-<h2><span class="section-number">10.1. </span>חלק א: חישובים מדעיים עם SciPy<a class="headerlink" href="#scipy" title="Link to this heading">#</a></h2>
+<p><strong>חלק א: חישובים מדעיים עם SciPy</strong></p>
 <p>נלמד כיצד לבצע אינטגרציה, אופטימיזציה, אינטרפולציה, ולעבוד עם קבועים פיזיקליים –<br />
 כלים קריטיים לכל פיזיקאי, מהנדס או חוקר העוסק בנתונים אמפיריים ובמודלים מתמטיים.</p>
 <p>נבין כיצד ניתן להשתמש ב־SciPy כדי:</p>
@@ -617,9 +614,7 @@ document.write(`
 <li><p>לבצע אינטגרציה נומרית עם <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></p></li>
 <li><p>לפתור בעיות אופטימיזציה עם <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code></p></li>
 </ul>
-</section>
-<section id="pandas">
-<h2><span class="section-number">10.2. </span>חלק ב: מבוא לעבודה עם Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h2>
+<p><strong>חלק ב: מבוא לעבודה עם Pandas</strong></p>
 <p>נלמד את עקרונות העבודה עם <strong>Pandas</strong> – איך לחשוב על נתונים בצורה טבלאית,<br />
 מהם מבני הנתונים המרכזיים שלה, ואיך לייבא נתונים ממקורות שונים לקובצי DataFrame.</p>
 <p>בסוף החלק תדעו:</p>
@@ -627,9 +622,8 @@ document.write(`
 <li><p>ליצור ולעבוד עם מבני הנתונים <code class="docutils literal notranslate"><span class="pre">Series</span></code> ו־<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
 <li><p>לייבא ולייצא נתונים מקבצים שונים (CSV, Excel ועוד)</p></li>
 </ul>
-</section>
 <section id="materials">
-<h2><span class="section-number">10.3. </span>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.1. </span>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="week_10/10_1_physical_consts.html"><span class="doc">1 • קבועים פיזיקליים ויחידות</span></a></p></li>
 <li><p><a class="reference internal" href="week_10/10_2_integration.html"><span class="doc">2 • אינטגרציה נומרית</span></a></p></li>
@@ -687,7 +681,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.4. </span>קבועים פיזיקליים</p>
+        <p class="prev-next-title"><span class="section-number">10.2. </span>קבועים פיזיקליים</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -707,9 +701,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy">10.1. חלק א: חישובים מדעיים עם SciPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">10.2. חלק ב: מבוא לעבודה עם Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">10.3. Materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">10.1. Materials</a></li>
 </ul>
   </nav></div>
 

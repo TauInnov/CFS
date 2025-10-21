@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10.4. קבועים פיזיקליים &#8212; Computers For physics</title>
+    <title>10.2. קבועים פיזיקליים &#8212; Computers For physics</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_1_physical_consts';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="10.5. אינטגרציה וגזירה נומרית + ODEs" href="10_2_integration.html" />
+    <link rel="next" title="10.3. אינטגרציה וגזירה נומרית + ODEs" href="10_2_integration.html" />
     <link rel="prev" title="10. שבוע 10 — חישובים מדעיים עם SciPy ו־מבוא לעבודה עם Pandas" href="../week_10.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -286,13 +286,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.4. קבועים פיזיקליים ויחידות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_2_integration.html">10.5. אינטגרציה נומרית</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_3_optimization.html">10.6. אופטימיזציה</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_11/11_0_intro.html">10.7. מבוא - Pandas</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.2. קבועים פיזיקליים ויחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_2_integration.html">10.3. אינטגרציה נומרית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_3_optimization.html">10.4. אופטימיזציה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_0_intro.html">10.5. מבוא - Pandas</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../week_11/11_1_data_structures.html">10.9. Series ו־DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_11/11_2_io.html">10.10. טעינה וכתיבה של נתונים (I/O)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_1_data_structures.html">10.7. Series ו־DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_2_io.html">10.8. טעינה וכתיבה של נתונים (I/O)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -583,11 +583,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.4.1. 1) חישוב אנרגיית פוטון מאורך גל</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-b-t">10.4.2. 2) סקאלת אנרגיה תרמית <span class="math notranslate nohighlight">\(k_B T\)</span> ומתיחות תרמית במתח</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">10.4.3. 3) דוגמת Broadcasting: אנרגיה פוטנציאלית כבידתית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4.4. 4) חוק וין: אורך גל שיא של גוף שחור</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.4.5. 5) הקדמה קצרה: מהירות האור וקבועי היסוד באלקטרומגנטיות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.2.1. 1) חישוב אנרגיית פוטון מאורך גל</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-b-t">10.2.2. 2) סקאלת אנרגיה תרמית <span class="math notranslate nohighlight">\(k_B T\)</span> ומתיחות תרמית במתח</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">10.2.3. 3) דוגמת Broadcasting: אנרגיה פוטנציאלית כבידתית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.2.4. 4) חוק וין: אורך גל שיא של גוף שחור</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.2.5. 5) הקדמה קצרה: מהירות האור וקבועי היסוד באלקטרומגנטיות</a></li>
 </ul>
             </nav>
         </div>
@@ -600,7 +600,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="id1">
-<h1><span class="section-number">10.4. </span>קבועים פיזיקליים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10.2. </span>קבועים פיזיקליים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p><strong>SciPy</strong> מוסיפה לסביבה של NumPy כלים נומריים מתקדמים: אינטגרציה, פתרון ODEs, אופטימיזציה, אינטרפולציה, FFT, עיבוד אותות, אלגברה ליניארית, סטטיסטיקה ועוד.<br />
 <strong>קבועים פיזיקליים</strong> זמינים ב־<code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>: למשל <span class="math notranslate nohighlight">\(c, h, k_B, G\)</span> וכד’.</p>
 <div class="cell docutils container">
@@ -675,7 +675,7 @@ document.write(`
 </div>
 <p>נדגים שימוש באמצעות מספר דוגמאות broadcasting ווקטוריזציה:</p>
 <section id="id2">
-<h2><span class="section-number">10.4.1. </span>1) חישוב אנרגיית פוטון מאורך גל<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2.1. </span>1) חישוב אנרגיית פוטון מאורך גל<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>האור הוא קרינה אלקטרומגנטית, ובתיאור הקוונטי שלו הוא מורכב מחלקיקים הנקראים <strong>פוטונים</strong>. לכל פוטון אנרגיה בדידה, הפרופורציונית לתדירות הגל: <span class="math notranslate nohighlight">\(E = h f\)</span> (כאשר <span class="math notranslate nohighlight">\(h\)</span> הוא קבוע פלאנק). מאחר שמהירות האור נקבעת על־ידי <span class="math notranslate nohighlight">\(c = \lambda f\)</span>, מתקבל הקשר השימושי</p>
 <p><span class="math notranslate nohighlight">\(E = \dfrac{h c}{\lambda}\)</span>.</p>
 <p>אורך גל קצר יותר (כחול/על־סגול) משמעו אנרגיה גדולה יותר, ואורך גל ארוך יותר (אדום/תת־אדום) משמעו אנרגיה קטנה יותר — עיקרון שמסביר תופעות כמו בליעה/פליטה ספקטרלית, יעילות תאים סולאריים ורגישות הראייה.</p>
@@ -705,7 +705,7 @@ document.write(`
 </div>
 </section>
 <section id="k-b-t">
-<h2><span class="section-number">10.4.2. </span>2) סקאלת אנרגיה תרמית <span class="math notranslate nohighlight">\(k_B T\)</span> ומתיחות תרמית במתח<a class="headerlink" href="#k-b-t" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2.2. </span>2) סקאלת אנרגיה תרמית <span class="math notranslate nohighlight">\(k_B T\)</span> ומתיחות תרמית במתח<a class="headerlink" href="#k-b-t" title="Link to this heading">#</a></h2>
 <p>במערכות פיזיקליות בטמפרטורה סופית, החלקיקים אינם נחים אלא נעים באנרגיות אקראיות הנובעות מחום. קנה־המידה הטבעי לאנרגיה תרמית הוא <span class="math notranslate nohighlight">\(k_B T\)</span>, כאשר <span class="math notranslate nohighlight">\(k_B\)</span> הוא קבוע בולצמן ו־<span class="math notranslate nohighlight">\(T\)</span> היא הטמפרטורה בקלווין. גודל זה מייצג את האנרגיה הממוצעת של תנודות תרמיות, ומשמש בהבנת תופעות כמו הולכה חשמלית, דיפוזיה ותהליכים סטטיסטיים.<br />
 באלקטרוניקה מקובל להמיר את האנרגיה התרמית למתח אופייני באמצעות <span class="math notranslate nohighlight">\(V_T = \tfrac{k_B T}{e}\)</span>, כאשר <span class="math notranslate nohighlight">\(e\)</span> הוא מטען האלקטרון. מתח זה מהווה קנה־מידה חשוב לקביעת התנהגות של דיודות, טרנזיסטורים ורכיבים מוליכים למחצה, ובטמפרטורת חדר ערכו קרוב ל־<span class="math notranslate nohighlight">\(25\ \mathrm{mV}\)</span>.</p>
 <p>בדוגמה זו חישבנו עבור מספר טמפרטורות אופייניות את <span class="math notranslate nohighlight">\(k_B T\)</span> — סדר־גודל האנרגיות החום־תרמיות במערכת. המרה ל־eV מקלה על ההשוואה לפיזיקה של אלקטרונים ומוליכים למחצה. בנוסף חישבנו את ה״מתח התרמי״ <span class="math notranslate nohighlight">\(V_T = \dfrac{k_B T}{e}\)</span>, קנה־מידה חשוב באלקטרוניקה (כ־<span class="math notranslate nohighlight">\(25\)</span>–<span class="math notranslate nohighlight">\(26\ \mathrm{mV}\)</span> בטמפרטורת חדר). שוב, הכל נעשה על מערך של <span class="math notranslate nohighlight">\(T\)</span>ים בבת אחת (וקטוריזציה).</p>
@@ -734,7 +734,7 @@ document.write(`
 </div>
 </section>
 <section id="broadcasting">
-<h2><span class="section-number">10.4.3. </span>3) דוגמת Broadcasting: אנרגיה פוטנציאלית כבידתית<a class="headerlink" href="#broadcasting" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2.3. </span>3) דוגמת Broadcasting: אנרגיה פוטנציאלית כבידתית<a class="headerlink" href="#broadcasting" title="Link to this heading">#</a></h2>
 <p>במערכת מכנית פשוטה, אנרגיה פוטנציאלית נגרמת מכוח הכבידה הפועל על מסה <span class="math notranslate nohighlight">\(m\)</span> בגובה <span class="math notranslate nohighlight">\(h\)</span> מעל נקודת ייחוס: <span class="math notranslate nohighlight">\(U = m g h\)</span>, כאשר <span class="math notranslate nohighlight">\(g\)</span> הוא תאוצת הכובד (כ־<span class="math notranslate nohighlight">\(9.8\ \mathrm{m/s^2}\)</span> על פני כדור הארץ). קשר זה חשוב להבנת תהליכים יומיומיים כמו נפילת עצמים, עבודה מכנית והמרת אנרגיה במערכות פיזיקליות. במודלים מתקדמים יותר, עקרון זה מהווה בסיס לחישוב שדות כבידה ולחוקי שימור אנרגיה.</p>
 <p>רצינו את האנרגיה <span class="math notranslate nohighlight">\(U = m g h\)</span> לכל צירוף של כמה מסות וכמה גבהים. שימוש ב־<strong>Broadcasting</strong> מאפשר לחשב מטריצה <span class="math notranslate nohighlight">\(U\)</span> במכה אחת: ממד המסות כעמודות והגבהים כשורות (או להפך) באמצעות הוספת מימד חדש (<code class="docutils literal notranslate"><span class="pre">masses[:,</span> <span class="pre">None]</span></code> ו־<code class="docutils literal notranslate"><span class="pre">heights[None,</span> <span class="pre">:]</span></code>). זו פרקטיקה חשובה לעבודה יעילה עם טבלאות/סריגים בלי לולאות.</p>
 <div class="cell docutils container">
@@ -760,7 +760,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">10.4.4. </span>4) חוק וין: אורך גל שיא של גוף שחור<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2.4. </span>4) חוק וין: אורך גל שיא של גוף שחור<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>בפיזיקה של תרמודינמיקה וקרינה, <strong>גוף שחור</strong> הוא מודל אידיאלי שקולט את כל הקרינה הפוגעת בו ופולט קרינה אלקטרומגנטית בהתאם לטמפרטורתו בלבד. ספקטרום הפליטה מתואר על־ידי חוק פלאנק, אך מיקום השיא בספקטרום נקבע על־פי <strong>חוק וין להזחת השיא</strong>:<br />
 <span class="math notranslate nohighlight">\(\lambda_{\max} = \dfrac{b}{T}\)</span>,<br />
 כאשר <span class="math notranslate nohighlight">\(b\)</span> הוא קבוע וין ו־<span class="math notranslate nohighlight">\(T\)</span> היא הטמפרטורה בקלווין. החוק מראה שככל שהטמפרטורה גבוהה יותר, אורך הגל של השיא קטן יותר — ולכן עצמים חמים פולטים קרינה בתחומי אור קצרים (כחול/על־סגול), בעוד שעצמים קרים יותר פולטים בעיקר באורכי גל ארוכים (אינפרה־אדום). עיקרון זה מסביר את צבעי הכוכבים ואת שיטות למדידת טמפרטורה באמצעות קרינה.</p>
@@ -789,7 +789,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">10.4.5. </span>5) הקדמה קצרה: מהירות האור וקבועי היסוד באלקטרומגנטיות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2.5. </span>5) הקדמה קצרה: מהירות האור וקבועי היסוד באלקטרומגנטיות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>באלקטרודינמיקה קלאסית (EMT), מהירות התפשטות של גלי אלקטרומגנטיים בוואקום אינה רק גודל ניסיוני אלא נובעת ישירות מקבועי היסוד:<br />
 <span class="math notranslate nohighlight">\(c = \dfrac{1}{\sqrt{\varepsilon_0 \mu_0}}\)</span>,<br />
 כאשר <span class="math notranslate nohighlight">\(\varepsilon_0\)</span> הוא המקדם הדיאלקטרי של הריק (permitivity) ו־<span class="math notranslate nohighlight">\(\mu_0\)</span> הוא המקדם המגנטי של הריק (permeability). קשר זה מדגים כיצד תכונות הוואקום מכתיבות את מהירות האור, ומהווה דוגמה מרתקת לאחדות של חשמל, מגנטיות וקרינה. מעבר לערך עצמו, בדיקה כזו חשובה לאימות עקביות יחידות וחישובים כשעובדים עם קבועים מספריים ממקורות שונים.</p>
@@ -2156,7 +2156,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.5. </span>אינטגרציה וגזירה נומרית + ODEs</p>
+        <p class="prev-next-title"><span class="section-number">10.3. </span>אינטגרציה וגזירה נומרית + ODEs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2176,11 +2176,11 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.4.1. 1) חישוב אנרגיית פוטון מאורך גל</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-b-t">10.4.2. 2) סקאלת אנרגיה תרמית <span class="math notranslate nohighlight">\(k_B T\)</span> ומתיחות תרמית במתח</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">10.4.3. 3) דוגמת Broadcasting: אנרגיה פוטנציאלית כבידתית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4.4. 4) חוק וין: אורך גל שיא של גוף שחור</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.4.5. 5) הקדמה קצרה: מהירות האור וקבועי היסוד באלקטרומגנטיות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.2.1. 1) חישוב אנרגיית פוטון מאורך גל</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-b-t">10.2.2. 2) סקאלת אנרגיה תרמית <span class="math notranslate nohighlight">\(k_B T\)</span> ומתיחות תרמית במתח</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">10.2.3. 3) דוגמת Broadcasting: אנרגיה פוטנציאלית כבידתית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.2.4. 4) חוק וין: אורך גל שיא של גוף שחור</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.2.5. 5) הקדמה קצרה: מהירות האור וקבועי היסוד באלקטרומגנטיות</a></li>
 </ul>
   </nav></div>
 

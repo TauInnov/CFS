@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10.5. אינטגרציה וגזירה נומרית + ODEs &#8212; Computers For physics</title>
+    <title>10.3. אינטגרציה וגזירה נומרית + ODEs &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_2_integration';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="10.6. אופטימיזציה, שורשים, והתאמת עקומות" href="10_3_optimization.html" />
-    <link rel="prev" title="10.4. קבועים פיזיקליים" href="10_1_physical_consts.html" />
+    <link rel="next" title="10.4. אופטימיזציה, שורשים, והתאמת עקומות" href="10_3_optimization.html" />
+    <link rel="prev" title="10.2. קבועים פיזיקליים" href="10_1_physical_consts.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -286,13 +286,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="10_1_physical_consts.html">10.4. קבועים פיזיקליים ויחידות</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.5. אינטגרציה נומרית</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_3_optimization.html">10.6. אופטימיזציה</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_11/11_0_intro.html">10.7. מבוא - Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_1_physical_consts.html">10.2. קבועים פיזיקליים ויחידות</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.3. אינטגרציה נומרית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_3_optimization.html">10.4. אופטימיזציה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_0_intro.html">10.5. מבוא - Pandas</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../week_11/11_1_data_structures.html">10.9. Series ו־DataFrame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_11/11_2_io.html">10.10. טעינה וכתיבה של נתונים (I/O)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_1_data_structures.html">10.7. Series ו־DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_2_io.html">10.8. טעינה וכתיבה של נתונים (I/O)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_11.html">11. שבוע 11 — Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -583,12 +583,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.5.1. אינטגרציה נומרית</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.5.1.1. ניתוח תוצאות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3.1. אינטגרציה נומרית</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3.1.1. ניתוח תוצאות</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.5.2. נגזרות ומשוואות דיפרנציאליות רגילות (ODEs)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.5.3. דוגמה: מתנד הרמוני</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.3.2. נגזרות ומשוואות דיפרנציאליות רגילות (ODEs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.3.3. דוגמה: מתנד הרמוני</a></li>
 </ul>
             </nav>
         </div>
@@ -601,10 +601,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="odes">
-<h1><span class="section-number">10.5. </span>אינטגרציה וגזירה נומרית + ODEs<a class="headerlink" href="#odes" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10.3. </span>אינטגרציה וגזירה נומרית + ODEs<a class="headerlink" href="#odes" title="Link to this heading">#</a></h1>
 <p>בפיזיקה ומתמטיקה רבות מהבעיות אינן ניתנות לפתרון אנליטי פשוט, ולכן יש צורך להעריך את הפתרונות באופן נומרי באמצעות קירובים חישוביים.</p>
 <section id="id1">
-<h2><span class="section-number">10.5.1. </span>אינטגרציה נומרית<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.3.1. </span>אינטגרציה נומרית<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>המטרה היא להעריך שטח מתחת לפונקציה:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -733,7 +733,7 @@ L=6   N=5000  | trap=0.88622693  + tail=1.907e-17  -&gt; trap+tail=0.88622693  |
 </div>
 </div>
 <section id="id2">
-<h3><span class="section-number">10.5.1.1. </span>ניתוח תוצאות<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.3.1.1. </span>ניתוח תוצאות<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">quad</span></code> נותנת תוצאה מדויקת מאוד ישירות על <span class="math notranslate nohighlight">\([0,\infty)\)</span>, עם הערכת שגיאה פנימית.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">trapezoid</span></code> לבדו על <span class="math notranslate nohighlight">\([0,L]\)</span> יחמיץ את הזנב (<span class="math notranslate nohighlight">\(x &gt; L\)</span>). שיפור פשוט הוא להוסיף תיקון זנב אנליטי:</p>
@@ -763,7 +763,7 @@ L=6   N=5000  | trap=0.88622693  + tail=1.907e-17  -&gt; trap+tail=0.88622693  |
 </section>
 </section>
 <section id="id3">
-<h2><span class="section-number">10.5.2. </span>נגזרות ומשוואות דיפרנציאליות רגילות (ODEs)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.3.2. </span>נגזרות ומשוואות דיפרנציאליות רגילות (ODEs)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>במקרים רבים אנו מתעניינים בהתפתחות בזמן של מערכת, המתוארת על ידי ODE:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -773,7 +773,7 @@ L=6   N=5000  | trap=0.88622693  + tail=1.907e-17  -&gt; trap+tail=0.88622693  |
 כדי לפתור, משתמשים בפונקציה <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp</span></code>, שמבצעת אינטגרציה נומרית לאורך הזמן.</p>
 </section>
 <section id="id4">
-<h2><span class="section-number">10.5.3. </span>דוגמה: מתנד הרמוני<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.3.3. </span>דוגמה: מתנד הרמוני<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>המשוואה של מתנד הרמוני פשוט היא:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2326,7 +2326,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10.4. </span>קבועים פיזיקליים</p>
+        <p class="prev-next-title"><span class="section-number">10.2. </span>קבועים פיזיקליים</p>
       </div>
     </a>
     <a class="right-next"
@@ -2334,7 +2334,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.6. </span>אופטימיזציה, שורשים, והתאמת עקומות</p>
+        <p class="prev-next-title"><span class="section-number">10.4. </span>אופטימיזציה, שורשים, והתאמת עקומות</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2354,12 +2354,12 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.5.1. אינטגרציה נומרית</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.5.1.1. ניתוח תוצאות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3.1. אינטגרציה נומרית</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3.1.1. ניתוח תוצאות</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.5.2. נגזרות ומשוואות דיפרנציאליות רגילות (ODEs)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.5.3. דוגמה: מתנד הרמוני</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.3.2. נגזרות ומשוואות דיפרנציאליות רגילות (ODEs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.3.3. דוגמה: מתנד הרמוני</a></li>
 </ul>
   </nav></div>
 
