@@ -373,7 +373,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/TauInnov/computers-for-physics/master?urlpath=lab/tree/course/weeks/week_12/12_1_unittesting_intro.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/course/weeks/week_12/12_1_unittesting_intro.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,7 +391,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/TauInnov/computers-for-physics/blob/master/course/weeks/week_12/12_1_unittesting_intro.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/course/weeks/week_12/12_1_unittesting_intro.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -440,7 +440,7 @@
       
       
       
-      <li><a href="https://github.com/TauInnov/computers-for-physics" target="_blank"
+      <li><a href="https://github.com/TauInnov/CFS" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -457,7 +457,7 @@
       
       
       
-      <li><a href="https://github.com/TauInnov/computers-for-physics/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_12/12_1_unittesting_intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_12/12_1_unittesting_intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -1149,7 +1149,7 @@ ERROR: test_basic_conversion (__main__.TestMetersToKilometers.test_basic_convers
 TODO: Verify that 1000 meters equals 1 kilometer.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_11585/1108015603.py&quot;, line 17, in test_basic_conversion
+  File &quot;/tmp/ipykernel_5967/1108015603.py&quot;, line 17, in test_basic_conversion
     self.assertAlmostEqual(meters_to_kilometers(1000), 1.0, places=6)
   File &quot;/usr/local/python/3.12.1/lib/python3.12/unittest/case.py&quot;, line 918, in assertAlmostEqual
     diff = abs(first - second)
@@ -1162,7 +1162,7 @@ FAIL: test_negative_raises (__main__.TestMetersToKilometers.test_negative_raises
 TODO: Ensure that negative input raises ValueError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_11585/1108015603.py&quot;, line 33, in test_negative_raises
+  File &quot;/tmp/ipykernel_5967/1108015603.py&quot;, line 33, in test_negative_raises
     with self.assertRaises(ValueError):
 AssertionError: ValueError not raised
 </pre></div>
@@ -1172,7 +1172,7 @@ FAIL: test_non_numeric_raises (__main__.TestMetersToKilometers.test_non_numeric_
 TODO: Ensure that passing a string raises TypeError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_11585/1108015603.py&quot;, line 27, in test_non_numeric_raises
+  File &quot;/tmp/ipykernel_5967/1108015603.py&quot;, line 27, in test_non_numeric_raises
     with self.assertRaises(TypeError):
 AssertionError: TypeError not raised
 </pre></div>
@@ -1182,7 +1182,7 @@ FAIL: test_zero (__main__.TestMetersToKilometers.test_zero)
 TODO: Check that 0 meters equals 0.0 km.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_11585/1108015603.py&quot;, line 22, in test_zero
+  File &quot;/tmp/ipykernel_5967/1108015603.py&quot;, line 22, in test_zero
     self.assertEqual(meters_to_kilometers(0), 0.0)
 AssertionError: None != 0.0
 </pre></div>
@@ -1303,7 +1303,7 @@ FAIL: test_invalid_values (__main__.TestNormalizeProbability.test_invalid_values
 TODO: Check that values outside [0, 1] raise ValueError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_11585/3068437329.py&quot;, line 24, in test_invalid_values
+  File &quot;/tmp/ipykernel_5967/3068437329.py&quot;, line 24, in test_invalid_values
     with self.assertRaises(ValueError):
 AssertionError: ValueError not raised
 </pre></div>
@@ -1313,7 +1313,7 @@ FAIL: test_type_validation (__main__.TestNormalizeProbability.test_type_validati
 TODO: Ensure that non-numeric input raises TypeError.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_11585/3068437329.py&quot;, line 32, in test_type_validation
+  File &quot;/tmp/ipykernel_5967/3068437329.py&quot;, line 32, in test_type_validation
     with self.assertRaises(TypeError):
 AssertionError: TypeError not raised
 </pre></div>
@@ -1323,7 +1323,7 @@ FAIL: test_valid_values (__main__.TestNormalizeProbability.test_valid_values)
 TODO: Verify that valid probabilities are returned unchanged.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File &quot;/tmp/ipykernel_11585/3068437329.py&quot;, line 17, in test_valid_values
+  File &quot;/tmp/ipykernel_5967/3068437329.py&quot;, line 17, in test_valid_values
     self.assertEqual(normalize_probability(0), 0.0)
 AssertionError: None != 0.0
 </pre></div>
@@ -1381,7 +1381,7 @@ FAILED (failures=3)
     {
         requestKernel: true,
         binderOptions: {
-            repo: "TauInnov/computers-for-physics",
+            repo: "TauInnov/CFS",
             ref: "master",
         },
         codeMirrorConfig: {
