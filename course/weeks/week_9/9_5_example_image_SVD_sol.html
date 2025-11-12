@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.7. דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית) &#8212; Computers For physics</title>
+    <title>דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית) &#8212; Computers For physics</title>
   
   
   
@@ -60,11 +60,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_5_example_image_SVD';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_5_example_image_SVD_sol';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.8. דוגמה מסכמת (2): הערכת מונטה–קרלו של π" href="9_6_example_PI_MC.html" />
-    <link rel="prev" title="9.6. SVD – פירוק לערכים סינגולריים" href="9_4_SVD.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,6 +125,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -187,7 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_0_objectives.html">1.2. מבוא</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_1_hardware-to-software.html">1.3. חומרה, תוכנה והשיטה הבינארית</a></li>
@@ -275,13 +275,13 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="9_0_intro.html">9.2. מבוא ל־NumPy מתקדם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_1_matrix_operations.html">9.3. פעולות מטריציוניות מתקדמות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_2_linear_system.html">9.4. פתרון מערכות ליניאריות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_3_eigen_values.html">9.5. ערכים ווקטורים עצמיים</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_4_SVD.html">9.6. SVD</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.7. דוגמה: דחיסת תמונה באמצעות SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_5_example_image_SVD.html">9.7. דוגמה: דחיסת תמונה באמצעות SVD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_6_example_PI_MC.html">9.8. דוגמה: הערכת π בשיטת מונטה־קרלו</a></li>
 </ul>
 </details></li>
@@ -375,7 +375,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/course/weeks/week_9/9_5_example_image_SVD.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/course/weeks/week_9/9_5_example_image_SVD_sol.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -393,7 +393,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/course/weeks/week_9/9_5_example_image_SVD.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/course/weeks/week_9/9_5_example_image_SVD_sol.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -459,7 +459,7 @@
       
       
       
-      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_9/9_5_example_image_SVD.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_9/9_5_example_image_SVD_sol.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -489,7 +489,7 @@
       
       
       
-      <li><a href="../../../_sources/course/weeks/week_9/9_5_example_image_SVD.ipynb" target="_blank"
+      <li><a href="../../../_sources/course/weeks/week_9/9_5_example_image_SVD_sol.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -583,17 +583,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.7.1. דחיסת תמונה סינתטית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.7.2. טעינת תמונה</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">9.7.2.1. ערוצי הצבע (RGB)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k">9.7.2.1.1. קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#svd-approx">9.7.2.1.2. svd_approx</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-error">9.7.2.1.3. relative_error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">דחיסת תמונה סינתטית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">טעינת תמונה</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">ערוצי הצבע (RGB)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k">קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.7.2.2. כמה אנרגיה נשמרה?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.7.2.3. מדד האנרגיה</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7.2.4. סיכום: מדידת האנרגיה המצטברת</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">כמה אנרגיה נשמרה?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">מדד האנרגיה</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">סיכום: מדידת האנרגיה המצטברת</a></li>
 </ul>
 </li>
 </ul>
@@ -608,14 +606,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="svd">
-<h1><span class="section-number">9.7. </span>דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית)<a class="headerlink" href="#svd" title="Link to this heading">#</a></h1>
+<h1>דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית)<a class="headerlink" href="#svd" title="Link to this heading">#</a></h1>
 <p>בואו נראה איך אפשר להשתמש ב־SVD לדחיסת תמונה.<br />
 דחיסה היא תהליך שבו אנחנו מצמצמים את כמות המידע הדרושה לייצוג של אובייקט (כמו תמונה, וידאו או קובץ טקסט), מבלי לאבד יותר מדי מהתוכן המקורי. הרעיון הוא להשתמש בפחות ביטים כדי לאחסן או לשדר את אותו המידע.
 הרעיון: במקום לשמור את כל הפיקסלים של התמונה, נפרק את מטריצת התמונה ל־<span class="math notranslate nohighlight">\(U \Sigma V^T\)</span>,<br />
 ונשמור רק את כמה הערכים הסינגולריים הגדולים ביותר.</p>
 <p>כך מקבלים קירוב טוב מאוד לתמונה המקורית, אבל עם הרבה פחות מידע.</p>
 <section id="id1">
-<h2><span class="section-number">9.7.1. </span>דחיסת תמונה סינתטית<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>דחיסת תמונה סינתטית<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>נחשוב על תמונה כעל טבלה של מספרים בין 0 ל־1 (שחור–לבן).<br />
 נבנה תמונה פשוטה: עיגול בהיר על רקע בהיר־קצת (גרדיאנט).<br />
 נבצע פירוק <span class="math notranslate nohighlight">\(A = U \Sigma V^T\)</span> ונשחזר את התמונה עם <span class="math notranslate nohighlight">\(k\)</span> הערכים הסינגולריים הגדולים בלבד.</p>
@@ -626,7 +624,7 @@ document.write(`
 </ul>
 </section>
 <section id="id2">
-<h2><span class="section-number">9.7.2. </span>טעינת תמונה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>טעינת תמונה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -657,7 +655,7 @@ document.write(`
 </div>
 </div>
 <section id="rgb">
-<h3><span class="section-number">9.7.2.1. </span>ערוצי הצבע (RGB)<a class="headerlink" href="#rgb" title="Link to this heading">#</a></h3>
+<h3>ערוצי הצבע (RGB)<a class="headerlink" href="#rgb" title="Link to this heading">#</a></h3>
 <p>תמונת צבע דיגיטלית מיוצגת כשלוש שכבות (Channels), כאשר כל שכבה מתארת את עוצמת הצבע עבור כל פיקסל:</p>
 <ul class="simple">
 <li><p><strong>R (Red)</strong> – עוצמת האדום</p></li>
@@ -672,9 +670,9 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Extract each color channel (Red, Green, Blue) from the image array.</span>
 <span class="c1"># Hint: The color channels are stored along the **third axis** of the array:</span>
-<span class="c1"># R = ...</span>
-<span class="c1"># G = ...</span>
-<span class="c1"># B = ...</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">img_color_np</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">img_color_np</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">img_color_np</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span>
 
 <span class="c1"># Display each channel in a single row</span>
 <span class="k">try</span><span class="p">:</span>
@@ -703,10 +701,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⚠️ At least one &#39;RGB&#39; variable is not defined yet. Please create the RGB images first.
-</pre></div>
-</div>
-<img alt="../../../_images/4780235e6e7e37c931c087d76287e9a0c1b3b73508349970ac750c03f6a8e37d.png" src="../../../_images/4780235e6e7e37c931c087d76287e9a0c1b3b73508349970ac750c03f6a8e37d.png" />
+<img alt="../../../_images/be7c96624b6fd4380f34ec836cedcfb76567770b17845462d79e42e90ae9afa6.png" src="../../../_images/be7c96624b6fd4380f34ec836cedcfb76567770b17845462d79e42e90ae9afa6.png" />
 </div>
 </div>
 <p>בשלבים הראשונים של עיבוד תמונה נעדיף לעיתים לעבוד עם <strong>תמונת גווני אפור (Grayscale)</strong> במקום תמונה צבעונית.<br />
@@ -723,6 +718,8 @@ Gray = 0.299 \times R + 0.587 \times G + 0.114 \times B
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Convert img_color_np to grayscale and display it.</span>
 <span class="c1"># Hint: use the weighted formula 0.299*R + 0.587*G + 0.114*B</span>
 <span class="c1"># img = ...</span>
+<span class="n">img</span> <span class="o">=</span> <span class="mf">0.299</span> <span class="o">*</span> <span class="n">img_color_np</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.587</span> <span class="o">*</span> <span class="n">img_color_np</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.114</span> <span class="o">*</span> <span class="n">img_color_np</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
 
 <span class="k">try</span><span class="p">:</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -736,32 +733,28 @@ Gray = 0.299 \times R + 0.587 \times G + 0.114 \times B
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⚠️ Variable &#39;img_gray&#39; is not defined yet. Please create the grayscale image first.
-</pre></div>
-</div>
-<img alt="../../../_images/48da81175fec7c1cf99650d28bebeb76cc1c5be323c09967e85fc9e1a128f983.png" src="../../../_images/48da81175fec7c1cf99650d28bebeb76cc1c5be323c09967e85fc9e1a128f983.png" />
+<img alt="../../../_images/f7f28291e390cc921361a0b362f31d25ed42eb1cca666de5e7545d1141dcdadd.png" src="../../../_images/f7f28291e390cc921361a0b362f31d25ed42eb1cca666de5e7545d1141dcdadd.png" />
 </div>
 </div>
 <p>נבצע את ה־SVD של המטריצה (התמונה) ונראה את הממדים שהתקבלו ואת מספר הערכים הסינגולריים הראשונים.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Compute the Singular Value Decomposition (SVD) of the image.</span>
-<span class="c1"># U, s, Vt = ...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute SVD</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shapes:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;U:&quot;</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot; s:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot; Vt:&quot;</span><span class="p">,</span> <span class="n">Vt</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shapes:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;U:&quot;</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot; s:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot; Vt:&quot;</span><span class="p">,</span> <span class="n">Vt</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-    <span class="c1"># Print first few singular values (they are already 1D numbers)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First 5 singular values:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
-<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ The variables U, s, or Vt are not defined yet. Please compute the SVD first.&quot;</span><span class="p">)</span>
+<span class="c1"># Print first few singular values (they are already 1D numbers)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First 5 singular values:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shapes:
-⚠️ The variables U, s, or Vt are not defined yet. Please compute the SVD first.
+U: (512, 512)  s: (512,)  Vt: (512, 512)
+First 5 singular values: [64735.21573791 10596.33183754  8175.13465424  6475.65164127
+  5883.02580999]
 </pre></div>
 </div>
 </div>
@@ -779,7 +772,7 @@ A = U \cdot \Sigma \cdot V^T
 <span class="math notranslate nohighlight">\(\sigma_1 \geq \sigma_2 \geq \dots \geq 0\)</span>.</p></li>
 </ul>
 <section id="k">
-<h4><span class="section-number">9.7.2.1.1. </span>קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד<a class="headerlink" href="#k" title="Link to this heading">#</a></h4>
+<h4>קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד<a class="headerlink" href="#k" title="Link to this heading">#</a></h4>
 <p>בפועל, רוב התרומה של המטריצה <span class="math notranslate nohighlight">\(A\)</span> מגיעה מהערכים הסינגולריים הגדולים ביותר.<br />
 לכן אפשר לכתוב קירוב:</p>
 <div class="math notranslate nohighlight">
@@ -817,101 +810,53 @@ A_k = \sigma_1 u_1 v_1^T + \cdots + \sigma_k u_k v_k^T,
 </ul>
 </div>
 <p>כך ניתן לדחוס את המידע: לשמור הרבה פחות נתונים (רק <span class="math notranslate nohighlight">\(k\)</span> ערכים וכמה וקטורים) ועדיין לשחזר תמונה קרובה מאוד למקור.</p>
-</section>
-<section id="svd-approx">
-<h4><span class="section-number">9.7.2.1.2. </span>svd_approx<a class="headerlink" href="#svd-approx" title="Link to this heading">#</a></h4>
-<p>הפונקציה <code class="docutils literal notranslate"><span class="pre">svd_approx</span></code> משחזרת את התמונה המקורית בקירוב באמצעות שימוש רק ב־k הערכים והווקטורים הסינגולריים הראשונים של פירוק ה־SVD.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">svd_approx</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="c1"># TODO: Reconstruct the image using the top-k singular values and vectors.</span>
-    <span class="c1"># 1. Keep only the first k columns of U.</span>
-    <span class="c1"># 2. Keep only the first k singular values from s.</span>
-    <span class="c1"># 3. Keep only the first k rows of Vt.</span>
-    <span class="c1"># 4. Multiply them to get the approximate image: (U[:, :k] * s[:k]) @ Vt[:k, :]</span>
+    <span class="c1"># Reconstruct using the top-k singular values/vectors</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">)))</span>  <span class="c1"># clamp k to [1, rank]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">s</span><span class="p">[:</span><span class="n">k</span><span class="p">])</span> <span class="o">@</span> <span class="n">Vt</span><span class="p">[:</span><span class="n">k</span><span class="p">,</span> <span class="p">:]</span>
 
-    <span class="c1"># U_k = ...</span>
-    <span class="c1"># s_k = ...</span>
-    <span class="c1"># Vt_k = ...</span>
-    <span class="c1"># img_approx = U_k * s_k @ Vt_k</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">]:</span>
+    <span class="n">approx</span> <span class="o">=</span> <span class="n">svd_approx</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">img_approx</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="relative-error">
-<h4><span class="section-number">9.7.2.1.3. </span>relative_error<a class="headerlink" href="#relative-error" title="Link to this heading">#</a></h4>
-<p>הפונקציה <code class="docutils literal notranslate"><span class="pre">relative_error</span></code> מחשבת את השגיאה היחסית בין התמונה המקורית לבין התמונה המשוחזרת.<br />
-השגיאה נמדדת לפי הנוסחה:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{||A - A_k||}{||A||}
-\]</div>
-<p>כלומר, כמה ההבדל בין שתי התמונות גדול ביחס לגודל הכולל של התמונה המקורית.<br />
-ערך קטן יותר מעיד על שחזור מדויק יותר.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">relative_error</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">approx</span><span class="p">):</span>
-    <span class="c1"># TODO: Compute the relative reconstruction error between the original image and its approximation.</span>
-    <span class="c1"># The formula is: ||A - A_k|| / ||A||</span>
+    <span class="c1"># Relative reconstruction error ||A - A_k|| / ||A||</span>
+    <span class="n">rel_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">img</span> <span class="o">-</span> <span class="n">approx</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="n">k</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2">  relative error ≈ </span><span class="si">{</span><span class="n">rel_err</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="n">rel_err</span> <span class="o">=</span> <span class="o">...</span>
-    <span class="k">return</span> <span class="n">rel_err</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>כעת נשתמש בשתי הפונקציות שכתבנו — <code class="docutils literal notranslate"><span class="pre">svd_approx</span></code> ו־<code class="docutils literal notranslate"><span class="pre">relative_error</span></code> — עבור מספר ערכים שונים של <em>k</em>.<br />
-כך נוכל לראות כיצד איכות השחזור והשגיאה היחסית משתנות בהתאם למספר הערכים הסינגולריים שבהם השתמשנו.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">]:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">approx</span> <span class="o">=</span> <span class="n">svd_approx</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-        <span class="n">rel_err</span> <span class="o">=</span> <span class="n">relative_error</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">approx</span><span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="n">k</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2">  relative error ≈ </span><span class="si">{</span><span class="n">rel_err</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SVD approximation with k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">approx</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-    <span class="k">except</span> <span class="ne">NameError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="k">if</span> <span class="s1">&#39;svd_approx&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ The function &#39;svd_approx&#39; is not defined yet. Please implement it before running (k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="s1">&#39;relative_error&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ The function &#39;relative_error&#39; is not defined yet. Please implement it before running (k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="s1">&#39;U&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;s&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;Vt&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ The SVD variables (U, s, Vt) are missing. Please compute the SVD first (k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="s1">&#39;img&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ The variable &#39;img&#39; is missing. Make sure the image is loaded before running (k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ Missing variable or function: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2"> (k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SVD approximation with k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">approx</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⚠️ The SVD variables (U, s, Vt) are missing. Please compute the SVD first (k=5).
-⚠️ The SVD variables (U, s, Vt) are missing. Please compute the SVD first (k=20).
-⚠️ The SVD variables (U, s, Vt) are missing. Please compute the SVD first (k=60).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k=  5  relative error ≈ 0.2013
 </pre></div>
 </div>
+<img alt="../../../_images/9d85dac65e0c34557eb3804c1788a1e8c617842eec21cc14cb3fa7652351dfb2.png" src="../../../_images/9d85dac65e0c34557eb3804c1788a1e8c617842eec21cc14cb3fa7652351dfb2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k= 20  relative error ≈ 0.1041
+</pre></div>
+</div>
+<img alt="../../../_images/e6ded4e517e7b17b8b7d71367e9c5f89d1de23315c1295c28d71a521ea07184a.png" src="../../../_images/e6ded4e517e7b17b8b7d71367e9c5f89d1de23315c1295c28d71a521ea07184a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k= 60  relative error ≈ 0.0514
+</pre></div>
+</div>
+<img alt="../../../_images/2e884d3ba779d1e5e1562b32519ee7935312a0f0f8024def0a8a034cd8a2c84f.png" src="../../../_images/2e884d3ba779d1e5e1562b32519ee7935312a0f0f8024def0a8a034cd8a2c84f.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="id3">
-<h3><span class="section-number">9.7.2.2. </span>כמה אנרגיה נשמרה?<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3>כמה אנרגיה נשמרה?<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>כדי למדוד עד כמה הקירוב <span class="math notranslate nohighlight">\(A_k\)</span> שומר על המידע של המטריצה המקורית <span class="math notranslate nohighlight">\(A\)</span>, משתמשים ב<strong>אנרגיה</strong>.</p>
 <p>ב־SVD, הערכים הסינגולריים <span class="math notranslate nohighlight">\(\sigma_i\)</span> מודדים כמה חזקה התרומה של כל רכיב <span class="math notranslate nohighlight">\(i\)</span> לתמונה או לנתונים.<br />
 ככל שהערך <span class="math notranslate nohighlight">\(\sigma_i\)</span> גדול יותר – הוא מייצג יותר מידע חשוב.</p>
 </section>
 <section id="id4">
-<h3><span class="section-number">9.7.2.3. </span>מדד האנרגיה<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3>מדד האנרגיה<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>נגדיר את סך כל האנרגיה של המטריצה כ־</p>
 <div class="math notranslate nohighlight">
 \[
@@ -939,42 +884,34 @@ E(k) = \sum_{i=1}^k \sigma_i^2
 <p>במילים פשוטות: היחס <span class="math notranslate nohighlight">\(\text{Ratio}(k)\)</span> אומר לנו כמה מה”תוכן החשוב” של המטריצה המקורית הצלחנו לשמור בקירוב שלנו.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Compute the cumulative energy of the singular values.</span>
-<span class="c1"># Hint: Use np.cumsum() on s**2 and divide by the total sum of s**2 to get the cumulative energy ratio.</span>
-<span class="c1"># energy_cum = ...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_cum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="n">k</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2">  energy ≈ </span><span class="si">{</span><span class="n">energy_cum</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">5.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="n">k</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2">  energy ≈ </span><span class="si">{</span><span class="n">energy_cum</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">5.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cumulative energy vs k&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">energy_cum</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;cumulative energy&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="k">except</span> <span class="ne">NameError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">if</span> <span class="s1">&#39;energy_cum&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ The variable &#39;energy_cum&#39; is not defined yet. Please compute it using np.cumsum(s**2) / np.sum(s**2).&quot;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="s1">&#39;s&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ The variable &#39;s&#39; (singular values) is missing. Please compute the SVD first.&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ Missing variable or function: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cumulative energy vs k&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">energy_cum</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;cumulative energy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⚠️ The variable &#39;s&#39; (singular values) is missing. Please compute the SVD first.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k=  5  energy ≈  95.9%
+k= 20  energy ≈  98.9%
+k= 60  energy ≈  99.7%
+k=100  energy ≈  99.9%
 </pre></div>
 </div>
+<img alt="../../../_images/22af6a5ac8f57f6c5d978f414932e87ca700a8fb6edeb944e48180c607dbaeaa.png" src="../../../_images/22af6a5ac8f57f6c5d978f414932e87ca700a8fb6edeb944e48180c607dbaeaa.png" />
 </div>
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">9.7.2.4. </span>סיכום: מדידת האנרגיה המצטברת<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3>סיכום: מדידת האנרגיה המצטברת<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>בתא הקוד אנחנו מחשבים את <strong>האנרגיה המצטברת</strong> שנשמרת ככל שמוסיפים יותר ערכים סינגולריים בקירוב:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">np.cumsum(s**2)</span></code> – מחשב את הסכום המצטבר של <span class="math notranslate nohighlight">\(\sigma_i^2\)</span>, כלומר כמה אנרגיה מצטברת עד ערך סינגולרי מסוים <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
@@ -986,8 +923,8 @@ E(k) = \sum_{i=1}^k \sigma_i^2
 זו הסיבה ש־SVD שימושי לדחיסה: אפשר לשמור אחוז קטן מהמידע ועדיין לשחזר כמעט את כל התוכן.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="SFUXAktIZbwU" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#SFUXAktIZbwU {
+<div class="output text_html"><div id="aFONaOThWlMQ" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#aFONaOThWlMQ {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1204,7 +1141,7 @@ E(k) = \sum_{i=1}^k \sigma_i^2
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsSFUXAktIZbwU=[{"question": "\u05e0\u05e0\u05d9\u05d7 \u05e9\u05d9\u05e9 \u05dc\u05e0\u05d5 \u05ea\u05de\u05d5\u05e0\u05d4 \u05d1\u05d2\u05d5\u05d3\u05dc 200x200 \u05d5\u05d0\u05d7\u05e8\u05d9 \u05e4\u05d9\u05e8\u05d5\u05e7 SVD \u05e7\u05d9\u05d1\u05dc\u05e0\u05d5 200 \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd. \u05d0\u05e0\u05d7\u05e0\u05d5 \u05de\u05e9\u05d7\u05d6\u05e8\u05d9\u05dd \u05d0\u05ea \u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05e2\u05dd k=20 \u05d1\u05dc\u05d1\u05d3.<br><br>\u05de\u05d4 \u05e0\u05db\u05d5\u05df \u05dc\u05d2\u05d1\u05d9 \u05d4\u05e7\u05d9\u05e8\u05d5\u05d1?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05ea\u05e9\u05d7\u05d6\u05e8 \u05d0\u05ea \u05d4\u05de\u05d1\u05e0\u05d4 \u05d4\u05db\u05dc\u05dc\u05d9 (\u05e6\u05d5\u05e8\u05d4, \u05d1\u05d4\u05d9\u05e8\u05d5\u05ea \u05db\u05dc\u05dc\u05d9\u05ea) \u05d0\u05d1\u05dc \u05ea\u05d0\u05d1\u05d3 \u05e4\u05e8\u05d8\u05d9\u05dd \u05e2\u05d3\u05d9\u05e0\u05d9\u05dd", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d9\u05dd \u05de\u05db\u05d9\u05dc\u05d9\u05dd \u05d0\u05ea \u05e8\u05d5\u05d1 \u05d4\u05de\u05d9\u05d3\u05e2 \u05d4\u05d2\u05e1, \u05d0\u05da \u05dc\u05d0 \u05d0\u05ea \u05db\u05dc \u05d4\u05e4\u05e8\u05d8\u05d9\u05dd"}, {"answer": "\u05db\u05de\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05e2 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e7\u05d8\u05e0\u05d4 \u05d1\u05d4\u05e8\u05d1\u05d4 \u05de\u05d0\u05e9\u05e8 \u05d1\u05de\u05d8\u05e8\u05d9\u05e6\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d1\u05de\u05e7\u05d5\u05dd \u05dc\u05e9\u05de\u05d5\u05e8 200x200 \u05e4\u05d9\u05e7\u05e1\u05dc\u05d9\u05dd, \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05e8\u05e7 \u05d0\u05ea 20 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05d5\u05e2\u05d5\u05d3 \u05d0\u05ea \u05d4\u05d5\u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d4\u05de\u05ea\u05d0\u05d9\u05de\u05d9\u05dd"}, {"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e9\u05d5\u05d7\u05d6\u05e8\u05ea \u05ea\u05d4\u05d9\u05d4 \u05d6\u05d4\u05d4 \u05dc\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d0\u05dd \u05dc\u05d0 \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05d0\u05ea \u05db\u05dc 200 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d9\u05e9 \u05ea\u05de\u05d9\u05d3 \u05d0\u05d5\u05d1\u05d3\u05df \u05de\u05d9\u05d3\u05e2"}, {"answer": "\u05d4\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05d4 \u05dc\u05d1\u05d9\u05df \u05d4\u05de\u05e7\u05d5\u05e8 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05e2\u05d1\u05d5\u05e8 i=1..20 \u05dc\u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05dc\u05db\u05dc \u05d4\u05be200", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e0\u05e7\u05d1\u05e2\u05ea \u05e2\u05dc \u05e4\u05d9 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05e9\u05e9\u05de\u05e8\u05e0\u05d5"}]}];
+</style></div><script type="application/javascript">var questionsaFONaOThWlMQ=[{"question": "\u05e0\u05e0\u05d9\u05d7 \u05e9\u05d9\u05e9 \u05dc\u05e0\u05d5 \u05ea\u05de\u05d5\u05e0\u05d4 \u05d1\u05d2\u05d5\u05d3\u05dc 200x200 \u05d5\u05d0\u05d7\u05e8\u05d9 \u05e4\u05d9\u05e8\u05d5\u05e7 SVD \u05e7\u05d9\u05d1\u05dc\u05e0\u05d5 200 \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd. \u05d0\u05e0\u05d7\u05e0\u05d5 \u05de\u05e9\u05d7\u05d6\u05e8\u05d9\u05dd \u05d0\u05ea \u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05e2\u05dd k=20 \u05d1\u05dc\u05d1\u05d3.<br><br>\u05de\u05d4 \u05e0\u05db\u05d5\u05df \u05dc\u05d2\u05d1\u05d9 \u05d4\u05e7\u05d9\u05e8\u05d5\u05d1?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05ea\u05e9\u05d7\u05d6\u05e8 \u05d0\u05ea \u05d4\u05de\u05d1\u05e0\u05d4 \u05d4\u05db\u05dc\u05dc\u05d9 (\u05e6\u05d5\u05e8\u05d4, \u05d1\u05d4\u05d9\u05e8\u05d5\u05ea \u05db\u05dc\u05dc\u05d9\u05ea) \u05d0\u05d1\u05dc \u05ea\u05d0\u05d1\u05d3 \u05e4\u05e8\u05d8\u05d9\u05dd \u05e2\u05d3\u05d9\u05e0\u05d9\u05dd", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d9\u05dd \u05de\u05db\u05d9\u05dc\u05d9\u05dd \u05d0\u05ea \u05e8\u05d5\u05d1 \u05d4\u05de\u05d9\u05d3\u05e2 \u05d4\u05d2\u05e1, \u05d0\u05da \u05dc\u05d0 \u05d0\u05ea \u05db\u05dc \u05d4\u05e4\u05e8\u05d8\u05d9\u05dd"}, {"answer": "\u05db\u05de\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05e2 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e7\u05d8\u05e0\u05d4 \u05d1\u05d4\u05e8\u05d1\u05d4 \u05de\u05d0\u05e9\u05e8 \u05d1\u05de\u05d8\u05e8\u05d9\u05e6\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d1\u05de\u05e7\u05d5\u05dd \u05dc\u05e9\u05de\u05d5\u05e8 200x200 \u05e4\u05d9\u05e7\u05e1\u05dc\u05d9\u05dd, \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05e8\u05e7 \u05d0\u05ea 20 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05d5\u05e2\u05d5\u05d3 \u05d0\u05ea \u05d4\u05d5\u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d4\u05de\u05ea\u05d0\u05d9\u05de\u05d9\u05dd"}, {"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e9\u05d5\u05d7\u05d6\u05e8\u05ea \u05ea\u05d4\u05d9\u05d4 \u05d6\u05d4\u05d4 \u05dc\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d0\u05dd \u05dc\u05d0 \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05d0\u05ea \u05db\u05dc 200 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d9\u05e9 \u05ea\u05de\u05d9\u05d3 \u05d0\u05d5\u05d1\u05d3\u05df \u05de\u05d9\u05d3\u05e2"}, {"answer": "\u05d4\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05d4 \u05dc\u05d1\u05d9\u05df \u05d4\u05de\u05e7\u05d5\u05e8 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05e2\u05d1\u05d5\u05e8 i=1..20 \u05dc\u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05dc\u05db\u05dc \u05d4\u05be200", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e0\u05e7\u05d1\u05e2\u05ea \u05e2\u05dc \u05e4\u05d9 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05e9\u05e9\u05de\u05e8\u05e0\u05d5"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2267,8 +2204,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("SFUXAktIZbwU")) {
-    show_questions(questionsSFUXAktIZbwU, SFUXAktIZbwU);
+  if (document.getElementById("aFONaOThWlMQ")) {
+    show_questions(questionsaFONaOThWlMQ, aFONaOThWlMQ);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2314,24 +2251,6 @@ function try_show() {
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="9_4_SVD.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.6. </span>SVD – פירוק לערכים סינגולריים</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="9_6_example_PI_MC.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.8. </span>דוגמה מסכמת (2): הערכת מונטה–קרלו של π</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -2348,17 +2267,15 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.7.1. דחיסת תמונה סינתטית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.7.2. טעינת תמונה</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">9.7.2.1. ערוצי הצבע (RGB)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k">9.7.2.1.1. קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#svd-approx">9.7.2.1.2. svd_approx</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-error">9.7.2.1.3. relative_error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">דחיסת תמונה סינתטית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">טעינת תמונה</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">ערוצי הצבע (RGB)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k">קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.7.2.2. כמה אנרגיה נשמרה?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.7.2.3. מדד האנרגיה</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7.2.4. סיכום: מדידת האנרגיה המצטברת</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">כמה אנרגיה נשמרה?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">מדד האנרגיה</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">סיכום: מדידת האנרגיה המצטברת</a></li>
 </ul>
 </li>
 </ul>
