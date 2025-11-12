@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.6. SVD – פירוק לערכים סינגולריים &#8212; Computers For physics</title>
+    <title>9.5. SVD – פירוק לערכים סינגולריים &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_4_SVD';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.7. דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית)" href="9_5_example_image_SVD.html" />
-    <link rel="prev" title="9.5. ערכים עצמיים, וקטורים עצמיים, עקבה ודטרמיננטה" href="9_3_eigen_values.html" />
+    <link rel="next" title="9.6. שבוע 9 - תרגול עצמי" href="9_7_exercises.html" />
+    <link rel="prev" title="9.4. ערכים עצמיים, וקטורים עצמיים, עקבה ודטרמיננטה" href="9_3_eigen_values.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -276,13 +276,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="9_0_intro.html">9.2. מבוא ל־NumPy מתקדם</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_1_matrix_operations.html">9.3. פעולות מטריציוניות מתקדמות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_2_linear_system.html">9.4. פתרון מערכות ליניאריות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_3_eigen_values.html">9.5. ערכים ווקטורים עצמיים</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.6. SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_5_example_image_SVD.html">9.7. דוגמה: דחיסת תמונה באמצעות SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_example_PI_MC.html">9.8. דוגמה: הערכת π בשיטת מונטה־קרלו</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_1_matrix_operations.html">9.2. פעולות מטריציוניות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_2_linear_system.html">9.3. פתרון מערכות ליניאריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_3_eigen_values.html">9.4. ערכים ווקטורים עצמיים</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.5. SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_7_exercises.html">9.6. תרגול עצמי</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy ומבוא לPandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -583,8 +581,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.6.1. שימושים עיקריים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.6.2. סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.5.1. שימושים עיקריים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.5.2. סיכום</a></li>
 </ul>
             </nav>
         </div>
@@ -597,7 +595,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="svd">
-<h1><span class="section-number">9.6. </span>SVD – פירוק לערכים סינגולריים<a class="headerlink" href="#svd" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9.5. </span>SVD – פירוק לערכים סינגולריים<a class="headerlink" href="#svd" title="Link to this heading">#</a></h1>
 <p>פירוק לערכים סינגולריים (Singular Value Decomposition – SVD) הוא דרך לייצג כל מטריצה <span class="math notranslate nohighlight">\(A\)</span> (אפילו אם היא לא ריבועית) כמכפלה של שלוש מטריצות:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -626,7 +624,7 @@ A = U \, \Sigma \, V^T
 <p>ה־SVD אומר בעצם שכל מטריצה <span class="math notranslate nohighlight">\(A\)</span> אפשר לראות כסיבוב (באמצעות <span class="math notranslate nohighlight">\(V^T\)</span>), אחר כך <strong>מתיחה בכיוונים מסוימים</strong> (באמצעות הערכים <span class="math notranslate nohighlight">\(\sigma_i\)</span> שב־<span class="math notranslate nohighlight">\(\Sigma\)</span>), ואז עוד סיבוב (באמצעות <span class="math notranslate nohighlight">\(U\)</span>).</p>
 </div>
 <section id="id1">
-<h2><span class="section-number">9.6.1. </span>שימושים עיקריים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.5.1. </span>שימושים עיקריים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p><strong>דחיסת מידע / הפחתת מימד</strong><br />
 הערכים הסינגולריים <span class="math notranslate nohighlight">\(\sigma_i\)</span> ממוינים מהגדול לקטן.<br />
@@ -647,7 +645,7 @@ A = U \, \Sigma \, V^T
 </ol>
 </section>
 <section id="id2">
-<h2><span class="section-number">9.6.2. </span>סיכום<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.5.2. </span>סיכום<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>ה־SVD מפרק כל מטריצה לשלושה מרכיבים: <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(\Sigma\)</span>, <span class="math notranslate nohighlight">\(V^T\)</span>.</p></li>
 <li><p>הערכים הסינגולריים <span class="math notranslate nohighlight">\(\sigma_i\)</span> מספרים לנו כמה “חזקה” התרומה של כל כיוון.</p></li>
@@ -655,8 +653,8 @@ A = U \, \Sigma \, V^T
 </ul>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="ZLKOPpOiePEx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#ZLKOPpOiePEx {
+<div class="output text_html"><div id="SBfYHloaMpVO" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#SBfYHloaMpVO {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -873,7 +871,7 @@ A = U \, \Sigma \, V^T
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsZLKOPpOiePEx=[{"question": "\u05d1\u05beSVD \u05e9\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d4 A \u05e0\u05db\u05ea\u05d5\u05d1 A = U \u03a3 V\u1d40. \u05de\u05d4 \u05e0\u05db\u05d5\u05df?", "type": "many_choice", "answers": [{"answer": "\u03a3 \u05de\u05db\u05d9\u05dc\u05d4 \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d0\u05d9\u05be\u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd \u05d5\u05de\u05de\u05d5\u05d9\u05e0\u05d9\u05dd \u05de\u05d4\u05d2\u05d3\u05d5\u05dc \u05dc\u05e7\u05d8\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d6\u05d4\u05d5 \u05dc\u05d1 \u05d4-SVD"}, {"answer": "U \u05d5-V \u05d4\u05df \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05d0\u05d5\u05e8\u05ea\u05d5\u05e0\u05d5\u05e8\u05de\u05dc\u05d9\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05e2\u05de\u05d5\u05d3\u05d5\u05ea\u05d9\u05d4\u05df \u05de\u05d0\u05d5\u05e0\u05db\u05d5\u05ea \u05d5\u05d1\u05e0\u05d5\u05e8\u05de\u05d4 1"}, {"answer": "SVD \u05e4\u05d5\u05e2\u05dc \u05d2\u05dd \u05dc\u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05de\u05dc\u05d1\u05e0\u05d9\u05d5\u05ea, \u05dc\u05d0 \u05e8\u05e7 \u05e8\u05d9\u05d1\u05d5\u05e2\u05d9\u05d5\u05ea", "correct": true, "feedback": "\u05d1\u05d3\u05d9\u05d5\u05e7 \u2014 \u05d6\u05d4 \u05d0\u05d7\u05d3 \u05d4\u05d9\u05ea\u05e8\u05d5\u05e0\u05d5\u05ea \u05d4\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05e9\u05dc SVD"}, {"answer": "\u03a3 \u05d9\u05db\u05d5\u05dc\u05d4 \u05dc\u05d4\u05db\u05d9\u05dc \u05d2\u05dd \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d0\u05d9\u05e0\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd"}]}];
+</style></div><script type="application/javascript">var questionsSBfYHloaMpVO=[{"question": "\u05d1\u05beSVD \u05e9\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d4 A \u05e0\u05db\u05ea\u05d5\u05d1 A = U \u03a3 V\u1d40. \u05de\u05d4 \u05e0\u05db\u05d5\u05df?", "type": "many_choice", "answers": [{"answer": "\u03a3 \u05de\u05db\u05d9\u05dc\u05d4 \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d0\u05d9\u05be\u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd \u05d5\u05de\u05de\u05d5\u05d9\u05e0\u05d9\u05dd \u05de\u05d4\u05d2\u05d3\u05d5\u05dc \u05dc\u05e7\u05d8\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d6\u05d4\u05d5 \u05dc\u05d1 \u05d4-SVD"}, {"answer": "U \u05d5-V \u05d4\u05df \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05d0\u05d5\u05e8\u05ea\u05d5\u05e0\u05d5\u05e8\u05de\u05dc\u05d9\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05e2\u05de\u05d5\u05d3\u05d5\u05ea\u05d9\u05d4\u05df \u05de\u05d0\u05d5\u05e0\u05db\u05d5\u05ea \u05d5\u05d1\u05e0\u05d5\u05e8\u05de\u05d4 1"}, {"answer": "SVD \u05e4\u05d5\u05e2\u05dc \u05d2\u05dd \u05dc\u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05de\u05dc\u05d1\u05e0\u05d9\u05d5\u05ea, \u05dc\u05d0 \u05e8\u05e7 \u05e8\u05d9\u05d1\u05d5\u05e2\u05d9\u05d5\u05ea", "correct": true, "feedback": "\u05d1\u05d3\u05d9\u05d5\u05e7 \u2014 \u05d6\u05d4 \u05d0\u05d7\u05d3 \u05d4\u05d9\u05ea\u05e8\u05d5\u05e0\u05d5\u05ea \u05d4\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05e9\u05dc SVD"}, {"answer": "\u03a3 \u05d9\u05db\u05d5\u05dc\u05d4 \u05dc\u05d4\u05db\u05d9\u05dc \u05d2\u05dd \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d0\u05d9\u05e0\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1936,8 +1934,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("ZLKOPpOiePEx")) {
-    show_questions(questionsZLKOPpOiePEx, ZLKOPpOiePEx);
+  if (document.getElementById("SBfYHloaMpVO")) {
+    show_questions(questionsSBfYHloaMpVO, SBfYHloaMpVO);
   } else {
     setTimeout(try_show, 200);
   }
@@ -1988,15 +1986,15 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.5. </span>ערכים עצמיים, וקטורים עצמיים, עקבה ודטרמיננטה</p>
+        <p class="prev-next-title"><span class="section-number">9.4. </span>ערכים עצמיים, וקטורים עצמיים, עקבה ודטרמיננטה</p>
       </div>
     </a>
     <a class="right-next"
-       href="9_5_example_image_SVD.html"
+       href="9_7_exercises.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.7. </span>דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית)</p>
+        <p class="prev-next-title"><span class="section-number">9.6. </span>שבוע 9 - תרגול עצמי</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2016,8 +2014,8 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.6.1. שימושים עיקריים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.6.2. סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.5.1. שימושים עיקריים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.5.2. סיכום</a></li>
 </ul>
   </nav></div>
 

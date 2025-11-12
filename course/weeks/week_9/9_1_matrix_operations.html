@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.3. פעולות מטריציוניות &#8212; Computers For physics</title>
+    <title>9.2. פעולות מטריציוניות &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_1_matrix_operations';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.4. פתרון מערכות לינאריות" href="9_2_linear_system.html" />
-    <link rel="prev" title="9.2. שבוע 9 - Numpy מתקדם" href="9_0_intro.html" />
+    <link rel="next" title="9.3. פתרון מערכות לינאריות" href="9_2_linear_system.html" />
+    <link rel="prev" title="9. שבוע 9 — NumPy מתקדם: מטריצות, ערכים עצמיים ויישומים מדעיים" href="../week_9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -276,13 +276,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="9_0_intro.html">9.2. מבוא ל־NumPy מתקדם</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.3. פעולות מטריציוניות מתקדמות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_2_linear_system.html">9.4. פתרון מערכות ליניאריות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_3_eigen_values.html">9.5. ערכים ווקטורים עצמיים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_4_SVD.html">9.6. SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_5_example_image_SVD.html">9.7. דוגמה: דחיסת תמונה באמצעות SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_example_PI_MC.html">9.8. דוגמה: הערכת π בשיטת מונטה־קרלו</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.2. פעולות מטריציוניות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_2_linear_system.html">9.3. פתרון מערכות ליניאריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_3_eigen_values.html">9.4. ערכים ווקטורים עצמיים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_4_SVD.html">9.5. SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_7_exercises.html">9.6. תרגול עצמי</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy ומבוא לPandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -583,11 +581,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-matmul">9.3.1. @ ו-np.matmul</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-dot">9.3.2. np.dot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose-t">9.3.3. transpose / .T</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">9.3.4. Transpose למימדים גבוהים יותר</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-broadcasting">9.3.5. פעולות מטריציוניות עם Batch ו־Broadcasting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-matmul">9.2.1. @ ו-np.matmul</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-dot">9.2.2. np.dot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose-t">9.2.3. transpose / .T</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">9.2.4. Transpose למימדים גבוהים יותר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-broadcasting">9.2.5. פעולות מטריציוניות עם Batch ו־Broadcasting</a></li>
 </ul>
             </nav>
         </div>
@@ -600,14 +598,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="id1">
-<h1><span class="section-number">9.3. </span>פעולות מטריציוניות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9.2. </span>פעולות מטריציוניות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="np-matmul">
-<h2><span class="section-number">9.3.1. </span>&#64; ו-np.matmul<a class="headerlink" href="#np-matmul" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2.1. </span>&#64; ו-np.matmul<a class="headerlink" href="#np-matmul" title="Link to this heading">#</a></h2>
 <p>האופרטור &#64; שקול ל-np.matmul עבור מכפלות מטריציות. שניהם תומכים בבאצ’ינג (batch/broadcast) במימדים גבוהים.
 שימו לב כי גם האופרטור וגם הפונקציה <strong>לא</strong> מבצעים כפל איבר-איבר; לשם כך משתמשים ב-*.</p>
 </section>
 <section id="np-dot">
-<h2><span class="section-number">9.3.2. </span>np.dot<a class="headerlink" href="#np-dot" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2.2. </span>np.dot<a class="headerlink" href="#np-dot" title="Link to this heading">#</a></h2>
 <p>עבור שני וקטורים – מחזיר מכפלה סקלרית.
 עבור מטריצות דו-ממדיות – שקול למכפלת מטריצות.
 במימדים גבוהים הכללים שונים מעט (כפל לאורך הצירים האחרונים) ולכן נעדיף &#64;/matmul לקוד ברור.</p>
@@ -649,8 +647,8 @@ AB3:
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="LuwuKDOkNKmc" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#LuwuKDOkNKmc {
+<div class="output text_html"><div id="xzflfQwDIaqN" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#xzflfQwDIaqN {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -867,7 +865,7 @@ AB3:
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsLuwuKDOkNKmc=[{"question": "\u05e0\u05ea\u05d5\u05e0\u05d5\u05ea \u05d4\u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea:<br><br>A = np.array([[1,2],[3,4]])<br><br>B = np.array([[5,6],[7,8]])<br><br>\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df np.dot(A,B) \u05dc\u05d1\u05d9\u05df np.matmul(A,B)?", "type": "many_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc: \u05e9\u05ea\u05d9\u05d4\u05df \u05de\u05d7\u05d6\u05d9\u05e8\u05d5\u05ea \u05d0\u05ea [[19,22],[43,50]]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e2\u05d1\u05d5\u05e8 \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05d3\u05d5\u05be\u05de\u05de\u05d3\u05d9\u05d5\u05ea np.dot \u05d5\u05benp.matmul \u05d6\u05d4\u05d5\u05ea"}, {"answer": "np.dot \u05de\u05d1\u05e6\u05e2 \u05de\u05db\u05e4\u05dc\u05d4 \u05d0\u05d9\u05d1\u05e8\u05be\u05dc\u05d0\u05d9\u05d1\u05e8 \u05d5\u05benp.matmul \u05de\u05db\u05e4\u05dc\u05d4 \u05de\u05d8\u05e8\u05d9\u05e6\u05d9\u05d5\u05e0\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05de\u05db\u05e4\u05dc\u05d4 \u05d0\u05d9\u05d1\u05e8\u05be\u05dc\u05d0\u05d9\u05d1\u05e8 \u05e0\u05e2\u05e9\u05d9\u05ea \u05e2\u05dd * \u05d5\u05dc\u05d0 \u05e2\u05dd dot"}, {"answer": "np.dot \u05de\u05d7\u05d6\u05d9\u05e8 \u05e1\u05e7\u05dc\u05e8 \u05d5\u05benp.matmul \u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05d8\u05e8\u05d9\u05e6\u05d4", "correct": false, "feedback": "\u05d6\u05d4 \u05e0\u05db\u05d5\u05df \u05e8\u05e7 \u05db\u05e9\u05e2\u05d5\u05d1\u05d3\u05d9\u05dd \u05e2\u05dd \u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d7\u05d3\u05be\u05de\u05de\u05d3\u05d9\u05d9\u05dd, \u05dc\u05d0 \u05e2\u05dd \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea 2D"}, {"answer": "np.matmul \u05e2\u05d5\u05d1\u05d3 \u05e8\u05e7 \u05e2\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05e8\u05d9\u05d1\u05d5\u05e2\u05d9\u05d5\u05ea \u05d5\u05d0\u05d9\u05dc\u05d5 np.dot \u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 np.matmul \u05e2\u05d5\u05d1\u05d3 \u05d2\u05dd \u05e2\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05de\u05dc\u05d1\u05e0\u05d9\u05d5\u05ea \u05db\u05dc \u05e2\u05d5\u05d3 \u05d4\u05de\u05de\u05d3\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd"}]}];
+</style></div><script type="application/javascript">var questionsxzflfQwDIaqN=[{"question": "\u05e0\u05ea\u05d5\u05e0\u05d5\u05ea \u05d4\u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea:<br><br>A = np.array([[1,2],[3,4]])<br><br>B = np.array([[5,6],[7,8]])<br><br>\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df np.dot(A,B) \u05dc\u05d1\u05d9\u05df np.matmul(A,B)?", "type": "many_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc: \u05e9\u05ea\u05d9\u05d4\u05df \u05de\u05d7\u05d6\u05d9\u05e8\u05d5\u05ea \u05d0\u05ea [[19,22],[43,50]]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e2\u05d1\u05d5\u05e8 \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05d3\u05d5\u05be\u05de\u05de\u05d3\u05d9\u05d5\u05ea np.dot \u05d5\u05benp.matmul \u05d6\u05d4\u05d5\u05ea"}, {"answer": "np.dot \u05de\u05d1\u05e6\u05e2 \u05de\u05db\u05e4\u05dc\u05d4 \u05d0\u05d9\u05d1\u05e8\u05be\u05dc\u05d0\u05d9\u05d1\u05e8 \u05d5\u05benp.matmul \u05de\u05db\u05e4\u05dc\u05d4 \u05de\u05d8\u05e8\u05d9\u05e6\u05d9\u05d5\u05e0\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05de\u05db\u05e4\u05dc\u05d4 \u05d0\u05d9\u05d1\u05e8\u05be\u05dc\u05d0\u05d9\u05d1\u05e8 \u05e0\u05e2\u05e9\u05d9\u05ea \u05e2\u05dd * \u05d5\u05dc\u05d0 \u05e2\u05dd dot"}, {"answer": "np.dot \u05de\u05d7\u05d6\u05d9\u05e8 \u05e1\u05e7\u05dc\u05e8 \u05d5\u05benp.matmul \u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05d8\u05e8\u05d9\u05e6\u05d4", "correct": false, "feedback": "\u05d6\u05d4 \u05e0\u05db\u05d5\u05df \u05e8\u05e7 \u05db\u05e9\u05e2\u05d5\u05d1\u05d3\u05d9\u05dd \u05e2\u05dd \u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d7\u05d3\u05be\u05de\u05de\u05d3\u05d9\u05d9\u05dd, \u05dc\u05d0 \u05e2\u05dd \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea 2D"}, {"answer": "np.matmul \u05e2\u05d5\u05d1\u05d3 \u05e8\u05e7 \u05e2\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05e8\u05d9\u05d1\u05d5\u05e2\u05d9\u05d5\u05ea \u05d5\u05d0\u05d9\u05dc\u05d5 np.dot \u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 np.matmul \u05e2\u05d5\u05d1\u05d3 \u05d2\u05dd \u05e2\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05de\u05dc\u05d1\u05e0\u05d9\u05d5\u05ea \u05db\u05dc \u05e2\u05d5\u05d3 \u05d4\u05de\u05de\u05d3\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1930,8 +1928,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("LuwuKDOkNKmc")) {
-    show_questions(questionsLuwuKDOkNKmc, LuwuKDOkNKmc);
+  if (document.getElementById("xzflfQwDIaqN")) {
+    show_questions(questionsxzflfQwDIaqN, xzflfQwDIaqN);
   } else {
     setTimeout(try_show, 200);
   }
@@ -1945,7 +1943,7 @@ function try_show() {
 </div>
 </section>
 <section id="transpose-t">
-<h2><span class="section-number">9.3.3. </span>transpose / .T<a class="headerlink" href="#transpose-t" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2.3. </span>transpose / .T<a class="headerlink" href="#transpose-t" title="Link to this heading">#</a></h2>
 <p>טרנספוז של מטריצה 2D מחליף שורות בעמודות.
 <img alt="Alt text" src="https://datascienceparichay.com/wp-content/uploads/2021/07/transpose-a-numpy-array.png" /></p>
 <div class="cell docutils container">
@@ -1974,7 +1972,7 @@ function try_show() {
 </div>
 </section>
 <section id="transpose">
-<h2><span class="section-number">9.3.4. </span>Transpose למימדים גבוהים יותר<a class="headerlink" href="#transpose" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2.4. </span>Transpose למימדים גבוהים יותר<a class="headerlink" href="#transpose" title="Link to this heading">#</a></h2>
 <p>במערכים בעלי יותר משני ממדים (tensors), <code class="docutils literal notranslate"><span class="pre">transpose</span></code> מחליפה <strong>סדר צירים</strong> כללי.<br />
 ברירת המחדל היא היפוך של סדר הצירים (axis reversal), אבל ניתן לשלוט בסדר הרצוי דרך ארגומנט <code class="docutils literal notranslate"><span class="pre">axes</span></code>.</p>
 <ul class="simple">
@@ -2021,8 +2019,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="nxGCojbaSUVq" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#nxGCojbaSUVq {
+<div class="output text_html"><div id="tINPLdjWeZWa" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#tINPLdjWeZWa {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2239,7 +2237,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsnxGCojbaSUVq=[{"question": "\u05e0\u05ea\u05d5\u05df \u05de\u05e2\u05e8\u05da \u05d1\u05d2\u05d5\u05d3\u05dc (2,3,4). \u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e6\u05d5\u05e8\u05d4 \u05d4\u05d7\u05d3\u05e9\u05d4 \u05d0\u05dd \u05e0\u05d1\u05e6\u05e2 <br><br>transpose(1,0,2)<br><br>\u05e2\u05dd \u05e1\u05d3\u05e8 \u05e6\u05d9\u05e8\u05d9\u05dd ?", "type": "many_choice", "answers": [{"answer": "(3,2,4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d7\u05dc\u05e4\u05e0\u05d5 \u05d1\u05d9\u05df \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d5\u05d4\u05e9\u05e0\u05d9, \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05d1\u05de\u05e7\u05d5\u05dd"}, {"answer": "(2,4,3)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05d4\u05d9\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05d4\u05d9\u05d9\u05e0\u05d5 \u05de\u05d7\u05dc\u05d9\u05e4\u05d9\u05dd \u05d1\u05d9\u05df \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05dc\u05e9\u05dc\u05d9\u05e9\u05d9"}, {"answer": "(4,3,2)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05e2\u05d5\u05e9\u05d9\u05dd A.T \u05db\u05dc\u05d5\u05de\u05e8 \u05d4\u05d9\u05e4\u05d5\u05da \u05db\u05dc \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd"}, {"answer": "(2,3,4)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05d4\u05d9\u05d4 \u05de\u05ea\u05e7\u05d1\u05dc \u05d0\u05dd \u05dc\u05d0 \u05d4\u05d9\u05d9\u05e0\u05d5 \u05de\u05e9\u05e0\u05d9\u05dd \u05d0\u05ea \u05e1\u05d3\u05e8 \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd \u05db\u05dc\u05dc"}]}];
+</style></div><script type="application/javascript">var questionstINPLdjWeZWa=[{"question": "\u05e0\u05ea\u05d5\u05df \u05de\u05e2\u05e8\u05da \u05d1\u05d2\u05d5\u05d3\u05dc (2,3,4). \u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e6\u05d5\u05e8\u05d4 \u05d4\u05d7\u05d3\u05e9\u05d4 \u05d0\u05dd \u05e0\u05d1\u05e6\u05e2 <br><br>transpose(1,0,2)<br><br>\u05e2\u05dd \u05e1\u05d3\u05e8 \u05e6\u05d9\u05e8\u05d9\u05dd ?", "type": "many_choice", "answers": [{"answer": "(3,2,4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d7\u05dc\u05e4\u05e0\u05d5 \u05d1\u05d9\u05df \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d5\u05d4\u05e9\u05e0\u05d9, \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05d1\u05de\u05e7\u05d5\u05dd"}, {"answer": "(2,4,3)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05d4\u05d9\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05d4\u05d9\u05d9\u05e0\u05d5 \u05de\u05d7\u05dc\u05d9\u05e4\u05d9\u05dd \u05d1\u05d9\u05df \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05dc\u05e9\u05dc\u05d9\u05e9\u05d9"}, {"answer": "(4,3,2)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05e2\u05d5\u05e9\u05d9\u05dd A.T \u05db\u05dc\u05d5\u05de\u05e8 \u05d4\u05d9\u05e4\u05d5\u05da \u05db\u05dc \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd"}, {"answer": "(2,3,4)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05d4\u05d9\u05d4 \u05de\u05ea\u05e7\u05d1\u05dc \u05d0\u05dd \u05dc\u05d0 \u05d4\u05d9\u05d9\u05e0\u05d5 \u05de\u05e9\u05e0\u05d9\u05dd \u05d0\u05ea \u05e1\u05d3\u05e8 \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd \u05db\u05dc\u05dc"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3302,8 +3300,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("nxGCojbaSUVq")) {
-    show_questions(questionsnxGCojbaSUVq, nxGCojbaSUVq);
+  if (document.getElementById("tINPLdjWeZWa")) {
+    show_questions(questionstINPLdjWeZWa, tINPLdjWeZWa);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3317,7 +3315,7 @@ function try_show() {
 </div>
 </section>
 <section id="batch-broadcasting">
-<h2><span class="section-number">9.3.5. </span>פעולות מטריציוניות עם Batch ו־Broadcasting<a class="headerlink" href="#batch-broadcasting" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2.5. </span>פעולות מטריציוניות עם Batch ו־Broadcasting<a class="headerlink" href="#batch-broadcasting" title="Link to this heading">#</a></h2>
 <p>ב־NumPy ניתן לבצע מכפלות מטריציוניות לא רק בין מטריצות בודדות, אלא גם בין <em>אוספים</em> של מטריצות
 (batch) בצורה וקטורית.</p>
 <p>נראה שתי דוגמאות:</p>
@@ -4699,12 +4697,12 @@ function try_show() {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="9_0_intro.html"
+       href="../week_9.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.2. </span>שבוע 9 - Numpy מתקדם</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>שבוע 9 — NumPy מתקדם: מטריצות, ערכים עצמיים ויישומים מדעיים</p>
       </div>
     </a>
     <a class="right-next"
@@ -4712,7 +4710,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.4. </span>פתרון מערכות לינאריות</p>
+        <p class="prev-next-title"><span class="section-number">9.3. </span>פתרון מערכות לינאריות</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -4732,11 +4730,11 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-matmul">9.3.1. @ ו-np.matmul</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-dot">9.3.2. np.dot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose-t">9.3.3. transpose / .T</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">9.3.4. Transpose למימדים גבוהים יותר</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-broadcasting">9.3.5. פעולות מטריציוניות עם Batch ו־Broadcasting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-matmul">9.2.1. @ ו-np.matmul</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-dot">9.2.2. np.dot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose-t">9.2.3. transpose / .T</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">9.2.4. Transpose למימדים גבוהים יותר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-broadcasting">9.2.5. פעולות מטריציוניות עם Batch ו־Broadcasting</a></li>
 </ul>
   </nav></div>
 

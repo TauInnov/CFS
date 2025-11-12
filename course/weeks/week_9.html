@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.2. שבוע 9 - Numpy מתקדם" href="week_9/9_0_intro.html" />
+    <link rel="next" title="9.2. פעולות מטריציוניות" href="week_9/9_1_matrix_operations.html" />
     <link rel="prev" title="8.6. Probabilities &amp; Histograms" href="week_8/8_3_prob_hists.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -276,13 +276,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">9. שבוע 9 — Numpy מתקדם</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="week_9/9_0_intro.html">9.2. מבוא ל־NumPy מתקדם</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_9/9_1_matrix_operations.html">9.3. פעולות מטריציוניות מתקדמות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_9/9_2_linear_system.html">9.4. פתרון מערכות ליניאריות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_9/9_3_eigen_values.html">9.5. ערכים ווקטורים עצמיים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_9/9_4_SVD.html">9.6. SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_9/9_5_example_image_SVD.html">9.7. דוגמה: דחיסת תמונה באמצעות SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_9/9_6_example_PI_MC.html">9.8. דוגמה: הערכת π בשיטת מונטה־קרלו</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_1_matrix_operations.html">9.2. פעולות מטריציוניות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_2_linear_system.html">9.3. פתרון מערכות ליניאריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_3_eigen_values.html">9.4. ערכים ווקטורים עצמיים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_4_SVD.html">9.5. SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_7_exercises.html">9.6. תרגול עצמי</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week_10.html">10. שבוע 10 — SciPy ומבוא לPandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -615,11 +613,11 @@ document.write(`
 <section id="materials">
 <h2><span class="section-number">9.1. </span>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="week_9/9_0_intro.html"><span class="doc">0 • מבוא ל־NumPy מתקדם</span></a></p></li>
 <li><p><a class="reference internal" href="week_9/9_1_matrix_operations.html"><span class="doc">1 • פעולות מטריציוניות מתקדמות</span></a></p></li>
 <li><p><a class="reference internal" href="week_9/9_2_linear_system.html"><span class="doc">2 • פתרון מערכות ליניאריות</span></a></p></li>
 <li><p><a class="reference internal" href="week_9/9_3_eigen_values.html"><span class="doc">3 • ערכים ווקטורים עצמיים</span></a></p></li>
 <li><p><a class="reference internal" href="week_9/9_4_SVD.html"><span class="doc">4 • פירוק לערכים סינגולריים (SVD)</span></a></p></li>
+<li><p><a class="reference internal" href="week_9/9_7_exercises.html"><span class="doc">5 • תרגול עצמי</span></a></p></li>
 </ul>
 </section>
 <div class="toctree-wrapper compound">
@@ -666,11 +664,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="week_9/9_0_intro.html"
+       href="week_9/9_1_matrix_operations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.2. </span>שבוע 9 - Numpy מתקדם</p>
+        <p class="prev-next-title"><span class="section-number">9.2. </span>פעולות מטריציוניות</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

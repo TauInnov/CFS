@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.5. ערכים עצמיים, וקטורים עצמיים, עקבה ודטרמיננטה &#8212; Computers For physics</title>
+    <title>9.4. ערכים עצמיים, וקטורים עצמיים, עקבה ודטרמיננטה &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_3_eigen_values';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.6. SVD – פירוק לערכים סינגולריים" href="9_4_SVD.html" />
-    <link rel="prev" title="9.4. פתרון מערכות לינאריות" href="9_2_linear_system.html" />
+    <link rel="next" title="9.5. SVD – פירוק לערכים סינגולריים" href="9_4_SVD.html" />
+    <link rel="prev" title="9.3. פתרון מערכות לינאריות" href="9_2_linear_system.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -276,13 +276,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="9_0_intro.html">9.2. מבוא ל־NumPy מתקדם</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_1_matrix_operations.html">9.3. פעולות מטריציוניות מתקדמות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_2_linear_system.html">9.4. פתרון מערכות ליניאריות</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.5. ערכים ווקטורים עצמיים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_4_SVD.html">9.6. SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_5_example_image_SVD.html">9.7. דוגמה: דחיסת תמונה באמצעות SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_example_PI_MC.html">9.8. דוגמה: הערכת π בשיטת מונטה־קרלו</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_1_matrix_operations.html">9.2. פעולות מטריציוניות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_2_linear_system.html">9.3. פתרון מערכות ליניאריות</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.4. ערכים ווקטורים עצמיים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_4_SVD.html">9.5. SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_7_exercises.html">9.6. תרגול עצמי</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy ומבוא לPandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -583,10 +581,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.5.1. אינטואיציה פיסיקלית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.5.2. קשרים שימושיים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.5.3. ערכים עצמיים ווקטורים עצמיים עבור מטריצה סימטרית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.5.4. מטריצה לא סימטרית וערכים עצמיים מרוכבים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4.1. אינטואיציה פיסיקלית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.4.2. קשרים שימושיים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4.3. ערכים עצמיים ווקטורים עצמיים עבור מטריצה סימטרית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.4.4. מטריצה לא סימטרית וערכים עצמיים מרוכבים</a></li>
 </ul>
             </nav>
         </div>
@@ -599,14 +597,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="id1">
-<h1><span class="section-number">9.5. </span>ערכים עצמיים, וקטורים עצמיים, עקבה ודטרמיננטה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9.4. </span>ערכים עצמיים, וקטורים עצמיים, עקבה ודטרמיננטה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>למטריצה <span class="math notranslate nohighlight">\(A\)</span> מתקבלים <strong>ערכים עצמיים</strong> <span class="math notranslate nohighlight">\(\lambda_i\)</span> ו־<strong>וקטורים עצמיים</strong> <span class="math notranslate nohighlight">\(v_i\)</span> כך ש־</p>
 <div class="math notranslate nohighlight">
 \[
 A v_i = \lambda_i v_i .
 \]</div>
 <section id="id2">
-<h2><span class="section-number">9.5.1. </span>אינטואיציה פיסיקלית<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.4.1. </span>אינטואיציה פיסיקלית<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>בפיסיקה, ערכים ווקטורים עצמיים מופיעים בהקשרים רבים:</p>
 <ul class="simple">
 <li><p><strong>מצבים נורמליים</strong> במערכות לינאריות — למשל תנודות קטנות סביב נקודת שיווי משקל.</p></li>
@@ -630,7 +628,7 @@ A v_i = \lambda_i v_i .
 </ul>
 </section>
 <section id="id3">
-<h2><span class="section-number">9.5.2. </span>קשרים שימושיים<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.4.2. </span>קשרים שימושיים<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <ul>
 <li><p>העקבה (trace) של מטריצה היא סכום הערכים העצמיים:</p>
 <div class="math notranslate nohighlight">
@@ -647,7 +645,7 @@ A v_i = \lambda_i v_i .
 </ul>
 </section>
 <section id="id4">
-<h2><span class="section-number">9.5.3. </span>ערכים עצמיים ווקטורים עצמיים עבור מטריצה סימטרית<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.4.3. </span>ערכים עצמיים ווקטורים עצמיים עבור מטריצה סימטרית<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>כאשר <span class="math notranslate nohighlight">\(A\)</span> היא מטריצה סימטרית (כלומר <span class="math notranslate nohighlight">\(A^T = A\)</span>), יש לה תכונות נוחות במיוחד:</p>
 <ul class="simple">
 <li><p>כל הערכים העצמיים שלה ממשיים.</p></li>
@@ -701,7 +699,7 @@ A \approx V \, \mathrm{diag}(w) \, V^T
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">9.5.4. </span>מטריצה לא סימטרית וערכים עצמיים מרוכבים<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.4.4. </span>מטריצה לא סימטרית וערכים עצמיים מרוכבים<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>לא כל המטריצות הן סימטריות. כאשר <span class="math notranslate nohighlight">\(A\)</span> אינה סימטרית, ייתכן שהערכים העצמיים שלה יהיו <strong>מספרים מרוכבים</strong>.</p>
 <p>בדוגמה הזו נגדיר מטריצה <span class="math notranslate nohighlight">\(B\)</span> שמתארת סיבוב במישור:</p>
 <div class="math notranslate nohighlight">
@@ -774,7 +772,7 @@ B = \begin{bmatrix}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.4. </span>פתרון מערכות לינאריות</p>
+        <p class="prev-next-title"><span class="section-number">9.3. </span>פתרון מערכות לינאריות</p>
       </div>
     </a>
     <a class="right-next"
@@ -782,7 +780,7 @@ B = \begin{bmatrix}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.6. </span>SVD – פירוק לערכים סינגולריים</p>
+        <p class="prev-next-title"><span class="section-number">9.5. </span>SVD – פירוק לערכים סינגולריים</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -802,10 +800,10 @@ B = \begin{bmatrix}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.5.1. אינטואיציה פיסיקלית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.5.2. קשרים שימושיים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.5.3. ערכים עצמיים ווקטורים עצמיים עבור מטריצה סימטרית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.5.4. מטריצה לא סימטרית וערכים עצמיים מרוכבים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4.1. אינטואיציה פיסיקלית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.4.2. קשרים שימושיים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4.3. ערכים עצמיים ווקטורים עצמיים עבור מטריצה סימטרית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.4.4. מטריצה לא סימטרית וערכים עצמיים מרוכבים</a></li>
 </ul>
   </nav></div>
 

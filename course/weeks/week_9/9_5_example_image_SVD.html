@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.7. דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית) &#8212; Computers For physics</title>
+    <title>דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית) &#8212; Computers For physics</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
@@ -63,8 +63,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_5_example_image_SVD';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.8. דוגמה מסכמת (2): הערכת מונטה–קרלו של π" href="9_6_example_PI_MC.html" />
-    <link rel="prev" title="9.6. SVD – פירוק לערכים סינגולריים" href="9_4_SVD.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,6 +125,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -187,7 +187,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_0_objectives.html">1.2. מבוא</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_1_hardware-to-software.html">1.3. חומרה, תוכנה והשיטה הבינארית</a></li>
@@ -275,14 +275,12 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="9_0_intro.html">9.2. מבוא ל־NumPy מתקדם</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_1_matrix_operations.html">9.3. פעולות מטריציוניות מתקדמות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_2_linear_system.html">9.4. פתרון מערכות ליניאריות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_3_eigen_values.html">9.5. ערכים ווקטורים עצמיים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_4_SVD.html">9.6. SVD</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.7. דוגמה: דחיסת תמונה באמצעות SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_example_PI_MC.html">9.8. דוגמה: הערכת π בשיטת מונטה־קרלו</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — Numpy מתקדם</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="9_1_matrix_operations.html">9.2. פעולות מטריציוניות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_2_linear_system.html">9.3. פתרון מערכות ליניאריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_3_eigen_values.html">9.4. ערכים ווקטורים עצמיים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_4_SVD.html">9.5. SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_7_exercises.html">9.6. תרגול עצמי</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — SciPy ומבוא לPandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -583,17 +581,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.7.1. דחיסת תמונה סינתטית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.7.2. טעינת תמונה</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">9.7.2.1. ערוצי הצבע (RGB)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k">9.7.2.1.1. קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#svd-approx">9.7.2.1.2. svd_approx</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-error">9.7.2.1.3. relative_error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">דחיסת תמונה סינתטית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">טעינת תמונה</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">ערוצי הצבע (RGB)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k">קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#svd-approx">svd_approx</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-error">relative_error</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.7.2.2. כמה אנרגיה נשמרה?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.7.2.3. מדד האנרגיה</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7.2.4. סיכום: מדידת האנרגיה המצטברת</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">כמה אנרגיה נשמרה?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">מדד האנרגיה</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">סיכום: מדידת האנרגיה המצטברת</a></li>
 </ul>
 </li>
 </ul>
@@ -608,14 +606,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="svd">
-<h1><span class="section-number">9.7. </span>דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית)<a class="headerlink" href="#svd" title="Link to this heading">#</a></h1>
+<h1>דוגמה מסכמת (1): פירוק SVD על תמונה (או על תמונה סינתטית)<a class="headerlink" href="#svd" title="Link to this heading">#</a></h1>
 <p>בואו נראה איך אפשר להשתמש ב־SVD לדחיסת תמונה.<br />
 דחיסה היא תהליך שבו אנחנו מצמצמים את כמות המידע הדרושה לייצוג של אובייקט (כמו תמונה, וידאו או קובץ טקסט), מבלי לאבד יותר מדי מהתוכן המקורי. הרעיון הוא להשתמש בפחות ביטים כדי לאחסן או לשדר את אותו המידע.
 הרעיון: במקום לשמור את כל הפיקסלים של התמונה, נפרק את מטריצת התמונה ל־<span class="math notranslate nohighlight">\(U \Sigma V^T\)</span>,<br />
 ונשמור רק את כמה הערכים הסינגולריים הגדולים ביותר.</p>
 <p>כך מקבלים קירוב טוב מאוד לתמונה המקורית, אבל עם הרבה פחות מידע.</p>
 <section id="id1">
-<h2><span class="section-number">9.7.1. </span>דחיסת תמונה סינתטית<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>דחיסת תמונה סינתטית<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>נחשוב על תמונה כעל טבלה של מספרים בין 0 ל־1 (שחור–לבן).<br />
 נבנה תמונה פשוטה: עיגול בהיר על רקע בהיר־קצת (גרדיאנט).<br />
 נבצע פירוק <span class="math notranslate nohighlight">\(A = U \Sigma V^T\)</span> ונשחזר את התמונה עם <span class="math notranslate nohighlight">\(k\)</span> הערכים הסינגולריים הגדולים בלבד.</p>
@@ -626,7 +624,7 @@ document.write(`
 </ul>
 </section>
 <section id="id2">
-<h2><span class="section-number">9.7.2. </span>טעינת תמונה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>טעינת תמונה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -657,7 +655,7 @@ document.write(`
 </div>
 </div>
 <section id="rgb">
-<h3><span class="section-number">9.7.2.1. </span>ערוצי הצבע (RGB)<a class="headerlink" href="#rgb" title="Link to this heading">#</a></h3>
+<h3>ערוצי הצבע (RGB)<a class="headerlink" href="#rgb" title="Link to this heading">#</a></h3>
 <p>תמונת צבע דיגיטלית מיוצגת כשלוש שכבות (Channels), כאשר כל שכבה מתארת את עוצמת הצבע עבור כל פיקסל:</p>
 <ul class="simple">
 <li><p><strong>R (Red)</strong> – עוצמת האדום</p></li>
@@ -779,7 +777,7 @@ A = U \cdot \Sigma \cdot V^T
 <span class="math notranslate nohighlight">\(\sigma_1 \geq \sigma_2 \geq \dots \geq 0\)</span>.</p></li>
 </ul>
 <section id="k">
-<h4><span class="section-number">9.7.2.1.1. </span>קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד<a class="headerlink" href="#k" title="Link to this heading">#</a></h4>
+<h4>קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד<a class="headerlink" href="#k" title="Link to this heading">#</a></h4>
 <p>בפועל, רוב התרומה של המטריצה <span class="math notranslate nohighlight">\(A\)</span> מגיעה מהערכים הסינגולריים הגדולים ביותר.<br />
 לכן אפשר לכתוב קירוב:</p>
 <div class="math notranslate nohighlight">
@@ -819,7 +817,7 @@ A_k = \sigma_1 u_1 v_1^T + \cdots + \sigma_k u_k v_k^T,
 <p>כך ניתן לדחוס את המידע: לשמור הרבה פחות נתונים (רק <span class="math notranslate nohighlight">\(k\)</span> ערכים וכמה וקטורים) ועדיין לשחזר תמונה קרובה מאוד למקור.</p>
 </section>
 <section id="svd-approx">
-<h4><span class="section-number">9.7.2.1.2. </span>svd_approx<a class="headerlink" href="#svd-approx" title="Link to this heading">#</a></h4>
+<h4>svd_approx<a class="headerlink" href="#svd-approx" title="Link to this heading">#</a></h4>
 <p>הפונקציה <code class="docutils literal notranslate"><span class="pre">svd_approx</span></code> משחזרת את התמונה המקורית בקירוב באמצעות שימוש רק ב־k הערכים והווקטורים הסינגולריים הראשונים של פירוק ה־SVD.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -842,7 +840,7 @@ A_k = \sigma_1 u_1 v_1^T + \cdots + \sigma_k u_k v_k^T,
 </div>
 </section>
 <section id="relative-error">
-<h4><span class="section-number">9.7.2.1.3. </span>relative_error<a class="headerlink" href="#relative-error" title="Link to this heading">#</a></h4>
+<h4>relative_error<a class="headerlink" href="#relative-error" title="Link to this heading">#</a></h4>
 <p>הפונקציה <code class="docutils literal notranslate"><span class="pre">relative_error</span></code> מחשבת את השגיאה היחסית בין התמונה המקורית לבין התמונה המשוחזרת.<br />
 השגיאה נמדדת לפי הנוסחה:</p>
 <div class="math notranslate nohighlight">
@@ -905,13 +903,13 @@ A_k = \sigma_1 u_1 v_1^T + \cdots + \sigma_k u_k v_k^T,
 </section>
 </section>
 <section id="id3">
-<h3><span class="section-number">9.7.2.2. </span>כמה אנרגיה נשמרה?<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3>כמה אנרגיה נשמרה?<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>כדי למדוד עד כמה הקירוב <span class="math notranslate nohighlight">\(A_k\)</span> שומר על המידע של המטריצה המקורית <span class="math notranslate nohighlight">\(A\)</span>, משתמשים ב<strong>אנרגיה</strong>.</p>
 <p>ב־SVD, הערכים הסינגולריים <span class="math notranslate nohighlight">\(\sigma_i\)</span> מודדים כמה חזקה התרומה של כל רכיב <span class="math notranslate nohighlight">\(i\)</span> לתמונה או לנתונים.<br />
 ככל שהערך <span class="math notranslate nohighlight">\(\sigma_i\)</span> גדול יותר – הוא מייצג יותר מידע חשוב.</p>
 </section>
 <section id="id4">
-<h3><span class="section-number">9.7.2.3. </span>מדד האנרגיה<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3>מדד האנרגיה<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>נגדיר את סך כל האנרגיה של המטריצה כ־</p>
 <div class="math notranslate nohighlight">
 \[
@@ -974,7 +972,7 @@ E(k) = \sum_{i=1}^k \sigma_i^2
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">9.7.2.4. </span>סיכום: מדידת האנרגיה המצטברת<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3>סיכום: מדידת האנרגיה המצטברת<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>בתא הקוד אנחנו מחשבים את <strong>האנרגיה המצטברת</strong> שנשמרת ככל שמוסיפים יותר ערכים סינגולריים בקירוב:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">np.cumsum(s**2)</span></code> – מחשב את הסכום המצטבר של <span class="math notranslate nohighlight">\(\sigma_i^2\)</span>, כלומר כמה אנרגיה מצטברת עד ערך סינגולרי מסוים <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
@@ -986,8 +984,8 @@ E(k) = \sum_{i=1}^k \sigma_i^2
 זו הסיבה ש־SVD שימושי לדחיסה: אפשר לשמור אחוז קטן מהמידע ועדיין לשחזר כמעט את כל התוכן.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="SFUXAktIZbwU" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#SFUXAktIZbwU {
+<div class="output text_html"><div id="sFoDMQEKygaR" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#sFoDMQEKygaR {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1204,7 +1202,7 @@ E(k) = \sum_{i=1}^k \sigma_i^2
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsSFUXAktIZbwU=[{"question": "\u05e0\u05e0\u05d9\u05d7 \u05e9\u05d9\u05e9 \u05dc\u05e0\u05d5 \u05ea\u05de\u05d5\u05e0\u05d4 \u05d1\u05d2\u05d5\u05d3\u05dc 200x200 \u05d5\u05d0\u05d7\u05e8\u05d9 \u05e4\u05d9\u05e8\u05d5\u05e7 SVD \u05e7\u05d9\u05d1\u05dc\u05e0\u05d5 200 \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd. \u05d0\u05e0\u05d7\u05e0\u05d5 \u05de\u05e9\u05d7\u05d6\u05e8\u05d9\u05dd \u05d0\u05ea \u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05e2\u05dd k=20 \u05d1\u05dc\u05d1\u05d3.<br><br>\u05de\u05d4 \u05e0\u05db\u05d5\u05df \u05dc\u05d2\u05d1\u05d9 \u05d4\u05e7\u05d9\u05e8\u05d5\u05d1?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05ea\u05e9\u05d7\u05d6\u05e8 \u05d0\u05ea \u05d4\u05de\u05d1\u05e0\u05d4 \u05d4\u05db\u05dc\u05dc\u05d9 (\u05e6\u05d5\u05e8\u05d4, \u05d1\u05d4\u05d9\u05e8\u05d5\u05ea \u05db\u05dc\u05dc\u05d9\u05ea) \u05d0\u05d1\u05dc \u05ea\u05d0\u05d1\u05d3 \u05e4\u05e8\u05d8\u05d9\u05dd \u05e2\u05d3\u05d9\u05e0\u05d9\u05dd", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d9\u05dd \u05de\u05db\u05d9\u05dc\u05d9\u05dd \u05d0\u05ea \u05e8\u05d5\u05d1 \u05d4\u05de\u05d9\u05d3\u05e2 \u05d4\u05d2\u05e1, \u05d0\u05da \u05dc\u05d0 \u05d0\u05ea \u05db\u05dc \u05d4\u05e4\u05e8\u05d8\u05d9\u05dd"}, {"answer": "\u05db\u05de\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05e2 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e7\u05d8\u05e0\u05d4 \u05d1\u05d4\u05e8\u05d1\u05d4 \u05de\u05d0\u05e9\u05e8 \u05d1\u05de\u05d8\u05e8\u05d9\u05e6\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d1\u05de\u05e7\u05d5\u05dd \u05dc\u05e9\u05de\u05d5\u05e8 200x200 \u05e4\u05d9\u05e7\u05e1\u05dc\u05d9\u05dd, \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05e8\u05e7 \u05d0\u05ea 20 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05d5\u05e2\u05d5\u05d3 \u05d0\u05ea \u05d4\u05d5\u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d4\u05de\u05ea\u05d0\u05d9\u05de\u05d9\u05dd"}, {"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e9\u05d5\u05d7\u05d6\u05e8\u05ea \u05ea\u05d4\u05d9\u05d4 \u05d6\u05d4\u05d4 \u05dc\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d0\u05dd \u05dc\u05d0 \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05d0\u05ea \u05db\u05dc 200 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d9\u05e9 \u05ea\u05de\u05d9\u05d3 \u05d0\u05d5\u05d1\u05d3\u05df \u05de\u05d9\u05d3\u05e2"}, {"answer": "\u05d4\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05d4 \u05dc\u05d1\u05d9\u05df \u05d4\u05de\u05e7\u05d5\u05e8 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05e2\u05d1\u05d5\u05e8 i=1..20 \u05dc\u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05dc\u05db\u05dc \u05d4\u05be200", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e0\u05e7\u05d1\u05e2\u05ea \u05e2\u05dc \u05e4\u05d9 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05e9\u05e9\u05de\u05e8\u05e0\u05d5"}]}];
+</style></div><script type="application/javascript">var questionssFoDMQEKygaR=[{"question": "\u05e0\u05e0\u05d9\u05d7 \u05e9\u05d9\u05e9 \u05dc\u05e0\u05d5 \u05ea\u05de\u05d5\u05e0\u05d4 \u05d1\u05d2\u05d5\u05d3\u05dc 200x200 \u05d5\u05d0\u05d7\u05e8\u05d9 \u05e4\u05d9\u05e8\u05d5\u05e7 SVD \u05e7\u05d9\u05d1\u05dc\u05e0\u05d5 200 \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd. \u05d0\u05e0\u05d7\u05e0\u05d5 \u05de\u05e9\u05d7\u05d6\u05e8\u05d9\u05dd \u05d0\u05ea \u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05e2\u05dd k=20 \u05d1\u05dc\u05d1\u05d3.<br><br>\u05de\u05d4 \u05e0\u05db\u05d5\u05df \u05dc\u05d2\u05d1\u05d9 \u05d4\u05e7\u05d9\u05e8\u05d5\u05d1?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05ea\u05e9\u05d7\u05d6\u05e8 \u05d0\u05ea \u05d4\u05de\u05d1\u05e0\u05d4 \u05d4\u05db\u05dc\u05dc\u05d9 (\u05e6\u05d5\u05e8\u05d4, \u05d1\u05d4\u05d9\u05e8\u05d5\u05ea \u05db\u05dc\u05dc\u05d9\u05ea) \u05d0\u05d1\u05dc \u05ea\u05d0\u05d1\u05d3 \u05e4\u05e8\u05d8\u05d9\u05dd \u05e2\u05d3\u05d9\u05e0\u05d9\u05dd", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d9\u05dd \u05de\u05db\u05d9\u05dc\u05d9\u05dd \u05d0\u05ea \u05e8\u05d5\u05d1 \u05d4\u05de\u05d9\u05d3\u05e2 \u05d4\u05d2\u05e1, \u05d0\u05da \u05dc\u05d0 \u05d0\u05ea \u05db\u05dc \u05d4\u05e4\u05e8\u05d8\u05d9\u05dd"}, {"answer": "\u05db\u05de\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05e2 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e7\u05d8\u05e0\u05d4 \u05d1\u05d4\u05e8\u05d1\u05d4 \u05de\u05d0\u05e9\u05e8 \u05d1\u05de\u05d8\u05e8\u05d9\u05e6\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d1\u05de\u05e7\u05d5\u05dd \u05dc\u05e9\u05de\u05d5\u05e8 200x200 \u05e4\u05d9\u05e7\u05e1\u05dc\u05d9\u05dd, \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05e8\u05e7 \u05d0\u05ea 20 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05d5\u05e2\u05d5\u05d3 \u05d0\u05ea \u05d4\u05d5\u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d4\u05de\u05ea\u05d0\u05d9\u05de\u05d9\u05dd"}, {"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e9\u05d5\u05d7\u05d6\u05e8\u05ea \u05ea\u05d4\u05d9\u05d4 \u05d6\u05d4\u05d4 \u05dc\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d0\u05dd \u05dc\u05d0 \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05d0\u05ea \u05db\u05dc 200 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d9\u05e9 \u05ea\u05de\u05d9\u05d3 \u05d0\u05d5\u05d1\u05d3\u05df \u05de\u05d9\u05d3\u05e2"}, {"answer": "\u05d4\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05d4 \u05dc\u05d1\u05d9\u05df \u05d4\u05de\u05e7\u05d5\u05e8 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05e2\u05d1\u05d5\u05e8 i=1..20 \u05dc\u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05dc\u05db\u05dc \u05d4\u05be200", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e0\u05e7\u05d1\u05e2\u05ea \u05e2\u05dc \u05e4\u05d9 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05e9\u05e9\u05de\u05e8\u05e0\u05d5"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2267,8 +2265,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("SFUXAktIZbwU")) {
-    show_questions(questionsSFUXAktIZbwU, SFUXAktIZbwU);
+  if (document.getElementById("sFoDMQEKygaR")) {
+    show_questions(questionssFoDMQEKygaR, sFoDMQEKygaR);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2314,24 +2312,6 @@ function try_show() {
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="9_4_SVD.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.6. </span>SVD – פירוק לערכים סינגולריים</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="9_6_example_PI_MC.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.8. </span>דוגמה מסכמת (2): הערכת מונטה–קרלו של π</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -2348,17 +2328,17 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.7.1. דחיסת תמונה סינתטית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.7.2. טעינת תמונה</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">9.7.2.1. ערוצי הצבע (RGB)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k">9.7.2.1.1. קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#svd-approx">9.7.2.1.2. svd_approx</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-error">9.7.2.1.3. relative_error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">דחיסת תמונה סינתטית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">טעינת תמונה</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rgb">ערוצי הצבע (RGB)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#k">קירוב בעזרת <span class="math notranslate nohighlight">\(k\)</span> רכיבים בלבד</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#svd-approx">svd_approx</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-error">relative_error</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.7.2.2. כמה אנרגיה נשמרה?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.7.2.3. מדד האנרגיה</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7.2.4. סיכום: מדידת האנרגיה המצטברת</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">כמה אנרגיה נשמרה?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">מדד האנרגיה</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">סיכום: מדידת האנרגיה המצטברת</a></li>
 </ul>
 </li>
 </ul>
