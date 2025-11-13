@@ -620,40 +620,20 @@ document.write(`
                   
   <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Cell magic `%%` not found.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><!-- RTL Fix the jupyter notebook 7  -->
-<style>
-    .jp-RenderedHTMLCommon {
-        padding-top: 2em !important;
-  }   
-    .jp-RenderedHTMLCommon, .jp-RenderedHTMLCommon * {
-        direction: rtl !important;
-        text-align:right !important;
-  }
-    .jp-MarkdownCell .jp-InputArea-editor {
-        direction: rtl !important; 
-        text-align:right !important;
-        padding-top: 2em !important;
-  } 
+<div class="output text_html"><style>
+/* Only flip the article (page content), not the sidebar/header */
+.bd-article, .bd-article * {
+  direction: ltr !important;
+  text-align: left !important;
+}
 
- .jp-RenderedHTMLCommon code, .jp-RenderedHTMLCommon code span {
-        text-align:left !important;
-        direction: ltr !important;
-        unicode-bidi: embed !important;
-
-    }
-    .jp-RenderedHTMLCommon pre:has(code) {
-      direction: ltr !important;
-      text-align: left!important;
-    }
-
-</style> 
+/* Keep code blocks and outputs safely LTR too */
+.bd-article pre, .bd-article code,
+.bd-article .cell .input, .bd-article .cell .output {
+  direction: ltr !important;
+  text-align: left !important;
+}
+</style>
 </div></div>
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -710,6 +690,13 @@ document.write(`
   insertIntoToolbar();
 })();
 </script>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><!-- <style>
+  table {display: inline-block}
+</style> -->
 </div></div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
