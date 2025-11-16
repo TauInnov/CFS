@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="10.2. קבועים פיזיקליים" href="week_10/10_1_physical_consts.html" />
-    <link rel="prev" title="9.6. שבוע 9 - תרגול עצמי" href="week_9/9_7_exercises.html" />
+    <link rel="prev" title="9.8. תרגול(2): הערכת מונטה–קרלו של π" href="week_9/9_6_example_PI_MC.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -281,6 +281,8 @@
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_3_eigen_values.html">9.4. ערכים ווקטורים עצמיים</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_4_SVD.html">9.5. SVD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_7_exercises.html">9.6. תרגול עצמי</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_5_example_image_SVD.html">9.7. תרגול: דחיסת תמונה באמצעות SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_6_example_PI_MC.html">9.8. תרגול: הערכת π בשיטת מונטה־קרלו</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">10. שבוע 10 — SciPy ומבוא לPandas</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -606,17 +608,14 @@ document.write(`
 <li><p>לחשב אינטגרלים של פונקציות (חד־ממדיים ורב־ממדיים) בצורה נומרית</p></li>
 <li><p>למצוא מינימום ומקסימום של פונקציות באמצעות שיטות אופטימיזציה מתקדמות</p></li>
 </ul>
-<p>בסוף החלק תדעו:</p>
+<p><strong>חלק ב: מבוא לעבודה עם Pandas</strong></p>
+<p>נלמד את עקרונות העבודה עם <strong>Pandas</strong> – איך לחשוב על נתונים בצורה טבלאית,<br />
+מהם מבני הנתונים המרכזיים שלה, ואיך לייבא נתונים ממקורות שונים לקובצי DataFrame.</p>
+<p>בסוף השבוע תדעו:</p>
 <ul class="simple">
 <li><p>להשתמש במודול <code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code> לקבועים ויחידות פיזיקליות</p></li>
 <li><p>לבצע אינטגרציה נומרית עם <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></p></li>
 <li><p>לפתור בעיות אופטימיזציה עם <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code></p></li>
-</ul>
-<p><strong>חלק ב: מבוא לעבודה עם Pandas</strong></p>
-<p>נלמד את עקרונות העבודה עם <strong>Pandas</strong> – איך לחשוב על נתונים בצורה טבלאית,<br />
-מהם מבני הנתונים המרכזיים שלה, ואיך לייבא נתונים ממקורות שונים לקובצי DataFrame.</p>
-<p>בסוף החלק תדעו:</p>
-<ul class="simple">
 <li><p>ליצור ולעבוד עם מבני הנתונים <code class="docutils literal notranslate"><span class="pre">Series</span></code> ו־<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p></li>
 <li><p>לייבא ולייצא נתונים מקבצים שונים (CSV, Excel ועוד)</p></li>
 </ul>
@@ -629,6 +628,7 @@ document.write(`
 <li><p><a class="reference internal" href="week_11/11_0_intro.html"><span class="doc">4 • מבוא לעבודה עם Pandas</span></a></p></li>
 <li><p><a class="reference internal" href="week_11/11_1_data_structures.html"><span class="doc">5 • מבני נתונים: Series ו־DataFrame</span></a></p></li>
 <li><p><a class="reference internal" href="week_11/11_2_io.html"><span class="doc">6 • טעינה וכתיבה של נתונים (I/O)</span></a></p></li>
+<li><p><a class="reference internal" href="week_10/10_5_example_MB.html"><span class="doc">7 • תרגול: התפלגות Maxwell-Boltzmann</span></a></p></li>
 </ul>
 </section>
 <div class="toctree-wrapper compound">
@@ -666,12 +666,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="week_9/9_7_exercises.html"
+       href="week_9/9_6_example_PI_MC.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.6. </span>שבוע 9 - תרגול עצמי</p>
+        <p class="prev-next-title"><span class="section-number">9.8. </span>תרגול(2): הערכת מונטה–קרלו של π</p>
       </div>
     </a>
     <a class="right-next"

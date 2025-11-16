@@ -25,26 +25,39 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%% html
-<style>
-/* Only flip the article (page content), not the sidebar/header */
-.bd-article, .bd-article * {
-  direction: ltr !important;
-  text-align: left !important;
-}
+# Minimal sanity check for mb_pdf (simple, with English comments)
+# TODO: Build a speed grid (0 to a few km/s is enough for Ar @ 300 K)
+v = np.linspace(0.0, 4000.0, 5000)
 
-/* Keep code blocks and outputs safely LTR too */
-.bd-article pre, .bd-article code,
-.bd-article .cell .input, .bd-article .cell .output {
-  direction: ltr !important;
-  text-align: left !important;
-}
-</style>
+# TODO: Evaluate the PDF on the grid
+y = mb_pdf(v, m_Ar, T)
+
+# TODO: 1) PDF should be non-negative
+# assert ..., "mb_pdf returned negative values"
+
+# TODO: 2) The integral over [0, ∞) should be ~1; we approximate it on a finite grid
+# area = ...
+print(f"Area under PDF ≈ {area:.5f}")
+
+# TODO: 3) The mode should be near v_mp 
+# v_mp = ...
+# v_mode = ...
+print(f"v_mp (theory) = {v_mp:.2f} m/s,  v_mode (numerical) = {v_mode:.2f} m/s")
 ------------------
 
------ stderr -----
-UsageError: Cell magic `%%` not found.
-------------------
 
+[31m---------------------------------------------------------------------------[39m
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 6[39m
+[32m      3[39m v = np.linspace([32m0.0[39m, [32m4000.0[39m, [32m5000[39m)
+[32m      5[39m [38;5;66;03m# TODO: Evaluate the PDF on the grid[39;00m
+[32m----> [39m[32m6[39m y = mb_pdf(v, m_Ar, [43mT[49m)
+[32m      8[39m [38;5;66;03m# TODO: 1) PDF should be non-negative[39;00m
+[32m      9[39m [38;5;66;03m# assert ..., "mb_pdf returned negative values"[39;00m
+[32m     10[39m 
+[32m     11[39m [38;5;66;03m# TODO: 2) The integral over [0, ∞) should be ~1; we approximate it on a finite grid[39;00m
+[32m     12[39m [38;5;66;03m# area = ...[39;00m
+[32m     13[39m [38;5;28mprint[39m([33mf[39m[33m"[39m[33mArea under PDF ≈ [39m[38;5;132;01m{[39;00marea[38;5;132;01m:[39;00m[33m.5f[39m[38;5;132;01m}[39;00m[33m"[39m)
 
+[31mNameError[39m: name 'T' is not defined
 
