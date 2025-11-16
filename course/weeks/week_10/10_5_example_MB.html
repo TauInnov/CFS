@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
@@ -1035,11 +1035,12 @@ v = \sqrt{v_x^2 + v_y^2 + v_z^2}.
 <li><p><span class="math notranslate nohighlight">\(\langle v\rangle=\sqrt{\frac{8k_BT}{\pi m}}\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(v_{\mathrm{rms}}=\sqrt{\frac{3k_BT}{m}}\)</span>,</p></li>
 </ul>
-<p>ונשווה לגדלים האמפיריים מתוך הדגימה (ממוצע ו־RMS של <span class="math notranslate nohighlight">\(v_2\)</span>). לאחר מכן נבדוק את יחס הסקיילינג:
-$<span class="math notranslate nohighlight">\(
+<p>ונשווה לגדלים האמפיריים מתוך הדגימה (ממוצע ו־RMS של <span class="math notranslate nohighlight">\(v_2\)</span>). לאחר מכן נבדוק את יחס הסקיילינג:</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{v_{\mathrm{char}}(T_2)}{v_{\mathrm{char}}(T_1)} \approx \sqrt{\frac{T_2}{T_1}},
-\)</span><span class="math notranslate nohighlight">\(
-עבור כל אחד משלושת הגדלים (שיא, ממוצע, RMS). התאמה טובה מאשרת שהסימולציה משחזרת את התלות \)</span>\propto \sqrt{T}$ הצפויה ממקסוול–בולצמן.</p>
+\]</div>
+<p>עבור כל אחד משלושת הגדלים (שיא, ממוצע, RMS). התאמה טובה מאשרת שהסימולציה משחזרת את התלות <span class="math notranslate nohighlight">\(\propto \sqrt{T}\)</span> הצפויה ממקסוול–בולצמן.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO (8): Compute and print the three characteristic speeds for T2, and briefly verify the √T scaling.</span>
