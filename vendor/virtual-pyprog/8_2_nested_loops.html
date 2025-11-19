@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.11. לולאות מקוננות (nested loops) &#8212; Computers For physics</title>
+    <title>4.12. לולאות מקוננות (nested loops) &#8212; Computers For physics</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/8_2_nested_loops';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.12. List Comprehension" href="8_3_list-comprehensions.html" />
-    <link rel="prev" title="4.10. break ו continue" href="8_1_break_and_continue.html" />
+    <link rel="next" title="4.13. List Comprehension" href="8_3_list-comprehensions.html" />
+    <link rel="prev" title="4.11. break ו continue" href="8_1_break_and_continue.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -229,15 +229,16 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../course/weeks/week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="5_0_intro-loops.html">4.2. מבוא ללולאות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6_0_for_loops.html">4.3. לולאות for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_1_ranges-and-for.html">4.4. range ולולאות for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_2_for-examples.html">4.5. דוגמאות ל־for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_3_for-summary.html">4.6. סיכום לולאות for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_0_while_loops.html">4.7. לולאות while</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_1_while-examples.html">4.8. דוגמאות ל־while</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8_0_while_vs_for.html">4.9. while לעומת for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8_1_break_and_continue.html">4.10. break ו־continue</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.11. לולאות מקוננות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="8_3_list-comprehensions.html">4.12. List Comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_1_ranges-and-for.html">4.4. thebe: false</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="6_2_for-examples.html">4.6. דוגמאות ל־for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_3_for-summary.html">4.7. סיכום לולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_0_while_loops.html">4.8. לולאות while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_1_while-examples.html">4.9. דוגמאות ל־while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_0_while_vs_for.html">4.10. while לעומת for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_1_break_and_continue.html">4.11. break ו־continue</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.12. לולאות מקוננות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_3_list-comprehensions.html">4.13. List Comprehensions</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -585,7 +586,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.11.1. תרגול</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.12.1. תרגול</a></li>
 </ul>
             </nav>
         </div>
@@ -598,7 +599,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="nested-loops">
-<h1><span class="section-number">4.11. </span>לולאות מקוננות (nested loops)<a class="headerlink" href="#nested-loops" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4.12. </span>לולאות מקוננות (nested loops)<a class="headerlink" href="#nested-loops" title="Link to this heading">#</a></h1>
 <p>בדומה למשפטי תנאי מקוננים אותם פגשנו, כאן מדובר על לולאה שנמצאת בתוך לולאה אחרת. אם יש שתי לולאות כאלו אחת בתוך השנייה, אז לולאה אחת היא לולאה חיצונית וזו שבתוכה תיקרא לולאה פנימית.</p>
 <p>מה שמיוחד במצב הזה הוא, שהלולאה הפנימית תתבצע בעצמה פעמים רבות. כלומר בכל איטרציה של הלולאה החיצונית, הלולאה הפנימית תתחיל להתבצע מחדש.</p>
 <p>נתחיל בשאלת הכנה.</p>
@@ -4561,7 +4562,7 @@ function try_show() {
 </script></div>
 </div>
 <section id="id1">
-<h2><span class="section-number">4.11.1. </span>תרגול<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.12.1. </span>תרגול<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p><strong>סכום מכפלת זוגות</strong></p>
 <p>בתרגיל זה עליכם לממש את הפונקציה <code class="docutils literal notranslate"><span class="pre">all_pairs_sum</span></code> שכותרתה מופיעה בחלונית הקוד. זוהי גרסה מעט שונה של הפונקציה <code class="docutils literal notranslate"><span class="pre">all_pairs</span></code> שאותה הצגנו בסרטון.</p>
 <p>הפונקציה <code class="docutils literal notranslate"><span class="pre">all_pairs_sum</span></code> מקבלת כקלט שני מספרים שלמים וחיוביים - <code class="docutils literal notranslate"><span class="pre">m</span></code> ו-<code class="docutils literal notranslate"><span class="pre">n</span></code>. הפונקציה צריכה להחזיר את סכום המכפלות של כל הזוגות של המספרים בהם האיבר הראשון הוא בין 1 ל-<code class="docutils literal notranslate"><span class="pre">m</span></code> והאיבר השני הוא בין 1 ל-<code class="docutils literal notranslate"><span class="pre">n</span></code>. בניגוד לפונקציה מהסרטון, פונקציה זו לא צריכה להדפיס שום דבר (אך ניתן כמובן להוסיף הדפסות עזר בעת כתיבת הפתרון).</p>
@@ -4762,7 +4763,7 @@ Tests concluded, add more tests of your own below!
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.10. </span><code class="docutils literal notranslate"><span class="pre">break</span></code> ו <code class="docutils literal notranslate"><span class="pre">continue</span></code></p>
+        <p class="prev-next-title"><span class="section-number">4.11. </span><code class="docutils literal notranslate"><span class="pre">break</span></code> ו <code class="docutils literal notranslate"><span class="pre">continue</span></code></p>
       </div>
     </a>
     <a class="right-next"
@@ -4770,7 +4771,7 @@ Tests concluded, add more tests of your own below!
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.12. </span>List Comprehension</p>
+        <p class="prev-next-title"><span class="section-number">4.13. </span>List Comprehension</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -4790,7 +4791,7 @@ Tests concluded, add more tests of your own below!
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.11.1. תרגול</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.12.1. תרגול</a></li>
 </ul>
   </nav></div>
 
