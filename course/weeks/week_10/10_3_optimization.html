@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
@@ -593,7 +593,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4.1.5. תרגום אי־ודאות לזמן הפגיעה</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.4.2. סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-optimize-minimize">10.4.2. scipy.optimize.minimize — מינימיזציה כללית של פונקציה סקלרית</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.4.2.1. דוגמה 1: מינימיזציה ללא אילוצים (עם נגזרת)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounds">10.4.2.2. דוגמה 2: גבולות (bounds) — משתנים תחומים</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">10.4.3. סיכום</a></li>
 </ul>
             </nav>
         </div>
@@ -829,7 +834,7 @@ g   = 9.811, v0 = 18.015, h0 = 1.176, chi2 = 16.88
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t_impact = 3.7365 ± 0.0026 s  (≈1σ)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_19715/4176238823.py:12: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_10302/4176238823.py:12: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   sigma_t = float(np.sqrt(num) / den)
 </pre></div>
 </div>
@@ -837,8 +842,103 @@ g   = 9.811, v0 = 18.015, h0 = 1.176, chi2 = 16.88
 </div>
 </section>
 </section>
+<section id="scipy-optimize-minimize">
+<h2><span class="section-number">10.4.2. </span>scipy.optimize.minimize — מינימיזציה כללית של פונקציה סקלרית<a class="headerlink" href="#scipy-optimize-minimize" title="Link to this heading">#</a></h2>
+<p>לעיתים אנחנו רוצים למצוא ערכים של וקטור משתנים <span class="math notranslate nohighlight">\(x\)</span> שממזערים פונקציה סקלרית <span class="math notranslate nohighlight">\(f(x)\)</span>. הפונקציה scipy.optimize.minimize נותנת ממשק אחיד להרבה אלגוריתמים (עם/בלי נגזרות), וגם תומכת בגבולות (bounds) ו־אילוצים (constraints).</p>
+<p>חתימת שימוש נפוצה (לא חייבים את כל הפרמטרים):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
+    <span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">=</span><span class="p">(),</span>
+    <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">jac</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">constraints</span><span class="o">=</span><span class="p">(),</span>
+    <span class="n">tol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">options</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">res</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">args</span><span class="o">=</span><span class="p">(),</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">jac</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">constraints</span><span class="o">=</span><span class="p">(),</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">tol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">options</span><span class="o">=</span><span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;fun&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>הפלט הוא אובייקט OptimizeResult (דומה למילון) עם שדות חשובים כמו:</p>
+<p>res.x — הפתרון שנמצא
+res.fun — ערך הפונקציה בפתרון
+res.success — האם האלגוריתם הסתיים בהצלחה
+res.message — הסבר לסיבת העצירה</p>
 <section id="id4">
-<h2><span class="section-number">10.4.2. </span>סיכום<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">10.4.2.1. </span>דוגמה 1: מינימיזציה ללא אילוצים (עם נגזרת)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>נמזער <span class="math notranslate nohighlight">\(f(x)=(x−2)^2\)</span>
+. מתמטית ברור שהמינימום ב־<span class="math notranslate nohighlight">\(x=2\)</span>, אבל זו דוגמה טובה לזרימת עבודה.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">grad_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.0</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span><span class="p">)])</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span> <span class="n">jac</span><span class="o">=</span><span class="n">grad_f</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x* =&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f(x*) =&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;success =&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">success</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;message =&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bounds">
+<h3><span class="section-number">10.4.2.2. </span>דוגמה 2: גבולות (bounds) — משתנים תחומים<a class="headerlink" href="#bounds" title="Link to this heading">#</a></h3>
+<p>כאן נחייב את <span class="math notranslate nohighlight">\(x\)</span> להיות בתחום [−1,1].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> 
+
+<span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;L-BFGS-B&quot;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">success</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>כאן הפתרון יתקרב ל־ <span class="math notranslate nohighlight">\(x=1\)</span> (קצה התחום), כי 2 מחוץ ל־bounds.</p>
+</section>
+</section>
+<section id="id5">
+<h2><span class="section-number">10.4.3. </span>סיכום<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>התאמה (<code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>)</strong> מספקת פרמטרים מיטביים ו־<strong>covariance</strong> להערכת אי־ודאות פיזיקלית.</p></li>
 <li><p><strong>שורשים (<code class="docutils literal notranslate"><span class="pre">root_scalar</span></code>)</strong> מתאימים לחישוב נקודות זמן/מיקום של אירוע (כמו <span class="math notranslate nohighlight">\(y=0\)</span>).</p></li>
@@ -848,8 +948,8 @@ g   = 9.811, v0 = 18.015, h0 = 1.176, chi2 = 16.88
 <p>טיפי עבודה: הקפידו על סולמות גודל טובים, מסגרות (<code class="docutils literal notranslate"><span class="pre">bracket</span></code>) לשורשים/מינימום, וניחושי פתיחה הגיוניים. עבור התאמות, ספקו <code class="docutils literal notranslate"><span class="pre">sigma</span></code> אמינה ו־<code class="docutils literal notranslate"><span class="pre">absolute_sigma=True</span></code> כדי לקבל שגיאות בפרמטרים ביחידות הנכונות.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="WYmStpVtcydy" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#WYmStpVtcydy {
+<div class="output text_html"><div id="OkSAOiQXewZa" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#OkSAOiQXewZa {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1066,7 +1166,7 @@ g   = 9.811, v0 = 18.015, h0 = 1.176, chi2 = 16.88
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsWYmStpVtcydy=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05e9\u05d9\u05d8\u05d4 \u05d1-<code>optimize.root_scalar</code> \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05d1\u05de\u05d9\u05d5\u05d7\u05d3 \u05db\u05e9\u05d9\u05d3\u05d5\u05e2 \u05ea\u05d7\u05d5\u05dd \u05e9\u05d1\u05d5 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05d7\u05dc\u05d9\u05e4\u05d4 \u05e1\u05d9\u05de\u05df (\u05dc\u05de\u05e9\u05dc \u05d1\u05d9\u05df 0 \u05dc-5)?", "type": "many_choice", "answers": [{"answer": "<code>method='brentq'</code> \u05e2\u05dd <code>bracket=(0,5)</code>", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! Brent (\u05d1\u05d2\u05e8\u05e1\u05ea brentq) \u05d3\u05d5\u05e8\u05e9 \u05de\u05e1\u05d2\u05e8\u05ea \u05e2\u05dd \u05d4\u05d7\u05dc\u05e4\u05ea \u05e1\u05d9\u05de\u05df \u05d5\u05de\u05e1\u05e4\u05e7 \u05d4\u05ea\u05db\u05e0\u05e1\u05d5\u05ea \u05d0\u05de\u05d9\u05e0\u05d4."}, {"answer": "<code>method='newton'</code> \u05e2\u05dd <code>x0=2.5</code> \u05dc\u05dc\u05d0 \u05e0\u05d2\u05d6\u05e8\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05e0\u05d9\u05d5\u05d8\u05d5\u05df \u05e8\u05d2\u05d9\u05e9 \u05dc\u05e0\u05d9\u05d7\u05d5\u05e9 \u05d4\u05ea\u05d7\u05dc\u05ea\u05d9 \u05d5\u05dc\u05e8\u05d5\u05d1 \u05d3\u05d5\u05e8\u05e9 \u05e0\u05d2\u05d6\u05e8\u05ea \u05db\u05d3\u05d9 \u05dc\u05d4\u05d9\u05d5\u05ea \u05d9\u05e6\u05d9\u05d1 \u05d5\u05de\u05d4\u05d9\u05e8."}, {"answer": "<code>method='secant'</code> \u05dc\u05dc\u05d0 \u05de\u05e1\u05d2\u05e8\u05ea \u05d5\u05dc\u05dc\u05d0 \u05e0\u05d2\u05d6\u05e8\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e9\u05d9\u05d8\u05ea \u05d4\u05e1\u05e7\u05e0\u05d8 \u05d9\u05db\u05d5\u05dc\u05d4 \u05dc\u05e2\u05d1\u05d5\u05d3, \u05d0\u05da \u05dc\u05dc\u05d0 \u05de\u05e1\u05d2\u05e8\u05ea \u05d4\u05d9\u05d0 \u05e4\u05d7\u05d5\u05ea \u05d0\u05de\u05d9\u05e0\u05d4 \u05de\u05d4-Brent \u05db\u05e9\u05d9\u05e9 \u05d4\u05d7\u05dc\u05e4\u05ea \u05e1\u05d9\u05de\u05df."}, {"answer": "<code>fsolve</code> \u05e2\u05dd <code>x0=2.5</code>", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 <code>fsolve</code> \u05de\u05d9\u05d5\u05e2\u05d3 \u05dc\u05d1\u05e2\u05d9\u05d5\u05ea \u05e8\u05d1-\u05de\u05de\u05d3/\u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05d5\u05ea \u05d5\u05de\u05ea\u05d1\u05e1\u05e1 \u05e2\u05dc \u05e0\u05d9\u05d5\u05d8\u05d5\u05df; \u05db\u05d0\u05df \u05e2\u05d3\u05d9\u05e3 <code>root_scalar</code> \u05e2\u05dd \u05de\u05e1\u05d2\u05e8\u05ea."}]}, {"question": "\u05d1\u05e8\u05e6\u05d5\u05e0\u05da \u05dc\u05de\u05d6\u05e2\u05e8 \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05d7\u05d3-\u05de\u05de\u05d3\u05d9\u05ea $f(t)$ \u05d1\u05ea\u05d7\u05d5\u05dd \u05d4\u05e7\u05e9\u05d5\u05e8 \u05d1\u05d2\u05d1\u05d5\u05dc\u05d5\u05ea: $0 \\le t \\le 5$. \u05d0\u05d9\u05d6\u05d5 \u05e7\u05e8\u05d9\u05d0\u05d4 \u05de\u05ea\u05d0\u05d9\u05de\u05d4?", "type": "many_choice", "answers": [{"answer": "<code>optimize.minimize_scalar(f, bounds=(0,5), method='bounded')</code>", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e9\u05d9\u05d8\u05d4 <code>bounded</code> \u05d1-<code>minimize_scalar</code> \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05dc\u05de\u05d9\u05e0\u05d9\u05de\u05d9\u05d6\u05e6\u05d9\u05d4 \u05e2\u05dd \u05d2\u05d1\u05d5\u05dc\u05d5\u05ea \u05e1\u05d5\u05e4\u05d9\u05d9\u05dd."}, {"answer": "<code>optimize.minimize_scalar(f, bracket=(0,5))</code>", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 <code>bracket</code> \u05e0\u05d5\u05ea\u05df \u05ea\u05d7\u05d5\u05dd \u05d7\u05d9\u05e4\u05d5\u05e9 \u05d0\u05d1\u05dc \u05dc\u05d0 \u05de\u05db\u05e8\u05d9\u05d7 \u05d2\u05d1\u05d5\u05dc\u05d5\u05ea; \u05dc\u05d7\u05d9\u05d5\u05d1 \u05d2\u05d1\u05d5\u05dc\u05d5\u05ea \u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-<code>method='bounded'</code>."}, {"answer": "<code>optimize.minimize(f, x0=2.5)</code>", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 <code>minimize</code> \u05d4\u05d5\u05d0 \u05dc\u05db\u05dc\u05d9\u05dd \u05e8\u05d1-\u05de\u05de\u05d3\u05d9\u05d9\u05dd; \u05dc\u05d7\u05d3-\u05de\u05de\u05d3\u05d9 \u05e2\u05dd \u05d2\u05d1\u05d5\u05dc\u05d5\u05ea \u05e2\u05d3\u05d9\u05e3 <code>minimize_scalar</code> \u05e2\u05dd <code>bounded</code>."}, {"answer": "<code>optimize.curve_fit(f, t, y)</code>", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 <code>curve_fit</code> \u05de\u05d9\u05d5\u05e2\u05d3 \u05dc\u05d4\u05ea\u05d0\u05de\u05ea \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05dc\u05de\u05d5\u05d3\u05dc \u05dc\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd, \u05dc\u05d0 \u05dc\u05de\u05d9\u05e0\u05d9\u05de\u05d9\u05d6\u05e6\u05d9\u05d4 \u05db\u05dc\u05dc\u05d9\u05ea \u05e2\u05dc \u05e6\u05d9\u05e8 \u05d9\u05d7\u05d9\u05d3."}]}, {"question": "\u05d1\u05d4\u05ea\u05d0\u05de\u05d4 \u05e9\u05dc \u05de\u05d5\u05d3\u05dc \u05dc\u05d9\u05e0\u05d9\u05d0\u05e8\u05d9 $y = a x + b$ \u05e2\u05dd <code>optimize.curve_fit</code>, \u05db\u05d9\u05e6\u05d3 \u05db\u05d3\u05d0\u05d9 \u05dc\u05e4\u05e2\u05d5\u05dc \u05db\u05d3\u05d9 \u05e9\u05d4\u05e9\u05d2\u05d9\u05d0\u05d5\u05ea $1\\sigma$ \u05e2\u05dc $a,b$ (\u05de\u05d4\u05d0\u05dc\u05db\u05e1\u05d5\u05df \u05e9\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05ea \u05d4-covariance) \u05d9\u05d4\u05d9\u05d5 \u05d1\u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05d5\u05ea \u05e0\u05db\u05d5\u05e0\u05d5\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05dc\u05d4\u05e2\u05d1\u05d9\u05e8 \u05d5\u05e7\u05d8\u05d5\u05e8 <code>sigma</code> \u05e2\u05dd \u05e1\u05d8\u05d9\u05d5\u05ea \u05d4\u05ea\u05e7\u05df \u05e9\u05dc \u05d4\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d5\u05dc\u05e6\u05d9\u05d9\u05df <code>absolute_sigma=True</code>", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d0\u05d6 \u05d4-covariance \u05de\u05d7\u05d5\u05e9\u05d1 \u05d1\u05e1\u05e7\u05d0\u05dc\u05d4 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea; \u05d4\u05e9\u05d2\u05d9\u05d0\u05d5\u05ea \u05d4\u05df $\\sqrt{\\mathrm{diag}(\\mathrm{Cov})}$."}, {"answer": "\u05dc\u05d4\u05d2\u05d3\u05d9\u05dc \u05d0\u05ea <code>maxfev</code> \u05db\u05d3\u05d9 \u05e9\u05d4\u05d4\u05ea\u05d0\u05de\u05d4 \u05ea\u05ea\u05db\u05e0\u05e1 \u05d8\u05d5\u05d1 \u05d9\u05d5\u05ea\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05e1\u05e4\u05d9\u05e7 \u2014 \u05d6\u05d4 \u05e2\u05e9\u05d5\u05d9 \u05dc\u05e2\u05d6\u05d5\u05e8 \u05dc\u05d4\u05ea\u05db\u05e0\u05e1\u05d5\u05ea \u05d0\u05da \u05dc\u05d0 \u05e7\u05d5\u05d1\u05e2 \u05d0\u05ea \u05e1\u05e7\u05dc\u05ea \u05d4-covariance \u05d1\u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05d5\u05ea."}, {"answer": "\u05dc\u05e0\u05e8\u05de\u05dc \u05d0\u05ea $x,y$ \u05dc\u05d8\u05d5\u05d5\u05d7 [0,1] \u05dc\u05e4\u05e0\u05d9 \u05d4\u05ea\u05d0\u05de\u05d4", "correct": false, "feedback": "\u05e0\u05d9\u05e8\u05de\u05d5\u05dc \u05d9\u05db\u05d5\u05dc \u05dc\u05e2\u05d6\u05d5\u05e8 \u05e0\u05d5\u05de\u05e8\u05d9\u05ea, \u05d0\u05da \u05d0\u05d9\u05e0\u05d5 \u05de\u05d7\u05dc\u05d9\u05e3 <code>sigma</code> \u05d5-<code>absolute_sigma=True</code> \u05dc\u05e6\u05d5\u05e8\u05da \u05e4\u05d9\u05e8\u05d5\u05e9 \u05e9\u05d2\u05d9\u05d0\u05d5\u05ea."}, {"answer": "\u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-<code>p0</code> \u05e7\u05e8\u05d5\u05d1 \u05dc\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d0\u05de\u05d9\u05ea\u05d9\u05d9\u05dd", "correct": false, "feedback": "\u05e0\u05d9\u05d7\u05d5\u05e9 \u05d4\u05ea\u05d7\u05dc\u05ea\u05d9 \u05d8\u05d5\u05d1 \u05de\u05e1\u05d9\u05d9\u05e2, \u05d0\u05da \u05d0\u05d9\u05e0\u05d5 \u05de\u05d1\u05d8\u05d9\u05d7 \u05e9-covariance \u05d9\u05ea\u05d5\u05e7\u05e0\u05df \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05dc\u05dc\u05d0 <code>sigma</code> \u05d5-<code>absolute_sigma=True</code>."}]}];
+</style></div><script type="application/javascript">var questionsOkSAOiQXewZa=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05e9\u05d9\u05d8\u05d4 \u05d1-<code>optimize.root_scalar</code> \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05d1\u05de\u05d9\u05d5\u05d7\u05d3 \u05db\u05e9\u05d9\u05d3\u05d5\u05e2 \u05ea\u05d7\u05d5\u05dd \u05e9\u05d1\u05d5 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05d7\u05dc\u05d9\u05e4\u05d4 \u05e1\u05d9\u05de\u05df (\u05dc\u05de\u05e9\u05dc \u05d1\u05d9\u05df 0 \u05dc-5)?", "type": "many_choice", "answers": [{"answer": "<code>method='brentq'</code> \u05e2\u05dd <code>bracket=(0,5)</code>", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! Brent (\u05d1\u05d2\u05e8\u05e1\u05ea brentq) \u05d3\u05d5\u05e8\u05e9 \u05de\u05e1\u05d2\u05e8\u05ea \u05e2\u05dd \u05d4\u05d7\u05dc\u05e4\u05ea \u05e1\u05d9\u05de\u05df \u05d5\u05de\u05e1\u05e4\u05e7 \u05d4\u05ea\u05db\u05e0\u05e1\u05d5\u05ea \u05d0\u05de\u05d9\u05e0\u05d4."}, {"answer": "<code>method='newton'</code> \u05e2\u05dd <code>x0=2.5</code> \u05dc\u05dc\u05d0 \u05e0\u05d2\u05d6\u05e8\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05e0\u05d9\u05d5\u05d8\u05d5\u05df \u05e8\u05d2\u05d9\u05e9 \u05dc\u05e0\u05d9\u05d7\u05d5\u05e9 \u05d4\u05ea\u05d7\u05dc\u05ea\u05d9 \u05d5\u05dc\u05e8\u05d5\u05d1 \u05d3\u05d5\u05e8\u05e9 \u05e0\u05d2\u05d6\u05e8\u05ea \u05db\u05d3\u05d9 \u05dc\u05d4\u05d9\u05d5\u05ea \u05d9\u05e6\u05d9\u05d1 \u05d5\u05de\u05d4\u05d9\u05e8."}, {"answer": "<code>method='secant'</code> \u05dc\u05dc\u05d0 \u05de\u05e1\u05d2\u05e8\u05ea \u05d5\u05dc\u05dc\u05d0 \u05e0\u05d2\u05d6\u05e8\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e9\u05d9\u05d8\u05ea \u05d4\u05e1\u05e7\u05e0\u05d8 \u05d9\u05db\u05d5\u05dc\u05d4 \u05dc\u05e2\u05d1\u05d5\u05d3, \u05d0\u05da \u05dc\u05dc\u05d0 \u05de\u05e1\u05d2\u05e8\u05ea \u05d4\u05d9\u05d0 \u05e4\u05d7\u05d5\u05ea \u05d0\u05de\u05d9\u05e0\u05d4 \u05de\u05d4-Brent \u05db\u05e9\u05d9\u05e9 \u05d4\u05d7\u05dc\u05e4\u05ea \u05e1\u05d9\u05de\u05df."}, {"answer": "<code>fsolve</code> \u05e2\u05dd <code>x0=2.5</code>", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 <code>fsolve</code> \u05de\u05d9\u05d5\u05e2\u05d3 \u05dc\u05d1\u05e2\u05d9\u05d5\u05ea \u05e8\u05d1-\u05de\u05de\u05d3/\u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05d5\u05ea \u05d5\u05de\u05ea\u05d1\u05e1\u05e1 \u05e2\u05dc \u05e0\u05d9\u05d5\u05d8\u05d5\u05df; \u05db\u05d0\u05df \u05e2\u05d3\u05d9\u05e3 <code>root_scalar</code> \u05e2\u05dd \u05de\u05e1\u05d2\u05e8\u05ea."}]}, {"question": "\u05d1\u05e8\u05e6\u05d5\u05e0\u05da \u05dc\u05de\u05d6\u05e2\u05e8 \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05d7\u05d3-\u05de\u05de\u05d3\u05d9\u05ea $f(t)$ \u05d1\u05ea\u05d7\u05d5\u05dd \u05d4\u05e7\u05e9\u05d5\u05e8 \u05d1\u05d2\u05d1\u05d5\u05dc\u05d5\u05ea: $0 \\le t \\le 5$. \u05d0\u05d9\u05d6\u05d5 \u05e7\u05e8\u05d9\u05d0\u05d4 \u05de\u05ea\u05d0\u05d9\u05de\u05d4?", "type": "many_choice", "answers": [{"answer": "<code>optimize.minimize_scalar(f, bounds=(0,5), method='bounded')</code>", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e9\u05d9\u05d8\u05d4 <code>bounded</code> \u05d1-<code>minimize_scalar</code> \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05dc\u05de\u05d9\u05e0\u05d9\u05de\u05d9\u05d6\u05e6\u05d9\u05d4 \u05e2\u05dd \u05d2\u05d1\u05d5\u05dc\u05d5\u05ea \u05e1\u05d5\u05e4\u05d9\u05d9\u05dd."}, {"answer": "<code>optimize.minimize_scalar(f, bracket=(0,5))</code>", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 <code>bracket</code> \u05e0\u05d5\u05ea\u05df \u05ea\u05d7\u05d5\u05dd \u05d7\u05d9\u05e4\u05d5\u05e9 \u05d0\u05d1\u05dc \u05dc\u05d0 \u05de\u05db\u05e8\u05d9\u05d7 \u05d2\u05d1\u05d5\u05dc\u05d5\u05ea; \u05dc\u05d7\u05d9\u05d5\u05d1 \u05d2\u05d1\u05d5\u05dc\u05d5\u05ea \u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-<code>method='bounded'</code>."}, {"answer": "<code>optimize.minimize(f, x0=2.5)</code>", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 <code>minimize</code> \u05d4\u05d5\u05d0 \u05dc\u05db\u05dc\u05d9\u05dd \u05e8\u05d1-\u05de\u05de\u05d3\u05d9\u05d9\u05dd; \u05dc\u05d7\u05d3-\u05de\u05de\u05d3\u05d9 \u05e2\u05dd \u05d2\u05d1\u05d5\u05dc\u05d5\u05ea \u05e2\u05d3\u05d9\u05e3 <code>minimize_scalar</code> \u05e2\u05dd <code>bounded</code>."}, {"answer": "<code>optimize.curve_fit(f, t, y)</code>", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 <code>curve_fit</code> \u05de\u05d9\u05d5\u05e2\u05d3 \u05dc\u05d4\u05ea\u05d0\u05de\u05ea \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05dc\u05de\u05d5\u05d3\u05dc \u05dc\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd, \u05dc\u05d0 \u05dc\u05de\u05d9\u05e0\u05d9\u05de\u05d9\u05d6\u05e6\u05d9\u05d4 \u05db\u05dc\u05dc\u05d9\u05ea \u05e2\u05dc \u05e6\u05d9\u05e8 \u05d9\u05d7\u05d9\u05d3."}]}, {"question": "\u05d1\u05d4\u05ea\u05d0\u05de\u05d4 \u05e9\u05dc \u05de\u05d5\u05d3\u05dc \u05dc\u05d9\u05e0\u05d9\u05d0\u05e8\u05d9 $y = a x + b$ \u05e2\u05dd <code>optimize.curve_fit</code>, \u05db\u05d9\u05e6\u05d3 \u05db\u05d3\u05d0\u05d9 \u05dc\u05e4\u05e2\u05d5\u05dc \u05db\u05d3\u05d9 \u05e9\u05d4\u05e9\u05d2\u05d9\u05d0\u05d5\u05ea $1\\sigma$ \u05e2\u05dc $a,b$ (\u05de\u05d4\u05d0\u05dc\u05db\u05e1\u05d5\u05df \u05e9\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05ea \u05d4-covariance) \u05d9\u05d4\u05d9\u05d5 \u05d1\u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05d5\u05ea \u05e0\u05db\u05d5\u05e0\u05d5\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05dc\u05d4\u05e2\u05d1\u05d9\u05e8 \u05d5\u05e7\u05d8\u05d5\u05e8 <code>sigma</code> \u05e2\u05dd \u05e1\u05d8\u05d9\u05d5\u05ea \u05d4\u05ea\u05e7\u05df \u05e9\u05dc \u05d4\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d5\u05dc\u05e6\u05d9\u05d9\u05df <code>absolute_sigma=True</code>", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d0\u05d6 \u05d4-covariance \u05de\u05d7\u05d5\u05e9\u05d1 \u05d1\u05e1\u05e7\u05d0\u05dc\u05d4 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea; \u05d4\u05e9\u05d2\u05d9\u05d0\u05d5\u05ea \u05d4\u05df $\\sqrt{\\mathrm{diag}(\\mathrm{Cov})}$."}, {"answer": "\u05dc\u05d4\u05d2\u05d3\u05d9\u05dc \u05d0\u05ea <code>maxfev</code> \u05db\u05d3\u05d9 \u05e9\u05d4\u05d4\u05ea\u05d0\u05de\u05d4 \u05ea\u05ea\u05db\u05e0\u05e1 \u05d8\u05d5\u05d1 \u05d9\u05d5\u05ea\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05e1\u05e4\u05d9\u05e7 \u2014 \u05d6\u05d4 \u05e2\u05e9\u05d5\u05d9 \u05dc\u05e2\u05d6\u05d5\u05e8 \u05dc\u05d4\u05ea\u05db\u05e0\u05e1\u05d5\u05ea \u05d0\u05da \u05dc\u05d0 \u05e7\u05d5\u05d1\u05e2 \u05d0\u05ea \u05e1\u05e7\u05dc\u05ea \u05d4-covariance \u05d1\u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05d5\u05ea."}, {"answer": "\u05dc\u05e0\u05e8\u05de\u05dc \u05d0\u05ea $x,y$ \u05dc\u05d8\u05d5\u05d5\u05d7 [0,1] \u05dc\u05e4\u05e0\u05d9 \u05d4\u05ea\u05d0\u05de\u05d4", "correct": false, "feedback": "\u05e0\u05d9\u05e8\u05de\u05d5\u05dc \u05d9\u05db\u05d5\u05dc \u05dc\u05e2\u05d6\u05d5\u05e8 \u05e0\u05d5\u05de\u05e8\u05d9\u05ea, \u05d0\u05da \u05d0\u05d9\u05e0\u05d5 \u05de\u05d7\u05dc\u05d9\u05e3 <code>sigma</code> \u05d5-<code>absolute_sigma=True</code> \u05dc\u05e6\u05d5\u05e8\u05da \u05e4\u05d9\u05e8\u05d5\u05e9 \u05e9\u05d2\u05d9\u05d0\u05d5\u05ea."}, {"answer": "\u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-<code>p0</code> \u05e7\u05e8\u05d5\u05d1 \u05dc\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d0\u05de\u05d9\u05ea\u05d9\u05d9\u05dd", "correct": false, "feedback": "\u05e0\u05d9\u05d7\u05d5\u05e9 \u05d4\u05ea\u05d7\u05dc\u05ea\u05d9 \u05d8\u05d5\u05d1 \u05de\u05e1\u05d9\u05d9\u05e2, \u05d0\u05da \u05d0\u05d9\u05e0\u05d5 \u05de\u05d1\u05d8\u05d9\u05d7 \u05e9-covariance \u05d9\u05ea\u05d5\u05e7\u05e0\u05df \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05dc\u05dc\u05d0 <code>sigma</code> \u05d5-<code>absolute_sigma=True</code>."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2129,8 +2229,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("WYmStpVtcydy")) {
-    show_questions(questionsWYmStpVtcydy, WYmStpVtcydy);
+  if (document.getElementById("OkSAOiQXewZa")) {
+    show_questions(questionsOkSAOiQXewZa, OkSAOiQXewZa);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2224,7 +2324,12 @@ function try_show() {
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4.1.5. תרגום אי־ודאות לזמן הפגיעה</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.4.2. סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-optimize-minimize">10.4.2. scipy.optimize.minimize — מינימיזציה כללית של פונקציה סקלרית</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.4.2.1. דוגמה 1: מינימיזציה ללא אילוצים (עם נגזרת)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounds">10.4.2.2. דוגמה 2: גבולות (bounds) — משתנים תחומים</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">10.4.3. סיכום</a></li>
 </ul>
   </nav></div>
 

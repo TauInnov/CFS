@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
@@ -590,6 +590,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose-t">9.2.3. transpose / .T</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">9.2.4. Transpose למימדים גבוהים יותר</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-broadcasting">9.2.5. פעולות מטריציוניות עם Batch ו־Broadcasting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-stack-np-concatenate">9.2.6. np.stack ו־np.concatenate: חיבור מערכים מול הוספת ממד חדש</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-concatenate">9.2.6.1. 1) np.concatenate — חיבור לאורך ציר קיים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-stack">9.2.6.2. 2) np.stack — הוספת ממד חדש (ואז “הדבקה”)</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -651,8 +656,8 @@ AB3:
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="yVbbnbiEnjIa" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#yVbbnbiEnjIa {
+<div class="output text_html"><div id="fKdlNMFqLPVj" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#fKdlNMFqLPVj {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -869,7 +874,7 @@ AB3:
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsyVbbnbiEnjIa=[{"question": "\u05e0\u05ea\u05d5\u05e0\u05d5\u05ea \u05d4\u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea:<br><br>A = np.array([[1,2],[3,4]])<br><br>B = np.array([[5,6],[7,8]])<br><br>\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df np.dot(A,B) \u05dc\u05d1\u05d9\u05df np.matmul(A,B)?", "type": "many_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc: \u05e9\u05ea\u05d9\u05d4\u05df \u05de\u05d7\u05d6\u05d9\u05e8\u05d5\u05ea \u05d0\u05ea [[19,22],[43,50]]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e2\u05d1\u05d5\u05e8 \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05d3\u05d5\u05be\u05de\u05de\u05d3\u05d9\u05d5\u05ea np.dot \u05d5\u05benp.matmul \u05d6\u05d4\u05d5\u05ea"}, {"answer": "np.dot \u05de\u05d1\u05e6\u05e2 \u05de\u05db\u05e4\u05dc\u05d4 \u05d0\u05d9\u05d1\u05e8\u05be\u05dc\u05d0\u05d9\u05d1\u05e8 \u05d5\u05benp.matmul \u05de\u05db\u05e4\u05dc\u05d4 \u05de\u05d8\u05e8\u05d9\u05e6\u05d9\u05d5\u05e0\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05de\u05db\u05e4\u05dc\u05d4 \u05d0\u05d9\u05d1\u05e8\u05be\u05dc\u05d0\u05d9\u05d1\u05e8 \u05e0\u05e2\u05e9\u05d9\u05ea \u05e2\u05dd * \u05d5\u05dc\u05d0 \u05e2\u05dd dot"}, {"answer": "np.dot \u05de\u05d7\u05d6\u05d9\u05e8 \u05e1\u05e7\u05dc\u05e8 \u05d5\u05benp.matmul \u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05d8\u05e8\u05d9\u05e6\u05d4", "correct": false, "feedback": "\u05d6\u05d4 \u05e0\u05db\u05d5\u05df \u05e8\u05e7 \u05db\u05e9\u05e2\u05d5\u05d1\u05d3\u05d9\u05dd \u05e2\u05dd \u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d7\u05d3\u05be\u05de\u05de\u05d3\u05d9\u05d9\u05dd, \u05dc\u05d0 \u05e2\u05dd \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea 2D"}, {"answer": "np.matmul \u05e2\u05d5\u05d1\u05d3 \u05e8\u05e7 \u05e2\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05e8\u05d9\u05d1\u05d5\u05e2\u05d9\u05d5\u05ea \u05d5\u05d0\u05d9\u05dc\u05d5 np.dot \u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 np.matmul \u05e2\u05d5\u05d1\u05d3 \u05d2\u05dd \u05e2\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05de\u05dc\u05d1\u05e0\u05d9\u05d5\u05ea \u05db\u05dc \u05e2\u05d5\u05d3 \u05d4\u05de\u05de\u05d3\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd"}]}];
+</style></div><script type="application/javascript">var questionsfKdlNMFqLPVj=[{"question": "\u05e0\u05ea\u05d5\u05e0\u05d5\u05ea \u05d4\u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea:<br><br>A = np.array([[1,2],[3,4]])<br><br>B = np.array([[5,6],[7,8]])<br><br>\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df np.dot(A,B) \u05dc\u05d1\u05d9\u05df np.matmul(A,B)?", "type": "many_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc: \u05e9\u05ea\u05d9\u05d4\u05df \u05de\u05d7\u05d6\u05d9\u05e8\u05d5\u05ea \u05d0\u05ea [[19,22],[43,50]]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e2\u05d1\u05d5\u05e8 \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05d3\u05d5\u05be\u05de\u05de\u05d3\u05d9\u05d5\u05ea np.dot \u05d5\u05benp.matmul \u05d6\u05d4\u05d5\u05ea"}, {"answer": "np.dot \u05de\u05d1\u05e6\u05e2 \u05de\u05db\u05e4\u05dc\u05d4 \u05d0\u05d9\u05d1\u05e8\u05be\u05dc\u05d0\u05d9\u05d1\u05e8 \u05d5\u05benp.matmul \u05de\u05db\u05e4\u05dc\u05d4 \u05de\u05d8\u05e8\u05d9\u05e6\u05d9\u05d5\u05e0\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05de\u05db\u05e4\u05dc\u05d4 \u05d0\u05d9\u05d1\u05e8\u05be\u05dc\u05d0\u05d9\u05d1\u05e8 \u05e0\u05e2\u05e9\u05d9\u05ea \u05e2\u05dd * \u05d5\u05dc\u05d0 \u05e2\u05dd dot"}, {"answer": "np.dot \u05de\u05d7\u05d6\u05d9\u05e8 \u05e1\u05e7\u05dc\u05e8 \u05d5\u05benp.matmul \u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05d8\u05e8\u05d9\u05e6\u05d4", "correct": false, "feedback": "\u05d6\u05d4 \u05e0\u05db\u05d5\u05df \u05e8\u05e7 \u05db\u05e9\u05e2\u05d5\u05d1\u05d3\u05d9\u05dd \u05e2\u05dd \u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d7\u05d3\u05be\u05de\u05de\u05d3\u05d9\u05d9\u05dd, \u05dc\u05d0 \u05e2\u05dd \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea 2D"}, {"answer": "np.matmul \u05e2\u05d5\u05d1\u05d3 \u05e8\u05e7 \u05e2\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05e8\u05d9\u05d1\u05d5\u05e2\u05d9\u05d5\u05ea \u05d5\u05d0\u05d9\u05dc\u05d5 np.dot \u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 np.matmul \u05e2\u05d5\u05d1\u05d3 \u05d2\u05dd \u05e2\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05de\u05dc\u05d1\u05e0\u05d9\u05d5\u05ea \u05db\u05dc \u05e2\u05d5\u05d3 \u05d4\u05de\u05de\u05d3\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1932,8 +1937,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("yVbbnbiEnjIa")) {
-    show_questions(questionsyVbbnbiEnjIa, yVbbnbiEnjIa);
+  if (document.getElementById("fKdlNMFqLPVj")) {
+    show_questions(questionsfKdlNMFqLPVj, fKdlNMFqLPVj);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2023,8 +2028,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="rLfJHFtXDLNA" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#rLfJHFtXDLNA {
+<div class="output text_html"><div id="caYeMeZvRBAP" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#caYeMeZvRBAP {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2241,7 +2246,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsrLfJHFtXDLNA=[{"question": "\u05e0\u05ea\u05d5\u05df \u05de\u05e2\u05e8\u05da \u05d1\u05d2\u05d5\u05d3\u05dc (2,3,4). \u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e6\u05d5\u05e8\u05d4 \u05d4\u05d7\u05d3\u05e9\u05d4 \u05d0\u05dd \u05e0\u05d1\u05e6\u05e2 <br><br>transpose(1,0,2)<br><br>\u05e2\u05dd \u05e1\u05d3\u05e8 \u05e6\u05d9\u05e8\u05d9\u05dd ?", "type": "many_choice", "answers": [{"answer": "(3,2,4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d7\u05dc\u05e4\u05e0\u05d5 \u05d1\u05d9\u05df \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d5\u05d4\u05e9\u05e0\u05d9, \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05d1\u05de\u05e7\u05d5\u05dd"}, {"answer": "(2,4,3)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05d4\u05d9\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05d4\u05d9\u05d9\u05e0\u05d5 \u05de\u05d7\u05dc\u05d9\u05e4\u05d9\u05dd \u05d1\u05d9\u05df \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05dc\u05e9\u05dc\u05d9\u05e9\u05d9"}, {"answer": "(4,3,2)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05e2\u05d5\u05e9\u05d9\u05dd A.T \u05db\u05dc\u05d5\u05de\u05e8 \u05d4\u05d9\u05e4\u05d5\u05da \u05db\u05dc \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd"}, {"answer": "(2,3,4)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05d4\u05d9\u05d4 \u05de\u05ea\u05e7\u05d1\u05dc \u05d0\u05dd \u05dc\u05d0 \u05d4\u05d9\u05d9\u05e0\u05d5 \u05de\u05e9\u05e0\u05d9\u05dd \u05d0\u05ea \u05e1\u05d3\u05e8 \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd \u05db\u05dc\u05dc"}]}];
+</style></div><script type="application/javascript">var questionscaYeMeZvRBAP=[{"question": "\u05e0\u05ea\u05d5\u05df \u05de\u05e2\u05e8\u05da \u05d1\u05d2\u05d5\u05d3\u05dc (2,3,4). \u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e6\u05d5\u05e8\u05d4 \u05d4\u05d7\u05d3\u05e9\u05d4 \u05d0\u05dd \u05e0\u05d1\u05e6\u05e2 <br><br>transpose(1,0,2)<br><br>\u05e2\u05dd \u05e1\u05d3\u05e8 \u05e6\u05d9\u05e8\u05d9\u05dd ?", "type": "many_choice", "answers": [{"answer": "(3,2,4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d7\u05dc\u05e4\u05e0\u05d5 \u05d1\u05d9\u05df \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d5\u05d4\u05e9\u05e0\u05d9, \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05d1\u05de\u05e7\u05d5\u05dd"}, {"answer": "(2,4,3)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05d4\u05d9\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05d4\u05d9\u05d9\u05e0\u05d5 \u05de\u05d7\u05dc\u05d9\u05e4\u05d9\u05dd \u05d1\u05d9\u05df \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05dc\u05e9\u05dc\u05d9\u05e9\u05d9"}, {"answer": "(4,3,2)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05e2\u05d5\u05e9\u05d9\u05dd A.T \u05db\u05dc\u05d5\u05de\u05e8 \u05d4\u05d9\u05e4\u05d5\u05da \u05db\u05dc \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd"}, {"answer": "(2,3,4)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05d4\u05d9\u05d4 \u05de\u05ea\u05e7\u05d1\u05dc \u05d0\u05dd \u05dc\u05d0 \u05d4\u05d9\u05d9\u05e0\u05d5 \u05de\u05e9\u05e0\u05d9\u05dd \u05d0\u05ea \u05e1\u05d3\u05e8 \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd \u05db\u05dc\u05dc"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3304,8 +3309,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("rLfJHFtXDLNA")) {
-    show_questions(questionsrLfJHFtXDLNA, rLfJHFtXDLNA);
+  if (document.getElementById("caYeMeZvRBAP")) {
+    show_questions(questionscaYeMeZvRBAP, caYeMeZvRBAP);
   } else {
     setTimeout(try_show, 200);
   }
@@ -4668,6 +4673,111 @@ function try_show() {
 </script></div>
 </div>
 </section>
+<section id="np-stack-np-concatenate">
+<h2><span class="section-number">9.2.6. </span>np.stack ו־np.concatenate: חיבור מערכים מול הוספת ממד חדש<a class="headerlink" href="#np-stack-np-concatenate" title="Link to this heading">#</a></h2>
+<p>כשמחברים מערכים/מטריצות ב-NumPy יש שתי פעולות שנראות דומות אבל עושות דברים שונים לגמרי:</p>
+<p>np.concatenate: מדביק מערכים לאורך ציר קיים (לא מוסיף ממד חדש).</p>
+<p>np.stack: מערים מערכים ע”י הוספת ממד חדש ואז חיבור לאורך הממד החדש.</p>
+<section id="np-concatenate">
+<h3><span class="section-number">9.2.6.1. </span>1) np.concatenate — חיבור לאורך ציר קיים<a class="headerlink" href="#np-concatenate" title="Link to this heading">#</a></h3>
+<p>דרישה מרכזית: כל המערכים חייבים להיות בעלי אותו מספר ממדים, ובכל הממדים מלבד הציר שנבחר (axis) הם חייבים להיות באותו גודל</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>   <span class="c1"># shape (2, 2)</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>   <span class="c1"># shape (2, 2)</span>
+
+<span class="c1"># concant over rows (axis=0):</span>
+<span class="n">C0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (4, 2)</span>
+
+<span class="c1"># concat over columns (axis=1):</span>
+<span class="n">C1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2, 4)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>ב-1D (וקטורים): axis=0 הוא הציר היחיד, ולכן התוצאה פשוט וקטור ארוך יותר:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>   <span class="c1"># (3,)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>    <span class="c1"># (2,)</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>        <span class="c1"># [ 1  2  3 10 20]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (5,)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="np-stack">
+<h3><span class="section-number">9.2.6.2. </span>2) np.stack — הוספת ממד חדש (ואז “הדבקה”)<a class="headerlink" href="#np-stack" title="Link to this heading">#</a></h3>
+<p>דרישה מרכזית: כל המערכים חייבים להיות בדיוק אותו shape, כי אנחנו לא “מאריכים” ציר קיים — אנחנו יוצרים ציר חדש של “ערימות”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>   <span class="c1"># (2, 2)</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>   <span class="c1"># (2, 2)</span>
+
+<span class="n">S0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># first new dimension</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2, 2, 2)</span>
+
+<span class="n">S1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># middle new dimension</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2, 2, 2)</span>
+
+<span class="n">S2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># las new dimension</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2, 2, 2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>כדי להבין אינטואיטיבית:</p>
+<p>stack יוצר אוסף של מטריצות (batch) — שימושי כשיש לכם הרבה מטריצות/תמונות/דגימות באותו גודל.</p>
+<p>ב-1D, ההבדל אפילו ברור יותר:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>   <span class="c1"># (3,)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span><span class="c1"># (3,)</span>
+
+<span class="n">s0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2, 3)</span>
+
+<span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (3, 2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>:כלל אצבע
+אם אתם רוצים להוסיף עוד נתונים לאורך שורה/עמודה קיימת → concatenate
+אם אתם רוצים ליצור ממד חדש של “פריטים” (למשל batch) → stack</p>
+<p>stack בעצם שקול ל: “הוספת ממד ואז concatenate”.
+לדוגמה, np.stack([u, v], axis=0) שקול ל:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+
+<span class="n">manual</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">u</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">v</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">manual</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (2, 3)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -4739,6 +4849,11 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose-t">9.2.3. transpose / .T</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">9.2.4. Transpose למימדים גבוהים יותר</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-broadcasting">9.2.5. פעולות מטריציוניות עם Batch ו־Broadcasting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#np-stack-np-concatenate">9.2.6. np.stack ו־np.concatenate: חיבור מערכים מול הוספת ממד חדש</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-concatenate">9.2.6.1. 1) np.concatenate — חיבור לאורך ציר קיים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-stack">9.2.6.2. 2) np.stack — הוספת ממד חדש (ואז “הדבקה”)</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
