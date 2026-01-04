@@ -319,6 +319,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_2_setup_teardown_edges.html">12.9. setUp/tearDown ושוליים</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_3_unittesting_oop.html">12.10. בדיקות ל־OOP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_4_physicsl_unittesting.html">12.11. בדיקות לקוד נומרי בפיזיקה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_5_Pandas_tutorial.html">12.12. תרגול מסכם</a></li>
 </ul>
 </details></li>
 </ul>
@@ -643,8 +644,8 @@ document.write(`
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="gtsbLIgIAHGd" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#gtsbLIgIAHGd {
+<div class="output text_html"><div id="RakUzbhumOgx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#RakUzbhumOgx {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -861,7 +862,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsgtsbLIgIAHGd=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df x * y \u05dc\u05bex.dot(y) \u05d1\u05beNumPy \u05db\u05d0\u05e9\u05e8 x \u05d5\u05bey \u05d4\u05df \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea?", "type": "many_choice", "answers": [{"answer": "* \u05e2\u05d5\u05e9\u05d4 \u05db\u05e4\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05d5\u05bedot \u05db\u05e4\u05dc \u05d0\u05d9\u05d1\u05e8\u05be\u05d0\u05d9\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "* \u05e2\u05d5\u05e9\u05d4 \u05db\u05e4\u05dc \u05d0\u05d9\u05d1\u05e8\u05be\u05d0\u05d9\u05d1\u05e8 \u05d5\u05bedot \u05db\u05e4\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05e9\u05ea\u05d9\u05d4\u05df \u05e2\u05d5\u05e9\u05d5\u05ea \u05db\u05e4\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05e9\u05ea\u05d9\u05d4\u05df \u05e2\u05d5\u05e9\u05d5\u05ea \u05db\u05e4\u05dc \u05d0\u05d9\u05d1\u05e8\u05be\u05d0\u05d9\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsRakUzbhumOgx=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df x * y \u05dc\u05bex.dot(y) \u05d1\u05beNumPy \u05db\u05d0\u05e9\u05e8 x \u05d5\u05bey \u05d4\u05df \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea?", "type": "many_choice", "answers": [{"answer": "* \u05e2\u05d5\u05e9\u05d4 \u05db\u05e4\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea \u05d5\u05bedot \u05db\u05e4\u05dc \u05d0\u05d9\u05d1\u05e8\u05be\u05d0\u05d9\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "* \u05e2\u05d5\u05e9\u05d4 \u05db\u05e4\u05dc \u05d0\u05d9\u05d1\u05e8\u05be\u05d0\u05d9\u05d1\u05e8 \u05d5\u05bedot \u05db\u05e4\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05e9\u05ea\u05d9\u05d4\u05df \u05e2\u05d5\u05e9\u05d5\u05ea \u05db\u05e4\u05dc \u05de\u05d8\u05e8\u05d9\u05e6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05e9\u05ea\u05d9\u05d4\u05df \u05e2\u05d5\u05e9\u05d5\u05ea \u05db\u05e4\u05dc \u05d0\u05d9\u05d1\u05e8\u05be\u05d0\u05d9\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1924,8 +1925,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("gtsbLIgIAHGd")) {
-    show_questions(questionsgtsbLIgIAHGd, gtsbLIgIAHGd);
+  if (document.getElementById("RakUzbhumOgx")) {
+    show_questions(questionsRakUzbhumOgx, RakUzbhumOgx);
   } else {
     setTimeout(try_show, 200);
   }

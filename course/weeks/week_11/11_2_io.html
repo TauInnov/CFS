@@ -319,6 +319,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_2_setup_teardown_edges.html">12.9. setUp/tearDown ושוליים</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_3_unittesting_oop.html">12.10. בדיקות ל־OOP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_4_physicsl_unittesting.html">12.11. בדיקות לקוד נומרי בפיזיקה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_5_Pandas_tutorial.html">12.12. תרגול מסכם</a></li>
 </ul>
 </details></li>
 </ul>
@@ -704,7 +705,7 @@ Pandas מספקת ממשק נוח לקריאה וכתיבה של קבצי CSV ו
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame loaded:
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_20060/322451142.py:16: UserWarning: The argument &#39;infer_datetime_format&#39; is deprecated and will be removed in a future version. A strict version of it is now the default, see https://pandas.pydata.org/pdeps/0004-consistent-to-datetime-parsing.html. You can safely remove this argument.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_29105/322451142.py:16: UserWarning: The argument &#39;infer_datetime_format&#39; is deprecated and will be removed in a future version. A strict version of it is now the default, see https://pandas.pydata.org/pdeps/0004-consistent-to-datetime-parsing.html. You can safely remove this argument.
   measurements[&quot;timestamp&quot;] = pd.to_datetime(measurements[&quot;timestamp&quot;], errors=&quot;coerce&quot;, infer_datetime_format=True)
 </pre></div>
 </div>
@@ -1112,8 +1113,8 @@ Reloaded from Parquet:
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="eqeQZwbJCoaK" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#eqeQZwbJCoaK {
+<div class="output text_html"><div id="mSoaYUOHhGHZ" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#mSoaYUOHhGHZ {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1330,7 +1331,7 @@ Reloaded from Parquet:
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionseqeQZwbJCoaK=[{"question": "\u05d1\u05e2\u05ea \u05d8\u05e2\u05d9\u05e0\u05ea \u05e0\u05ea\u05d5\u05e0\u05d9 \u05e0\u05d9\u05e1\u05d5\u05d9 \u05d1\u05d0\u05de\u05e6\u05e2\u05d5\u05ea \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 <code>pd.read_csv()</code>, \u05e0\u05e8\u05e6\u05d4 \u05dc\u05d4\u05d1\u05d8\u05d9\u05d7 \u05e9\u05e2\u05de\u05d5\u05d3\u05ea \u05d6\u05de\u05df \u05d4\u05de\u05d3\u05d9\u05d3\u05d4 \u05ea\u05e4\u05d5\u05e8\u05e9 \u05db\u05e8\u05d0\u05d5\u05d9 \u05d5\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d8\u05e7\u05e1\u05d8 (\u05db\u05de\u05d5 \u05d4\u05e2\u05e8\u05d5\u05ea) \u05d9\u05d9\u05e9\u05de\u05e8\u05d5 \u05d1\u05e4\u05d5\u05e8\u05de\u05d8 \u05e0\u05db\u05d5\u05df.<br><br>\u05d0\u05d9\u05d6\u05d4 \u05e9\u05d9\u05dc\u05d5\u05d1 \u05e9\u05dc \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05db\u05da?", "type": "many_choice", "answers": [{"answer": "parse_dates=['timestamp'], dtype={'notes': 'string', 'experiment_id': 'string'}", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e4\u05e8\u05de\u05d8\u05e8 parse_dates \u05de\u05de\u05d9\u05e8 \u05d0\u05ea \u05e2\u05de\u05d5\u05d3\u05ea \u05d4\u05d6\u05de\u05df \u05dc\u05e4\u05d5\u05e8\u05de\u05d8 datetime64, \u05d5\u05bedtype \u05de\u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05d2\u05d3\u05d9\u05e8 \u05d1\u05de\u05e4\u05d5\u05e8\u05e9 \u05d0\u05ea \u05e1\u05d5\u05d2 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d1\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d8\u05e7\u05e1\u05d8."}, {"answer": "convert_dates=True, data_type='string'", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05dc\u05d5 \u05d0\u05d9\u05e0\u05dd \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05ea\u05e7\u05e4\u05d9\u05dd \u05d1\u05beread_csv. Pandas \u05de\u05e9\u05ea\u05de\u05e9\u05ea \u05d1\u05beparse_dates \u05d5\u05bedtype."}, {"answer": "read_as_text=True, cast_all='object'", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 Pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05db\u05ea \u05d1\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05db\u05d0\u05dc\u05d4 \u05dc\u05d8\u05e2\u05d9\u05e0\u05ea CSV."}, {"answer": "parse_time=True, types={'timestamp': 'datetime'}", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05d0\u05d9\u05df \u05e4\u05e8\u05de\u05d8\u05e8 parse_time \u05d1\u05beread_csv. \u05d9\u05e9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05beparse_dates."}]}];
+</style></div><script type="application/javascript">var questionsmSoaYUOHhGHZ=[{"question": "\u05d1\u05e2\u05ea \u05d8\u05e2\u05d9\u05e0\u05ea \u05e0\u05ea\u05d5\u05e0\u05d9 \u05e0\u05d9\u05e1\u05d5\u05d9 \u05d1\u05d0\u05de\u05e6\u05e2\u05d5\u05ea \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 <code>pd.read_csv()</code>, \u05e0\u05e8\u05e6\u05d4 \u05dc\u05d4\u05d1\u05d8\u05d9\u05d7 \u05e9\u05e2\u05de\u05d5\u05d3\u05ea \u05d6\u05de\u05df \u05d4\u05de\u05d3\u05d9\u05d3\u05d4 \u05ea\u05e4\u05d5\u05e8\u05e9 \u05db\u05e8\u05d0\u05d5\u05d9 \u05d5\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d8\u05e7\u05e1\u05d8 (\u05db\u05de\u05d5 \u05d4\u05e2\u05e8\u05d5\u05ea) \u05d9\u05d9\u05e9\u05de\u05e8\u05d5 \u05d1\u05e4\u05d5\u05e8\u05de\u05d8 \u05e0\u05db\u05d5\u05df.<br><br>\u05d0\u05d9\u05d6\u05d4 \u05e9\u05d9\u05dc\u05d5\u05d1 \u05e9\u05dc \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05db\u05da?", "type": "many_choice", "answers": [{"answer": "parse_dates=['timestamp'], dtype={'notes': 'string', 'experiment_id': 'string'}", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e4\u05e8\u05de\u05d8\u05e8 parse_dates \u05de\u05de\u05d9\u05e8 \u05d0\u05ea \u05e2\u05de\u05d5\u05d3\u05ea \u05d4\u05d6\u05de\u05df \u05dc\u05e4\u05d5\u05e8\u05de\u05d8 datetime64, \u05d5\u05bedtype \u05de\u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05d2\u05d3\u05d9\u05e8 \u05d1\u05de\u05e4\u05d5\u05e8\u05e9 \u05d0\u05ea \u05e1\u05d5\u05d2 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d1\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d8\u05e7\u05e1\u05d8."}, {"answer": "convert_dates=True, data_type='string'", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05dc\u05d5 \u05d0\u05d9\u05e0\u05dd \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05ea\u05e7\u05e4\u05d9\u05dd \u05d1\u05beread_csv. Pandas \u05de\u05e9\u05ea\u05de\u05e9\u05ea \u05d1\u05beparse_dates \u05d5\u05bedtype."}, {"answer": "read_as_text=True, cast_all='object'", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 Pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05db\u05ea \u05d1\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05db\u05d0\u05dc\u05d4 \u05dc\u05d8\u05e2\u05d9\u05e0\u05ea CSV."}, {"answer": "parse_time=True, types={'timestamp': 'datetime'}", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05d0\u05d9\u05df \u05e4\u05e8\u05de\u05d8\u05e8 parse_time \u05d1\u05beread_csv. \u05d9\u05e9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05beparse_dates."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2393,8 +2394,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("eqeQZwbJCoaK")) {
-    show_questions(questionseqeQZwbJCoaK, eqeQZwbJCoaK);
+  if (document.getElementById("mSoaYUOHhGHZ")) {
+    show_questions(questionsmSoaYUOHhGHZ, mSoaYUOHhGHZ);
   } else {
     setTimeout(try_show, 200);
   }

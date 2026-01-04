@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
@@ -319,6 +319,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_2_setup_teardown_edges.html">12.9. setUp/tearDown ושוליים</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_3_unittesting_oop.html">12.10. בדיקות ל־OOP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_4_physicsl_unittesting.html">12.11. בדיקות לקוד נומרי בפיזיקה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_5_Pandas_tutorial.html">12.12. תרגול מסכם</a></li>
 </ul>
 </details></li>
 </ul>
@@ -630,8 +631,8 @@ document.write(`
 כך נמשך ביצוע הלולאה <strong>כל עוד</strong> התנאי n&lt;10 מתקיים.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="haWvFwEWnWjW" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#haWvFwEWnWjW {
+<div class="output text_html"><div id="WzsqYLhWKObK" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#WzsqYLhWKObK {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -848,7 +849,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionshaWvFwEWnWjW=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05e2\u05e8\u05da \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05dc \u05d7 \u05e9\u05d4\u05d5\u05d3\u05e4\u05e1?", "type": "numeric", "answers": [{"type": "value", "value": 9, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"type": "default", "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05e4\u05e2\u05dd \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05e9\u05d1\u05d4 \u05d4\u05ea\u05e0\u05d0\u05d9 \u05de\u05ea\u05e7\u05d9\u05d9\u05dd \u05d4\u05d9\u05d0 \u05db\u05d0\u05e9\u05e8 n \u05e9\u05d5\u05d5\u05d4 9. \u05d4\u05ea\u05e0\u05d0\u05d9 9<10 \u05de\u05ea\u05e7\u05d9\u05d9\u05dd, \u05e0\u05db\u05e0\u05e1\u05d9\u05dd \u05dc\u05d2\u05d5\u05e3 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4, \u05de\u05d3\u05e4\u05d9\u05e1\u05d9\u05dd \u05d0\u05ea 9, \u05d5\u05de\u05d2\u05d3\u05d9\u05dc\u05d9\u05dd \u05d0\u05ea n \u05dc-10. \u05e2\u05db\u05e9\u05d9\u05d5 \u05d1\u05d5\u05d3\u05e7\u05d9\u05dd \u05d0\u05ea \u05d4\u05ea\u05e0\u05d0\u05d9 10<10 \u05d5\u05ea\u05e0\u05d0\u05d9 \u05d6\u05d4 \u05d4\u05d5\u05d0 False. \u05dc\u05db\u05df \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05e6\u05e8\u05ea, \u05d5\u05e2\u05d5\u05d1\u05e8\u05d9\u05dd \u05dc\u05d4\u05de\u05e9\u05da \u05d4\u05ea\u05d5\u05db\u05e0\u05d9\u05ea, \u05db\u05dc\u05d5\u05de\u05e8 \u05dc\u05d4\u05d3\u05e4\u05e1\u05ea \u201cgoodbye\u201c. "}]}];
+</style></div><script type="application/javascript">var questionsWzsqYLhWKObK=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05e2\u05e8\u05da \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05dc \u05d7 \u05e9\u05d4\u05d5\u05d3\u05e4\u05e1?", "type": "numeric", "answers": [{"type": "value", "value": 9, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"type": "default", "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05e4\u05e2\u05dd \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05e9\u05d1\u05d4 \u05d4\u05ea\u05e0\u05d0\u05d9 \u05de\u05ea\u05e7\u05d9\u05d9\u05dd \u05d4\u05d9\u05d0 \u05db\u05d0\u05e9\u05e8 n \u05e9\u05d5\u05d5\u05d4 9. \u05d4\u05ea\u05e0\u05d0\u05d9 9<10 \u05de\u05ea\u05e7\u05d9\u05d9\u05dd, \u05e0\u05db\u05e0\u05e1\u05d9\u05dd \u05dc\u05d2\u05d5\u05e3 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4, \u05de\u05d3\u05e4\u05d9\u05e1\u05d9\u05dd \u05d0\u05ea 9, \u05d5\u05de\u05d2\u05d3\u05d9\u05dc\u05d9\u05dd \u05d0\u05ea n \u05dc-10. \u05e2\u05db\u05e9\u05d9\u05d5 \u05d1\u05d5\u05d3\u05e7\u05d9\u05dd \u05d0\u05ea \u05d4\u05ea\u05e0\u05d0\u05d9 10<10 \u05d5\u05ea\u05e0\u05d0\u05d9 \u05d6\u05d4 \u05d4\u05d5\u05d0 False. \u05dc\u05db\u05df \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05e6\u05e8\u05ea, \u05d5\u05e2\u05d5\u05d1\u05e8\u05d9\u05dd \u05dc\u05d4\u05de\u05e9\u05da \u05d4\u05ea\u05d5\u05db\u05e0\u05d9\u05ea, \u05db\u05dc\u05d5\u05de\u05e8 \u05dc\u05d4\u05d3\u05e4\u05e1\u05ea \u201cgoodbye\u201c. "}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1911,8 +1912,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("haWvFwEWnWjW")) {
-    show_questions(questionshaWvFwEWnWjW, haWvFwEWnWjW);
+  if (document.getElementById("WzsqYLhWKObK")) {
+    show_questions(questionsWzsqYLhWKObK, WzsqYLhWKObK);
   } else {
     setTimeout(try_show, 200);
   }
@@ -1979,8 +1980,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="CEMOKZBMniXU" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#CEMOKZBMniXU {
+<div class="output text_html"><div id="QrjrqSjHgsvd" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#QrjrqSjHgsvd {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2197,7 +2198,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsCEMOKZBMniXU=[{"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 1 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}, {"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 2 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}, {"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 3 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}, {"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 4 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}, {"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 5 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsQrjrqSjHgsvd=[{"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 1 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}, {"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 2 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}, {"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 3 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}, {"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 4 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}, {"question": "\u05d4\u05d0\u05dd \u05e7\u05d8\u05e2 5 \u05d9\u05d5\u05e6\u05e8 \u05dc\u05d5\u05dc\u05d0\u05d4 \u05d0\u05d9\u05e0\u05e1\u05d5\u05e4\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3260,8 +3261,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("CEMOKZBMniXU")) {
-    show_questions(questionsCEMOKZBMniXU, CEMOKZBMniXU);
+  if (document.getElementById("QrjrqSjHgsvd")) {
+    show_questions(questionsQrjrqSjHgsvd, QrjrqSjHgsvd);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3358,13 +3359,19 @@ goodbye
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-2
-5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+4
+1
+1
+4
 4
 3
+3
+3
+5
+5
 6
-6 rolls were needed to get 6 in a fair dice experiment
+12 rolls were needed to get 6 in a fair dice experiment
 </pre></div>
 </div>
 </div>
@@ -3404,8 +3411,9 @@ goodbye
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-1 rolls were needed to get 1 times 6 in a fair dice experiment
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+6
+2 rolls were needed to get 1 times 6 in a fair dice experiment
 </pre></div>
 </div>
 </div>

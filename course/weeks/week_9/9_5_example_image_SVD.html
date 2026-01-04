@@ -321,6 +321,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_2_setup_teardown_edges.html">12.9. setUp/tearDown ושוליים</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_3_unittesting_oop.html">12.10. בדיקות ל־OOP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_4_physicsl_unittesting.html">12.11. בדיקות לקוד נומרי בפיזיקה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_5_Pandas_tutorial.html">12.12. תרגול מסכם</a></li>
 </ul>
 </details></li>
 </ul>
@@ -988,8 +989,8 @@ E(k) = \sum_{i=1}^k \sigma_i^2
 זו הסיבה ש־SVD שימושי לדחיסה: אפשר לשמור אחוז קטן מהמידע ועדיין לשחזר כמעט את כל התוכן.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="ZAtplKFcNRLy" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#ZAtplKFcNRLy {
+<div class="output text_html"><div id="tyWiytUrXRqc" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#tyWiytUrXRqc {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1206,7 +1207,7 @@ E(k) = \sum_{i=1}^k \sigma_i^2
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsZAtplKFcNRLy=[{"question": "\u05e0\u05e0\u05d9\u05d7 \u05e9\u05d9\u05e9 \u05dc\u05e0\u05d5 \u05ea\u05de\u05d5\u05e0\u05d4 \u05d1\u05d2\u05d5\u05d3\u05dc 200x200 \u05d5\u05d0\u05d7\u05e8\u05d9 \u05e4\u05d9\u05e8\u05d5\u05e7 SVD \u05e7\u05d9\u05d1\u05dc\u05e0\u05d5 200 \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd. \u05d0\u05e0\u05d7\u05e0\u05d5 \u05de\u05e9\u05d7\u05d6\u05e8\u05d9\u05dd \u05d0\u05ea \u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05e2\u05dd k=20 \u05d1\u05dc\u05d1\u05d3.<br><br>\u05de\u05d4 \u05e0\u05db\u05d5\u05df \u05dc\u05d2\u05d1\u05d9 \u05d4\u05e7\u05d9\u05e8\u05d5\u05d1?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05ea\u05e9\u05d7\u05d6\u05e8 \u05d0\u05ea \u05d4\u05de\u05d1\u05e0\u05d4 \u05d4\u05db\u05dc\u05dc\u05d9 (\u05e6\u05d5\u05e8\u05d4, \u05d1\u05d4\u05d9\u05e8\u05d5\u05ea \u05db\u05dc\u05dc\u05d9\u05ea) \u05d0\u05d1\u05dc \u05ea\u05d0\u05d1\u05d3 \u05e4\u05e8\u05d8\u05d9\u05dd \u05e2\u05d3\u05d9\u05e0\u05d9\u05dd", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d9\u05dd \u05de\u05db\u05d9\u05dc\u05d9\u05dd \u05d0\u05ea \u05e8\u05d5\u05d1 \u05d4\u05de\u05d9\u05d3\u05e2 \u05d4\u05d2\u05e1, \u05d0\u05da \u05dc\u05d0 \u05d0\u05ea \u05db\u05dc \u05d4\u05e4\u05e8\u05d8\u05d9\u05dd"}, {"answer": "\u05db\u05de\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05e2 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e7\u05d8\u05e0\u05d4 \u05d1\u05d4\u05e8\u05d1\u05d4 \u05de\u05d0\u05e9\u05e8 \u05d1\u05de\u05d8\u05e8\u05d9\u05e6\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d1\u05de\u05e7\u05d5\u05dd \u05dc\u05e9\u05de\u05d5\u05e8 200x200 \u05e4\u05d9\u05e7\u05e1\u05dc\u05d9\u05dd, \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05e8\u05e7 \u05d0\u05ea 20 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05d5\u05e2\u05d5\u05d3 \u05d0\u05ea \u05d4\u05d5\u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d4\u05de\u05ea\u05d0\u05d9\u05de\u05d9\u05dd"}, {"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e9\u05d5\u05d7\u05d6\u05e8\u05ea \u05ea\u05d4\u05d9\u05d4 \u05d6\u05d4\u05d4 \u05dc\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d0\u05dd \u05dc\u05d0 \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05d0\u05ea \u05db\u05dc 200 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d9\u05e9 \u05ea\u05de\u05d9\u05d3 \u05d0\u05d5\u05d1\u05d3\u05df \u05de\u05d9\u05d3\u05e2"}, {"answer": "\u05d4\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05d4 \u05dc\u05d1\u05d9\u05df \u05d4\u05de\u05e7\u05d5\u05e8 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05e2\u05d1\u05d5\u05e8 i=1..20 \u05dc\u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05dc\u05db\u05dc \u05d4\u05be200", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e0\u05e7\u05d1\u05e2\u05ea \u05e2\u05dc \u05e4\u05d9 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05e9\u05e9\u05de\u05e8\u05e0\u05d5"}]}];
+</style></div><script type="application/javascript">var questionstyWiytUrXRqc=[{"question": "\u05e0\u05e0\u05d9\u05d7 \u05e9\u05d9\u05e9 \u05dc\u05e0\u05d5 \u05ea\u05de\u05d5\u05e0\u05d4 \u05d1\u05d2\u05d5\u05d3\u05dc 200x200 \u05d5\u05d0\u05d7\u05e8\u05d9 \u05e4\u05d9\u05e8\u05d5\u05e7 SVD \u05e7\u05d9\u05d1\u05dc\u05e0\u05d5 200 \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd. \u05d0\u05e0\u05d7\u05e0\u05d5 \u05de\u05e9\u05d7\u05d6\u05e8\u05d9\u05dd \u05d0\u05ea \u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05e2\u05dd k=20 \u05d1\u05dc\u05d1\u05d3.<br><br>\u05de\u05d4 \u05e0\u05db\u05d5\u05df \u05dc\u05d2\u05d1\u05d9 \u05d4\u05e7\u05d9\u05e8\u05d5\u05d1?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05ea\u05e9\u05d7\u05d6\u05e8 \u05d0\u05ea \u05d4\u05de\u05d1\u05e0\u05d4 \u05d4\u05db\u05dc\u05dc\u05d9 (\u05e6\u05d5\u05e8\u05d4, \u05d1\u05d4\u05d9\u05e8\u05d5\u05ea \u05db\u05dc\u05dc\u05d9\u05ea) \u05d0\u05d1\u05dc \u05ea\u05d0\u05d1\u05d3 \u05e4\u05e8\u05d8\u05d9\u05dd \u05e2\u05d3\u05d9\u05e0\u05d9\u05dd", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d9\u05dd \u05de\u05db\u05d9\u05dc\u05d9\u05dd \u05d0\u05ea \u05e8\u05d5\u05d1 \u05d4\u05de\u05d9\u05d3\u05e2 \u05d4\u05d2\u05e1, \u05d0\u05da \u05dc\u05d0 \u05d0\u05ea \u05db\u05dc \u05d4\u05e4\u05e8\u05d8\u05d9\u05dd"}, {"answer": "\u05db\u05de\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05e2 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e7\u05d8\u05e0\u05d4 \u05d1\u05d4\u05e8\u05d1\u05d4 \u05de\u05d0\u05e9\u05e8 \u05d1\u05de\u05d8\u05e8\u05d9\u05e6\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d1\u05de\u05e7\u05d5\u05dd \u05dc\u05e9\u05de\u05d5\u05e8 200x200 \u05e4\u05d9\u05e7\u05e1\u05dc\u05d9\u05dd, \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05e8\u05e7 \u05d0\u05ea 20 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05d5\u05e2\u05d5\u05d3 \u05d0\u05ea \u05d4\u05d5\u05d5\u05e7\u05d8\u05d5\u05e8\u05d9\u05dd \u05d4\u05de\u05ea\u05d0\u05d9\u05de\u05d9\u05dd"}, {"answer": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e9\u05d5\u05d7\u05d6\u05e8\u05ea \u05ea\u05d4\u05d9\u05d4 \u05d6\u05d4\u05d4 \u05dc\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d0\u05dd \u05dc\u05d0 \u05e9\u05d5\u05de\u05e8\u05d9\u05dd \u05d0\u05ea \u05db\u05dc 200 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05d9\u05e9 \u05ea\u05de\u05d9\u05d3 \u05d0\u05d5\u05d1\u05d3\u05df \u05de\u05d9\u05d3\u05e2"}, {"answer": "\u05d4\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05d4 \u05dc\u05d1\u05d9\u05df \u05d4\u05de\u05e7\u05d5\u05e8 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05d9\u05d7\u05e1 \u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05e2\u05d1\u05d5\u05e8 i=1..20 \u05dc\u05d1\u05d9\u05df \u05e1\u05db\u05d5\u05dd (\u03c3_i \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2) \u05dc\u05db\u05dc \u05d4\u05be200", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05e0\u05e8\u05d2\u05d9\u05d4 \u05e9\u05e0\u05e9\u05de\u05e8\u05ea \u05e0\u05e7\u05d1\u05e2\u05ea \u05e2\u05dc \u05e4\u05d9 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e1\u05d9\u05e0\u05d2\u05d5\u05dc\u05e8\u05d9\u05d9\u05dd \u05e9\u05e9\u05de\u05e8\u05e0\u05d5"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2269,8 +2270,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("ZAtplKFcNRLy")) {
-    show_questions(questionsZAtplKFcNRLy, ZAtplKFcNRLy);
+  if (document.getElementById("tyWiytUrXRqc")) {
+    show_questions(questionstyWiytUrXRqc, tyWiytUrXRqc);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2281,6 +2282,101 @@ function try_show() {
 }
 }
 </script></div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Solutions</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Path to your local image</span>
+<span class="n">img_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;figs/Lenna.png&quot;</span><span class="p">)</span>
+
+<span class="c1"># Load the color image</span>
+<span class="n">img_color</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert to NumPy array</span>
+<span class="n">img_color_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img_color</span><span class="p">)</span>
+
+<span class="c1"># Display the color image</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Original color image (Lenna)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_color_np</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># TODO: Extract each color channel (Red, Green, Blue) from the image array.</span>
+<span class="c1"># Hint: The color channels are stored along the **third axis** of the array:</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">img_color_np</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">img_color_np</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">img_color_np</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Display each channel in a single row</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Red channel&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Green channel&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greens&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Blue channel&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ At least one &#39;RGB&#39; variable is not defined yet. Please create the RGB images first.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Compute SVD</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shapes:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;U:&quot;</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot; s:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot; Vt:&quot;</span><span class="p">,</span> <span class="n">Vt</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Print first few singular values (they are already 1D numbers)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First 5 singular values:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">svd_approx</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="c1"># Reconstruct using the top-k singular values/vectors</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">)))</span>  <span class="c1"># clamp k to [1, rank]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">s</span><span class="p">[:</span><span class="n">k</span><span class="p">])</span> <span class="o">@</span> <span class="n">Vt</span><span class="p">[:</span><span class="n">k</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">]:</span>
+    <span class="n">approx</span> <span class="o">=</span> <span class="n">svd_approx</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vt</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+    <span class="c1"># Relative reconstruction error ||A - A_k|| / ||A||</span>
+    <span class="n">rel_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">img</span> <span class="o">-</span> <span class="n">approx</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="n">k</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2">  relative error ≈ </span><span class="si">{</span><span class="n">rel_err</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SVD approximation with k=</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">approx</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">energy_cum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k=</span><span class="si">{</span><span class="n">k</span><span class="si">:</span><span class="s2">&gt;3</span><span class="si">}</span><span class="s2">  energy ≈ </span><span class="si">{</span><span class="n">energy_cum</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">5.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cumulative energy vs k&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">energy_cum</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;cumulative energy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </section>
 </section>

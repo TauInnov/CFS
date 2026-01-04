@@ -321,6 +321,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_2_setup_teardown_edges.html">12.9. setUp/tearDown ושוליים</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_3_unittesting_oop.html">12.10. בדיקות ל־OOP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_4_physicsl_unittesting.html">12.11. בדיקות לקוד נומרי בפיזיקה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_5_Pandas_tutorial.html">12.12. תרגול מסכם</a></li>
 </ul>
 </details></li>
 </ul>
@@ -825,8 +826,8 @@ document.write(`
 <p>אנו רואים כי הגדלת מספר הדגימות <span class="math notranslate nohighlight">\(N\)</span> גורמת להערכות <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> להיות קרובות יותר לערך האמיתי.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="kftISZvhUBkm" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#kftISZvhUBkm {
+<div class="output text_html"><div id="fiExnrnVXpEa" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#fiExnrnVXpEa {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1043,7 +1044,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionskftISZvhUBkm=[{"question": "\u05d1\u05d3\u05d5\u05d2\u05de\u05ea \u05de\u05d5\u05e0\u05d8\u05d4\u2013\u05e7\u05e8\u05dc\u05d5 \u05dc\u05d4\u05e2\u05e8\u05db\u05ea \u03c0 \u05d0\u05e0\u05d5 \u05d6\u05d5\u05e8\u05e7\u05d9\u05dd N \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d0\u05d7\u05d9\u05d3\u05d5\u05ea \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2 [-1,1]\u00d7[-1,1].<br><br>\u05de\u05d4\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05dc\u05d4\u05e2\u05e8\u05db\u05ea \u03c0 \u05de\u05ea\u05d5\u05da \u05d4\u05e0\u05d9\u05e1\u05d5\u05d9?", "type": "many_choice", "answers": [{"answer": "\u03c0 \u2248 4 * (\u05de\u05e1\u05e4\u05e8 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d1\u05ea\u05d5\u05da \u05d4\u05de\u05e2\u05d2\u05dc / \u05e1\u05da \u05db\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e9\u05d8\u05d7 \u05d4\u05de\u05e2\u05d2\u05dc \u05d7\u05dc\u05e7\u05d9 \u05e9\u05d8\u05d7 \u05d4\u05e8\u05d9\u05d1\u05d5\u05e2 \u05e0\u05d5\u05ea\u05df \u05d0\u05ea \u05d4\u05d9\u05d7\u05e1, \u05d5\u05db\u05e4\u05d5\u05dc 4 \u05de\u05e9\u05d7\u05d6\u05e8 \u05d0\u05ea \u03c0"}, {"answer": "\u03c0 \u2248 (\u05de\u05e1\u05e4\u05e8 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05de\u05d7\u05d5\u05e5 \u05dc\u05de\u05e2\u05d2\u05dc / \u05e1\u05da \u05db\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05e9\u05de\u05d7\u05d5\u05e5 \u05dc\u05de\u05e2\u05d2\u05dc \u05d0\u05d9\u05e0\u05df \u05e0\u05d5\u05ea\u05e0\u05d5\u05ea \u05d4\u05e2\u05e8\u05db\u05d4 \u05d9\u05e9\u05d9\u05e8\u05d4 \u05dc-\u03c0"}, {"answer": "\u03c0 \u2248 (\u05e9\u05d8\u05d7 \u05d4\u05e8\u05d9\u05d1\u05d5\u05e2 / \u05e9\u05d8\u05d7 \u05d4\u05de\u05e2\u05d2\u05dc)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05d9\u05d7\u05e1 \u05d4\u05e4\u05d5\u05da: \u05e9\u05d8\u05d7 \u05d4\u05de\u05e2\u05d2\u05dc \u05d7\u05dc\u05e7\u05d9 \u05e9\u05d8\u05d7 \u05d4\u05e8\u05d9\u05d1\u05d5\u05e2 \u05e7\u05e9\u05d5\u05e8 \u05dc-\u03c0"}, {"answer": "\u05d4\u05e2\u05e8\u05da \u05ea\u05de\u05d9\u05d3 \u05e9\u05d5\u05d5\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05dc-3.14 \u05dc\u05dc\u05d0 \u05ea\u05dc\u05d5\u05ea \u05d1-N", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05db\u05db\u05dc \u05e9-N \u05d2\u05d3\u05dc \u05d4\u05d4\u05e2\u05e8\u05db\u05d4 \u05de\u05e9\u05ea\u05e4\u05e8\u05ea, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 \u05dc\u05e2\u05d5\u05dc\u05dd \u05d0\u05d9\u05e0\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 3.14"}]}];
+</style></div><script type="application/javascript">var questionsfiExnrnVXpEa=[{"question": "\u05d1\u05d3\u05d5\u05d2\u05de\u05ea \u05de\u05d5\u05e0\u05d8\u05d4\u2013\u05e7\u05e8\u05dc\u05d5 \u05dc\u05d4\u05e2\u05e8\u05db\u05ea \u03c0 \u05d0\u05e0\u05d5 \u05d6\u05d5\u05e8\u05e7\u05d9\u05dd N \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d0\u05d7\u05d9\u05d3\u05d5\u05ea \u05d1\u05e8\u05d9\u05d1\u05d5\u05e2 [-1,1]\u00d7[-1,1].<br><br>\u05de\u05d4\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05dc\u05d4\u05e2\u05e8\u05db\u05ea \u03c0 \u05de\u05ea\u05d5\u05da \u05d4\u05e0\u05d9\u05e1\u05d5\u05d9?", "type": "many_choice", "answers": [{"answer": "\u03c0 \u2248 4 * (\u05de\u05e1\u05e4\u05e8 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d1\u05ea\u05d5\u05da \u05d4\u05de\u05e2\u05d2\u05dc / \u05e1\u05da \u05db\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e9\u05d8\u05d7 \u05d4\u05de\u05e2\u05d2\u05dc \u05d7\u05dc\u05e7\u05d9 \u05e9\u05d8\u05d7 \u05d4\u05e8\u05d9\u05d1\u05d5\u05e2 \u05e0\u05d5\u05ea\u05df \u05d0\u05ea \u05d4\u05d9\u05d7\u05e1, \u05d5\u05db\u05e4\u05d5\u05dc 4 \u05de\u05e9\u05d7\u05d6\u05e8 \u05d0\u05ea \u03c0"}, {"answer": "\u03c0 \u2248 (\u05de\u05e1\u05e4\u05e8 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05de\u05d7\u05d5\u05e5 \u05dc\u05de\u05e2\u05d2\u05dc / \u05e1\u05da \u05db\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05e9\u05de\u05d7\u05d5\u05e5 \u05dc\u05de\u05e2\u05d2\u05dc \u05d0\u05d9\u05e0\u05df \u05e0\u05d5\u05ea\u05e0\u05d5\u05ea \u05d4\u05e2\u05e8\u05db\u05d4 \u05d9\u05e9\u05d9\u05e8\u05d4 \u05dc-\u03c0"}, {"answer": "\u03c0 \u2248 (\u05e9\u05d8\u05d7 \u05d4\u05e8\u05d9\u05d1\u05d5\u05e2 / \u05e9\u05d8\u05d7 \u05d4\u05de\u05e2\u05d2\u05dc)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05d9\u05d7\u05e1 \u05d4\u05e4\u05d5\u05da: \u05e9\u05d8\u05d7 \u05d4\u05de\u05e2\u05d2\u05dc \u05d7\u05dc\u05e7\u05d9 \u05e9\u05d8\u05d7 \u05d4\u05e8\u05d9\u05d1\u05d5\u05e2 \u05e7\u05e9\u05d5\u05e8 \u05dc-\u03c0"}, {"answer": "\u05d4\u05e2\u05e8\u05da \u05ea\u05de\u05d9\u05d3 \u05e9\u05d5\u05d5\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05dc-3.14 \u05dc\u05dc\u05d0 \u05ea\u05dc\u05d5\u05ea \u05d1-N", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05db\u05db\u05dc \u05e9-N \u05d2\u05d3\u05dc \u05d4\u05d4\u05e2\u05e8\u05db\u05d4 \u05de\u05e9\u05ea\u05e4\u05e8\u05ea, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 \u05dc\u05e2\u05d5\u05dc\u05dd \u05d0\u05d9\u05e0\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 3.14"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2106,8 +2107,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("kftISZvhUBkm")) {
-    show_questions(questionskftISZvhUBkm, kftISZvhUBkm);
+  if (document.getElementById("fiExnrnVXpEa")) {
+    show_questions(questionsfiExnrnVXpEa, fiExnrnVXpEa);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2127,6 +2128,56 @@ function try_show() {
 <li><p>השגיאה הטיפוסית קטנה בערך כמו <span class="math notranslate nohighlight">\(1/\sqrt{N}\)</span>: כדי לחצות את השגיאה בחצי צריך בערך פי 4 יותר דגימות.</p></li>
 <li><p>שימוש ב־<code class="docutils literal notranslate"><span class="pre">default_rng</span></code> עם <code class="docutils literal notranslate"><span class="pre">seed</span></code> קבוע מאפשר <strong>שחזור</strong> של אותן תוצאות בכל הפעלה.</p></li>
 </ul>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Solutions</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Modern RNG for reproducibility</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mc_pi</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># Monte Carlo estimate of pi via hit-or-miss in unit disk</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">xy</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>      <span class="c1"># N points in the square [-1,1]^2</span>
+    <span class="n">inside</span> <span class="o">=</span> <span class="p">(</span><span class="n">xy</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">xy</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">1.0</span> <span class="c1"># boolean mask: points inside the unit circle</span>
+    <span class="k">return</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">inside</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>                  <span class="c1"># 4 * (fraction inside)</span>
+
+<span class="n">Ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># from 1e2 to 1e6</span>
+<span class="n">est</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mc_pi</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="n">Ns</span><span class="p">])</span>
+<span class="n">abs_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">est</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="n">Ns</span><span class="p">[:</span><span class="mi">5</span><span class="p">],</span> <span class="n">est</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">abs_err</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Theoretical 1/sqrt(N) standard deviation band</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">4.0</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">p</span><span class="p">))</span>  <span class="c1"># ~1.64</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">c</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ns</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;π estimate vs N (log scale)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ns</span><span class="p">,</span> <span class="n">est</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;estimate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;π (true)&quot;</span><span class="p">)</span>
+<span class="c1"># 95% band (approximately) around true π</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">Ns</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;~95% band (theory)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;estimate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;|error| vs N (expected ~ 1/√N)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">Ns</span><span class="p">,</span> <span class="n">abs_err</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;empirical error&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">Ns</span><span class="p">,</span> <span class="n">c</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ns</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;~ c/√N (theory)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;|error|&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 

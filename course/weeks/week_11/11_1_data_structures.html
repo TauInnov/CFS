@@ -319,6 +319,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_2_setup_teardown_edges.html">12.9. setUp/tearDown ושוליים</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_3_unittesting_oop.html">12.10. בדיקות ל־OOP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_12/12_4_physicsl_unittesting.html">12.11. בדיקות לקוד נומרי בפיזיקה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_5_Pandas_tutorial.html">12.12. תרגול מסכם</a></li>
 </ul>
 </details></li>
 </ul>
@@ -870,8 +871,8 @@ memory usage: 252.0+ bytes
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="kaqgEpGxLNXP" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#kaqgEpGxLNXP {
+<div class="output text_html"><div id="fmZUpilYuaXi" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#fmZUpilYuaXi {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1088,7 +1089,7 @@ memory usage: 252.0+ bytes
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionskaqgEpGxLNXP=[{"question": "\u05dc\u05d0\u05d7\u05e8 \u05d9\u05e6\u05d9\u05e8\u05ea \u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 <code>DataFrame</code> \u05d1Pandas, \u05e0\u05e8\u05e6\u05d4 \u05dc\u05d4\u05d1\u05d9\u05df \u05d0\u05ea \u05de\u05d1\u05e0\u05d4 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d5\u05d0\u05ea \u05de\u05d0\u05e4\u05d9\u05d9\u05e0\u05d9\u05d5.<br><br>\u05d0\u05d9\u05dc\u05d5 \u05e4\u05e7\u05d5\u05d3\u05d5\u05ea \u05de\u05ea\u05d0\u05d9\u05de\u05d5\u05ea \u05dc\u05db\u05da?", "type": "many_choice", "answers": [{"answer": "shape, columns, index, info(), describe()", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! shape \u05de\u05e6\u05d9\u05d2 \u05d0\u05ea \u05d2\u05d5\u05d3\u05dc \u05d4\u05d8\u05d1\u05dc\u05d4, columns \u05de\u05e6\u05d9\u05d2 \u05e9\u05de\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d5\u05ea, index \u05d0\u05ea \u05d8\u05d5\u05d5\u05d7 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd, info() \u05e0\u05d5\u05ea\u05df \u05e1\u05d9\u05db\u05d5\u05dd \u05db\u05dc\u05dc\u05d9, \u05d5\u05bedescribe() \u05de\u05e1\u05e4\u05e7 \u05e1\u05d8\u05d8\u05d9\u05e1\u05d8\u05d9\u05e7\u05d4 \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05e0\u05d5\u05de\u05e8\u05d9\u05d5\u05ea."}, {"answer": "size(), dtype(), header(), summary()", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05d0\u05dc\u05d5 \u05d0\u05d9\u05e0\u05df \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05d4\u05e0\u05db\u05d5\u05e0\u05d5\u05ea \u05d1\u05bePandas. \u05dc\u05d3\u05d5\u05d2\u05de\u05d4, dtype() \u05d0\u05d9\u05e0\u05d5 \u05e7\u05d9\u05d9\u05dd \u05db\u05de\u05ea\u05d5\u05d3\u05d4 \u05db\u05d6\u05d5 \u05dc\u05beDataFrame."}, {"answer": "len(df), df.columns_count(), df.summary()", "correct": false, "feedback": "\u05dc\u05d0 \u2014 pandas \u05dc\u05d0 \u05db\u05d5\u05dc\u05dc\u05ea \u05de\u05ea\u05d5\u05d3\u05d5\u05ea \u05d1\u05e9\u05dd columns_count \u05d0\u05d5 summary. \u05d9\u05e9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05beshape, info() \u05d5\u05bedescribe()."}, {"answer": "get_structure(), get_columns(), describe_all()", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d0\u05dc\u05d5 \u05e9\u05de\u05d5\u05ea \u05d3\u05de\u05d9\u05d5\u05e0\u05d9\u05d9\u05dd. \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05d4\u05d0\u05de\u05d9\u05ea\u05d9\u05d5\u05ea \u05d4\u05df info(), shape \u05d5\u05bedescribe()."}]}];
+</style></div><script type="application/javascript">var questionsfmZUpilYuaXi=[{"question": "\u05dc\u05d0\u05d7\u05e8 \u05d9\u05e6\u05d9\u05e8\u05ea \u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 <code>DataFrame</code> \u05d1Pandas, \u05e0\u05e8\u05e6\u05d4 \u05dc\u05d4\u05d1\u05d9\u05df \u05d0\u05ea \u05de\u05d1\u05e0\u05d4 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d5\u05d0\u05ea \u05de\u05d0\u05e4\u05d9\u05d9\u05e0\u05d9\u05d5.<br><br>\u05d0\u05d9\u05dc\u05d5 \u05e4\u05e7\u05d5\u05d3\u05d5\u05ea \u05de\u05ea\u05d0\u05d9\u05de\u05d5\u05ea \u05dc\u05db\u05da?", "type": "many_choice", "answers": [{"answer": "shape, columns, index, info(), describe()", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! shape \u05de\u05e6\u05d9\u05d2 \u05d0\u05ea \u05d2\u05d5\u05d3\u05dc \u05d4\u05d8\u05d1\u05dc\u05d4, columns \u05de\u05e6\u05d9\u05d2 \u05e9\u05de\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d5\u05ea, index \u05d0\u05ea \u05d8\u05d5\u05d5\u05d7 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd, info() \u05e0\u05d5\u05ea\u05df \u05e1\u05d9\u05db\u05d5\u05dd \u05db\u05dc\u05dc\u05d9, \u05d5\u05bedescribe() \u05de\u05e1\u05e4\u05e7 \u05e1\u05d8\u05d8\u05d9\u05e1\u05d8\u05d9\u05e7\u05d4 \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05e0\u05d5\u05de\u05e8\u05d9\u05d5\u05ea."}, {"answer": "size(), dtype(), header(), summary()", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05d0\u05dc\u05d5 \u05d0\u05d9\u05e0\u05df \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05d4\u05e0\u05db\u05d5\u05e0\u05d5\u05ea \u05d1\u05bePandas. \u05dc\u05d3\u05d5\u05d2\u05de\u05d4, dtype() \u05d0\u05d9\u05e0\u05d5 \u05e7\u05d9\u05d9\u05dd \u05db\u05de\u05ea\u05d5\u05d3\u05d4 \u05db\u05d6\u05d5 \u05dc\u05beDataFrame."}, {"answer": "len(df), df.columns_count(), df.summary()", "correct": false, "feedback": "\u05dc\u05d0 \u2014 pandas \u05dc\u05d0 \u05db\u05d5\u05dc\u05dc\u05ea \u05de\u05ea\u05d5\u05d3\u05d5\u05ea \u05d1\u05e9\u05dd columns_count \u05d0\u05d5 summary. \u05d9\u05e9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05beshape, info() \u05d5\u05bedescribe()."}, {"answer": "get_structure(), get_columns(), describe_all()", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d0\u05dc\u05d5 \u05e9\u05de\u05d5\u05ea \u05d3\u05de\u05d9\u05d5\u05e0\u05d9\u05d9\u05dd. \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05d4\u05d0\u05de\u05d9\u05ea\u05d9\u05d5\u05ea \u05d4\u05df info(), shape \u05d5\u05bedescribe()."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2151,8 +2152,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("kaqgEpGxLNXP")) {
-    show_questions(questionskaqgEpGxLNXP, kaqgEpGxLNXP);
+  if (document.getElementById("fmZUpilYuaXi")) {
+    show_questions(questionsfmZUpilYuaXi, fmZUpilYuaXi);
   } else {
     setTimeout(try_show, 200);
   }
