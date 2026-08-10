@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.11. תרגול: שלושת סוגי שאלות המבחן &#8212; Computers For physics</title>
+    <title>7.11. תרגול מסכם &#8212; Computers For physics</title>
   
   
   
@@ -266,7 +266,7 @@
 <li class="toctree-l2"><a class="reference internal" href="7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_9_scipy_constants.html">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_10_common_bugs.html">7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.11. תרגול: שלושת סוגי שאלות המבחן</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.11. תרגול מסכם</a></li>
 </ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
@@ -513,9 +513,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -526,21 +524,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>תרגול: שלושת סוגי שאלות המבחן</h1>
+    <h1>תרגול מסכם</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.11.1. שאלה 1 — מה הקוד עושה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.11.2. שאלה 2 — מצא את הבאג ותקן</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.11.3. שאלה 3 — מבעיה פיזיקלית לקוד</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -551,10 +539,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="id1">
-<h1><span class="section-number">7.11. </span>תרגול: שלושת סוגי שאלות המבחן<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>בבוחן ובמבחן הסופי תופיע בכל פעם שאלה אחת מכל אחד משלושת הסוגים הבאים: <strong>מה הקוד עושה</strong>, <strong>מצא את הבאג ותקן</strong>, ו<strong>מבעיה פיזיקלית לקוד</strong>. הנה שאלה אחת מכל סוג, בנושאי השבוע, כדי שתכירו את הפורמט לפני הבוחן.</p>
-<section id="id2">
-<h2><span class="section-number">7.11.1. </span>שאלה 1 — מה הקוד עושה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h1><span class="section-number">7.11. </span>תרגול מסכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>בלי להריץ, תארו במילים מה מחשב הקוד הבא, ומה יהיה ה-<code class="docutils literal notranslate"><span class="pre">shape</span></code> של <code class="docutils literal notranslate"><span class="pre">result</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -573,9 +558,7 @@ document.write(`
 <p>הקוד מחשב את גובה הזריקה <span class="math notranslate nohighlight">\(y(t) = v_0 t - \tfrac{1}{2} g t^2\)</span> עבור <strong>שלוש מהירויות שיגור שונות בו-זמנית</strong>, על פני 50 נקודות זמן. השורה <code class="docutils literal notranslate"><span class="pre">v0[:,</span> <span class="pre">None]</span></code> הופכת את <code class="docutils literal notranslate"><span class="pre">v0</span></code> מווקטור באורך 3 למערך בצורת <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">1)</span></code>, כך שכל מהירות “מוכפלת” כנגד כל נקודות הזמן.</p>
 <p><code class="docutils literal notranslate"><span class="pre">result.shape</span></code> הוא <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">50)</span></code>: שורה לכל מהירות שיגור, עמודה לכל נקודת זמן — בדיוק כמו התבנית שראינו בסעיף 7.3.</p>
 </div>
-</section>
-<section id="id3">
-<h2><span class="section-number">7.11.2. </span>שאלה 2 — מצא את הבאג ותקן<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
 <p>הקוד הבא נועד לחשב את זמן הטיסה הכולל של כדור שנזרק אנכית כלפי מעלה במהירות <span class="math notranslate nohighlight">\(v_0\)</span> וחוזר לאותו גובה: <span class="math notranslate nohighlight">\(t_{flight} = 2v_0/g\)</span>, וכן את גובהו המרבי <span class="math notranslate nohighlight">\(h_{max} = v_0^2/(2g)\)</span>. יש בו באג. אתרו ותקנו:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -609,9 +592,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</section>
-<section id="id4">
-<h2><span class="section-number">7.11.3. </span>שאלה 3 — מבעיה פיזיקלית לקוד<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
 <p>כדור נזרק מגובה <span class="math notranslate nohighlight">\(y_0\)</span> במהירות אופקית <span class="math notranslate nohighlight">\(v_0\)</span> בלבד (ללא רכיב אנכי התחלתי). הגובה בזמן <span class="math notranslate nohighlight">\(t\)</span> נתון על ידי:</p>
 <div class="math notranslate nohighlight">
 \[y(t) = y_0 - \tfrac{1}{2} g t^2\]</div>
@@ -641,7 +622,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -698,23 +678,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.11.1. שאלה 1 — מה הקוד עושה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.11.2. שאלה 2 — מצא את הבאג ותקן</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.11.3. שאלה 3 — מבעיה פיזיקלית לקוד</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
