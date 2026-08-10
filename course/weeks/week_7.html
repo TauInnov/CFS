@@ -262,6 +262,11 @@
 <li class="toctree-l2"><a class="reference internal" href="week_7/7_4_indexing_slicing.html">7.4. אינדוקס ופריסה בציר אחד</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_7/7_5_views_vs_copies.html">7.5. views מול copies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_7/7_6_sort_argsort.html">7.6. sort ו-argsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_7_arithmetic_ufuncs.html">7.7. פעולות חשבון על מערכים: איבר-איבר, פונקציות מתמטיות וסקלר מול מערך</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_9_scipy_constants.html">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_10_common_bugs.html">7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_11_exam_practice.html">7.11. תרגול: שלושת סוגי שאלות המבחן</a></li>
 </ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
@@ -537,28 +542,31 @@ document.write(`
 <h1><span class="section-number">7. </span>שבוע 7 — יסודות NumPy: מבוא לעבודה עם מערכים מדעיים<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
 <p>בשבוע השביעי נצלול אל אחת הספריות החשובות ביותר בפייתון לעולם המדעי — <strong>NumPy</strong>.<br />
 נלמד כיצד לעבוד עם מערכים (ndarray), לבנות עליהם חישובים יעילים,<br />
-ולנצל את הכוח של עיבוד וקטורי (Vectorized Computing) שמאפשר לפייתון לחשב במהירות כמו שפות נמוכות־רמה.</p>
-<p>נבין כיצד להגדיר, לאנדקס, ולשנות מערכים, כיצד מטפלים בסוגי נתונים שונים בתוך מערכים,<br />
+ולנצל את הכוח של עיבוד וקטורי (Vectorized Computing) שמאפשר לפייתון לחשב במהירות כמו שפות נמוכות־רמה.<br />
+נבין כיצד להגדיר, לאנדקס, ולשנות מערכים, כיצד מטפלים בסוגי נתונים שונים בתוך מערכים,<br />
 ונראה כיצד לבצע פעולות מתמטיות שלמות על מערכים שלמים בפקודה אחת בלבד.<br />
 בנוסף, נלמד על מנגנון השידור (Broadcasting) — אחת התכונות החשובות של NumPy,<br />
-שמאפשרת עבודה נוחה בין מערכים בעלי ממדים שונים בצורה חכמה ואוטומטית.</p>
-<p>בסוף השבוע תדעו:</p>
+שמאפשרת עבודה נוחה בין מערכים בעלי ממדים שונים בצורה חכמה ואוטומטית.
+בסוף השבוע תדעו:</p>
 <ul class="simple">
 <li><p>לייבא ולהשתמש בספריית NumPy ביעילות</p></li>
 <li><p>ליצור מערכים (<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>) ממקורות שונים (רשימות, טווחים, פונקציות)</p></li>
 <li><p>לבצע אינדוקס, חיתוך ושינוי נתונים במערכים</p></li>
 <li><p>להבין ולעבוד עם סוגי נתונים (Data Types)</p></li>
 <li><p>לבצע פעולות מתמטיות ווקטוריות על מערכים</p></li>
-<li><p>להשתמש במנגנון השידור (Broadcasting) לפעולות בין מערכים בממדים שונים</p></li>
-</ul>
-<p><strong>Materials</strong></p>
-<ul class="simple">
+<li><p>להשתמש במנגנון השידור (Broadcasting) לפעולות בין מערכים בממדים שונים<br />
+<strong>Materials</strong></p></li>
 <li><p><a class="reference internal" href="week_7/7_1_vectorization.html"><span class="doc">1 • מרשימה למערך: וקטוריזציה</span></a></p></li>
 <li><p><a class="reference internal" href="week_7/7_2_creating_arrays.html"><span class="doc">2 • יצירת מערכים: array, zeros, ones, arange, linspace</span></a></p></li>
 <li><p><a class="reference internal" href="week_7/7_3_array_properties.html"><span class="doc">3 • תכונות מערך: shape, ndim, size, dtype וטיפוסים</span></a></p></li>
 <li><p><a class="reference internal" href="week_7/7_4_indexing_slicing.html"><span class="doc">4 • אינדוקס ופריסה בציר אחד</span></a></p></li>
 <li><p><a class="reference internal" href="week_7/7_5_views_vs_copies.html"><span class="doc">5 • views מול copies</span></a></p></li>
 <li><p><a class="reference internal" href="week_7/7_6_sort_argsort.html"><span class="doc">6 • sort ו-argsort</span></a></p></li>
+<li><p><a class="reference internal" href="week_7/7_7_arithmetic_ufuncs.html"><span class="doc">7 • פעולות חשבון על מערכים</span></a></p></li>
+<li><p><a class="reference internal" href="week_7/7_8_boolean_masks.html"><span class="doc">8 • השוואות ומסכות בוליאניות</span></a></p></li>
+<li><p><a class="reference internal" href="week_7/7_9_scipy_constants.html"><span class="doc">9 • קבועים פיזיקליים ויחידות (scipy.constants)</span></a></p></li>
+<li><p><a class="reference internal" href="week_7/7_10_common_bugs.html"><span class="doc">10 • שגיאות נפוצות בתרגום משוואה</span></a></p></li>
+<li><p><a class="reference internal" href="week_7/7_11_exam_practice.html"><span class="doc">11 • תרגול: שלושת סוגי שאלות המבחן</span></a></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
