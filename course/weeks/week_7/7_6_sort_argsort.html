@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.6. 7.6 — sort ו-argsort &#8212; Computers For physics</title>
+    <title>7.6. sort ו-argsort &#8212; Computers For physics</title>
   
   
   
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="8. שבוע 8 — ויזואליזציה וניתוח התפלגויות עם Matplotlib ו־NumPy" href="../week_8.html" />
-    <link rel="prev" title="7.5. 7.5 — views מול copies" href="7_5_views_vs_copies.html" />
+    <link rel="prev" title="7.5. views מול copies" href="7_5_views_vs_copies.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -519,7 +519,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>7.6 — sort ו-argsort</h1>
+    <h1>sort ו-argsort</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -545,7 +545,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="sort-argsort">
-<h1><span class="section-number">7.6. </span>7.6 — sort ו-argsort<a class="headerlink" href="#sort-argsort" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7.6. </span>sort ו-argsort<a class="headerlink" href="#sort-argsort" title="Link to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">np.sort(a)</span></code> מחזיר עותק ממוין של המערך. לעיתים קרובות יש לנו כמה מערכים “מקבילים” — לכל איבר במערך אחד יש איבר מתאים באחר (למשל: זמן מדידה וטמפרטורה, לפי אותו סדר ניסויים) — ורוצים למיין את כולם לפי אותו סדר. לשם כך משמש <code class="docutils literal notranslate"><span class="pre">np.argsort(a)</span></code>, שמחזיר לא את הערכים הממוינים אלא את <strong>האינדקסים</strong> שיסדרו את המערך.</p>
 <section id="id1">
 <h2><span class="section-number">7.6.1. </span>דוגמה: גבהי קפיצה במספר ניסויים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
@@ -640,8 +640,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="RAIgrvwIjDJU" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#RAIgrvwIjDJU {
+<div class="output text_html"><div id="xNSaygjPBtGs" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#xNSaygjPBtGs {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -864,7 +864,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsRAIgrvwIjDJU=[{"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df <code>a = np.array([30, 10, 20])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>np.argsort(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "[10, 20, 30] \u2014 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05de\u05de\u05d5\u05d9\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc np.sort(a), \u05dc\u05d0 \u05e9\u05dc argsort."}, {"answer": "[1, 2, 0] \u2014 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05e9\u05d9\u05e1\u05d3\u05e8\u05d5 \u05d0\u05ea a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: a[1]=10 (\u05d4\u05db\u05d9 \u05e7\u05d8\u05df), a[2]=20, a[0]=30 (\u05d4\u05db\u05d9 \u05d2\u05d3\u05d5\u05dc)."}, {"answer": "[2, 1, 0] \u2014 \u05e1\u05d3\u05e8 \u05d9\u05d5\u05e8\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 argsort \u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc \u05de\u05de\u05d9\u05d9\u05df \u05d1\u05e1\u05d3\u05e8 \u05e2\u05d5\u05dc\u05d4."}]}];
+</style></div><script type="application/javascript">var questionsxNSaygjPBtGs=[{"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df <code>a = np.array([30, 10, 20])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>np.argsort(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "[10, 20, 30] \u2014 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05de\u05de\u05d5\u05d9\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc np.sort(a), \u05dc\u05d0 \u05e9\u05dc argsort."}, {"answer": "[1, 2, 0] \u2014 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05e9\u05d9\u05e1\u05d3\u05e8\u05d5 \u05d0\u05ea a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: a[1]=10 (\u05d4\u05db\u05d9 \u05e7\u05d8\u05df), a[2]=20, a[0]=30 (\u05d4\u05db\u05d9 \u05d2\u05d3\u05d5\u05dc)."}, {"answer": "[2, 1, 0] \u2014 \u05e1\u05d3\u05e8 \u05d9\u05d5\u05e8\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 argsort \u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc \u05de\u05de\u05d9\u05d9\u05df \u05d1\u05e1\u05d3\u05e8 \u05e2\u05d5\u05dc\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1926,8 +1926,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("RAIgrvwIjDJU")) {
-    show_questions(questionsRAIgrvwIjDJU, RAIgrvwIjDJU);
+  if (document.getElementById("xNSaygjPBtGs")) {
+    show_questions(questionsxNSaygjPBtGs, xNSaygjPBtGs);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2004,7 +2004,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.5. </span>7.5 — views מול copies</p>
+        <p class="prev-next-title"><span class="section-number">7.5. </span>views מול copies</p>
       </div>
     </a>
     <a class="right-next"

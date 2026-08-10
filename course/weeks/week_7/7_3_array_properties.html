@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.3. 7.3 — תכונות מערך: shape, ndim, size, dtype וטיפוסים &#8212; Computers For physics</title>
+    <title>7.3. תכונות מערך: shape, ndim, size, dtype וטיפוסים &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_7/7_3_array_properties';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="7.4. 7.4 — אינדוקס ופריסה בציר אחד" href="7_4_indexing_slicing.html" />
-    <link rel="prev" title="7.2. 7.2 — יצירת מערכים: array, zeros, ones, arange, linspace" href="7_2_creating_arrays.html" />
+    <link rel="next" title="7.4. אינדוקס ופריסה בציר אחד" href="7_4_indexing_slicing.html" />
+    <link rel="prev" title="7.2. יצירת מערכים: array, zeros, ones, arange, linspace" href="7_2_creating_arrays.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -521,7 +521,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>7.3 — תכונות מערך: shape, ndim, size, dtype וטיפוסים</h1>
+    <h1>תכונות מערך: shape, ndim, size, dtype וטיפוסים</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -548,7 +548,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="shape-ndim-size-dtype">
-<h1><span class="section-number">7.3. </span>7.3 — תכונות מערך: shape, ndim, size, dtype וטיפוסים<a class="headerlink" href="#shape-ndim-size-dtype" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7.3. </span>תכונות מערך: shape, ndim, size, dtype וטיפוסים<a class="headerlink" href="#shape-ndim-size-dtype" title="Link to this heading">#</a></h1>
 <p>לכל מערך NumPy יש כמה תכונות בסיסיות שכדאי לבדוק לפני שעובדים איתו:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">a.shape</span></code> — גודל המערך בכל ציר, כטאפל. למשל <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">10)</span></code> — 3 שורות, 10 עמודות.</p></li>
@@ -681,8 +681,8 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="cNCRluPgZzBD" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#cNCRluPgZzBD {
+<div class="output text_html"><div id="RxMjCkqPmweC" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#RxMjCkqPmweC {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -905,7 +905,7 @@ dtype: float64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionscNCRluPgZzBD=[{"question": "\u05de\u05e2\u05e8\u05da <code>a</code> \u05e0\u05d5\u05e6\u05e8 \u05e2\u05dd <code>np.array([1, 2, 3])</code> (\u05d1\u05dc\u05d9 \u05e0\u05e7\u05d5\u05d3\u05d4 \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05ea). \u05de\u05d4 \u05d9\u05e7\u05e8\u05d4 \u05d1\u05e2\u05e7\u05d1\u05d5\u05ea <code>a[0] = 2.7</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05ea\u05d9\u05d6\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4, \u05db\u05d9 2.7 \u05d0\u05d9\u05e0\u05d5 \u05e9\u05dc\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 NumPy \u05dc\u05d0 \u05d1\u05d5\u05d3\u05e7 \u05d6\u05d0\u05ea \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9\u05ea."}, {"answer": "a[0] \u05d9\u05d4\u05e4\u05d5\u05da \u05dc-2, \u05d1\u05dc\u05d9 \u05d0\u05d6\u05d4\u05e8\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05de\u05e2\u05e8\u05da int \u05d7\u05d5\u05ea\u05da \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05d1\u05e8\u05d9\u05d9\u05dd \u05d1\u05e9\u05e7\u05d8 \u05d1\u05d6\u05de\u05df \u05d4\u05d4\u05e9\u05de\u05d4."}, {"answer": "\u05db\u05dc \u05d4\u05de\u05e2\u05e8\u05da \u05d9\u05d4\u05e4\u05d5\u05da \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9\u05ea \u05dc\u05d8\u05d9\u05e4\u05d5\u05e1 float", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d8\u05d9\u05e4\u05d5\u05e1 \u05e9\u05dc \u05d4\u05de\u05e2\u05e8\u05da \u05e0\u05e7\u05d1\u05e2 \u05d1\u05d9\u05e6\u05d9\u05e8\u05d4 \u05d5\u05dc\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4 \u05d1\u05d4\u05e9\u05de\u05d4 \u05d1\u05d5\u05d3\u05d3\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsRxMjCkqPmweC=[{"question": "\u05de\u05e2\u05e8\u05da <code>a</code> \u05e0\u05d5\u05e6\u05e8 \u05e2\u05dd <code>np.array([1, 2, 3])</code> (\u05d1\u05dc\u05d9 \u05e0\u05e7\u05d5\u05d3\u05d4 \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05ea). \u05de\u05d4 \u05d9\u05e7\u05e8\u05d4 \u05d1\u05e2\u05e7\u05d1\u05d5\u05ea <code>a[0] = 2.7</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05ea\u05d9\u05d6\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4, \u05db\u05d9 2.7 \u05d0\u05d9\u05e0\u05d5 \u05e9\u05dc\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 NumPy \u05dc\u05d0 \u05d1\u05d5\u05d3\u05e7 \u05d6\u05d0\u05ea \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9\u05ea."}, {"answer": "a[0] \u05d9\u05d4\u05e4\u05d5\u05da \u05dc-2, \u05d1\u05dc\u05d9 \u05d0\u05d6\u05d4\u05e8\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05de\u05e2\u05e8\u05da int \u05d7\u05d5\u05ea\u05da \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05d1\u05e8\u05d9\u05d9\u05dd \u05d1\u05e9\u05e7\u05d8 \u05d1\u05d6\u05de\u05df \u05d4\u05d4\u05e9\u05de\u05d4."}, {"answer": "\u05db\u05dc \u05d4\u05de\u05e2\u05e8\u05da \u05d9\u05d4\u05e4\u05d5\u05da \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9\u05ea \u05dc\u05d8\u05d9\u05e4\u05d5\u05e1 float", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d8\u05d9\u05e4\u05d5\u05e1 \u05e9\u05dc \u05d4\u05de\u05e2\u05e8\u05da \u05e0\u05e7\u05d1\u05e2 \u05d1\u05d9\u05e6\u05d9\u05e8\u05d4 \u05d5\u05dc\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4 \u05d1\u05d4\u05e9\u05de\u05d4 \u05d1\u05d5\u05d3\u05d3\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1967,8 +1967,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("cNCRluPgZzBD")) {
-    show_questions(questionscNCRluPgZzBD, cNCRluPgZzBD);
+  if (document.getElementById("RxMjCkqPmweC")) {
+    show_questions(questionsRxMjCkqPmweC, RxMjCkqPmweC);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2044,7 +2044,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.2. </span>7.2 — יצירת מערכים: array, zeros, ones, arange, linspace</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>יצירת מערכים: array, zeros, ones, arange, linspace</p>
       </div>
     </a>
     <a class="right-next"
@@ -2052,7 +2052,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7.4. </span>7.4 — אינדוקס ופריסה בציר אחד</p>
+        <p class="prev-next-title"><span class="section-number">7.4. </span>אינדוקס ופריסה בציר אחד</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
