@@ -266,7 +266,7 @@
 <li class="toctree-l2"><a class="reference internal" href="7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_9_scipy_constants.html">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_10_common_bugs.html">7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_11_exam_practice.html">7.11. תרגול: שלושת סוגי שאלות המבחן</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_11_exam_practice.html">7.11. תרגול מסכם</a></li>
 </ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib, Probabilities &amp; Histograms</a></li>
@@ -560,6 +560,13 @@ document.write(`
 <p class="admonition-title">Warning</p>
 <p>כל הפונקציות הטריגונומטריות ב-NumPy (<code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">tan</span></code>) מצפות לזווית <strong>ברדיאנים</strong>, לא במעלות. שכחת ההמרה היא אחת מהטעויות הנפוצות ביותר בתרגום נוסחה פיזיקלית לקוד.</p>
 </div>
+<div class="seealso admonition">
+<p class="admonition-title">🎥 כאן נכנס סרטון השבוע</p>
+<p><strong>“ממשוואה לקוד: פעולות איבר-איבר, רדיאנים, שגיאות תרגום”</strong> (כ-6–10 דקות, הקלטת מסך של המחברת עם קול).</p>
+<!-- TODO (למפיק/ה): להחליף תא זה בהטמעת הסרטון בפועל, למשל:
+<iframe width="100%" height="400" src="VIDEO_URL_HERE" title="שבוע 7 — ממשוואה לקוד" frameborder="0" allowfullscreen></iframe>
+-->
+</div>
 <section id="id2">
 <h2><span class="section-number">7.7.1. </span>דוגמה: רכיבי המהירות בזריקה בזווית<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>כדור נזרק בזווית <span class="math notranslate nohighlight">\(\theta\)</span> מעל האופק, במהירות התחלתית <span class="math notranslate nohighlight">\(v_0\)</span>. רכיבי המהירות בזמן <span class="math notranslate nohighlight">\(t\)</span> נתונים על ידי:</p>
@@ -683,8 +690,8 @@ vy[0:5] = [14.14213562 13.12834252 12.11454942 11.10075631 10.08696321]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="NJtsGMYPUPJF" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#NJtsGMYPUPJF {
+<div class="output text_html"><div id="WtaxCWLkyrok" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#WtaxCWLkyrok {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -907,7 +914,7 @@ vy[0:5] = [14.14213562 13.12834252 12.11454942 11.10075631 10.08696321]
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsNJtsGMYPUPJF=[{"question": "\u05de\u05d4 \u05d9\u05d7\u05d6\u05d9\u05e8 <code>np.sin(90)</code> (\u05d1\u05dc\u05d9 \u05d4\u05de\u05e8\u05d4 \u05dc\u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd)?", "type": "multiple_choice", "answers": [{"answer": "1.0, \u05db\u05de\u05d5 sin(90\u00b0)", "correct": false, "feedback": "\u05dc\u05d0 \u2014 NumPy \u05de\u05e4\u05e8\u05e9 \u05d0\u05ea 90 \u05db-90 \u05e8\u05d3\u05d9\u05d0\u05df, \u05dc\u05d0 90 \u05de\u05e2\u05dc\u05d5\u05ea."}, {"answer": "\u05e2\u05e8\u05da \u05db\u05dc\u05e9\u05d4\u05d5 \u05d1\u05d9\u05df -1 \u05dc-1, \u05e9\u05d0\u05d9\u05e0\u05d5 1.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: sin(90 \u05e8\u05d3\u05d9\u05d0\u05df) \u2248 0.894, \u05db\u05d9 90 \u05e8\u05d3\u05d9\u05d0\u05df \u05d4\u05df \u05d6\u05d5\u05d5\u05d9\u05ea \u05e2\u05e0\u05e7\u05d9\u05ea (\u05d4\u05e8\u05d1\u05d4 \u05e1\u05d9\u05d1\u05d5\u05d1\u05d9\u05dd \u05de\u05dc\u05d0\u05d9\u05dd)."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05ea \u05e8\u05d9\u05e6\u05d4, \u05db\u05d9 90 \u05d2\u05d3\u05d5\u05dc \u05de\u05d3\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 sin \u05de\u05d5\u05d2\u05d3\u05e8\u05ea \u05dc\u05db\u05dc \u05de\u05e1\u05e4\u05e8 \u05de\u05de\u05e9\u05d9, \u05d0\u05d9\u05df \u05e9\u05d2\u05d9\u05d0\u05d4."}]}, {"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df \u05de\u05e2\u05e8\u05da <code>a = np.array([1, 4, 9])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>np.sqrt(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3 \u2014 \u05e9\u05d5\u05e8\u05e9 \u05d4\u05e1\u05db\u05d5\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 sqrt \u05d4\u05d5\u05d0 ufunc, \u05e4\u05d5\u05e2\u05dc \u05e2\u05dc \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d1\u05e0\u05e4\u05e8\u05d3."}, {"answer": "\u05de\u05e2\u05e8\u05da [1, 2, 3]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e9\u05d5\u05e8\u05e9 \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d1\u05e0\u05e4\u05e8\u05d3."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4, \u05db\u05d9 sqrt \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc \u05de\u05e2\u05e8\u05db\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05de\u05d8\u05e8\u05d4 \u05e9\u05dc ufuncs."}]}];
+</style></div><script type="application/javascript">var questionsWtaxCWLkyrok=[{"question": "\u05de\u05d4 \u05d9\u05d7\u05d6\u05d9\u05e8 <code>np.sin(90)</code> (\u05d1\u05dc\u05d9 \u05d4\u05de\u05e8\u05d4 \u05dc\u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd)?", "type": "multiple_choice", "answers": [{"answer": "1.0, \u05db\u05de\u05d5 sin(90\u00b0)", "correct": false, "feedback": "\u05dc\u05d0 \u2014 NumPy \u05de\u05e4\u05e8\u05e9 \u05d0\u05ea 90 \u05db-90 \u05e8\u05d3\u05d9\u05d0\u05df, \u05dc\u05d0 90 \u05de\u05e2\u05dc\u05d5\u05ea."}, {"answer": "\u05e2\u05e8\u05da \u05db\u05dc\u05e9\u05d4\u05d5 \u05d1\u05d9\u05df -1 \u05dc-1, \u05e9\u05d0\u05d9\u05e0\u05d5 1.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: sin(90 \u05e8\u05d3\u05d9\u05d0\u05df) \u2248 0.894, \u05db\u05d9 90 \u05e8\u05d3\u05d9\u05d0\u05df \u05d4\u05df \u05d6\u05d5\u05d5\u05d9\u05ea \u05e2\u05e0\u05e7\u05d9\u05ea (\u05d4\u05e8\u05d1\u05d4 \u05e1\u05d9\u05d1\u05d5\u05d1\u05d9\u05dd \u05de\u05dc\u05d0\u05d9\u05dd)."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05ea \u05e8\u05d9\u05e6\u05d4, \u05db\u05d9 90 \u05d2\u05d3\u05d5\u05dc \u05de\u05d3\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 sin \u05de\u05d5\u05d2\u05d3\u05e8\u05ea \u05dc\u05db\u05dc \u05de\u05e1\u05e4\u05e8 \u05de\u05de\u05e9\u05d9, \u05d0\u05d9\u05df \u05e9\u05d2\u05d9\u05d0\u05d4."}]}, {"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df \u05de\u05e2\u05e8\u05da <code>a = np.array([1, 4, 9])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>np.sqrt(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3 \u2014 \u05e9\u05d5\u05e8\u05e9 \u05d4\u05e1\u05db\u05d5\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 sqrt \u05d4\u05d5\u05d0 ufunc, \u05e4\u05d5\u05e2\u05dc \u05e2\u05dc \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d1\u05e0\u05e4\u05e8\u05d3."}, {"answer": "\u05de\u05e2\u05e8\u05da [1, 2, 3]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e9\u05d5\u05e8\u05e9 \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d1\u05e0\u05e4\u05e8\u05d3."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4, \u05db\u05d9 sqrt \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc \u05de\u05e2\u05e8\u05db\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05de\u05d8\u05e8\u05d4 \u05e9\u05dc ufuncs."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1969,8 +1976,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("NJtsGMYPUPJF")) {
-    show_questions(questionsNJtsGMYPUPJF, NJtsGMYPUPJF);
+  if (document.getElementById("WtaxCWLkyrok")) {
+    show_questions(questionsWtaxCWLkyrok, WtaxCWLkyrok);
   } else {
     setTimeout(try_show, 200);
   }
