@@ -130,99 +130,134 @@ parts:
       - file: course/weeks/week_7
         title: "שבוע 7 — Numpy"
         sections:
-          - file: course/weeks/week_7/7_0_intro_libs
-            title: "Intro: Setup & NumPy"
-          - file: course/weeks/week_7/7_1_arrays
-            title: "Arrays"
-          - file: course/weeks/week_7/7_2_arrays_indexing
-            title: "Arrays — Indexing"
-          - file: course/weeks/week_7/7_3_datatypes
-            title: "Datatypes"
-          - file: course/weeks/week_7/7_4_array_math
-            title: "Array Math"
-          - file: course/weeks/week_7/7_5_broadcasting
-            title: "Broadcasting"
+          - file: course/weeks/week_7/7_1_vectorization
+            title: "מרשימה למערך: וקטוריזציה"
+          - file: course/weeks/week_7/7_2_creating_arrays
+            title: "יצירת מערכים: array, zeros, ones, arange, linspace"
+          - file: course/weeks/week_7/7_3_array_properties
+            title: "תכונות מערך: shape, ndim, size, dtype וטיפוסים"
+          - file: course/weeks/week_7/7_4_indexing_slicing
+            title: "אינדוקס ופריסה בציר אחד"
+          - file: course/weeks/week_7/7_5_views_vs_copies
+            title: "views מול copies"
+          - file: course/weeks/week_7/7_6_sort_argsort
+            title: "sort ו-argsort"
+          - file: course/weeks/week_7/7_7_arithmetic_ufuncs
+            title: "פעולות חשבון על מערכים: איבר-איבר, פונקציות מתמטיות וסקלר מול מערך"
+          - file: course/weeks/week_7/7_8_boolean_masks
+            title: "השוואות ומסכות בוליאניות, where, any, all"
+          - file: course/weeks/week_7/7_9_scipy_constants
+            title: "קבועים פיזיקליים ויחידות (scipy.constants)"
+          - file: course/weeks/week_7/7_10_common_bugs
+            title: "שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות"
+          - file: course/weeks/week_7/7_11_exam_practice
+            title: "תרגול מסכם"
 
       - file: course/weeks/week_8
-        title: "שבוע 8 — Matplotlib, Probabilities & Histograms"
+        title: "שבוע 8 — Matplotlib: לראות את התוצאה"
         sections:
-          - file: course/weeks/week_8/8_1_matplotlib
-            title: "Matplotlib — Basics"
-          - file: course/weeks/week_8/8_2_example_matplotlib
-            title: "דוגמה מסכמת — Matplotlib"
-          - file: course/weeks/week_8/8_3_prob_hists
-            title: "Probabilities & Histograms"
+          - file: course/weeks/week_8/8_1_figure_axes
+            title: "figure ו-axes — המודל המנטלי"
+          - file: course/weeks/week_8/8_2_plot_scatter
+            title: "plot ו-scatter: קווים, נקודות וסגנון"
+          - file: course/weeks/week_8/8_3_axes_labels_units
+            title: "צירים, תוויות ויחידות"
+          - file: course/weeks/week_8/8_4_legend_ticks_text
+            title: "תיוג הגרף: legend, גבולות וסימוני ציר, טקסט וחצים"
+          - file: course/weeks/week_8/8_5_multiple_curves
+            title: "כמה עקומות באותו גרף"
+          - file: course/weeks/week_8/8_6_subplots
+            title: "subplots"
+          - file: course/weeks/week_8/8_7_log_scales
+            title: "סקאלות לוגריתמיות — ומתי משתמשים בהן"
+          - file: course/weeks/week_8/8_8_histogram
+            title: "היסטוגרמה: bins, density"
+          - file: course/weeks/week_8/8_9_errorbar
+            title: "errorbar — נקודות עם שגיאות"
+          - file: course/weeks/week_8/8_10_savefig
+            title: "שמירה לדוח: savefig, dpi, פורמט"
+          - file: course/weeks/week_8/8_11_practice
+            title: "תרגול מסכם"
 
       - file: course/weeks/week_9
-        title: "שבוע 9 — Numpy מתקדם"
+        title: "שבוע 9 — NumPy מתקדם ואינטגרציה"
         sections:
-          - file: course/weeks/week_9/9_1_matrix_operations
-            title: "פעולות מטריציוניות מתקדמות"
-          - file: course/weeks/week_9/9_2_linear_system
-            title: "פתרון מערכות ליניאריות"
-          - file: course/weeks/week_9/9_3_eigen_values
-            title: "ערכים ווקטורים עצמיים"
-          - file: course/weeks/week_9/9_4_SVD
-            title: "SVD"
-          - file: course/weeks/week_9/9_7_exercises
-            title: "תרגול עצמי"
-          - file: course/weeks/week_9/9_5_example_image_SVD
-            title: "תרגול: דחיסת תמונה באמצעות SVD"
-          - file: course/weeks/week_9/9_6_example_PI_MC
-            title: "תרגול: הערכת π בשיטת מונטה־קרלו"
+          - file: course/weeks/week_9/9_1_multidim_arrays
+            title: "מבנה נתונים רב-ממדי: דו-ממד ותלת-ממד"
+          - file: course/weeks/week_9/9_2_axis_indexing
+            title: "פריסה לפי צירים"
+          - file: course/weeks/week_9/9_3_reshape_transpose
+            title: "reshape ו-transpose"
+          - file: course/weeks/week_9/9_4_stack_concatenate
+            title: "stack ו-concatenate — לאחד ריצות"
+          - file: course/weeks/week_9/9_5_broadcasting
+            title: "התאמת צירים בין שני מערכים (Broadcasting)"
+          - file: course/weeks/week_9/9_6_none_meshgrid
+            title: "None ו-meshgrid"
+          - file: course/weeks/week_9/9_7_axis_reductions
+            title: "צמצום לפי ציר"
+          - file: course/weeks/week_9/9_8_diff_cumsum
+            title: "diff ו-cumsum — נגזרת וסכום מצטבר"
+          - file: course/weeks/week_9/9_9_trapezoid_quad
+            title: "אינטגרציה: trapezoid ו-quad"
+          - file: course/weeks/week_9/9_10_recurrence_loop
+            title: "יחס נסיגה ולולאת עדכון"
+          - file: course/weeks/week_9/9_11_practice
+            title: "תרגול מסכם"
 
       - file: course/weeks/week_10
-        title: "שבוע 10 — SciPy ומבוא לPandas"
+        title: "שבוע 10 — pandas (לקריאה)"
         sections:
-          - file: course/weeks/week_10/10_1_physical_consts
-            title: "קבועים פיזיקליים ויחידות"
-          - file: course/weeks/week_10/10_2_integration
-            title: "אינטגרציה נומרית"
-          - file: course/weeks/week_10/10_3_optimization
-            title: "אופטימיזציה"
-          - file: course/weeks/week_11/11_0_intro
-            title: "מבוא לעבודה עם Pandas"
-          - file: course/weeks/week_11/11_1_data_structures
-            title: "Series ו־DataFrame"
-          - file: course/weeks/week_11/11_2_io
-            title: "טעינה וכתיבה של נתונים (I/O)"
-          - file: course/weeks/week_10/10_5_example_MB.ipynb
-            title: "תרגול: התפלגות Maxwell-Boltzmann" 
+          - file: course/weeks/week_10/10_1_why_pandas
+            title: "למה pandas — טבלה מול מערך"
+          - file: course/weeks/week_10/10_2_dataframe_series
+            title: "DataFrame ו-Series"
+          - file: course/weeks/week_10/10_3_read_csv
+            title: "read_csv"
+          - file: course/weeks/week_10/10_4_selection_filtering
+            title: "בחירה, סינון ומיון"
+          - file: course/weeks/week_10/10_5_groupby
+            title: "groupby(...).mean()"
+          - file: course/weeks/week_10/10_6_describe
+            title: "describe"
+          - file: course/weeks/week_10/10_7_to_numpy
+            title: "מעבר ל-NumPy: to_numpy()"
+          - file: course/weeks/week_10/10_8_reading_agent_code
+            title: "קריאת קוד pandas שכתב אייג'נט"
+          - file: course/weeks/week_10/10_9_practice
+            title: "תרגול"
 
       - file: course/weeks/week_11
-        title: "שבוע 11 — Pandas מתקדם"
+        title: "שבוע 11 — סטטיסטיקה והתאמת קווים: שיא הקורס"
         sections:
-          - file: course/weeks/week_11/11_3_indexing_select_filter
-            title: "מיון, סינון ואינדוקס נתונים"
-          - file: course/weeks/week_11/11_4_cleaning_type_handling
-            title: "ניקוי נתונים וטיפוסים"
-          - file: course/weeks/week_11/11_5_vector_transform
-            title: "טרנספורמציות ווקטוריות"
-          - file: course/weeks/week_11/11_6_grouping_aggregation
-            title: "קיבוץ וצבירה"
-          - file: course/weeks/week_11/11_7_reshaping_dataframes
-            title: "Reshaping DataFrames"
-          - file: course/weeks/week_11/11_8_merging_joining
-            title: "Merging & Joining"
-          - file: course/weeks/week_11/11_9_time_series
-            title: "Time Series"
-          - file: course/weeks/week_11/11_10_exploration_quick_plots
-            title: "Exploration & Quick Plots"
+          - file: course/weeks/week_11/11_1_clean_data
+            title: "מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים"
+          - file: course/weeks/week_11/11_2_mean_std_sem
+            title: "ממוצע, סטיית תקן ושגיאת הממוצע — ולמה 1/√N"
+          - file: course/weeks/week_11/11_3_measurement_noise
+            title: "רעש מדידה: default_rng ו-normal"
+          - file: course/weeks/week_11/11_4_stats_per_run
+            title: "סטטיסטיקה לכל ריצה: groupby מול צמצום לפי ציר"
+          - file: course/weeks/week_11/11_5_error_propagation
+            title: "הולכת שגיאות: אנליטית ומונטה-קרלו"
+          - file: course/weeks/week_11/11_6_linear_fit
+            title: "התאמה ליניארית: מהנוסחה לקוד"
+          - file: course/weeks/week_11/11_7_fit_errors_residuals
+            title: "תוצרי ההתאמה: שגיאות המקדמים ושאריות"
+          - file: course/weeks/week_11/11_8_chi2_r2
+            title: "טיב ההתאמה: חי בריבוע ו-R בריבוע"
+          - file: course/weeks/week_11/11_9_weighted_fit
+            title: "התאמה משוקללת"
+          - file: course/weeks/week_11/11_10_outlier_influence
+            title: "השפעת נקודה חריגה"
+          - file: course/weeks/week_11/11_11_linearization
+            title: "לינאריזציה: דעיכה מעריכית דרך ln"
+          - file: course/weeks/week_11/11_12_model_comparison
+            title: "השוואה בין שני מודלים"
+          - file: course/weeks/week_11/11_13_final_report_figure
+            title: "נתונים מול מודל — הגרף המלא, savetxt"
+          - file: course/weeks/week_11/11_14_practice
+            title: "תרגול מסכם"
 
       - file: course/weeks/week_12
         title: "שבוע 12 — OOP & Unittesting"
-        sections:
-          - file: vendor/virtual-pyprog/17_0_oop-intro
-            title: "מבוא ל־OOP"
-          - file: vendor/virtual-pyprog/17_1_oop-implementation
-            title: "מימוש עקרונות OOP"
-          - file: course/weeks/week_12/12_1_unittesting_intro
-            title: "מבוא ל־Unit Testing"
-          - file: course/weeks/week_12/12_2_setup_teardown_edges
-            title: "setUp/tearDown ושוליים"
-          - file: course/weeks/week_12/12_3_unittesting_oop
-            title: "בדיקות ל־OOP"
-          - file: course/weeks/week_12/12_4_physicsl_unittesting
-            title: "בדיקות לקוד נומרי בפיזיקה"
-          - file: course/weeks/week_12/12_5_Pandas_tutorial
-            title: "תרגול מסכם"

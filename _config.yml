@@ -10,7 +10,49 @@ logo: _static/tau.png
 execute:
   execute_notebooks: force
 
-# exclude_patterns:
+# Vendored virtual-pyprog notebooks not referenced by any chapter in _toc.yml.
+# sphinx-external-toc errors on orphaned docs, so they must be excluded from the build.
+exclude_patterns:
+  - drafts/**
+  - vendor/virtual-pyprog/14_0_questions-from-exams.ipynb
+  - vendor/virtual-pyprog/15_0_algorithms-intro.ipynb
+  - vendor/virtual-pyprog/15_1_search.ipynb
+  - vendor/virtual-pyprog/15_2_sort.ipynb
+  - vendor/virtual-pyprog/16_0_recursion-intro.ipynb
+  - vendor/virtual-pyprog/16_1_basic-exercises.ipynb
+  - vendor/virtual-pyprog/16_2_merge-sort.ipynb
+  - vendor/virtual-pyprog/16_3_knapsack.ipynb
+  - vendor/virtual-pyprog/16_4_lcs.ipynb
+  - vendor/virtual-pyprog/16_5_questions-from-exams.ipynb
+  - vendor/virtual-pyprog/17_0_oop-intro.ipynb
+  - vendor/virtual-pyprog/17_1_oop-implementation.ipynb
+  - vendor/virtual-pyprog/17_2_magic-methods.ipynb
+  - vendor/virtual-pyprog/17_3_operator-overload.ipynb
+  - vendor/virtual-pyprog/17_4_questions-from-exams.ipynb
+  - vendor/virtual-pyprog/18_0_numpy-intro.ipynb
+  - vendor/virtual-pyprog/18_1_create-array.ipynb
+  - vendor/virtual-pyprog/18_1_image-representation.ipynb
+  - vendor/virtual-pyprog/18_2_basic-operations.ipynb
+  - vendor/virtual-pyprog/18_3_image-processing.ipynb
+  - vendor/virtual-pyprog/18_4_common-functions.ipynb
+  - vendor/virtual-pyprog/18_5_questions-from-exams.ipynb
+  - vendor/virtual-pyprog/19_10_common-functions.ipynb
+  - vendor/virtual-pyprog/19_11_questions-from-exams.ipynb
+  - vendor/virtual-pyprog/19_1_pandas-intro.ipynb
+  - vendor/virtual-pyprog/19_2_create-df.ipynb
+  - vendor/virtual-pyprog/19_3_access-df.ipynb
+  - vendor/virtual-pyprog/19_4_basic_editing.ipynb
+  - vendor/virtual-pyprog/19_5_advanced_editing.ipynb
+  - vendor/virtual-pyprog/19_6_combine_dfs.ipynb
+  - vendor/virtual-pyprog/19_7_basic-quering.ipynb
+  - vendor/virtual-pyprog/19_8_advanced-quering-groupby.ipynb
+  - vendor/virtual-pyprog/19_9_data-visualization.ipynb
+  - vendor/virtual-pyprog/9_0_intro-complexity.ipynb
+  - vendor/virtual-pyprog/gale_shapely.ipynb
+  - vendor/virtual-pyprog/intro.md
+  - vendor/virtual-pyprog/lec6.ipynb
+  - vendor/virtual-pyprog/lec7.ipynb
+  - vendor/virtual-pyprog/lec8.ipynb
 
 # sphinx:
 #   extra_extensions:
