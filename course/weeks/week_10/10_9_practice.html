@@ -1,0 +1,960 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>10.11. 10.9 — תרגול &#8212; Computers For physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_9_practice';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="11. שבוע 11 — סטטיסטיקה והתאמת קווים: שיא הקורס" href="../week_11.html" />
+    <link rel="prev" title="10.10. 10.8 — קריאת קוד pandas: קוד שכתב אייג’נט ובאגים אופייניים" href="10_8_reading_agent_code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
+    <script>document.write(`<img src="../../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_1.html">1. שבוע 1 — טיפוסים ותנאים</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_0_objectives.html">1.1. מבוא</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_1_hardware-to-software.html">1.2. חומרה, תוכנה והשיטה הבינארית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_2_python.html">1.3. שפת התכנות פייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/0_3_variables-and-assignments.html">1.4. משתנים והשמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_0_intro_types.html">1.5. מבוא לטיפוסים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_1_numerical_types.html">1.6. טיפוסים נומריים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_2_booleans.html">1.7. משתנים בוליאניים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_3_strings.html">1.8. מחרוזות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/1_4_conversion.html">1.9. המרות בין טיפוסים</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_0_intro-conditions.html">2.1. מבוא לתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_1_if-else-statements.html">2.2. משפטי תנאי בסיסיים: <code class="docutils literal notranslate"><span class="pre">if</span></code> ו<code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_2_nested-ifs.html">2.5. תנאים מקוננים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_3_elif.html">2.6. elif ותנאים מרובים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_4_logical-operators-in-ifs.html">2.7. אופרטורים לוגיים בתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_0_intro-functions.html">2.8. מבוא לפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.9. פונקציות מובנות בפייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.10. בניית פונקציות משלכם</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.11. פרמטרים וארגומנטים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.12. קריאה הדדית בין פונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.13. דוגמאות מתקדמות</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_0_intro-list.html">3.1. מבוא לרשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_1_list-operators-indices.html">3.2. רשימות: אופרטורים בסיסיים ואינדקסים</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_2_built-in-functions-in-list.html">3.4. פונקציות מובנות לרשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_3_list-methods.html">3.5. מתודות של רשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_4_nested_lists.html">3.6. רשימות מקוננות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_5_list-examples.html">3.7. דוגמאות מעשיות</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/5_0_intro-loops.html">4.1. מבוא ללולאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_0_for_loops.html">4.2. לולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_1_ranges-and-for.html">4.3. range ולולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_2_for-examples.html">4.4. דוגמאות ל־for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_3_for-summary.html">4.5. סיכום לולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_0_while_loops.html">4.6. לולאות while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_1_while-examples.html">4.7. דוגמאות ל־while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_0_while_vs_for.html">4.8. while לעומת for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_1_break_and_continue.html">4.9. break ו־continue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_2_nested_loops.html">4.10. לולאות מקוננות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_3_list-comprehensions.html">4.11. List Comprehensions</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/10_0_mutable-vs-immutable.html">5.1. Mutable vs Immutable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/10_1_memory-in-functions.html">5.2. זיכרון והתנהגות בפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/11_0_advanced_function_usage.html">5.3. שימושים מתקדמים בפונקציות</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/12_0_data_structures.html">6.1. מבני נתונים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/12_1_tuples.html">6.2. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/12_2_dicts.html">6.3. מילונים (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/13_0_string-formats.html">6.5. עיצוב מחרוזות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/13_1_files.html">6.6. קריאה וכתיבה לקבצים</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_7.html">7. שבוע 7 — Numpy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_1_vectorization.html">7.1. מרשימה למערך: וקטוריזציה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_2_creating_arrays.html">7.2. יצירת מערכים: array, zeros, ones, arange, linspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_3_array_properties.html">7.3. תכונות מערך: shape, ndim, size, dtype וטיפוסים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_4_indexing_slicing.html">7.4. אינדוקס ופריסה בציר אחד</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_5_views_vs_copies.html">7.5. views מול copies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_6_sort_argsort.html">7.6. sort ו-argsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_7_arithmetic_ufuncs.html">7.7. פעולות חשבון על מערכים: איבר-איבר, פונקציות מתמטיות וסקלר מול מערך</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_9_scipy_constants.html">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_10_common_bugs.html">7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_11_exam_practice.html">7.11. תרגול מסכם</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_8.html">8. שבוע 8 — Matplotlib: לראות את התוצאה</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_1_figure_axes.html">8.2. figure ו-axes — המודל המנטלי</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_2_plot_scatter.html">8.3. plot ו-scatter: קווים, נקודות וסגנון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_3_axes_labels_units.html">8.4. צירים, תוויות ויחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_4_legend_ticks_text.html">8.5. תיוג הגרף: legend, גבולות וסימוני ציר, טקסט וחצים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_5_multiple_curves.html">8.6. כמה עקומות באותו גרף</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_6_subplots.html">8.7. subplots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_7_log_scales.html">8.8. סקאלות לוגריתמיות — ומתי משתמשים בהן</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_8_histogram.html">8.9. היסטוגרמה: bins, density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_9_errorbar.html">8.10. errorbar — נקודות עם שגיאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_10_savefig.html">8.11. שמירה לדוח: savefig, dpi, פורמט</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_8/8_11_practice.html">8.12. תרגול מסכם</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_9.html">9. שבוע 9 — NumPy מתקדם ואינטגרציה</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_1_multidim_arrays.html">9.2. מבנה נתונים רב-ממדי: דו-ממד ותלת-ממד</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_2_axis_indexing.html">9.3. פריסה לפי צירים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.4. reshape ו-transpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.5. stack ו-concatenate — לאחד ריצות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.6. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.7. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.8. צמצום לפי ציר</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.9. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.10. אינטגרציה: trapezoid ו-quad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_10_recurrence_loop.html">9.11. יחס נסיגה ולולאת עדכון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_11_practice.html">9.12. תרגול מסכם</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — pandas (לקריאה)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="10_1_why_pandas.html">10.3. למה pandas — טבלה מול מערך</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_2_dataframe_series.html">10.4. DataFrame ו-Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_3_read_csv.html">10.5. read_csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_4_selection_filtering.html">10.6. בחירה, סינון ומיון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_5_groupby.html">10.7. groupby(...).mean()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_6_describe.html">10.8. describe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_7_to_numpy.html">10.9. מעבר ל-NumPy: to_numpy()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_8_reading_agent_code.html">10.10. קריאת קוד pandas שכתב אייג'נט</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.11. תרגול</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_11.html">11. שבוע 11 — סטטיסטיקה והתאמת קווים: שיא הקורס</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_1_clean_data.html">11.4. מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_2_mean_std_sem.html">11.5. ממוצע, סטיית תקן ושגיאת הממוצע — ולמה 1/√N</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_3_measurement_noise.html">11.6. רעש מדידה: default_rng ו-normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_4_stats_per_run.html">11.7. סטטיסטיקה לכל ריצה: groupby מול צמצום לפי ציר</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_5_error_propagation.html">11.8. הולכת שגיאות: אנליטית ומונטה-קרלו</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_6_linear_fit.html">11.9. התאמה ליניארית: מהנוסחה לקוד</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_7_fit_errors_residuals.html">11.10. תוצרי ההתאמה: שגיאות המקדמים ושאריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_8_chi2_r2.html">11.11. טיב ההתאמה: חי בריבוע ו-R בריבוע</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_9_weighted_fit.html">11.12. התאמה משוקללת</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_10_outlier_influence.html">11.13. השפעת נקודה חריגה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_11_linearization.html">11.14. לינאריזציה: דעיכה מעריכית דרך ln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_12_model_comparison.html">11.15. השוואה בין שני מודלים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_13_final_report_figure.html">11.16. נתונים מול מודל — הגרף המלא, savetxt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_11/11_14_practice.html">11.17. תרגול מסכם</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../week_12.html">12. שבוע 12 — OOP &amp; Unittesting</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/course/weeks/week_10/10_9_practice.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/course/weeks/week_10/10_9_practice.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/CFS" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_10/10_9_practice.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/course/weeks/week_10/10_9_practice.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>10.9 — תרגול</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="id1">
+<h1><span class="section-number">10.11. </span>10.9 — תרגול<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>בלי להריץ, תארו במילים מה מחשב הקוד הבא, וכמה שורות תהיה לתוצאה <code class="docutils literal notranslate"><span class="pre">result</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;launch_log.csv&quot;</span><span class="p">)</span>
+
+<span class="n">fast_runs</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;v0_measured&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;v0_measured&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">fast_runs</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;angle_deg&quot;</span><span class="p">)[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File &quot;/opt/anaconda3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/opt/anaconda3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
+    exec(code, run_globals)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
+    app.launch_new_instance()
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
+    app.start()
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
+    self.io_loop.start()
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
+    self.asyncio_loop.run_forever()
+  File &quot;/opt/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
+    self._run_once()
+  File &quot;/opt/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
+    handle._run()
+  File &quot;/opt/anaconda3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 471, in dispatch_queue
+    await self.process_one()
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 460, in process_one
+    await dispatch(*args)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 367, in dispatch_shell
+    await result
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 662, in execute_request
+    reply_content = await reply_content
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 360, in do_execute
+    res = shell.run_cell(code, store_history=store_history, silent=silent)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2863, in run_cell
+    result = self._run_cell(
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2909, in _run_cell
+    return runner(coro)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
+    coro.send(None)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3106, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3309, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3369, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;/tmp/ipykernel_2435412/460924429.py&quot;, line 1, in &lt;cell line: 1&gt;
+    import pandas as pd
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/__init__.py&quot;, line 49, in &lt;module&gt;
+    from pandas.core.api import (
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/api.py&quot;, line 28, in &lt;module&gt;
+    from pandas.core.arrays import Categorical
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/arrays/__init__.py&quot;, line 1, in &lt;module&gt;
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/arrays/arrow/__init__.py&quot;, line 5, in &lt;module&gt;
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/arrays/arrow/array.py&quot;, line 53, in &lt;module&gt;
+    from pandas.core import (
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/ops/__init__.py&quot;, line 8, in &lt;module&gt;
+    from pandas.core.ops.array_ops import (
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/ops/array_ops.py&quot;, line 56, in &lt;module&gt;
+    from pandas.core.computation import expressions
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/computation/expressions.py&quot;, line 21, in &lt;module&gt;
+    from pandas.core.computation.check import NUMEXPR_INSTALLED
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/computation/check.py&quot;, line 5, in &lt;module&gt;
+    ne = import_optional_dependency(&quot;numexpr&quot;, errors=&quot;warn&quot;)
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/compat/_optional.py&quot;, line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File &quot;/opt/anaconda3/lib/python3.9/importlib/__init__.py&quot;, line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/numexpr/__init__.py&quot;, line 24, in &lt;module&gt;
+    from numexpr.interpreter import MAX_THREADS, use_vml, __BLOCK_SIZE1__
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span>: _ARRAY_API not found
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File &quot;/opt/anaconda3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/opt/anaconda3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
+    exec(code, run_globals)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
+    app.launch_new_instance()
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
+    app.start()
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
+    self.io_loop.start()
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
+    self.asyncio_loop.run_forever()
+  File &quot;/opt/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
+    self._run_once()
+  File &quot;/opt/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
+    handle._run()
+  File &quot;/opt/anaconda3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 471, in dispatch_queue
+    await self.process_one()
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 460, in process_one
+    await dispatch(*args)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 367, in dispatch_shell
+    await result
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 662, in execute_request
+    reply_content = await reply_content
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 360, in do_execute
+    res = shell.run_cell(code, store_history=store_history, silent=silent)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2863, in run_cell
+    result = self._run_cell(
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2909, in _run_cell
+    return runner(coro)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
+    coro.send(None)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3106, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3309, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3369, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;/tmp/ipykernel_2435412/460924429.py&quot;, line 1, in &lt;cell line: 1&gt;
+    import pandas as pd
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/__init__.py&quot;, line 49, in &lt;module&gt;
+    from pandas.core.api import (
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/api.py&quot;, line 28, in &lt;module&gt;
+    from pandas.core.arrays import Categorical
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/arrays/__init__.py&quot;, line 1, in &lt;module&gt;
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/arrays/arrow/__init__.py&quot;, line 5, in &lt;module&gt;
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/arrays/arrow/array.py&quot;, line 67, in &lt;module&gt;
+    from pandas.core.arrays.masked import BaseMaskedArray
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/arrays/masked.py&quot;, line 61, in &lt;module&gt;
+    from pandas.core import (
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/core/nanops.py&quot;, line 52, in &lt;module&gt;
+    bn = import_optional_dependency(&quot;bottleneck&quot;, errors=&quot;warn&quot;)
+  File &quot;/home/yaminbsh/.local/lib/python3.9/site-packages/pandas/compat/_optional.py&quot;, line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File &quot;/opt/anaconda3/lib/python3.9/importlib/__init__.py&quot;, line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File &quot;/opt/anaconda3/lib/python3.9/site-packages/bottleneck/__init__.py&quot;, line 7, in &lt;module&gt;
+    from .move import (move_argmax, move_argmin, move_max, move_mean, move_median,
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span>: _ARRAY_API not found
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<p>השורה הראשונה מסננת רק ריצות שבהן <code class="docutils literal notranslate"><span class="pre">v0_measured</span></code> היה <strong>מעל הממוצע הכללי</strong> של כל 30 הריצות (לא ממוצע לפי זווית — ממוצע אחד, גלובלי, על כל הטבלה). השורה השנייה מקבצת את הריצות שנשארו לפי <code class="docutils literal notranslate"><span class="pre">angle_deg</span></code>, ומחשבת לכל קבוצה גם ממוצע וגם מונה (<code class="docutils literal notranslate"><span class="pre">count</span></code>) של <code class="docutils literal notranslate"><span class="pre">range_measured</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">result</span></code> היא <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> עם <strong>עמודה אחת לכל סטטיסטיקה</strong> (<code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>) ו<strong>שורה אחת לכל זווית שנותרה</strong> בנתונים המסוננים — לא בהכרח כל חמש הזוויות, כי ייתכן שבזווית מסוימת אף ריצה לא עברה את סף המהירות הממוצעת (במקרה כזה, הזווית הזו פשוט לא תופיע בתוצאה).</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>הקוד הבא נועד להוסיף לטבלה עמודה חדשה <code class="docutils literal notranslate"><span class="pre">above_mean</span></code>, שמסמנת אילו ריצות היה בהן טווח מעל הממוצע. יש בו באג — אתרו ותקנו:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;launch_log.csv&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df2</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">():</span>
+        <span class="n">is_above</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">is_above</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">df2</span><span class="p">[</span><span class="s2">&quot;above_mean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">is_above</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;above_mean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<p>המשתנה <code class="docutils literal notranslate"><span class="pre">is_above</span></code> מחושב <strong>מחדש בכל איטרציה של הלולאה</strong>, ונשמר עם הערך של השורה <strong>האחרונה בלבד</strong>. אחרי סיום הלולאה, <code class="docutils literal notranslate"><span class="pre">df2[&quot;above_mean&quot;]</span> <span class="pre">=</span> <span class="pre">is_above</span></code> משייך לכל 30 השורות <strong>את אותו ערך בודד</strong> — לא ערך שונה לכל שורה. הקוד רץ בלי שגיאה, אבל התוצאה חסרת משמעות: <code class="docutils literal notranslate"><span class="pre">unique()</span></code> יראה רק ערך אחד (<code class="docutils literal notranslate"><span class="pre">True</span></code> או <code class="docutils literal notranslate"><span class="pre">False</span></code>), לא שניהם.</p>
+<p>הפתרון הנכון: לוותר על הלולאה ולהשתמש בהשוואה וקטורית ישירה על כל העמודה בבת אחת (בדיוק כמו מסכה בוליאנית מסעיף 7.8 / 10.4):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;launch_log.csv&quot;</span><span class="p">)</span>
+<span class="n">df2</span><span class="p">[</span><span class="s2">&quot;above_mean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;above_mean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>   <span class="c1"># [True, False] - שני הערכים כצפוי</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>כתבו פונקציה <code class="docutils literal notranslate"><span class="pre">best_angle_by_mean_range(df)</span></code> שמקבלת DataFrame בפורמט של <code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code>, ומחזירה <strong>tuple</strong> של (הזווית עם הטווח הממוצע הגבוה ביותר, ערך הטווח הממוצע הזה).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">best_angle_by_mean_range</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># כתבו כאן</span>
+    <span class="k">pass</span>
+
+<span class="c1"># בדיקה:</span>
+<span class="c1"># best_angle_by_mean_range(pd.read_csv(&quot;launch_log.csv&quot;))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">best_angle_by_mean_range</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">mean_by_angle</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;angle_deg&quot;</span><span class="p">)[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">best_angle</span> <span class="o">=</span> <span class="n">mean_by_angle</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+    <span class="n">best_value</span> <span class="o">=</span> <span class="n">mean_by_angle</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">best_angle</span><span class="p">,</span> <span class="n">best_value</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">best_angle_by_mean_range</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;launch_log.csv&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/CFS",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./course/weeks/week_10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="10_8_reading_agent_code.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10.10. </span>10.8 — קריאת קוד pandas: קוד שכתב אייג’נט ובאגים אופייניים</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../week_11.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>שבוע 11 — סטטיסטיקה והתאמת קווים: שיא הקורס</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
