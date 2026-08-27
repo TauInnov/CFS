@@ -651,15 +651,15 @@ document.write(`
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">theta_theory</span><span class="p">),</span> <span class="n">R_theory</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;תיאוריה&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">,</span> <span class="n">means</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">stds</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&quot;מדידה&quot; ± שגיאה&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;זווית שיגור (מעלות)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;טווח R (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Launch angle (degrees)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Range R (m)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/7d6373bda4ef4a8f56c55b8dcfa07ca6cd719781288e87c4b0868e8f2ad41227.png" src="../../../_images/7d6373bda4ef4a8f56c55b8dcfa07ca6cd719781288e87c4b0868e8f2ad41227.png" />
+<img alt="../../../_images/1cd9f7552e089381317e9823daccf7e6ae7eb087901f4913e56a132ea0b7c0b5.png" src="../../../_images/1cd9f7552e089381317e9823daccf7e6ae7eb087901f4913e56a132ea0b7c0b5.png" />
 </div>
 </div>
 </section>
@@ -684,8 +684,8 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">theta_theory</span><span class="p">),</span> <span class="n">R_theory</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;תיאוריה&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">,</span> <span class="n">means</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">stds</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&quot;מדידה&quot; ± שגיאה&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;זווית שיגור (מעלות)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;טווח R (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Launch angle (degrees)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Range R (m)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -724,8 +724,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="cNFrkGBofVXc" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#cNFrkGBofVXc {
+<div class="output text_html"><div id="zVGlThbLtxaB" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#zVGlThbLtxaB {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -948,7 +948,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionscNFrkGBofVXc=[{"question": "\u05de\u05d4 \u05e2\u05d5\u05e9\u05d4 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8 <code>capsize</code> \u05d1-<code>ax.errorbar</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05e7\u05d5\u05d1\u05e2 \u05d0\u05ea \u05d2\u05d5\u05d3\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05e2\u05e6\u05de\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05dc\u05d2\u05d5\u05d3\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05d9\u05e9 \u05e4\u05e8\u05de\u05d8\u05e8 \u05d0\u05d7\u05e8 (markersize)."}, {"answer": "\u05e7\u05d5\u05d1\u05e2 \u05d0\u05ea \u05d0\u05d5\u05e8\u05da \u05d4'\u05db\u05d5\u05d1\u05e2\u05d9\u05dd' \u05d4\u05e7\u05d8\u05e0\u05d9\u05dd \u05d1\u05e7\u05e6\u05d5\u05ea \u05e7\u05d5\u05d5\u05d9 \u05d4\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e7\u05d5\u05d1\u05e2 \u05d0\u05ea \u05e6\u05d1\u05e2 \u05e7\u05d5 \u05d4\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}, {"question": "\u05de\u05d3\u05d5\u05e2 \u05d1\u05d3\u05e8\u05da \u05db\u05dc\u05dc \u05e0\u05e2\u05d3\u05d9\u05e3 <code>fmt=\"o\"</code> \u05e2\u05dc \u05e4\u05e0\u05d9 <code>fmt=\"-o\"</code> \u05dc\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05de\u05d3\u05d9\u05d3\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 fmt=\"-o\" \u05d2\u05d5\u05e8\u05dd \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05e7\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df."}, {"answer": "\u05db\u05d9 \u05e7\u05d5 \u05de\u05d7\u05d1\u05e8 \u05d1\u05d9\u05df \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05de\u05d3\u05d9\u05d3\u05d4 \u05d1\u05d3\u05d9\u05d3\u05d5\u05ea \u05e2\u05dc\u05d5\u05dc \u05dc\u05e8\u05de\u05d6 \u05d1\u05d8\u05e2\u05d5\u05ea \u05e2\u05dc \u05de\u05d5\u05d3\u05dc \u05e8\u05e6\u05d9\u05e3 \u05d1\u05d9\u05e0\u05d9\u05d4\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 fmt=\"o\" \u05de\u05d4\u05d9\u05e8 \u05d9\u05d5\u05ea\u05e8 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4."}]}];
+</style></div><script type="application/javascript">var questionszVGlThbLtxaB=[{"question": "\u05de\u05d4 \u05e2\u05d5\u05e9\u05d4 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8 <code>capsize</code> \u05d1-<code>ax.errorbar</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05e7\u05d5\u05d1\u05e2 \u05d0\u05ea \u05d2\u05d5\u05d3\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05e2\u05e6\u05de\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05dc\u05d2\u05d5\u05d3\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05d9\u05e9 \u05e4\u05e8\u05de\u05d8\u05e8 \u05d0\u05d7\u05e8 (markersize)."}, {"answer": "\u05e7\u05d5\u05d1\u05e2 \u05d0\u05ea \u05d0\u05d5\u05e8\u05da \u05d4'\u05db\u05d5\u05d1\u05e2\u05d9\u05dd' \u05d4\u05e7\u05d8\u05e0\u05d9\u05dd \u05d1\u05e7\u05e6\u05d5\u05ea \u05e7\u05d5\u05d5\u05d9 \u05d4\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e7\u05d5\u05d1\u05e2 \u05d0\u05ea \u05e6\u05d1\u05e2 \u05e7\u05d5 \u05d4\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}, {"question": "\u05de\u05d3\u05d5\u05e2 \u05d1\u05d3\u05e8\u05da \u05db\u05dc\u05dc \u05e0\u05e2\u05d3\u05d9\u05e3 <code>fmt=\"o\"</code> \u05e2\u05dc \u05e4\u05e0\u05d9 <code>fmt=\"-o\"</code> \u05dc\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05de\u05d3\u05d9\u05d3\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 fmt=\"-o\" \u05d2\u05d5\u05e8\u05dd \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05e7\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df."}, {"answer": "\u05db\u05d9 \u05e7\u05d5 \u05de\u05d7\u05d1\u05e8 \u05d1\u05d9\u05df \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05de\u05d3\u05d9\u05d3\u05d4 \u05d1\u05d3\u05d9\u05d3\u05d5\u05ea \u05e2\u05dc\u05d5\u05dc \u05dc\u05e8\u05de\u05d6 \u05d1\u05d8\u05e2\u05d5\u05ea \u05e2\u05dc \u05de\u05d5\u05d3\u05dc \u05e8\u05e6\u05d9\u05e3 \u05d1\u05d9\u05e0\u05d9\u05d4\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 fmt=\"o\" \u05de\u05d4\u05d9\u05e8 \u05d9\u05d5\u05ea\u05e8 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2010,8 +2010,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("cNFrkGBofVXc")) {
-    show_questions(questionscNFrkGBofVXc, cNFrkGBofVXc);
+  if (document.getElementById("zVGlThbLtxaB")) {
+    show_questions(questionszVGlThbLtxaB, zVGlThbLtxaB);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2040,8 +2040,8 @@ function try_show() {
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">theta_theory</span><span class="p">),</span> <span class="n">R_theory</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;תיאוריה&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">,</span> <span class="n">means</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">stds</span><span class="p">,</span> <span class="n">xerr</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&quot;מדידה&quot; ± שגיאה&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;זווית שיגור (מעלות)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;טווח R (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Launch angle (degrees)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Range R (m)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>

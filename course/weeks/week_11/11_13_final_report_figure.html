@@ -650,14 +650,14 @@ document.write(`
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">sigma_y</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;מדידה (ממוצע לזווית)&quot;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_line</span><span class="p">,</span> <span class="n">y_line</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;התאמה: R = </span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">·sin(2θ) + </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;טווח ממוצע [m]&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Mean range [m]&quot;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chi²_ν = </span><span class="si">{</span><span class="n">reduced_chi2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">   R² = </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">sigma_y</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;sin(2θ)&quot;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;שארית [m]&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Residual [m]&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -665,7 +665,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/e429c674d747c6eca8e062b3468c46a7e83ed8af7c09f29601a49f2e50e41ac1.png" src="../../../_images/e429c674d747c6eca8e062b3468c46a7e83ed8af7c09f29601a49f2e50e41ac1.png" />
+<img alt="../../../_images/dff5e6595e70f7009463b0ead1e6ff2d8a641a1fec1309abd7fe2b99b1f38b7d.png" src="../../../_images/dff5e6595e70f7009463b0ead1e6ff2d8a641a1fec1309abd7fe2b99b1f38b7d.png" />
 </div>
 </div>
 </section>
@@ -763,8 +763,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="bQkNPAtqQGRu" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#bQkNPAtqQGRu {
+<div class="output text_html"><div id="bbCBtPepCWQk" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#bbCBtPepCWQk {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -987,7 +987,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsbQkNPAtqQGRu=[{"question": "\u05dc\u05de\u05d4 \u05d7\u05d5\u05e1\u05e8-\u05d4\u05ea\u05d0\u05de\u05d4 \u05d1\u05d9\u05df header \u05dc\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d1-savetxt \u05d4\u05d5\u05d0 \u05d1\u05d0\u05d2 '\u05de\u05e1\u05d5\u05db\u05df' \u05d1\u05de\u05d9\u05d5\u05d7\u05d3?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05e7\u05d5\u05d1\u05e5 \u05e0\u05e9\u05de\u05e8 \u05d1\u05d4\u05e6\u05dc\u05d7\u05d4, \u05e0\u05e8\u05d0\u05d4 \u05ea\u05e7\u05d9\u05df, \u05d5\u05e0\u05d9\u05ea\u05df \u05dc\u05d8\u05e2\u05d9\u05e0\u05d4 - \u05d4\u05d8\u05e2\u05d5\u05ea \u05de\u05ea\u05d2\u05dc\u05d4 \u05e8\u05e7 \u05db\u05e9\u05de\u05e4\u05e8\u05e9\u05d9\u05dd \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05e4\u05d9 \u05e9\u05dd \u05e9\u05d2\u05d5\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 savetxt \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05d5\u05de\u05d5\u05e0\u05e2 \u05d0\u05ea \u05d4\u05e9\u05de\u05d9\u05e8\u05d4", "correct": false, "feedback": "\u05dc\u05d0 - savetxt \u05dc\u05d0 \u05d1\u05d5\u05d3\u05e7 \u05d0\u05ea \u05d4\u05ea\u05d0\u05de\u05ea \u05d4-header \u05db\u05dc\u05dc."}, {"answer": "\u05d6\u05d4 \u05dc\u05d0 \u05d1\u05d0\u05d2 \u05d0\u05de\u05d9\u05ea\u05d9, \u05e8\u05e7 \u05e2\u05e0\u05d9\u05d9\u05df \u05e7\u05d5\u05e1\u05de\u05d8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 - \u05d6\u05d4 \u05e2\u05dc\u05d5\u05dc \u05dc\u05d4\u05d5\u05d1\u05d9\u05dc \u05dc\u05e0\u05d9\u05ea\u05d5\u05d7 \u05e9\u05d2\u05d5\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df \u05e9\u05dc \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d1\u05e2\u05ea\u05d9\u05d3."}]}];
+</style></div><script type="application/javascript">var questionsbbCBtPepCWQk=[{"question": "\u05dc\u05de\u05d4 \u05d7\u05d5\u05e1\u05e8-\u05d4\u05ea\u05d0\u05de\u05d4 \u05d1\u05d9\u05df header \u05dc\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d1-savetxt \u05d4\u05d5\u05d0 \u05d1\u05d0\u05d2 '\u05de\u05e1\u05d5\u05db\u05df' \u05d1\u05de\u05d9\u05d5\u05d7\u05d3?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05e7\u05d5\u05d1\u05e5 \u05e0\u05e9\u05de\u05e8 \u05d1\u05d4\u05e6\u05dc\u05d7\u05d4, \u05e0\u05e8\u05d0\u05d4 \u05ea\u05e7\u05d9\u05df, \u05d5\u05e0\u05d9\u05ea\u05df \u05dc\u05d8\u05e2\u05d9\u05e0\u05d4 - \u05d4\u05d8\u05e2\u05d5\u05ea \u05de\u05ea\u05d2\u05dc\u05d4 \u05e8\u05e7 \u05db\u05e9\u05de\u05e4\u05e8\u05e9\u05d9\u05dd \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05e4\u05d9 \u05e9\u05dd \u05e9\u05d2\u05d5\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 savetxt \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05d5\u05de\u05d5\u05e0\u05e2 \u05d0\u05ea \u05d4\u05e9\u05de\u05d9\u05e8\u05d4", "correct": false, "feedback": "\u05dc\u05d0 - savetxt \u05dc\u05d0 \u05d1\u05d5\u05d3\u05e7 \u05d0\u05ea \u05d4\u05ea\u05d0\u05de\u05ea \u05d4-header \u05db\u05dc\u05dc."}, {"answer": "\u05d6\u05d4 \u05dc\u05d0 \u05d1\u05d0\u05d2 \u05d0\u05de\u05d9\u05ea\u05d9, \u05e8\u05e7 \u05e2\u05e0\u05d9\u05d9\u05df \u05e7\u05d5\u05e1\u05de\u05d8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 - \u05d6\u05d4 \u05e2\u05dc\u05d5\u05dc \u05dc\u05d4\u05d5\u05d1\u05d9\u05dc \u05dc\u05e0\u05d9\u05ea\u05d5\u05d7 \u05e9\u05d2\u05d5\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df \u05e9\u05dc \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05d1\u05e2\u05ea\u05d9\u05d3."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2049,8 +2049,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("bQkNPAtqQGRu")) {
-    show_questions(questionsbQkNPAtqQGRu, bQkNPAtqQGRu);
+  if (document.getElementById("bbCBtPepCWQk")) {
+    show_questions(questionsbbCBtPepCWQk, bbCBtPepCWQk);
   } else {
     setTimeout(try_show, 200);
   }

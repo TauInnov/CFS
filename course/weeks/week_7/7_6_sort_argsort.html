@@ -640,15 +640,15 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">heights_sorted</span><span class="p">)),</span> <span class="n">heights_sorted</span><span class="p">,</span>
        <span class="n">tick_label</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;t=</span><span class="si">{</span><span class="n">ts</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="n">timestamps_sorted</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;גובה מרבי (m)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;ניסוי (לפי חותמת זמן)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Max height (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Trial (by timestamp)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;גבהי קפיצה, ממוינים מהנמוך לגבוה&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/bec365fba1bf4275983b18e96e937326e2105b9a387954a956a7706c02955d54.png" src="../../../_images/bec365fba1bf4275983b18e96e937326e2105b9a387954a956a7706c02955d54.png" />
+<img alt="../../../_images/a94f41df63c6addddfc6626fd4b3227a1f30fbeb88458d5db17379fb50878a06.png" src="../../../_images/a94f41df63c6addddfc6626fd4b3227a1f30fbeb88458d5db17379fb50878a06.png" />
 </div>
 </div>
 </section>
@@ -697,8 +697,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="PZAunIehtmkz" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#PZAunIehtmkz {
+<div class="output text_html"><div id="igxGuSJlHdsY" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#igxGuSJlHdsY {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -921,7 +921,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsPZAunIehtmkz=[{"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df <code>a = np.array([30, 10, 20])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>np.argsort(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "[10, 20, 30] \u2014 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05de\u05de\u05d5\u05d9\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc np.sort(a), \u05dc\u05d0 \u05e9\u05dc argsort."}, {"answer": "[1, 2, 0] \u2014 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05e9\u05d9\u05e1\u05d3\u05e8\u05d5 \u05d0\u05ea a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: a[1]=10 (\u05d4\u05db\u05d9 \u05e7\u05d8\u05df), a[2]=20, a[0]=30 (\u05d4\u05db\u05d9 \u05d2\u05d3\u05d5\u05dc)."}, {"answer": "[2, 1, 0] \u2014 \u05e1\u05d3\u05e8 \u05d9\u05d5\u05e8\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 argsort \u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc \u05de\u05de\u05d9\u05d9\u05df \u05d1\u05e1\u05d3\u05e8 \u05e2\u05d5\u05dc\u05d4."}]}];
+</style></div><script type="application/javascript">var questionsigxGuSJlHdsY=[{"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df <code>a = np.array([30, 10, 20])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>np.argsort(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "[10, 20, 30] \u2014 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05de\u05de\u05d5\u05d9\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc np.sort(a), \u05dc\u05d0 \u05e9\u05dc argsort."}, {"answer": "[1, 2, 0] \u2014 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05e9\u05d9\u05e1\u05d3\u05e8\u05d5 \u05d0\u05ea a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: a[1]=10 (\u05d4\u05db\u05d9 \u05e7\u05d8\u05df), a[2]=20, a[0]=30 (\u05d4\u05db\u05d9 \u05d2\u05d3\u05d5\u05dc)."}, {"answer": "[2, 1, 0] \u2014 \u05e1\u05d3\u05e8 \u05d9\u05d5\u05e8\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 argsort \u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc \u05de\u05de\u05d9\u05d9\u05df \u05d1\u05e1\u05d3\u05e8 \u05e2\u05d5\u05dc\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1983,8 +1983,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("PZAunIehtmkz")) {
-    show_questions(questionsPZAunIehtmkz, PZAunIehtmkz);
+  if (document.getElementById("igxGuSJlHdsY")) {
+    show_questions(questionsigxGuSJlHdsY, igxGuSJlHdsY);
   } else {
     setTimeout(try_show, 200);
   }

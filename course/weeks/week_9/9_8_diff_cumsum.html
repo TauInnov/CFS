@@ -677,13 +677,13 @@ document.write(`
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">distance_traveled</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;t (s)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;מרחק מצטבר לאורך המסלול (m)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cumulative distance along the path (m)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/73ff8563a3ffd961b2b1c413b18d76c19fc18aec848a6165f427cb823f65b895.png" src="../../../_images/73ff8563a3ffd961b2b1c413b18d76c19fc18aec848a6165f427cb823f65b895.png" />
+<img alt="../../../_images/66bde6d1ed187933734fcd9dd17289e1152328118024a509f1f3a0708465a0a4.png" src="../../../_images/66bde6d1ed187933734fcd9dd17289e1152328118024a509f1f3a0708465a0a4.png" />
 </div>
 </div>
 </section>
@@ -737,8 +737,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="DpazqtoyiHbD" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#DpazqtoyiHbD {
+<div class="output text_html"><div id="WKSnnbmEzJDl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#WKSnnbmEzJDl {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -961,7 +961,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsDpazqtoyiHbD=[{"question": "\u05d0\u05dd <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100, \u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.diff(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "100", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d1\u05d0\u05d7\u05d3."}, {"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 99 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd \u05d1\u05d9\u05df 100 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e1\u05de\u05d5\u05db\u05d9\u05dd."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}, {"question": "\u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.cumsum(a)</code> \u05e2\u05d1\u05d5\u05e8 <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100?", "type": "multiple_choice", "answers": [{"answer": "100 - \u05d0\u05d5\u05ea\u05d5 \u05d0\u05d5\u05e8\u05da \u05db\u05de\u05d5 a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05dc\u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d9\u05e9 \u05e1\u05db\u05d5\u05dd \u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d0\u05d5\u05ea\u05d5 \u05de\u05e7\u05d5\u05dd."}, {"answer": "99, \u05db\u05de\u05d5 diff", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da."}, {"answer": "1 - \u05e8\u05e7 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05e1\u05d5\u05e4\u05d9", "correct": false, "feedback": "\u05d6\u05d4 \u05de\u05d4 \u05e9-np.sum (\u05d1\u05dc\u05d9 cum) \u05de\u05d7\u05d6\u05d9\u05e8, \u05dc\u05d0 cumsum."}]}];
+</style></div><script type="application/javascript">var questionsWKSnnbmEzJDl=[{"question": "\u05d0\u05dd <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100, \u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.diff(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "100", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d1\u05d0\u05d7\u05d3."}, {"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 99 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd \u05d1\u05d9\u05df 100 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e1\u05de\u05d5\u05db\u05d9\u05dd."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}, {"question": "\u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.cumsum(a)</code> \u05e2\u05d1\u05d5\u05e8 <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100?", "type": "multiple_choice", "answers": [{"answer": "100 - \u05d0\u05d5\u05ea\u05d5 \u05d0\u05d5\u05e8\u05da \u05db\u05de\u05d5 a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05dc\u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d9\u05e9 \u05e1\u05db\u05d5\u05dd \u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d0\u05d5\u05ea\u05d5 \u05de\u05e7\u05d5\u05dd."}, {"answer": "99, \u05db\u05de\u05d5 diff", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da."}, {"answer": "1 - \u05e8\u05e7 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05e1\u05d5\u05e4\u05d9", "correct": false, "feedback": "\u05d6\u05d4 \u05de\u05d4 \u05e9-np.sum (\u05d1\u05dc\u05d9 cum) \u05de\u05d7\u05d6\u05d9\u05e8, \u05dc\u05d0 cumsum."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2023,8 +2023,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("DpazqtoyiHbD")) {
-    show_questions(questionsDpazqtoyiHbD, DpazqtoyiHbD);
+  if (document.getElementById("WKSnnbmEzJDl")) {
+    show_questions(questionsWKSnnbmEzJDl, WKSnnbmEzJDl);
   } else {
     setTimeout(try_show, 200);
   }
