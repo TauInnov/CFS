@@ -604,7 +604,7 @@ document.write(`
   <section id="views-copies">
 <h1><span class="section-number">7.5. </span>views מול copies<a class="headerlink" href="#views-copies" title="Link to this heading">#</a></h1>
 <p>זהו אחד ממקורות הבאגים הנפוצים ביותר בעבודה עם NumPy. כאשר פורסים מערך (<code class="docutils literal notranslate"><span class="pre">a[2:5]</span></code>), NumPy <strong>לא</strong> יוצר מערך חדש בזיכרון — הוא מחזיר <strong>תצוגה (view)</strong> שמצביעה על אותו זיכרון. שינוי בתצוגה משנה גם את המערך המקורי, ולהיפך.</p>
-<p>זה שונה מרשימות פייתון, שבהן פריסה (<code class="docutils literal notranslate"><span class="pre">lst[2:5]</span></code>) תמיד יוצרת רשימה חדשה (עותק). כדי לקבל התנהגות דומה במערך NumPy יש לבקש עותק במפורש: <code class="docutils literal notranslate"><span class="pre">a[2:5].copy()</span></code>.</p>
+<p>זה שונה מרשימות פייתון, שבהן פריסה (<code class="docutils literal notranslate"><span class="pre">lst[2:5]</span></code>) תמיד יוצרת רשימה חדשה (עותק). כדי לקבל התנהגות דומה במערך NumPy יש לבקש עותק במפורש: <code class="docutils literal notranslate"><span class="pre">()a[2:5].copy</span></code>.</p>
 <section id="id1">
 <h2><span class="section-number">7.5.1. </span>דוגמה: “ניקוי” נתוני מדידה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>יש לנו יומן מדידות גובה גולמי מניסוי נפילה חופשית, וברצוננו לתקן רק את שלוש המדידות האמצעיות (שהיו שגויות עקב רעש רגעי במכשיר):</p>
@@ -629,7 +629,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>במקרה הזה זה בדיוק מה שרצינו — אבל אם המטרה הייתה לשמור עותק נקי לצד המקור לצורך השוואה, זו טעות שקטה. הפתרון: לבקש <code class="docutils literal notranslate"><span class="pre">.copy()</span></code> באופן מפורש.</p>
+<p>במקרה הזה זה בדיוק מה שרצינו — אבל אם המטרה הייתה לשמור עותק נקי לצד המקור לצורך השוואה, זו טעות שקטה. הפתרון: לבקש <code class="docutils literal notranslate"><span class="pre">().copy</span></code> באופן מפורש.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_log2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">18.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">999.0</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
@@ -694,8 +694,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="uPFAjgNMHIQY" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#uPFAjgNMHIQY {
+<div class="output text_html"><div id="ASmuvdTPqpTG" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ASmuvdTPqpTG {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -918,7 +918,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsuPFAjgNMHIQY=[{"question": "\u05d0\u05d7\u05e8\u05d9 <code>a = np.array([1,2,3]); b = a[1:]; b[0] = 99</code>, \u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc <code>a[1]</code>?", "type": "multiple_choice", "answers": [{"answer": "2 (a \u05dc\u05d0 \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": false, "feedback": "\u05dc\u05d0 \u2014 b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}, {"answer": "99 (a \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05e4\u05e8\u05d9\u05e1\u05d4 \u05e9\u05dc \u05de\u05e2\u05e8\u05da NumPy \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05ea\u05e6\u05d5\u05d2\u05d4, \u05d5\u05dc\u05db\u05df \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1-b \u05de\u05e9\u05e4\u05d9\u05e2 \u05d2\u05dd \u05e2\u05dc a."}, {"answer": "\u05ea\u05d9\u05d6\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05d7\u05d5\u05e7\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df."}]}];
+</style></div><script type="application/javascript">var questionsASmuvdTPqpTG=[{"question": "\u05d0\u05d7\u05e8\u05d9 <code>a = np.array([1,2,3]); b = a[1:]; b[0] = 99</code>, \u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc <code>a[1]</code>?", "type": "multiple_choice", "answers": [{"answer": "2 (a \u05dc\u05d0 \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": false, "feedback": "\u05dc\u05d0 \u2014 b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}, {"answer": "99 (a \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05e4\u05e8\u05d9\u05e1\u05d4 \u05e9\u05dc \u05de\u05e2\u05e8\u05da NumPy \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05ea\u05e6\u05d5\u05d2\u05d4, \u05d5\u05dc\u05db\u05df \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1-b \u05de\u05e9\u05e4\u05d9\u05e2 \u05d2\u05dd \u05e2\u05dc a."}, {"answer": "\u05ea\u05d9\u05d6\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05d7\u05d5\u05e7\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1980,8 +1980,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("uPFAjgNMHIQY")) {
-    show_questions(questionsuPFAjgNMHIQY, uPFAjgNMHIQY);
+  if (document.getElementById("ASmuvdTPqpTG")) {
+    show_questions(questionsASmuvdTPqpTG, ASmuvdTPqpTG);
   } else {
     setTimeout(try_show, 200);
   }
@@ -1996,7 +1996,7 @@ function try_show() {
 </section>
 <section id="id4">
 <h2><span class="section-number">7.5.4. </span>תרגול עצמי<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>בקוד הבא יש כוונה ליצור גרסה “מנורמלת” של וקטור מהירויות, בלי לפגוע במקור — אבל יש בו באג. אתרו ותקנו אותו בעזרת <code class="docutils literal notranslate"><span class="pre">.copy()</span></code>:</p>
+<p>בקוד הבא יש כוונה ליצור גרסה “מנורמלת” של וקטור מהירויות, בלי לפגוע במקור — אבל יש בו באג. אתרו ותקנו אותו בעזרת <code class="docutils literal notranslate"><span class="pre">().copy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v_measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">12.0</span><span class="p">,</span> <span class="mf">15.5</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">20.1</span><span class="p">])</span>

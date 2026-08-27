@@ -610,7 +610,7 @@ document.write(`
 <p>שני כלים לשינוי <strong>צורת</strong> מערך בלי לשנות את הערכים עצמם:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">a.reshape(new_shape)</span></code></strong> — מסדר מחדש את אותם ערכים לתוך צורה חדשה, בסדר קריאה קבוע (שורה-שורה). לא “מזיז” נתונים בין ריצות/זמנים — רק קורא להם אחרת.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">a.T</span></code></strong> (או <code class="docutils literal notranslate"><span class="pre">a.transpose()</span></code>) — <strong>מחליף בין הצירים עצמם</strong>: <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code> הופך ל-<code class="docutils literal notranslate"><span class="pre">(60,</span> <span class="pre">5)</span></code>. בניגוד ל-reshape, זו לא רק “קריאה אחרת” — ציר 0 וציר 1 מחליפים תפקידים.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">a.T</span></code></strong> (או <code class="docutils literal notranslate"><span class="pre">()a.transpose</span></code>) — <strong>מחליף בין הצירים עצמם</strong>: <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code> הופך ל-<code class="docutils literal notranslate"><span class="pre">(60,</span> <span class="pre">5)</span></code>. בניגוד ל-reshape, זו לא רק “קריאה אחרת” — ציר 0 וציר 1 מחליפים תפקידים.</p></li>
 </ul>
 <p>כבר ראינו <code class="docutils literal notranslate"><span class="pre">.T</span></code> בקצרה בסעיף 7.7 (על וקטורים); כאן מרחיבים למערך רב-ממדי.</p>
 <div class="cell docutils container">
@@ -732,8 +732,8 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="kBJefFqeikEL" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#kBJefFqeikEL {
+<div class="output text_html"><div id="XTiXVmEotXgp" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#XTiXVmEotXgp {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -956,7 +956,7 @@ True
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionskBJefFqeikEL=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05de\u05d4\u05d5\u05ea\u05d9 \u05d1\u05d9\u05df <code>a.reshape(...)</code> \u05dc-<code>a.T</code>?", "type": "multiple_choice", "answers": [{"answer": "reshape \u05de\u05e9\u05e0\u05d4 \u05d0\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e2\u05e6\u05de\u05dd, T \u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05e3 \u05d0\u05d7\u05ea \u05de\u05d4\u05df \u05dc\u05d0 \u05de\u05e9\u05e0\u05d4 \u05e2\u05e8\u05db\u05d9\u05dd, \u05e8\u05e7 \u05d0\u05ea \u05e1\u05d9\u05d3\u05d5\u05e8\u05dd."}, {"answer": "T \u05de\u05d7\u05dc\u05d9\u05e3 \u05d0\u05ea \u05ea\u05e4\u05e7\u05d9\u05d3\u05d9 \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd \u05ea\u05d5\u05da \u05e9\u05de\u05d9\u05e8\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4 \u05d4\u05e0\u05db\u05d5\u05e0\u05d4; reshape \u05e8\u05e7 \u05e7\u05d5\u05e8\u05d0 \u05de\u05d7\u05d3\u05e9 \u05d0\u05ea \u05d4\u05d6\u05d9\u05db\u05e8\u05d5\u05df \u05d1\u05e1\u05d3\u05e8 \u05e7\u05d1\u05d5\u05e2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d4\u05df \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05d6\u05d4\u05d5\u05ea \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d1\u05d4 \u05d4\u05df \u05e0\u05d5\u05ea\u05e0\u05d5\u05ea \u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsXTiXVmEotXgp=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05de\u05d4\u05d5\u05ea\u05d9 \u05d1\u05d9\u05df <code>a.reshape(...)</code> \u05dc-<code>a.T</code>?", "type": "multiple_choice", "answers": [{"answer": "reshape \u05de\u05e9\u05e0\u05d4 \u05d0\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e2\u05e6\u05de\u05dd, T \u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05e3 \u05d0\u05d7\u05ea \u05de\u05d4\u05df \u05dc\u05d0 \u05de\u05e9\u05e0\u05d4 \u05e2\u05e8\u05db\u05d9\u05dd, \u05e8\u05e7 \u05d0\u05ea \u05e1\u05d9\u05d3\u05d5\u05e8\u05dd."}, {"answer": "T \u05de\u05d7\u05dc\u05d9\u05e3 \u05d0\u05ea \u05ea\u05e4\u05e7\u05d9\u05d3\u05d9 \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd \u05ea\u05d5\u05da \u05e9\u05de\u05d9\u05e8\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4 \u05d4\u05e0\u05db\u05d5\u05e0\u05d4; reshape \u05e8\u05e7 \u05e7\u05d5\u05e8\u05d0 \u05de\u05d7\u05d3\u05e9 \u05d0\u05ea \u05d4\u05d6\u05d9\u05db\u05e8\u05d5\u05df \u05d1\u05e1\u05d3\u05e8 \u05e7\u05d1\u05d5\u05e2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d4\u05df \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05d6\u05d4\u05d5\u05ea \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d1\u05d4 \u05d4\u05df \u05e0\u05d5\u05ea\u05e0\u05d5\u05ea \u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2018,8 +2018,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("kBJefFqeikEL")) {
-    show_questions(questionskBJefFqeikEL, kBJefFqeikEL);
+  if (document.getElementById("XTiXVmEotXgp")) {
+    show_questions(questionsXTiXVmEotXgp, XTiXVmEotXgp);
   } else {
     setTimeout(try_show, 200);
   }

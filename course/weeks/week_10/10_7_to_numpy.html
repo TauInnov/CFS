@@ -604,7 +604,7 @@ document.write(`
                   
   <section id="numpy-to-numpy">
 <h1><span class="section-number">10.9. </span>10.7 — מעבר ל-NumPy: to_numpy()<a class="headerlink" href="#numpy-to-numpy" title="Link to this heading">#</a></h1>
-<p>זו החוליה לשבוע 11: pandas טוב לקריאה, סינון וקיבוץ של נתונים גולמיים — אבל כל החישוב הכבד (הולכת שגיאות, התאמה ליניארית, שילוב עם broadcasting) חוזר להיות <strong>מערכי NumPy</strong>, כמו בשבועות 7–9. <code class="docutils literal notranslate"><span class="pre">.to_numpy()</span></code> הוא הגשר.</p>
+<p>זו החוליה לשבוע 11: pandas טוב לקריאה, סינון וקיבוץ של נתונים גולמיים — אבל כל החישוב הכבד (הולכת שגיאות, התאמה ליניארית, שילוב עם broadcasting) חוזר להיות <strong>מערכי NumPy</strong>, כמו בשבועות 7–9. <code class="docutils literal notranslate"><span class="pre">().to_numpy</span></code> הוא הגשר.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -656,7 +656,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">s1</span></code> ו-<code class="docutils literal notranslate"><span class="pre">s2</span></code> מגיעות מקבוצות <strong>שונות לגמרי</strong> של שורות, כך שאין אף תווית index משותפת ביניהן — pandas לא “מוצא” זוגות תואמים, ומחזיר <code class="docutils literal notranslate"><span class="pre">NaN</span></code> בכל מקום. הפתרון: להמיר קודם ל-NumPy עם <code class="docutils literal notranslate"><span class="pre">.to_numpy()</span></code>, ואז ההתאמה חוזרת להיות לפי מיקום (ואחריות המתכנת לוודא שהאורכים תואמים ומשמעותיים).</p>
+<p><code class="docutils literal notranslate"><span class="pre">s1</span></code> ו-<code class="docutils literal notranslate"><span class="pre">s2</span></code> מגיעות מקבוצות <strong>שונות לגמרי</strong> של שורות, כך שאין אף תווית index משותפת ביניהן — pandas לא “מוצא” זוגות תואמים, ומחזיר <code class="docutils literal notranslate"><span class="pre">NaN</span></code> בכל מקום. הפתרון: להמיר קודם ל-NumPy עם <code class="docutils literal notranslate"><span class="pre">().to_numpy</span></code>, ואז ההתאמה חוזרת להיות לפי מיקום (ואחריות המתכנת לוודא שהאורכים תואמים ומשמעותיים).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff_right</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="o">-</span> <span class="n">s2</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>   <span class="c1"># התאמה לפי מיקום, לא לפי index</span>
@@ -673,7 +673,7 @@ document.write(`
 </section>
 <section id="id2">
 <h2><span class="section-number">10.9.3. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>חלצו את <code class="docutils literal notranslate"><span class="pre">v0_measured</span></code> בזווית 30° כמערך NumPy, וחשבו את סטיית התקן שלו (<code class="docutils literal notranslate"><span class="pre">.std()</span></code>) - השוו לתוצאה שמתקבלת ישירות מ-pandas (<code class="docutils literal notranslate"><span class="pre">df[...]['v0_measured'].std()</span></code>).</p>
+<p>חלצו את <code class="docutils literal notranslate"><span class="pre">v0_measured</span></code> בזווית 30° כמערך NumPy, וחשבו את סטיית התקן שלו (<code class="docutils literal notranslate"><span class="pre">().std</span></code>) - השוו לתוצאה שמתקבלת ישירות מ-pandas (<code class="docutils literal notranslate"><span class="pre">()df[...]['v0_measured'].std</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># v0_30 = df[df[&quot;angle_deg&quot;] == 30][&quot;v0_measured&quot;].to_numpy()</span>
@@ -717,8 +717,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="OsjRxGqcVrtm" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#OsjRxGqcVrtm {
+<div class="output text_html"><div id="prTmBNDsmRQV" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#prTmBNDsmRQV {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -941,7 +941,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsOsjRxGqcVrtm=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05de\u05e2\u05e8\u05db\u05d9 NumPy \u05de\u05ea\u05e0\u05d4\u05d2 \u05e9\u05d5\u05e0\u05d4 \u05de\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 Series \u05e9\u05dc pandas \u05e9\u05e2\u05d1\u05e8\u05d5 \u05e1\u05d9\u05e0\u05d5\u05df \u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "NumPy \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 \u05de\u05d9\u05e7\u05d5\u05dd; pandas Series \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 index, \u05e9\u05e2\u05dc\u05d5\u05dc \u05dc\u05d4\u05d9\u05d5\u05ea \u05e9\u05d5\u05e0\u05d4 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05d4-Series", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05d6\u05d5 \u05d0\u05d5\u05ea\u05d4 \u05d4\u05ea\u05e0\u05d4\u05d2\u05d5\u05ea \u05d1\u05d3\u05d9\u05d5\u05e7", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05d5\u05e0\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9 (NaN)."}, {"answer": "pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsprTmBNDsmRQV=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05de\u05e2\u05e8\u05db\u05d9 NumPy \u05de\u05ea\u05e0\u05d4\u05d2 \u05e9\u05d5\u05e0\u05d4 \u05de\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 Series \u05e9\u05dc pandas \u05e9\u05e2\u05d1\u05e8\u05d5 \u05e1\u05d9\u05e0\u05d5\u05df \u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "NumPy \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 \u05de\u05d9\u05e7\u05d5\u05dd; pandas Series \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 index, \u05e9\u05e2\u05dc\u05d5\u05dc \u05dc\u05d4\u05d9\u05d5\u05ea \u05e9\u05d5\u05e0\u05d4 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05d4-Series", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05d6\u05d5 \u05d0\u05d5\u05ea\u05d4 \u05d4\u05ea\u05e0\u05d4\u05d2\u05d5\u05ea \u05d1\u05d3\u05d9\u05d5\u05e7", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05d5\u05e0\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9 (NaN)."}, {"answer": "pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2003,8 +2003,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("OsjRxGqcVrtm")) {
-    show_questions(questionsOsjRxGqcVrtm, OsjRxGqcVrtm);
+  if (document.getElementById("prTmBNDsmRQV")) {
+    show_questions(questionsprTmBNDsmRQV, prTmBNDsmRQV);
   } else {
     setTimeout(try_show, 200);
   }

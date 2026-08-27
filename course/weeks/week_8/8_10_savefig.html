@@ -588,7 +588,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.11.1. דוגמה: שמירת גרף ההשוואה כקובץ לדוח</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.11.2. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-show">8.11.3. באג נפוץ: שמירה <strong>אחרי</strong> <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-show">8.11.3. באג נפוץ: שמירה <strong>אחרי</strong> <code class="docutils literal notranslate"><span class="pre">()plt.show</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.11.4. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.11.5. תרגול עצמי</a></li>
 </ul>
@@ -673,8 +673,8 @@ document.write(`
 </div>
 </section>
 <section id="plt-show">
-<h2><span class="section-number">8.11.3. </span>באג נפוץ: שמירה <strong>אחרי</strong> <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code><a class="headerlink" href="#plt-show" title="Link to this heading">#</a></h2>
-<p>קריאה ל-<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> יכולה, בסביבות מסוימות, “לנקות” את ה-figure מהזיכרון. הרגל בטוח: לקרוא ל-<code class="docutils literal notranslate"><span class="pre">fig.savefig(...)</span></code> <strong>לפני</strong> <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>, כמו בדוגמה למעלה — כך שאין תלות בסדר.</p>
+<h2><span class="section-number">8.11.3. </span>באג נפוץ: שמירה <strong>אחרי</strong> <code class="docutils literal notranslate"><span class="pre">()plt.show</span></code><a class="headerlink" href="#plt-show" title="Link to this heading">#</a></h2>
+<p>קריאה ל-<code class="docutils literal notranslate"><span class="pre">()plt.show</span></code> יכולה, בסביבות מסוימות, “לנקות” את ה-figure מהזיכרון. הרגל בטוח: לקרוא ל-<code class="docutils literal notranslate"><span class="pre">fig.savefig(...)</span></code> <strong>לפני</strong> <code class="docutils literal notranslate"><span class="pre">()plt.show</span></code>, כמו בדוגמה למעלה — כך שאין תלות בסדר.</p>
 </section>
 <section id="id3">
 <h2><span class="section-number">8.11.4. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
@@ -698,8 +698,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="AvYquGatPSjY" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#AvYquGatPSjY {
+<div class="output text_html"><div id="WROnTjcgOgAU" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#WROnTjcgOgAU {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -922,7 +922,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsAvYquGatPSjY=[{"question": "\u05dc\u05de\u05d4 \u05e2\u05d3\u05d9\u05e3 fig.savefig() \u05e2\u05dc \u05e4\u05e0\u05d9 \u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05e9\u05dc \u05d4\u05d2\u05e8\u05e3 \u05de\u05d4\u05de\u05d7\u05d1\u05e8\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05d4\u05d1\u05d3\u05dc \u05de\u05e2\u05e9\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 \u05d4\u05d1\u05d3\u05dc \u05de\u05e9\u05de\u05e2\u05d5\u05ea\u05d9 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05d5\u05d1\u05e9\u05dc\u05de\u05d5\u05ea \u05d4\u05ea\u05d5\u05d5\u05d9\u05d5\u05ea."}, {"answer": "savefig \u05e9\u05d5\u05de\u05e8 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05e0\u05e9\u05dc\u05d8\u05ea (dpi) \u05d5\u05d1\u05dc\u05d9 \u05d7\u05d9\u05ea\u05d5\u05da \u05ea\u05d5\u05d5\u05d9\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05dc\u05d0 \u05e0\u05ea\u05de\u05da \u05d1\u05d2'\u05d5\u05e4\u05d9\u05d8\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4 \u2014 \u05d8\u05db\u05e0\u05d9\u05ea \u05d0\u05e4\u05e9\u05e8 \u05dc\u05e6\u05dc\u05dd \u05de\u05e1\u05da, \u05d6\u05d5 \u05e4\u05e9\u05d5\u05d8 \u05dc\u05d0 \u05d4\u05d3\u05e8\u05da \u05d4\u05e0\u05db\u05d5\u05e0\u05d4."}]}];
+</style></div><script type="application/javascript">var questionsWROnTjcgOgAU=[{"question": "\u05dc\u05de\u05d4 \u05e2\u05d3\u05d9\u05e3 fig.savefig() \u05e2\u05dc \u05e4\u05e0\u05d9 \u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05e9\u05dc \u05d4\u05d2\u05e8\u05e3 \u05de\u05d4\u05de\u05d7\u05d1\u05e8\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05d4\u05d1\u05d3\u05dc \u05de\u05e2\u05e9\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 \u05d4\u05d1\u05d3\u05dc \u05de\u05e9\u05de\u05e2\u05d5\u05ea\u05d9 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05d5\u05d1\u05e9\u05dc\u05de\u05d5\u05ea \u05d4\u05ea\u05d5\u05d5\u05d9\u05d5\u05ea."}, {"answer": "savefig \u05e9\u05d5\u05de\u05e8 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05e0\u05e9\u05dc\u05d8\u05ea (dpi) \u05d5\u05d1\u05dc\u05d9 \u05d7\u05d9\u05ea\u05d5\u05da \u05ea\u05d5\u05d5\u05d9\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05dc\u05d0 \u05e0\u05ea\u05de\u05da \u05d1\u05d2'\u05d5\u05e4\u05d9\u05d8\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4 \u2014 \u05d8\u05db\u05e0\u05d9\u05ea \u05d0\u05e4\u05e9\u05e8 \u05dc\u05e6\u05dc\u05dd \u05de\u05e1\u05da, \u05d6\u05d5 \u05e4\u05e9\u05d5\u05d8 \u05dc\u05d0 \u05d4\u05d3\u05e8\u05da \u05d4\u05e0\u05db\u05d5\u05e0\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1984,8 +1984,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("AvYquGatPSjY")) {
-    show_questions(questionsAvYquGatPSjY, AvYquGatPSjY);
+  if (document.getElementById("WROnTjcgOgAU")) {
+    show_questions(questionsWROnTjcgOgAU, WROnTjcgOgAU);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2100,7 +2100,7 @@ function try_show() {
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.11.1. דוגמה: שמירת גרף ההשוואה כקובץ לדוח</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.11.2. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-show">8.11.3. באג נפוץ: שמירה <strong>אחרי</strong> <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-show">8.11.3. באג נפוץ: שמירה <strong>אחרי</strong> <code class="docutils literal notranslate"><span class="pre">()plt.show</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.11.4. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.11.5. תרגול עצמי</a></li>
 </ul>

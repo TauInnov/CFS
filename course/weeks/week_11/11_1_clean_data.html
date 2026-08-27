@@ -587,7 +587,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nan">11.4.1. שלב 1: איתור ערכים חסרים (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropna">11.4.2. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> בלי לשמור את התוצאה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropna">11.4.2. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">()dropna</span></code> בלי לשמור את התוצאה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.4.3. שלב 2: סינון נקודה חריגה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">11.4.4. שלב 3: מעבר ל-NumPy לניתוח נומרי</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.4.5. נסו בעצמכם</a></li>
@@ -607,7 +607,7 @@ document.write(`
   <section id="read-csv-to-numpy-nan">
 <h1><span class="section-number">11.4. </span>11.1 — מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים<a class="headerlink" href="#read-csv-to-numpy-nan" title="Link to this heading">#</a></h1>
 <p>זו הפעם הראשונה בקורס שהנתונים <strong>לא מושלמים</strong>: יומן מדידות אמיתי (<code class="docutils literal notranslate"><span class="pre">lab_measurements.csv</span></code>, המשך <code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code> משבוע 10) כולל מדידות שנכשלו (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>) ולפחות נקודה חריגה אחת (טעות תזמון, קריאת מכשיר שגויה וכו’). לפני כל ניתוח סטטיסטי, צריך לנקות.</p>
-<p>הכלים כבר מוכרים: <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> (10.3), <code class="docutils literal notranslate"><span class="pre">to_numpy()</span></code> (10.7), ומסכות בוליאניות (7.8). החדש הוא איך משתמשים בהם יחד כדי <strong>לנקות</strong>, לא רק לסנן.</p>
+<p>הכלים כבר מוכרים: <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> (10.3), <code class="docutils literal notranslate"><span class="pre">()to_numpy</span></code> (10.7), ומסכות בוליאניות (7.8). החדש הוא איך משתמשים בהם יחד כדי <strong>לנקות</strong>, לא רק לסנן.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -687,8 +687,8 @@ dtype: int64
 </div>
 </section>
 <section id="dropna">
-<h2><span class="section-number">11.4.2. </span>באג נפוץ: <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> בלי לשמור את התוצאה<a class="headerlink" href="#dropna" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">df.dropna()</span></code> <strong>מחזיר טבלה חדשה</strong> ללא השורות עם <code class="docutils literal notranslate"><span class="pre">NaN</span></code> — הוא <strong>לא</strong> משנה את <code class="docutils literal notranslate"><span class="pre">df</span></code> המקורי במקום (בדיוק כמו הבאג מסעיף 10.8: פעולות pandas כמעט תמיד מחזירות עותק, אלא אם מציינים <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code> או משייכים בחזרה). קוד שקורא ל-<code class="docutils literal notranslate"><span class="pre">df.dropna()</span></code> בלי לשייך את התוצאה למשתנה “מנקה” — ולא באמת עושה כלום.</p>
+<h2><span class="section-number">11.4.2. </span>באג נפוץ: <code class="docutils literal notranslate"><span class="pre">()dropna</span></code> בלי לשמור את התוצאה<a class="headerlink" href="#dropna" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">()df.dropna</span></code> <strong>מחזיר טבלה חדשה</strong> ללא השורות עם <code class="docutils literal notranslate"><span class="pre">NaN</span></code> — הוא <strong>לא</strong> משנה את <code class="docutils literal notranslate"><span class="pre">df</span></code> המקורי במקום (בדיוק כמו הבאג מסעיף 10.8: פעולות pandas כמעט תמיד מחזירות עותק, אלא אם מציינים <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code> או משייכים בחזרה). קוד שקורא ל-<code class="docutils literal notranslate"><span class="pre">()df.dropna</span></code> בלי לשייך את התוצאה למשתנה “מנקה” — ולא באמת עושה כלום.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>                      <span class="c1"># לא משנה את df!</span>
@@ -732,7 +732,7 @@ dtype: int64
 (40, 4) -&gt; (38, 4) -&gt; (37, 4)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4012522/195395840.py:7: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4040601/195395840.py:7: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
   is_outlier = df_clean.groupby(&quot;angle_deg&quot;, group_keys=False).apply(flag_outliers)
 </pre></div>
 </div>
@@ -757,7 +757,7 @@ dtype: int64
 </section>
 <section id="id2">
 <h2><span class="section-number">11.4.5. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>נחשו: אחרי <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> ואיתור החריגה, כמה שורות אמורות להישאר ב-<code class="docutils literal notranslate"><span class="pre">df_final</span></code> (מתוך 40 המקוריות)? נמקו לפני שתריצו.</p>
+<p>נחשו: אחרי <code class="docutils literal notranslate"><span class="pre">()dropna</span></code> ואיתור החריגה, כמה שורות אמורות להישאר ב-<code class="docutils literal notranslate"><span class="pre">df_final</span></code> (מתוך 40 המקוריות)? נמקו לפני שתריצו.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># נחשו, ואז בדקו:</span>
@@ -807,8 +807,8 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="EcnGGPAzMJZx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#EcnGGPAzMJZx {
+<div class="output text_html"><div id="MSkDqqaXeZIB" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#MSkDqqaXeZIB {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1031,7 +1031,7 @@ dtype: int64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsEcnGGPAzMJZx=[{"question": "\u05dc\u05de\u05d4 \u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1\u05d7\u05e6\u05d9\u05d5\u05df \u05d5\u05d1-MAD, \u05d5\u05dc\u05d0 \u05d1\u05de\u05de\u05d5\u05e6\u05e2 \u05d5\u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df, \u05db\u05d3\u05d9 \u05dc\u05d6\u05d4\u05d5\u05ea \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d7\u05e8\u05d9\u05d2\u05d5\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05dd \u05de\u05d4\u05d9\u05e8\u05d9\u05dd \u05d9\u05d5\u05ea\u05e8 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4."}, {"answer": "\u05db\u05d9 \u05de\u05de\u05d5\u05e6\u05e2 \u05d5\u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df \u05e2\u05e6\u05de\u05dd \u05de\u05d5\u05e9\u05e4\u05e2\u05d9\u05dd \u05d7\u05d6\u05e7 \u05de\u05e0\u05e7\u05d5\u05d3\u05d4 \u05d7\u05e8\u05d9\u05d2\u05d4, \u05de\u05d4 \u05e9\u05e2\u05dc\u05d5\u05dc '\u05dc\u05d4\u05e1\u05ea\u05d9\u05e8' \u05d0\u05d5\u05ea\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 std \u05e0\u05ea\u05de\u05da \u05d4\u05d9\u05d8\u05d1."}]}, {"question": "\u05de\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05e7\u05d5\u05e8\u05d0\u05d9\u05dd \u05dc-df.dropna() \u05d1\u05dc\u05d9 \u05dc\u05e9\u05d9\u05d9\u05da \u05d0\u05ea \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05dc\u05de\u05e9\u05ea\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "df \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05de\u05e0\u05d5\u05e7\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 dropna \u05dc\u05d0 \u05de\u05e9\u05e0\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd \u05db\u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc."}, {"answer": "\u05e0\u05d5\u05e6\u05e8\u05ea \u05d8\u05d1\u05dc\u05d4 \u05d7\u05d3\u05e9\u05d4 \u05d5\u05e0\u05e7\u05d9\u05d9\u05d4, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 \u05e0\u05d6\u05e8\u05e7\u05ea \u05de\u05d9\u05d3; df \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05e2\u05dd \u05d4-NaN", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05de\u05ea\u05e7\u05d1\u05dc\u05ea \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df, \u05e4\u05e9\u05d5\u05d8 \u05dc\u05d0 \u05e9\u05d9\u05de\u05d5\u05e9\u05d9 \u05db\u05e9\u05db\u05d5\u05ea\u05d1\u05d9\u05dd \u05d0\u05d5\u05ea\u05d5 \u05db\u05da."}]}];
+</style></div><script type="application/javascript">var questionsMSkDqqaXeZIB=[{"question": "\u05dc\u05de\u05d4 \u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1\u05d7\u05e6\u05d9\u05d5\u05df \u05d5\u05d1-MAD, \u05d5\u05dc\u05d0 \u05d1\u05de\u05de\u05d5\u05e6\u05e2 \u05d5\u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df, \u05db\u05d3\u05d9 \u05dc\u05d6\u05d4\u05d5\u05ea \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d7\u05e8\u05d9\u05d2\u05d5\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05dd \u05de\u05d4\u05d9\u05e8\u05d9\u05dd \u05d9\u05d5\u05ea\u05e8 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4."}, {"answer": "\u05db\u05d9 \u05de\u05de\u05d5\u05e6\u05e2 \u05d5\u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df \u05e2\u05e6\u05de\u05dd \u05de\u05d5\u05e9\u05e4\u05e2\u05d9\u05dd \u05d7\u05d6\u05e7 \u05de\u05e0\u05e7\u05d5\u05d3\u05d4 \u05d7\u05e8\u05d9\u05d2\u05d4, \u05de\u05d4 \u05e9\u05e2\u05dc\u05d5\u05dc '\u05dc\u05d4\u05e1\u05ea\u05d9\u05e8' \u05d0\u05d5\u05ea\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 std \u05e0\u05ea\u05de\u05da \u05d4\u05d9\u05d8\u05d1."}]}, {"question": "\u05de\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05e7\u05d5\u05e8\u05d0\u05d9\u05dd \u05dc-df.dropna() \u05d1\u05dc\u05d9 \u05dc\u05e9\u05d9\u05d9\u05da \u05d0\u05ea \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05dc\u05de\u05e9\u05ea\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "df \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05de\u05e0\u05d5\u05e7\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 dropna \u05dc\u05d0 \u05de\u05e9\u05e0\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd \u05db\u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc."}, {"answer": "\u05e0\u05d5\u05e6\u05e8\u05ea \u05d8\u05d1\u05dc\u05d4 \u05d7\u05d3\u05e9\u05d4 \u05d5\u05e0\u05e7\u05d9\u05d9\u05d4, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 \u05e0\u05d6\u05e8\u05e7\u05ea \u05de\u05d9\u05d3; df \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05e2\u05dd \u05d4-NaN", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05de\u05ea\u05e7\u05d1\u05dc\u05ea \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df, \u05e4\u05e9\u05d5\u05d8 \u05dc\u05d0 \u05e9\u05d9\u05de\u05d5\u05e9\u05d9 \u05db\u05e9\u05db\u05d5\u05ea\u05d1\u05d9\u05dd \u05d0\u05d5\u05ea\u05d5 \u05db\u05da."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2093,8 +2093,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("EcnGGPAzMJZx")) {
-    show_questions(questionsEcnGGPAzMJZx, EcnGGPAzMJZx);
+  if (document.getElementById("MSkDqqaXeZIB")) {
+    show_questions(questionsMSkDqqaXeZIB, MSkDqqaXeZIB);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2202,7 +2202,7 @@ function try_show() {
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nan">11.4.1. שלב 1: איתור ערכים חסרים (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropna">11.4.2. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">dropna()</span></code> בלי לשמור את התוצאה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropna">11.4.2. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">()dropna</span></code> בלי לשמור את התוצאה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.4.3. שלב 2: סינון נקודה חריגה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">11.4.4. שלב 3: מעבר ל-NumPy לניתוח נומרי</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.4.5. נסו בעצמכם</a></li>

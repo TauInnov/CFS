@@ -652,7 +652,7 @@ document.write(`
 </section>
 <section id="id2">
 <h2><span class="section-number">11.5.2. </span>דוגמה: אותו מספר, שלוש דרכים<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>באותו ערך אפשר להגיע גם דרך NumPy ישירות (סעיף 9.7) וגם דרך <code class="docutils literal notranslate"><span class="pre">describe()</span></code> של pandas (סעיף 10.6) — שלוש דרכים לאותו מספר, וכדאי להכיר את כולן כדי לזהות אותן בקוד של מישהו אחר.</p>
+<p>באותו ערך אפשר להגיע גם דרך NumPy ישירות (סעיף 9.7) וגם דרך <code class="docutils literal notranslate"><span class="pre">()describe</span></code> של pandas (סעיף 10.6) — שלוש דרכים לאותו מספר, וכדאי להכיר את כולן כדי לזהות אותן בקוד של מישהו אחר.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># דרך 2: NumPy ישירות (עם ddof=1, כדי להתאים לסטיית תקן מדגמית)</span>
@@ -678,7 +678,7 @@ pandas describe: mean= 41.309  std= 3.009
 </section>
 <section id="ddof-1-n-1-sqrt-n">
 <h2><span class="section-number">11.5.3. </span>באג נפוץ: <code class="docutils literal notranslate"><span class="pre">ddof</span></code> שגוי, או <span class="math notranslate nohighlight">\(1/N\)</span> במקום <span class="math notranslate nohighlight">\(1/\sqrt{N}\)</span><a class="headerlink" href="#ddof-1-n-1-sqrt-n" title="Link to this heading">#</a></h2>
-<p>שני בלבולים נפוצים: (1) <code class="docutils literal notranslate"><span class="pre">np.std(...)</span></code> <strong>בברירת המחדל</strong> משתמש ב-<code class="docutils literal notranslate"><span class="pre">ddof=0</span></code> (חלוקה ב-<span class="math notranslate nohighlight">\(N\)</span>), בעוד ש-<code class="docutils literal notranslate"><span class="pre">pandas.Series.std()</span></code> וכן ה”סטיית תקן המדגמית” הסטטיסטית משתמשות ב-<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code> (חלוקה ב-<span class="math notranslate nohighlight">\(N-1\)</span>) — התוצאות שונות מעט, במיוחד ב-<span class="math notranslate nohighlight">\(N\)</span> קטן. (2) שגיאת הממוצע היא <span class="math notranslate nohighlight">\(s/\sqrt{N}\)</span>, <strong>לא</strong> <span class="math notranslate nohighlight">\(s/N\)</span> — טעות שגורמת להערכת חסר דרסטית של אי-הוודאות כש-<span class="math notranslate nohighlight">\(N\)</span> גדול.</p>
+<p>שני בלבולים נפוצים: (1) <code class="docutils literal notranslate"><span class="pre">np.std(...)</span></code> <strong>בברירת המחדל</strong> משתמש ב-<code class="docutils literal notranslate"><span class="pre">ddof=0</span></code> (חלוקה ב-<span class="math notranslate nohighlight">\(N\)</span>), בעוד ש-<code class="docutils literal notranslate"><span class="pre">()pandas.Series.std</span></code> וכן ה”סטיית תקן המדגמית” הסטטיסטית משתמשות ב-<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code> (חלוקה ב-<span class="math notranslate nohighlight">\(N-1\)</span>) — התוצאות שונות מעט, במיוחד ב-<span class="math notranslate nohighlight">\(N\)</span> קטן. (2) שגיאת הממוצע היא <span class="math notranslate nohighlight">\(s/\sqrt{N}\)</span>, <strong>לא</strong> <span class="math notranslate nohighlight">\(s/N\)</span> — טעות שגורמת להערכת חסר דרסטית של אי-הוודאות כש-<span class="math notranslate nohighlight">\(N\)</span> גדול.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wrong_sem</span> <span class="o">=</span> <span class="n">std</span> <span class="o">/</span> <span class="n">N</span>          <span class="c1"># שגוי - זה לא 1/sqrt(N)</span>
@@ -745,8 +745,8 @@ pandas describe: mean= 41.309  std= 3.009
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="FELwEqdsKHyh" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#FELwEqdsKHyh {
+<div class="output text_html"><div id="ViqWeitvBRak" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ViqWeitvBRak {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -969,7 +969,7 @@ pandas describe: mean= 41.309  std= 3.009
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsFELwEqdsKHyh=[{"question": "\u05d0\u05dd \u05db\u05d5\u05e4\u05dc\u05d9\u05dd \u05d0\u05ea \u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e4\u05d9 4 (\u05d0\u05d5\u05ea\u05d4 std \u05d1\u05e7\u05d9\u05e8\u05d5\u05d1), \u05de\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05dc\u05e9\u05d2\u05d9\u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2?", "type": "multiple_choice", "answers": [{"answer": "\u05e0\u05e9\u05d0\u05e8\u05ea \u05d0\u05d5\u05ea\u05d5 \u05d3\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d9\u05d0 \u05ea\u05dc\u05d5\u05d9\u05d4 \u05d1-N."}, {"answer": "\u05e7\u05d8\u05e0\u05d4 \u05e4\u05d9 2 (\u05db\u05d9 sqrt(4)=2)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 1/sqrt(N) \u05e2\u05dd N \u05e4\u05d9 4 \u05d2\u05d3\u05d5\u05dc \u05d9\u05d5\u05ea\u05e8."}, {"answer": "\u05e7\u05d8\u05e0\u05d4 \u05e4\u05d9 4", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05d9\u05d4 \u05e0\u05db\u05d5\u05df \u05d0\u05dd \u05d4\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d4\u05d9\u05d9\u05ea\u05d4 1/N, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 1/sqrt(N)."}]}];
+</style></div><script type="application/javascript">var questionsViqWeitvBRak=[{"question": "\u05d0\u05dd \u05db\u05d5\u05e4\u05dc\u05d9\u05dd \u05d0\u05ea \u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e4\u05d9 4 (\u05d0\u05d5\u05ea\u05d4 std \u05d1\u05e7\u05d9\u05e8\u05d5\u05d1), \u05de\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05dc\u05e9\u05d2\u05d9\u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2?", "type": "multiple_choice", "answers": [{"answer": "\u05e0\u05e9\u05d0\u05e8\u05ea \u05d0\u05d5\u05ea\u05d5 \u05d3\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d9\u05d0 \u05ea\u05dc\u05d5\u05d9\u05d4 \u05d1-N."}, {"answer": "\u05e7\u05d8\u05e0\u05d4 \u05e4\u05d9 2 (\u05db\u05d9 sqrt(4)=2)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 1/sqrt(N) \u05e2\u05dd N \u05e4\u05d9 4 \u05d2\u05d3\u05d5\u05dc \u05d9\u05d5\u05ea\u05e8."}, {"answer": "\u05e7\u05d8\u05e0\u05d4 \u05e4\u05d9 4", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05d9\u05d4 \u05e0\u05db\u05d5\u05df \u05d0\u05dd \u05d4\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d4\u05d9\u05d9\u05ea\u05d4 1/N, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 1/sqrt(N)."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2031,8 +2031,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("FELwEqdsKHyh")) {
-    show_questions(questionsFELwEqdsKHyh, FELwEqdsKHyh);
+  if (document.getElementById("ViqWeitvBRak")) {
+    show_questions(questionsViqWeitvBRak, ViqWeitvBRak);
   } else {
     setTimeout(try_show, 200);
   }

@@ -686,7 +686,7 @@ document.write(`
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">df.shape</span></code></strong> — כמה שורות ועמודות בכלל הגיעו?</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">df.dtypes</span></code></strong> — האם הטיפוסים הגיוניים (מספרים כ-<code class="docutils literal notranslate"><span class="pre">int</span></code>/<code class="docutils literal notranslate"><span class="pre">float</span></code>, לא בטעות <code class="docutils literal notranslate"><span class="pre">object</span></code>)?</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">df.head()</span></code></strong> — האם השורות הראשונות נראות סבירות?</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">()df.head</span></code></strong> — האם השורות הראשונות נראות סבירות?</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -709,7 +709,7 @@ dtype: object
 </section>
 <section id="id2">
 <h2><span class="section-number">10.5.2. </span>באג נפוץ: עמודה מספרית שהתקבלה כטקסט<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>אם באחד התאים בקובץ ה-CSV יש טקסט חורג (למשל <code class="docutils literal notranslate"><span class="pre">&quot;20.3?&quot;</span></code> במקום <code class="docutils literal notranslate"><span class="pre">20.3</span></code>, או תא ריק שמסומן ב-<code class="docutils literal notranslate"><span class="pre">&quot;N/A&quot;</span></code> בלי שpandas מזהה אותו), כל העמודה הופכת לטיפוס טקסטואלי (<code class="docutils literal notranslate"><span class="pre">object</span></code> או <code class="docutils literal notranslate"><span class="pre">str</span></code>, תלוי בגרסת pandas) — כלומר pandas מתייחס לערכים כמחרוזות, לא כמספרים. הקוד <strong>ימשיך לרוץ</strong>, אבל כל חישוב מספרי על העמודה הזו (<code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">describe()</span></code>) ייכשל או יתנהג מוזר. <code class="docutils literal notranslate"><span class="pre">df.dtypes</span></code> אחרי כל <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> הוא בדיוק הבדיקה שתופסת את זה.</p>
+<p>אם באחד התאים בקובץ ה-CSV יש טקסט חורג (למשל <code class="docutils literal notranslate"><span class="pre">&quot;20.3?&quot;</span></code> במקום <code class="docutils literal notranslate"><span class="pre">20.3</span></code>, או תא ריק שמסומן ב-<code class="docutils literal notranslate"><span class="pre">&quot;N/A&quot;</span></code> בלי שpandas מזהה אותו), כל העמודה הופכת לטיפוס טקסטואלי (<code class="docutils literal notranslate"><span class="pre">object</span></code> או <code class="docutils literal notranslate"><span class="pre">str</span></code>, תלוי בגרסת pandas) — כלומר pandas מתייחס לערכים כמחרוזות, לא כמספרים. הקוד <strong>ימשיך לרוץ</strong>, אבל כל חישוב מספרי על העמודה הזו (<code class="docutils literal notranslate"><span class="pre">()mean</span></code>, <code class="docutils literal notranslate"><span class="pre">()describe</span></code>) ייכשל או יתנהג מוזר. <code class="docutils literal notranslate"><span class="pre">df.dtypes</span></code> אחרי כל <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> הוא בדיוק הבדיקה שתופסת את זה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
@@ -731,7 +731,7 @@ dtype: object
 </section>
 <section id="id3">
 <h2><span class="section-number">10.5.3. </span>נסו בעצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>נחשו: מה <code class="docutils literal notranslate"><span class="pre">df[&quot;angle_deg&quot;].unique()</span></code> יחזיר על יומן המדידות שלנו (<code class="docutils literal notranslate"><span class="pre">df</span></code>, לא <code class="docutils literal notranslate"><span class="pre">df_bad</span></code>)? אילו ערכים ייחודיים יש בעמודת הזווית?</p>
+<p>נחשו: מה <code class="docutils literal notranslate"><span class="pre">()df[&quot;angle_deg&quot;].unique</span></code> יחזיר על יומן המדידות שלנו (<code class="docutils literal notranslate"><span class="pre">df</span></code>, לא <code class="docutils literal notranslate"><span class="pre">df_bad</span></code>)? אילו ערכים ייחודיים יש בעמודת הזווית?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># נחשו, ואז בדקו:</span>
@@ -751,7 +751,7 @@ dtype: object
 <span class="c1"># array([15, 30, 45, 60, 75])</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">unique()</span></code> מחזיר את הערכים השונים שמופיעים בעמודה, כל אחד פעם אחת — כלי טוב לבדיקת שפיות אחרי <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>, כדי לוודא שאין ערכים “חשודים” (כמו טעות הקלדה שיוצרת זווית נוספת בלתי צפויה).</p>
+<p><code class="docutils literal notranslate"><span class="pre">()unique</span></code> מחזיר את הערכים השונים שמופיעים בעמודה, כל אחד פעם אחת — כלי טוב לבדיקת שפיות אחרי <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>, כדי לוודא שאין ערכים “חשודים” (כמו טעות הקלדה שיוצרת זווית נוספת בלתי צפויה).</p>
 </div>
 </section>
 <section id="id4">
@@ -776,8 +776,8 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="XOYEJhIVcKbl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#XOYEJhIVcKbl {
+<div class="output text_html"><div id="iNkqHhYUeQXk" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#iNkqHhYUeQXk {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1000,7 +1000,7 @@ dtype: object
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsXOYEJhIVcKbl=[{"question": "\u05e2\u05de\u05d5\u05d3\u05d4 \u05e9\u05d0\u05de\u05d5\u05e8\u05d4 \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05e1\u05e4\u05e8\u05d9\u05ea \u05de\u05d2\u05d9\u05e2\u05d4 \u05db\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d8\u05e7\u05e1\u05d8\u05d5\u05d0\u05dc\u05d9 (object/str) \u05d0\u05d7\u05e8\u05d9 read_csv. \u05de\u05d4 \u05d6\u05d4 \u05d1\u05d3\u05e8\u05da \u05db\u05dc\u05dc \u05de\u05e8\u05de\u05d6?", "type": "multiple_choice", "answers": [{"answer": "\u05e9\u05d4\u05e7\u05d5\u05d1\u05e5 \u05e4\u05d2\u05d5\u05dd \u05dc\u05d2\u05de\u05e8\u05d9 \u05d5\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05e7\u05e8\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05db\u05df \u05d4\u05e6\u05dc\u05d9\u05d7\u05d4, \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05e2\u05d3\u05d9\u05e0\u05d4 \u05d9\u05d5\u05ea\u05e8."}, {"answer": "\u05e9\u05d9\u05e9 \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05e8\u05da \u05e9\u05d0\u05d9\u05e0\u05d5 \u05de\u05e1\u05e4\u05e8 \u05d8\u05d4\u05d5\u05e8 (\u05d8\u05e7\u05e1\u05d8 \u05d7\u05d5\u05e8\u05d2, \u05ea\u05d0 \u05e8\u05d9\u05e7 \u05dc\u05d0 \u05de\u05d6\u05d5\u05d4\u05d4 \u05d5\u05db\u05d5')", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05e8\u05d9\u05e7\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7."}]}];
+</style></div><script type="application/javascript">var questionsiNkqHhYUeQXk=[{"question": "\u05e2\u05de\u05d5\u05d3\u05d4 \u05e9\u05d0\u05de\u05d5\u05e8\u05d4 \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05e1\u05e4\u05e8\u05d9\u05ea \u05de\u05d2\u05d9\u05e2\u05d4 \u05db\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d8\u05e7\u05e1\u05d8\u05d5\u05d0\u05dc\u05d9 (object/str) \u05d0\u05d7\u05e8\u05d9 read_csv. \u05de\u05d4 \u05d6\u05d4 \u05d1\u05d3\u05e8\u05da \u05db\u05dc\u05dc \u05de\u05e8\u05de\u05d6?", "type": "multiple_choice", "answers": [{"answer": "\u05e9\u05d4\u05e7\u05d5\u05d1\u05e5 \u05e4\u05d2\u05d5\u05dd \u05dc\u05d2\u05de\u05e8\u05d9 \u05d5\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05e7\u05e8\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05db\u05df \u05d4\u05e6\u05dc\u05d9\u05d7\u05d4, \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05e2\u05d3\u05d9\u05e0\u05d4 \u05d9\u05d5\u05ea\u05e8."}, {"answer": "\u05e9\u05d9\u05e9 \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05e8\u05da \u05e9\u05d0\u05d9\u05e0\u05d5 \u05de\u05e1\u05e4\u05e8 \u05d8\u05d4\u05d5\u05e8 (\u05d8\u05e7\u05e1\u05d8 \u05d7\u05d5\u05e8\u05d2, \u05ea\u05d0 \u05e8\u05d9\u05e7 \u05dc\u05d0 \u05de\u05d6\u05d5\u05d4\u05d4 \u05d5\u05db\u05d5')", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05e8\u05d9\u05e7\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2062,8 +2062,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("XOYEJhIVcKbl")) {
-    show_questions(questionsXOYEJhIVcKbl, XOYEJhIVcKbl);
+  if (document.getElementById("iNkqHhYUeQXk")) {
+    show_questions(questionsiNkqHhYUeQXk, iNkqHhYUeQXk);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2078,7 +2078,7 @@ function try_show() {
 </section>
 <section id="id5">
 <h2><span class="section-number">10.5.5. </span>תרגול עצמי<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>טענו את <code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code> וודאו (בעזרת <code class="docutils literal notranslate"><span class="pre">df.dtypes</span></code>) שכל ארבע העמודות נטענו בטיפוס מספרי (<code class="docutils literal notranslate"><span class="pre">int64</span></code> או <code class="docutils literal notranslate"><span class="pre">float64</span></code>). לאחר מכן הדפיסו את <code class="docutils literal notranslate"><span class="pre">df[&quot;range_measured&quot;].min()</span></code> ו-<code class="docutils literal notranslate"><span class="pre">df[&quot;range_measured&quot;].max()</span></code>.</p>
+<p>טענו את <code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code> וודאו (בעזרת <code class="docutils literal notranslate"><span class="pre">df.dtypes</span></code>) שכל ארבע העמודות נטענו בטיפוס מספרי (<code class="docutils literal notranslate"><span class="pre">int64</span></code> או <code class="docutils literal notranslate"><span class="pre">float64</span></code>). לאחר מכן הדפיסו את <code class="docutils literal notranslate"><span class="pre">()df[&quot;range_measured&quot;].min</span></code> ו-<code class="docutils literal notranslate"><span class="pre">()df[&quot;range_measured&quot;].max</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>

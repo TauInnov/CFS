@@ -652,7 +652,7 @@ document.write(`
 </section>
 <section id="seed">
 <h2><span class="section-number">11.6.2. </span>באג נפוץ: שכחת seed → תוצאות לא ניתנות לשחזור<a class="headerlink" href="#seed" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">np.random.default_rng()</span></code> (בלי seed) יוצר generator עם seed אקראי מהמערכת — כל הרצה חדשה של הנוטבוק תיתן תוצאות <strong>שונות</strong>. לדוח מעבדה (ולבדיקת קוד!) חשוב seed קבוע, כדי שאותה הרצה תמיד תיתן אותה תוצאה.</p>
+<p><code class="docutils literal notranslate"><span class="pre">()np.random.default_rng</span></code> (בלי seed) יוצר generator עם seed אקראי מהמערכת — כל הרצה חדשה של הנוטבוק תיתן תוצאות <strong>שונות</strong>. לדוח מעבדה (ולבדיקת קוד!) חשוב seed קבוע, כדי שאותה הרצה תמיד תיתן אותה תוצאה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng_no_seed_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
@@ -668,8 +668,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.65553119  1.48365974 -1.64186969]
-[ 0.20358586  1.75400647 -0.52217811]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.80599367 0.04233556 1.42248406]
+[-1.26725151 -2.10551059  0.34998425]
 [ 0.30471708 -1.03998411  0.7504512 ]
 [ 0.30471708 -1.03998411  0.7504512 ]
 </pre></div>
@@ -724,8 +724,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="PWazFbBfGQpi" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#PWazFbBfGQpi {
+<div class="output text_html"><div id="pzBuPgGuVMsF" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#pzBuPgGuVMsF {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -948,7 +948,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsPWazFbBfGQpi=[{"question": "\u05dc\u05de\u05d4 \u05d7\u05e9\u05d5\u05d1 \u05dc\u05e7\u05d1\u05d5\u05e2 seed \u05e7\u05d1\u05d5\u05e2 \u05dc-default_rng \u05d1\u05e7\u05d5\u05d3 \u05e0\u05d9\u05ea\u05d5\u05d7 \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05d9\u05d4\u05d9\u05d5 \u05e0\u05d9\u05ea\u05e0\u05d5\u05ea \u05dc\u05e9\u05d7\u05d6\u05d5\u05e8 \u05d1\u05db\u05dc \u05d4\u05e8\u05e6\u05d4 \u05de\u05d7\u05d3\u05e9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05e7\u05d5\u05d3 \u05d9\u05e8\u05d5\u05e5 \u05de\u05d4\u05e8 \u05d9\u05d5\u05ea\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05de\u05d4\u05d9\u05e8\u05d5\u05ea."}, {"answer": "\u05d1\u05dc\u05d9 seed, \u05d4\u05e7\u05d5\u05d3 \u05dc\u05d0 \u05e8\u05e5 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05e4\u05e9\u05d5\u05d8 \u05d9\u05d9\u05ea\u05df \u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea \u05d1\u05db\u05dc \u05d4\u05e8\u05e6\u05d4."}]}];
+</style></div><script type="application/javascript">var questionspzBuPgGuVMsF=[{"question": "\u05dc\u05de\u05d4 \u05d7\u05e9\u05d5\u05d1 \u05dc\u05e7\u05d1\u05d5\u05e2 seed \u05e7\u05d1\u05d5\u05e2 \u05dc-default_rng \u05d1\u05e7\u05d5\u05d3 \u05e0\u05d9\u05ea\u05d5\u05d7 \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05d9\u05d4\u05d9\u05d5 \u05e0\u05d9\u05ea\u05e0\u05d5\u05ea \u05dc\u05e9\u05d7\u05d6\u05d5\u05e8 \u05d1\u05db\u05dc \u05d4\u05e8\u05e6\u05d4 \u05de\u05d7\u05d3\u05e9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05e7\u05d5\u05d3 \u05d9\u05e8\u05d5\u05e5 \u05de\u05d4\u05e8 \u05d9\u05d5\u05ea\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05de\u05d4\u05d9\u05e8\u05d5\u05ea."}, {"answer": "\u05d1\u05dc\u05d9 seed, \u05d4\u05e7\u05d5\u05d3 \u05dc\u05d0 \u05e8\u05e5 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d4 \u05e4\u05e9\u05d5\u05d8 \u05d9\u05d9\u05ea\u05df \u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea \u05d1\u05db\u05dc \u05d4\u05e8\u05e6\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2010,8 +2010,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("PWazFbBfGQpi")) {
-    show_questions(questionsPWazFbBfGQpi, PWazFbBfGQpi);
+  if (document.getElementById("pzBuPgGuVMsF")) {
+    show_questions(questionspzBuPgGuVMsF, pzBuPgGuVMsF);
   } else {
     setTimeout(try_show, 200);
   }

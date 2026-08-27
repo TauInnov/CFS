@@ -588,7 +588,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.8.1. דוגמה: תמונת מצב מהירה על כל הטבלה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-groupby">10.8.2. דוגמה: describe אחרי groupby</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.8.3. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">describe()</span></code> “שוכח” עמודת טקסט</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.8.3. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">()describe</span></code> “שוכח” עמודת טקסט</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.8.4. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.8.5. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">10.8.6. תרגול עצמי</a></li>
@@ -605,7 +605,7 @@ document.write(`
                   
   <section id="describe">
 <h1><span class="section-number">10.8. </span>10.6 — describe<a class="headerlink" href="#describe" title="Link to this heading">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> הוא כלי הבדיקה המהיר ביותר לטבלה שלמה: הוא מחשב, לכל עמודה <strong>מספרית</strong>, שמונה סטטיסטיקות בבת אחת — <code class="docutils literal notranslate"><span class="pre">count</span></code>, <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">std</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, שלושה אחוזונים (<code class="docutils literal notranslate"><span class="pre">25%</span></code>, <code class="docutils literal notranslate"><span class="pre">50%</span></code>, <code class="docutils literal notranslate"><span class="pre">75%</span></code>), ו-<code class="docutils literal notranslate"><span class="pre">max</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">()df.describe</span></code> הוא כלי הבדיקה המהיר ביותר לטבלה שלמה: הוא מחשב, לכל עמודה <strong>מספרית</strong>, שמונה סטטיסטיקות בבת אחת — <code class="docutils literal notranslate"><span class="pre">count</span></code>, <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">std</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, שלושה אחוזונים (<code class="docutils literal notranslate"><span class="pre">25%</span></code>, <code class="docutils literal notranslate"><span class="pre">50%</span></code>, <code class="docutils literal notranslate"><span class="pre">75%</span></code>), ו-<code class="docutils literal notranslate"><span class="pre">max</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -708,11 +708,11 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-<p>שימו לב ש-<code class="docutils literal notranslate"><span class="pre">run_id</span></code> מופיע ב-<code class="docutils literal notranslate"><span class="pre">describe()</span></code> למרות שהוא לא באמת גודל פיזיקלי — הוא מספרי (<code class="docutils literal notranslate"><span class="pre">int64</span></code>), אז <code class="docutils literal notranslate"><span class="pre">describe()</span></code> כולל אותו אוטומטית. חשוב לזכור <strong>לא</strong> לפרש את הממוצע/סטיית התקן שלו כאילו יש להם משמעות פיזיקלית.</p>
+<p>שימו לב ש-<code class="docutils literal notranslate"><span class="pre">run_id</span></code> מופיע ב-<code class="docutils literal notranslate"><span class="pre">()describe</span></code> למרות שהוא לא באמת גודל פיזיקלי — הוא מספרי (<code class="docutils literal notranslate"><span class="pre">int64</span></code>), אז <code class="docutils literal notranslate"><span class="pre">()describe</span></code> כולל אותו אוטומטית. חשוב לזכור <strong>לא</strong> לפרש את הממוצע/סטיית התקן שלו כאילו יש להם משמעות פיזיקלית.</p>
 </section>
 <section id="describe-groupby">
 <h2><span class="section-number">10.8.2. </span>דוגמה: describe אחרי groupby<a class="headerlink" href="#describe-groupby" title="Link to this heading">#</a></h2>
-<p>אפשר לשלב את שני הכלים: <code class="docutils literal notranslate"><span class="pre">describe()</span></code> בתוך כל קבוצה בנפרד, כדי לראות בבת אחת את הפיזור בכל זווית.</p>
+<p>אפשר לשלב את שני הכלים: <code class="docutils literal notranslate"><span class="pre">()describe</span></code> בתוך כל קבוצה בנפרד, כדי לראות בבת אחת את הפיזור בכל זווית.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;angle_deg&quot;</span><span class="p">)[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -821,8 +821,8 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">10.8.3. </span>באג נפוץ: <code class="docutils literal notranslate"><span class="pre">describe()</span></code> “שוכח” עמודת טקסט<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>אם לעמודה יש טיפוס טקסטואלי (<code class="docutils literal notranslate"><span class="pre">object</span></code>/<code class="docutils literal notranslate"><span class="pre">str</span></code>, למשל בגלל הבאג שראינו בסעיף 10.3 — טקסט חורג שהחליק לתוך עמודה מספרית), <code class="docutils literal notranslate"><span class="pre">describe()</span></code> <strong>פשוט לא מציג אותה</strong> בפלט הרגיל, בלי אזהרה. קל לפספס עמודה שלמה בלי לשים לב.</p>
+<h2><span class="section-number">10.8.3. </span>באג נפוץ: <code class="docutils literal notranslate"><span class="pre">()describe</span></code> “שוכח” עמודת טקסט<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>אם לעמודה יש טיפוס טקסטואלי (<code class="docutils literal notranslate"><span class="pre">object</span></code>/<code class="docutils literal notranslate"><span class="pre">str</span></code>, למשל בגלל הבאג שראינו בסעיף 10.3 — טקסט חורג שהחליק לתוך עמודה מספרית), <code class="docutils literal notranslate"><span class="pre">()describe</span></code> <strong>פשוט לא מציג אותה</strong> בפלט הרגיל, בלי אזהרה. קל לפספס עמודה שלמה בלי לשים לב.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
@@ -849,7 +849,7 @@ max         15.0
 </section>
 <section id="id3">
 <h2><span class="section-number">10.8.4. </span>נסו בעצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>מצאו, מתוך <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> על <code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code>, את הטווח (range_measured) המקסימלי שנמדד בכל הניסוי — בלי לחשב <code class="docutils literal notranslate"><span class="pre">max()</span></code> בנפרד, רק לקרוא מהטבלה שכבר חושבה.</p>
+<p>מצאו, מתוך <code class="docutils literal notranslate"><span class="pre">()df.describe</span></code> על <code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code>, את הטווח (range_measured) המקסימלי שנמדד בכל הניסוי — בלי לחשב <code class="docutils literal notranslate"><span class="pre">()max</span></code> בנפרד, רק לקרוא מהטבלה שכבר חושבה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># summary = df.describe()</span>
@@ -864,7 +864,7 @@ max         15.0
 <span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="s2">&quot;range_measured&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">describe()</span></code> מחזיר בעצמו <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, כך שאפשר לשלוף ממנו ערכים ספציפיים בעזרת <code class="docutils literal notranslate"><span class="pre">.loc[שורה,</span> <span class="pre">עמודה]</span></code>, בלי לחשב שוב.</p>
+<p><code class="docutils literal notranslate"><span class="pre">()describe</span></code> מחזיר בעצמו <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, כך שאפשר לשלוף ממנו ערכים ספציפיים בעזרת <code class="docutils literal notranslate"><span class="pre">.loc[שורה,</span> <span class="pre">עמודה]</span></code>, בלי לחשב שוב.</p>
 </div>
 </section>
 <section id="id4">
@@ -889,8 +889,8 @@ max         15.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="tqxXOWyLMpqW" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#tqxXOWyLMpqW {
+<div class="output text_html"><div id="PseihRMSCFyO" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#PseihRMSCFyO {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1113,7 +1113,7 @@ max         15.0
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionstqxXOWyLMpqW=[{"question": "\u05e2\u05de\u05d5\u05d3\u05d4 \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d8\u05e7\u05e1\u05d8\u05d5\u05d0\u05dc\u05d9 (object/str) \u05dc\u05d0 \u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05d1\u05e4\u05dc\u05d8 \u05e9\u05dc df.describe() \u05d4\u05e8\u05d2\u05d9\u05dc. \u05dc\u05de\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 describe() \u05ea\u05d5\u05de\u05da \u05e8\u05e7 \u05d1\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05de\u05e1\u05e4\u05e8\u05d9\u05d5\u05ea \u05db\u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d1\u05d8\u05d7 \u05e8\u05d9\u05e7\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7."}, {"answer": "describe() \u05ea\u05de\u05d9\u05d3 \u05de\u05e6\u05d9\u05d2 \u05d0\u05ea \u05db\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d1\u05dc\u05d9 \u05d9\u05d5\u05e6\u05d0 \u05de\u05df \u05d4\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05d4\u05e4\u05d5\u05db\u05d4."}]}];
+</style></div><script type="application/javascript">var questionsPseihRMSCFyO=[{"question": "\u05e2\u05de\u05d5\u05d3\u05d4 \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d8\u05e7\u05e1\u05d8\u05d5\u05d0\u05dc\u05d9 (object/str) \u05dc\u05d0 \u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05d1\u05e4\u05dc\u05d8 \u05e9\u05dc df.describe() \u05d4\u05e8\u05d2\u05d9\u05dc. \u05dc\u05de\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 describe() \u05ea\u05d5\u05de\u05da \u05e8\u05e7 \u05d1\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05de\u05e1\u05e4\u05e8\u05d9\u05d5\u05ea \u05db\u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d1\u05d8\u05d7 \u05e8\u05d9\u05e7\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7."}, {"answer": "describe() \u05ea\u05de\u05d9\u05d3 \u05de\u05e6\u05d9\u05d2 \u05d0\u05ea \u05db\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d1\u05dc\u05d9 \u05d9\u05d5\u05e6\u05d0 \u05de\u05df \u05d4\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05d4\u05e4\u05d5\u05db\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2175,8 +2175,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("tqxXOWyLMpqW")) {
-    show_questions(questionstqxXOWyLMpqW, tqxXOWyLMpqW);
+  if (document.getElementById("PseihRMSCFyO")) {
+    show_questions(questionsPseihRMSCFyO, PseihRMSCFyO);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2191,7 +2191,7 @@ function try_show() {
 </section>
 <section id="id5">
 <h2><span class="section-number">10.8.6. </span>תרגול עצמי<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>השתמשו ב-<code class="docutils literal notranslate"><span class="pre">df.groupby(&quot;angle_deg&quot;)[&quot;range_measured&quot;].describe()</span></code> כדי למצוא: באיזו זווית סטיית התקן (<code class="docutils literal notranslate"><span class="pre">std</span></code>) של הטווח הנמדד הייתה <strong>הגדולה ביותר</strong>?</p>
+<p>השתמשו ב-<code class="docutils literal notranslate"><span class="pre">()df.groupby(&quot;angle_deg&quot;)[&quot;range_measured&quot;].describe</span></code> כדי למצוא: באיזו זווית סטיית התקן (<code class="docutils literal notranslate"><span class="pre">std</span></code>) של הטווח הנמדד הייתה <strong>הגדולה ביותר</strong>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
@@ -2276,7 +2276,7 @@ function try_show() {
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.8.1. דוגמה: תמונת מצב מהירה על כל הטבלה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-groupby">10.8.2. דוגמה: describe אחרי groupby</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.8.3. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">describe()</span></code> “שוכח” עמודת טקסט</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.8.3. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">()describe</span></code> “שוכח” עמודת טקסט</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.8.4. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.8.5. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">10.8.6. תרגול עצמי</a></li>
