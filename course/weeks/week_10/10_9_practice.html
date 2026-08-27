@@ -604,14 +604,8 @@ document.write(`
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <p>השורה הראשונה מסננת רק ריצות שבהן <code class="docutils literal notranslate"><span class="pre">v0_measured</span></code> היה <strong>מעל הממוצע הכללי</strong> של כל 30 הריצות (לא ממוצע לפי זווית — ממוצע אחד, גלובלי, על כל הטבלה). השורה השנייה מקבצת את הריצות שנשארו לפי <code class="docutils literal notranslate"><span class="pre">angle_deg</span></code>, ומחשבת לכל קבוצה גם ממוצע וגם מונה (<code class="docutils literal notranslate"><span class="pre">count</span></code>) של <code class="docutils literal notranslate"><span class="pre">range_measured</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">result</span></code> היא <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> עם <strong>עמודה אחת לכל סטטיסטיקה</strong> (<code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>) ו<strong>שורה אחת לכל זווית שנותרה</strong> בנתונים המסוננים — לא בהכרח כל חמש הזוויות, כי ייתכן שבזווית מסוימת אף ריצה לא עברה את סף המהירות הממוצעת (במקרה כזה, הזווית הזו פשוט לא תופיע בתוצאה).</p>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 <hr class="docutils" />
 <p>הקוד הבא נועד להוסיף לטבלה עמודה חדשה <code class="docutils literal notranslate"><span class="pre">above_mean</span></code>, שמסמנת אילו ריצות היה בהן טווח מעל הממוצע. יש בו באג — אתרו ותקנו:</p>
@@ -638,8 +632,6 @@ document.write(`
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <p>המשתנה <code class="docutils literal notranslate"><span class="pre">is_above</span></code> מחושב <strong>מחדש בכל איטרציה של הלולאה</strong>, ונשמר עם הערך של השורה <strong>האחרונה בלבד</strong>. אחרי סיום הלולאה, <code class="docutils literal notranslate"><span class="pre">df2[&quot;above_mean&quot;]</span> <span class="pre">=</span> <span class="pre">is_above</span></code> משייך לכל 30 השורות <strong>את אותו ערך בודד</strong> — לא ערך שונה לכל שורה. הקוד רץ בלי שגיאה, אבל התוצאה חסרת משמעות: <code class="docutils literal notranslate"><span class="pre">unique()</span></code> יראה רק ערך אחד (<code class="docutils literal notranslate"><span class="pre">True</span></code> או <code class="docutils literal notranslate"><span class="pre">False</span></code>), לא שניהם.</p>
 <p>הפתרון הנכון: לוותר על הלולאה ולהשתמש בהשוואה וקטורית ישירה על כל העמודה בבת אחת (בדיוק כמו מסכה בוליאנית מסעיף 7.8 / 10.4):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;launch_log.csv&quot;</span><span class="p">)</span>
@@ -647,10 +639,6 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;above_mean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>   <span class="c1"># [True, False] - שני הערכים כצפוי</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 <hr class="docutils" />
 <p>כתבו פונקציה <code class="docutils literal notranslate"><span class="pre">best_angle_by_mean_range(df)</span></code> שמקבלת DataFrame בפורמט של <code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code>, ומחזירה <strong>tuple</strong> של (הזווית עם הטווח הממוצע הגבוה ביותר, ערך הטווח הממוצע הזה).</p>
@@ -668,8 +656,6 @@ document.write(`
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">best_angle_by_mean_range</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="n">mean_by_angle</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;angle_deg&quot;</span><span class="p">)[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
     <span class="n">best_angle</span> <span class="o">=</span> <span class="n">mean_by_angle</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
@@ -679,10 +665,6 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">best_angle_by_mean_range</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;launch_log.csv&quot;</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </section>
 

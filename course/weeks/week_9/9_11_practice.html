@@ -608,14 +608,8 @@ document.write(`
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <p><code class="docutils literal notranslate"><span class="pre">Y</span></code> נבנה בעזרת broadcasting: <code class="docutils literal notranslate"><span class="pre">v0_runs[:,</span> <span class="pre">None]</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">1)</span></code> מול <code class="docutils literal notranslate"><span class="pre">t</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(40,)</span></code>, נותן <code class="docutils literal notranslate"><span class="pre">Y</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">40)</span></code> — 5 ריצות, 40 נקודות זמן. <code class="docutils literal notranslate"><span class="pre">Y.std(axis=0)</span></code> מצמצם את ציר הריצות (<code class="docutils literal notranslate"><span class="pre">axis=0</span></code> נעלם), ומחזיר את <strong>סטיית התקן של הגובה על פני הריצות, בכל נקודת זמן בנפרד</strong>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">spread.shape</span></code> הוא <code class="docutils literal notranslate"><span class="pre">(40,)</span></code> — ערך אחד לכל זמן, בדיוק כמו התבנית שראינו בסעיף 9.7.</p>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 <hr class="docutils" />
 <p>הקוד הבא נועד לחשב מהירות אנכית מקורבת מתוך מדגם גובה <code class="docutils literal notranslate"><span class="pre">y</span></code>, ולצייר אותה מול הזמן. יש בו באג — אתרו ותקנו:</p>
@@ -641,8 +635,6 @@ document.write(`
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <p>הקוד רץ בלי שגיאה — וזו בדיוק הבעיה. <code class="docutils literal notranslate"><span class="pre">np.diff</span></code> מקצר את המערך מ-7 איברים ל-6, ו-<code class="docutils literal notranslate"><span class="pre">t_meas[:-1]</span></code> “מתאים” בגודלו (גם 6), אבל <strong>לא</strong> במשמעות הפיזיקלית: <code class="docutils literal notranslate"><span class="pre">t_meas[:-1]</span></code> הן נקודות ה<strong>התחלה</strong> של כל קטע, בעוד ש-<code class="docutils literal notranslate"><span class="pre">vy_approx[i]</span></code> מייצג את המהירות <strong>על פני</strong> הקטע — הערך הנכון הוא <strong>אמצע</strong> הקטע, לא תחילתו. הגרף “עובד” ונראה סביר, אבל כל הנקודות שלו מוזזות בחצי צעד שמאלה. זה בדיוק הבאג שראינו בסעיף 9.8.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">t_meas</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">t_meas</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>   <span class="c1"># נקודת האמצע של כל קטע, לא ההתחלה</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -652,10 +644,6 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 <hr class="docutils" />
 <p>כתבו פונקציה <code class="docutils literal notranslate"><span class="pre">max_height_per_run(Y)</span></code> שמקבלת מערך גבהים <code class="docutils literal notranslate"><span class="pre">Y</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(n_runs,</span> <span class="pre">n_t)</span></code> (ריצה, זמן) ומחזירה מערך <code class="docutils literal notranslate"><span class="pre">(n_runs,)</span></code> עם הגובה המרבי של כל ריצה.</p>
@@ -673,18 +661,12 @@ document.write(`
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">max_height_per_run</span><span class="p">(</span><span class="n">Y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Y</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># axis=1 (זמן) נעלם, ציר הריצות נשאר</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">max_height_per_run</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])))</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </section>
 

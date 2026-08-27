@@ -685,8 +685,6 @@ Name: range_measured, dtype: float64
 </div>
 </div>
 <div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
 <p class="admonition-title">פתרון — שני באגים</p>
 <p><strong>באג 1: <code class="docutils literal notranslate"><span class="pre">max()</span></code> במקום <code class="docutils literal notranslate"><span class="pre">mean()</span></code>.</strong> הבקשה הייתה “הטווח הממוצע הגבוה ביותר”, אבל הקוד קרא ל-<code class="docutils literal notranslate"><span class="pre">grouped.max()</span></code> — הטווח <strong>המקסימלי שנמדד אי פעם</strong> בכל קבוצה, לא הממוצע. שתי סטטיסטיקות שונות לגמרי; קל להחליף ביניהן כי שתיהן “מקסימום משהו”.</p>
 <p><strong>באג 2: התוצאה היא Series שלם, לא זווית בודדת.</strong> גם אחרי תיקון ל-<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">grouped.mean()</span></code> מחזיר <code class="docutils literal notranslate"><span class="pre">Series</span></code> עם ערך לכל זווית (5 שורות) — לא “הזווית הטובה ביותר”. כדי לקבל את תווית הזווית בעלת הערך הגבוה ביותר, צריך <code class="docutils literal notranslate"><span class="pre">.idxmax()</span></code>:</p>
@@ -698,10 +696,6 @@ Name: range_measured, dtype: float64
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;הזווית עם הטווח הממוצע הגבוה ביותר: </span><span class="si">{</span><span class="n">best_angle</span><span class="si">}</span><span class="s2">° (טווח ממוצע </span><span class="si">{</span><span class="n">best_value</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">m)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </section>
 <section id="id4">
@@ -735,8 +729,8 @@ Name: range_measured, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="HAuHcUyydhWW" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#HAuHcUyydhWW {
+<div class="output text_html"><div id="spLmKmAumgfu" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#spLmKmAumgfu {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -959,7 +953,7 @@ Name: range_measured, dtype: float64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsHAuHcUyydhWW=[{"question": "\u05e7\u05d5\u05d3 \u05e9\u05db\u05ea\u05d1 \u05e1\u05d5\u05db\u05df AI \u05e7\u05d5\u05e8\u05d0 \u05dc-<code>df.groupby(\"angle_deg\")[\"range_measured\"].max()</code> \u05db\u05e9\u05d4\u05de\u05e9\u05d9\u05de\u05d4 \u05d4\u05d9\u05d9\u05ea\u05d4 \u05dc\u05de\u05e6\u05d5\u05d0 \u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05d4\u05d2\u05d1\u05d5\u05d4 \u05d1\u05d9\u05d5\u05ea\u05e8. \u05de\u05d4 \u05d4\u05d1\u05e2\u05d9\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d1\u05e2\u05d9\u05d4, max \u05d5-mean \u05e9\u05e7\u05d5\u05dc\u05d9\u05dd \u05db\u05d0\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05df \u05e1\u05d8\u05d8\u05d9\u05e1\u05d8\u05d9\u05e7\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea \u05dc\u05d2\u05de\u05e8\u05d9."}, {"answer": "max() \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05e2\u05e8\u05da \u05d4\u05d1\u05d5\u05d3\u05d3 \u05d4\u05d2\u05d1\u05d5\u05d4 \u05d1\u05d9\u05d5\u05ea\u05e8 \u05e9\u05e0\u05de\u05d3\u05d3 \u05d1\u05db\u05dc \u05e7\u05d1\u05d5\u05e6\u05d4, \u05dc\u05d0 \u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc \u05d4\u05e7\u05d1\u05d5\u05e6\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "groupby \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc-max()", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d5 \u05e7\u05e8\u05d9\u05d0\u05d4 \u05ea\u05e7\u05d9\u05e0\u05d4."}]}, {"question": "\u05d9\u05e9 \u05dc\u05db\u05dd Series \u05e2\u05dd \u05de\u05de\u05d5\u05e6\u05e2 \u05d4\u05d8\u05d5\u05d5\u05d7 \u05dc\u05db\u05dc \u05d6\u05d5\u05d5\u05d9\u05ea. \u05d0\u05d9\u05da \u05de\u05d5\u05e6\u05d0\u05d9\u05dd \u05d0\u05ea \u05ea\u05d5\u05d5\u05d9\u05ea \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05d1\u05e2\u05dc\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05d4\u05d2\u05d1\u05d5\u05d4 \u05d1\u05d9\u05d5\u05ea\u05e8 (\u05dc\u05d0 \u05e8\u05e7 \u05d0\u05ea \u05d4\u05e2\u05e8\u05da)?", "type": "multiple_choice", "answers": [{"answer": "\u05e2\u05dd .max()", "correct": false, "feedback": "\u05d6\u05d4 \u05e0\u05d5\u05ea\u05df \u05e8\u05e7 \u05d0\u05ea \u05d4\u05e2\u05e8\u05da \u05d4\u05de\u05e7\u05e1\u05d9\u05de\u05dc\u05d9, \u05dc\u05d0 \u05d0\u05ea \u05d4\u05ea\u05d5\u05d5\u05d9\u05ea."}, {"answer": "\u05e2\u05dd .idxmax()", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e2\u05dd .sort_values() \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05de\u05d9\u05d5\u05df \u05dc\u05d0 \u05e0\u05d5\u05ea\u05df \u05d9\u05e9\u05d9\u05e8\u05d5\u05ea \u05d0\u05ea \u05d4\u05ea\u05d5\u05d5\u05d9\u05ea \u05d4\u05de\u05e7\u05e1\u05d9\u05de\u05dc\u05d9\u05ea \u05d1\u05dc\u05d9 \u05e9\u05dc\u05d1 \u05e0\u05d5\u05e1\u05e3."}]}];
+</style></div><script type="application/javascript">var questionsspLmKmAumgfu=[{"question": "\u05e7\u05d5\u05d3 \u05e9\u05db\u05ea\u05d1 \u05e1\u05d5\u05db\u05df AI \u05e7\u05d5\u05e8\u05d0 \u05dc-<code>df.groupby(\"angle_deg\")[\"range_measured\"].max()</code> \u05db\u05e9\u05d4\u05de\u05e9\u05d9\u05de\u05d4 \u05d4\u05d9\u05d9\u05ea\u05d4 \u05dc\u05de\u05e6\u05d5\u05d0 \u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05d4\u05d2\u05d1\u05d5\u05d4 \u05d1\u05d9\u05d5\u05ea\u05e8. \u05de\u05d4 \u05d4\u05d1\u05e2\u05d9\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d1\u05e2\u05d9\u05d4, max \u05d5-mean \u05e9\u05e7\u05d5\u05dc\u05d9\u05dd \u05db\u05d0\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05df \u05e1\u05d8\u05d8\u05d9\u05e1\u05d8\u05d9\u05e7\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea \u05dc\u05d2\u05de\u05e8\u05d9."}, {"answer": "max() \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05e2\u05e8\u05da \u05d4\u05d1\u05d5\u05d3\u05d3 \u05d4\u05d2\u05d1\u05d5\u05d4 \u05d1\u05d9\u05d5\u05ea\u05e8 \u05e9\u05e0\u05de\u05d3\u05d3 \u05d1\u05db\u05dc \u05e7\u05d1\u05d5\u05e6\u05d4, \u05dc\u05d0 \u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc \u05d4\u05e7\u05d1\u05d5\u05e6\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "groupby \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc-max()", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d6\u05d5 \u05e7\u05e8\u05d9\u05d0\u05d4 \u05ea\u05e7\u05d9\u05e0\u05d4."}]}, {"question": "\u05d9\u05e9 \u05dc\u05db\u05dd Series \u05e2\u05dd \u05de\u05de\u05d5\u05e6\u05e2 \u05d4\u05d8\u05d5\u05d5\u05d7 \u05dc\u05db\u05dc \u05d6\u05d5\u05d5\u05d9\u05ea. \u05d0\u05d9\u05da \u05de\u05d5\u05e6\u05d0\u05d9\u05dd \u05d0\u05ea \u05ea\u05d5\u05d5\u05d9\u05ea \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05d1\u05e2\u05dc\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05d4\u05d2\u05d1\u05d5\u05d4 \u05d1\u05d9\u05d5\u05ea\u05e8 (\u05dc\u05d0 \u05e8\u05e7 \u05d0\u05ea \u05d4\u05e2\u05e8\u05da)?", "type": "multiple_choice", "answers": [{"answer": "\u05e2\u05dd .max()", "correct": false, "feedback": "\u05d6\u05d4 \u05e0\u05d5\u05ea\u05df \u05e8\u05e7 \u05d0\u05ea \u05d4\u05e2\u05e8\u05da \u05d4\u05de\u05e7\u05e1\u05d9\u05de\u05dc\u05d9, \u05dc\u05d0 \u05d0\u05ea \u05d4\u05ea\u05d5\u05d5\u05d9\u05ea."}, {"answer": "\u05e2\u05dd .idxmax()", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e2\u05dd .sort_values() \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05de\u05d9\u05d5\u05df \u05dc\u05d0 \u05e0\u05d5\u05ea\u05df \u05d9\u05e9\u05d9\u05e8\u05d5\u05ea \u05d0\u05ea \u05d4\u05ea\u05d5\u05d5\u05d9\u05ea \u05d4\u05de\u05e7\u05e1\u05d9\u05de\u05dc\u05d9\u05ea \u05d1\u05dc\u05d9 \u05e9\u05dc\u05d1 \u05e0\u05d5\u05e1\u05e3."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2021,8 +2015,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("HAuHcUyydhWW")) {
-    show_questions(questionsHAuHcUyydhWW, HAuHcUyydhWW);
+  if (document.getElementById("spLmKmAumgfu")) {
+    show_questions(questionsspLmKmAumgfu, spLmKmAumgfu);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2053,7 +2047,7 @@ function try_show() {
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 ערכים שליליים נשארו
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4011808/392185472.py:5: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4033942/392185472.py:5: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -2065,18 +2059,12 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <p><code class="docutils literal notranslate"><span class="pre">df_check[df_check[&quot;range_measured&quot;]</span> <span class="pre">&lt;</span> <span class="pre">0]</span></code> יוצר <strong>עותק זמני</strong> של השורות המסוננות — לא “חלון” לתוך <code class="docutils literal notranslate"><span class="pre">df_check</span></code> המקורי. ההשמה <code class="docutils literal notranslate"><span class="pre">[&quot;range_measured&quot;]</span> <span class="pre">=</span> <span class="pre">np.nan</span></code> שאחריו כותבת לתוך העותק הזמני הזה, שנזרק מיד — <code class="docutils literal notranslate"><span class="pre">df_check</span></code> המקורי לא משתנה בכלל. זה בדיוק סוג הבאג “מוטציה של מערך הקלט”: הקוד רץ (אולי עם אזהרה בלבד), אבל בלי לעשות את מה שהתכוונו.</p>
 <p>הפתרון: לבצע את הבחירה וההשמה <strong>בפעולה אחת</strong>, עם <code class="docutils literal notranslate"><span class="pre">.loc</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_check</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_check</span><span class="p">[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;range_measured&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 <span class="nb">print</span><span class="p">((</span><span class="n">df_check</span><span class="p">[</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="s2">&quot;ערכים שליליים נשארו&quot;</span><span class="p">)</span>   <span class="c1"># 0</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </section>
 </section>

@@ -619,13 +619,7 @@ document.write(`
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <p>הקוד יוצר figure עם <strong>שני צירים זה לצד זה</strong> (<code class="docutils literal notranslate"><span class="pre">1×2</span></code>), שחולקים את אותו ציר <span class="math notranslate nohighlight">\(y\)</span> (<code class="docutils literal notranslate"><span class="pre">sharey=True</span></code>). על כל ציר מצוירת <strong>עקומה אחת</strong> — מסלול הזריקה עבור זווית אחת (30° בציר השמאלי, 60° בציר הימני), עם מקרא שמציג את הזווית באמצעות <span class="math notranslate nohighlight">\(\theta\)</span>. שני הצירים לא מוצגים על אותו גרף — זו טעות נפוצה לבלבל בין <code class="docutils literal notranslate"><span class="pre">subplots(1,</span> <span class="pre">2)</span></code> (שני גרפים נפרדים) לבין לולאה שמציירת הכול על <code class="docutils literal notranslate"><span class="pre">ax</span></code> יחיד (סעיף 8.5).</p>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 <hr class="docutils" />
 <p>בקוד הבא יש כוונה לצייר את הטווח הנמדד עם קווי שגיאה מול התיאוריה. יש בו באג — אתרו ותקנו:</p>
@@ -657,16 +651,10 @@ document.write(`
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <p>הבאג הוא ב-<code class="docutils literal notranslate"><span class="pre">fmt=&quot;-&quot;</span></code>: זה מחבר את נקודות המדידה בקו רציף, כאילו יש מודל רציף בין הזוויות שנמדדו בפועל — בניגוד לעקרון שראינו בסעיף 8.9, שלפיו נקודות מדידה בדידות מוצגות כסמלים בלי קו מחבר.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">,</span> <span class="n">means</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">stds</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 <hr class="docutils" />
 <p>כדור נזרק במהירות התחלתית <span class="math notranslate nohighlight">\(v_0\)</span> בזווית <span class="math notranslate nohighlight">\(\theta\)</span>. כתבו פונקציה <code class="docutils literal notranslate"><span class="pre">plot_range_vs_v0(v0_array,</span> <span class="pre">theta_deg)</span></code> שמקבלת מערך מהירויות התחלתיות ווזווית קבועה (במעלות), ומציגה גרף של הטווח <span class="math notranslate nohighlight">\(R = v_0^2\sin(2\theta)/g\)</span> כתלות ב-<span class="math notranslate nohighlight">\(v_0\)</span>, עם תוויות צירים ויחידות. השתמשו ב-<span class="math notranslate nohighlight">\(g=9.8\)</span>.</p>
@@ -684,8 +672,6 @@ document.write(`
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_range_vs_v0</span><span class="p">(</span><span class="n">v0_array</span><span class="p">,</span> <span class="n">theta_deg</span><span class="p">):</span>
     <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
     <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>
@@ -701,10 +687,6 @@ document.write(`
 <span class="n">plot_range_vs_v0</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">45</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </section>
 
