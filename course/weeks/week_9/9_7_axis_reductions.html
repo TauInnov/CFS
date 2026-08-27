@@ -724,8 +724,9 @@ document.write(`
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;multiple_choice&quot;</span><span class="p">,</span>
         <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;מספר בודד&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — רק Y.mean() בלי axis מחזיר מספר בודד.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;מערך בצורה (60,) - ממוצע על פני הריצות, לכל זמן&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון — axis=0 (ציר הריצות) נעלם.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;מערך בצורה (5,) - ממוצע על פני הזמן, לכל ריצה&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;זו התוצאה של axis=1, לא axis=0.&quot;</span><span class="p">}</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;מערך בצורה (5,) - ממוצע על פני הזמן, לכל ריצה&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;זו התוצאה של axis=1, לא axis=0.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;(5, 60) — אותה צורה, ללא שינוי&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — axis=0 גורם לציר הריצות להיעלם מהתוצאה; הצורה קטנה מ-(5,60) ל-(60,).&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;מערך בצורה (60,) - ממוצע על פני הריצות, לכל זמן&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון — axis=0 (ציר הריצות) נעלם.&quot;</span><span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">]</span>
@@ -734,8 +735,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="JGyvvRmwRrCT" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#JGyvvRmwRrCT {
+<div class="output text_html"><div id="tOirWDPRmlDG" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#tOirWDPRmlDG {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -958,7 +959,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsJGyvvRmwRrCT=[{"question": "\u05e2\u05d1\u05d5\u05e8 <code>Y</code> \u05d1\u05e6\u05d5\u05e8\u05d4 <code>(5, 60)</code> (\u05e8\u05d9\u05e6\u05d4, \u05d6\u05de\u05df), \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>Y.mean(axis=0)</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05e7 Y.mean() \u05d1\u05dc\u05d9 axis \u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (60,) - \u05de\u05de\u05d5\u05e6\u05e2 \u05e2\u05dc \u05e4\u05e0\u05d9 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05dc\u05db\u05dc \u05d6\u05de\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 axis=0 (\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea) \u05e0\u05e2\u05dc\u05dd."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (5,) - \u05de\u05de\u05d5\u05e6\u05e2 \u05e2\u05dc \u05e4\u05e0\u05d9 \u05d4\u05d6\u05de\u05df, \u05dc\u05db\u05dc \u05e8\u05d9\u05e6\u05d4", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc axis=1, \u05dc\u05d0 axis=0."}]}];
+</style></div><script type="application/javascript">var questionstOirWDPRmlDG=[{"question": "\u05e2\u05d1\u05d5\u05e8 <code>Y</code> \u05d1\u05e6\u05d5\u05e8\u05d4 <code>(5, 60)</code> (\u05e8\u05d9\u05e6\u05d4, \u05d6\u05de\u05df), \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>Y.mean(axis=0)</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05e7 Y.mean() \u05d1\u05dc\u05d9 axis \u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (5,) - \u05de\u05de\u05d5\u05e6\u05e2 \u05e2\u05dc \u05e4\u05e0\u05d9 \u05d4\u05d6\u05de\u05df, \u05dc\u05db\u05dc \u05e8\u05d9\u05e6\u05d4", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc axis=1, \u05dc\u05d0 axis=0."}, {"answer": "(5, 60) \u2014 \u05d0\u05d5\u05ea\u05d4 \u05e6\u05d5\u05e8\u05d4, \u05dc\u05dc\u05d0 \u05e9\u05d9\u05e0\u05d5\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 axis=0 \u05d2\u05d5\u05e8\u05dd \u05dc\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea \u05dc\u05d4\u05d9\u05e2\u05dc\u05dd \u05de\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4; \u05d4\u05e6\u05d5\u05e8\u05d4 \u05e7\u05d8\u05e0\u05d4 \u05de-(5,60) \u05dc-(60,)."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (60,) - \u05de\u05de\u05d5\u05e6\u05e2 \u05e2\u05dc \u05e4\u05e0\u05d9 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05dc\u05db\u05dc \u05d6\u05de\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 axis=0 (\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea) \u05e0\u05e2\u05dc\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2020,8 +2021,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("JGyvvRmwRrCT")) {
-    show_questions(questionsJGyvvRmwRrCT, JGyvvRmwRrCT);
+  if (document.getElementById("tOirWDPRmlDG")) {
+    show_questions(questionstOirWDPRmlDG, tOirWDPRmlDG);
   } else {
     setTimeout(try_show, 200);
   }

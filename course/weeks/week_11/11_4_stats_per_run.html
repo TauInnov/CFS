@@ -734,9 +734,10 @@ dtype: int64
         <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;מתי עדיף להשתמש ב-groupby במקום בצמצום לפי ציר על מערך NumPy?&quot;</span><span class="p">,</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;multiple_choice&quot;</span><span class="p">,</span>
         <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כשהנתונים כבר בטבלה עם עמודת קיבוץ, ולא בהכרח באותו מספר איברים לכל קבוצה&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון.&quot;</span><span class="p">},</span>
             <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;תמיד - groupby תמיד עדיף&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — כשהנתונים כבר מערך מסודר, axis reduction נוח וישיר יותר.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;groupby עובד רק על מספרים שלמים&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא נכון.&quot;</span><span class="p">}</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כשהנתונים כבר בטבלה עם עמודת קיבוץ, ולא בהכרח באותו מספר איברים לכל קבוצה&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;groupby עובד רק על מספרים שלמים&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא נכון.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;רק כשיש פחות מ-10 קבוצות&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — אין מגבלה כזו; groupby עובד באותה יעילות עם כל מספר קבוצות.&quot;</span><span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">]</span>
@@ -745,8 +746,8 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="wNppTwVaLEJe" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#wNppTwVaLEJe {
+<div class="output text_html"><div id="qWJEWkarNMbX" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#qWJEWkarNMbX {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -969,7 +970,7 @@ dtype: int64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionswNppTwVaLEJe=[{"question": "\u05de\u05ea\u05d9 \u05e2\u05d3\u05d9\u05e3 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-groupby \u05d1\u05de\u05e7\u05d5\u05dd \u05d1\u05e6\u05de\u05e6\u05d5\u05dd \u05dc\u05e4\u05d9 \u05e6\u05d9\u05e8 \u05e2\u05dc \u05de\u05e2\u05e8\u05da NumPy?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05e9\u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05db\u05d1\u05e8 \u05d1\u05d8\u05d1\u05dc\u05d4 \u05e2\u05dd \u05e2\u05de\u05d5\u05d3\u05ea \u05e7\u05d9\u05d1\u05d5\u05e5, \u05d5\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7 \u05d1\u05d0\u05d5\u05ea\u05d5 \u05de\u05e1\u05e4\u05e8 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05dc\u05db\u05dc \u05e7\u05d1\u05d5\u05e6\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05ea\u05de\u05d9\u05d3 - groupby \u05ea\u05de\u05d9\u05d3 \u05e2\u05d3\u05d9\u05e3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05db\u05e9\u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05db\u05d1\u05e8 \u05de\u05e2\u05e8\u05da \u05de\u05e1\u05d5\u05d3\u05e8, axis reduction \u05e0\u05d5\u05d7 \u05d5\u05d9\u05e9\u05d9\u05e8 \u05d9\u05d5\u05ea\u05e8."}, {"answer": "groupby \u05e2\u05d5\u05d1\u05d3 \u05e8\u05e7 \u05e2\u05dc \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsqWJEWkarNMbX=[{"question": "\u05de\u05ea\u05d9 \u05e2\u05d3\u05d9\u05e3 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-groupby \u05d1\u05de\u05e7\u05d5\u05dd \u05d1\u05e6\u05de\u05e6\u05d5\u05dd \u05dc\u05e4\u05d9 \u05e6\u05d9\u05e8 \u05e2\u05dc \u05de\u05e2\u05e8\u05da NumPy?", "type": "multiple_choice", "answers": [{"answer": "\u05ea\u05de\u05d9\u05d3 - groupby \u05ea\u05de\u05d9\u05d3 \u05e2\u05d3\u05d9\u05e3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05db\u05e9\u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05db\u05d1\u05e8 \u05de\u05e2\u05e8\u05da \u05de\u05e1\u05d5\u05d3\u05e8, axis reduction \u05e0\u05d5\u05d7 \u05d5\u05d9\u05e9\u05d9\u05e8 \u05d9\u05d5\u05ea\u05e8."}, {"answer": "\u05db\u05e9\u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05db\u05d1\u05e8 \u05d1\u05d8\u05d1\u05dc\u05d4 \u05e2\u05dd \u05e2\u05de\u05d5\u05d3\u05ea \u05e7\u05d9\u05d1\u05d5\u05e5, \u05d5\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7 \u05d1\u05d0\u05d5\u05ea\u05d5 \u05de\u05e1\u05e4\u05e8 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05dc\u05db\u05dc \u05e7\u05d1\u05d5\u05e6\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "groupby \u05e2\u05d5\u05d1\u05d3 \u05e8\u05e7 \u05e2\u05dc \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e8\u05e7 \u05db\u05e9\u05d9\u05e9 \u05e4\u05d7\u05d5\u05ea \u05de-10 \u05e7\u05d1\u05d5\u05e6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05d9\u05df \u05de\u05d2\u05d1\u05dc\u05d4 \u05db\u05d6\u05d5; groupby \u05e2\u05d5\u05d1\u05d3 \u05d1\u05d0\u05d5\u05ea\u05d4 \u05d9\u05e2\u05d9\u05dc\u05d5\u05ea \u05e2\u05dd \u05db\u05dc \u05de\u05e1\u05e4\u05e8 \u05e7\u05d1\u05d5\u05e6\u05d5\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2031,8 +2032,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("wNppTwVaLEJe")) {
-    show_questions(questionswNppTwVaLEJe, wNppTwVaLEJe);
+  if (document.getElementById("qWJEWkarNMbX")) {
+    show_questions(questionsqWJEWkarNMbX, qWJEWkarNMbX);
   } else {
     setTimeout(try_show, 200);
   }

@@ -684,7 +684,8 @@ document.write(`
         <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;2 (a לא השתנה)&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — b היא תצוגה של a, לא עותק.&quot;</span><span class="p">},</span>
             <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;99 (a השתנה)&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון. פריסה של מערך NumPy מחזירה תצוגה, ולכן שינוי ב-b משפיע גם על a.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;תיזרק שגיאה&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — זה קוד חוקי לחלוטין.&quot;</span><span class="p">}</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;תיזרק שגיאה&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — זה קוד חוקי לחלוטין.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;רק b משתנה ל-99, ו-a[1] הופך ל-None&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — a לא הופך ל-None; פשוט האיבר המתאים בו גם הוא משתנה ל-99, כי b היא תצוגה (view) של a, לא עותק.&quot;</span><span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">]</span>
@@ -694,8 +695,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="XElLJRVFOBtC" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#XElLJRVFOBtC {
+<div class="output text_html"><div id="cUAzbQtGptoF" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#cUAzbQtGptoF {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -918,7 +919,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsXElLJRVFOBtC=[{"question": "\u05d0\u05d7\u05e8\u05d9 <code>a = np.array([1,2,3]); b = a[1:]; b[0] = 99</code>, \u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc <code>a[1]</code>?", "type": "multiple_choice", "answers": [{"answer": "2 (a \u05dc\u05d0 \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": false, "feedback": "\u05dc\u05d0 \u2014 b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}, {"answer": "99 (a \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05e4\u05e8\u05d9\u05e1\u05d4 \u05e9\u05dc \u05de\u05e2\u05e8\u05da NumPy \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05ea\u05e6\u05d5\u05d2\u05d4, \u05d5\u05dc\u05db\u05df \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1-b \u05de\u05e9\u05e4\u05d9\u05e2 \u05d2\u05dd \u05e2\u05dc a."}, {"answer": "\u05ea\u05d9\u05d6\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05d7\u05d5\u05e7\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df."}]}];
+</style></div><script type="application/javascript">var questionscUAzbQtGptoF=[{"question": "\u05d0\u05d7\u05e8\u05d9 <code>a = np.array([1,2,3]); b = a[1:]; b[0] = 99</code>, \u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc <code>a[1]</code>?", "type": "multiple_choice", "answers": [{"answer": "2 (a \u05dc\u05d0 \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": false, "feedback": "\u05dc\u05d0 \u2014 b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}, {"answer": "99 (a \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05e4\u05e8\u05d9\u05e1\u05d4 \u05e9\u05dc \u05de\u05e2\u05e8\u05da NumPy \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05ea\u05e6\u05d5\u05d2\u05d4, \u05d5\u05dc\u05db\u05df \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1-b \u05de\u05e9\u05e4\u05d9\u05e2 \u05d2\u05dd \u05e2\u05dc a."}, {"answer": "\u05ea\u05d9\u05d6\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05d7\u05d5\u05e7\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df."}, {"answer": "\u05e8\u05e7 b \u05de\u05e9\u05ea\u05e0\u05d4 \u05dc-99, \u05d5-a[1] \u05d4\u05d5\u05e4\u05da \u05dc-None", "correct": false, "feedback": "\u05dc\u05d0 \u2014 a \u05dc\u05d0 \u05d4\u05d5\u05e4\u05da \u05dc-None; \u05e4\u05e9\u05d5\u05d8 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05de\u05ea\u05d0\u05d9\u05dd \u05d1\u05d5 \u05d2\u05dd \u05d4\u05d5\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4 \u05dc-99, \u05db\u05d9 b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 (view) \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1980,8 +1981,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("XElLJRVFOBtC")) {
-    show_questions(questionsXElLJRVFOBtC, XElLJRVFOBtC);
+  if (document.getElementById("cUAzbQtGptoF")) {
+    show_questions(questionscUAzbQtGptoF, cUAzbQtGptoF);
   } else {
     setTimeout(try_show, 200);
   }

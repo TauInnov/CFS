@@ -682,7 +682,7 @@ I0 משוחזר = 128.3  (אמיתי: 120.0)
 m עם ה-nan בפנים: nan
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4093222/85346611.py:4: RuntimeWarning: invalid value encountered in log
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4108760/85346611.py:4: RuntimeWarning: invalid value encountered in log
   y_lin_bad = np.log(I_meas_bad)   # RuntimeWarning, לא Exception
 </pre></div>
 </div>
@@ -725,7 +725,8 @@ m עם ה-nan בפנים: nan
         <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי הוא מחזיר nan בשקט (רק אזהרה) והריצה ממשיכה, כך שהבעיה מתגלה רק בתוצאה הסופית - אם בכלל&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון - זו בדיוק ההגדרה של &#39;באג סמנטי&#39;.&quot;</span><span class="p">},</span>
             <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי הוא תמיד קורס את כל הפייתון&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא - הפעולה עצמה לא קורסת.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;np.log על ערך שלילי לא באמת בעייתי, זו רק אזהרת סגנון&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא נכון - התוצאה (nan) לא שמישה, זו בעיה אמיתית.&quot;</span><span class="p">}</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;np.log על ערך שלילי לא באמת בעייתי, זו רק אזהרת סגנון&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא נכון - התוצאה (nan) לא שמישה, זו בעיה אמיתית.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי הוא מוחק את המערך המקורי מהזיכרון&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — np.log לא נוגע במערך המקורי בכלל; הוא רק מחזיר nan עבור הערכים השליליים בפלט החדש.&quot;</span><span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">]</span>
@@ -734,8 +735,8 @@ m עם ה-nan בפנים: nan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="pxWqjIEkHCaS" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#pxWqjIEkHCaS {
+<div class="output text_html"><div id="RRCNriVSlvlp" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#RRCNriVSlvlp {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -958,7 +959,7 @@ m עם ה-nan בפנים: nan
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionspxWqjIEkHCaS=[{"question": "\u05dc\u05de\u05d4 `np.log` \u05e2\u05dc \u05e2\u05e8\u05da \u05e9\u05dc\u05d9\u05dc\u05d9 \u05de\u05e1\u05d5\u05db\u05df \u05d9\u05d5\u05ea\u05e8 \u05de-Exception \u05e8\u05d2\u05d9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05de\u05d7\u05d6\u05d9\u05e8 nan \u05d1\u05e9\u05e7\u05d8 (\u05e8\u05e7 \u05d0\u05d6\u05d4\u05e8\u05d4) \u05d5\u05d4\u05e8\u05d9\u05e6\u05d4 \u05de\u05de\u05e9\u05d9\u05db\u05d4, \u05db\u05da \u05e9\u05d4\u05d1\u05e2\u05d9\u05d4 \u05de\u05ea\u05d2\u05dc\u05d4 \u05e8\u05e7 \u05d1\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05e1\u05d5\u05e4\u05d9\u05ea - \u05d0\u05dd \u05d1\u05db\u05dc\u05dc", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df - \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05d2\u05d3\u05e8\u05d4 \u05e9\u05dc '\u05d1\u05d0\u05d2 \u05e1\u05de\u05e0\u05d8\u05d9'."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05ea\u05de\u05d9\u05d3 \u05e7\u05d5\u05e8\u05e1 \u05d0\u05ea \u05db\u05dc \u05d4\u05e4\u05d9\u05d9\u05ea\u05d5\u05df", "correct": false, "feedback": "\u05dc\u05d0 - \u05d4\u05e4\u05e2\u05d5\u05dc\u05d4 \u05e2\u05e6\u05de\u05d4 \u05dc\u05d0 \u05e7\u05d5\u05e8\u05e1\u05ea."}, {"answer": "np.log \u05e2\u05dc \u05e2\u05e8\u05da \u05e9\u05dc\u05d9\u05dc\u05d9 \u05dc\u05d0 \u05d1\u05d0\u05de\u05ea \u05d1\u05e2\u05d9\u05d9\u05ea\u05d9, \u05d6\u05d5 \u05e8\u05e7 \u05d0\u05d6\u05d4\u05e8\u05ea \u05e1\u05d2\u05e0\u05d5\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df - \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 (nan) \u05dc\u05d0 \u05e9\u05de\u05d9\u05e9\u05d4, \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05d0\u05de\u05d9\u05ea\u05d9\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsRRCNriVSlvlp=[{"question": "\u05dc\u05de\u05d4 `np.log` \u05e2\u05dc \u05e2\u05e8\u05da \u05e9\u05dc\u05d9\u05dc\u05d9 \u05de\u05e1\u05d5\u05db\u05df \u05d9\u05d5\u05ea\u05e8 \u05de-Exception \u05e8\u05d2\u05d9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05de\u05d7\u05d6\u05d9\u05e8 nan \u05d1\u05e9\u05e7\u05d8 (\u05e8\u05e7 \u05d0\u05d6\u05d4\u05e8\u05d4) \u05d5\u05d4\u05e8\u05d9\u05e6\u05d4 \u05de\u05de\u05e9\u05d9\u05db\u05d4, \u05db\u05da \u05e9\u05d4\u05d1\u05e2\u05d9\u05d4 \u05de\u05ea\u05d2\u05dc\u05d4 \u05e8\u05e7 \u05d1\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05e1\u05d5\u05e4\u05d9\u05ea - \u05d0\u05dd \u05d1\u05db\u05dc\u05dc", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df - \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05d2\u05d3\u05e8\u05d4 \u05e9\u05dc '\u05d1\u05d0\u05d2 \u05e1\u05de\u05e0\u05d8\u05d9'."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05ea\u05de\u05d9\u05d3 \u05e7\u05d5\u05e8\u05e1 \u05d0\u05ea \u05db\u05dc \u05d4\u05e4\u05d9\u05d9\u05ea\u05d5\u05df", "correct": false, "feedback": "\u05dc\u05d0 - \u05d4\u05e4\u05e2\u05d5\u05dc\u05d4 \u05e2\u05e6\u05de\u05d4 \u05dc\u05d0 \u05e7\u05d5\u05e8\u05e1\u05ea."}, {"answer": "np.log \u05e2\u05dc \u05e2\u05e8\u05da \u05e9\u05dc\u05d9\u05dc\u05d9 \u05dc\u05d0 \u05d1\u05d0\u05de\u05ea \u05d1\u05e2\u05d9\u05d9\u05ea\u05d9, \u05d6\u05d5 \u05e8\u05e7 \u05d0\u05d6\u05d4\u05e8\u05ea \u05e1\u05d2\u05e0\u05d5\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df - \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 (nan) \u05dc\u05d0 \u05e9\u05de\u05d9\u05e9\u05d4, \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05d0\u05de\u05d9\u05ea\u05d9\u05ea."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05de\u05d5\u05d7\u05e7 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05de\u05d4\u05d6\u05d9\u05db\u05e8\u05d5\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u2014 np.log \u05dc\u05d0 \u05e0\u05d5\u05d2\u05e2 \u05d1\u05de\u05e2\u05e8\u05da \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05d1\u05db\u05dc\u05dc; \u05d4\u05d5\u05d0 \u05e8\u05e7 \u05de\u05d7\u05d6\u05d9\u05e8 nan \u05e2\u05d1\u05d5\u05e8 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd \u05d1\u05e4\u05dc\u05d8 \u05d4\u05d7\u05d3\u05e9."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2020,8 +2021,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("pxWqjIEkHCaS")) {
-    show_questions(questionspxWqjIEkHCaS, pxWqjIEkHCaS);
+  if (document.getElementById("RRCNriVSlvlp")) {
+    show_questions(questionsRRCNriVSlvlp, RRCNriVSlvlp);
   } else {
     setTimeout(try_show, 200);
   }

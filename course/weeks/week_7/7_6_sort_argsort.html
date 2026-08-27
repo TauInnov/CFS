@@ -686,8 +686,9 @@ document.write(`
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;multiple_choice&quot;</span><span class="p">,</span>
         <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;[10, 20, 30] — הערכים הממוינים&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;זו התוצאה של np.sort(a), לא של argsort.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;[2, 1, 0] — סדר יורד&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — argsort ברירת מחדל ממיין בסדר עולה.&quot;</span><span class="p">},</span>
             <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;[1, 2, 0] — האינדקסים שיסדרו את a&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון: a[1]=10 (הכי קטן), a[2]=20, a[0]=30 (הכי גדול).&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;[2, 1, 0] — סדר יורד&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — argsort ברירת מחדל ממיין בסדר עולה.&quot;</span><span class="p">}</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;[0, 1, 2] — אותם אינדקסים בסדר המקורי&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — argsort לא מחזיר את הסדר המקורי; הוא מחזיר את הסדר שממיין את a.&quot;</span><span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">]</span>
@@ -697,8 +698,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="igxGuSJlHdsY" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#igxGuSJlHdsY {
+<div class="output text_html"><div id="qrhoxuBQtddb" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#qrhoxuBQtddb {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -921,7 +922,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsigxGuSJlHdsY=[{"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df <code>a = np.array([30, 10, 20])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>np.argsort(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "[10, 20, 30] \u2014 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05de\u05de\u05d5\u05d9\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc np.sort(a), \u05dc\u05d0 \u05e9\u05dc argsort."}, {"answer": "[1, 2, 0] \u2014 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05e9\u05d9\u05e1\u05d3\u05e8\u05d5 \u05d0\u05ea a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: a[1]=10 (\u05d4\u05db\u05d9 \u05e7\u05d8\u05df), a[2]=20, a[0]=30 (\u05d4\u05db\u05d9 \u05d2\u05d3\u05d5\u05dc)."}, {"answer": "[2, 1, 0] \u2014 \u05e1\u05d3\u05e8 \u05d9\u05d5\u05e8\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 argsort \u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc \u05de\u05de\u05d9\u05d9\u05df \u05d1\u05e1\u05d3\u05e8 \u05e2\u05d5\u05dc\u05d4."}]}];
+</style></div><script type="application/javascript">var questionsqrhoxuBQtddb=[{"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df <code>a = np.array([30, 10, 20])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>np.argsort(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "[10, 20, 30] \u2014 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05de\u05de\u05d5\u05d9\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc np.sort(a), \u05dc\u05d0 \u05e9\u05dc argsort."}, {"answer": "[2, 1, 0] \u2014 \u05e1\u05d3\u05e8 \u05d9\u05d5\u05e8\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 argsort \u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc \u05de\u05de\u05d9\u05d9\u05df \u05d1\u05e1\u05d3\u05e8 \u05e2\u05d5\u05dc\u05d4."}, {"answer": "[1, 2, 0] \u2014 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05e9\u05d9\u05e1\u05d3\u05e8\u05d5 \u05d0\u05ea a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: a[1]=10 (\u05d4\u05db\u05d9 \u05e7\u05d8\u05df), a[2]=20, a[0]=30 (\u05d4\u05db\u05d9 \u05d2\u05d3\u05d5\u05dc)."}, {"answer": "[0, 1, 2] \u2014 \u05d0\u05d5\u05ea\u05dd \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05d1\u05e1\u05d3\u05e8 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 argsort \u05dc\u05d0 \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05e1\u05d3\u05e8 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9; \u05d4\u05d5\u05d0 \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05e1\u05d3\u05e8 \u05e9\u05de\u05de\u05d9\u05d9\u05df \u05d0\u05ea a."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1983,8 +1984,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("igxGuSJlHdsY")) {
-    show_questions(questionsigxGuSJlHdsY, igxGuSJlHdsY);
+  if (document.getElementById("qrhoxuBQtddb")) {
+    show_questions(questionsqrhoxuBQtddb, qrhoxuBQtddb);
   } else {
     setTimeout(try_show, 200);
   }
