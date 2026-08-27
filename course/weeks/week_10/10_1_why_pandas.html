@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10.1. 10.1 — למה pandas — טבלה מול מערך &#8212; Computers For physics</title>
+    <title>10.1. למה pandas — טבלה מול מערך &#8212; Computers For physics</title>
   
   
   
@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_1_why_pandas';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="10.2. 10.2 — DataFrame ו-Series" href="10_2_dataframe_series.html" />
+    <link rel="next" title="10.2. DataFrame ו-Series" href="10_2_dataframe_series.html" />
     <link rel="prev" title="10. שבוע 10 — pandas" href="../week_10.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -576,7 +576,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>10.1 — למה pandas — טבלה מול מערך</h1>
+    <h1>למה pandas — טבלה מול מערך</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -602,7 +602,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="pandas">
-<h1><span class="section-number">10.1. </span>10.1 — למה pandas — טבלה מול מערך<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10.1. </span>למה pandas — טבלה מול מערך<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
 <p>השבוע הזה שונה משבועות 7–9: המטרה היא <strong>אוריינות, לא הפקה</strong>. לא נדרש לכתוב שאילתת pandas מהזיכרון — נדרש להבין קוד pandas קיים, לדעת מה הוא מחזיר, ולזהות בו טעות. זו גם ההכנה הישירה לשבוע 11: pandas תהיה שכבת הקלט של נתוני הניסוי.</p>
 <p>בשבועות 7–9 עבדנו עם מערכי NumPy: כל התאים מאותו טיפוס, וניגשים אליהם לפי <strong>מיקום</strong> בציר (<code class="docutils literal notranslate"><span class="pre">Y[2]</span></code>, <code class="docutils literal notranslate"><span class="pre">Y[:,</span> <span class="pre">0]</span></code>). בפועל, יומן מדידות מעבדה נראה אחרת: לכל עמודה יש <strong>שם</strong> ומשמעות שונה (מספר ריצה, זווית שיגור, מהירות נמדדת, טווח נמדד), ולעיתים גם <strong>טיפוס שונה</strong> (מספר שלם, מספר עשרוני, טקסט). זו בדיוק הטבלה — ולכך נועד <strong>pandas</strong>.</p>
 <section id="id1">
@@ -760,8 +760,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="YLESSwKIxvhx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#YLESSwKIxvhx {
+<div class="output text_html"><div id="gYGSEkhhbznp" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#gYGSEkhhbznp {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -984,7 +984,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsYLESSwKIxvhx=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05de\u05e8\u05db\u05d6\u05d9 \u05d1\u05d9\u05df \u05de\u05e2\u05e8\u05da NumPy \u05dc\u05d8\u05d1\u05dc\u05ea pandas (DataFrame)?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05d4\u05d1\u05d3\u05dc \u05de\u05d4\u05d5\u05ea\u05d9, \u05d6\u05d4 \u05e8\u05e7 \u05e9\u05dd \u05d0\u05d7\u05e8 \u05dc\u05d0\u05d5\u05ea\u05d5 \u05d3\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 \u05d4\u05d1\u05d3\u05dc\u05d9\u05dd \u05de\u05e9\u05de\u05e2\u05d5\u05ea\u05d9\u05d9\u05dd."}, {"answer": "\u05d1\u05d8\u05d1\u05dc\u05d4 \u05db\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05d9\u05db\u05d5\u05dc\u05d4 \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 \u05e9\u05d5\u05e0\u05d4 \u05d5\u05d1\u05e2\u05dc\u05ea \u05e9\u05dd; \u05d1\u05de\u05e2\u05e8\u05da NumPy \u05db\u05dc \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05de\u05d0\u05d5\u05ea\u05d5 \u05d8\u05d9\u05e4\u05d5\u05e1", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05de\u05e2\u05e8\u05da NumPy \u05ea\u05de\u05d9\u05d3 \u05d2\u05d3\u05d5\u05dc \u05d9\u05d5\u05ea\u05e8 \u05de\u05d8\u05d1\u05dc\u05ea pandas", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05d2\u05d5\u05d3\u05dc."}]}];
+</style></div><script type="application/javascript">var questionsgYGSEkhhbznp=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05de\u05e8\u05db\u05d6\u05d9 \u05d1\u05d9\u05df \u05de\u05e2\u05e8\u05da NumPy \u05dc\u05d8\u05d1\u05dc\u05ea pandas (DataFrame)?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05d4\u05d1\u05d3\u05dc \u05de\u05d4\u05d5\u05ea\u05d9, \u05d6\u05d4 \u05e8\u05e7 \u05e9\u05dd \u05d0\u05d7\u05e8 \u05dc\u05d0\u05d5\u05ea\u05d5 \u05d3\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 \u05d4\u05d1\u05d3\u05dc\u05d9\u05dd \u05de\u05e9\u05de\u05e2\u05d5\u05ea\u05d9\u05d9\u05dd."}, {"answer": "\u05d1\u05d8\u05d1\u05dc\u05d4 \u05db\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05d9\u05db\u05d5\u05dc\u05d4 \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 \u05e9\u05d5\u05e0\u05d4 \u05d5\u05d1\u05e2\u05dc\u05ea \u05e9\u05dd; \u05d1\u05de\u05e2\u05e8\u05da NumPy \u05db\u05dc \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05de\u05d0\u05d5\u05ea\u05d5 \u05d8\u05d9\u05e4\u05d5\u05e1", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05de\u05e2\u05e8\u05da NumPy \u05ea\u05de\u05d9\u05d3 \u05d2\u05d3\u05d5\u05dc \u05d9\u05d5\u05ea\u05e8 \u05de\u05d8\u05d1\u05dc\u05ea pandas", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05d2\u05d5\u05d3\u05dc."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2046,8 +2046,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("YLESSwKIxvhx")) {
-    show_questions(questionsYLESSwKIxvhx, YLESSwKIxvhx);
+  if (document.getElementById("gYGSEkhhbznp")) {
+    show_questions(questionsgYGSEkhhbznp, gYGSEkhhbznp);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2121,7 +2121,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.2. </span>10.2 — DataFrame ו-Series</p>
+        <p class="prev-next-title"><span class="section-number">10.2. </span>DataFrame ו-Series</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

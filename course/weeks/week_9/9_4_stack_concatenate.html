@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.4. 9.4 — stack ו-concatenate — לאחד ריצות &#8212; Computers For physics</title>
+    <title>9.4. stack ו-concatenate — לאחד ריצות &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_4_stack_concatenate';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.5. 9.5 — התאמת צירים בין שני מערכים (כלל 3)" href="9_5_broadcasting.html" />
-    <link rel="prev" title="9.3. 9.3 — reshape ו-transpose" href="9_3_reshape_transpose.html" />
+    <link rel="next" title="9.5. התאמת צירים בין שני מערכים (כלל 3)" href="9_5_broadcasting.html" />
+    <link rel="prev" title="9.3. reshape ו-transpose" href="9_3_reshape_transpose.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -578,7 +578,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>9.4 — stack ו-concatenate — לאחד ריצות</h1>
+    <h1>stack ו-concatenate — לאחד ריצות</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -606,7 +606,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="stack-concatenate">
-<h1><span class="section-number">9.4. </span>9.4 — stack ו-concatenate — לאחד ריצות<a class="headerlink" href="#stack-concatenate" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9.4. </span>stack ו-concatenate — לאחד ריצות<a class="headerlink" href="#stack-concatenate" title="Link to this heading">#</a></h1>
 <p>בסעיף 9.1 בנינו את <code class="docutils literal notranslate"><span class="pre">Y</span></code> בלולאה מפורשת. בפועל, כשיש כבר כמה מערכים חד-ממדיים נפרדים (למשל, ריצה שנמדדה בנפרד בכל פעם), משלבים אותם עם:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">np.stack([a1,</span> <span class="pre">a2,</span> <span class="pre">...])</span></code></strong> — יוצר <strong>ציר חדש</strong> ומניח את כל המערכים זה לצד זה עליו. אם כל <code class="docutils literal notranslate"><span class="pre">a_i</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(60,)</span></code>, ו-5 מהם, <code class="docutils literal notranslate"><span class="pre">np.stack</span></code> נותן <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code>.</p></li>
@@ -728,8 +728,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="cBRXlXmsgUAD" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#cBRXlXmsgUAD {
+<div class="output text_html"><div id="SMBWzTTWqbDA" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#SMBWzTTWqbDA {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -952,7 +952,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionscBRXlXmsgUAD=[{"question": "\u05d9\u05e9 4 \u05de\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05e6\u05d5\u05e8\u05d4 <code>(60,)</code>. \u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 <code>np.stack([a, b, c, d])</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (240,)", "correct": false, "feedback": "\u05d6\u05d5 \u05ea\u05d5\u05e6\u05d0\u05ea concatenate, \u05dc\u05d0 stack."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (4, 60)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 stack \u05d9\u05d5\u05e6\u05e8 \u05e6\u05d9\u05e8 \u05d7\u05d3\u05e9."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4, \u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d7\u05d1\u05e8 4 \u05de\u05e2\u05e8\u05db\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05de\u05e7\u05e8\u05d4 \u05d4\u05e9\u05d9\u05de\u05d5\u05e9 \u05d4\u05e0\u05e4\u05d5\u05e5 \u05d1\u05d9\u05d5\u05ea\u05e8 \u05e9\u05dc stack."}]}];
+</style></div><script type="application/javascript">var questionsSMBWzTTWqbDA=[{"question": "\u05d9\u05e9 4 \u05de\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05e6\u05d5\u05e8\u05d4 <code>(60,)</code>. \u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 <code>np.stack([a, b, c, d])</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (240,)", "correct": false, "feedback": "\u05d6\u05d5 \u05ea\u05d5\u05e6\u05d0\u05ea concatenate, \u05dc\u05d0 stack."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (4, 60)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 stack \u05d9\u05d5\u05e6\u05e8 \u05e6\u05d9\u05e8 \u05d7\u05d3\u05e9."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4, \u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d7\u05d1\u05e8 4 \u05de\u05e2\u05e8\u05db\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05de\u05e7\u05e8\u05d4 \u05d4\u05e9\u05d9\u05de\u05d5\u05e9 \u05d4\u05e0\u05e4\u05d5\u05e5 \u05d1\u05d9\u05d5\u05ea\u05e8 \u05e9\u05dc stack."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2014,8 +2014,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("cBRXlXmsgUAD")) {
-    show_questions(questionscBRXlXmsgUAD, cBRXlXmsgUAD);
+  if (document.getElementById("SMBWzTTWqbDA")) {
+    show_questions(questionsSMBWzTTWqbDA, SMBWzTTWqbDA);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2088,7 +2088,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.3. </span>9.3 — reshape ו-transpose</p>
+        <p class="prev-next-title"><span class="section-number">9.3. </span>reshape ו-transpose</p>
       </div>
     </a>
     <a class="right-next"
@@ -2096,7 +2096,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.5. </span>9.5 — התאמת צירים בין שני מערכים (כלל 3)</p>
+        <p class="prev-next-title"><span class="section-number">9.5. </span>התאמת צירים בין שני מערכים (כלל 3)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

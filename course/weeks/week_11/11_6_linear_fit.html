@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.6. 11.6 התאמה ליניארית: מהנוסחה לקוד &#8212; Computers For physics</title>
+    <title>11.6. התאמה ליניארית: מהנוסחה לקוד &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_6_linear_fit';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="11.7. 11.7 תוצרי ההתאמה: שגיאות המקדמים ושאריות" href="11_7_fit_errors_residuals.html" />
-    <link rel="prev" title="11.5. 11.5 הולכת שגיאות: אנליטית ומונטה-קרלו" href="11_5_error_propagation.html" />
+    <link rel="next" title="11.7. תוצרי ההתאמה: שגיאות המקדמים ושאריות" href="11_7_fit_errors_residuals.html" />
+    <link rel="prev" title="11.5. הולכת שגיאות: אנליטית ומונטה-קרלו" href="11_5_error_propagation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -578,7 +578,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.6 התאמה ליניארית: מהנוסחה לקוד</h1>
+    <h1>התאמה ליניארית: מהנוסחה לקוד</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -606,7 +606,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="id1">
-<h1><span class="section-number">11.6. </span>11.6 התאמה ליניארית: מהנוסחה לקוד<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11.6. </span>התאמה ליניארית: מהנוסחה לקוד<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>עד עכשיו חישבנו סטטיסטיקות על <strong>קבוצה אחת</strong> של מדידות (ממוצע, סטיית תקן, SEM). עכשיו עוברים לשאלה אחרת: יש לנו <strong>כמה נקודות</strong> – טווח ממוצע לכל זווית – ורוצים למצוא את הקשר הליניארי ביניהן ובין <code class="docutils literal notranslate"><span class="pre">sin(2*theta)</span></code>, לפי המודל התאורטי <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">=</span> <span class="pre">(v0**2/g)</span> <span class="pre">*</span> <span class="pre">sin(2*theta)</span></code>.</p>
 <p>זו בדיוק משוואת קו ישר: <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">m*x</span> <span class="pre">+</span> <span class="pre">b</span></code>, כאשר <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">sin(2*theta)</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">R</span></code>, השיפוע <code class="docutils literal notranslate"><span class="pre">m</span></code> אמור לצאת קרוב ל-<code class="docutils literal notranslate"><span class="pre">v0**2/g</span></code>, וה-חיתוך <code class="docutils literal notranslate"><span class="pre">b</span></code> קרוב ל-0.</p>
 <p>בקורס הזה <strong>לא</strong> נשתמש ב-<code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> או <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code> כקופסה שחורה – נכתוב את פונקציית ההתאמה הליניארית בעצמנו, מהנוסחה הסגורה (least squares), כדי להבין בדיוק מה יש בפנים.</p>
@@ -733,8 +733,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="GzlgvPnnGfpR" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#GzlgvPnnGfpR {
+<div class="output text_html"><div id="aGFzLYrlwGKn" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#aGFzLYrlwGKn {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -957,7 +957,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsGzlgvPnnGfpR=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df `m = sum((x-xbar)*(y-ybar)) / sum((x-xbar)**2)` \u05dc\u05d1\u05d9\u05df `m = sum(x*y) / sum(x*x)`?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05e7\u05d5 \u05db\u05dc\u05dc\u05d9 (b \u05d7\u05d5\u05e4\u05e9\u05d9), \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05de\u05db\u05e8\u05d9\u05d7\u05d4 \u05d0\u05ea \u05d4\u05e7\u05d5 \u05dc\u05e2\u05d1\u05d5\u05e8 \u05d3\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d9\u05ea (b=0)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05e9\u05ea\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d0\u05d5\u05ea \u05e9\u05e7\u05d5\u05dc\u05d5\u05ea \u05ea\u05de\u05d9\u05d3", "correct": false, "feedback": "\u05dc\u05d0 - \u05d4\u05df \u05e9\u05e7\u05d5\u05dc\u05d5\u05ea \u05e8\u05e7 \u05d0\u05dd xbar=0 \u05d0\u05d5 ybar=0."}, {"answer": "\u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05d4\u05e0\u05db\u05d5\u05e0\u05d4 \u05ea\u05de\u05d9\u05d3, \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05d2\u05d5\u05d9\u05d4", "correct": false, "feedback": "\u05dc\u05d0 - \u05e9\u05ea\u05d9\u05d4\u05df \u05e0\u05db\u05d5\u05e0\u05d5\u05ea, \u05dc\u05e9\u05ea\u05d9 \u05e9\u05d0\u05dc\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsaGFzLYrlwGKn=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df `m = sum((x-xbar)*(y-ybar)) / sum((x-xbar)**2)` \u05dc\u05d1\u05d9\u05df `m = sum(x*y) / sum(x*x)`?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05e7\u05d5 \u05db\u05dc\u05dc\u05d9 (b \u05d7\u05d5\u05e4\u05e9\u05d9), \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05de\u05db\u05e8\u05d9\u05d7\u05d4 \u05d0\u05ea \u05d4\u05e7\u05d5 \u05dc\u05e2\u05d1\u05d5\u05e8 \u05d3\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d9\u05ea (b=0)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05e9\u05ea\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d0\u05d5\u05ea \u05e9\u05e7\u05d5\u05dc\u05d5\u05ea \u05ea\u05de\u05d9\u05d3", "correct": false, "feedback": "\u05dc\u05d0 - \u05d4\u05df \u05e9\u05e7\u05d5\u05dc\u05d5\u05ea \u05e8\u05e7 \u05d0\u05dd xbar=0 \u05d0\u05d5 ybar=0."}, {"answer": "\u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05d4\u05e0\u05db\u05d5\u05e0\u05d4 \u05ea\u05de\u05d9\u05d3, \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05d2\u05d5\u05d9\u05d4", "correct": false, "feedback": "\u05dc\u05d0 - \u05e9\u05ea\u05d9\u05d4\u05df \u05e0\u05db\u05d5\u05e0\u05d5\u05ea, \u05dc\u05e9\u05ea\u05d9 \u05e9\u05d0\u05dc\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2019,8 +2019,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("GzlgvPnnGfpR")) {
-    show_questions(questionsGzlgvPnnGfpR, GzlgvPnnGfpR);
+  if (document.getElementById("aGFzLYrlwGKn")) {
+    show_questions(questionsaGFzLYrlwGKn, aGFzLYrlwGKn);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2106,7 +2106,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">11.5. </span>11.5 הולכת שגיאות: אנליטית ומונטה-קרלו</p>
+        <p class="prev-next-title"><span class="section-number">11.5. </span>הולכת שגיאות: אנליטית ומונטה-קרלו</p>
       </div>
     </a>
     <a class="right-next"
@@ -2114,7 +2114,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11.7. </span>11.7 תוצרי ההתאמה: שגיאות המקדמים ושאריות</p>
+        <p class="prev-next-title"><span class="section-number">11.7. </span>תוצרי ההתאמה: שגיאות המקדמים ושאריות</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

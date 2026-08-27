@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.1. 11.1 — מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים &#8212; Computers For physics</title>
+    <title>11.1. מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים &#8212; Computers For physics</title>
   
   
   
@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_1_clean_data';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="11.2. 11.2 — ממוצע, סטיית תקן ושגיאת הממוצע — ולמה 1/√N" href="11_2_mean_std_sem.html" />
+    <link rel="next" title="11.2. ממוצע, סטיית תקן ושגיאת הממוצע — ולמה 1/√N" href="11_2_mean_std_sem.html" />
     <link rel="prev" title="11. שבוע 11 — סטטיסטיקה והתאמת קווים" href="../week_11.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -576,7 +576,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.1 — מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים</h1>
+    <h1>מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -605,7 +605,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="read-csv-to-numpy-nan">
-<h1><span class="section-number">11.1. </span>11.1 — מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים<a class="headerlink" href="#read-csv-to-numpy-nan" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11.1. </span>מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים<a class="headerlink" href="#read-csv-to-numpy-nan" title="Link to this heading">#</a></h1>
 <p>זו הפעם הראשונה בקורס שהנתונים <strong>לא מושלמים</strong>: יומן מדידות אמיתי (<code class="docutils literal notranslate"><span class="pre">lab_measurements.csv</span></code>, המשך <code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code> משבוע 10) כולל מדידות שנכשלו (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>) ולפחות נקודה חריגה אחת (טעות תזמון, קריאת מכשיר שגויה וכו’). לפני כל ניתוח סטטיסטי, צריך לנקות.</p>
 <p>הכלים כבר מוכרים: <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> (10.3), <code class="docutils literal notranslate"><span class="pre">()to_numpy</span></code> (10.7), ומסכות בוליאניות (7.8). החדש הוא איך משתמשים בהם יחד כדי <strong>לנקות</strong>, לא רק לסנן.</p>
 <div class="cell docutils container">
@@ -732,7 +732,7 @@ dtype: int64
 (40, 4) -&gt; (38, 4) -&gt; (37, 4)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4040601/195395840.py:7: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4076634/195395840.py:7: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
   is_outlier = df_clean.groupby(&quot;angle_deg&quot;, group_keys=False).apply(flag_outliers)
 </pre></div>
 </div>
@@ -807,8 +807,8 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="MSkDqqaXeZIB" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#MSkDqqaXeZIB {
+<div class="output text_html"><div id="WiLhTXgedEQl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#WiLhTXgedEQl {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1031,7 +1031,7 @@ dtype: int64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsMSkDqqaXeZIB=[{"question": "\u05dc\u05de\u05d4 \u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1\u05d7\u05e6\u05d9\u05d5\u05df \u05d5\u05d1-MAD, \u05d5\u05dc\u05d0 \u05d1\u05de\u05de\u05d5\u05e6\u05e2 \u05d5\u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df, \u05db\u05d3\u05d9 \u05dc\u05d6\u05d4\u05d5\u05ea \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d7\u05e8\u05d9\u05d2\u05d5\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05dd \u05de\u05d4\u05d9\u05e8\u05d9\u05dd \u05d9\u05d5\u05ea\u05e8 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4."}, {"answer": "\u05db\u05d9 \u05de\u05de\u05d5\u05e6\u05e2 \u05d5\u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df \u05e2\u05e6\u05de\u05dd \u05de\u05d5\u05e9\u05e4\u05e2\u05d9\u05dd \u05d7\u05d6\u05e7 \u05de\u05e0\u05e7\u05d5\u05d3\u05d4 \u05d7\u05e8\u05d9\u05d2\u05d4, \u05de\u05d4 \u05e9\u05e2\u05dc\u05d5\u05dc '\u05dc\u05d4\u05e1\u05ea\u05d9\u05e8' \u05d0\u05d5\u05ea\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 std \u05e0\u05ea\u05de\u05da \u05d4\u05d9\u05d8\u05d1."}]}, {"question": "\u05de\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05e7\u05d5\u05e8\u05d0\u05d9\u05dd \u05dc-df.dropna() \u05d1\u05dc\u05d9 \u05dc\u05e9\u05d9\u05d9\u05da \u05d0\u05ea \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05dc\u05de\u05e9\u05ea\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "df \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05de\u05e0\u05d5\u05e7\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 dropna \u05dc\u05d0 \u05de\u05e9\u05e0\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd \u05db\u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc."}, {"answer": "\u05e0\u05d5\u05e6\u05e8\u05ea \u05d8\u05d1\u05dc\u05d4 \u05d7\u05d3\u05e9\u05d4 \u05d5\u05e0\u05e7\u05d9\u05d9\u05d4, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 \u05e0\u05d6\u05e8\u05e7\u05ea \u05de\u05d9\u05d3; df \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05e2\u05dd \u05d4-NaN", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05de\u05ea\u05e7\u05d1\u05dc\u05ea \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df, \u05e4\u05e9\u05d5\u05d8 \u05dc\u05d0 \u05e9\u05d9\u05de\u05d5\u05e9\u05d9 \u05db\u05e9\u05db\u05d5\u05ea\u05d1\u05d9\u05dd \u05d0\u05d5\u05ea\u05d5 \u05db\u05da."}]}];
+</style></div><script type="application/javascript">var questionsWiLhTXgedEQl=[{"question": "\u05dc\u05de\u05d4 \u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1\u05d7\u05e6\u05d9\u05d5\u05df \u05d5\u05d1-MAD, \u05d5\u05dc\u05d0 \u05d1\u05de\u05de\u05d5\u05e6\u05e2 \u05d5\u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df, \u05db\u05d3\u05d9 \u05dc\u05d6\u05d4\u05d5\u05ea \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d7\u05e8\u05d9\u05d2\u05d5\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05dd \u05de\u05d4\u05d9\u05e8\u05d9\u05dd \u05d9\u05d5\u05ea\u05e8 \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4."}, {"answer": "\u05db\u05d9 \u05de\u05de\u05d5\u05e6\u05e2 \u05d5\u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df \u05e2\u05e6\u05de\u05dd \u05de\u05d5\u05e9\u05e4\u05e2\u05d9\u05dd \u05d7\u05d6\u05e7 \u05de\u05e0\u05e7\u05d5\u05d3\u05d4 \u05d7\u05e8\u05d9\u05d2\u05d4, \u05de\u05d4 \u05e9\u05e2\u05dc\u05d5\u05dc '\u05dc\u05d4\u05e1\u05ea\u05d9\u05e8' \u05d0\u05d5\u05ea\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e1\u05d8\u05d9\u05d9\u05ea \u05ea\u05e7\u05df \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 std \u05e0\u05ea\u05de\u05da \u05d4\u05d9\u05d8\u05d1."}]}, {"question": "\u05de\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05d0\u05dd \u05e7\u05d5\u05e8\u05d0\u05d9\u05dd \u05dc-df.dropna() \u05d1\u05dc\u05d9 \u05dc\u05e9\u05d9\u05d9\u05da \u05d0\u05ea \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05dc\u05de\u05e9\u05ea\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "df \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05de\u05e0\u05d5\u05e7\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 dropna \u05dc\u05d0 \u05de\u05e9\u05e0\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd \u05db\u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc."}, {"answer": "\u05e0\u05d5\u05e6\u05e8\u05ea \u05d8\u05d1\u05dc\u05d4 \u05d7\u05d3\u05e9\u05d4 \u05d5\u05e0\u05e7\u05d9\u05d9\u05d4, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 \u05e0\u05d6\u05e8\u05e7\u05ea \u05de\u05d9\u05d3; df \u05d4\u05de\u05e7\u05d5\u05e8\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05e2\u05dd \u05d4-NaN", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05de\u05ea\u05e7\u05d1\u05dc\u05ea \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df, \u05e4\u05e9\u05d5\u05d8 \u05dc\u05d0 \u05e9\u05d9\u05de\u05d5\u05e9\u05d9 \u05db\u05e9\u05db\u05d5\u05ea\u05d1\u05d9\u05dd \u05d0\u05d5\u05ea\u05d5 \u05db\u05da."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2093,8 +2093,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("MSkDqqaXeZIB")) {
-    show_questions(questionsMSkDqqaXeZIB, MSkDqqaXeZIB);
+  if (document.getElementById("WiLhTXgedEQl")) {
+    show_questions(questionsWiLhTXgedEQl, WiLhTXgedEQl);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2181,7 +2181,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11.2. </span>11.2 — ממוצע, סטיית תקן ושגיאת הממוצע — ולמה 1/√N</p>
+        <p class="prev-next-title"><span class="section-number">11.2. </span>ממוצע, סטיית תקן ושגיאת הממוצע — ולמה 1/√N</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

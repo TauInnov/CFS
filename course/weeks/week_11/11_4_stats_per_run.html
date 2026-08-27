@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.4. 11.4 — סטטיסטיקה לכל ריצה &#8212; Computers For physics</title>
+    <title>11.4. סטטיסטיקה לכל ריצה &#8212; Computers For physics</title>
   
   
   
@@ -61,8 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_4_stats_per_run';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="11.5. 11.5 הולכת שגיאות: אנליטית ומונטה-קרלו" href="11_5_error_propagation.html" />
-    <link rel="prev" title="11.3. 11.3 — רעש מדידה: default_rng ו-normal" href="11_3_measurement_noise.html" />
+    <link rel="next" title="11.5. הולכת שגיאות: אנליטית ומונטה-קרלו" href="11_5_error_propagation.html" />
+    <link rel="prev" title="11.3. רעש מדידה: default_rng ו-normal" href="11_3_measurement_noise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -576,7 +576,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.4 — סטטיסטיקה לכל ריצה</h1>
+    <h1>סטטיסטיקה לכל ריצה</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -604,7 +604,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="id1">
-<h1><span class="section-number">11.4. </span>11.4 — סטטיסטיקה לכל ריצה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11.4. </span>סטטיסטיקה לכל ריצה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>השיעור הזה הוא בעצם <strong>השוואה</strong>: אותה תוצאה בדיוק, בשתי דרכים שכבר מכירים — <code class="docutils literal notranslate"><span class="pre">groupby</span></code> (סעיף 10.5) מול צמצום לפי ציר על מערך NumPy (סעיף 9.7). ההשוואה עצמה היא הנקודה: מתי משתמשים בכל אחת, ולמה שתיהן חייבות לתת את אותו מספר.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -745,8 +745,8 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="VVWAUekFKRNI" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#VVWAUekFKRNI {
+<div class="output text_html"><div id="NueQXtANXFHI" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#NueQXtANXFHI {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -969,7 +969,7 @@ dtype: int64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsVVWAUekFKRNI=[{"question": "\u05de\u05ea\u05d9 \u05e2\u05d3\u05d9\u05e3 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-groupby \u05d1\u05de\u05e7\u05d5\u05dd \u05d1\u05e6\u05de\u05e6\u05d5\u05dd \u05dc\u05e4\u05d9 \u05e6\u05d9\u05e8 \u05e2\u05dc \u05de\u05e2\u05e8\u05da NumPy?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05e9\u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05db\u05d1\u05e8 \u05d1\u05d8\u05d1\u05dc\u05d4 \u05e2\u05dd \u05e2\u05de\u05d5\u05d3\u05ea \u05e7\u05d9\u05d1\u05d5\u05e5, \u05d5\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7 \u05d1\u05d0\u05d5\u05ea\u05d5 \u05de\u05e1\u05e4\u05e8 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05dc\u05db\u05dc \u05e7\u05d1\u05d5\u05e6\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05ea\u05de\u05d9\u05d3 - groupby \u05ea\u05de\u05d9\u05d3 \u05e2\u05d3\u05d9\u05e3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05db\u05e9\u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05db\u05d1\u05e8 \u05de\u05e2\u05e8\u05da \u05de\u05e1\u05d5\u05d3\u05e8, axis reduction \u05e0\u05d5\u05d7 \u05d5\u05d9\u05e9\u05d9\u05e8 \u05d9\u05d5\u05ea\u05e8."}, {"answer": "groupby \u05e2\u05d5\u05d1\u05d3 \u05e8\u05e7 \u05e2\u05dc \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsNueQXtANXFHI=[{"question": "\u05de\u05ea\u05d9 \u05e2\u05d3\u05d9\u05e3 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-groupby \u05d1\u05de\u05e7\u05d5\u05dd \u05d1\u05e6\u05de\u05e6\u05d5\u05dd \u05dc\u05e4\u05d9 \u05e6\u05d9\u05e8 \u05e2\u05dc \u05de\u05e2\u05e8\u05da NumPy?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05e9\u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05db\u05d1\u05e8 \u05d1\u05d8\u05d1\u05dc\u05d4 \u05e2\u05dd \u05e2\u05de\u05d5\u05d3\u05ea \u05e7\u05d9\u05d1\u05d5\u05e5, \u05d5\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7 \u05d1\u05d0\u05d5\u05ea\u05d5 \u05de\u05e1\u05e4\u05e8 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05dc\u05db\u05dc \u05e7\u05d1\u05d5\u05e6\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05ea\u05de\u05d9\u05d3 - groupby \u05ea\u05de\u05d9\u05d3 \u05e2\u05d3\u05d9\u05e3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05db\u05e9\u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05db\u05d1\u05e8 \u05de\u05e2\u05e8\u05da \u05de\u05e1\u05d5\u05d3\u05e8, axis reduction \u05e0\u05d5\u05d7 \u05d5\u05d9\u05e9\u05d9\u05e8 \u05d9\u05d5\u05ea\u05e8."}, {"answer": "groupby \u05e2\u05d5\u05d1\u05d3 \u05e8\u05e7 \u05e2\u05dc \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2031,8 +2031,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("VVWAUekFKRNI")) {
-    show_questions(questionsVVWAUekFKRNI, VVWAUekFKRNI);
+  if (document.getElementById("NueQXtANXFHI")) {
+    show_questions(questionsNueQXtANXFHI, NueQXtANXFHI);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2106,7 +2106,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">11.3. </span>11.3 — רעש מדידה: default_rng ו-normal</p>
+        <p class="prev-next-title"><span class="section-number">11.3. </span>רעש מדידה: default_rng ו-normal</p>
       </div>
     </a>
     <a class="right-next"
@@ -2114,7 +2114,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11.5. </span>11.5 הולכת שגיאות: אנליטית ומונטה-קרלו</p>
+        <p class="prev-next-title"><span class="section-number">11.5. </span>הולכת שגיאות: אנליטית ומונטה-קרלו</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

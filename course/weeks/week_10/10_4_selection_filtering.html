@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10.4. 10.4 — בחירה, סינון ומיון: עמודות, שורות, תנאים בוליאניים ו-sort_values &#8212; Computers For physics</title>
+    <title>10.4. בחירה, סינון ומיון: עמודות, שורות, תנאים בוליאניים ו-sort_values &#8212; Computers For physics</title>
   
   
   
@@ -61,8 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_4_selection_filtering';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="10.5. 10.5 — groupby(…).mean()" href="10_5_groupby.html" />
-    <link rel="prev" title="10.3. 10.3 — read_csv" href="10_3_read_csv.html" />
+    <link rel="next" title="10.5. groupby(…).mean()" href="10_5_groupby.html" />
+    <link rel="prev" title="10.3. read_csv" href="10_3_read_csv.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -576,7 +576,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>10.4 — בחירה, סינון ומיון: עמודות, שורות, תנאים בוליאניים ו-sort_values</h1>
+    <h1>בחירה, סינון ומיון: עמודות, שורות, תנאים בוליאניים ו-sort_values</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -603,7 +603,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="sort-values">
-<h1><span class="section-number">10.4. </span>10.4 — בחירה, סינון ומיון: עמודות, שורות, תנאים בוליאניים ו-sort_values<a class="headerlink" href="#sort-values" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10.4. </span>בחירה, סינון ומיון: עמודות, שורות, תנאים בוליאניים ו-sort_values<a class="headerlink" href="#sort-values" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>ל-pandas יש כלים עשירים יותר לבחירה (<code class="docutils literal notranslate"><span class="pre">loc</span></code>, <code class="docutils literal notranslate"><span class="pre">iloc</span></code>) — מעבר להיקף הקורס הזה. כאן מתמקדים בגישה הבסיסית: <code class="docutils literal notranslate"><span class="pre">df[&quot;col&quot;]</span></code> לעמודה, ו-<code class="docutils literal notranslate"><span class="pre">df[mask]</span></code> לשורות — התבנית שתפגשו הכי הרבה בקוד pandas אמיתי.</p>
@@ -849,8 +849,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="uxxJvuYmEaes" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#uxxJvuYmEaes {
+<div class="output text_html"><div id="gokmaiXbGKpI" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#gokmaiXbGKpI {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1073,7 +1073,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsuxxJvuYmEaes=[{"question": "\u05dc\u05de\u05d4 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsgokmaiXbGKpI=[{"question": "\u05dc\u05de\u05d4 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2135,8 +2135,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("uxxJvuYmEaes")) {
-    show_questions(questionsuxxJvuYmEaes, uxxJvuYmEaes);
+  if (document.getElementById("gokmaiXbGKpI")) {
+    show_questions(questionsgokmaiXbGKpI, gokmaiXbGKpI);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2205,7 +2205,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10.3. </span>10.3 — read_csv</p>
+        <p class="prev-next-title"><span class="section-number">10.3. </span>read_csv</p>
       </div>
     </a>
     <a class="right-next"
@@ -2213,7 +2213,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.5. </span>10.5 — groupby(…).mean()</p>
+        <p class="prev-next-title"><span class="section-number">10.5. </span>groupby(…).mean()</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

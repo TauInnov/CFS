@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.6. 8.6 — subplots &#8212; Computers For physics</title>
+    <title>8.6. subplots &#8212; Computers For physics</title>
   
   
   
@@ -61,8 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_8/8_6_subplots';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="8.7. 8.7 — סקאלות לוגריתמיות — ומתי משתמשים בהן" href="8_7_log_scales.html" />
-    <link rel="prev" title="8.5. 8.5 — כמה עקומות באותו גרף" href="8_5_multiple_curves.html" />
+    <link rel="next" title="8.7. סקאלות לוגריתמיות — ומתי משתמשים בהן" href="8_7_log_scales.html" />
+    <link rel="prev" title="8.5. כמה עקומות באותו גרף" href="8_5_multiple_curves.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -576,7 +576,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>8.6 — subplots</h1>
+    <h1>subplots</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -602,7 +602,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="subplots">
-<h1><span class="section-number">8.6. </span>8.6 — subplots<a class="headerlink" href="#subplots" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8.6. </span>subplots<a class="headerlink" href="#subplots" title="Link to this heading">#</a></h1>
 <p>לפעמים רוצים כמה גרפים <strong>נפרדים</strong> באותו figure, לא כמה עקומות על אותו ציר. לכך נועד <code class="docutils literal notranslate"><span class="pre">plt.subplots(nrows,</span> <span class="pre">ncols)</span></code>: הוא מחזיר <code class="docutils literal notranslate"><span class="pre">fig</span></code> יחיד, ומערך <code class="docutils literal notranslate"><span class="pre">axs</span></code> של צירים בגודל <code class="docutils literal notranslate"><span class="pre">nrows</span> <span class="pre">×</span> <span class="pre">ncols</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="c1"># הציר הראשון</span>
@@ -697,8 +697,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="peckIYxgwINk" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#peckIYxgwINk {
+<div class="output text_html"><div id="YaLsexMLaqyL" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#YaLsexMLaqyL {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -921,7 +921,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionspeckIYxgwINk=[{"question": "\u05db\u05d0\u05e9\u05e8 \u05e7\u05d5\u05e8\u05d0\u05d9\u05dd <code>fig, axs = plt.subplots(2, 2)</code>, \u05d0\u05d9\u05da \u05e0\u05d9\u05d2\u05e9\u05d9\u05dd \u05dc\u05e6\u05d9\u05e8 \u05e9\u05d1\u05e4\u05d9\u05e0\u05d4 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "axs[0]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 axs \u05db\u05d0\u05df \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs[0, 0]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05db\u05e9-nrows>1 \u05d5\u05d2\u05dd ncols>1, axs \u05d4\u05d5\u05d0 \u05de\u05e2\u05e8\u05da \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs.first()", "correct": false, "feedback": "\u05d0\u05d9\u05df \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05db\u05d6\u05d5."}]}];
+</style></div><script type="application/javascript">var questionsYaLsexMLaqyL=[{"question": "\u05db\u05d0\u05e9\u05e8 \u05e7\u05d5\u05e8\u05d0\u05d9\u05dd <code>fig, axs = plt.subplots(2, 2)</code>, \u05d0\u05d9\u05da \u05e0\u05d9\u05d2\u05e9\u05d9\u05dd \u05dc\u05e6\u05d9\u05e8 \u05e9\u05d1\u05e4\u05d9\u05e0\u05d4 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "axs[0]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 axs \u05db\u05d0\u05df \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs[0, 0]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05db\u05e9-nrows>1 \u05d5\u05d2\u05dd ncols>1, axs \u05d4\u05d5\u05d0 \u05de\u05e2\u05e8\u05da \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs.first()", "correct": false, "feedback": "\u05d0\u05d9\u05df \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05db\u05d6\u05d5."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1983,8 +1983,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("peckIYxgwINk")) {
-    show_questions(questionspeckIYxgwINk, peckIYxgwINk);
+  if (document.getElementById("YaLsexMLaqyL")) {
+    show_questions(questionsYaLsexMLaqyL, YaLsexMLaqyL);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2076,7 +2076,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8.5. </span>8.5 — כמה עקומות באותו גרף</p>
+        <p class="prev-next-title"><span class="section-number">8.5. </span>כמה עקומות באותו גרף</p>
       </div>
     </a>
     <a class="right-next"
@@ -2084,7 +2084,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.7. </span>8.7 — סקאלות לוגריתמיות — ומתי משתמשים בהן</p>
+        <p class="prev-next-title"><span class="section-number">8.7. </span>סקאלות לוגריתמיות — ומתי משתמשים בהן</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.9. 9.9 — אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית) &#8212; Computers For physics</title>
+    <title>9.9. אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית) &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_9_trapezoid_quad';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.10. 9.10 — יחס נסיגה ולולאת עדכון — מתי אי אפשר לוקטר" href="9_10_recurrence_loop.html" />
-    <link rel="prev" title="9.8. 9.8 — diff ו-cumsum — נגזרת וסכום מצטבר" href="9_8_diff_cumsum.html" />
+    <link rel="next" title="9.10. יחס נסיגה ולולאת עדכון — מתי אי אפשר לוקטר" href="9_10_recurrence_loop.html" />
+    <link rel="prev" title="9.8. diff ו-cumsum — נגזרת וסכום מצטבר" href="9_8_diff_cumsum.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -578,7 +578,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>9.9 — אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)</h1>
+    <h1>אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -605,7 +605,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="trapezoid-quad">
-<h1><span class="section-number">9.9. </span>9.9 — אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)<a class="headerlink" href="#trapezoid-quad" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9.9. </span>אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)<a class="headerlink" href="#trapezoid-quad" title="Link to this heading">#</a></h1>
 <p>(המשך הסרטון מ-9.8.) <code class="docutils literal notranslate"><span class="pre">cumsum</span></code> נתן קירוב גס לאינטגרל. ל-SciPy יש שני כלים מדויקים יותר, לשני מצבים שונים:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">scipy.integrate.trapezoid(y,</span> <span class="pre">x)</span></code></strong> — מקבל <strong>מדידות בדידות</strong> (<span class="math notranslate nohighlight">\(y\)</span> בנקודות <span class="math notranslate nohighlight">\(x\)</span>), ומחשב את השטח שמתחתן בשיטת הטרפזים. מתאים לנתוני ניסוי.</p></li>
@@ -719,8 +719,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="wQBSlzabsPBF" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#wQBSlzabsPBF {
+<div class="output text_html"><div id="YZNjyIzGgHHu" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#YZNjyIzGgHHu {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -943,7 +943,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionswQBSlzabsPBF=[{"question": "\u05de\u05ea\u05d9 \u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1-<code>trapezoid</code> \u05d5\u05de\u05ea\u05d9 \u05d1-<code>quad</code>?", "type": "multiple_choice", "answers": [{"answer": "trapezoid \u05dc\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d1\u05d3\u05d9\u05d3\u05d5\u05ea; quad \u05db\u05e9\u05d9\u05e9 \u05e0\u05d5\u05e1\u05d7\u05d4 \u05d0\u05e0\u05dc\u05d9\u05d8\u05d9\u05ea (\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d9\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d4\u05df \u05d6\u05d4\u05d5\u05ea \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df, \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05db\u05dc \u05d0\u05d7\u05ea \u05d1\u05db\u05dc \u05de\u05e6\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u2014 quad \u05d3\u05d5\u05e8\u05e9 \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05e8\u05d9\u05d0\u05d4, \u05dc\u05d0 \u05de\u05e2\u05e8\u05da \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd."}, {"answer": "trapezoid \u05dc\u05de\u05d4\u05d9\u05e8\u05d5\u05ea, quad \u05dc\u05ea\u05d0\u05d5\u05e6\u05d4 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05e7\u05dc\u05d8 (\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05de\u05d5\u05dc \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4), \u05dc\u05d0 \u05d1\u05d2\u05d5\u05d3\u05dc \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9."}]}];
+</style></div><script type="application/javascript">var questionsYZNjyIzGgHHu=[{"question": "\u05de\u05ea\u05d9 \u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1-<code>trapezoid</code> \u05d5\u05de\u05ea\u05d9 \u05d1-<code>quad</code>?", "type": "multiple_choice", "answers": [{"answer": "trapezoid \u05dc\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d1\u05d3\u05d9\u05d3\u05d5\u05ea; quad \u05db\u05e9\u05d9\u05e9 \u05e0\u05d5\u05e1\u05d7\u05d4 \u05d0\u05e0\u05dc\u05d9\u05d8\u05d9\u05ea (\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d9\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d4\u05df \u05d6\u05d4\u05d5\u05ea \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df, \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05db\u05dc \u05d0\u05d7\u05ea \u05d1\u05db\u05dc \u05de\u05e6\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u2014 quad \u05d3\u05d5\u05e8\u05e9 \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05e8\u05d9\u05d0\u05d4, \u05dc\u05d0 \u05de\u05e2\u05e8\u05da \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd."}, {"answer": "trapezoid \u05dc\u05de\u05d4\u05d9\u05e8\u05d5\u05ea, quad \u05dc\u05ea\u05d0\u05d5\u05e6\u05d4 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05e7\u05dc\u05d8 (\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05de\u05d5\u05dc \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4), \u05dc\u05d0 \u05d1\u05d2\u05d5\u05d3\u05dc \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2005,8 +2005,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("wQBSlzabsPBF")) {
-    show_questions(questionswQBSlzabsPBF, wQBSlzabsPBF);
+  if (document.getElementById("YZNjyIzGgHHu")) {
+    show_questions(questionsYZNjyIzGgHHu, YZNjyIzGgHHu);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2080,7 +2080,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.8. </span>9.8 — diff ו-cumsum — נגזרת וסכום מצטבר</p>
+        <p class="prev-next-title"><span class="section-number">9.8. </span>diff ו-cumsum — נגזרת וסכום מצטבר</p>
       </div>
     </a>
     <a class="right-next"
@@ -2088,7 +2088,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.10. </span>9.10 — יחס נסיגה ולולאת עדכון — מתי אי אפשר לוקטר</p>
+        <p class="prev-next-title"><span class="section-number">9.10. </span>יחס נסיגה ולולאת עדכון — מתי אי אפשר לוקטר</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

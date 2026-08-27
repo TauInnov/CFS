@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.8. 8.8 — היסטוגרמה: bins, density &#8212; Computers For physics</title>
+    <title>8.8. היסטוגרמה: bins, density &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_8/8_8_histogram';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="8.9. 8.9 — errorbar: נקודות עם שגיאות" href="8_9_errorbar.html" />
-    <link rel="prev" title="8.7. 8.7 — סקאלות לוגריתמיות — ומתי משתמשים בהן" href="8_7_log_scales.html" />
+    <link rel="next" title="8.9. errorbar: נקודות עם שגיאות" href="8_9_errorbar.html" />
+    <link rel="prev" title="8.7. סקאלות לוגריתמיות — ומתי משתמשים בהן" href="8_7_log_scales.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -578,7 +578,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>8.8 — היסטוגרמה: bins, density</h1>
+    <h1>היסטוגרמה: bins, density</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -605,7 +605,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="bins-density">
-<h1><span class="section-number">8.8. </span>8.8 — היסטוגרמה: bins, density<a class="headerlink" href="#bins-density" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8.8. </span>היסטוגרמה: bins, density<a class="headerlink" href="#bins-density" title="Link to this heading">#</a></h1>
 <p>היסטוגרמה מציגה את <strong>התפלגות</strong> ערכי מדגם — כמה תוצאות נפלו בכל תחום ערכים. הפונקציה המרכזית: <code class="docutils literal notranslate"><span class="pre">ax.hist(data,</span> <span class="pre">bins=,</span> <span class="pre">density=)</span></code>.</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">bins</span></code></strong> — מספר התאים (או גבולותיהם המפורשים) שאליהם מחלקים את טווח הנתונים.</p></li>
@@ -690,8 +690,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="TVEgpBdxfedO" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#TVEgpBdxfedO {
+<div class="output text_html"><div id="AmidGTVjvzjV" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#AmidGTVjvzjV {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -914,7 +914,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsTVEgpBdxfedO=[{"question": "\u05de\u05d4 \u05de\u05e9\u05de\u05e2\u05d5\u05ea <code>density=True</code> \u05d1-<code>ax.hist</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05e6\u05d9\u05e8 \u05d4-y \u05de\u05e6\u05d9\u05d2 \u05de\u05e1\u05e4\u05e8 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d2\u05d5\u05dc\u05de\u05d9 \u05d1\u05db\u05dc \u05ea\u05d0", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05de\u05e9\u05de\u05e2\u05d5\u05ea \u05e9\u05dc density=False."}, {"answer": "\u05e6\u05d9\u05e8 \u05d4-y \u05de\u05e0\u05d5\u05e8\u05de\u05dc \u05db\u05da \u05e9\u05d4\u05e9\u05d8\u05d7 \u05d4\u05db\u05d5\u05dc\u05dc \u05de\u05ea\u05d7\u05ea \u05dc\u05d4\u05d9\u05e1\u05d8\u05d5\u05d2\u05e8\u05de\u05d4 \u05e9\u05d5\u05d5\u05d4 1", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d4-bins \u05e0\u05e7\u05d1\u05e2\u05d9\u05dd \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9\u05ea \u05dc\u05e4\u05d9 \u05db\u05dc\u05dc \u05e9\u05d5\u05e0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 density \u05dc\u05d0 \u05e7\u05d5\u05d1\u05e2\u05ea \u05d0\u05ea \u05de\u05e1\u05e4\u05e8 \u05d4\u05ea\u05d0\u05d9\u05dd."}]}];
+</style></div><script type="application/javascript">var questionsAmidGTVjvzjV=[{"question": "\u05de\u05d4 \u05de\u05e9\u05de\u05e2\u05d5\u05ea <code>density=True</code> \u05d1-<code>ax.hist</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05e6\u05d9\u05e8 \u05d4-y \u05de\u05e6\u05d9\u05d2 \u05de\u05e1\u05e4\u05e8 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d2\u05d5\u05dc\u05de\u05d9 \u05d1\u05db\u05dc \u05ea\u05d0", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05de\u05e9\u05de\u05e2\u05d5\u05ea \u05e9\u05dc density=False."}, {"answer": "\u05e6\u05d9\u05e8 \u05d4-y \u05de\u05e0\u05d5\u05e8\u05de\u05dc \u05db\u05da \u05e9\u05d4\u05e9\u05d8\u05d7 \u05d4\u05db\u05d5\u05dc\u05dc \u05de\u05ea\u05d7\u05ea \u05dc\u05d4\u05d9\u05e1\u05d8\u05d5\u05d2\u05e8\u05de\u05d4 \u05e9\u05d5\u05d5\u05d4 1", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d4-bins \u05e0\u05e7\u05d1\u05e2\u05d9\u05dd \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9\u05ea \u05dc\u05e4\u05d9 \u05db\u05dc\u05dc \u05e9\u05d5\u05e0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 density \u05dc\u05d0 \u05e7\u05d5\u05d1\u05e2\u05ea \u05d0\u05ea \u05de\u05e1\u05e4\u05e8 \u05d4\u05ea\u05d0\u05d9\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1976,8 +1976,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("TVEgpBdxfedO")) {
-    show_questions(questionsTVEgpBdxfedO, TVEgpBdxfedO);
+  if (document.getElementById("AmidGTVjvzjV")) {
+    show_questions(questionsAmidGTVjvzjV, AmidGTVjvzjV);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2055,7 +2055,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8.7. </span>8.7 — סקאלות לוגריתמיות — ומתי משתמשים בהן</p>
+        <p class="prev-next-title"><span class="section-number">8.7. </span>סקאלות לוגריתמיות — ומתי משתמשים בהן</p>
       </div>
     </a>
     <a class="right-next"
@@ -2063,7 +2063,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.9. </span>8.9 — errorbar: נקודות עם שגיאות</p>
+        <p class="prev-next-title"><span class="section-number">8.9. </span>errorbar: נקודות עם שגיאות</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

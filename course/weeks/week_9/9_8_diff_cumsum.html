@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.8. 9.8 — diff ו-cumsum — נגזרת וסכום מצטבר &#8212; Computers For physics</title>
+    <title>9.8. diff ו-cumsum — נגזרת וסכום מצטבר &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_8_diff_cumsum';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.9. 9.9 — אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)" href="9_9_trapezoid_quad.html" />
-    <link rel="prev" title="9.7. 9.7 — צמצום לפי ציר: mean, std, sum, argmin, argmax (כלל 2)" href="9_7_axis_reductions.html" />
+    <link rel="next" title="9.9. אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)" href="9_9_trapezoid_quad.html" />
+    <link rel="prev" title="9.7. צמצום לפי ציר: mean, std, sum, argmin, argmax (כלל 2)" href="9_7_axis_reductions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -578,7 +578,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>9.8 — diff ו-cumsum — נגזרת וסכום מצטבר</h1>
+    <h1>diff ו-cumsum — נגזרת וסכום מצטבר</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -606,7 +606,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="diff-cumsum">
-<h1><span class="section-number">9.8. </span>9.8 — diff ו-cumsum — נגזרת וסכום מצטבר<a class="headerlink" href="#diff-cumsum" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9.8. </span>diff ו-cumsum — נגזרת וסכום מצטבר<a class="headerlink" href="#diff-cumsum" title="Link to this heading">#</a></h1>
 <p>עכשיו עוברים מ<strong>מבנה נתונים</strong> ל<strong>חשבון אינפיניטסימלי כקריאה לפונקציה</strong> — נגזרת ואינטגרל, כשתי פעולות NumPy על מערך:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">np.diff(a)</span></code></strong> — ההפרש בין כל שני איברים סמוכים: קירוב לנגזרת. מערך באורך <span class="math notranslate nohighlight">\(n\)</span> נותן <code class="docutils literal notranslate"><span class="pre">diff</span></code> באורך <span class="math notranslate nohighlight">\(n-1\)</span>.</p></li>
@@ -737,8 +737,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="UdsoZqoDVQXx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#UdsoZqoDVQXx {
+<div class="output text_html"><div id="DpazqtoyiHbD" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#DpazqtoyiHbD {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -961,7 +961,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsUdsoZqoDVQXx=[{"question": "\u05d0\u05dd <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100, \u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.diff(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "100", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d1\u05d0\u05d7\u05d3."}, {"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 99 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd \u05d1\u05d9\u05df 100 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e1\u05de\u05d5\u05db\u05d9\u05dd."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}, {"question": "\u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.cumsum(a)</code> \u05e2\u05d1\u05d5\u05e8 <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100?", "type": "multiple_choice", "answers": [{"answer": "100 - \u05d0\u05d5\u05ea\u05d5 \u05d0\u05d5\u05e8\u05da \u05db\u05de\u05d5 a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05dc\u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d9\u05e9 \u05e1\u05db\u05d5\u05dd \u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d0\u05d5\u05ea\u05d5 \u05de\u05e7\u05d5\u05dd."}, {"answer": "99, \u05db\u05de\u05d5 diff", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da."}, {"answer": "1 - \u05e8\u05e7 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05e1\u05d5\u05e4\u05d9", "correct": false, "feedback": "\u05d6\u05d4 \u05de\u05d4 \u05e9-np.sum (\u05d1\u05dc\u05d9 cum) \u05de\u05d7\u05d6\u05d9\u05e8, \u05dc\u05d0 cumsum."}]}];
+</style></div><script type="application/javascript">var questionsDpazqtoyiHbD=[{"question": "\u05d0\u05dd <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100, \u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.diff(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "100", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d1\u05d0\u05d7\u05d3."}, {"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 99 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd \u05d1\u05d9\u05df 100 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e1\u05de\u05d5\u05db\u05d9\u05dd."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}]}, {"question": "\u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.cumsum(a)</code> \u05e2\u05d1\u05d5\u05e8 <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100?", "type": "multiple_choice", "answers": [{"answer": "100 - \u05d0\u05d5\u05ea\u05d5 \u05d0\u05d5\u05e8\u05da \u05db\u05de\u05d5 a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05dc\u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d9\u05e9 \u05e1\u05db\u05d5\u05dd \u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d0\u05d5\u05ea\u05d5 \u05de\u05e7\u05d5\u05dd."}, {"answer": "99, \u05db\u05de\u05d5 diff", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da."}, {"answer": "1 - \u05e8\u05e7 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05e1\u05d5\u05e4\u05d9", "correct": false, "feedback": "\u05d6\u05d4 \u05de\u05d4 \u05e9-np.sum (\u05d1\u05dc\u05d9 cum) \u05de\u05d7\u05d6\u05d9\u05e8, \u05dc\u05d0 cumsum."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2023,8 +2023,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("UdsoZqoDVQXx")) {
-    show_questions(questionsUdsoZqoDVQXx, UdsoZqoDVQXx);
+  if (document.getElementById("DpazqtoyiHbD")) {
+    show_questions(questionsDpazqtoyiHbD, DpazqtoyiHbD);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2097,7 +2097,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.7. </span>9.7 — צמצום לפי ציר: mean, std, sum, argmin, argmax (כלל 2)</p>
+        <p class="prev-next-title"><span class="section-number">9.7. </span>צמצום לפי ציר: mean, std, sum, argmin, argmax (כלל 2)</p>
       </div>
     </a>
     <a class="right-next"
@@ -2105,7 +2105,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.9. </span>9.9 — אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)</p>
+        <p class="prev-next-title"><span class="section-number">9.9. </span>אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

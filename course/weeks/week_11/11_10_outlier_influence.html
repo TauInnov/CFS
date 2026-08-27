@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.10. 11.10 השפעת נקודה חריגה &#8212; Computers For physics</title>
+    <title>11.10. השפעת נקודה חריגה &#8212; Computers For physics</title>
   
   
   
@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_10_outlier_influence';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="11.11. 11.11 לינאריזציה: דעיכה מעריכית דרך ln" href="11_11_linearization.html" />
-    <link rel="prev" title="11.9. 11.9 התאמה משוקללת (weighted least squares)" href="11_9_weighted_fit.html" />
+    <link rel="next" title="11.11. לינאריזציה: דעיכה מעריכית דרך ln" href="11_11_linearization.html" />
+    <link rel="prev" title="11.9. התאמה משוקללת (weighted least squares)" href="11_9_weighted_fit.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -578,7 +578,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>11.10 השפעת נקודה חריגה</h1>
+    <h1>השפעת נקודה חריגה</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -604,7 +604,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="id1">
-<h1><span class="section-number">11.10. </span>11.10 השפעת נקודה חריגה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11.10. </span>השפעת נקודה חריגה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>בסעיף 11.1 זיהינו וסימנו נקודה חריגה אחת (ב-<code class="docutils literal notranslate"><span class="pre">is_outlier</span></code>), אבל מאז ההתאמות שלנו (11.6–11.9) עבדו על <code class="docutils literal notranslate"><span class="pre">df_clean</span></code> – כלומר, <strong>בלי</strong> להסיר אותה. הגיע הזמן לבדוק: כמה בכלל משנה נקודה חריגה <strong>אחת מתוך 38</strong> להתאמה?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,7 +633,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>df_clean: 38 שורות,  df_final (בלי חריגה): 37 שורות
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4012034/24810891.py:16: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4076033/24810891.py:16: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
   is_outlier = df_clean.groupby(&quot;angle_deg&quot;, group_keys=False).apply(flag_outliers)
 </pre></div>
 </div>
@@ -746,8 +746,8 @@ R^2 בלי הנקודה החריגה: 0.9950
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="gehIgUruwLxN" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#gehIgUruwLxN {
+<div class="output text_html"><div id="ESSetIBhkYHM" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ESSetIBhkYHM {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -970,7 +970,7 @@ R^2 בלי הנקודה החריגה: 0.9950
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsgehIgUruwLxN=[{"question": "\u05dc\u05de\u05d4 R^2 \u05d2\u05d1\u05d5\u05d4 \u05dc\u05d0 \u05de\u05d1\u05d8\u05d9\u05d7 \u05e9\u05d0\u05d9\u05df \u05e0\u05e7\u05d5\u05d3\u05d4 \u05e2\u05dd \u05d4\u05e9\u05e4\u05e2\u05d4 \u05d7\u05e8\u05d9\u05d2\u05d4 \u05e2\u05dc \u05d4\u05e9\u05d9\u05e4\u05d5\u05e2?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 R^2 \u05de\u05d5\u05d3\u05d3 \u05d0\u05ea \u05d0\u05d9\u05db\u05d5\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4 \u05d4\u05db\u05d5\u05dc\u05dc\u05ea, \u05dc\u05d0 \u05d0\u05ea \u05d4\u05ea\u05e8\u05d5\u05de\u05d4 \u05e9\u05dc \u05e0\u05e7\u05d5\u05d3\u05d4 \u05d1\u05d5\u05d3\u05d3\u05ea \u05dc\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 R^2 \u05ea\u05de\u05d9\u05d3 \u05e9\u05d5\u05d5\u05d4 1 \u05db\u05e9\u05d9\u05e9 \u05e0\u05e7\u05d5\u05d3\u05d4 \u05d7\u05e8\u05d9\u05d2\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "R^2 \u05d1\u05db\u05dc\u05dc \u05dc\u05d0 \u05de\u05d5\u05d2\u05d3\u05e8 \u05db\u05e9\u05d9\u05e9 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d7\u05e8\u05d9\u05d2\u05d5\u05ea", "correct": false, "feedback": "R^2 \u05de\u05d5\u05d2\u05d3\u05e8 \u05ea\u05de\u05d9\u05d3, \u05d2\u05dd \u05e2\u05dd \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d7\u05e8\u05d9\u05d2\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsESSetIBhkYHM=[{"question": "\u05dc\u05de\u05d4 R^2 \u05d2\u05d1\u05d5\u05d4 \u05dc\u05d0 \u05de\u05d1\u05d8\u05d9\u05d7 \u05e9\u05d0\u05d9\u05df \u05e0\u05e7\u05d5\u05d3\u05d4 \u05e2\u05dd \u05d4\u05e9\u05e4\u05e2\u05d4 \u05d7\u05e8\u05d9\u05d2\u05d4 \u05e2\u05dc \u05d4\u05e9\u05d9\u05e4\u05d5\u05e2?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 R^2 \u05de\u05d5\u05d3\u05d3 \u05d0\u05ea \u05d0\u05d9\u05db\u05d5\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4 \u05d4\u05db\u05d5\u05dc\u05dc\u05ea, \u05dc\u05d0 \u05d0\u05ea \u05d4\u05ea\u05e8\u05d5\u05de\u05d4 \u05e9\u05dc \u05e0\u05e7\u05d5\u05d3\u05d4 \u05d1\u05d5\u05d3\u05d3\u05ea \u05dc\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 R^2 \u05ea\u05de\u05d9\u05d3 \u05e9\u05d5\u05d5\u05d4 1 \u05db\u05e9\u05d9\u05e9 \u05e0\u05e7\u05d5\u05d3\u05d4 \u05d7\u05e8\u05d9\u05d2\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "R^2 \u05d1\u05db\u05dc\u05dc \u05dc\u05d0 \u05de\u05d5\u05d2\u05d3\u05e8 \u05db\u05e9\u05d9\u05e9 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d7\u05e8\u05d9\u05d2\u05d5\u05ea", "correct": false, "feedback": "R^2 \u05de\u05d5\u05d2\u05d3\u05e8 \u05ea\u05de\u05d9\u05d3, \u05d2\u05dd \u05e2\u05dd \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d7\u05e8\u05d9\u05d2\u05d5\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2032,8 +2032,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("gehIgUruwLxN")) {
-    show_questions(questionsgehIgUruwLxN, gehIgUruwLxN);
+  if (document.getElementById("ESSetIBhkYHM")) {
+    show_questions(questionsESSetIBhkYHM, ESSetIBhkYHM);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2118,7 +2118,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">11.9. </span>11.9 התאמה משוקללת (weighted least squares)</p>
+        <p class="prev-next-title"><span class="section-number">11.9. </span>התאמה משוקללת (weighted least squares)</p>
       </div>
     </a>
     <a class="right-next"
@@ -2126,7 +2126,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11.11. </span>11.11 לינאריזציה: דעיכה מעריכית דרך ln</p>
+        <p class="prev-next-title"><span class="section-number">11.11. </span>לינאריזציה: דעיכה מעריכית דרך ln</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
