@@ -263,7 +263,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_7_arithmetic_ufuncs.html">7.7. פעולות חשבון על מערכים: איבר-איבר, פונקציות מתמטיות וסקלר מול מערך</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_9_scipy_constants.html">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_10_common_bugs.html">7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_10_common_bugs.html">7.10. מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_11_exam_practice.html">7.11. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -639,8 +639,8 @@ document.write(`
 זה רק הצעד הראשון – במהלך הקורס תריצו עוד הרבה תוכניות, וגם תכתבו בעצמכם המון קוד. ההרפתקה המלאה מתחילה עכשיו!</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="xoCHvbKPMFCO" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#xoCHvbKPMFCO {
+<div class="output text_html"><div id="XSibWXGVVUvC" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#XSibWXGVVUvC {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -863,7 +863,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsxoCHvbKPMFCO=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05d2\u05e8\u05e1\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d4\u05ea\u05e7\u05e0\u05ea\u05dd?", "type": "many_choice", "answers": [{"answer": "3.11", "correct": true, "feedback": "\u05d9\u05d0\u05e1\u05e1\u05e1"}, {"answer": "3.9", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.12", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.6", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}]}];
+</style></div><script type="application/javascript">var questionsXSibWXGVVUvC=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05d2\u05e8\u05e1\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d4\u05ea\u05e7\u05e0\u05ea\u05dd?", "type": "many_choice", "answers": [{"answer": "3.11", "correct": true, "feedback": "\u05d9\u05d0\u05e1\u05e1\u05e1"}, {"answer": "3.9", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.12", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.6", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1925,8 +1925,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("xoCHvbKPMFCO")) {
-    show_questions(questionsxoCHvbKPMFCO, xoCHvbKPMFCO);
+  if (document.getElementById("XSibWXGVVUvC")) {
+    show_questions(questionsXSibWXGVVUvC, XSibWXGVVUvC);
   } else {
     setTimeout(try_show, 200);
   }

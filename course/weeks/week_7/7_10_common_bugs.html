@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות &#8212; Computers For physics</title>
+    <title>7.10. מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות &#8212; Computers For physics</title>
   
   
   
@@ -265,7 +265,7 @@
 <li class="toctree-l2"><a class="reference internal" href="7_7_arithmetic_ufuncs.html">7.7. פעולות חשבון על מערכים: איבר-איבר, פונקציות מתמטיות וסקלר מול מערך</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_9_scipy_constants.html">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.10. מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_11_exam_practice.html">7.11. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -578,7 +578,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</h1>
+    <h1>מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -588,11 +588,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.1. באג 1: קדימות פעולות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.2. באג 2: חילוק שלמים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.3. באג 3: יחידות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.4. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.5. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.1. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.2. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.4. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.5. באג 1: קדימות פעולות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.6. באג 2: חילוק שלמים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.10.7. באג 3: יחידות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.10.8. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.10.9. בדקו את עצמכם</a></li>
 </ul>
             </nav>
         </div>
@@ -605,144 +609,82 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="id1">
-<h1><span class="section-number">7.10. </span>שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>לתרגם משוואה פיזיקלית נכונה לקוד שגוי הוא קל יותר משנדמה. הבעיה בבאגים מהסוג הזה היא שהקוד <strong>רץ בלי שגיאה</strong> — הוא פשוט מחזיר תוצאה פיזיקלית לא נכונה, בלי שום התראה. שלושת סוגי הבאגים הנפוצים ביותר: קדימות פעולות, חילוק שלמים, וטעות ביחידות. סעיף זה בונה “מאגר באגים” שישמש אותנו גם בהמשך הקורס.</p>
+<h1><span class="section-number">7.10. </span>מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>לתרגם משוואה פיזיקלית לקוד זו לא רק “העתקת סימנים” — יש לזה תהליך שיטתי, שאפשר וכדאי להפעיל בכל פעם מחדש. בסעיף הזה נעבור על התהליך הזה צעד-צעד על דוגמה מלאה, ואז נבנה יחד “מאגר באגים”: שלושת סוגי הטעויות הנפוצים ביותר כשהתהליך משתבש. באגים מהסוג הזה מסוכנים במיוחד, כי הקוד <strong>רץ בלי שגיאה</strong> — הוא פשוט מחזיר תוצאה פיזיקלית לא נכונה, בלי שום התראה.</p>
+<section id="numpy">
+<h2><span class="section-number">7.10.1. </span>תהליך שיטתי: מנוסחה לביטוי ב-NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
+<p>בכל פעם שמתרגמים משוואה פיזיקלית לקוד, שווה לעבור על ארבעה שלבים, בסדר הזה:</p>
+<ol class="arabic simple">
+<li><p><strong>זיהוי כל גורם במשוואה</strong> — האם הוא סקלר קבוע (מספר בודד, כמו מהירות התחלתית אחת), מערך (למשל טווח זמנים, או תוצאה של כמה ריצות), או קבוע פיזיקלי (<code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>)?</p></li>
+<li><p><strong>החלטה על סדר הפעולות והביטוי המתאים ב-NumPy</strong> — אילו סוגריים נדרשים כדי שסדר החישוב יתאים לנוסחה? אילו פעולות פועלות איבר-איבר (סעיף 7.7), ואילו הן סקלר מול מערך?</p></li>
+<li><p><strong>כתיבת הביטוי שורה-שורה</strong> — לא לנסות לדחוס את כל הנוסחה לשורה אחת מסובכת בניסיון הראשון. לבנות בהדרגה, ולהדפיס תוצאות ביניים כדי לוודא שכל שלב עשה מה שהתכוונתם.</p></li>
+<li><p><strong>בדיקת סבירות בסוף</strong> — יחידות (כל הגדלים עדיין ב-SI?), סדר גודל (התוצאה הגיונית פיזיקלית?), ומקרי קצה (מה קורה בערכי קיצון, כמו זווית של <span class="math notranslate nohighlight">\(0°\)</span> או <span class="math notranslate nohighlight">\(90°\)</span>?).</p></li>
+</ol>
+</section>
 <section id="id2">
-<h2><span class="section-number">7.10.1. </span>באג 1: קדימות פעולות<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>הנוסחה לתקופת מטוטלת פשוטה היא <span class="math notranslate nohighlight">\(T = 2\pi\sqrt{L/g}\)</span>. הקוד הבא ניסה לממש אותה — אבל התוצאה שגויה. מצאו את הבאג לפני שתגלו את הפתרון:</p>
+<h2><span class="section-number">7.10.2. </span>דוגמה: מהנוסחה לקוד — טווח הזריקה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>נתרגם את נוסחת הטווח האופקי של זריקה:</p>
+<div class="math notranslate nohighlight">
+\[R(v_0,\theta) = \frac{v_0^2 \sin(2\theta)}{g}\]</div>
+<p><strong>שלב 1 — זיהוי גורמים:</strong> <span class="math notranslate nohighlight">\(v_0\)</span> ו-<span class="math notranslate nohighlight">\(\theta\)</span> הם סקלרים (מהירות שיגור וזווית שיגור בודדות), <span class="math notranslate nohighlight">\(g\)</span> הוא קבוע פיזיקלי. הזווית <span class="math notranslate nohighlight">\(\theta\)</span> נתונה במעלות — ולכן, כמו בכל שימוש בפונקציה טריגונומטרית של NumPy (סעיף 7.7), חייבים להמיר אותה לרדיאנים <strong>לפני</strong> שמכניסים אותה ל-<code class="docutils literal notranslate"><span class="pre">np.sin</span></code>.</p>
+<p><strong>שלב 2 — סדר הפעולות:</strong> קודם <code class="docutils literal notranslate"><span class="pre">2*theta</span></code> (בתוך ה-<code class="docutils literal notranslate"><span class="pre">sin</span></code>), אז <code class="docutils literal notranslate"><span class="pre">np.sin(...)</span></code>, אז <code class="docutils literal notranslate"><span class="pre">v0**2</span> <span class="pre">*</span> <span class="pre">...</span></code>, ולבסוף חילוק ב-<code class="docutils literal notranslate"><span class="pre">g</span></code>. כל צעד כזה יהפוך לשורת קוד נפרדת.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
 
-<span class="n">L</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># מטר</span>
-<span class="n">T_buggy</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span>   <span class="c1"># מה פה לא בסדר?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">T_buggy</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span>    <span class="c1"># m/s^2</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mf">20.0</span>           <span class="c1"># m/s</span>
+<span class="n">theta_deg</span> <span class="o">=</span> <span class="mi">45</span>      <span class="c1"># מעלות</span>
+
+<span class="c1"># שלב 3: כתיבה שורה-שורה</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>          <span class="c1"># המרה לרדיאנים לפני sin</span>
+<span class="n">numerator</span> <span class="o">=</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">g</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R = </span><span class="si">{</span><span class="n">R</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+
+<span class="c1"># שלב 4: בדיקת סבירות - מקרי קצה</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R בזווית 0°:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>    <span class="c1"># ציפייה: 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R בזווית 90°:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">90</span><span class="p">))</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># ציפייה: 0</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6407065926875729
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R = 40.79 m
+R בזווית 0°: 0.0
+R בזווית 90°: 0.0
 </pre></div>
 </div>
 </div>
 </div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<p>הבאג: <code class="docutils literal notranslate"><span class="pre">np.sqrt(L)</span> <span class="pre">/</span> <span class="pre">constants.g</span></code> מחשב <span class="math notranslate nohighlight">\(\sqrt{L}/g\)</span>, לא <span class="math notranslate nohighlight">\(\sqrt{L/g}\)</span>. כדי לחשב את השורש של המנה כולה, צריך את ה-<code class="docutils literal notranslate"><span class="pre">g</span></code> <strong>בתוך</strong> ה-<code class="docutils literal notranslate"><span class="pre">sqrt</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">T_fixed</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">T_fixed</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<p>התוצאה, כ-40.8 מטר עבור <span class="math notranslate nohighlight">\(v_0=20\)</span> מ/ש בזווית <span class="math notranslate nohighlight">\(45°\)</span>, נמצאת בסדר גודל סביר לזריקת כדור ביד. בדיקת מקרי הקצה מאששת את הפיזיקה: בזווית <span class="math notranslate nohighlight">\(0°\)</span> הכדור לא עף אופקית בכלל (הטווח 0), ובזווית <span class="math notranslate nohighlight">\(90°\)</span> הוא עולה ויורד באותה נקודה (הטווח גם כן 0) — בדיוק כפי שמצפים ממשוואת הטווח.</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">7.10.2. </span>באג 2: חילוק שלמים<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>רוצים לחשב את מהירות הממוצע של כדור שעבר מרחק 7 מטרים ב-2 שניות (<span class="math notranslate nohighlight">\(v=d/t\)</span>):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1"># מטר</span>
-<span class="n">t</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># שניות</span>
-<span class="n">v_buggy</span> <span class="o">=</span> <span class="n">d</span> <span class="o">//</span> <span class="n">t</span>   <span class="c1"># מה פה לא בסדר?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v_buggy</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<p>הבאג: <code class="docutils literal notranslate"><span class="pre">//</span></code> הוא חילוק שלמים (מחזיר את החלק השלם, מעוגל כלפי מטה) — <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">//</span> <span class="pre">2</span></code> נותן <code class="docutils literal notranslate"><span class="pre">3</span></code>, לא <code class="docutils literal notranslate"><span class="pre">3.5</span></code>. עבור גדלים פיזיקליים רציפים צריך את אופרטור החילוק הרגיל <code class="docutils literal notranslate"><span class="pre">/</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v_fixed</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">t</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v_fixed</span><span class="p">)</span>   <span class="c1"># 3.5</span>
-</pre></div>
-</div>
-<p>חילוק שלמים שגוי מסוכן במיוחד כי הוא לא זורק שגיאה, ולעיתים אף נותן תוצאה “סבירה למראה” (כמו 3, לא רחוק מ-3.5).</p>
-</div>
-</section>
-<section id="id4">
-<h2><span class="section-number">7.10.3. </span>באג 3: יחידות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>מודדים זווית שיגור של <span class="math notranslate nohighlight">\(30°\)</span> ורוצים את רכיב המהירות האנכי, <span class="math notranslate nohighlight">\(v_y = v_0 \sin\theta\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span> <span class="o">=</span> <span class="mf">20.0</span>
-<span class="n">theta_deg</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="n">vy_buggy</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>   <span class="c1"># מה פה לא בסדר?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vy_buggy</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-19.760632481857236
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<p>הבאג: <code class="docutils literal notranslate"><span class="pre">np.sin</span></code> מצפה לזווית ברדיאנים, ו-<code class="docutils literal notranslate"><span class="pre">theta_deg</span></code> הוא במעלות. חייבים להמיר קודם עם <code class="docutils literal notranslate"><span class="pre">np.radians</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vy_fixed</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vy_fixed</span><span class="p">)</span>   <span class="c1"># 10.0, כצפוי מ- v0 * sin(30°) = v0 * 0.5</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="id5">
-<h2><span class="section-number">7.10.4. </span>נסו בעצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>הקוד הבא מנסה לחשב את האנרגיה הפוטנציאלית הממוצעת של שלושה גופים, <span class="math notranslate nohighlight">\(\bar{E} = mg\bar{h}\)</span>, כאשר <code class="docutils literal notranslate"><span class="pre">heights</span></code> הוא מערך גבהים בס”מ (לא במטר!). יש כאן שילוב של שני סוגי הבאגים שראינו. אתרו ותקנו:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mf">2.0</span>  <span class="c1"># ק&quot;ג</span>
-<span class="n">heights_cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span>   <span class="c1"># ס&quot;מ</span>
-
-<span class="c1"># avg_energy_buggy = m * constants.g * heights_cm.mean()</span>
-<span class="c1"># print(avg_energy_buggy)</span>
-
-<span class="c1"># תקנו כאן:</span>
-<span class="c1"># avg_energy_fixed = ...</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># הבאג: heights_cm הוא בסנטימטרים, ו-g בנוסחה מצפה למטרים.</span>
-<span class="n">heights_m</span> <span class="o">=</span> <span class="n">heights_cm</span> <span class="o">/</span> <span class="mi">100</span>
-<span class="n">avg_energy_fixed</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span> <span class="o">*</span> <span class="n">heights_m</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">avg_energy_fixed</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="id6">
-<h2><span class="section-number">7.10.5. </span>בדקו את עצמכם<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.10.3. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
 
 <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
-        <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;מה התוצאה של &lt;code&gt;9 // 2&lt;/code&gt; בפייתון?&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;לפי התהליך שראינו, מה השלב הראשון בתרגום משוואה לקוד — עוד לפני כתיבת שורת קוד אחת?&quot;</span><span class="p">,</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;multiple_choice&quot;</span><span class="p">,</span>
         <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;4.5&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;זו הייתה התוצאה של / (חילוק רגיל), לא של // (חילוק שלמים).&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — // מעגל כלפי מטה, לא כלפי מעלה.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;-4&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — שני המספרים חיוביים, אז אין סיבה לתוצאה שלילית.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון: // מעגל כלפי מטה לשלם הקרוב.&quot;</span><span class="p">}</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;לכתוב את כל הביטוי בשורה אחת ואז לתקן שגיאות אם יש&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — זה בדיוק ההפך מהתהליך המומלץ; עדיף לבנות בהדרגה.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;לזהות כל גורם במשוואה: האם הוא סקלר קבוע, מערך, או קבוע פיזיקלי&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;לבדוק את יחידות המידה של התוצאה הסופית&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;זה שלב חשוב — אבל הוא שלב 4, בדיקת הסבירות בסוף, לא הראשון.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;לחפש את הנוסחה המדויקת בספר לימוד&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא קשור לתהליך התרגום עצמו — התהליך מתחיל מרגע שהנוסחה כבר בידיכם.&quot;</span><span class="p">}</span>
         <span class="p">]</span>
     <span class="p">},</span>
     <span class="p">{</span>
-        <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;מדוע באג של קדימות פעולות (כמו sqrt(L)/g במקום sqrt(L/g)) מסוכן במיוחד?&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;בדוגמת הטווח, למה חובה להפעיל את &lt;code&gt;np.radians&lt;/code&gt; על הזווית לפני &lt;code&gt;np.sin&lt;/code&gt;, ולא בשלב כלשהו אחרי?&quot;</span><span class="p">,</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;multiple_choice&quot;</span><span class="p">,</span>
         <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי הקוד רץ בהצלחה ומחזיר מספר, אבל הוא פיזיקלית שגוי&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון. זו בדיוק הסיבה שקשה לתפוס באגים כאלה — אין הודעת שגיאה שמצביעה עליהם.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי פייתון זורק שגיאת תחביר&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — התחביר תקין לגמרי, הקוד רץ בלי בעיה.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי NumPy לא תומך בחילוק בתוך sqrt&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — NumPy תומך בכך היטב, השאלה היא רק סדר הפעולות שכתבתם.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי הוא גורם ל-Python לקרוס לגמרי&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — הקוד ממשיך לרוץ כרגיל; זו בדיוק הבעיה, שאין שום קריסה שתסמן את הטעות.&quot;</span><span class="p">}</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי np.radians משנה גם את הערך של g&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — np.radians פועל רק על הזווית שהועברה לו, ולא נוגע במשתנים אחרים.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;זה לא באמת משנה — אפשר להמיר בכל שלב בתהליך, גם אחרי החישוב&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — זה בדיוק ההפך; ראינו בסעיף 7.7 שהמרה בשלב הלא נכון נותנת תוצאה פיזיקלית שגויה.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי np.sin לא מקבל בכלל משתנים מטיפוס float&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא נכון — np.sin מקבל בדיוק מספרים מטיפוס float; הבעיה היא ביחידה, לא בטיפוס.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי np.sin מצפה שהערך שהיא מקבלת כבר יהיה ברדיאנים; קלט במעלות מחושב כאילו הוא רדיאנים, וזו זווית אחרת לגמרי&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון.&quot;</span><span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">]</span>
@@ -752,8 +694,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="TwMmizHKhhYm" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#TwMmizHKhhYm {
+<div class="output text_html"><div id="BHEcnrBqjBTo" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#BHEcnrBqjBTo {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -976,7 +918,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsTwMmizHKhhYm=[{"question": "\u05de\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc <code>9 // 2</code> \u05d1\u05e4\u05d9\u05d9\u05ea\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "4.5", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05d9\u05d9\u05ea\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc / (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e8\u05d2\u05d9\u05dc), \u05dc\u05d0 \u05e9\u05dc // (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e9\u05dc\u05de\u05d9\u05dd)."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0 \u2014 // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4, \u05dc\u05d0 \u05db\u05dc\u05e4\u05d9 \u05de\u05e2\u05dc\u05d4."}, {"answer": "-4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05e0\u05d9 \u05d4\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05d7\u05d9\u05d5\u05d1\u05d9\u05d9\u05dd, \u05d0\u05d6 \u05d0\u05d9\u05df \u05e1\u05d9\u05d1\u05d4 \u05dc\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc\u05d9\u05dc\u05d9\u05ea."}, {"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4 \u05dc\u05e9\u05dc\u05dd \u05d4\u05e7\u05e8\u05d5\u05d1."}]}, {"question": "\u05de\u05d3\u05d5\u05e2 \u05d1\u05d0\u05d2 \u05e9\u05dc \u05e7\u05d3\u05d9\u05de\u05d5\u05ea \u05e4\u05e2\u05d5\u05dc\u05d5\u05ea (\u05db\u05de\u05d5 sqrt(L)/g \u05d1\u05de\u05e7\u05d5\u05dd sqrt(L/g)) \u05de\u05e1\u05d5\u05db\u05df \u05d1\u05de\u05d9\u05d5\u05d7\u05d3?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05d4\u05e6\u05dc\u05d7\u05d4 \u05d5\u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05e1\u05e4\u05e8, \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05d9\u05d1\u05d4 \u05e9\u05e7\u05e9\u05d4 \u05dc\u05ea\u05e4\u05d5\u05e1 \u05d1\u05d0\u05d2\u05d9\u05dd \u05db\u05d0\u05dc\u05d4 \u2014 \u05d0\u05d9\u05df \u05d4\u05d5\u05d3\u05e2\u05ea \u05e9\u05d2\u05d9\u05d0\u05d4 \u05e9\u05de\u05e6\u05d1\u05d9\u05e2\u05d4 \u05e2\u05dc\u05d9\u05d4\u05dd."}, {"answer": "\u05db\u05d9 \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05ea \u05ea\u05d7\u05d1\u05d9\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05ea\u05d7\u05d1\u05d9\u05e8 \u05ea\u05e7\u05d9\u05df \u05dc\u05d2\u05de\u05e8\u05d9, \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05dc\u05d9 \u05d1\u05e2\u05d9\u05d4."}, {"answer": "\u05db\u05d9 NumPy \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05dc\u05d5\u05e7 \u05d1\u05ea\u05d5\u05da sqrt", "correct": false, "feedback": "\u05dc\u05d0 \u2014 NumPy \u05ea\u05d5\u05de\u05da \u05d1\u05db\u05da \u05d4\u05d9\u05d8\u05d1, \u05d4\u05e9\u05d0\u05dc\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05e1\u05d3\u05e8 \u05d4\u05e4\u05e2\u05d5\u05dc\u05d5\u05ea \u05e9\u05db\u05ea\u05d1\u05ea\u05dd."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05d2\u05d5\u05e8\u05dd \u05dc-Python \u05dc\u05e7\u05e8\u05d5\u05e1 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e7\u05d5\u05d3 \u05de\u05de\u05e9\u05d9\u05da \u05dc\u05e8\u05d5\u05e5 \u05db\u05e8\u05d2\u05d9\u05dc; \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d1\u05e2\u05d9\u05d4, \u05e9\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05e7\u05e8\u05d9\u05e1\u05d4 \u05e9\u05ea\u05e1\u05de\u05df \u05d0\u05ea \u05d4\u05d8\u05e2\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsBHEcnrBqjBTo=[{"question": "\u05dc\u05e4\u05d9 \u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05e9\u05e8\u05d0\u05d9\u05e0\u05d5, \u05de\u05d4 \u05d4\u05e9\u05dc\u05d1 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05ea\u05e8\u05d2\u05d5\u05dd \u05de\u05e9\u05d5\u05d5\u05d0\u05d4 \u05dc\u05e7\u05d5\u05d3 \u2014 \u05e2\u05d5\u05d3 \u05dc\u05e4\u05e0\u05d9 \u05db\u05ea\u05d9\u05d1\u05ea \u05e9\u05d5\u05e8\u05ea \u05e7\u05d5\u05d3 \u05d0\u05d7\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05dc\u05db\u05ea\u05d5\u05d1 \u05d0\u05ea \u05db\u05dc \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d5\u05d0\u05d6 \u05dc\u05ea\u05e7\u05df \u05e9\u05d2\u05d9\u05d0\u05d5\u05ea \u05d0\u05dd \u05d9\u05e9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05e4\u05da \u05de\u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05d4\u05de\u05d5\u05de\u05dc\u05e5; \u05e2\u05d3\u05d9\u05e3 \u05dc\u05d1\u05e0\u05d5\u05ea \u05d1\u05d4\u05d3\u05e8\u05d2\u05d4."}, {"answer": "\u05dc\u05d6\u05d4\u05d5\u05ea \u05db\u05dc \u05d2\u05d5\u05e8\u05dd \u05d1\u05de\u05e9\u05d5\u05d5\u05d0\u05d4: \u05d4\u05d0\u05dd \u05d4\u05d5\u05d0 \u05e1\u05e7\u05dc\u05e8 \u05e7\u05d1\u05d5\u05e2, \u05de\u05e2\u05e8\u05da, \u05d0\u05d5 \u05e7\u05d1\u05d5\u05e2 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05ea \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05d4 \u05e9\u05dc \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05e1\u05d5\u05e4\u05d9\u05ea", "correct": false, "feedback": "\u05d6\u05d4 \u05e9\u05dc\u05d1 \u05d7\u05e9\u05d5\u05d1 \u2014 \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05e9\u05dc\u05d1 4, \u05d1\u05d3\u05d9\u05e7\u05ea \u05d4\u05e1\u05d1\u05d9\u05e8\u05d5\u05ea \u05d1\u05e1\u05d5\u05e3, \u05dc\u05d0 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df."}, {"answer": "\u05dc\u05d7\u05e4\u05e9 \u05d0\u05ea \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05d4\u05de\u05d3\u05d5\u05d9\u05e7\u05ea \u05d1\u05e1\u05e4\u05e8 \u05dc\u05d9\u05de\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05ea\u05d4\u05dc\u05d9\u05da \u05d4\u05ea\u05e8\u05d2\u05d5\u05dd \u05e2\u05e6\u05de\u05d5 \u2014 \u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05de\u05ea\u05d7\u05d9\u05dc \u05de\u05e8\u05d2\u05e2 \u05e9\u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05db\u05d1\u05e8 \u05d1\u05d9\u05d3\u05d9\u05db\u05dd."}]}, {"question": "\u05d1\u05d3\u05d5\u05d2\u05de\u05ea \u05d4\u05d8\u05d5\u05d5\u05d7, \u05dc\u05de\u05d4 \u05d7\u05d5\u05d1\u05d4 \u05dc\u05d4\u05e4\u05e2\u05d9\u05dc \u05d0\u05ea <code>np.radians</code> \u05e2\u05dc \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05dc\u05e4\u05e0\u05d9 <code>np.sin</code>, \u05d5\u05dc\u05d0 \u05d1\u05e9\u05dc\u05d1 \u05db\u05dc\u05e9\u05d4\u05d5 \u05d0\u05d7\u05e8\u05d9?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 np.radians \u05de\u05e9\u05e0\u05d4 \u05d2\u05dd \u05d0\u05ea \u05d4\u05e2\u05e8\u05da \u05e9\u05dc g", "correct": false, "feedback": "\u05dc\u05d0 \u2014 np.radians \u05e4\u05d5\u05e2\u05dc \u05e8\u05e7 \u05e2\u05dc \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05e9\u05d4\u05d5\u05e2\u05d1\u05e8\u05d4 \u05dc\u05d5, \u05d5\u05dc\u05d0 \u05e0\u05d5\u05d2\u05e2 \u05d1\u05de\u05e9\u05ea\u05e0\u05d9\u05dd \u05d0\u05d7\u05e8\u05d9\u05dd."}, {"answer": "\u05d6\u05d4 \u05dc\u05d0 \u05d1\u05d0\u05de\u05ea \u05de\u05e9\u05e0\u05d4 \u2014 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05de\u05d9\u05e8 \u05d1\u05db\u05dc \u05e9\u05dc\u05d1 \u05d1\u05ea\u05d4\u05dc\u05d9\u05da, \u05d2\u05dd \u05d0\u05d7\u05e8\u05d9 \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05e4\u05da; \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d1\u05e1\u05e2\u05d9\u05e3 7.7 \u05e9\u05d4\u05de\u05e8\u05d4 \u05d1\u05e9\u05dc\u05d1 \u05d4\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u05e0\u05d5\u05ea\u05e0\u05ea \u05ea\u05d5\u05e6\u05d0\u05d4 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9\u05d4."}, {"answer": "\u05db\u05d9 np.sin \u05dc\u05d0 \u05de\u05e7\u05d1\u05dc \u05d1\u05db\u05dc\u05dc \u05de\u05e9\u05ea\u05e0\u05d9\u05dd \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 float", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 np.sin \u05de\u05e7\u05d1\u05dc \u05d1\u05d3\u05d9\u05d5\u05e7 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 float; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05d9\u05d7\u05d9\u05d3\u05d4, \u05dc\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1."}, {"answer": "\u05db\u05d9 np.sin \u05de\u05e6\u05e4\u05d4 \u05e9\u05d4\u05e2\u05e8\u05da \u05e9\u05d4\u05d9\u05d0 \u05de\u05e7\u05d1\u05dc\u05ea \u05db\u05d1\u05e8 \u05d9\u05d4\u05d9\u05d4 \u05d1\u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd; \u05e7\u05dc\u05d8 \u05d1\u05de\u05e2\u05dc\u05d5\u05ea \u05de\u05d7\u05d5\u05e9\u05d1 \u05db\u05d0\u05d9\u05dc\u05d5 \u05d4\u05d5\u05d0 \u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd, \u05d5\u05d6\u05d5 \u05d6\u05d5\u05d5\u05d9\u05ea \u05d0\u05d7\u05e8\u05ea \u05dc\u05d2\u05de\u05e8\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2038,8 +1980,1488 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("TwMmizHKhhYm")) {
-    show_questions(questionsTwMmizHKhhYm, TwMmizHKhhYm);
+  if (document.getElementById("BHEcnrBqjBTo")) {
+    show_questions(questionsBHEcnrBqjBTo, BHEcnrBqjBTo);
+  } else {
+    setTimeout(try_show, 200);
+  }
+};
+// Invoke immediately
+{
+  try_show();
+}
+}
+</script></div>
+</div>
+</section>
+<section id="id4">
+<h2><span class="section-number">7.10.4. </span>נסו בעצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>הפעילו את התהליך בעצמכם על נוסחת <strong>הגובה המרבי</strong> של הזריקה:</p>
+<div class="math notranslate nohighlight">
+\[y_{max}(v_0,\theta) = \frac{(v_0\sin\theta)^2}{2g}\]</div>
+<p>עברו על ארבעת השלבים: אילו גורמים יש כאן, מה סדר הפעולות הנכון (שימו לב: הריבוע חל על <strong>התוצאה</strong> של <span class="math notranslate nohighlight">\(v_0\sin\theta\)</span>, לא על <span class="math notranslate nohighlight">\(v_0\)</span> בלבד!), כתבו את הביטוי שורה-שורה, ובדקו סבירות עבור <span class="math notranslate nohighlight">\(v_0=20\)</span> מ/ש ו-<span class="math notranslate nohighlight">\(\theta=45°\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># v0 = 20.0</span>
+<span class="c1"># theta_deg = 45</span>
+<span class="c1">#</span>
+<span class="c1"># שלב 1: מהם הגורמים כאן? (סקלר קבוע / קבוע פיזיקלי)</span>
+<span class="c1"># שלב 2-3: כתבו כאן, שורה-שורה</span>
+<span class="c1"># y_max = ...</span>
+<span class="c1">#</span>
+<span class="c1"># שלב 4: בדיקת סבירות</span>
+<span class="c1"># print(y_max)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="n">theta_deg</span> <span class="o">=</span> <span class="mi">45</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>               <span class="c1"># שלב 1+2: המרה לרדיאנים לפני sin</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>   <span class="c1"># שלב 3: הריבוע חל על התוצאה של v0*sin(theta)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y_max = </span><span class="si">{</span><span class="n">y_max</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>             <span class="c1"># שלב 4: כ-10.2 מ&#39; — סביר, וכרבע מגודל הטווח שחישבנו למעלה</span>
+</pre></div>
+</div>
+</div>
+<p>עכשיו, כשראינו איך התהליך אמור להיראות כשהוא עובד נכון — נעבור למאגר הבאגים: מה קורה, בשקט, כשכל אחד מהשלבים האלה משתבש.</p>
+</section>
+<section id="id5">
+<h2><span class="section-number">7.10.5. </span>באג 1: קדימות פעולות<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>הנוסחה לתקופת מטוטלת פשוטה היא <span class="math notranslate nohighlight">\(T = 2\pi\sqrt{L/g}\)</span>. הקוד הבא ניסה לממש אותה — אבל התוצאה שגויה. מצאו את הבאג לפני שתגלו את הפתרון:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># מטר</span>
+<span class="n">T_buggy</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span>   <span class="c1"># מה פה לא בסדר?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T_buggy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6407065926875729
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<p>הבאג: <code class="docutils literal notranslate"><span class="pre">np.sqrt(L)</span> <span class="pre">/</span> <span class="pre">constants.g</span></code> מחשב <span class="math notranslate nohighlight">\(\sqrt{L}/g\)</span>, לא <span class="math notranslate nohighlight">\(\sqrt{L/g}\)</span>. כדי לחשב את השורש של המנה כולה, צריך את ה-<code class="docutils literal notranslate"><span class="pre">g</span></code> <strong>בתוך</strong> ה-<code class="docutils literal notranslate"><span class="pre">sqrt</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">T_fixed</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T_fixed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2><span class="section-number">7.10.6. </span>באג 2: חילוק שלמים<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>רוצים לחשב את מהירות הממוצע של כדור שעבר מרחק 7 מטרים ב-2 שניות (<span class="math notranslate nohighlight">\(v=d/t\)</span>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1"># מטר</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># שניות</span>
+<span class="n">v_buggy</span> <span class="o">=</span> <span class="n">d</span> <span class="o">//</span> <span class="n">t</span>   <span class="c1"># מה פה לא בסדר?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v_buggy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<p>הבאג: <code class="docutils literal notranslate"><span class="pre">//</span></code> הוא חילוק שלמים (מחזיר את החלק השלם, מעוגל כלפי מטה) — <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">//</span> <span class="pre">2</span></code> נותן <code class="docutils literal notranslate"><span class="pre">3</span></code>, לא <code class="docutils literal notranslate"><span class="pre">3.5</span></code>. עבור גדלים פיזיקליים רציפים צריך את אופרטור החילוק הרגיל <code class="docutils literal notranslate"><span class="pre">/</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v_fixed</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">t</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v_fixed</span><span class="p">)</span>   <span class="c1"># 3.5</span>
+</pre></div>
+</div>
+<p>חילוק שלמים שגוי מסוכן במיוחד כי הוא לא זורק שגיאה, ולעיתים אף נותן תוצאה “סבירה למראה” (כמו 3, לא רחוק מ-3.5).</p>
+</div>
+</section>
+<section id="id7">
+<h2><span class="section-number">7.10.7. </span>באג 3: יחידות<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>מודדים זווית שיגור של <span class="math notranslate nohighlight">\(30°\)</span> ורוצים את רכיב המהירות האנכי, <span class="math notranslate nohighlight">\(v_y = v_0 \sin\theta\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="n">theta_deg</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">vy_buggy</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>   <span class="c1"># מה פה לא בסדר?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vy_buggy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-19.760632481857236
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<p>הבאג: <code class="docutils literal notranslate"><span class="pre">np.sin</span></code> מצפה לזווית ברדיאנים, ו-<code class="docutils literal notranslate"><span class="pre">theta_deg</span></code> הוא במעלות. חייבים להמיר קודם עם <code class="docutils literal notranslate"><span class="pre">np.radians</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vy_fixed</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vy_fixed</span><span class="p">)</span>   <span class="c1"># 10.0, כצפוי מ- v0 * sin(30°) = v0 * 0.5</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h2><span class="section-number">7.10.8. </span>נסו בעצמכם<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p>הקוד הבא מנסה לחשב את האנרגיה הפוטנציאלית הממוצעת של שלושה גופים, <span class="math notranslate nohighlight">\(\bar{E} = mg\bar{h}\)</span>, כאשר <code class="docutils literal notranslate"><span class="pre">heights</span></code> הוא מערך גבהים בס”מ (לא במטר!). יש כאן שילוב של שני סוגי הבאגים שראינו. אתרו ותקנו:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mf">2.0</span>  <span class="c1"># ק&quot;ג</span>
+<span class="n">heights_cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span>   <span class="c1"># ס&quot;מ</span>
+
+<span class="c1"># avg_energy_buggy = m * constants.g * heights_cm.mean()</span>
+<span class="c1"># print(avg_energy_buggy)</span>
+
+<span class="c1"># תקנו כאן:</span>
+<span class="c1"># avg_energy_fixed = ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># הבאג: heights_cm הוא בסנטימטרים, ו-g בנוסחה מצפה למטרים.</span>
+<span class="n">heights_m</span> <span class="o">=</span> <span class="n">heights_cm</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="n">avg_energy_fixed</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span> <span class="o">*</span> <span class="n">heights_m</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">avg_energy_fixed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h2><span class="section-number">7.10.9. </span>בדקו את עצמכם<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+
+<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;מה התוצאה של &lt;code&gt;9 // 2&lt;/code&gt; בפייתון?&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;multiple_choice&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;4.5&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;זו הייתה התוצאה של / (חילוק רגיל), לא של // (חילוק שלמים).&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — // מעגל כלפי מטה, לא כלפי מעלה.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;-4&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — שני המספרים חיוביים, אז אין סיבה לתוצאה שלילית.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון: // מעגל כלפי מטה לשלם הקרוב.&quot;</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;מדוע באג של קדימות פעולות (כמו sqrt(L)/g במקום sqrt(L/g)) מסוכן במיוחד?&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;multiple_choice&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי הקוד רץ בהצלחה ומחזיר מספר, אבל הוא פיזיקלית שגוי&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון. זו בדיוק הסיבה שקשה לתפוס באגים כאלה — אין הודעת שגיאה שמצביעה עליהם.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי פייתון זורק שגיאת תחביר&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — התחביר תקין לגמרי, הקוד רץ בלי בעיה.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי NumPy לא תומך בחילוק בתוך sqrt&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — NumPy תומך בכך היטב, השאלה היא רק סדר הפעולות שכתבתם.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי הוא גורם ל-Python לקרוס לגמרי&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — הקוד ממשיך לרוץ כרגיל; זו בדיוק הבעיה, שאין שום קריסה שתסמן את הטעות.&quot;</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="OFvalepkSraS" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#OFvalepkSraS {
+   --jq-multiple-choice-bg: #392061;
+   --jq-mc-button-bg: #fafafa;
+   --jq-mc-button-border: #e0e0e0e0;
+   --jq-mc-button-inset-shadow: #555555;
+   --jq-many-choice-bg: #f75c03ff;
+   --jq-numeric-bg: #392061ff;
+   --jq-numeric-input-bg: #c0c0c0;
+   --jq-numeric-input-label: #101010;
+   --jq-numeric-input-shadow: #999999;
+   --jq-string-bg: #4c1a57;
+   --jq-incorrect-color: #c80202;
+   --jq-correct-color: #009113;
+   --jq-text-color: #fafafa;
+   --jq-link-color: #9abafa;
+}
+
+.Quiz {
+    max-width: 600px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+/*    margin-bottom: 15px;*/
+/*    padding-bottom: 4px;*/
+    padding-top: 4px;
+    line-height: 1.1;
+    font-size: 16pt;
+    border-radius: inherit;
+}
+
+.QuizCode {
+    font-size: 14pt;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.QuizCode>pre {
+    padding: 4px;
+}
+
+.Quiz code {
+    background-color: lightgray;
+    color: black;
+}
+
+.Quiz .QuizCode code {
+    background-color: inherit;
+    color: inherit;
+}
+
+
+.Quiz .MCButton code {
+    background-color: inherit;
+    color: inherit;
+}
+
+.MCButton .QuizCode {
+    text-align: left;
+}
+
+
+.Quiz .JQLink {
+    color: var(--jq-link-color) !important;
+    text-decoration: underline;
+}
+
+
+
+.Answer {
+    border-radius: inherit;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width:480px) {
+    .Answer {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.Feedback {
+    font-size: 16pt;
+    text-align: center;
+/*    min-height: 2em;*/
+}
+
+.Input {
+    align: left;
+    font-size: 20pt;
+}
+
+.Input-text {
+    display: block;
+    margin: 10px;
+    color: inherit;
+    width: unset;
+    min-width: 140px;
+    max-width: 93%;
+    field-sizing: content;
+    background-color: var(--jq-numeric-input-bg);
+    color: var(--jq-text-color);
+    padding: 5px;
+    padding-left: 10px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: 20pt;
+    border: none;
+    border-radius: 0.2rem;
+    transition: box-shadow 0.1s);
+}
+
+.Input-text:focus {
+    /*outline: none;*/
+    background-color: var(--jq-numeric-input-bg);
+    box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem var(--jq-numeric-input-shadow);
+}
+
+.MCButton {
+    background: var(--jq-mc-button-bg);
+    border: 1px solid var(--jq-mc-button-border);
+    border-radius: inherit;
+    color: #333333;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.MCButton p {
+    color: inherit;
+}
+
+.MultipleChoiceQn {
+    padding: 10px;
+    background: var(--jq-multiple-choice-bg);
+    color: var(--jq-text-color);
+    border-radius: inherit;
+}
+
+.ManyChoiceQn {
+    padding: 10px;
+    background: var(--jq-many-choice-bg);
+    color: var(--jq-text-color);
+    border-radius: inherit;
+}
+
+.NumericQn {
+    background: var(--jq-numeric-bg);
+    border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
+}
+
+.NumericQn p {
+    color: inherit;
+}
+
+.StringQn {
+    background: var(--jq-string-bg);
+    border-radius: inherit;
+    color: var(--jq-text-color);
+    padding: 10px;
+}
+
+.StringQn p {
+    color: inherit;
+}
+
+
+.InpLabel {
+    color: var(--jq-numeric-input-label);
+    float: left;
+    font-size: 15pt;
+    line-height: 34px;
+    margin-right: 10px;
+}
+
+.incorrect {
+    color: var(--jq-incorrect-color);
+}
+
+.correct {
+    color: var(--jq-correct-color);
+}
+
+.correctButton {
+    /*
+    background: var(--jq-correct-color);
+   */
+    animation: correct-anim 0.6s ease;
+    animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
+    color: var(--jq-text-color);
+    /*outline: none;*/
+}
+
+.incorrectButton {
+    animation: incorrect-anim 0.8s ease;
+    animation-fill-mode: forwards;
+    box-shadow: inset 0 0 5px var(--jq-mc-button-inset-shadow);
+    color: var(--jq-text-color);
+    /*outline: none;*/
+}
+
+@keyframes incorrect-anim {
+    100% {
+        background-color: var(--jq-incorrect-color);
+    }
+}
+
+@keyframes correct-anim {
+    100% {
+        background-color: var(--jq-correct-color);
+    }
+}
+</style></div><script type="application/javascript">var questionsOFvalepkSraS=[{"question": "\u05de\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc <code>9 // 2</code> \u05d1\u05e4\u05d9\u05d9\u05ea\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "4.5", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05d9\u05d9\u05ea\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc / (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e8\u05d2\u05d9\u05dc), \u05dc\u05d0 \u05e9\u05dc // (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e9\u05dc\u05de\u05d9\u05dd)."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0 \u2014 // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4, \u05dc\u05d0 \u05db\u05dc\u05e4\u05d9 \u05de\u05e2\u05dc\u05d4."}, {"answer": "-4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05e0\u05d9 \u05d4\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05d7\u05d9\u05d5\u05d1\u05d9\u05d9\u05dd, \u05d0\u05d6 \u05d0\u05d9\u05df \u05e1\u05d9\u05d1\u05d4 \u05dc\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc\u05d9\u05dc\u05d9\u05ea."}, {"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4 \u05dc\u05e9\u05dc\u05dd \u05d4\u05e7\u05e8\u05d5\u05d1."}]}, {"question": "\u05de\u05d3\u05d5\u05e2 \u05d1\u05d0\u05d2 \u05e9\u05dc \u05e7\u05d3\u05d9\u05de\u05d5\u05ea \u05e4\u05e2\u05d5\u05dc\u05d5\u05ea (\u05db\u05de\u05d5 sqrt(L)/g \u05d1\u05de\u05e7\u05d5\u05dd sqrt(L/g)) \u05de\u05e1\u05d5\u05db\u05df \u05d1\u05de\u05d9\u05d5\u05d7\u05d3?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05d4\u05e6\u05dc\u05d7\u05d4 \u05d5\u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05e1\u05e4\u05e8, \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05d9\u05d1\u05d4 \u05e9\u05e7\u05e9\u05d4 \u05dc\u05ea\u05e4\u05d5\u05e1 \u05d1\u05d0\u05d2\u05d9\u05dd \u05db\u05d0\u05dc\u05d4 \u2014 \u05d0\u05d9\u05df \u05d4\u05d5\u05d3\u05e2\u05ea \u05e9\u05d2\u05d9\u05d0\u05d4 \u05e9\u05de\u05e6\u05d1\u05d9\u05e2\u05d4 \u05e2\u05dc\u05d9\u05d4\u05dd."}, {"answer": "\u05db\u05d9 \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05ea \u05ea\u05d7\u05d1\u05d9\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05ea\u05d7\u05d1\u05d9\u05e8 \u05ea\u05e7\u05d9\u05df \u05dc\u05d2\u05de\u05e8\u05d9, \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05dc\u05d9 \u05d1\u05e2\u05d9\u05d4."}, {"answer": "\u05db\u05d9 NumPy \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05dc\u05d5\u05e7 \u05d1\u05ea\u05d5\u05da sqrt", "correct": false, "feedback": "\u05dc\u05d0 \u2014 NumPy \u05ea\u05d5\u05de\u05da \u05d1\u05db\u05da \u05d4\u05d9\u05d8\u05d1, \u05d4\u05e9\u05d0\u05dc\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05e1\u05d3\u05e8 \u05d4\u05e4\u05e2\u05d5\u05dc\u05d5\u05ea \u05e9\u05db\u05ea\u05d1\u05ea\u05dd."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05d2\u05d5\u05e8\u05dd \u05dc-Python \u05dc\u05e7\u05e8\u05d5\u05e1 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e7\u05d5\u05d3 \u05de\u05de\u05e9\u05d9\u05da \u05dc\u05e8\u05d5\u05e5 \u05db\u05e8\u05d2\u05d9\u05dc; \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d1\u05e2\u05d9\u05d4, \u05e9\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05e7\u05e8\u05d9\u05e1\u05d4 \u05e9\u05ea\u05e1\u05de\u05df \u05d0\u05ea \u05d4\u05d8\u05e2\u05d5\u05ea."}]}];
+
+if (typeof Question === 'undefined') {
+// Make a random ID
+function makeid(length) {
+    var result = [];
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+    }
+    return result.join('');
+}
+// Convert LaTeX delimiters and markdown links to HTML
+function jaxify(string) {
+    let mystring = string;
+    let count = 0, count2 = 0;
+    let loc = mystring.search(/([^\\]|^)(\$)/);
+    let loc2 = mystring.search(/([^\\]|^)(\$\$)/);
+    while (loc >= 0 || loc2 >= 0) {
+        if (loc2 >= 0) {
+            mystring = mystring.replace(/([^\\]|^)(\$\$)/, count2 % 2 ? '$1\\]' : '$1\\[');
+            count2++;
+        } else {
+            mystring = mystring.replace(/([^\\]|^)(\$)/, count % 2 ? '$1\\)' : '$1\\(');
+            count++;
+        }
+        loc = mystring.search(/([^\\]|^)(\$)/);
+        loc2 = mystring.search(/([^\\]|^)(\$\$)/);
+    }
+    // Replace markdown links
+    mystring = mystring.replace(/<http(.*?)>/g, '<a href="http$1" target="_blank" class="Quiz JQLink">http$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="Quiz JQLink">$1</a>');
+    return mystring;
+}
+
+// Base class for question types
+class Question {
+    static registry = {};
+    static register(type, cls) {
+        Question.registry[type] = cls;
+    }
+    static create(qa, id, index, options, rootDiv) {
+        const Cls = Question.registry[qa.type];
+        if (!Cls) {
+            console.error(`No question class registered for type "${qa.type}"`);
+            return;
+        }
+        const q = new Cls(qa, id, index, options, rootDiv);
+        q.render();
+    }
+
+    constructor(qa, id, index, options, rootDiv) {
+        this.qa = qa;
+        this.id = id;
+        this.index = index;
+        this.options = options;
+        this.rootDiv = rootDiv;
+        // wrapper
+        this.wrapper = document.createElement('div');
+        this.wrapper.id = `quizWrap${id}`;
+        this.wrapper.className = 'Quiz';
+        this.wrapper.dataset.qnum = index;
+        this.wrapper.style.maxWidth = `${options.maxWidth}px`;
+        rootDiv.appendChild(this.wrapper);
+        // question container
+        this.outerqDiv = document.createElement('div');
+        this.outerqDiv.id = `OuterquizQn${id}${index}`;
+        this.wrapper.appendChild(this.outerqDiv);
+        // question text
+        this.qDiv = document.createElement('div');
+        this.qDiv.id = `quizQn${id}${index}`;
+        if (qa.question) {
+            this.qDiv.innerHTML = jaxify(qa.question);
+            this.outerqDiv.appendChild(this.qDiv);
+        }
+        // code block
+        if (qa.code) {
+            const codeDiv = document.createElement('div');
+            codeDiv.id = `code${id}${index}`;
+            codeDiv.className = 'QuizCode';
+            const pre = document.createElement('pre');
+            const codeEl = document.createElement('code');
+            codeEl.innerHTML = qa.code;
+            pre.appendChild(codeEl);
+            codeDiv.appendChild(pre);
+            this.outerqDiv.appendChild(codeDiv);
+        }
+        // answer container
+        this.aDiv = document.createElement('div');
+        this.aDiv.id = `quizAns${id}${index}`;
+        this.aDiv.className = 'Answer';
+        this.wrapper.appendChild(this.aDiv);
+        // feedback container (append after answers)
+        this.fbDiv = document.createElement('div');
+        this.fbDiv.id = `fb${id}`;
+        this.fbDiv.className = 'Feedback';
+        this.fbDiv.dataset.answeredcorrect = 0;
+    }
+
+    render() {
+        throw new Error('render() not implemented');
+    }
+
+    preserveResponse(val) {
+        if (!this.options.preserveResponses) return;
+        const resp = document.getElementById(`responses${this.rootDiv.id}`);
+        if (!resp) return;
+        const arr = JSON.parse(resp.dataset.responses);
+        arr[this.index] = val;
+        resp.dataset.responses = JSON.stringify(arr);
+        printResponses(resp);
+    }
+
+    typeset(container) {
+        if (typeof MathJax !== 'undefined') {
+            const v = MathJax.version;
+            if (v[0] === '2') {
+                MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+            } else {
+                MathJax.typeset([container]);
+            }
+        }
+    }
+}
+
+// Choose a random subset of an array. Can also be used to shuffle the array
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
+
+function printResponses(responsesContainer) {
+    var responses=JSON.parse(responsesContainer.dataset.responses);
+    var stringResponses='<B>IMPORTANT!</B>To preserve this answer sequence for submission, when you have finalized your answers: <ol> <li> Copy the text in this cell below "Answer String"</li> <li> Double click on the cell directly below the Answer String, labeled "Replace Me"</li> <li> Select the whole "Replace Me" text</li> <li> Paste in your answer string and press shift-Enter.</li><li>Save the notebook using the save icon or File->Save Notebook menu item</li></ul><br><br><br><b>Answer String:</b><br> ';
+    console.log(responses);
+    responses.forEach((response, index) => {
+        if (response) {
+            console.log(index + ': ' + response);
+            stringResponses+= index + ': ' + response +"<BR>";
+        }
+    });
+    responsesContainer.innerHTML=stringResponses;
+}
+/* Callback function to determine whether a selected multiple-choice
+   button corresponded to a correct answer and to provide feedback
+   based on the answer */
+function check_mc() {
+    var id = this.id.split('-')[0];
+    //var response = this.id.split('-')[1];
+    //console.log(response);
+    //console.log("In check_mc(), id="+id);
+    //console.log(event.srcElement.id)           
+    //console.log(event.srcElement.dataset.correct)   
+    //console.log(event.srcElement.dataset.feedback)
+
+    var label = event.srcElement;
+    //console.log(label, label.nodeName);
+    var depth = 0;
+    while ((label.nodeName != "LABEL") && (depth < 20)) {
+        label = label.parentElement;
+        console.log(depth, label);
+        depth++;
+    }
+
+
+
+    var answers = label.parentElement.children;
+    //console.log(answers);
+
+    // Split behavior based on multiple choice vs many choice:
+    var fb = document.getElementById("fb" + id);
+
+
+
+    /* Multiple choice (1 answer). Allow for 0 correct
+       answers as an edge case */
+    if (fb.dataset.numcorrect <= 1) {
+        // What follows is for the saved responses stuff
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            //console.log(responsesContainer);
+            var response = label.firstChild.innerText;
+            if (label.querySelector(".QuizCode")){
+                response+= label.querySelector(".QuizCode").firstChild.innerText;
+            }
+            console.log(response);
+            //console.log(document.getElementById("quizWrap"+id));
+            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
+            console.log("Question " + qnum);
+            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+            var responses=JSON.parse(responsesContainer.dataset.responses);
+            console.log(responses);
+            responses[qnum]= response;
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+        // End code to preserve responses
+
+        for (var i = 0; i < answers.length; i++) {
+            var child = answers[i];
+            //console.log(child);
+            child.className = "MCButton";
+        }
+
+
+
+        if (label.dataset.correct == "true") {
+            // console.log("Correct action");
+            if ("feedback" in label.dataset) {
+                fb.innerHTML = jaxify(label.dataset.feedback);
+            } else {
+                fb.innerHTML = "Correct!";
+            }
+            label.classList.add("correctButton");
+
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+
+        } else {
+            if ("feedback" in label.dataset) {
+                fb.innerHTML = jaxify(label.dataset.feedback);
+            } else {
+                fb.innerHTML = "Incorrect -- try again.";
+            }
+            //console.log("Error action");
+            label.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+    }
+    else { /* Many choice (more than 1 correct answer) */
+        var reset = false;
+        var feedback;
+         if (label.dataset.correct == "true") {
+            if ("feedback" in label.dataset) {
+                feedback = jaxify(label.dataset.feedback);
+            } else {
+                feedback = "Correct!";
+            }
+            if (label.dataset.answered <= 0) {
+                if (fb.dataset.answeredcorrect < 0) {
+                    fb.dataset.answeredcorrect = 1;
+                    reset = true;
+                } else {
+                    fb.dataset.answeredcorrect++;
+                }
+                if (reset) {
+                    for (var i = 0; i < answers.length; i++) {
+                        var child = answers[i];
+                        child.className = "MCButton";
+                        child.dataset.answered = 0;
+                    }
+                }
+                label.classList.add("correctButton");
+                label.dataset.answered = 1;
+                fb.className = "Feedback";
+                fb.classList.add("correct");
+
+            }
+        } else {
+            if ("feedback" in label.dataset) {
+                feedback = jaxify(label.dataset.feedback);
+            } else {
+                feedback = "Incorrect -- try again.";
+            }
+            if (fb.dataset.answeredcorrect > 0) {
+                fb.dataset.answeredcorrect = -1;
+                reset = true;
+            } else {
+                fb.dataset.answeredcorrect--;
+            }
+
+            if (reset) {
+                for (var i = 0; i < answers.length; i++) {
+                    var child = answers[i];
+                    child.className = "MCButton";
+                    child.dataset.answered = 0;
+                }
+            }
+            label.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+        // What follows is for the saved responses stuff
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            //console.log(responsesContainer);
+            var response = label.firstChild.innerText;
+            if (label.querySelector(".QuizCode")){
+                response+= label.querySelector(".QuizCode").firstChild.innerText;
+            }
+            console.log(response);
+            //console.log(document.getElementById("quizWrap"+id));
+            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
+            console.log("Question " + qnum);
+            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+            var responses=JSON.parse(responsesContainer.dataset.responses);
+            if (label.dataset.correct == "true") {
+                if (typeof(responses[qnum]) == "object"){
+                    if (!responses[qnum].includes(response))
+                        responses[qnum].push(response);
+                } else{
+                    responses[qnum]= [ response ];
+                }
+            } else {
+                responses[qnum]= response;
+            }
+            console.log(responses);
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+        // End save responses stuff
+
+
+
+        var numcorrect = fb.dataset.numcorrect;
+        var answeredcorrect = fb.dataset.answeredcorrect;
+        if (answeredcorrect >= 0) {
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+        } else {
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
+        }
+
+
+    }
+
+    if (typeof MathJax != 'undefined') {
+        var version = MathJax.version;
+        console.log('MathJax version', version);
+        if (version[0] == "2") {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset([fb]);
+        }
+    } else {
+        console.log('MathJax not detected');
+    }
+
+}
+
+
+/* Function to produce the HTML buttons for a multiple choice/
+   many choice question  and to update the CSS tags based on
+   the question type */
+function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+
+    var shuffled;
+    if (shuffle_answers == true) {
+        //console.log(shuffle_answers+" read as true");
+        shuffled = getRandomSubarray(qa.answers, qa.answers.length);
+    } else {
+        //console.log(shuffle_answers+" read as false");
+        shuffled = qa.answers;
+    }
+
+
+    var num_correct = 0;
+
+    shuffled.forEach((item, index, ans_array) => {
+        //console.log(answer);
+
+        // Make label for input element
+        var lab = document.createElement("label");
+        lab.className = "MCButton";
+        lab.id = id + '-' + index;
+        lab.onclick = check_mc;
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type = "radio";
+        inp.id = "quizo" + id + index;
+        inp.name = "mcgroup-" + id; // for grouping radios
+        inp.className = "sr-only"; // or "visually-hidden" or whatever you call it
+
+
+        lab.append(inp); // input is now inside the label
+
+        var aSpan = document.createElement('span');
+        if ("answer" in item) {
+            aSpan.innerHTML = jaxify(item.answer);
+        }
+        lab.append(aSpan);
+
+        // Create div for code inside question
+        if ("code" in item) {
+            var codeSpan = document.createElement('span');
+            codeSpan.id = "code" + id + index;
+            codeSpan.className = "QuizCode";
+            var codePre = document.createElement('pre');
+            codeSpan.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML = item.code;
+            lab.append(codeSpan);
+        }
+
+        // Set the data attributes for the answer
+        lab.setAttribute('data-correct', item.correct);
+        if (item.correct) {
+            num_correct++;
+        }
+        if ("feedback" in item) {
+            lab.setAttribute('data-feedback', item.feedback);
+        }
+        lab.setAttribute('data-answered', 0);
+
+        // Only append the label (input is inside)
+        aDiv.append(lab);
+
+
+    });
+
+    if (num_correct > 1) {
+        outerqDiv.className = "ManyChoiceQn";
+    } else {
+        outerqDiv.className = "MultipleChoiceQn";
+    }
+
+    return num_correct;
+
+}
+// Object-oriented wrapper for MC/MANY choice
+class MCQuestion extends Question {
+    constructor(qa, id, idx, opts, rootDiv) { super(qa, id, idx, opts, rootDiv); }
+    render() {
+        //console.log("options.shuffleAnswers " + this.options.shuffleAnswers);
+        const numCorrect = make_mc(
+            this.qa,
+            this.options.shuffleAnswers,
+            this.outerqDiv,
+            this.qDiv,
+            this.aDiv,
+            this.id
+        );
+        if ('answer_cols' in this.qa) {
+            this.aDiv.style.gridTemplateColumns =
+                'repeat(' + this.qa.answer_cols + ', 1fr)';
+        }
+        this.fbDiv.dataset.numcorrect = numCorrect;
+        this.wrapper.appendChild(this.fbDiv);
+    }
+}
+Question.register('multiple_choice', MCQuestion);
+Question.register('many_choice', MCQuestion);
+function check_numeric(ths, event) {
+
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id = ths.id.split('-')[0];
+
+        var submission = ths.value;
+        if (submission.indexOf('/') != -1) {
+            var sub_parts = submission.split('/');
+            //console.log(sub_parts);
+            submission = sub_parts[0] / sub_parts[1];
+        }
+        //console.log("Reader entered", submission);
+
+        if (("precision" in ths.dataset) && (ths.dataset.precision > 0)) {
+            var precision = ths.dataset.precision;
+            submission = Number(Number(submission).toPrecision(precision));
+        }
+
+
+        //console.log("In check_numeric(), id="+id);
+        //console.log(event.srcElement.id)           
+        //console.log(event.srcElement.dataset.feedback)
+
+        var fb = document.getElementById("fb" + id);
+        fb.style.display = "none";
+        fb.innerHTML = "Incorrect -- try again.";
+
+        var answers = JSON.parse(ths.dataset.answers);
+        //console.log(answers);
+
+        var defaultFB = "Incorrect. Try again.";
+        var correct;
+        var done = false;
+        answers.every(answer => {
+            //console.log(answer.type);
+
+            correct = false;
+            // if (answer.type=="value"){
+            if ('value' in answer) {
+                var value;
+                if ("precision" in ths.dataset) {
+                    value = answer.value.toPrecision(ths.dataset.precision);
+                } else {
+                    value = answer.value;
+                }
+                if (submission == value) {
+                    if ("feedback" in answer) {
+                        fb.innerHTML = jaxify(answer.feedback);
+                    } else {
+                        fb.innerHTML = jaxify("Correct");
+                    }
+                    correct = answer.correct;
+                    //console.log(answer.correct);
+                    done = true;
+                }
+
+                // } else if (answer.type=="range") {
+            } else if ('range' in answer) {
+                console.log(answer.range);
+                console.log(submission, submission >=answer.range[0], submission < answer.range[1])
+                if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
+                    fb.innerHTML = jaxify(answer.feedback);
+                    correct = answer.correct;
+                    console.log(answer.correct);
+                    done = true;
+                }
+            } else if (answer.type == "default") {
+                if ("feedback" in answer) {
+                    defaultFB = answer.feedback;
+                } 
+            }
+            if (done) {
+                return false; // Break out of loop if this has been marked correct
+            } else {
+                return true; // Keep looking for case that includes this as a correct answer
+            }
+        });
+        console.log("done:", done);
+
+        if ((!done) && (defaultFB != "")) {
+            fb.innerHTML = jaxify(defaultFB);
+            //console.log("Default feedback", defaultFB);
+        }
+
+        fb.style.display = "block";
+        if (correct) {
+            ths.className = "Input-text";
+            ths.classList.add("correctButton");
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className = "Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+
+        // What follows is for the saved responses stuff
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            console.log(submission);
+            var qnum = document.getElementById("quizWrap"+id).dataset.qnum;
+            //console.log("Question " + qnum);
+            //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+            var responses=JSON.parse(responsesContainer.dataset.responses);
+            console.log(responses);
+            if (submission == ths.value){
+                responses[qnum]= submission;
+            } else {
+                responses[qnum]= ths.value + "(" + submission +")";
+            }
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+        // End code to preserve responses
+
+        if (typeof MathJax != 'undefined') {
+            var version = MathJax.version;
+            console.log('MathJax version', version);
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset([fb]);
+            }
+        } else {
+            console.log('MathJax not detected');
+        }
+        // After correct answer, if next JupyterQuiz question exists and has a text input, scroll by current question height
+        if (correct) {
+            // find the current question wrapper
+            var wrapper = ths.closest('.Quiz');
+            if (wrapper) {
+                var nextWrapper = wrapper.nextElementSibling;
+                if (nextWrapper && nextWrapper.classList.contains('Quiz')) {
+                    var nextInput = nextWrapper.querySelector('input.Input-text');
+                    if (nextInput) {
+                        var height = wrapper.getBoundingClientRect().height;
+                        console.log(height);
+                        nextInput.focus();
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+}
+// Object-oriented wrapper for numeric questions
+class NumericQuestion extends Question {
+    constructor(qa, id, idx, opts, rootDiv) {
+        super(qa, id, idx, opts, rootDiv);
+    }
+    render() {
+        make_numeric(this.qa, this.outerqDiv, this.qDiv, this.aDiv, this.id);
+        this.wrapper.appendChild(this.fbDiv);
+    }
+}
+Question.register('numeric', NumericQuestion);
+
+function isValid(el, charC) {
+    //console.log("Input char: ", charC);
+    if (charC == 46) {
+        if (el.value.indexOf('.') === -1) {
+            return true;
+        } else if (el.value.indexOf('/') != -1) {
+            var parts = el.value.split('/');
+            if (parts[1].indexOf('.') === -1) {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    } else if (charC == 47) {
+        if (el.value.indexOf('/') === -1) {
+            if ((el.value != "") && (el.value != ".")) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else if (charC == 45) {
+        var edex = el.value.indexOf('e');
+        if (edex == -1) {
+            edex = el.value.indexOf('E');
+        }
+
+        if (el.value == "") {
+            return true;
+        } else if (edex == (el.value.length - 1)) { // If just after e or E
+            return true;
+        } else {
+            return false;
+        }
+    } else if (charC == 101) { // "e"
+        if ((el.value.indexOf('e') === -1) && (el.value.indexOf('E') === -1) && (el.value.indexOf('/') == -1)) {
+            // Prev symbol must be digit or decimal point:
+            if (el.value.slice(-1).search(/\d/) >= 0) {
+                return true;
+            } else if (el.value.slice(-1).search(/\./) >= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        if (charC > 31 && (charC < 48 || charC > 57))
+            return false;
+    }
+    return true;
+}
+
+function numeric_keypress(evnt) {
+    var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC == 13) {
+        check_numeric(this, evnt);
+    } else {
+        return isValid(this, charC);
+    }
+}
+
+
+
+
+
+function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
+
+
+
+    //console.log(answer);
+
+
+    outerqDiv.className = "NumericQn";
+    aDiv.style.display = 'block';
+
+    var lab = document.createElement("label");
+    lab.className = "InpLabel";
+    lab.innerHTML = "Type numeric answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type = "text";
+    //inp.id="input-"+id;
+    inp.id = id + "-0";
+    inp.className = "Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers));
+    if ("precision" in qa) {
+        inp.setAttribute('data-precision', qa.precision);
+    }
+    aDiv.append(inp);
+    //console.log(inp);
+
+    //inp.addEventListener("keypress", check_numeric);
+    //inp.addEventListener("keypress", numeric_keypress);
+    /*
+    inp.addEventListener("keypress", function(event) {
+        return numeric_keypress(this, event);
+    }
+                        );
+                        */
+    //inp.onkeypress="return numeric_keypress(this, event)";
+    inp.onkeypress = numeric_keypress;
+    inp.onpaste = event => false;
+
+    inp.addEventListener("focus", function (event) {
+        this.value = "";
+        return false;
+    }
+    );
+
+
+}
+// Override show_questions to use object-oriented Question API
+function show_questions(json, container) {
+    // Accept container element or element ID
+    if (typeof container === 'string') {
+        container = document.getElementById(container);
+    }
+    if (!container) {
+        console.error('show_questions: invalid container', container);
+        return;
+    }
+
+    const shuffleQuestions = container.dataset.shufflequestions === 'True';
+    const shuffleAnswers = container.dataset.shuffleanswers === 'True';
+    const preserveResponses = container.dataset.preserveresponses === 'true';
+    const maxWidth = parseInt(container.dataset.maxwidth, 10) || 0;
+    let numQuestions = parseInt(container.dataset.numquestions, 10) || json.length;
+    if (numQuestions > json.length) numQuestions = json.length;
+
+    let questions = json;
+    if (shuffleQuestions || numQuestions < json.length) {
+        questions = getRandomSubarray(json, numQuestions);
+    }
+
+    questions.forEach((qa, index) => {
+        const id = makeid(8);
+        const options = {
+            shuffleAnswers: shuffleAnswers,
+            preserveResponses: preserveResponses,
+            maxWidth: maxWidth
+        };
+        Question.create(qa, id, index, options, container);
+    });
+
+    if (preserveResponses) {
+        const respDiv = document.createElement('div');
+        respDiv.id = 'responses' + container.id;
+        respDiv.className = 'JCResponses';
+        respDiv.dataset.responses = JSON.stringify([]);
+        respDiv.innerHTML = '<b>Select your answers and then follow the directions that will appear here.</b>';
+        container.appendChild(respDiv);
+    }
+
+    // Trigger MathJax typesetting if available
+    if (typeof MathJax != 'undefined') {
+        console.log("MathJax version", MathJax.version);
+        var version = MathJax.version;
+        setTimeout(function(){
+            var version = MathJax.version;
+            console.log('After sleep, MathJax version', version);
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([container]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
+            }
+        }, 500);
+if (typeof version == 'undefined') {
+        } else
+        {
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                if (MathJax.hasOwnProperty('typeset') ) {
+                    MathJax.typeset([container]);
+                } else {
+                    console.log('WARNING: Trying to force load MathJax 3');
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']]
+                        },
+                        svg: {
+                            fontCache: 'global'
+                        }
+                    };
+
+                    (function () {
+                        var script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+                        script.async = true;
+                        document.head.appendChild(script);
+                    })();
+                }
+            } else {
+                console.log("MathJax not found");
+            }
+        }
+    }
+    // if (typeof MathJax !== 'undefined') {
+    //     const v = MathJax.version;
+    //     if (v[0] === '2') {
+    //         MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+    //     } else if (v[0] === '3') {
+    //         MathJax.typeset([container]);
+    //     }
+    // }
+
+    // Prevent link clicks from bubbling up
+    Array.from(container.getElementsByClassName('Link')).forEach(link => {
+        link.addEventListener('click', e => e.stopPropagation());
+    });
+}
+function levenshteinDistance(a, b) {
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+
+    const matrix = Array(b.length + 1).fill(null).map(() => Array(a.length + 1).fill(null));
+
+    for (let i = 0; i <= a.length; i++) {
+        matrix[0][i] = i;
+    }
+
+    for (let j = 0; j <= b.length; j++) {
+        matrix[j][0] = j;
+    }
+
+    for (let j = 1; j <= b.length; j++) {
+        for (let i = 1; i <= a.length; i++) {
+            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            matrix[j][i] = Math.min(
+                matrix[j - 1][i] + 1, // Deletion
+                matrix[j][i - 1] + 1, // Insertion
+                matrix[j - 1][i - 1] + cost // Substitution
+            );
+        }
+    }
+    return matrix[b.length][a.length];
+}
+// Object-oriented wrapper for string input questions
+class StringQuestion extends Question {
+    constructor(qa, id, idx, opts, rootDiv) {
+        super(qa, id, idx, opts, rootDiv);
+    }
+    render() {
+        make_string(this.qa, this.outerqDiv, this.qDiv, this.aDiv, this.id);
+        this.wrapper.appendChild(this.fbDiv);
+    }
+}
+Question.register('string', StringQuestion);
+
+function check_string(ths, event) {
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id = ths.id.split('-')[0];
+        var submission = ths.value.trim();
+        var fb = document.getElementById("fb" + id);
+        fb.style.display = "none";
+        fb.innerHTML = "Incorrect -- try again.";
+
+        var answers = JSON.parse(ths.dataset.answers);
+        var defaultFB = "Incorrect. Try again.";
+        var correct;
+        var done = false;
+
+        // Handle default answer pattern: filter out and capture default feedback
+        var filteredAnswers = [];
+        answers.forEach(answer => {
+            if (answer.type === "default") {
+                defaultFB = answer.feedback;
+            } else {
+                filteredAnswers.push(answer);
+            }
+        });
+        answers = filteredAnswers;
+
+        answers.every(answer => {
+            correct = false;
+
+            let match = false;
+            if (answer.match_case) {
+                match = submission === answer.answer;
+            } else {
+                match = submission.toLowerCase() === answer.answer.toLowerCase();
+            }
+            console.log(submission);
+            console.log(answer.answer);
+            console.log(match);
+
+            if (match) {
+                if ("feedback" in answer) {
+                    fb.innerHTML = jaxify(answer.feedback);
+                } else {
+                    fb.innerHTML = jaxify("Correct");
+                }
+                correct = answer.correct;
+                done = true;
+            } else if (answer.fuzzy_threshold) {
+                var max_length = Math.max(submission.length, answer.answer.length);
+                var ratio;
+                if (answer.match_case) {
+                    ratio = 1- (levenshteinDistance(submission, answer.answer) / max_length);
+                } else {
+                    ratio = 1- (levenshteinDistance(submission.toLowerCase(),
+                                                    answer.answer.toLowerCase()) / max_length);
+                }
+                if (ratio >= answer.fuzzy_threshold) {
+                    if ("feedback" in answer) {
+                        fb.innerHTML = jaxify("(Fuzzy) " + answer.feedback);
+                    } else {
+                        fb.innerHTML = jaxify("Correct");
+                    }
+                    correct = answer.correct;
+                    done = true;
+                }
+
+            }
+
+            if (done) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+
+        if ((!done) && (defaultFB != "")) {
+            fb.innerHTML = jaxify(defaultFB);
+        }
+
+        fb.style.display = "block";
+        if (correct) {
+            ths.className = "Input-text";
+            ths.classList.add("correctButton");
+            fb.className = "Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className = "Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className = "Feedback";
+            fb.classList.add("incorrect");
+        }
+
+        var outerContainer = fb.parentElement.parentElement;
+        var responsesContainer = document.getElementById("responses" + outerContainer.id);
+        if (responsesContainer) {
+            var qnum = document.getElementById("quizWrap" + id).dataset.qnum;
+            var responses = JSON.parse(responsesContainer.dataset.responses);
+            responses[qnum] = submission;
+            responsesContainer.setAttribute('data-responses', JSON.stringify(responses));
+            printResponses(responsesContainer);
+        }
+
+        if (typeof MathJax != 'undefined') {
+            var version = MathJax.version;
+            if (version[0] == "2") {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset([fb]);
+            }
+        } else {
+            console.log('MathJax not detected');
+        }
+        // After correct answer, if next JupyterQuiz question exists and has a text input, scroll by current question height
+        if (correct) {
+            var wrapper = ths.closest('.Quiz');
+            if (wrapper) {
+                var nextWrapper = wrapper.nextElementSibling;
+                if (nextWrapper && nextWrapper.classList.contains('Quiz')) {
+                    var nextInput = nextWrapper.querySelector('input.Input-text');
+                    if (nextInput) {
+                        var height = wrapper.getBoundingClientRect().height;
+                        nextInput.focus();
+                    }
+                }
+            }
+        }
+        return false;
+    }
+}
+
+function string_keypress(evnt) {
+    var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC == 13) {
+        check_string(this, evnt);
+    } 
+}
+
+
+function make_string(qa, outerqDiv, qDiv, aDiv, id) {
+    outerqDiv.className = "StringQn";
+    aDiv.style.display = 'block';
+
+    var lab = document.createElement("label");
+    lab.className = "InpLabel";
+    lab.innerHTML = "Type your answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type = "text";
+    inp.id = id + "-0";
+    inp.className = "Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers));
+    // Apply optional input width (approx. number of characters, in em units)
+    if (qa.input_width != null) {
+        inp.style['min-width'] = qa.input_width + 'em';
+    }
+    aDiv.append(inp);
+
+    inp.onkeypress = string_keypress;
+    inp.onpaste = event => false;
+
+    inp.addEventListener("focus", function (event) {
+        this.value = "";
+        return false;
+    });
+}
+/*
+ * Handle asynchrony issues when re-running quizzes in Jupyter notebooks.
+ * Ensures show_questions is called after the container div is in the DOM.
+ */
+function try_show() {
+  if (document.getElementById("OFvalepkSraS")) {
+    show_questions(questionsOFvalepkSraS, OFvalepkSraS);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2118,11 +3540,15 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.1. באג 1: קדימות פעולות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.2. באג 2: חילוק שלמים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.3. באג 3: יחידות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.4. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.5. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.1. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.2. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.4. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.5. באג 1: קדימות פעולות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.6. באג 2: חילוק שלמים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.10.7. באג 3: יחידות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.10.8. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.10.9. בדקו את עצמכם</a></li>
 </ul>
   </nav></div>
 

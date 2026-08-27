@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_7/7_9_scipy_constants';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות" href="7_10_common_bugs.html" />
+    <link rel="next" title="7.10. מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות" href="7_10_common_bugs.html" />
     <link rel="prev" title="7.8. השוואות ומסכות בוליאניות, where, any, all" href="7_8_boolean_masks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -265,7 +265,7 @@
 <li class="toctree-l2"><a class="reference internal" href="7_7_arithmetic_ufuncs.html">7.7. פעולות חשבון על מערכים: איבר-איבר, פונקציות מתמטיות וסקלר מול מערך</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_10_common_bugs.html">7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_10_common_bugs.html">7.10. מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_11_exam_practice.html">7.11. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -711,8 +711,8 @@ G (קבוע הכבידה האוניברסלי): 6.6743e-11
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="huVTrOWQgJZh" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#huVTrOWQgJZh {
+<div class="output text_html"><div id="SRpdZFmVgVSH" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#SRpdZFmVgVSH {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -935,7 +935,7 @@ G (קבוע הכבידה האוניברסלי): 6.6743e-11
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionshuVTrOWQgJZh=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df <code>scipy.constants.g</code> \u05dc-<code>scipy.constants.G</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05dd \u05d0\u05d5\u05ea\u05d5 \u05e7\u05d1\u05d5\u05e2, \u05e8\u05e7 \u05db\u05ea\u05d9\u05d1\u05d4 \u05e9\u05d5\u05e0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05dc\u05d4 \u05e9\u05e0\u05d9 \u05d2\u05d3\u05dc\u05d9\u05dd \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05d9\u05dd \u05e9\u05d5\u05e0\u05d9\u05dd \u05dc\u05d2\u05de\u05e8\u05d9."}, {"answer": "g \u05d4\u05d5\u05d0 \u05d1\u05d9\u05d7\u05d9\u05d3\u05d5\u05ea cgs \u05d5-G \u05d1\u05d9\u05d7\u05d9\u05d3\u05d5\u05ea SI", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05e0\u05d9\u05d4\u05dd \u05d1-SI \u05d1-scipy.constants; \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05de\u05e9\u05de\u05e2\u05d5\u05ea \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea."}, {"answer": "g \u05d4\u05d9\u05d0 \u05ea\u05d0\u05d5\u05e6\u05ea \u05d4\u05e0\u05e4\u05d9\u05dc\u05d4 \u05d4\u05d7\u05d5\u05e4\u05e9\u05d9\u05ea \u05dc\u05d9\u05d3 \u05db\u05d3\u05d5\u05e8 \u05d4\u05d0\u05e8\u05e5; G \u05d4\u05d5\u05d0 \u05e7\u05d1\u05d5\u05e2 \u05d4\u05db\u05d1\u05d9\u05d3\u05d4 \u05d4\u05d0\u05d5\u05e0\u05d9\u05d1\u05e8\u05e1\u05dc\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05e9\u05e0\u05d9 \u05e7\u05d1\u05d5\u05e2\u05d9\u05dd \u05d1\u05e2\u05dc\u05d9 \u05e9\u05dd \u05d3\u05d5\u05de\u05d4 \u05d0\u05da \u05de\u05e9\u05de\u05e2\u05d5\u05ea \u05e9\u05d5\u05e0\u05d4 \u2014 \u05de\u05e7\u05d5\u05e8 \u05d8\u05e2\u05d5\u05ea \u05e0\u05e4\u05d5\u05e5."}, {"answer": "g \u05d4\u05d5\u05d0 \u05e7\u05d1\u05d5\u05e2 \u05dc\u05db\u05dc \u05d4\u05d9\u05e7\u05d5\u05dd, \u05d5-G \u05ea\u05dc\u05d5\u05d9 \u05d1\u05de\u05d9\u05e7\u05d5\u05dd \u05e2\u05dc \u05e4\u05e0\u05d9 \u05db\u05d3\u05d5\u05e8 \u05d4\u05d0\u05e8\u05e5", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d4\u05e4\u05d5\u05da: g (\u05ea\u05d0\u05d5\u05e6\u05ea \u05d4\u05e0\u05e4\u05d9\u05dc\u05d4 \u05d4\u05d7\u05d5\u05e4\u05e9\u05d9\u05ea) \u05d4\u05d5\u05d0 \u05d6\u05d4 \u05e9\u05de\u05e9\u05ea\u05e0\u05d4 \u05de\u05e2\u05d8 \u05dc\u05e4\u05d9 \u05de\u05d9\u05e7\u05d5\u05dd, \u05d5\u05d0\u05d9\u05dc\u05d5 G \u05d4\u05d5\u05d0 \u05e7\u05d1\u05d5\u05e2 \u05d0\u05d5\u05e0\u05d9\u05d1\u05e8\u05e1\u05dc\u05d9."}]}];
+</style></div><script type="application/javascript">var questionsSRpdZFmVgVSH=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df <code>scipy.constants.g</code> \u05dc-<code>scipy.constants.G</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05dd \u05d0\u05d5\u05ea\u05d5 \u05e7\u05d1\u05d5\u05e2, \u05e8\u05e7 \u05db\u05ea\u05d9\u05d1\u05d4 \u05e9\u05d5\u05e0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05dc\u05d4 \u05e9\u05e0\u05d9 \u05d2\u05d3\u05dc\u05d9\u05dd \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05d9\u05dd \u05e9\u05d5\u05e0\u05d9\u05dd \u05dc\u05d2\u05de\u05e8\u05d9."}, {"answer": "g \u05d4\u05d5\u05d0 \u05d1\u05d9\u05d7\u05d9\u05d3\u05d5\u05ea cgs \u05d5-G \u05d1\u05d9\u05d7\u05d9\u05d3\u05d5\u05ea SI", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05e0\u05d9\u05d4\u05dd \u05d1-SI \u05d1-scipy.constants; \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05de\u05e9\u05de\u05e2\u05d5\u05ea \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea."}, {"answer": "g \u05d4\u05d9\u05d0 \u05ea\u05d0\u05d5\u05e6\u05ea \u05d4\u05e0\u05e4\u05d9\u05dc\u05d4 \u05d4\u05d7\u05d5\u05e4\u05e9\u05d9\u05ea \u05dc\u05d9\u05d3 \u05db\u05d3\u05d5\u05e8 \u05d4\u05d0\u05e8\u05e5; G \u05d4\u05d5\u05d0 \u05e7\u05d1\u05d5\u05e2 \u05d4\u05db\u05d1\u05d9\u05d3\u05d4 \u05d4\u05d0\u05d5\u05e0\u05d9\u05d1\u05e8\u05e1\u05dc\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05e9\u05e0\u05d9 \u05e7\u05d1\u05d5\u05e2\u05d9\u05dd \u05d1\u05e2\u05dc\u05d9 \u05e9\u05dd \u05d3\u05d5\u05de\u05d4 \u05d0\u05da \u05de\u05e9\u05de\u05e2\u05d5\u05ea \u05e9\u05d5\u05e0\u05d4 \u2014 \u05de\u05e7\u05d5\u05e8 \u05d8\u05e2\u05d5\u05ea \u05e0\u05e4\u05d5\u05e5."}, {"answer": "g \u05d4\u05d5\u05d0 \u05e7\u05d1\u05d5\u05e2 \u05dc\u05db\u05dc \u05d4\u05d9\u05e7\u05d5\u05dd, \u05d5-G \u05ea\u05dc\u05d5\u05d9 \u05d1\u05de\u05d9\u05e7\u05d5\u05dd \u05e2\u05dc \u05e4\u05e0\u05d9 \u05db\u05d3\u05d5\u05e8 \u05d4\u05d0\u05e8\u05e5", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d4\u05e4\u05d5\u05da: g (\u05ea\u05d0\u05d5\u05e6\u05ea \u05d4\u05e0\u05e4\u05d9\u05dc\u05d4 \u05d4\u05d7\u05d5\u05e4\u05e9\u05d9\u05ea) \u05d4\u05d5\u05d0 \u05d6\u05d4 \u05e9\u05de\u05e9\u05ea\u05e0\u05d4 \u05de\u05e2\u05d8 \u05dc\u05e4\u05d9 \u05de\u05d9\u05e7\u05d5\u05dd, \u05d5\u05d0\u05d9\u05dc\u05d5 G \u05d4\u05d5\u05d0 \u05e7\u05d1\u05d5\u05e2 \u05d0\u05d5\u05e0\u05d9\u05d1\u05e8\u05e1\u05dc\u05d9."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1997,8 +1997,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("huVTrOWQgJZh")) {
-    show_questions(questionshuVTrOWQgJZh, huVTrOWQgJZh);
+  if (document.getElementById("SRpdZFmVgVSH")) {
+    show_questions(questionsSRpdZFmVgVSH, SRpdZFmVgVSH);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2078,7 +2078,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7.10. </span>שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</p>
+        <p class="prev-next-title"><span class="section-number">7.10. </span>מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

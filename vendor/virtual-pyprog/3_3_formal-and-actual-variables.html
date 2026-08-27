@@ -263,7 +263,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_7_arithmetic_ufuncs.html">7.7. פעולות חשבון על מערכים: איבר-איבר, פונקציות מתמטיות וסקלר מול מערך</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_9_scipy_constants.html">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_10_common_bugs.html">7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_10_common_bugs.html">7.10. מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_7/7_11_exam_practice.html">7.11. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -611,8 +611,8 @@ document.write(`
 <p>הפונקציה בודקת האם תו כלשהו <code class="docutils literal notranslate"><span class="pre">c</span></code> מופיע בתוך מחרוזת <code class="docutils literal notranslate"><span class="pre">st</span></code>. שני אלו - <code class="docutils literal notranslate"><span class="pre">st</span></code> ו-<code class="docutils literal notranslate"><span class="pre">c</span></code> הם פרמטרים פורמליים. בעת קריאה לפונקציה, למשל <code class="docutils literal notranslate"><span class="pre">what(&quot;hello&quot;,</span> <span class="pre">&quot;t&quot;)</span></code> מועברים לה פרמטרים אקטואליים - “hello” ו-“t”. הערך האקטואלי “hello” מוצב לתוך הפרמטר הפורמלי <code class="docutils literal notranslate"><span class="pre">st</span></code>, ואילו “t” מוצב לתוך <code class="docutils literal notranslate"><span class="pre">c</span></code>. וכעת הפונקציה מתחילה לעבוד.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="yjxdCuShKERi" data-shufflequestions="False" data-shuffleanswers="False" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#yjxdCuShKERi {
+<div class="output text_html"><div id="XZLCEyJBexPX" data-shufflequestions="False" data-shuffleanswers="False" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#XZLCEyJBexPX {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -835,7 +835,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsyjxdCuShKERi=[{"question": " \u05e2\u05d1\u05d5\u05e8 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05d4\u05e4\u05d5\u05e8\u05de\u05dc\u05d9\u05d9\u05dd c \u05d5st, \u05de\u05d4 \u05d9\u05d4\u05d9\u05d4 \u05e2\u05e8\u05da \u05d4\u05d4\u05d7\u05d6\u05e8\u05d4?", "type": "many_choice", "answers": [{"answer": "True", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05de\u05d4 \u05d0\u05dd \u05d4\u05e8\u05e6\u05e0\u05d5 \u05e2\u05dd \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05d9\u05dd 't','x'?"}, {"answer": "False", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05de\u05d4 \u05d0\u05dd \u05d4\u05e8\u05e6\u05e0\u05d5 \u05e2\u05dd \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05d9\u05dd 't','t'?"}, {"answer": "\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e2\u05e8\u05da \u05d4\u05d4\u05d7\u05d6\u05e8\u05d4 \u05e9\u05dc \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05d4\u05d6\u05d5 \u05d9\u05db\u05d5\u05dc \u05dc\u05d4\u05d9\u05d5\u05ea True \u05d0\u05d5 False, \u05d5\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea \u05d0\u05d9\u05d6\u05d4 \u05de\u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e0\u05e7\u05d1\u05dc \u05d1\u05dc\u05d9 \u05dc\u05d3\u05e2\u05ea \u05d0\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05dd."}]}];
+</style></div><script type="application/javascript">var questionsXZLCEyJBexPX=[{"question": " \u05e2\u05d1\u05d5\u05e8 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05d4\u05e4\u05d5\u05e8\u05de\u05dc\u05d9\u05d9\u05dd c \u05d5st, \u05de\u05d4 \u05d9\u05d4\u05d9\u05d4 \u05e2\u05e8\u05da \u05d4\u05d4\u05d7\u05d6\u05e8\u05d4?", "type": "many_choice", "answers": [{"answer": "True", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05de\u05d4 \u05d0\u05dd \u05d4\u05e8\u05e6\u05e0\u05d5 \u05e2\u05dd \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05d9\u05dd 't','x'?"}, {"answer": "False", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05de\u05d4 \u05d0\u05dd \u05d4\u05e8\u05e6\u05e0\u05d5 \u05e2\u05dd \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05d9\u05dd 't','t'?"}, {"answer": "\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e2\u05e8\u05da \u05d4\u05d4\u05d7\u05d6\u05e8\u05d4 \u05e9\u05dc \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05d4\u05d6\u05d5 \u05d9\u05db\u05d5\u05dc \u05dc\u05d4\u05d9\u05d5\u05ea True \u05d0\u05d5 False, \u05d5\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea \u05d0\u05d9\u05d6\u05d4 \u05de\u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e0\u05e7\u05d1\u05dc \u05d1\u05dc\u05d9 \u05dc\u05d3\u05e2\u05ea \u05d0\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1897,8 +1897,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("yjxdCuShKERi")) {
-    show_questions(questionsyjxdCuShKERi, yjxdCuShKERi);
+  if (document.getElementById("XZLCEyJBexPX")) {
+    show_questions(questionsXZLCEyJBexPX, XZLCEyJBexPX);
   } else {
     setTimeout(try_show, 200);
   }
@@ -1912,8 +1912,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="SMZAnbqvKlDD" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#SMZAnbqvKlDD {
+<div class="output text_html"><div id="kVeppkSFRRfg" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#kVeppkSFRRfg {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2136,7 +2136,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsSMZAnbqvKlDD=[{"question": " \u05e2\u05d1\u05d5\u05e8 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05d9\u05dd 'hello' \u05d5'o', \u05de\u05d4 \u05d9\u05d4\u05d9\u05d4 \u05e2\u05e8\u05da \u05d4\u05d4\u05d7\u05d6\u05e8\u05d4?", "type": "many_choice", "answers": [{"answer": "True", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "False", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionskVeppkSFRRfg=[{"question": " \u05e2\u05d1\u05d5\u05e8 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05d9\u05dd 'hello' \u05d5'o', \u05de\u05d4 \u05d9\u05d4\u05d9\u05d4 \u05e2\u05e8\u05da \u05d4\u05d4\u05d7\u05d6\u05e8\u05d4?", "type": "many_choice", "answers": [{"answer": "True", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "False", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3198,8 +3198,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("SMZAnbqvKlDD")) {
-    show_questions(questionsSMZAnbqvKlDD, SMZAnbqvKlDD);
+  if (document.getElementById("kVeppkSFRRfg")) {
+    show_questions(questionskVeppkSFRRfg, kVeppkSFRRfg);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3235,8 +3235,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="gPkfktPqdLPC" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#gPkfktPqdLPC {
+<div class="output text_html"><div id="RYCnOdYOcPFp" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#RYCnOdYOcPFp {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3459,7 +3459,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsgPkfktPqdLPC=[{"question": "\u05e1\u05de\u05e0\u05d5 \u05d0\u05ea \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05d9\u05dd", "type": "many_choice", "answers": [{"answer": "letter", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "char", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "string", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "text", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}];
+</style></div><script type="application/javascript">var questionsRYCnOdYOcPFp=[{"question": "\u05e1\u05de\u05e0\u05d5 \u05d0\u05ea \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05d4\u05d0\u05e7\u05d8\u05d5\u05d0\u05dc\u05d9\u05d9\u05dd", "type": "many_choice", "answers": [{"answer": "letter", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "char", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "string", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "text", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -4521,8 +4521,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("gPkfktPqdLPC")) {
-    show_questions(questionsgPkfktPqdLPC, gPkfktPqdLPC);
+  if (document.getElementById("RYCnOdYOcPFp")) {
+    show_questions(questionsRYCnOdYOcPFp, RYCnOdYOcPFp);
   } else {
     setTimeout(try_show, 200);
   }

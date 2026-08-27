@@ -265,7 +265,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_7/7_7_arithmetic_ufuncs.html">7.7. פעולות חשבון על מערכים: איבר-איבר, פונקציות מתמטיות וסקלר מול מערך</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_7/7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_7/7_9_scipy_constants.html">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_7/7_10_common_bugs.html">7.10. שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_7/7_10_common_bugs.html">7.10. מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_7/7_11_exam_practice.html">7.11. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -734,8 +734,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="ZduAlgvgroTR" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#ZduAlgvgroTR {
+<div class="output text_html"><div id="lOSHOGYfStOy" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#lOSHOGYfStOy {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -958,7 +958,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsZduAlgvgroTR=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df `m = sum((x-xbar)*(y-ybar)) / sum((x-xbar)**2)` \u05dc\u05d1\u05d9\u05df `m = sum(x*y) / sum(x*x)`?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05e9\u05ea\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d0\u05d5\u05ea \u05e9\u05e7\u05d5\u05dc\u05d5\u05ea \u05ea\u05de\u05d9\u05d3", "correct": false, "feedback": "\u05dc\u05d0 - \u05d4\u05df \u05e9\u05e7\u05d5\u05dc\u05d5\u05ea \u05e8\u05e7 \u05d0\u05dd xbar=0 \u05d0\u05d5 ybar=0."}, {"answer": "\u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05d4\u05e0\u05db\u05d5\u05e0\u05d4 \u05ea\u05de\u05d9\u05d3, \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05d2\u05d5\u05d9\u05d4", "correct": false, "feedback": "\u05dc\u05d0 - \u05e9\u05ea\u05d9\u05d4\u05df \u05e0\u05db\u05d5\u05e0\u05d5\u05ea, \u05dc\u05e9\u05ea\u05d9 \u05e9\u05d0\u05dc\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea."}, {"answer": "\u05e9\u05ea\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d0\u05d5\u05ea \u05de\u05d7\u05e9\u05d1\u05d5\u05ea \u05d0\u05ea \u05d4\u05e9\u05d9\u05e4\u05d5\u05e2 b, \u05dc\u05d0 \u05d0\u05ea m", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05ea\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d0\u05d5\u05ea \u05de\u05d7\u05e9\u05d1\u05d5\u05ea \u05d0\u05ea m (\u05d4\u05e9\u05d9\u05e4\u05d5\u05e2); \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05e0\u05d9\u05d4\u05df \u05d4\u05d5\u05d0 \u05d1\u05d4\u05e0\u05d7\u05d4 \u05e2\u05dc b (\u05d4\u05d7\u05d9\u05ea\u05d5\u05da), \u05dc\u05d0 \u05d1\u05de\u05d4 \u05e9\u05d4\u05df \u05de\u05d7\u05e9\u05d1\u05d5\u05ea."}, {"answer": "\u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05e7\u05d5 \u05db\u05dc\u05dc\u05d9 (b \u05d7\u05d5\u05e4\u05e9\u05d9), \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05de\u05db\u05e8\u05d9\u05d7\u05d4 \u05d0\u05ea \u05d4\u05e7\u05d5 \u05dc\u05e2\u05d1\u05d5\u05e8 \u05d3\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d9\u05ea (b=0)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionslOSHOGYfStOy=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df `m = sum((x-xbar)*(y-ybar)) / sum((x-xbar)**2)` \u05dc\u05d1\u05d9\u05df `m = sum(x*y) / sum(x*x)`?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05e9\u05ea\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d0\u05d5\u05ea \u05e9\u05e7\u05d5\u05dc\u05d5\u05ea \u05ea\u05de\u05d9\u05d3", "correct": false, "feedback": "\u05dc\u05d0 - \u05d4\u05df \u05e9\u05e7\u05d5\u05dc\u05d5\u05ea \u05e8\u05e7 \u05d0\u05dd xbar=0 \u05d0\u05d5 ybar=0."}, {"answer": "\u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05d4\u05e0\u05db\u05d5\u05e0\u05d4 \u05ea\u05de\u05d9\u05d3, \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05d2\u05d5\u05d9\u05d4", "correct": false, "feedback": "\u05dc\u05d0 - \u05e9\u05ea\u05d9\u05d4\u05df \u05e0\u05db\u05d5\u05e0\u05d5\u05ea, \u05dc\u05e9\u05ea\u05d9 \u05e9\u05d0\u05dc\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea."}, {"answer": "\u05e9\u05ea\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d0\u05d5\u05ea \u05de\u05d7\u05e9\u05d1\u05d5\u05ea \u05d0\u05ea \u05d4\u05e9\u05d9\u05e4\u05d5\u05e2 b, \u05dc\u05d0 \u05d0\u05ea m", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05ea\u05d9 \u05d4\u05e0\u05d5\u05e1\u05d7\u05d0\u05d5\u05ea \u05de\u05d7\u05e9\u05d1\u05d5\u05ea \u05d0\u05ea m (\u05d4\u05e9\u05d9\u05e4\u05d5\u05e2); \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05e0\u05d9\u05d4\u05df \u05d4\u05d5\u05d0 \u05d1\u05d4\u05e0\u05d7\u05d4 \u05e2\u05dc b (\u05d4\u05d7\u05d9\u05ea\u05d5\u05da), \u05dc\u05d0 \u05d1\u05de\u05d4 \u05e9\u05d4\u05df \u05de\u05d7\u05e9\u05d1\u05d5\u05ea."}, {"answer": "\u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05de\u05ea\u05d0\u05d9\u05de\u05d4 \u05e7\u05d5 \u05db\u05dc\u05dc\u05d9 (b \u05d7\u05d5\u05e4\u05e9\u05d9), \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05de\u05db\u05e8\u05d9\u05d7\u05d4 \u05d0\u05ea \u05d4\u05e7\u05d5 \u05dc\u05e2\u05d1\u05d5\u05e8 \u05d3\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d9\u05ea (b=0)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2020,8 +2020,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("ZduAlgvgroTR")) {
-    show_questions(questionsZduAlgvgroTR, ZduAlgvgroTR);
+  if (document.getElementById("lOSHOGYfStOy")) {
+    show_questions(questionslOSHOGYfStOy, lOSHOGYfStOy);
   } else {
     setTimeout(try_show, 200);
   }
