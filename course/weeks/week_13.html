@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12. שבוע 13 — בקרת גרסאות עם Git &#8212; Computers For physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_13';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12.1. למה בקרת גרסאות (Version Control)" href="week_13/13_1_why_version_control.html" />
+    <link rel="prev" title="11.14. תרגול מסכם" href="week_11/11_14_practice.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
+    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ברוכים הבאים לקורס מחשבים לפיסיקאים
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../0_intro.html">מנהלות</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_1.html">1. שבוע 1 — טיפוסים ותנאים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/0_0_objectives.html">1.1. מבוא</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/0_1_hardware-to-software.html">1.2. חומרה, תוכנה והשיטה הבינארית</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/0_2_python.html">1.3. שפת התכנות פייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/0_3_variables-and-assignments.html">1.4. משתנים והשמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/1_0_intro_types.html">1.5. מבוא לטיפוסים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/1_1_numerical_types.html">1.6. טיפוסים נומריים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/1_2_booleans.html">1.7. משתנים בוליאניים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/1_3_strings.html">1.8. מחרוזות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/1_4_conversion.html">1.9. המרות בין טיפוסים</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_2.html">2. שבוע 2 — תנאים ופונקציות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/2_0_intro-conditions.html">2.1. מבוא לתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/2_1_if-else-statements.html">2.2. משפטי תנאי בסיסיים: <code class="docutils literal notranslate"><span class="pre">if</span></code> ו<code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/2_2_nested-ifs.html">2.5. תנאים מקוננים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/2_3_elif.html">2.6. elif ותנאים מרובים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/2_4_logical-operators-in-ifs.html">2.7. אופרטורים לוגיים בתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_0_intro-functions.html">2.8. מבוא לפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.9. פונקציות מובנות בפייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_2_building-functions.html">2.10. בניית פונקציות משלכם</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.11. פרמטרים וארגומנטים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_5_caller-callee.html">2.12. קריאה הדדית בין פונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.13. דוגמאות מתקדמות</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_3.html">3. שבוע 3 — רשימות ולולאות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/4_0_intro-list.html">3.1. מבוא לרשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/4_1_list-operators-indices.html">3.2. רשימות: אופרטורים בסיסיים ואינדקסים</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/4_2_built-in-functions-in-list.html">3.4. פונקציות מובנות לרשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/4_3_list-methods.html">3.5. מתודות של רשימות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/4_4_nested_lists.html">3.6. רשימות מקוננות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/4_5_list-examples.html">3.7. דוגמאות מעשיות</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/5_0_intro-loops.html">4.1. מבוא ללולאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/6_0_for_loops.html">4.2. לולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/6_1_ranges-and-for.html">4.3. range ולולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/6_2_for-examples.html">4.4. דוגמאות ל־for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/6_3_for-summary.html">4.5. סיכום לולאות for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/7_0_while_loops.html">4.6. לולאות while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/7_1_while-examples.html">4.7. דוגמאות ל־while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/8_0_while_vs_for.html">4.8. while לעומת for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/8_1_break_and_continue.html">4.9. break ו־continue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/8_2_nested_loops.html">4.10. לולאות מקוננות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/8_3_list-comprehensions.html">4.11. List Comprehensions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/10_0_mutable-vs-immutable.html">5.1. Mutable vs Immutable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/10_1_memory-in-functions.html">5.2. זיכרון והתנהגות בפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/11_0_advanced_function_usage.html">5.3. שימושים מתקדמים בפונקציות</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/12_0_data_structures.html">6.1. מבני נתונים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/12_1_tuples.html">6.2. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/12_2_dicts.html">6.3. מילונים (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/13_0_string-formats.html">6.5. עיצוב מחרוזות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/13_1_files.html">6.6. קריאה וכתיבה לקבצים</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_7.html">7. שבוע 7 — Numpy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_1_vectorization.html">7.1. מרשימה למערך: וקטוריזציה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_2_creating_arrays.html">7.2. יצירת מערכים: array, zeros, ones, arange, linspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_3_array_properties.html">7.3. תכונות מערך: shape, ndim, size, dtype וטיפוסים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_4_indexing_slicing.html">7.4. אינדוקס ופריסה בציר אחד</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_5_views_vs_copies.html">7.5. views מול copies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_6_sort_argsort.html">7.6. sort ו-argsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_7_arithmetic_ufuncs.html">7.7. פעולות חשבון על מערכים: איבר-איבר, פונקציות מתמטיות וסקלר מול מערך</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_8_boolean_masks.html">7.8. השוואות ומסכות בוליאניות, where, any, all</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_9_scipy_constants.html">7.9. קבועים פיזיקליים ויחידות (scipy.constants)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_10_common_bugs.html">7.10. מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_7/7_11_exam_practice.html">7.11. תרגול מסכם</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_8.html">8. שבוע 8 — Matplotlib</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_1_figure_axes.html">8.1. figure ו-axes — המודל המנטלי</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_2_plot_scatter.html">8.2. plot ו-scatter: קווים, נקודות וסגנון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_3_axes_labels_units.html">8.3. צירים, תוויות ויחידות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_4_legend_ticks_text.html">8.4. תיוג הגרף: legend, גבולות וסימוני ציר, טקסט וחצים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_5_multiple_curves.html">8.5. כמה עקומות באותו גרף</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_6_subplots.html">8.6. subplots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_7_log_scales.html">8.7. סקאלות לוגריתמיות — ומתי משתמשים בהן</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_8_histogram.html">8.8. היסטוגרמה: bins, density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_9_errorbar.html">8.9. errorbar — נקודות עם שגיאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_10_savefig.html">8.10. שמירה לדוח: savefig, dpi, פורמט</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_8/8_11_practice.html">8.11. תרגול מסכם</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_9.html">9. שבוע 9 — NumPy מתקדם ואינטגרציה</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_1_multidim_arrays.html">9.1. מבנה נתונים רב-ממדי: דו-ממד ותלת-ממד</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_2_axis_indexing.html">9.2. פריסה לפי צירים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_10_recurrence_loop.html">9.10. יחס נסיגה ולולאת עדכון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_11_practice.html">9.11. תרגול מסכם</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_10.html">10. שבוע 10 — pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_1_why_pandas.html">10.1. למה pandas — טבלה מול מערך</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_2_dataframe_series.html">10.2. DataFrame ו-Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_3_read_csv.html">10.3. read_csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_4_selection_filtering.html">10.4. בחירה, סינון ומיון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_5_groupby.html">10.5. groupby(...).mean()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_6_describe.html">10.6. describe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_7_to_numpy.html">10.7. מעבר ל-NumPy: to_numpy()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_8_reading_agent_code.html">10.8. קריאת קוד pandas שכתב אייג'נט</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_9_practice.html">10.9. תרגול</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="week_11.html">11. שבוע 11 — סטטיסטיקה והתאמת קווים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_1_clean_data.html">11.1. מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_2_mean_std_sem.html">11.2. ממוצע, סטיית תקן ושגיאת הממוצע — ולמה 1/√N</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_3_measurement_noise.html">11.3. רעש מדידה: default_rng ו-normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_4_stats_per_run.html">11.4. סטטיסטיקה לכל ריצה: groupby מול צמצום לפי ציר</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_5_error_propagation.html">11.5. הולכת שגיאות: אנליטית ומונטה-קרלו</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_6_linear_fit.html">11.6. התאמה ליניארית: מהנוסחה לקוד</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_7_fit_errors_residuals.html">11.7. תוצרי ההתאמה: שגיאות המקדמים ושאריות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_8_chi2_r2.html">11.8. טיב ההתאמה: חי בריבוע ו-R בריבוע</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_9_weighted_fit.html">11.9. התאמה משוקללת</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_10_outlier_influence.html">11.10. השפעת נקודה חריגה</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_11_linearization.html">11.11. לינאריזציה: דעיכה מעריכית דרך ln</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_12_model_comparison.html">11.12. השוואה בין שני מודלים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_13_final_report_figure.html">11.13. נתונים מול מודל — הגרף המלא, savetxt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_11/11_14_practice.html">11.14. תרגול מסכם</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">12. שבוע 13 — בקרת גרסאות עם Git</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="week_13/13_1_why_version_control.html">12.1. למה בקרת גרסאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_13/13_2_init_add_commit.html">12.2. snapshot אחד בכל פעם: git init, add, commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_13/13_3_log_diff_status.html">12.3. לקרוא את ההיסטוריה: git log, diff, status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_13/13_4_gitignore.html">12.4. .gitignore — מה לא לשים ב-Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_13/13_5_github_remote.html">12.5. GitHub: remote, clone, push, pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_13/13_6_branch_merge.html">12.6. branch ו-merge conflict</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/course/weeks/week_13.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/course/weeks/week_13.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/CFS" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_13.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/course/weeks/week_13.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>שבוע 13 — בקרת גרסאות עם Git</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="git">
+<h1><span class="section-number">12. </span>שבוע 13 — בקרת גרסאות עם Git<a class="headerlink" href="#git" title="Link to this heading">#</a></h1>
+<p>בשבוע האחרון של הקורס נלמד כלי שהוא לא עוד ספרייה כמו NumPy או pandas, אלא הרגלת עבודה: <strong>Git</strong>, מערכת בקרת הגרסאות הנפוצה בעולם.
+כל פיזיקאי שעובד עם קוד מכיר את הרגע שבו קובץ בשם <code class="docutils literal notranslate"><span class="pre">sim_v2_final_REAL.py</span></code> מפסיק להיות מצחיק — שינוי “קטן” שמשבש קוד עובד, בלי אפשרות לחזור אחורה, או שני שותפי מעבדה שדורכים על השינויים אחד של השני.
+Git פותר את זה: הוא שומר <strong>היסטוריה</strong> מלאה של הקוד שלכם, תמונת מצב אחרי תמונת מצב, כל אחת מתועדת ובת-שחזור.
+לא נלמד את כל Git — שבוע אחד לא מספיק לזה — אלא בדיוק את מה שמכסה 90% מהשימוש היומיומי של מדען שעובד לבד או בזוג: לשמור היסטוריה, לקרוא אותה, לגבות אותה ל-GitHub, ולשרוד קונפליקט מיזוג אחד בלי בהלה.
+בסוף השבוע תדעו:</p>
+<ul class="simple">
+<li><p>למה בקרת גרסאות פותרת בעיה שכל אחד מכיר, ולמה Ctrl+Z ותיקיות v1/v2 לא מספיקות</p></li>
+<li><p>ליצור repo ולשמור היסטוריה עם <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>, <code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">commit</span></code></p></li>
+<li><p>לקרוא היסטוריה קיימת ולאתר בה באגים עם <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
+<li><p>להחליט מה לא שייך ל-Git עם <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
+<li><p>לגבות ולשתף קוד עם GitHub — <code class="docutils literal notranslate"><span class="pre">remote</span></code>, <code class="docutils literal notranslate"><span class="pre">push</span></code>, <code class="docutils literal notranslate"><span class="pre">clone</span></code>, <code class="docutils literal notranslate"><span class="pre">pull</span></code></p></li>
+<li><p>להסתעף עם branch, ולפתור merge conflict אחד בביטחון
+<strong>Materials</strong></p></li>
+<li><p><a class="reference internal" href="week_13/13_1_why_version_control.html"><span class="doc">1 • למה בקרת גרסאות</span></a></p></li>
+<li><p><a class="reference internal" href="week_13/13_2_init_add_commit.html"><span class="doc">2 • snapshot אחד בכל פעם: git init, add, commit</span></a></p></li>
+<li><p><a class="reference internal" href="week_13/13_3_log_diff_status.html"><span class="doc">3 • לקרוא את ההיסטוריה: git log, diff, status</span></a></p></li>
+<li><p><a class="reference internal" href="week_13/13_4_gitignore.html"><span class="doc">4 • מה לא לשים ב-Git: .gitignore</span></a></p></li>
+<li><p><a class="reference internal" href="week_13/13_5_github_remote.html"><span class="doc">5 • גיבוי ושיתוף: GitHub — remote, clone, push, pull</span></a></p></li>
+<li><p><a class="reference internal" href="week_13/13_6_branch_merge.html"><span class="doc">6 • בסיס שיתוף פעולה: branch ו-merge conflict</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/CFS",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./course/weeks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="week_11/11_14_practice.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">11.14. </span>תרגול מסכם</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week_13/13_1_why_version_control.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12.1. </span>למה בקרת גרסאות (Version Control)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

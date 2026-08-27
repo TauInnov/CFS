@@ -326,6 +326,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_11/11_14_practice.html">11.14. תרגול מסכם</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_12.html">12. שבוע 12 — בקרת גרסאות עם Git</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_1_why_version_control.html">12.1. למה בקרת גרסאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_2_init_add_commit.html">12.2. snapshot אחד בכל פעם: git init, add, commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_3_log_diff_status.html">12.3. לקרוא את ההיסטוריה: git log, diff, status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_4_gitignore.html">12.4. .gitignore — מה לא לשים ב-Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_5_github_remote.html">12.5. GitHub: remote, clone, push, pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_6_branch_merge.html">12.6. branch ו-merge conflict</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -739,8 +748,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="AzJZFBOAdLpl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#AzJZFBOAdLpl {
+<div class="output text_html"><div id="JbIUBaIOyElT" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#JbIUBaIOyElT {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -963,7 +972,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsAzJZFBOAdLpl=[{"question": "\u05d0\u05dd <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100, \u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.diff(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 99 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd \u05d1\u05d9\u05df 100 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e1\u05de\u05d5\u05db\u05d9\u05dd."}, {"answer": "100", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d1\u05d0\u05d7\u05d3."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "50", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05e8\u05e7 \u05d1\u05d0\u05d7\u05d3, \u05dc\u05d0 \u05d1\u05d7\u05e6\u05d9."}]}, {"question": "\u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.cumsum(a)</code> \u05e2\u05d1\u05d5\u05e8 <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100?", "type": "multiple_choice", "answers": [{"answer": "99, \u05db\u05de\u05d5 diff", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da."}, {"answer": "100 - \u05d0\u05d5\u05ea\u05d5 \u05d0\u05d5\u05e8\u05da \u05db\u05de\u05d5 a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05dc\u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d9\u05e9 \u05e1\u05db\u05d5\u05dd \u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d0\u05d5\u05ea\u05d5 \u05de\u05e7\u05d5\u05dd."}, {"answer": "1 - \u05e8\u05e7 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05e1\u05d5\u05e4\u05d9", "correct": false, "feedback": "\u05d6\u05d4 \u05de\u05d4 \u05e9-np.sum (\u05d1\u05dc\u05d9 cum) \u05de\u05d7\u05d6\u05d9\u05e8, \u05dc\u05d0 cumsum."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05d5\u05e1\u05d9\u05e3 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd; \u05d4\u05d0\u05d5\u05e8\u05da \u05e0\u05e9\u05d0\u05e8 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05db\u05de\u05d5 \u05e9\u05dc a."}]}];
+</style></div><script type="application/javascript">var questionsJbIUBaIOyElT=[{"question": "\u05d0\u05dd <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100, \u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.diff(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 99 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd \u05d1\u05d9\u05df 100 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e1\u05de\u05d5\u05db\u05d9\u05dd."}, {"answer": "100", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d1\u05d0\u05d7\u05d3."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "50", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05e8\u05e7 \u05d1\u05d0\u05d7\u05d3, \u05dc\u05d0 \u05d1\u05d7\u05e6\u05d9."}]}, {"question": "\u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.cumsum(a)</code> \u05e2\u05d1\u05d5\u05e8 <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100?", "type": "multiple_choice", "answers": [{"answer": "99, \u05db\u05de\u05d5 diff", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da."}, {"answer": "100 - \u05d0\u05d5\u05ea\u05d5 \u05d0\u05d5\u05e8\u05da \u05db\u05de\u05d5 a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05dc\u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d9\u05e9 \u05e1\u05db\u05d5\u05dd \u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d0\u05d5\u05ea\u05d5 \u05de\u05e7\u05d5\u05dd."}, {"answer": "1 - \u05e8\u05e7 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05e1\u05d5\u05e4\u05d9", "correct": false, "feedback": "\u05d6\u05d4 \u05de\u05d4 \u05e9-np.sum (\u05d1\u05dc\u05d9 cum) \u05de\u05d7\u05d6\u05d9\u05e8, \u05dc\u05d0 cumsum."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05d5\u05e1\u05d9\u05e3 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd; \u05d4\u05d0\u05d5\u05e8\u05da \u05e0\u05e9\u05d0\u05e8 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05db\u05de\u05d5 \u05e9\u05dc a."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2025,8 +2034,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("AzJZFBOAdLpl")) {
-    show_questions(questionsAzJZFBOAdLpl, AzJZFBOAdLpl);
+  if (document.getElementById("JbIUBaIOyElT")) {
+    show_questions(questionsJbIUBaIOyElT, JbIUBaIOyElT);
   } else {
     setTimeout(try_show, 200);
   }

@@ -324,6 +324,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_11/11_14_practice.html">11.14. תרגול מסכם</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_12.html">12. שבוע 12 — בקרת גרסאות עם Git</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_1_why_version_control.html">12.1. למה בקרת גרסאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_2_init_add_commit.html">12.2. snapshot אחד בכל פעם: git init, add, commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_3_log_diff_status.html">12.3. לקרוא את ההיסטוריה: git log, diff, status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_4_gitignore.html">12.4. .gitignore — מה לא לשים ב-Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_5_github_remote.html">12.5. GitHub: remote, clone, push, pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_12/12_6_branch_merge.html">12.6. branch ו-merge conflict</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -661,8 +670,8 @@ document.write(`
 <p>למעשה, ניתן להכליל ולהגיד כי כל פעולה שראינו עד כה עבור רשימות קיימת גם עבור טאפלים <strong>אם ורק אם</strong> פעולה זו אינה משנה את הרשימה</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="kLhXFMsjEsOU" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#kLhXFMsjEsOU {
+<div class="output text_html"><div id="pKhZgKdGlESx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#pKhZgKdGlESx {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -885,7 +894,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionskLhXFMsjEsOU=[{"question": "\u05d0\u05d9\u05dc\u05d5 \u05de\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea/\u05de\u05ea\u05d5\u05d3\u05d5\u05ea \u05d4\u05d1\u05d0\u05d5\u05ea \u05d4\u05d2\u05d9\u05d5\u05e0\u05d9 \u05e9\u05d9\u05d4\u05d9\u05d4 \u05dc\u05d8\u05d0\u05e4\u05dc?", "type": "many_choice", "answers": [{"answer": "append", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05de\u05ea\u05d5\u05d3\u05d4 \u05e2\u05d5\u05e8\u05db\u05ea \u05d8\u05d0\u05e4\u05dc \u05e7\u05d9\u05d9\u05dd."}, {"answer": "remove", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05de\u05ea\u05d5\u05d3\u05d4 \u05e2\u05d5\u05e8\u05db\u05ea \u05d8\u05d0\u05e4\u05dc \u05e7\u05d9\u05d9\u05dd."}, {"answer": "len", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "sorted (\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}];
+</style></div><script type="application/javascript">var questionspKhZgKdGlESx=[{"question": "\u05d0\u05d9\u05dc\u05d5 \u05de\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea/\u05de\u05ea\u05d5\u05d3\u05d5\u05ea \u05d4\u05d1\u05d0\u05d5\u05ea \u05d4\u05d2\u05d9\u05d5\u05e0\u05d9 \u05e9\u05d9\u05d4\u05d9\u05d4 \u05dc\u05d8\u05d0\u05e4\u05dc?", "type": "many_choice", "answers": [{"answer": "append", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05de\u05ea\u05d5\u05d3\u05d4 \u05e2\u05d5\u05e8\u05db\u05ea \u05d8\u05d0\u05e4\u05dc \u05e7\u05d9\u05d9\u05dd."}, {"answer": "remove", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05de\u05ea\u05d5\u05d3\u05d4 \u05e2\u05d5\u05e8\u05db\u05ea \u05d8\u05d0\u05e4\u05dc \u05e7\u05d9\u05d9\u05dd."}, {"answer": "len", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "sorted (\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1947,8 +1956,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("kLhXFMsjEsOU")) {
-    show_questions(questionskLhXFMsjEsOU, kLhXFMsjEsOU);
+  if (document.getElementById("pKhZgKdGlESx")) {
+    show_questions(questionspKhZgKdGlESx, pKhZgKdGlESx);
   } else {
     setTimeout(try_show, 200);
   }

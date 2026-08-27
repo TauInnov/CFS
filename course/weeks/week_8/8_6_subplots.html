@@ -324,6 +324,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_11/11_14_practice.html">11.14. תרגול מסכם</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week_12.html">12. שבוע 12 — בקרת גרסאות עם Git</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_1_why_version_control.html">12.1. למה בקרת גרסאות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_2_init_add_commit.html">12.2. snapshot אחד בכל פעם: git init, add, commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_3_log_diff_status.html">12.3. לקרוא את ההיסטוריה: git log, diff, status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_4_gitignore.html">12.4. .gitignore — מה לא לשים ב-Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_5_github_remote.html">12.5. GitHub: remote, clone, push, pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_12/12_6_branch_merge.html">12.6. branch ו-merge conflict</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -698,8 +707,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="FkaItoebdsHP" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#FkaItoebdsHP {
+<div class="output text_html"><div id="FOAyXzsHQhTi" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#FOAyXzsHQhTi {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -922,7 +931,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsFkaItoebdsHP=[{"question": "\u05db\u05d0\u05e9\u05e8 \u05e7\u05d5\u05e8\u05d0\u05d9\u05dd <code>fig, axs = plt.subplots(2, 2)</code>, \u05d0\u05d9\u05da \u05e0\u05d9\u05d2\u05e9\u05d9\u05dd \u05dc\u05e6\u05d9\u05e8 \u05e9\u05d1\u05e4\u05d9\u05e0\u05d4 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "axs[0, 0]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05db\u05e9-nrows>1 \u05d5\u05d2\u05dd ncols>1, axs \u05d4\u05d5\u05d0 \u05de\u05e2\u05e8\u05da \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs[0]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 axs \u05db\u05d0\u05df \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs.first()", "correct": false, "feedback": "\u05d0\u05d9\u05df \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05db\u05d6\u05d5."}, {"answer": "axs[0][1]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d5 \u05d4\u05e4\u05d9\u05e0\u05d4 \u05d4\u05d9\u05de\u05e0\u05d9\u05ea \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4 (\u05d8\u05d5\u05e8 1 \u05d1\u05e9\u05d5\u05e8\u05d4 0), \u05dc\u05d0 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsFOAyXzsHQhTi=[{"question": "\u05db\u05d0\u05e9\u05e8 \u05e7\u05d5\u05e8\u05d0\u05d9\u05dd <code>fig, axs = plt.subplots(2, 2)</code>, \u05d0\u05d9\u05da \u05e0\u05d9\u05d2\u05e9\u05d9\u05dd \u05dc\u05e6\u05d9\u05e8 \u05e9\u05d1\u05e4\u05d9\u05e0\u05d4 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "axs[0, 0]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05db\u05e9-nrows>1 \u05d5\u05d2\u05dd ncols>1, axs \u05d4\u05d5\u05d0 \u05de\u05e2\u05e8\u05da \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs[0]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 axs \u05db\u05d0\u05df \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs.first()", "correct": false, "feedback": "\u05d0\u05d9\u05df \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05db\u05d6\u05d5."}, {"answer": "axs[0][1]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d5 \u05d4\u05e4\u05d9\u05e0\u05d4 \u05d4\u05d9\u05de\u05e0\u05d9\u05ea \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4 (\u05d8\u05d5\u05e8 1 \u05d1\u05e9\u05d5\u05e8\u05d4 0), \u05dc\u05d0 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1984,8 +1993,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("FkaItoebdsHP")) {
-    show_questions(questionsFkaItoebdsHP, FkaItoebdsHP);
+  if (document.getElementById("FOAyXzsHQhTi")) {
+    show_questions(questionsFOAyXzsHQhTi, FOAyXzsHQhTi);
   } else {
     setTimeout(try_show, 200);
   }
