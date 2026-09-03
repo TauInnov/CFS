@@ -149,12 +149,12 @@ parts:
           - file: course/weeks/week_7/7_9_scipy_constants
             title: "קבועים פיזיקליים ויחידות (scipy.constants)"
           - file: course/weeks/week_7/7_10_common_bugs
-            title: "שגיאות נפוצות בתרגום משוואה: קדימויות, חילוק שלמים, יחידות"
+            title: "מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות"
           - file: course/weeks/week_7/7_11_exam_practice
             title: "תרגול מסכם"
 
       - file: course/weeks/week_8
-        title: "שבוע 8 — Matplotlib: לראות את התוצאה"
+        title: "שבוע 8 — Matplotlib"
         sections:
           - file: course/weeks/week_8/8_1_figure_axes
             title: "figure ו-axes — המודל המנטלי"
@@ -206,7 +206,7 @@ parts:
             title: "תרגול מסכם"
 
       - file: course/weeks/week_10
-        title: "שבוע 10 — pandas (לקריאה)"
+        title: "שבוע 10 — pandas"
         sections:
           - file: course/weeks/week_10/10_1_why_pandas
             title: "למה pandas — טבלה מול מערך"
@@ -228,7 +228,7 @@ parts:
             title: "תרגול"
 
       - file: course/weeks/week_11
-        title: "שבוע 11 — סטטיסטיקה והתאמת קווים: שיא הקורס"
+        title: "שבוע 11 — סטטיסטיקה והתאמת קווים"
         sections:
           - file: course/weeks/week_11/11_1_clean_data
             title: "מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים"
@@ -260,4 +260,17 @@ parts:
             title: "תרגול מסכם"
 
       - file: course/weeks/week_12
-        title: "שבוע 12 — OOP & Unittesting"
+        title: "שבוע 12 — בקרת גרסאות עם Git"
+        sections:
+          - file: course/weeks/week_12/12_1_why_version_control
+            title: "למה בקרת גרסאות"
+          - file: course/weeks/week_12/12_2_init_add_commit
+            title: "snapshot אחד בכל פעם: git init, add, commit"
+          - file: course/weeks/week_12/12_3_log_diff_status
+            title: "לקרוא את ההיסטוריה: git log, diff, status"
+          - file: course/weeks/week_12/12_4_gitignore
+            title: ".gitignore — מה לא לשים ב-Git"
+          - file: course/weeks/week_12/12_5_github_remote
+            title: "GitHub: remote, clone, push, pull"
+          - file: course/weeks/week_12/12_6_branch_merge
+            title: "branch ו-merge conflict"
