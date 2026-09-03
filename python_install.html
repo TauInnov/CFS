@@ -6,7 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - Computers For physics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>התקנת פייתון על המחשב האישי &#8212; Computers For physics</title>
   
   
   
@@ -56,12 +58,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python_install';</script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. שבוע 1 — טיפוסים" href="course/weeks/week_1.html" />
+    <link rel="prev" title="מנהלות" href="0_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -93,7 +94,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -123,8 +124,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -182,9 +181,9 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_intro.html">מנהלות</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_install.html">התקנת פייתון</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">התקנת פייתון</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
 <ul class="nav bd-sidenav">
@@ -381,6 +380,73 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/python_install.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/python_install.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -406,7 +472,7 @@
       
       
       
-      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fpython_install.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,6 +484,54 @@
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/python_install.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -459,7 +573,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -468,42 +584,134 @@ document.write(`
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Search</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>התקנת פייתון על המחשב האישי</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">ההמלצה: Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">התקנה ב-Windows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">פתיחת טרמינל ב-Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">הרצת נוטבוק</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">התקנה ב-Mac</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">פתיחת טרמינל ב-Mac</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">הרצת נוטבוק</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בדיקת ההתקנה</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>התקנת פייתון על המחשב האישי<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>את כל תרגילי הקורס אפשר להריץ ישירות מהדפדפן דרך <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>, בלי להתקין דבר. עם זאת, מומלץ להתקין פייתון גם על המחשב האישי — כדי לעבוד גם בלי אינטרנט, וכדי להתרגל לסביבת עבודה מקומית שתשמש אתכם גם בהמשך הלימודים.</p>
+<p>בעמוד זה מוסבר כיצד להתקין פייתון עם כל הספריות הדרושות לקורס (NumPy, Matplotlib, Pandas ועוד), עבור <strong>Windows</strong> ועבור <strong>Mac</strong>.</p>
+<section id="anaconda">
+<h2>ההמלצה: Anaconda<a class="headerlink" href="#anaconda" title="Link to this heading">#</a></h2>
+<p>הדרך הפשוטה ביותר להתקין פייתון היא באמצעות <a class="reference external" href="https://www.anaconda.com/download">Anaconda</a> — חבילה חינמית שכוללת יחד עם פייתון גם את כל הספריות המדעיות הדרושות לקורס (NumPy, Pandas, Matplotlib ועוד) וגם את Jupyter Notebook, כך שאין צורך להתקין כל ספרייה בנפרד.</p>
+</section>
+<section id="windows">
+<h2>התקנה ב-Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>היכנסו לכתובת <a class="reference external" href="https://www.anaconda.com/download">anaconda.com/download</a> ולחצו על <strong>Download</strong>. יש להזין כתובת מייל, ולאחר מכן יישלח קישור להורדה (אפשר גם לדלג ולהוריד ישירות).</p></li>
+<li><p>ודאו שההורדה היא עבור <strong>Windows</strong> (הגרסה המוצעת כברירת מחדל בדרך כלל מתאימה).</p></li>
+<li><p>פתחו את קובץ ההתקנה שהורד (<code class="docutils literal notranslate"><span class="pre">Anaconda3-...-Windows-x86_64.exe</span></code>) ועברו על אשף ההתקנה:</p>
+<ul class="simple">
+<li><p>בשלב “Select Installation Type” בחרו <strong>Just Me</strong> (מומלץ, לא דורש הרשאות מנהל).</p></li>
+<li><p>אפשר להשאיר את נתיב ההתקנה כברירת המחדל.</p></li>
+<li><p>בשלב <strong>Advanced Installation Options</strong> אין חובה לסמן “Add Anaconda to my PATH environment variable” — לא מומלץ על ידי המתקין עצמו, ופותחים סביבת עבודה ייעודית (<strong>Anaconda Prompt</strong>, ראו בהמשך) במקום.</p></li>
+<li><p>לחצו <strong>Install</strong> והמתינו לסיום (ההתקנה עשויה לקחת מספר דקות).</p></li>
+</ul>
+</li>
+</ol>
+<section id="id2">
+<h3>פתיחת טרמינל ב-Windows<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>לאחר ההתקנה, פתחו את תפריט <strong>התחל (Start)</strong>, הקלידו <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code> ולחצו Enter. ייפתח חלון שורת פקודה (טרמינל) שבו פייתון וכל הספריות זמינים ישירות — זו הדרך המומלצת להריץ פקודות פייתון ב-Windows.</p>
+</section>
+<section id="id3">
+<h3>הרצת נוטבוק<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>בתוך Anaconda Prompt הקלידו:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>ולחצו Enter. ייפתח חלון דפדפן עם ממשק Jupyter, שבו ניתן ליצור ולהריץ קובצי נוטבוק (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>).</p>
+<p>לחלופין, אפשר לפתוח את <strong>Anaconda Navigator</strong> (מתפריט Start) — ממשק גרפי שממנו אפשר להפעיל את Jupyter Notebook בלחיצת כפתור, בלי להשתמש בטרמינל כלל.</p>
+</section>
+</section>
+<section id="mac">
+<h2>התקנה ב-Mac<a class="headerlink" href="#mac" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>בדקו איזה מעבד יש במחשב שלכם: תפריט אפל (הסמל ) בפינה הימנית העליונה ← <strong>About This Mac</strong>. אם כתוב “Apple M1/M2/M3/…” יש לכם מעבד Apple Silicon; אם כתוב “Intel” יש לכם מעבד Intel.</p></li>
+<li><p>היכנסו לכתובת <a class="reference external" href="https://www.anaconda.com/download">anaconda.com/download</a> והורידו את קובץ ההתקנה עבור <strong>macOS</strong> בהתאם למעבד שלכם (Apple Silicon או Intel), בפורמט <strong><code class="docutils literal notranslate"><span class="pre">.pkg</span></code></strong> (מומלץ, מתקין גרפי).</p></li>
+<li><p>פתחו את קובץ ה-<code class="docutils literal notranslate"><span class="pre">.pkg</span></code> שהורד ועברו על אשף ההתקנה בלחיצות <strong>Continue</strong> ← <strong>Agree</strong> ← <strong>Install</strong>, עד לסיום ההתקנה. ייתכן שתידרשו להזין את סיסמת המשתמש שלכם במחשב.</p></li>
+</ol>
+<section id="id4">
+<h3>פתיחת טרמינל ב-Mac<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>לחצו <strong>Cmd + Space</strong> לפתיחת Spotlight, הקלידו <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> ולחצו Enter. (אפשר גם למצוא את Terminal תחת Applications ← Utilities.) לאחר ההתקנה, Anaconda מוסיפה את עצמה אוטומטית לטרמינל — אם תפתחו טרמינל חדש (חשוב: חלון <strong>חדש</strong>, לא כזה שכבר היה פתוח לפני ההתקנה) אמורה להופיע התוספת <code class="docutils literal notranslate"><span class="pre">(base)</span></code> בתחילת השורה.</p>
+</section>
+<section id="id5">
+<h3>הרצת נוטבוק<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>בטרמינל הקלידו:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>ולחצו Enter. ייפתח חלון דפדפן עם ממשק Jupyter, שבו ניתן ליצור ולהריץ קובצי נוטבוק (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>).</p>
+<p>לחלופין, אפשר לפתוח את <strong>Anaconda Navigator</strong> (מתוך Launchpad או Applications) — ממשק גרפי שממנו אפשר להפעיל את Jupyter Notebook בלחיצת כפתור, בלי להשתמש בטרמינל כלל.</p>
+</section>
+</section>
+<section id="id6">
+<h2>בדיקת ההתקנה<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>כדי לוודא שההתקנה הצליחה, פתחו טרמינל (Anaconda Prompt ב-Windows, Terminal ב-Mac) והריצו:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>אמור להופיע מספר גרסה (למשל <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.12.4</span></code>). אם התקבלה שגיאה שהפקודה לא מזוהה — ודאו שאתם משתמשים ב-Anaconda Prompt (ב-Windows) או שפתחתם חלון טרמינל חדש לאחר ההתקנה (ב-Mac).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>אם משהו לא עובד, אפשר תמיד לחזור להריץ את התרגילים דרך <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> בדפדפן, וללא צורך בהתקנה מקומית, ולפנות למתרגלים או למרצה בשעות הקבלה.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "TauInnov/CFS",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
 
               
               
@@ -512,12 +720,56 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="0_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">מנהלות</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="course/weeks/week_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>שבוע 1 — טיפוסים</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">ההמלצה: Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">התקנה ב-Windows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">פתיחת טרמינל ב-Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">הרצת נוטבוק</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">התקנה ב-Mac</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">פתיחת טרמינל ב-Mac</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">הרצת נוטבוק</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בדיקת ההתקנה</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
