@@ -9,6 +9,8 @@ parts:
     chapters:
       - file: 0_intro
         title: "מנהלות"
+      - file: python_install
+        title: "התקנת פייתון"
 
   - caption: "שבועות הלמידה"
     numbered: true
