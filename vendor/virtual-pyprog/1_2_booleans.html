@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
@@ -183,6 +183,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../0_intro.html">מנהלות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_install.html">התקנת פייתון</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
 <ul class="current nav bd-sidenav">
@@ -200,18 +201,16 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_2.html">2. שבוע 2 — תנאים ופונקציות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="2_0_intro-conditions.html">2.1. מבוא לתנאים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_1_if-else-statements.html">2.2. משפטי תנאי בסיסיים: <code class="docutils literal notranslate"><span class="pre">if</span></code> ו<code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
-
-
-<li class="toctree-l2"><a class="reference internal" href="2_2_nested-ifs.html">2.5. תנאים מקוננים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_3_elif.html">2.6. elif ותנאים מרובים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_4_logical-operators-in-ifs.html">2.7. אופרטורים לוגיים בתנאים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_0_intro-functions.html">2.8. מבוא לפונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_1_builtin-functions.html">2.9. פונקציות מובנות בפייתון</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_2_building-functions.html">2.10. בניית פונקציות משלכם</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_3_formal-and-actual-variables.html">2.11. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_5_caller-callee.html">2.12. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_4_advanced-examples.html">2.13. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_1_if-else-statements.html">2.2. פקודות if ו־else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_2_nested-ifs.html">2.3. תנאים מקוננים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_3_elif.html">2.4. elif ותנאים מרובים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_4_logical-operators-in-ifs.html">2.5. אופרטורים לוגיים בתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_0_intro-functions.html">2.6. מבוא לפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_3.html">3. שבוע 3 — רשימות ולולאות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -704,8 +703,8 @@ False
 <p><strong>שאלת חשיבה:</strong> אם נתון ש<code class="docutils literal notranslate"><span class="pre">a=False</span></code>, ולא ידוע הערך של b, מה יהיה הערך של <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">and</span> <span class="pre">b</span></code>?</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="IQEVQtPGETLl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#IQEVQtPGETLl {
+<div class="output text_html"><div id="jsgCKJjfrKMo" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#jsgCKJjfrKMo {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -928,7 +927,7 @@ False
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsIQEVQtPGETLl=[{"type": "many_choice", "answers": [{"answer": "True", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "False", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsjsgCKJjfrKMo=[{"type": "many_choice", "answers": [{"answer": "True", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "False", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1990,8 +1989,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("IQEVQtPGETLl")) {
-    show_questions(questionsIQEVQtPGETLl, IQEVQtPGETLl);
+  if (document.getElementById("jsgCKJjfrKMo")) {
+    show_questions(questionsjsgCKJjfrKMo, jsgCKJjfrKMo);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2067,8 +2066,8 @@ False
 <p><strong>שאלת חשיבה:</strong> אם נתון ש<code class="docutils literal notranslate"><span class="pre">a=True</span></code>, ולא ידוע הערך של b, מה יהיה הערך של <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">or</span> <span class="pre">b</span></code>?</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="ySjWxbQIMHFB" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#ySjWxbQIMHFB {
+<div class="output text_html"><div id="KahhqCxaQzsy" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#KahhqCxaQzsy {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2291,7 +2290,7 @@ False
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsySjWxbQIMHFB=[{"type": "many_choice", "answers": [{"answer": "False", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "True", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsKahhqCxaQzsy=[{"type": "many_choice", "answers": [{"answer": "False", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "True", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d3\u05e2\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3353,8 +3352,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("ySjWxbQIMHFB")) {
-    show_questions(questionsySjWxbQIMHFB, ySjWxbQIMHFB);
+  if (document.getElementById("KahhqCxaQzsy")) {
+    show_questions(questionsKahhqCxaQzsy, KahhqCxaQzsy);
   } else {
     setTimeout(try_show, 200);
   }

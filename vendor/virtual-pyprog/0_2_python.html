@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
@@ -647,8 +647,8 @@ document.write(`
 זה רק הצעד הראשון – במהלך הקורס תריצו עוד הרבה תוכניות, וגם תכתבו בעצמכם המון קוד. ההרפתקה המלאה מתחילה עכשיו!</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="WiWnWZNCoHSP" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#WiWnWZNCoHSP {
+<div class="output text_html"><div id="RGNaJkTQZgUT" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#RGNaJkTQZgUT {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -871,7 +871,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsWiWnWZNCoHSP=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05d2\u05e8\u05e1\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d4\u05ea\u05e7\u05e0\u05ea\u05dd?", "type": "many_choice", "answers": [{"answer": "3.11", "correct": true, "feedback": "\u05d9\u05d0\u05e1\u05e1\u05e1"}, {"answer": "3.9", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.12", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.6", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}]}];
+</style></div><script type="application/javascript">var questionsRGNaJkTQZgUT=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05d2\u05e8\u05e1\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d4\u05ea\u05e7\u05e0\u05ea\u05dd?", "type": "many_choice", "answers": [{"answer": "3.11", "correct": true, "feedback": "\u05d9\u05d0\u05e1\u05e1\u05e1"}, {"answer": "3.9", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.12", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.6", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1933,8 +1933,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("WiWnWZNCoHSP")) {
-    show_questions(questionsWiWnWZNCoHSP, WiWnWZNCoHSP);
+  if (document.getElementById("RGNaJkTQZgUT")) {
+    show_questions(questionsRGNaJkTQZgUT, RGNaJkTQZgUT);
   } else {
     setTimeout(try_show, 200);
   }
