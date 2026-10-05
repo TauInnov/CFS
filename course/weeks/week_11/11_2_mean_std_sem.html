@@ -185,6 +185,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../0_intro.html">מנהלות</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python_install.html">התקנת פייתון</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
 <ul class="current nav bd-sidenav">
@@ -202,18 +203,16 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_2.html">2. שבוע 2 — תנאים ופונקציות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_0_intro-conditions.html">2.1. מבוא לתנאים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_1_if-else-statements.html">2.2. משפטי תנאי בסיסיים: <code class="docutils literal notranslate"><span class="pre">if</span></code> ו<code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
-
-
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_2_nested-ifs.html">2.5. תנאים מקוננים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_3_elif.html">2.6. elif ותנאים מרובים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_4_logical-operators-in-ifs.html">2.7. אופרטורים לוגיים בתנאים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_0_intro-functions.html">2.8. מבוא לפונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.9. פונקציות מובנות בפייתון</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.10. בניית פונקציות משלכם</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.11. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.12. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.13. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_1_if-else-statements.html">2.2. פקודות if ו־else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_2_nested-ifs.html">2.3. תנאים מקוננים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_3_elif.html">2.4. elif ותנאים מרובים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/2_4_logical-operators-in-ifs.html">2.5. אופרטורים לוגיים בתנאים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_0_intro-functions.html">2.6. מבוא לפונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות ולולאות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -618,7 +617,7 @@ document.write(`
 <h1><span class="section-number">11.2. </span>ממוצע, סטיית תקן ושגיאת הממוצע — ולמה 1/√N<a class="headerlink" href="#n" title="Link to this heading">#</a></h1>
 <p>שלוש כמויות, שקל לבלבל ביניהן:</p>
 <ul class="simple">
-<li><p><strong>ממוצע</strong> <span class="math notranslate nohighlight">\(\bar{x}\)</span> — האומדן הטוב ביותר לערך ה”אמיתי”.</p></li>
+<li><p><strong>ממוצע</strong> <span class="math notranslate nohighlight">\(\bar{x}\)</span> — אומדן נפוץ לערך הצפוי, והוא מתאים במיוחד כאשר המדידות בלתי־תלויות והרעש חסר הטיה ובעל שונות סופית.</p></li>
 <li><p><strong>סטיית תקן</strong> <span class="math notranslate nohighlight">\(s\)</span> — כמה <strong>מדידה בודדת</strong> מתפזרת סביב הממוצע (תכונה של הנתונים עצמם).</p></li>
 <li><p><strong>שגיאת הממוצע</strong> (Standard Error of the Mean, SEM) <span class="math notranslate nohighlight">\(\sigma_{\bar{x}} = s/\sqrt{N}\)</span> — כמה <strong>הממוצע עצמו</strong> היה משתנה אם היינו חוזרים על כל הניסוי (כל ה-<span class="math notranslate nohighlight">\(N\)</span> מדידות) שוב ושוב.</p></li>
 </ul>
@@ -755,8 +754,8 @@ pandas describe: mean= 41.309  std= 3.009
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="UfqnxBVvihql" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#UfqnxBVvihql {
+<div class="output text_html"><div id="eMEcMprESoYc" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#eMEcMprESoYc {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -979,7 +978,7 @@ pandas describe: mean= 41.309  std= 3.009
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsUfqnxBVvihql=[{"question": "\u05d0\u05dd \u05db\u05d5\u05e4\u05dc\u05d9\u05dd \u05d0\u05ea \u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e4\u05d9 4 (\u05d0\u05d5\u05ea\u05d4 std \u05d1\u05e7\u05d9\u05e8\u05d5\u05d1), \u05de\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05dc\u05e9\u05d2\u05d9\u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2?", "type": "multiple_choice", "answers": [{"answer": "\u05e0\u05e9\u05d0\u05e8\u05ea \u05d0\u05d5\u05ea\u05d5 \u05d3\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d9\u05d0 \u05ea\u05dc\u05d5\u05d9\u05d4 \u05d1-N."}, {"answer": "\u05e7\u05d8\u05e0\u05d4 \u05e4\u05d9 4", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05d9\u05d4 \u05e0\u05db\u05d5\u05df \u05d0\u05dd \u05d4\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d4\u05d9\u05d9\u05ea\u05d4 1/N, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 1/sqrt(N)."}, {"answer": "\u05d2\u05d3\u05dc\u05d4 \u05e4\u05d9 2", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d9\u05d5\u05ea\u05e8 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05ea\u05de\u05d9\u05d3 \u05de\u05e7\u05d8\u05d9\u05e0\u05d5\u05ea (\u05d0\u05d5 \u05dc\u05db\u05dc \u05d4\u05d9\u05d5\u05ea\u05e8 \u05de\u05e9\u05d0\u05d9\u05e8\u05d5\u05ea) \u05d0\u05ea \u05e9\u05d2\u05d9\u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2, \u05dc\u05d0 \u05de\u05d2\u05d3\u05d9\u05dc\u05d5\u05ea \u05d0\u05d5\u05ea\u05d4."}, {"answer": "\u05e7\u05d8\u05e0\u05d4 \u05e4\u05d9 2 (\u05db\u05d9 sqrt(4)=2)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 1/sqrt(N) \u05e2\u05dd N \u05e4\u05d9 4 \u05d2\u05d3\u05d5\u05dc \u05d9\u05d5\u05ea\u05e8."}]}];
+</style></div><script type="application/javascript">var questionseMEcMprESoYc=[{"question": "\u05d0\u05dd \u05db\u05d5\u05e4\u05dc\u05d9\u05dd \u05d0\u05ea \u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e4\u05d9 4 (\u05d0\u05d5\u05ea\u05d4 std \u05d1\u05e7\u05d9\u05e8\u05d5\u05d1), \u05de\u05d4 \u05e7\u05d5\u05e8\u05d4 \u05dc\u05e9\u05d2\u05d9\u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2?", "type": "multiple_choice", "answers": [{"answer": "\u05e0\u05e9\u05d0\u05e8\u05ea \u05d0\u05d5\u05ea\u05d5 \u05d3\u05d1\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d9\u05d0 \u05ea\u05dc\u05d5\u05d9\u05d4 \u05d1-N."}, {"answer": "\u05e7\u05d8\u05e0\u05d4 \u05e4\u05d9 4", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05d9\u05d4 \u05e0\u05db\u05d5\u05df \u05d0\u05dd \u05d4\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d4\u05d9\u05d9\u05ea\u05d4 1/N, \u05d0\u05d1\u05dc \u05d4\u05d9\u05d0 1/sqrt(N)."}, {"answer": "\u05d2\u05d3\u05dc\u05d4 \u05e4\u05d9 2", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d9\u05d5\u05ea\u05e8 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05ea\u05de\u05d9\u05d3 \u05de\u05e7\u05d8\u05d9\u05e0\u05d5\u05ea (\u05d0\u05d5 \u05dc\u05db\u05dc \u05d4\u05d9\u05d5\u05ea\u05e8 \u05de\u05e9\u05d0\u05d9\u05e8\u05d5\u05ea) \u05d0\u05ea \u05e9\u05d2\u05d9\u05d0\u05ea \u05d4\u05de\u05de\u05d5\u05e6\u05e2, \u05dc\u05d0 \u05de\u05d2\u05d3\u05d9\u05dc\u05d5\u05ea \u05d0\u05d5\u05ea\u05d4."}, {"answer": "\u05e7\u05d8\u05e0\u05d4 \u05e4\u05d9 2 (\u05db\u05d9 sqrt(4)=2)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 1/sqrt(N) \u05e2\u05dd N \u05e4\u05d9 4 \u05d2\u05d3\u05d5\u05dc \u05d9\u05d5\u05ea\u05e8."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2041,8 +2040,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("UfqnxBVvihql")) {
-    show_questions(questionsUfqnxBVvihql, UfqnxBVvihql);
+  if (document.getElementById("eMEcMprESoYc")) {
+    show_questions(questionseMEcMprESoYc, eMEcMprESoYc);
   } else {
     setTimeout(try_show, 200);
   }
