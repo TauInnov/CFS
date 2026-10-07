@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
@@ -596,15 +596,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.1. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.2. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.4. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.5. באג 1: קדימות פעולות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.6. באג 2: חילוק שלמים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.10.7. באג 3: יחידות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.10.8. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.10.9. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.1. סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.2. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.4. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.5. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.6. באג 1: קדימות פעולות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.10.7. באג 2: חילוק שלמים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.10.8. באג 3: יחידות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.10.9. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">7.10.10. בדקו את עצמכם</a></li>
 </ul>
             </nav>
         </div>
@@ -619,8 +620,29 @@ document.write(`
   <section id="id1">
 <h1><span class="section-number">7.10. </span>מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>לתרגם משוואה פיזיקלית לקוד זו לא רק “העתקת סימנים” — יש לזה תהליך שיטתי, שאפשר וכדאי להפעיל בכל פעם מחדש. בסעיף הזה נעבור על התהליך הזה צעד-צעד על דוגמה מלאה, ואז נבנה יחד “מאגר באגים”: שלושת סוגי הטעויות הנפוצים ביותר כשהתהליך משתבש. באגים מהסוג הזה מסוכנים במיוחד, כי הקוד <strong>רץ בלי שגיאה</strong> — הוא פשוט מחזיר תוצאה פיזיקלית לא נכונה, בלי שום התראה.</p>
+<p>סרטון: <strong>“מסכות בוליאניות עם &amp; ו-|: נוסחה שמוגדרת בקטעים”</strong> — הקלטת מסך של המחברת עם קול.</p>
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/EAt93dTWIXg?rel=0"
+          style="position:absolute; top:0; left:0; width:100%; height:100%;"
+          frameborder="0" allowfullscreen></iframe>
+</div>
+<section id="id2">
+<h2><span class="section-number">7.10.1. </span>סיכום<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>כל מקרה של הנוסחה הופך למסכה: <code class="docutils literal notranslate"><span class="pre">(t</span> <span class="pre">&gt;=</span> <span class="pre">0)</span> <span class="pre">&amp;</span> <span class="pre">(t</span> <span class="pre">&lt;</span> <span class="pre">4)</span></code>.</p></li>
+<li><p>משתמשים ב-<code class="docutils literal notranslate"><span class="pre">&amp;</span></code> וב-<code class="docutils literal notranslate"><span class="pre">|</span></code> עם סוגריים סביב כל השוואה. <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> ו-<code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">t</span> <span class="pre">&lt;</span> <span class="pre">4</span></code> נכשלים על מערכים.</p></li>
+<li><p>בודקים שהמקרים מכסים כל נקודה ואינם חופפים: <code class="docutils literal notranslate"><span class="pre">np.all(m1</span> <span class="pre">|</span> <span class="pre">m2</span> <span class="pre">|</span> <span class="pre">m3)</span></code>, <code class="docutils literal notranslate"><span class="pre">np.any(m1</span> <span class="pre">&amp;</span> <span class="pre">m2)</span></code>.</p></li>
+<li><p>בגבולות (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code> או <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>) קל לטעות בלי שתתקבל שגיאה.</p></li>
+</ul>
+<p><strong>תרגול עצמי:</strong></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/TauInnov/CFS/blob/main/exercises/week7_10_practice.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p>או להורדה: <a class="reference download internal" download="" href="../../../_downloads/1bc944848bd07a39cfa60302e400c3ed/week7_10_practice.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">week7_10_practice.ipynb</span></code></a></p>
+<blockquote>
+<div><p>בפתיחה ב־Colab: File ← Save a copy in Drive לפני שמתחילים, אחרת העבודה לא תישמר.</p>
+</div></blockquote>
+</section>
 <section id="numpy">
-<h2><span class="section-number">7.10.1. </span>תהליך שיטתי: מנוסחה לביטוי ב-NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.10.2. </span>תהליך שיטתי: מנוסחה לביטוי ב-NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
 <p>בכל פעם שמתרגמים משוואה פיזיקלית לקוד, שווה לעבור על ארבעה שלבים, בסדר הזה:</p>
 <ol class="arabic simple">
 <li><p><strong>זיהוי כל גורם במשוואה</strong> — האם הוא סקלר קבוע (מספר בודד, כמו מהירות התחלתית אחת), מערך (למשל טווח זמנים, או תוצאה של כמה ריצות), או קבוע פיזיקלי (<code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>)?</p></li>
@@ -629,8 +651,8 @@ document.write(`
 <li><p><strong>בדיקת סבירות בסוף</strong> — יחידות (כל הגדלים עדיין ב-SI?), סדר גודל (התוצאה הגיונית פיזיקלית?), ומקרי קצה (מה קורה בערכי קיצון, כמו זווית של <span class="math notranslate nohighlight">\(0°\)</span> או <span class="math notranslate nohighlight">\(90°\)</span>?).</p></li>
 </ol>
 </section>
-<section id="id2">
-<h2><span class="section-number">7.10.2. </span>דוגמה: מהנוסחה לקוד — טווח הזריקה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2><span class="section-number">7.10.3. </span>דוגמה: מהנוסחה לקוד — טווח הזריקה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>נתרגם את נוסחת הטווח האופקי של זריקה:</p>
 <div class="math notranslate nohighlight">
 \[R(v_0,\theta) = \frac{v_0^2 \sin(2\theta)}{g}\]</div>
@@ -668,8 +690,8 @@ R בזווית 90°: 0.0
 </div>
 <p>התוצאה, כ-40.8 מטר עבור <span class="math notranslate nohighlight">\(v_0=20\)</span> מ/ש בזווית <span class="math notranslate nohighlight">\(45°\)</span>, נמצאת בסדר גודל סביר לזריקת כדור ביד. בדיקת מקרי הקצה מאששת את הפיזיקה: בזווית <span class="math notranslate nohighlight">\(0°\)</span> הכדור לא עף אופקית בכלל (הטווח 0), ובזווית <span class="math notranslate nohighlight">\(90°\)</span> הוא עולה ויורד באותה נקודה (הטווח גם כן 0) — בדיוק כפי שמצפים ממשוואת הטווח.</p>
 </section>
-<section id="id3">
-<h2><span class="section-number">7.10.3. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2><span class="section-number">7.10.4. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
@@ -702,8 +724,8 @@ R בזווית 90°: 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="qgthDzxhJQoe" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#qgthDzxhJQoe {
+<div class="output text_html"><div id="hmwaecBVWcwH" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#hmwaecBVWcwH {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -926,7 +948,7 @@ R בזווית 90°: 0.0
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsqgthDzxhJQoe=[{"question": "\u05dc\u05e4\u05d9 \u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05e9\u05e8\u05d0\u05d9\u05e0\u05d5, \u05de\u05d4 \u05d4\u05e9\u05dc\u05d1 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05ea\u05e8\u05d2\u05d5\u05dd \u05de\u05e9\u05d5\u05d5\u05d0\u05d4 \u05dc\u05e7\u05d5\u05d3 \u2014 \u05e2\u05d5\u05d3 \u05dc\u05e4\u05e0\u05d9 \u05db\u05ea\u05d9\u05d1\u05ea \u05e9\u05d5\u05e8\u05ea \u05e7\u05d5\u05d3 \u05d0\u05d7\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05dc\u05db\u05ea\u05d5\u05d1 \u05d0\u05ea \u05db\u05dc \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d5\u05d0\u05d6 \u05dc\u05ea\u05e7\u05df \u05e9\u05d2\u05d9\u05d0\u05d5\u05ea \u05d0\u05dd \u05d9\u05e9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05e4\u05da \u05de\u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05d4\u05de\u05d5\u05de\u05dc\u05e5; \u05e2\u05d3\u05d9\u05e3 \u05dc\u05d1\u05e0\u05d5\u05ea \u05d1\u05d4\u05d3\u05e8\u05d2\u05d4."}, {"answer": "\u05dc\u05d6\u05d4\u05d5\u05ea \u05db\u05dc \u05d2\u05d5\u05e8\u05dd \u05d1\u05de\u05e9\u05d5\u05d5\u05d0\u05d4: \u05d4\u05d0\u05dd \u05d4\u05d5\u05d0 \u05e1\u05e7\u05dc\u05e8 \u05e7\u05d1\u05d5\u05e2, \u05de\u05e2\u05e8\u05da, \u05d0\u05d5 \u05e7\u05d1\u05d5\u05e2 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05ea \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05d4 \u05e9\u05dc \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05e1\u05d5\u05e4\u05d9\u05ea", "correct": false, "feedback": "\u05d6\u05d4 \u05e9\u05dc\u05d1 \u05d7\u05e9\u05d5\u05d1 \u2014 \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05e9\u05dc\u05d1 4, \u05d1\u05d3\u05d9\u05e7\u05ea \u05d4\u05e1\u05d1\u05d9\u05e8\u05d5\u05ea \u05d1\u05e1\u05d5\u05e3, \u05dc\u05d0 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df."}, {"answer": "\u05dc\u05d7\u05e4\u05e9 \u05d0\u05ea \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05d4\u05de\u05d3\u05d5\u05d9\u05e7\u05ea \u05d1\u05e1\u05e4\u05e8 \u05dc\u05d9\u05de\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05ea\u05d4\u05dc\u05d9\u05da \u05d4\u05ea\u05e8\u05d2\u05d5\u05dd \u05e2\u05e6\u05de\u05d5 \u2014 \u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05de\u05ea\u05d7\u05d9\u05dc \u05de\u05e8\u05d2\u05e2 \u05e9\u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05db\u05d1\u05e8 \u05d1\u05d9\u05d3\u05d9\u05db\u05dd."}]}, {"question": "\u05d1\u05d3\u05d5\u05d2\u05de\u05ea \u05d4\u05d8\u05d5\u05d5\u05d7, \u05dc\u05de\u05d4 \u05d7\u05d5\u05d1\u05d4 \u05dc\u05d4\u05e4\u05e2\u05d9\u05dc \u05d0\u05ea <code>np.radians</code> \u05e2\u05dc \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05dc\u05e4\u05e0\u05d9 <code>np.sin</code>, \u05d5\u05dc\u05d0 \u05d1\u05e9\u05dc\u05d1 \u05db\u05dc\u05e9\u05d4\u05d5 \u05d0\u05d7\u05e8\u05d9?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 np.radians \u05de\u05e9\u05e0\u05d4 \u05d2\u05dd \u05d0\u05ea \u05d4\u05e2\u05e8\u05da \u05e9\u05dc g", "correct": false, "feedback": "\u05dc\u05d0 \u2014 np.radians \u05e4\u05d5\u05e2\u05dc \u05e8\u05e7 \u05e2\u05dc \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05e9\u05d4\u05d5\u05e2\u05d1\u05e8\u05d4 \u05dc\u05d5, \u05d5\u05dc\u05d0 \u05e0\u05d5\u05d2\u05e2 \u05d1\u05de\u05e9\u05ea\u05e0\u05d9\u05dd \u05d0\u05d7\u05e8\u05d9\u05dd."}, {"answer": "\u05d6\u05d4 \u05dc\u05d0 \u05d1\u05d0\u05de\u05ea \u05de\u05e9\u05e0\u05d4 \u2014 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05de\u05d9\u05e8 \u05d1\u05db\u05dc \u05e9\u05dc\u05d1 \u05d1\u05ea\u05d4\u05dc\u05d9\u05da, \u05d2\u05dd \u05d0\u05d7\u05e8\u05d9 \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05e4\u05da; \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d1\u05e1\u05e2\u05d9\u05e3 7.7 \u05e9\u05d4\u05de\u05e8\u05d4 \u05d1\u05e9\u05dc\u05d1 \u05d4\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u05e0\u05d5\u05ea\u05e0\u05ea \u05ea\u05d5\u05e6\u05d0\u05d4 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9\u05d4."}, {"answer": "\u05db\u05d9 np.sin \u05dc\u05d0 \u05de\u05e7\u05d1\u05dc \u05d1\u05db\u05dc\u05dc \u05de\u05e9\u05ea\u05e0\u05d9\u05dd \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 float", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 np.sin \u05de\u05e7\u05d1\u05dc \u05d1\u05d3\u05d9\u05d5\u05e7 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 float; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05d9\u05d7\u05d9\u05d3\u05d4, \u05dc\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1."}, {"answer": "\u05db\u05d9 np.sin \u05de\u05e6\u05e4\u05d4 \u05e9\u05d4\u05e2\u05e8\u05da \u05e9\u05d4\u05d9\u05d0 \u05de\u05e7\u05d1\u05dc\u05ea \u05db\u05d1\u05e8 \u05d9\u05d4\u05d9\u05d4 \u05d1\u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd; \u05e7\u05dc\u05d8 \u05d1\u05de\u05e2\u05dc\u05d5\u05ea \u05de\u05d7\u05d5\u05e9\u05d1 \u05db\u05d0\u05d9\u05dc\u05d5 \u05d4\u05d5\u05d0 \u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd, \u05d5\u05d6\u05d5 \u05d6\u05d5\u05d5\u05d9\u05ea \u05d0\u05d7\u05e8\u05ea \u05dc\u05d2\u05de\u05e8\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionshmwaecBVWcwH=[{"question": "\u05dc\u05e4\u05d9 \u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05e9\u05e8\u05d0\u05d9\u05e0\u05d5, \u05de\u05d4 \u05d4\u05e9\u05dc\u05d1 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05ea\u05e8\u05d2\u05d5\u05dd \u05de\u05e9\u05d5\u05d5\u05d0\u05d4 \u05dc\u05e7\u05d5\u05d3 \u2014 \u05e2\u05d5\u05d3 \u05dc\u05e4\u05e0\u05d9 \u05db\u05ea\u05d9\u05d1\u05ea \u05e9\u05d5\u05e8\u05ea \u05e7\u05d5\u05d3 \u05d0\u05d7\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05dc\u05db\u05ea\u05d5\u05d1 \u05d0\u05ea \u05db\u05dc \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d5\u05d0\u05d6 \u05dc\u05ea\u05e7\u05df \u05e9\u05d2\u05d9\u05d0\u05d5\u05ea \u05d0\u05dd \u05d9\u05e9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05e4\u05da \u05de\u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05d4\u05de\u05d5\u05de\u05dc\u05e5; \u05e2\u05d3\u05d9\u05e3 \u05dc\u05d1\u05e0\u05d5\u05ea \u05d1\u05d4\u05d3\u05e8\u05d2\u05d4."}, {"answer": "\u05dc\u05d6\u05d4\u05d5\u05ea \u05db\u05dc \u05d2\u05d5\u05e8\u05dd \u05d1\u05de\u05e9\u05d5\u05d5\u05d0\u05d4: \u05d4\u05d0\u05dd \u05d4\u05d5\u05d0 \u05e1\u05e7\u05dc\u05e8 \u05e7\u05d1\u05d5\u05e2, \u05de\u05e2\u05e8\u05da, \u05d0\u05d5 \u05e7\u05d1\u05d5\u05e2 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05ea \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05d4 \u05e9\u05dc \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05e1\u05d5\u05e4\u05d9\u05ea", "correct": false, "feedback": "\u05d6\u05d4 \u05e9\u05dc\u05d1 \u05d7\u05e9\u05d5\u05d1 \u2014 \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05e9\u05dc\u05d1 4, \u05d1\u05d3\u05d9\u05e7\u05ea \u05d4\u05e1\u05d1\u05d9\u05e8\u05d5\u05ea \u05d1\u05e1\u05d5\u05e3, \u05dc\u05d0 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df."}, {"answer": "\u05dc\u05d7\u05e4\u05e9 \u05d0\u05ea \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05d4\u05de\u05d3\u05d5\u05d9\u05e7\u05ea \u05d1\u05e1\u05e4\u05e8 \u05dc\u05d9\u05de\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05ea\u05d4\u05dc\u05d9\u05da \u05d4\u05ea\u05e8\u05d2\u05d5\u05dd \u05e2\u05e6\u05de\u05d5 \u2014 \u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05de\u05ea\u05d7\u05d9\u05dc \u05de\u05e8\u05d2\u05e2 \u05e9\u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05db\u05d1\u05e8 \u05d1\u05d9\u05d3\u05d9\u05db\u05dd."}]}, {"question": "\u05d1\u05d3\u05d5\u05d2\u05de\u05ea \u05d4\u05d8\u05d5\u05d5\u05d7, \u05dc\u05de\u05d4 \u05d7\u05d5\u05d1\u05d4 \u05dc\u05d4\u05e4\u05e2\u05d9\u05dc \u05d0\u05ea <code>np.radians</code> \u05e2\u05dc \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05dc\u05e4\u05e0\u05d9 <code>np.sin</code>, \u05d5\u05dc\u05d0 \u05d1\u05e9\u05dc\u05d1 \u05db\u05dc\u05e9\u05d4\u05d5 \u05d0\u05d7\u05e8\u05d9?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 np.radians \u05de\u05e9\u05e0\u05d4 \u05d2\u05dd \u05d0\u05ea \u05d4\u05e2\u05e8\u05da \u05e9\u05dc g", "correct": false, "feedback": "\u05dc\u05d0 \u2014 np.radians \u05e4\u05d5\u05e2\u05dc \u05e8\u05e7 \u05e2\u05dc \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05e9\u05d4\u05d5\u05e2\u05d1\u05e8\u05d4 \u05dc\u05d5, \u05d5\u05dc\u05d0 \u05e0\u05d5\u05d2\u05e2 \u05d1\u05de\u05e9\u05ea\u05e0\u05d9\u05dd \u05d0\u05d7\u05e8\u05d9\u05dd."}, {"answer": "\u05d6\u05d4 \u05dc\u05d0 \u05d1\u05d0\u05de\u05ea \u05de\u05e9\u05e0\u05d4 \u2014 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05de\u05d9\u05e8 \u05d1\u05db\u05dc \u05e9\u05dc\u05d1 \u05d1\u05ea\u05d4\u05dc\u05d9\u05da, \u05d2\u05dd \u05d0\u05d7\u05e8\u05d9 \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05e4\u05da; \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d1\u05e1\u05e2\u05d9\u05e3 7.7 \u05e9\u05d4\u05de\u05e8\u05d4 \u05d1\u05e9\u05dc\u05d1 \u05d4\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u05e0\u05d5\u05ea\u05e0\u05ea \u05ea\u05d5\u05e6\u05d0\u05d4 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9\u05d4."}, {"answer": "\u05db\u05d9 np.sin \u05dc\u05d0 \u05de\u05e7\u05d1\u05dc \u05d1\u05db\u05dc\u05dc \u05de\u05e9\u05ea\u05e0\u05d9\u05dd \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 float", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 np.sin \u05de\u05e7\u05d1\u05dc \u05d1\u05d3\u05d9\u05d5\u05e7 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 float; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05d9\u05d7\u05d9\u05d3\u05d4, \u05dc\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1."}, {"answer": "\u05db\u05d9 np.sin \u05de\u05e6\u05e4\u05d4 \u05e9\u05d4\u05e2\u05e8\u05da \u05e9\u05d4\u05d9\u05d0 \u05de\u05e7\u05d1\u05dc\u05ea \u05db\u05d1\u05e8 \u05d9\u05d4\u05d9\u05d4 \u05d1\u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd; \u05e7\u05dc\u05d8 \u05d1\u05de\u05e2\u05dc\u05d5\u05ea \u05de\u05d7\u05d5\u05e9\u05d1 \u05db\u05d0\u05d9\u05dc\u05d5 \u05d4\u05d5\u05d0 \u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd, \u05d5\u05d6\u05d5 \u05d6\u05d5\u05d5\u05d9\u05ea \u05d0\u05d7\u05e8\u05ea \u05dc\u05d2\u05de\u05e8\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1988,8 +2010,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("qgthDzxhJQoe")) {
-    show_questions(questionsqgthDzxhJQoe, qgthDzxhJQoe);
+  if (document.getElementById("hmwaecBVWcwH")) {
+    show_questions(questionshmwaecBVWcwH, hmwaecBVWcwH);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2002,8 +2024,8 @@ function try_show() {
 </script></div>
 </div>
 </section>
-<section id="id4">
-<h2><span class="section-number">7.10.4. </span>נסו בעצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h2><span class="section-number">7.10.5. </span>נסו בעצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>הפעילו את התהליך בעצמכם על נוסחת <strong>הגובה המרבי</strong> של הזריקה:</p>
 <div class="math notranslate nohighlight">
 \[y_{max}(v_0,\theta) = \frac{(v_0\sin\theta)^2}{2g}\]</div>
@@ -2037,8 +2059,8 @@ function try_show() {
 </div>
 <p>עכשיו, כשראינו איך התהליך אמור להיראות כשהוא עובד נכון — נעבור למאגר הבאגים: מה קורה, בשקט, כשכל אחד מהשלבים האלה משתבש.</p>
 </section>
-<section id="id5">
-<h2><span class="section-number">7.10.5. </span>באג 1: קדימות פעולות<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h2><span class="section-number">7.10.6. </span>באג 1: קדימות פעולות<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>הנוסחה לתקופת מטוטלת פשוטה היא <span class="math notranslate nohighlight">\(T = 2\pi\sqrt{L/g}\)</span>. הקוד הבא ניסה לממש אותה — אבל התוצאה שגויה. מצאו את הבאג לפני שתגלו את הפתרון:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2066,8 +2088,8 @@ function try_show() {
 </div>
 </div>
 </section>
-<section id="id6">
-<h2><span class="section-number">7.10.6. </span>באג 2: חילוק שלמים<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h2><span class="section-number">7.10.7. </span>באג 2: חילוק שלמים<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>רוצים לחשב את מהירות הממוצע של כדור שעבר מרחק 7 מטרים ב-2 שניות (<span class="math notranslate nohighlight">\(v=d/t\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2094,8 +2116,8 @@ function try_show() {
 <p>חילוק שלמים שגוי מסוכן במיוחד כי הוא לא זורק שגיאה, ולעיתים אף נותן תוצאה “סבירה למראה” (כמו 3, לא רחוק מ-3.5).</p>
 </div>
 </section>
-<section id="id7">
-<h2><span class="section-number">7.10.7. </span>באג 3: יחידות<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h2><span class="section-number">7.10.8. </span>באג 3: יחידות<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <p>מודדים זווית שיגור של <span class="math notranslate nohighlight">\(30°\)</span> ורוצים את רכיב המהירות האנכי, <span class="math notranslate nohighlight">\(v_y = v_0 \sin\theta\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2121,8 +2143,8 @@ function try_show() {
 </div>
 </div>
 </section>
-<section id="id8">
-<h2><span class="section-number">7.10.8. </span>נסו בעצמכם<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h2><span class="section-number">7.10.9. </span>נסו בעצמכם<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <p>הקוד הבא מנסה לחשב את האנרגיה הפוטנציאלית הממוצעת של שלושה גופים, <span class="math notranslate nohighlight">\(\bar{E} = mg\bar{h}\)</span>, כאשר <code class="docutils literal notranslate"><span class="pre">heights</span></code> הוא מערך גבהים בס”מ (לא במטר!). יש כאן שילוב של שני סוגי הבאגים שראינו. אתרו ותקנו:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2148,8 +2170,8 @@ function try_show() {
 </div>
 </div>
 </section>
-<section id="id9">
-<h2><span class="section-number">7.10.9. </span>בדקו את עצמכם<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h2><span class="section-number">7.10.10. </span>בדקו את עצמכם<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
@@ -2182,8 +2204,8 @@ function try_show() {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="hmVaJSKhXLvV" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#hmVaJSKhXLvV {
+<div class="output text_html"><div id="vUwDHkHdylMg" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#vUwDHkHdylMg {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2406,7 +2428,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionshmVaJSKhXLvV=[{"question": "\u05de\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc <code>9 // 2</code> \u05d1\u05e4\u05d9\u05d9\u05ea\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "4.5", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05d9\u05d9\u05ea\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc / (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e8\u05d2\u05d9\u05dc), \u05dc\u05d0 \u05e9\u05dc // (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e9\u05dc\u05de\u05d9\u05dd)."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0 \u2014 // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4, \u05dc\u05d0 \u05db\u05dc\u05e4\u05d9 \u05de\u05e2\u05dc\u05d4."}, {"answer": "-4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05e0\u05d9 \u05d4\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05d7\u05d9\u05d5\u05d1\u05d9\u05d9\u05dd, \u05d0\u05d6 \u05d0\u05d9\u05df \u05e1\u05d9\u05d1\u05d4 \u05dc\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc\u05d9\u05dc\u05d9\u05ea."}, {"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4 \u05dc\u05e9\u05dc\u05dd \u05d4\u05e7\u05e8\u05d5\u05d1."}]}, {"question": "\u05de\u05d3\u05d5\u05e2 \u05d1\u05d0\u05d2 \u05e9\u05dc \u05e7\u05d3\u05d9\u05de\u05d5\u05ea \u05e4\u05e2\u05d5\u05dc\u05d5\u05ea (\u05db\u05de\u05d5 sqrt(L)/g \u05d1\u05de\u05e7\u05d5\u05dd sqrt(L/g)) \u05de\u05e1\u05d5\u05db\u05df \u05d1\u05de\u05d9\u05d5\u05d7\u05d3?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05d4\u05e6\u05dc\u05d7\u05d4 \u05d5\u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05e1\u05e4\u05e8, \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05d9\u05d1\u05d4 \u05e9\u05e7\u05e9\u05d4 \u05dc\u05ea\u05e4\u05d5\u05e1 \u05d1\u05d0\u05d2\u05d9\u05dd \u05db\u05d0\u05dc\u05d4 \u2014 \u05d0\u05d9\u05df \u05d4\u05d5\u05d3\u05e2\u05ea \u05e9\u05d2\u05d9\u05d0\u05d4 \u05e9\u05de\u05e6\u05d1\u05d9\u05e2\u05d4 \u05e2\u05dc\u05d9\u05d4\u05dd."}, {"answer": "\u05db\u05d9 \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05ea \u05ea\u05d7\u05d1\u05d9\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05ea\u05d7\u05d1\u05d9\u05e8 \u05ea\u05e7\u05d9\u05df \u05dc\u05d2\u05de\u05e8\u05d9, \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05dc\u05d9 \u05d1\u05e2\u05d9\u05d4."}, {"answer": "\u05db\u05d9 NumPy \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05dc\u05d5\u05e7 \u05d1\u05ea\u05d5\u05da sqrt", "correct": false, "feedback": "\u05dc\u05d0 \u2014 NumPy \u05ea\u05d5\u05de\u05da \u05d1\u05db\u05da \u05d4\u05d9\u05d8\u05d1, \u05d4\u05e9\u05d0\u05dc\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05e1\u05d3\u05e8 \u05d4\u05e4\u05e2\u05d5\u05dc\u05d5\u05ea \u05e9\u05db\u05ea\u05d1\u05ea\u05dd."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05d2\u05d5\u05e8\u05dd \u05dc-Python \u05dc\u05e7\u05e8\u05d5\u05e1 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e7\u05d5\u05d3 \u05de\u05de\u05e9\u05d9\u05da \u05dc\u05e8\u05d5\u05e5 \u05db\u05e8\u05d2\u05d9\u05dc; \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d1\u05e2\u05d9\u05d4, \u05e9\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05e7\u05e8\u05d9\u05e1\u05d4 \u05e9\u05ea\u05e1\u05de\u05df \u05d0\u05ea \u05d4\u05d8\u05e2\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsvUwDHkHdylMg=[{"question": "\u05de\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc <code>9 // 2</code> \u05d1\u05e4\u05d9\u05d9\u05ea\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "4.5", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05d9\u05d9\u05ea\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc / (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e8\u05d2\u05d9\u05dc), \u05dc\u05d0 \u05e9\u05dc // (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e9\u05dc\u05de\u05d9\u05dd)."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0 \u2014 // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4, \u05dc\u05d0 \u05db\u05dc\u05e4\u05d9 \u05de\u05e2\u05dc\u05d4."}, {"answer": "-4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05e0\u05d9 \u05d4\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05d7\u05d9\u05d5\u05d1\u05d9\u05d9\u05dd, \u05d0\u05d6 \u05d0\u05d9\u05df \u05e1\u05d9\u05d1\u05d4 \u05dc\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc\u05d9\u05dc\u05d9\u05ea."}, {"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4 \u05dc\u05e9\u05dc\u05dd \u05d4\u05e7\u05e8\u05d5\u05d1."}]}, {"question": "\u05de\u05d3\u05d5\u05e2 \u05d1\u05d0\u05d2 \u05e9\u05dc \u05e7\u05d3\u05d9\u05de\u05d5\u05ea \u05e4\u05e2\u05d5\u05dc\u05d5\u05ea (\u05db\u05de\u05d5 sqrt(L)/g \u05d1\u05de\u05e7\u05d5\u05dd sqrt(L/g)) \u05de\u05e1\u05d5\u05db\u05df \u05d1\u05de\u05d9\u05d5\u05d7\u05d3?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05d4\u05e6\u05dc\u05d7\u05d4 \u05d5\u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05e1\u05e4\u05e8, \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05d9\u05d1\u05d4 \u05e9\u05e7\u05e9\u05d4 \u05dc\u05ea\u05e4\u05d5\u05e1 \u05d1\u05d0\u05d2\u05d9\u05dd \u05db\u05d0\u05dc\u05d4 \u2014 \u05d0\u05d9\u05df \u05d4\u05d5\u05d3\u05e2\u05ea \u05e9\u05d2\u05d9\u05d0\u05d4 \u05e9\u05de\u05e6\u05d1\u05d9\u05e2\u05d4 \u05e2\u05dc\u05d9\u05d4\u05dd."}, {"answer": "\u05db\u05d9 \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05ea \u05ea\u05d7\u05d1\u05d9\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05ea\u05d7\u05d1\u05d9\u05e8 \u05ea\u05e7\u05d9\u05df \u05dc\u05d2\u05de\u05e8\u05d9, \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05dc\u05d9 \u05d1\u05e2\u05d9\u05d4."}, {"answer": "\u05db\u05d9 NumPy \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05dc\u05d5\u05e7 \u05d1\u05ea\u05d5\u05da sqrt", "correct": false, "feedback": "\u05dc\u05d0 \u2014 NumPy \u05ea\u05d5\u05de\u05da \u05d1\u05db\u05da \u05d4\u05d9\u05d8\u05d1, \u05d4\u05e9\u05d0\u05dc\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05e1\u05d3\u05e8 \u05d4\u05e4\u05e2\u05d5\u05dc\u05d5\u05ea \u05e9\u05db\u05ea\u05d1\u05ea\u05dd."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05d2\u05d5\u05e8\u05dd \u05dc-Python \u05dc\u05e7\u05e8\u05d5\u05e1 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e7\u05d5\u05d3 \u05de\u05de\u05e9\u05d9\u05da \u05dc\u05e8\u05d5\u05e5 \u05db\u05e8\u05d2\u05d9\u05dc; \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d1\u05e2\u05d9\u05d4, \u05e9\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05e7\u05e8\u05d9\u05e1\u05d4 \u05e9\u05ea\u05e1\u05de\u05df \u05d0\u05ea \u05d4\u05d8\u05e2\u05d5\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3468,8 +3490,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("hmVaJSKhXLvV")) {
-    show_questions(questionshmVaJSKhXLvV, hmVaJSKhXLvV);
+  if (document.getElementById("vUwDHkHdylMg")) {
+    show_questions(questionsvUwDHkHdylMg, vUwDHkHdylMg);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3548,15 +3570,16 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.1. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.2. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.4. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.5. באג 1: קדימות פעולות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.6. באג 2: חילוק שלמים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.10.7. באג 3: יחידות</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.10.8. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.10.9. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.1. סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.2. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.4. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.5. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.6. באג 1: קדימות פעולות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.10.7. באג 2: חילוק שלמים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.10.8. באג 3: יחידות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.10.9. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">7.10.10. בדקו את עצמכם</a></li>
 </ul>
   </nav></div>
 
