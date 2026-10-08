@@ -10,7 +10,7 @@ parts:
       - file: 0_intro
         title: "מנהלות"
       - file: python_install
-        title: "התקנת פייתון"
+        title: "איפה מריצים פייתון"
 
   - caption: "שבועות הלמידה"
     numbered: true
@@ -64,7 +64,7 @@ parts:
             title: "דוגמאות מתקדמות"
 
       - file: course/weeks/week_3
-        title: "שבוע 3 — רשימות ולולאות"
+        title: "שבוע 3 — רשימות"
         sections:
           - file: vendor/virtual-pyprog/4_0_intro-list
             title: "מבוא לרשימות"
@@ -130,7 +130,7 @@ parts:
             title: "קריאה וכתיבה לקבצים"
 
       - file: course/weeks/week_7
-        title: "שבוע 7 — Numpy"
+        title: "שבוע 7 — NumPy"
         sections:
           - file: course/weeks/week_7/7_1_vectorization
             title: "מרשימה למערך: וקטוריזציה"
