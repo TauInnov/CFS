@@ -16,7 +16,7 @@ parts:
     numbered: true
     chapters:
       - file: course/weeks/week_1
-        title: "שבוע 1 — טיפוסים ותנאים"
+        title: "שבוע 1 — טיפוסים"
         sections:
           - file: vendor/virtual-pyprog/0_0_objectives
             title: "מבוא"
