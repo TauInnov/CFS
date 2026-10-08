@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>התקנת פייתון על המחשב האישי &#8212; Computers For physics</title>
+    <title>הרצת פייתון &#8212; Computers For physics</title>
   
   
   
@@ -183,11 +183,11 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">מידע כללי</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_intro.html">מנהלות</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">התקנת פייתון</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">הרצת פייתון</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">שבועות הלמידה</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="course/weeks/week_1.html">1. שבוע 1 — טיפוסים ותנאים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="course/weeks/week_1.html">1. שבוע 1 — טיפוסים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="vendor/virtual-pyprog/0_0_objectives.html">1.1. מבוא</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vendor/virtual-pyprog/0_1_hardware-to-software.html">1.2. חומרה, תוכנה והשיטה הבינארית</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vendor/virtual-pyprog/0_2_python.html">1.3. שפת התכנות פייתון</a></li>
@@ -213,7 +213,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="course/weeks/week_3.html">3. שבוע 3 — רשימות ולולאות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="course/weeks/week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="vendor/virtual-pyprog/4_0_intro-list.html">3.1. מבוא לרשימות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vendor/virtual-pyprog/4_1_list-operators-indices.html">3.2. רשימות: אופרטורים בסיסיים ואינדקסים</a></li>
 
@@ -252,7 +252,7 @@
 <li class="toctree-l2"><a class="reference internal" href="vendor/virtual-pyprog/13_1_files.html">6.6. קריאה וכתיבה לקבצים</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="course/weeks/week_7.html">7. שבוע 7 — Numpy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="course/weeks/week_7.html">7. שבוע 7 — NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="course/weeks/week_7/7_1_vectorization.html">7.1. מרשימה למערך: וקטוריזציה</a></li>
 <li class="toctree-l2"><a class="reference internal" href="course/weeks/week_7/7_2_creating_arrays.html">7.2. יצירת מערכים: array, zeros, ones, arange, linspace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="course/weeks/week_7/7_3_array_properties.html">7.3. תכונות מערך: shape, ndim, size, dtype וטיפוסים</a></li>
@@ -584,7 +584,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>התקנת פייתון על המחשב האישי</h1>
+    <h1>הרצת פייתון</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -594,18 +594,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">ההמלצה: Anaconda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">התקנה ב-Windows</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">פתיחת טרמינל ב-Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">הרצת נוטבוק</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#live-code">אפשרות 1: Live Code באתר הקורס</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">אפשרות 2: Google Colab (ברירת המחדל בקורס)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">אפשרות 3: Jupyter מקומי על המחשב</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">התקנה ב-Windows</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">פתיחת טרמינל ב-Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">הרצת נוטבוק</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">התקנה ב-Mac</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">פתיחת טרמינל ב-Mac</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">הרצת נוטבוק</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">התקנה ב-Mac</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">פתיחת טרמינל ב-Mac</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">הרצת נוטבוק</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בדיקת ההתקנה</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בדיקת ההתקנה</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-org-pip">פייתון רגיל מ־<code class="docutils literal notranslate"><span class="pre">python.org</span></code> עם pip</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">השוואה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-pycharm">למתקדמים: VS Code ו־PyCharm</a></li>
 </ul>
             </nav>
         </div>
@@ -618,15 +626,36 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>התקנת פייתון על המחשב האישי<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>את כל תרגילי הקורס אפשר להריץ ישירות מהדפדפן דרך <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>, בלי להתקין דבר. עם זאת, מומלץ להתקין פייתון גם על המחשב האישי — כדי לעבוד גם בלי אינטרנט, וכדי להתרגל לסביבת עבודה מקומית שתשמש אתכם גם בהמשך הלימודים.</p>
-<p>בעמוד זה מוסבר כיצד להתקין פייתון עם כל הספריות הדרושות לקורס (NumPy, Matplotlib, Pandas ועוד), עבור <strong>Windows</strong> ועבור <strong>Mac</strong>.</p>
+<h1>הרצת פייתון<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p><strong>Google Colab</strong> היא ברירת המחדל של הקורס. אין המלצה רשמית על Anaconda. מי שלא מסתפק ב־Colab מוזמן להתקין סביבה מקומית על המחשב.</p>
+<p>אפשר לכתוב ולהריץ פייתון בארבע דרכים, מהקלה למתקדמת.</p>
+<section id="live-code">
+<h2>אפשרות 1: Live Code באתר הקורס<a class="headerlink" href="#live-code" title="Link to this heading">#</a></h2>
+<p>בראש כל עמוד בקורס יש תפריט הרצה (סמל הטיל). בוחרים בו <code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Code</span></code>, והתאים הופכים לניתנים לעריכה ולהרצה בתוך הדף. לא צריך חשבון ולא צריך התקנה.</p>
+<p>ההפעלה הראשונה איטית, כי היא מעלה סביבה ברקע (דרך Binder). השינויים לא נשמרים.</p>
+<p>כפתור <code class="docutils literal notranslate"><span class="pre">Binder</span></code> באותו תפריט פותח את אותה מחברת ב־JupyterLab מלא.</p>
+<p>מתאים לבדיקה מהירה תוך כדי קריאה. לא מתאים לעבודה על תרגיל שלם.</p>
+</section>
+<section id="google-colab">
+<h2>אפשרות 2: Google Colab (ברירת המחדל בקורס)<a class="headerlink" href="#google-colab" title="Link to this heading">#</a></h2>
+<p>באותו תפריט טיל בוחרים <code class="docutils literal notranslate"><span class="pre">Colab</span></code>, מתחברים עם חשבון Google ומריצים תאים.</p>
+<p>הספריות של הקורס כבר מותקנות, ובהן <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> ו־<code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>.</p>
+<p>שמירת העבודה: <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">in</span> <span class="pre">Drive</span></code>.</p>
+<p>אחרי זמן בלי פעילות הסשן מתנתק, והמשתנים נמחקים.</p>
+<p>אם חסרה חבילה, מריצים בתא:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install &lt;package&gt;
+</pre></div>
+</div>
+</section>
+<section id="jupyter">
+<h2>אפשרות 3: Jupyter מקומי על המחשב<a class="headerlink" href="#jupyter" title="Link to this heading">#</a></h2>
+<p>שתי דרכים, בלי המלצה מחייבת. <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> פותח את הממשק בדפדפן, אבל הקוד רץ על המחשב המקומי.</p>
 <section id="anaconda">
-<h2>ההמלצה: Anaconda<a class="headerlink" href="#anaconda" title="Link to this heading">#</a></h2>
-<p>הדרך הפשוטה ביותר להתקין פייתון היא באמצעות <a class="reference external" href="https://www.anaconda.com/download">Anaconda</a> — חבילה חינמית שכוללת יחד עם פייתון גם את כל הספריות המדעיות הדרושות לקורס (NumPy, Pandas, Matplotlib ועוד) וגם את Jupyter Notebook, כך שאין צורך להתקין כל ספרייה בנפרד.</p>
+<h3>Anaconda<a class="headerlink" href="#anaconda" title="Link to this heading">#</a></h3>
+<p>התקנה אחת שכוללת פייתון, Jupyter והספריות המדעיות, אבל שוקלת כמה GB. אפשר להפעיל אותה דרך <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code> בלי טרמינל.</p>
 </section>
 <section id="windows">
-<h2>התקנה ב-Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h2>
+<h3>התקנה ב-Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>היכנסו לכתובת <a class="reference external" href="https://www.anaconda.com/download">anaconda.com/download</a> ולחצו על <strong>Download</strong>. יש להזין כתובת מייל, ולאחר מכן יישלח קישור להורדה (אפשר גם לדלג ולהוריד ישירות).</p></li>
 <li><p>ודאו שההורדה היא עבור <strong>Windows</strong> (הגרסה המוצעת כברירת מחדל בדרך כלל מתאימה).</p></li>
@@ -640,11 +669,11 @@ document.write(`
 </li>
 </ol>
 <section id="id2">
-<h3>פתיחת טרמינל ב-Windows<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h4>פתיחת טרמינל ב-Windows<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p>לאחר ההתקנה, פתחו את תפריט <strong>התחל (Start)</strong>, הקלידו <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code> ולחצו Enter. ייפתח חלון שורת פקודה (טרמינל) שבו פייתון וכל הספריות זמינים ישירות — זו הדרך המומלצת להריץ פקודות פייתון ב-Windows.</p>
 </section>
 <section id="id3">
-<h3>הרצת נוטבוק<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h4>הרצת נוטבוק<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>בתוך Anaconda Prompt הקלידו:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
 </pre></div>
@@ -654,18 +683,18 @@ document.write(`
 </section>
 </section>
 <section id="mac">
-<h2>התקנה ב-Mac<a class="headerlink" href="#mac" title="Link to this heading">#</a></h2>
+<h3>התקנה ב-Mac<a class="headerlink" href="#mac" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>בדקו איזה מעבד יש במחשב שלכם: תפריט אפל (הסמל ) בפינה הימנית העליונה ← <strong>About This Mac</strong>. אם כתוב “Apple M1/M2/M3/…” יש לכם מעבד Apple Silicon; אם כתוב “Intel” יש לכם מעבד Intel.</p></li>
 <li><p>היכנסו לכתובת <a class="reference external" href="https://www.anaconda.com/download">anaconda.com/download</a> והורידו את קובץ ההתקנה עבור <strong>macOS</strong> בהתאם למעבד שלכם (Apple Silicon או Intel), בפורמט <strong><code class="docutils literal notranslate"><span class="pre">.pkg</span></code></strong> (מומלץ, מתקין גרפי).</p></li>
 <li><p>פתחו את קובץ ה-<code class="docutils literal notranslate"><span class="pre">.pkg</span></code> שהורד ועברו על אשף ההתקנה בלחיצות <strong>Continue</strong> ← <strong>Agree</strong> ← <strong>Install</strong>, עד לסיום ההתקנה. ייתכן שתידרשו להזין את סיסמת המשתמש שלכם במחשב.</p></li>
 </ol>
 <section id="id4">
-<h3>פתיחת טרמינל ב-Mac<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h4>פתיחת טרמינל ב-Mac<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>לחצו <strong>Cmd + Space</strong> לפתיחת Spotlight, הקלידו <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> ולחצו Enter. (אפשר גם למצוא את Terminal תחת Applications ← Utilities.) לאחר ההתקנה, Anaconda מוסיפה את עצמה אוטומטית לטרמינל — אם תפתחו טרמינל חדש (חשוב: חלון <strong>חדש</strong>, לא כזה שכבר היה פתוח לפני ההתקנה) אמורה להופיע התוספת <code class="docutils literal notranslate"><span class="pre">(base)</span></code> בתחילת השורה.</p>
 </section>
 <section id="id5">
-<h3>הרצת נוטבוק<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h4>הרצת נוטבוק<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p>בטרמינל הקלידו:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
 </pre></div>
@@ -675,16 +704,85 @@ document.write(`
 </section>
 </section>
 <section id="id6">
-<h2>בדיקת ההתקנה<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h3>בדיקת ההתקנה<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>כדי לוודא שההתקנה הצליחה, פתחו טרמינל (Anaconda Prompt ב-Windows, Terminal ב-Mac) והריצו:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
 <p>אמור להופיע מספר גרסה (למשל <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.12.4</span></code>). אם התקבלה שגיאה שהפקודה לא מזוהה — ודאו שאתם משתמשים ב-Anaconda Prompt (ב-Windows) או שפתחתם חלון טרמינל חדש לאחר ההתקנה (ב-Mac).</p>
+</section>
+<section id="python-org-pip">
+<h3>פייתון רגיל מ־<code class="docutils literal notranslate"><span class="pre">python.org</span></code> עם pip<a class="headerlink" href="#python-org-pip" title="Link to this heading">#</a></h3>
+<p>ההתקנה קלה יותר, אבל כל ספרייה מתקינים לבד. מתקינים פייתון מ־<a class="reference external" href="https://www.python.org/">python.org</a>, ואז בטרמינל:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">notebook</span> <span class="n">numpy</span> <span class="n">matplotlib</span>
+</pre></div>
+</div>
+<p>ואחר כך:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>כדי לבדוק שההתקנה עבדה, מריצים בטרמינל:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>אם משהו לא עובד, אפשר תמיד לחזור להריץ את התרגילים דרך <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> בדפדפן, וללא צורך בהתקנה מקומית, ולפנות למתרגלים או למרצה בשעות הקבלה.</p>
+<p>אם ההתקנה המקומית לא עובדת, אפשר להריץ את התרגילים דרך <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> בדפדפן, בלי התקנה, ולפנות למתרגלים או למרצה בשעות הקבלה.</p>
 </div>
+</section>
+</section>
+<section id="id7">
+<h2>השוואה<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<table class="table" dir="rtl">
+<thead>
+<tr>
+<th></th>
+<th>Live Code</th>
+<th>Colab</th>
+<th>Jupyter מקומי</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>התקנה</td>
+<td>לא</td>
+<td>לא</td>
+<td>כן, פעם אחת</td>
+</tr>
+<tr>
+<td>חשבון</td>
+<td>לא</td>
+<td>חשבון Google</td>
+<td>לא</td>
+</tr>
+<tr>
+<td>אינטרנט</td>
+<td>חובה</td>
+<td>חובה</td>
+<td>לא צריך</td>
+</tr>
+<tr>
+<td>איפה העבודה נשמרת</td>
+<td>לא נשמרת</td>
+<td>Google Drive</td>
+<td>על המחשב</td>
+</tr>
+<tr>
+<td>מתאים ל</td>
+<td>בדיקה מהירה תוך כדי קריאה</td>
+<td>עבודה שוטפת מכל מחשב</td>
+<td>עבודה שוטפת, גם בלי רשת</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vs-code-pycharm">
+<h2>למתקדמים: VS Code ו־PyCharm<a class="headerlink" href="#vs-code-pycharm" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">VS</span> <span class="pre">Code</span></code> ו־<code class="docutils literal notranslate"><span class="pre">PyCharm</span></code> הן סביבות פיתוח מלאות, שתומכות גם במחברות <span dir="ltr">(.ipynb)</span>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a></p></li>
+<li><p><a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -752,18 +850,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">ההמלצה: Anaconda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">התקנה ב-Windows</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">פתיחת טרמינל ב-Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">הרצת נוטבוק</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#live-code">אפשרות 1: Live Code באתר הקורס</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">אפשרות 2: Google Colab (ברירת המחדל בקורס)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">אפשרות 3: Jupyter מקומי על המחשב</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">התקנה ב-Windows</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">פתיחת טרמינל ב-Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">הרצת נוטבוק</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">התקנה ב-Mac</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">פתיחת טרמינל ב-Mac</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">הרצת נוטבוק</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac">התקנה ב-Mac</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">פתיחת טרמינל ב-Mac</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">הרצת נוטבוק</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בדיקת ההתקנה</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">בדיקת ההתקנה</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-org-pip">פייתון רגיל מ־<code class="docutils literal notranslate"><span class="pre">python.org</span></code> עם pip</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">השוואה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-pycharm">למתקדמים: VS Code ו־PyCharm</a></li>
 </ul>
   </nav></div>
 
