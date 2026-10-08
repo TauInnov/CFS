@@ -10,7 +10,7 @@ parts:
       - file: 0_intro
         title: "מנהלות"
       - file: python_install
-        title: "איפה מריצים פייתון"
+        title: "הרצת פייתון"
 
   - caption: "שבועות הלמידה"
     numbered: true
