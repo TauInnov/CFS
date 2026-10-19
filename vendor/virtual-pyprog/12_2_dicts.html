@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
@@ -647,7 +647,6 @@ document.write(`
 <p>נבחן כעת דוגמא נוספת: <strong>חיפוש איבר ברשימה</strong>.
 על מנת לבדוק אם מספר מסוים נמצא ברשימת מספרים כלשהי, עלינו יהיה לעבור על כל האיבורים ברשימה אחד-אחד ולבדוק אם האם מצאנו את המספר המבוקש.<br />
 בדוגמא זו, עבור רשימה בגודל <code class="docutils literal notranslate"><span class="pre">n</span></code>,  יידרשו <code class="docutils literal notranslate"><span class="pre">n</span></code> צעדים <strong>לכל היותר</strong> על מנת להשלים את הפעולה. כלומר, גם פעולת החיפוש ברשימה אינה קלה, במיוחד כאשר מדובר ברשימה המכילה מספר רב של איברים.</p>
-<p><span style="color: red;">TODO: להוסיף אילוסטרציות</span></p>
 <div class="caution admonition">
 <p class="admonition-title"><strong>עצרו וחשבו</strong></p>
 <p>מדוע בדוגמת הכנסת איבר לראש הרשימה נדרשות תמיד <code class="docutils literal notranslate"><span class="pre">n</span></code> הזזות, אך בדוגמת החיפוש נדרשים <code class="docutils literal notranslate"><span class="pre">n</span></code> צעדים <strong>לכל היותר</strong>? ``</p>
@@ -667,7 +666,6 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id3">
 <h1><span class="section-number">6.4. </span>מילונים: <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
-<p><span style="color: red;">TODO: סרטון חגי לגבי מבנה הנתונים מילון. עם התוכן הזה</span></p>
 <p>מילון הוא מבנה נתונים אסוציאטיבי שמאפשר לשמור מידע בצורה של התאמה בין מפתחות לערכים. בניגוד לרשימות, שבהן ניגשים לאיברים לפי המיקום שלהם, במילון הגישה נעשית ישירות לפי <strong>מפתח (key)</strong>. כלומר, אם יש לנו מפתח מסוים, נוכל למצוא את הערך המשויך אליו במהירות ובקלות.</p>
 <p>אחת החוזקות הגדולות של מילון היא <strong>מהירות הגישה לנתונים לפי מפתח</strong>.
 בניגוד לרשימות, שם הגישה מתבצעת לפי מיקום האיבר - האינדקס, במילונים אנו יכולים להשתמש באלמנטים בעלי משמעות, שלאו דווקא קשורים לסדר האיברים במבנה הנתונים שלנו.
