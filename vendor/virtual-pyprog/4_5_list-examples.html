@@ -594,10 +594,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.7.1. מימוש “בעית ניו-זילנד”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.7.2. עוד תרגול</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.7.2.1. מצאו את השגיאות</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.7.2.2. לאתגר: שני גופים מחליפים חום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.7.1. בעיית ניו-זילנד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.7.2. בחנו את עצמכם: ציונים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.7.3. אותו רעיון עם מדידות</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.7.3.1. נסו לחזות מה יודפס</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.7.3.2. מצאו את השגיאות</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.7.3.3. הוסיפו מדידה</a></li>
 </ul>
 </li>
 </ul>
@@ -613,9 +615,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1><span class="section-number">3.7. </span>תרגול מסכם: רשימות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>בעמוד הזה נחבר את מה שלמדנו על רשימות: נחשב סכום, אורך וממוצע של רשימה, ובהמשך נקרא קוד שכתוב עם פונקציות ורשימות ונחפש בו שגיאות.</p>
 <section id="id2">
-<h2><span class="section-number">3.7.1. </span>מימוש “בעית ניו-זילנד”<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>כעת נראה כיצד לממש את הפתרון ל”בעית ניו-זילנד” בפייתון:</p>
+<h2><span class="section-number">3.7.1. </span>בעיית ניו-זילנד<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>מטייל יוצא לטיול בניו-זילנד עם 10,000 דולר. ברשימה <code class="docutils literal notranslate"><span class="pre">spend_lst</span></code> רשומות ההוצאות שלו בכל אחד מהשבועות הראשונים של הטיול. אם ימשיך להוציא בממוצע כמו עד עכשיו, כמה כסף נשאר לו, וכמה שבועות נוספים הוא יוכל להמשיך לטייל?</p>
+<p>כעת נראה כיצד לממש את הפתרון בפייתון:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/BrhvAr4mDHg?si=6lwZ-WM1Lj056lvi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -646,9 +650,10 @@ You have approx. 4.926159314913557 weeks left to travel
 </div>
 </div>
 </div>
-<h4 style="color:purple">
-בחנו את עצמכם
-</h4><p>בקוד שלפניכם מופיעה הרשימה <code class="docutils literal notranslate"><span class="pre">grades</span></code> ובה ציוני סטודנטים בקורס מסוים. אנחנו רוצים לבדוק האם יש תלמיד שציונו בקורס שווה בדיוק לממוצע הציונים (במילים אחרות - האם ממוצע הציונים מופיע ברשימה <code class="docutils literal notranslate"><span class="pre">grades</span></code>). עליכם לכתוב קוד שמבצע את הבדיקה הזו ומדפיס את התוצאה למסך.</p>
+</section>
+<section id="id3">
+<h2><span class="section-number">3.7.2. </span>בחנו את עצמכם: ציונים<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>בקוד שלפניכם מופיעה הרשימה <code class="docutils literal notranslate"><span class="pre">grades</span></code> ובה ציוני סטודנטים בקורס מסוים. אנחנו רוצים לבדוק האם יש תלמיד שציונו בקורס שווה בדיוק לממוצע הציונים (במילים אחרות - האם ממוצע הציונים מופיע ברשימה <code class="docutils literal notranslate"><span class="pre">grades</span></code>). עליכם לכתוב קוד שמבצע את הבדיקה הזו ומדפיס את התוצאה למסך.</p>
 <p><strong>הנחיות:</strong></p>
 <ol class="arabic simple">
 <li><p>תחילה חשבו את סכום כל הציונים ושמרו אותו במשתנה כלשהו (תנו למשתנה זה שם כרצונכם).</p></li>
@@ -728,23 +733,29 @@ You have approx. 4.926159314913557 weeks left to travel
 <p>לאחר שניסחנו פתרון בתצורת מעלה-מטה, אנחנו יכולים לקחת את סדרת הפעולות שקיבלנו ולבחון אותן בסדר הפוך, מהקטן לגדול. גישה זו נקראת, כמובן, גישת “מטה-מעלה” (bottom-up approach). כשנרצה לתרגם את ההנחיות שניסחנו לקוד, ניישם אותן בתצורת מטה-מעלה, שכן עלינו לפתור ראשית את הבעיות הקטנות (כמו חישוב סכום הרשימה ואורכה) על מנת להשתמש בהן לפתור את הבעיות הגדולות (כמו חישוב ממוצע הרשימה ובדיקת המצאות שלו ברשימה).</p>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">3.7.2. </span>עוד תרגול<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2><span class="section-number">3.7.3. </span>אותו רעיון עם מדידות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>בבעיית ניו-זילנד ובתרגיל הציונים חישבנו ערך אחד מתוך רשימת מספרים. נעשה עכשיו משהו דומה עם מדידות מניסוי: עגלה נעה על מסילה, וכל רשומה ברשימה <code class="docutils literal notranslate"><span class="pre">cart</span></code> היא <code class="docutils literal notranslate"><span class="pre">[time_s,</span> <span class="pre">position_m]</span></code>, כלומר זמן בשניות ומיקום במטרים. הפונקציה <code class="docutils literal notranslate"><span class="pre">mean_velocity</span></code> מחשבת את המהירות הממוצעת בין הרשומה הראשונה לאחרונה.</p>
+<section id="id5">
+<h3><span class="section-number">3.7.3.1. </span>נסו לחזות מה יודפס<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>נסו לחזות מה יודפס בקוד הבא, ורק אחר כך הריצו ובדקו:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">momentum_energy</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v</span>
-    <span class="n">K</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">p</span><span class="p">,</span> <span class="n">K</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mean_velocity</span><span class="p">(</span><span class="n">records</span><span class="p">):</span>
+    <span class="n">t_start</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">x_start</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">t_end</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">x_end</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x_end</span> <span class="o">-</span> <span class="n">x_start</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x_end</span> <span class="o">-</span> <span class="n">x_start</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">t_start</span><span class="p">)</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">momentum_energy</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">cart</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">mean_velocity</span><span class="p">(</span><span class="n">cart</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="cJnIYKsrwaex" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#cJnIYKsrwaex {
+<div class="output text_html"><div id="UseeyDXBovCK" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#UseeyDXBovCK {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -967,7 +978,7 @@ You have approx. 4.926159314913557 weeks left to travel
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionscJnIYKsrwaex=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05d1\u05e7\u05d5\u05d3 \u05e9\u05dc\u05de\u05e2\u05dc\u05d4?", "type": "many_choice", "answers": [{"answer": "6.0 \u05d5\u05d0\u05d7\u05e8 \u05db\u05da 9.0, \u05d1\u05e9\u05ea\u05d9 \u05e9\u05d5\u05e8\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "9.0 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4 \u05d0\u05ea p \u05d1\u05ea\u05d5\u05da \u05d4\u05d2\u05d5\u05e3 \u05e9\u05dc\u05d4, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4 \u05e9\u05d5\u05e8\u05d4"}, {"answer": "6.0 \u05d5\u05d0\u05d7\u05e8 \u05db\u05da 6.0", "correct": false, "feedback": "result[1] \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 \u05d4\u05de\u05d5\u05d7\u05d6\u05e8\u05ea, \u05db\u05dc\u05d5\u05de\u05e8 K, \u05d5\u05dc\u05d0 p"}, {"answer": "6.0 \u05d5\u05d0\u05d7\u05e8 \u05db\u05da [6.0, 9.0]", "correct": false, "feedback": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 print(result[1]) \u05de\u05d3\u05e4\u05d9\u05e1\u05d4 \u05d0\u05d9\u05d1\u05e8 \u05d0\u05d7\u05d3 \u05de\u05d4\u05e8\u05e9\u05d9\u05de\u05d4, \u05dc\u05d0 \u05d0\u05ea \u05db\u05d5\u05dc\u05d4"}]}];
+</style></div><script type="application/javascript">var questionsUseeyDXBovCK=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05d1\u05e7\u05d5\u05d3 \u05e9\u05dc\u05de\u05e2\u05dc\u05d4?", "type": "many_choice", "answers": [{"answer": "3.0 \u05d5\u05d0\u05d7\u05e8 \u05db\u05da 2.0, \u05d1\u05e9\u05ea\u05d9 \u05e9\u05d5\u05e8\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "2.0 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4 \u05d0\u05ea x_end - x_start \u05d1\u05ea\u05d5\u05da \u05d4\u05d2\u05d5\u05e3 \u05e9\u05dc\u05d4, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4 \u05e9\u05d5\u05e8\u05d4"}, {"answer": "2.0 \u05d5\u05d0\u05d7\u05e8 \u05db\u05da 3.0", "correct": false, "feedback": "print \u05d1\u05ea\u05d5\u05da \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05ea\u05d1\u05e6\u05e2 \u05dc\u05e4\u05e0\u05d9 \u05d4-return, \u05d5\u05dc\u05db\u05df 3.0 \u05de\u05d5\u05d3\u05e4\u05e1 \u05e8\u05d0\u05e9\u05d5\u05df"}, {"answer": "3.0 \u05d5\u05d0\u05d7\u05e8 \u05db\u05da None", "correct": false, "feedback": "\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05db\u05df \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05e2\u05e8\u05da, \u05db\u05d9 \u05d9\u05e9 \u05d1\u05d4 return, \u05d5\u05dc\u05db\u05df v \u05d4\u05d5\u05d0 2.0 \u05d5\u05dc\u05d0 None"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2029,8 +2040,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("cJnIYKsrwaex")) {
-    show_questions(questionscJnIYKsrwaex, cJnIYKsrwaex);
+  if (document.getElementById("UseeyDXBovCK")) {
+    show_questions(questionsUseeyDXBovCK, UseeyDXBovCK);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2042,9 +2053,10 @@ function try_show() {
 }
 </script></div>
 </div>
-<section id="id4">
-<h3><span class="section-number">3.7.2.1. </span>מצאו את השגיאות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<p>כל רשומה ברשימה <code class="docutils literal notranslate"><span class="pre">cart</span></code> היא <code class="docutils literal notranslate"><span class="pre">[time_s,</span> <span class="pre">position_m]</span></code>. המהירות הממוצעת היא ההעתק חלקי הזמן שעבר, מהרשומה הראשונה עד האחרונה. הקוד שלפניכם אמור להדפיס <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">2.0</span> <span class="pre">m/s</span></code>, אבל יש בו <strong>שלוש שגיאות</strong>. מצאו אותן, תקנו אותן והסבירו במשפט אחד מה הייתה הבעיה בכל אחת.</p>
+</section>
+<section id="id6">
+<h3><span class="section-number">3.7.3.2. </span>מצאו את השגיאות<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>זו אותה פונקציה אחרי שנעשו בה שלושה שינויים קטנים. הקוד אמור להדפיס <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">2.0</span> <span class="pre">m/s</span></code>, אבל יש בו <strong>שלוש שגיאות</strong>. מצאו אותן, תקנו אותן והסבירו במשפט אחד מה הייתה הבעיה בכל אחת.</p>
 <div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mean_velocity</span><span class="p">(</span><span class="n">records</span><span class="p">):</span>
@@ -2082,62 +2094,40 @@ function try_show() {
 </div>
 </div>
 </section>
-<section id="id5">
-<h3><span class="section-number">3.7.2.2. </span>לאתגר: שני גופים מחליפים חום<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
-<p>שני גופים בעלי אותו קיבול חום נמצאים במגע. בכל צעד זמן <code class="docutils literal notranslate"><span class="pre">dt</span></code> עובר חום מהגוף החם לגוף הקר. הכמות שעוברת בצעד אחד, <code class="docutils literal notranslate"><span class="pre">flow</span></code>, היא <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">(T1</span> <span class="pre">-</span> <span class="pre">T2)</span> <span class="pre">*</span> <span class="pre">dt</span></code>. הגוף הראשון מאבד אותה והשני מקבל אותה.</p>
-<ol class="arabic simple">
-<li><p>השלימו את הפונקציה <code class="docutils literal notranslate"><span class="pre">step(T1,</span> <span class="pre">T2,</span> <span class="pre">k,</span> <span class="pre">dt)</span></code> שמחזירה רשימה <code class="docutils literal notranslate"><span class="pre">[T1_new,</span> <span class="pre">T2_new]</span></code> עם הטמפרטורות החדשות. לדוגמה, <code class="docutils literal notranslate"><span class="pre">step(80.0,</span> <span class="pre">20.0,</span> <span class="pre">0.1,</span> <span class="pre">1)</span></code> מחזירה <code class="docutils literal notranslate"><span class="pre">[74.0,</span> <span class="pre">26.0]</span></code>.</p></li>
-<li><p>הוסיפו קוד שקורא ל-<code class="docutils literal notranslate"><span class="pre">step</span></code> פעמיים, בלי לולאה, ואחרי כל קריאה מוסיף את שתי הטמפרטורות החדשות לרשימות <code class="docutils literal notranslate"><span class="pre">history1</span></code> ו-<code class="docutils literal notranslate"><span class="pre">history2</span></code>.</p></li>
-<li><p>בדקו שהסכום <code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">+</span> <span class="pre">T2</span></code> נשאר 100 אחרי כל צעד.</p></li>
-</ol>
-<p>בשבוע הבא נלמד לולאות, ואז אפשר יהיה לחזור על הצעד הזה מאות פעמים.</p>
+<section id="id7">
+<h3><span class="section-number">3.7.3.3. </span>הוסיפו מדידה<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>נמדדה עוד נקודה: ברגע <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">2.0</span></code> העגלה הייתה במיקום <code class="docutils literal notranslate"><span class="pre">5.5</span></code>. הוסיפו אותה לרשימה <code class="docutils literal notranslate"><span class="pre">cart</span></code> והריצו שוב את הפונקציה (בגרסה המתוקנת). מה המהירות הממוצעת עכשיו?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-    <span class="c1"># Replace the pass with your code</span>
-    <span class="k">pass</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mean_velocity</span><span class="p">(</span><span class="n">records</span><span class="p">):</span>
+    <span class="n">t_start</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">x_start</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">t_end</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">x_end</span> <span class="o">=</span> <span class="n">records</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x_end</span> <span class="o">-</span> <span class="n">x_start</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">t_end</span> <span class="o">-</span> <span class="n">t_start</span><span class="p">)</span>
 
-<span class="n">history1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">80.0</span><span class="p">]</span>
-<span class="n">history2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">20.0</span><span class="p">]</span>
+<span class="n">cart</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">mean_velocity</span><span class="p">(</span><span class="n">cart</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"v ="</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s2">"m/s"</span><span class="p">)</span>   <span class="c1"># v = 2.0 m/s</span>
 
 <span class="c1"># Write your code here</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">history1</span><span class="p">,</span> <span class="n">history2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[80.0] [20.0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>v = 2.0 m/s
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-    <span class="n">flow</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">T1</span> <span class="o">-</span> <span class="n">flow</span><span class="p">,</span> <span class="n">T2</span> <span class="o">+</span> <span class="n">flow</span><span class="p">]</span>
-
-<span class="n">history1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">80.0</span><span class="p">]</span>
-<span class="n">history2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">20.0</span><span class="p">]</span>
-
-<span class="n">T</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span><span class="n">history1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">history2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">history1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">history2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="n">T</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span><span class="n">history1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">history2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">history1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">history2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">history1</span><span class="p">,</span> <span class="n">history2</span><span class="p">)</span>   <span class="c1"># [80.0, 74.0, 69.2] [20.0, 26.0, 30.8]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cart</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">])</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">mean_velocity</span><span class="p">(</span><span class="n">cart</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"v ="</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s2">"m/s"</span><span class="p">)</span>   <span class="c1"># v = 2.5 m/s</span>
 </pre></div>
 </div>
-<p>שימו לב לטעות נפוצה: אם כותבים</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">T1</span> <span class="o">=</span> <span class="n">T1</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-<span class="n">T2</span> <span class="o">=</span> <span class="n">T2</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-</pre></div>
-</div>
-<p>השורה השנייה משתמשת ב-<code class="docutils literal notranslate"><span class="pre">T1</span></code> אחרי שכבר עודכן, והפונקציה מחזירה <code class="docutils literal notranslate"><span class="pre">[74.0,</span> <span class="pre">25.4]</span></code>. הסכום הוא 99.4 ולא 100, כלומר החום שיצא מהגוף הראשון גדול מהחום שנכנס לשני. בכל צעד צריך לחשב את שני הערכים החדשים מהערכים <strong>הישנים</strong>, ולכן מחשבים קודם את <code class="docutils literal notranslate"><span class="pre">flow</span></code>.</p>
+<p>הרשימה <code class="docutils literal notranslate"><span class="pre">cart</span></code> גדלה, והפונקציה משתמשת תמיד ברשומה האחרונה שבה (<code class="docutils literal notranslate"><span class="pre">records[-1]</span></code>), ולכן אין צורך לשנות אותה.</p>
 </div>
 </section>
 </section>
@@ -2207,10 +2197,12 @@ function try_show() {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.7.1. מימוש “בעית ניו-זילנד”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.7.2. עוד תרגול</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.7.2.1. מצאו את השגיאות</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.7.2.2. לאתגר: שני גופים מחליפים חום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.7.1. בעיית ניו-זילנד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.7.2. בחנו את עצמכם: ציונים</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.7.3. אותו רעיון עם מדידות</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.7.3.1. נסו לחזות מה יודפס</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.7.3.2. מצאו את השגיאות</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.7.3.3. הוסיפו מדידה</a></li>
 </ul>
 </li>
 </ul>
