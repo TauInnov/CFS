@@ -16,38 +16,41 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -59,40 +62,37 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/12_2_dicts';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6.5. פורמט מחרוזות (&#34;&#34;f)" href="13_0_string-formats.html" />
     <link rel="prev" title="6.2. טאפלים (tuple)" href="12_1_tuples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -100,7 +100,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,15 +107,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -125,7 +168,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,21 +199,17 @@
     
     
     <img src="../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
-    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+    <img src="../../_static/tau.png" class="logo__image only-dark pst-js-only" alt="Computers For physics - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -340,9 +380,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -539,7 +584,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -553,25 +598,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -593,13 +630,13 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.3. מילונים (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a><ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.3. מילונים (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3.1. מוטיבציה למילונים</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.3.2. מילונים בפייתון</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.4. מילונים: <code class="docutils literal notranslate"><span class="pre">dict</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.4. מילונים: <code class="docutils literal notranslate"><span class="pre">dict</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.4.1. שימוש בסיסי במילון בפייתון</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.4.1.1. תרגול</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.4.1.2. מפתחות מורכבים</a></li>
@@ -647,6 +684,7 @@ document.write(`
 <p>נבחן כעת דוגמא נוספת: <strong>חיפוש איבר ברשימה</strong>.
 על מנת לבדוק אם מספר מסוים נמצא ברשימת מספרים כלשהי, עלינו יהיה לעבור על כל האיבורים ברשימה אחד-אחד ולבדוק אם האם מצאנו את המספר המבוקש.<br />
 בדוגמא זו, עבור רשימה בגודל <code class="docutils literal notranslate"><span class="pre">n</span></code>,  יידרשו <code class="docutils literal notranslate"><span class="pre">n</span></code> צעדים <strong>לכל היותר</strong> על מנת להשלים את הפעולה. כלומר, גם פעולת החיפוש ברשימה אינה קלה, במיוחד כאשר מדובר ברשימה המכילה מספר רב של איברים.</p>
+<p><span style="color: red;">TODO: להוסיף אילוסטרציות</span></p>
 <div class="caution admonition">
 <p class="admonition-title"><strong>עצרו וחשבו</strong></p>
 <p>מדוע בדוגמת הכנסת איבר לראש הרשימה נדרשות תמיד <code class="docutils literal notranslate"><span class="pre">n</span></code> הזזות, אך בדוגמת החיפוש נדרשים <code class="docutils literal notranslate"><span class="pre">n</span></code> צעדים <strong>לכל היותר</strong>? ``</p>
@@ -666,6 +704,7 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id3">
 <h1><span class="section-number">6.4. </span>מילונים: <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<p><span style="color: red;">TODO: סרטון חגי לגבי מבנה הנתונים מילון. עם התוכן הזה</span></p>
 <p>מילון הוא מבנה נתונים אסוציאטיבי שמאפשר לשמור מידע בצורה של התאמה בין מפתחות לערכים. בניגוד לרשימות, שבהן ניגשים לאיברים לפי המיקום שלהם, במילון הגישה נעשית ישירות לפי <strong>מפתח (key)</strong>. כלומר, אם יש לנו מפתח מסוים, נוכל למצוא את הערך המשויך אליו במהירות ובקלות.</p>
 <p>אחת החוזקות הגדולות של מילון היא <strong>מהירות הגישה לנתונים לפי מפתח</strong>.
 בניגוד לרשימות, שם הגישה מתבצעת לפי מיקום האיבר - האינדקס, במילונים אנו יכולים להשתמש באלמנטים בעלי משמעות, שלאו דווקא קשורים לסדר האיברים במבנה הנתונים שלנו.
@@ -690,7 +729,7 @@ document.write(`
 <p>לכן במימוש של המילון המופיע באילוסטרציה ייראה כך:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span><span class="o">=</span><span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -700,7 +739,7 @@ document.write(`
 אם היינו משתמשים ברשימות וטאפלים בלבד, היינו יכולים לשמור זוגות של שמות וציונים ברשימה</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;Avi&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Moshe&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Adam&quot;</span><span class="p">,</span> <span class="mi">70</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">=</span><span class="p">[(</span><span class="s2">"Avi"</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Moshe"</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Adam"</span><span class="p">,</span> <span class="mi">70</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -709,7 +748,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_grade_by_name_lst</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="n">studs</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;Avi&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Moshe&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Adam&quot;</span><span class="p">,</span> <span class="mi">70</span><span class="p">)]</span>
+    <span class="n">studs</span><span class="o">=</span><span class="p">[(</span><span class="s2">"Avi"</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Moshe"</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Adam"</span><span class="p">,</span> <span class="mi">70</span><span class="p">)]</span>
     <span class="k">for</span> <span class="n">cur_stud</span> <span class="ow">in</span> <span class="n">studs</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">cur_stud</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">name</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">cur_stud</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -720,7 +759,7 @@ document.write(`
 <p>דוגמא להפעלת הפונקציה:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_grade_by_name_lst</span><span class="p">(</span><span class="s2">&quot;Moshe&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_grade_by_name_lst</span><span class="p">(</span><span class="s2">"Moshe"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -738,7 +777,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_grade_by_name_dict</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+    <span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
     <span class="k">return</span> <span class="n">studs</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -746,7 +785,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_grade_by_name_dict</span><span class="p">(</span><span class="s2">&quot;Moshe&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_grade_by_name_dict</span><span class="p">(</span><span class="s2">"Moshe"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -766,19 +805,19 @@ document.write(`
 בדומה לשגיאת <code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">range</span></code> שקיבלנו ברשימות באינדקסים שלא קיימים, במקרה של מפתח לא קיים נקבל <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">error</span></code>.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">[</span><span class="s2">&quot;Haim&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">[</span><span class="s2">"Haim"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">[</span><span class="s2">&quot;Haim&quot;</span><span class="p">])</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">[</span><span class="s2">"Haim"</span><span class="p">])</span>
 
-<span class="ne">KeyError</span>: &#39;Haim&#39;
+<span class="ne">KeyError</span>: 'Haim'
 </pre></div>
 </div>
 </div>
@@ -788,10 +827,10 @@ document.write(`
 <p>במקרה של מילונים, הפקודה <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">in</span> <span class="pre">dict</span></code> תחזיר <code class="docutils literal notranslate"><span class="pre">True</span></code> אם <code class="docutils literal notranslate"><span class="pre">a</span></code> הוא <strong>מפתח</strong> במילון, ו<code class="docutils literal notranslate"><span class="pre">False</span></code> אחרת.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Johnny&quot;</span> <span class="ow">in</span> <span class="n">studs</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Avi&quot;</span> <span class="ow">in</span> <span class="n">studs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Johnny"</span> <span class="ow">in</span> <span class="n">studs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Avi"</span> <span class="ow">in</span> <span class="n">studs</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">80</span> <span class="ow">in</span> <span class="n">studs</span><span class="p">)</span> <span class="c1"># 80 is a value, not a key, so that will be False.</span>
 </pre></div>
 </div>
@@ -810,13 +849,13 @@ False
 שימו לב כי ניתן לשנות את הערך שחוזר במקרים בהם המפתח לא קיים במילון לכל ערך אלטרנטיבי שנרצה ע”י העברתו בארגומנט השני בפונקציה <code class="docutils literal notranslate"><span class="pre">get</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Avi&quot;</span><span class="p">))</span> <span class="c1"># The key exists, so we&#39;ll get the value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"Avi"</span><span class="p">))</span> <span class="c1"># The key exists, so we'll get the value</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Johnny&quot;</span><span class="p">))</span> <span class="c1"># The key doesn&#39;t exist, so we&#39;ll get the default - None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"Johnny"</span><span class="p">))</span> <span class="c1"># The key doesn't exist, so we'll get the default - None</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Johnny&quot;</span><span class="p">,</span> <span class="s2">&quot;Student not found&quot;</span><span class="p">))</span> <span class="c1"># The key doesn&#39;t exist, so we&#39;ll get the default - &quot;not found&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"Johnny"</span><span class="p">,</span> <span class="s2">"Student not found"</span><span class="p">))</span> <span class="c1"># The key doesn't exist, so we'll get the default - "not found"</span>
 </pre></div>
 </div>
 </div>
@@ -836,13 +875,13 @@ Student not found
 <p>נגיד, נוסיף את חיים למילון הסטודנטים שלנו.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span><span class="p">[</span><span class="s2">&quot;Johnny&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">95</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span><span class="p">[</span><span class="s2">"Johnny"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">95</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Avi&#39;: 90, &#39;Moshe&#39;: 80, &#39;Adam&#39;: 70, &#39;Johnny&#39;: 95}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Avi': 90, 'Moshe': 80, 'Adam': 70, 'Johnny': 95}
 </pre></div>
 </div>
 </div>
@@ -851,13 +890,13 @@ Student not found
 לדוגמה, אם נבצע השמה מחדש לציון של משה:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span><span class="p">[</span><span class="s2">&quot;Moshe&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span><span class="p">[</span><span class="s2">"Moshe"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Avi&#39;: 90, &#39;Moshe&#39;: 90, &#39;Adam&#39;: 70, &#39;Johnny&#39;: 95}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Avi': 90, 'Moshe': 90, 'Adam': 70, 'Johnny': 95}
 </pre></div>
 </div>
 </div>
@@ -948,26 +987,26 @@ Student not found
 <span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
 
 <span class="c1"># 2</span>
-<span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Amir&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">95</span>
-<span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Michal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">97</span>
-<span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Hagai&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">82</span>
+<span class="n">grades</span><span class="p">[</span><span class="s2">"Amir"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">95</span>
+<span class="n">grades</span><span class="p">[</span><span class="s2">"Michal"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">97</span>
+<span class="n">grades</span><span class="p">[</span><span class="s2">"Hagai"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">82</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
 
 <span class="c1"># 3</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Michal&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">[</span><span class="s2">"Michal"</span><span class="p">])</span>
 
 <span class="c1"># 4</span>
-<span class="k">if</span> <span class="s2">&quot;Maya&quot;</span> <span class="ow">in</span> <span class="n">grades</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Maya&quot;</span><span class="p">])</span>
+<span class="k">if</span> <span class="s2">"Maya"</span> <span class="ow">in</span> <span class="n">grades</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">[</span><span class="s2">"Maya"</span><span class="p">])</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maya not found&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Maya not found"</span><span class="p">)</span>
 
 <span class="c1"># 5</span>
-<span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Maya&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">76</span>
+<span class="n">grades</span><span class="p">[</span><span class="s2">"Maya"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">76</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
 
 <span class="c1"># 6</span>
-<span class="n">grades</span><span class="p">[</span><span class="s2">&quot;Hagai&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">grades</span><span class="p">[</span><span class="s2">"Hagai"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -979,16 +1018,16 @@ Student not found
 <p>אז ראינו שמפתחות הם ייחודיים, ולכן שינוי ערך של מפתח קיים ידרוס את הערך הקודם.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">)</span>
-<span class="n">studs</span><span class="p">[</span><span class="s1">&#39;Moshe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">studs</span><span class="p">[</span><span class="s1">'Moshe'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Avi&#39;: 90, &#39;Moshe&#39;: 80, &#39;Adam&#39;: 70}
-{&#39;Avi&#39;: 90, &#39;Moshe&#39;: 90, &#39;Adam&#39;: 70}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Avi': 90, 'Moshe': 80, 'Adam': 70}
+{'Avi': 90, 'Moshe': 90, 'Adam': 70}
 </pre></div>
 </div>
 </div>
@@ -999,17 +1038,17 @@ Student not found
 <p>ננסה תחילה לממש רעיון זה ע”י הגדרת המפתח כרשימה המכילה את השם הפרטי ושם המשפחה.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{[</span><span class="s1">&#39;Moshe&#39;</span><span class="p">,</span> <span class="s1">&#39;Cohen&#39;</span><span class="p">]:</span> <span class="mi">90</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{[</span><span class="s1">'Moshe'</span><span class="p">,</span> <span class="s1">'Cohen'</span><span class="p">]:</span> <span class="mi">90</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [21],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">studs</span> <span class="o">=</span> <span class="p">{[</span><span class="s1">&#39;Moshe&#39;</span><span class="p">,</span> <span class="s1">&#39;Cohen&#39;</span><span class="p">]:</span> <span class="mi">90</span><span class="p">}</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">studs</span> <span class="o">=</span> <span class="p">{[</span><span class="s1">'Moshe'</span><span class="p">,</span> <span class="s1">'Cohen'</span><span class="p">]:</span> <span class="mi">90</span><span class="p">}</span>
 
-<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+<span class="ne">TypeError</span>: unhashable type: 'list'
 </pre></div>
 </div>
 </div>
@@ -1037,7 +1076,7 @@ Student not found
 <p>למשל, אם נרצה להדפיס את כל השמות והציונים של מילון הסטודנטים שלנו שורה אחר שורה, נוכל לעשות זאת כך:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1045,7 +1084,7 @@ Student not found
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">studs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">":"</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1060,7 +1099,7 @@ Adam : 70
 <p>בנוסף, קיימות עוד 2 תצוגות נפוצות: <code class="docutils literal notranslate"><span class="pre">()keys</span></code> ו-<code class="docutils literal notranslate"><span class="pre">()values</span></code>, המחזירות את מפתחות הערכים של המילון:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All keys:&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"All keys:"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">studs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 </pre></div>
@@ -1077,7 +1116,7 @@ Adam
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All values:&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"All values:"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">studs</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1"># No default way to get the key.</span>
 </pre></div>
@@ -1106,7 +1145,7 @@ Adam
 <p>על מנת לחדד את ההבדל, נבחן כעת את הדוגמא של מילון הסטודנטים שלנו, בו הערך הוא <strong>רשימת ציונים</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">],</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">80</span><span class="p">],</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">70</span><span class="p">]}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">],</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="p">[</span><span class="mi">80</span><span class="p">],</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="p">[</span><span class="mi">70</span><span class="p">]}</span>
 </pre></div>
 </div>
 </div>
@@ -1122,15 +1161,15 @@ Adam
 <p>נוסיף כעת סטודנט חדש למילון המשוכפל, ונדפיס את 2 המילונים:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs_2</span><span class="p">[</span><span class="s2">&quot;Johnny&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">60</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs_2</span><span class="p">[</span><span class="s2">"Johnny"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">60</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">studs_2</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Avi&#39;: [90], &#39;Moshe&#39;: [80], &#39;Adam&#39;: [70]}
-{&#39;Avi&#39;: [90], &#39;Moshe&#39;: [80], &#39;Adam&#39;: [70], &#39;Johnny&#39;: [60]}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Avi': [90], 'Moshe': [80], 'Adam': [70]}
+{'Avi': [90], 'Moshe': [80], 'Adam': [70], 'Johnny': [60]}
 </pre></div>
 </div>
 </div>
@@ -1139,15 +1178,15 @@ Adam
 <p>כעת נוסיף במילון המשוכפל לציוניו של משה את הציון 100, ונדפיס את 2 המילונים</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs_2</span><span class="p">[</span><span class="s2">&quot;Moshe&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs_2</span><span class="p">[</span><span class="s2">"Moshe"</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">studs_2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Avi&#39;: [90], &#39;Moshe&#39;: [80, 100], &#39;Adam&#39;: [70]}
-{&#39;Avi&#39;: [90], &#39;Moshe&#39;: [80, 100], &#39;Adam&#39;: [70], &#39;Johnny&#39;: [60]}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Avi': [90], 'Moshe': [80, 100], 'Adam': [70]}
+{'Avi': [90], 'Moshe': [80, 100], 'Adam': [70], 'Johnny': [60]}
 </pre></div>
 </div>
 </div>
@@ -1168,8 +1207,8 @@ Adam
 <p>נבחן יחד את הדוגמא הבאה, בה במילון <code class="docutils literal notranslate"><span class="pre">studs_2</span></code> ישמש כארגומנט על מנת לעדכן את המילון <code class="docutils literal notranslate"><span class="pre">sstud</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
-<span class="n">studs_2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;Johnny&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<span class="n">studs_2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">"Johnny"</span><span class="p">:</span> <span class="mi">60</span><span class="p">}</span>
 
 <span class="n">studs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">studs_2</span><span class="p">)</span>
 
@@ -1178,7 +1217,7 @@ Adam
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Avi&#39;: 90, &#39;Moshe&#39;: 100, &#39;Adam&#39;: 70, &#39;Johnny&#39;: 60}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Avi': 90, 'Moshe': 100, 'Adam': 70, 'Johnny': 60}
 </pre></div>
 </div>
 </div>
@@ -1195,16 +1234,16 @@ Adam
 <p>נבחן את הדוגמא הבאה:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Avi&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;Moshe&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Adam&quot;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Moshe&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"Moshe"</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">studs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80
-{&#39;Avi&#39;: 90, &#39;Adam&#39;: 70}
+{'Avi': 90, 'Adam': 70}
 </pre></div>
 </div>
 </div>
@@ -1217,17 +1256,17 @@ Adam
 <p>וכפי שאמרנו, הסרת מפתח לא קיים מהמילון תוביל לשגיאה, ולכן אם ננסה להסיר שוב את משה נקבל את השגיאה הבאה</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Moshe&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"Moshe"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">Input In [33],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">studs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Moshe&quot;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">studs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"Moshe"</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: &#39;Moshe&#39;
+<span class="ne">KeyError</span>: 'Moshe'
 </pre></div>
 </div>
 </div>
@@ -1315,7 +1354,7 @@ Adam
 <p>לאחר שסיימתם לממש את הקוד, בדקו את נכונותו בהרצות הבאות:</p>
 <div class="cell tag_remove-output tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;jerry&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">'jerry'</span>
 <span class="n">get_char_count</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1323,7 +1362,7 @@ Adam
 </div>
 <div class="cell tag_remove-output tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;supercalifragilisticexpialidocious&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">'supercalifragilisticexpialidocious'</span>
 <span class="n">get_char_count</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1368,7 +1407,7 @@ Adam
 <p>לאחר שסיימתם לממש את הקוד, בדקו את נכונותו בהרצות הבאות:</p>
 <div class="cell tag_remove-output tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;jerry&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">'jerry'</span>
 <span class="n">get_char_count</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1376,7 +1415,7 @@ Adam
 </div>
 <div class="cell tag_remove-output tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;supercalifragilisticexpialidocious&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">'supercalifragilisticexpialidocious'</span>
 <span class="n">get_char_count</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1414,9 +1453,9 @@ Adam
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_by_keys_order</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
     <span class="n">sorted_chars</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">sorted_chars</span><span class="p">:</span>  
-        <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s1">':'</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;supercalifragilisticexpialidocious&#39;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">'supercalifragilisticexpialidocious'</span>
 <span class="n">cc</span> <span class="o">=</span> <span class="n">get_char_count</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 <span class="n">print_by_keys_order</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span>
 </pre></div>
@@ -1434,9 +1473,9 @@ Adam
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_by_keys_order</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
     <span class="n">sorted_chars</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">sorted_chars</span><span class="p">:</span> 
-        <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="s1">':'</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">])</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;supercalifragilisticexpialidocious&#39;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">'supercalifragilisticexpialidocious'</span>
 <span class="n">cc</span> <span class="o">=</span> <span class="n">get_char_count</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 <span class="n">print_by_keys_order</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span>
 </pre></div>
@@ -1502,21 +1541,23 @@ Adam
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.3. מילונים (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a><ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.3. מילונים (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3.1. מוטיבציה למילונים</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.3.2. מילונים בפייתון</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.4. מילונים: <code class="docutils literal notranslate"><span class="pre">dict</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.4. מילונים: <code class="docutils literal notranslate"><span class="pre">dict</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.4.1. שימוש בסיסי במילון בפייתון</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.4.1.1. תרגול</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.4.1.2. מפתחות מורכבים</a></li>
@@ -1583,8 +1624,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

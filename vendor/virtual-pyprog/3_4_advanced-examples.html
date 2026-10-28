@@ -16,38 +16,41 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -59,40 +62,37 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/3_4_advanced-examples';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3. שבוע 3 — רשימות" href="../../course/weeks/week_3.html" />
     <link rel="prev" title="2.10. פונקציות שקוראות לפונקציות" href="3_5_caller-callee.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -100,7 +100,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,15 +107,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -125,7 +168,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,21 +199,17 @@
     
     
     <img src="../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
-    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+    <img src="../../_static/tau.png" class="logo__image only-dark pst-js-only" alt="Computers For physics - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -340,9 +380,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -539,7 +584,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -553,25 +598,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -593,7 +630,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.11.1. בשאלות הבאות נממש מספר פונקציות המחשבות מקסימום בין מספרים שונים</a></li>
 </ul>
             </nav>
@@ -619,7 +656,7 @@ document.write(`
     <span class="c1"># Write your code here</span>
     <span class="k">pass</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">is_pretty_name</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_pretty_name</span><span class="p">(</span><span class="s2">"Python"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -650,19 +687,19 @@ document.write(`
 
     <span class="c1"># Print results    </span>
     <span class="k">if</span> <span class="n">hat</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should take a hat&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You should take a hat"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You shouldnt take a hat&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You shouldnt take a hat"</span><span class="p">)</span>
         
     <span class="k">if</span> <span class="n">coat</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should take a coat&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You should take a coat"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You shouldnt take a coat&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You shouldnt take a coat"</span><span class="p">)</span>
         
     <span class="k">if</span> <span class="n">umbrella</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should take an umbrella&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You should take an umbrella"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You shouldnt take an umbrella&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You shouldnt take an umbrella"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -703,27 +740,27 @@ document.write(`
     
     <span class="c1"># Check if raining    </span>
     <span class="k">if</span> <span class="n">is_raining</span><span class="p">:</span>
-        <span class="c1"># If it&#39;s raining</span>
+        <span class="c1"># If it's raining</span>
         <span class="n">umbrella</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># If it&#39;s not raining</span>
+        <span class="c1"># If it's not raining</span>
         <span class="n">umbrella</span> <span class="o">=</span> <span class="kc">False</span>
         
     <span class="c1"># Print results    </span>
     <span class="k">if</span> <span class="n">hat</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should take a hat&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You should take a hat"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You shouldnt take a hat&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You shouldnt take a hat"</span><span class="p">)</span>
         
     <span class="k">if</span> <span class="n">coat</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should take a coat&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You should take a coat"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You shouldnt take a coat&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You shouldnt take a coat"</span><span class="p">)</span>
         
     <span class="k">if</span> <span class="n">umbrella</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should take an umbrella&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You should take an umbrella"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You shouldnt take an umbrella&quot;</span><span class="p">)</span>   
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You shouldnt take an umbrella"</span><span class="p">)</span>   
 </pre></div>
 </div>
 </div>
@@ -772,8 +809,8 @@ document.write(`
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="zZraEESQghTy" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#zZraEESQghTy {
+<div class="output text_html"><div id="HtwlyVWKgvYz" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#HtwlyVWKgvYz {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -996,7 +1033,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionszZraEESQghTy=[{"question": "\u05e2\u05d1\u05d5\u05e8 \u05d0\u05d9\u05dc\u05d5 \u05e2\u05e8\u05db\u05d9 \u05e7\u05dc\u05d8 \u05d9\u05e0\u05d9\u05d1\u05d5 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05ea\u05d5\u05e6\u05d0\u05d4 \u05d6\u05d4\u05d4?", "type": "many_choice", "answers": [{"answer": "15", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "-20", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "100", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}];
+</style></div><script type="application/javascript">var questionsHtwlyVWKgvYz=[{"question": "\u05e2\u05d1\u05d5\u05e8 \u05d0\u05d9\u05dc\u05d5 \u05e2\u05e8\u05db\u05d9 \u05e7\u05dc\u05d8 \u05d9\u05e0\u05d9\u05d1\u05d5 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05ea\u05d5\u05e6\u05d0\u05d4 \u05d6\u05d4\u05d4?", "type": "many_choice", "answers": [{"answer": "15", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "-20", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "100", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2058,8 +2095,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("zZraEESQghTy")) {
-    show_questions(questionszZraEESQghTy, zZraEESQghTy);
+  if (document.getElementById("HtwlyVWKgvYz")) {
+    show_questions(questionsHtwlyVWKgvYz, HtwlyVWKgvYz);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2078,17 +2115,17 @@ function try_show() {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">foo2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">z</span> <span class="o">==</span> <span class="n">y</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">6</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hey!!!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"hey!!!"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi…&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Hi…"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="rqKNjiviTgDm" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#rqKNjiviTgDm {
+<div class="output text_html"><div id="MyfuyfNSMngW" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#MyfuyfNSMngW {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2311,7 +2348,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsrqKNjiviTgDm=[{"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 foo2(6,4,'y')?", "type": "many_choice", "answers": [{"answer": "\u05dc\u05d0 \u05d9\u05d5\u05d7\u05d6\u05e8 \u05db\u05dc\u05d5\u05dd (None)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05ea\u05ea\u05e7\u05d1\u05dc \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": " \u2026Hi", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "!!!hey", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsMyfuyfNSMngW=[{"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 foo2(6,4,'y')?", "type": "many_choice", "answers": [{"answer": "\u05dc\u05d0 \u05d9\u05d5\u05d7\u05d6\u05e8 \u05db\u05dc\u05d5\u05dd (None)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05ea\u05ea\u05e7\u05d1\u05dc \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": " \u2026Hi", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "!!!hey", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3373,8 +3410,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("rqKNjiviTgDm")) {
-    show_questions(questionsrqKNjiviTgDm, rqKNjiviTgDm);
+  if (document.getElementById("MyfuyfNSMngW")) {
+    show_questions(questionsMyfuyfNSMngW, MyfuyfNSMngW);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3398,8 +3435,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="WkFXiOovDRTb" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#WkFXiOovDRTb {
+<div class="output text_html"><div id="eSGTRGuqQQgK" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#eSGTRGuqQQgK {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3622,7 +3659,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsWkFXiOovDRTb=[{"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05d0\u05dd \u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st \u05de\u05db\u05d9\u05dc\u05d4 \u05d0\u05ea \u05ea\u05d5 \u05e0\u05ea\u05d5\u05df \u05db\u05dc\u05e9\u05d4\u05d5 c", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05ea\u05d5 \u05e0\u05ea\u05d5\u05df \u05db\u05dc\u05e9\u05d4\u05d5 c \u05de\u05d5\u05e4\u05d9\u05e2 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05d4\u05d0\u05dd \u05de\u05d7\u05e8\u05d5\u05d6\u05ea st \u05de\u05db\u05d9\u05dc\u05d4 \u05d0\u05ea \u05d4\u05d0\u05d5\u05ea \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9\u05ea \u05d1\u05d0\u05dc\u05e4\u05d1\u05d9\u05ea \u05d4\u05d0\u05e0\u05d2\u05dc\u05d9 c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05d4\u05d0\u05d5\u05ea c (\u05d4\u05d0\u05d5\u05ea \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9\u05ea \u05d1\u05d0\u05dc\u05e4\u05d1\u05d9\u05ea \u05d4\u05d0\u05e0\u05d2\u05dc\u05d9) \u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionseSGTRGuqQQgK=[{"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05d0\u05dd \u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st \u05de\u05db\u05d9\u05dc\u05d4 \u05d0\u05ea \u05ea\u05d5 \u05e0\u05ea\u05d5\u05df \u05db\u05dc\u05e9\u05d4\u05d5 c", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05ea\u05d5 \u05e0\u05ea\u05d5\u05df \u05db\u05dc\u05e9\u05d4\u05d5 c \u05de\u05d5\u05e4\u05d9\u05e2 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05d4\u05d0\u05dd \u05de\u05d7\u05e8\u05d5\u05d6\u05ea st \u05de\u05db\u05d9\u05dc\u05d4 \u05d0\u05ea \u05d4\u05d0\u05d5\u05ea \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9\u05ea \u05d1\u05d0\u05dc\u05e4\u05d1\u05d9\u05ea \u05d4\u05d0\u05e0\u05d2\u05dc\u05d9 c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05d4\u05d0\u05d5\u05ea c (\u05d4\u05d0\u05d5\u05ea \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9\u05ea \u05d1\u05d0\u05dc\u05e4\u05d1\u05d9\u05ea \u05d4\u05d0\u05e0\u05d2\u05dc\u05d9) \u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -4684,8 +4721,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("WkFXiOovDRTb")) {
-    show_questions(questionsWkFXiOovDRTb, WkFXiOovDRTb);
+  if (document.getElementById("eSGTRGuqQQgK")) {
+    show_questions(questionseSGTRGuqQQgK, eSGTRGuqQQgK);
   } else {
     setTimeout(try_show, 200);
   }
@@ -4706,8 +4743,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="KmRWPVrysoaI" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#KmRWPVrysoaI {
+<div class="output text_html"><div id="tYBjXeeOgbzL" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#tYBjXeeOgbzL {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -4930,7 +4967,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsKmRWPVrysoaI=[{"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05d0\u05dd \u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st \u05de\u05db\u05d9\u05dc\u05d4 \u05d0\u05ea \u05ea\u05d5 \u05e0\u05ea\u05d5\u05df \u05db\u05dc\u05e9\u05d4\u05d5 c", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 c in st \u05e2\u05e8\u05db\u05d5 True \u05d0\u05d5 False, \u05d5\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e4\u05e9\u05d5\u05d8 \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05e2\u05e8\u05da \u05d6\u05d4. \u05d6\u05d4\u05d5 \u05e7\u05d9\u05e6\u05d5\u05e8 \u05de\u05e7\u05d5\u05d1\u05dc \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05d4\u05ea\u05e8\u05d2\u05d9\u05dc \u05d4\u05e7\u05d5\u05d3\u05dd."}, {"answer": "\u05d4\u05d0\u05dd \u05ea\u05d5 \u05db\u05dc\u05e9\u05d4\u05d5 c \u05e0\u05de\u05e6\u05d0 \u05d1\u05ea\u05d7\u05d9\u05dc\u05ea\u05d4 \u05e9\u05dc \u05d4\u05de\u05d7\u05e8\u05d5\u05d6\u05ea st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05d4\u05d0\u05dd \u05ea\u05d5 \u05db\u05dc\u05e9\u05d4\u05d5 c \u05dc\u05d0 \u05e0\u05de\u05e6\u05d0 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05ea\u05d5 \u05e0\u05ea\u05d5\u05df \u05db\u05dc\u05e9\u05d4\u05d5 c \u05de\u05d5\u05e4\u05d9\u05e2 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionstYBjXeeOgbzL=[{"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05d0\u05dd \u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st \u05de\u05db\u05d9\u05dc\u05d4 \u05d0\u05ea \u05ea\u05d5 \u05e0\u05ea\u05d5\u05df \u05db\u05dc\u05e9\u05d4\u05d5 c", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 c in st \u05e2\u05e8\u05db\u05d5 True \u05d0\u05d5 False, \u05d5\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e4\u05e9\u05d5\u05d8 \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05e2\u05e8\u05da \u05d6\u05d4. \u05d6\u05d4\u05d5 \u05e7\u05d9\u05e6\u05d5\u05e8 \u05de\u05e7\u05d5\u05d1\u05dc \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05d4\u05ea\u05e8\u05d2\u05d9\u05dc \u05d4\u05e7\u05d5\u05d3\u05dd."}, {"answer": "\u05d4\u05d0\u05dd \u05ea\u05d5 \u05db\u05dc\u05e9\u05d4\u05d5 c \u05e0\u05de\u05e6\u05d0 \u05d1\u05ea\u05d7\u05d9\u05dc\u05ea\u05d4 \u05e9\u05dc \u05d4\u05de\u05d7\u05e8\u05d5\u05d6\u05ea st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05d4\u05d0\u05dd \u05ea\u05d5 \u05db\u05dc\u05e9\u05d4\u05d5 c \u05dc\u05d0 \u05e0\u05de\u05e6\u05d0 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05ea\u05d5 \u05e0\u05ea\u05d5\u05df \u05db\u05dc\u05e9\u05d4\u05d5 c \u05de\u05d5\u05e4\u05d9\u05e2 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e0\u05ea\u05d5\u05e0\u05d4 st", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -5992,8 +6029,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("KmRWPVrysoaI")) {
-    show_questions(questionsKmRWPVrysoaI, KmRWPVrysoaI);
+  if (document.getElementById("tYBjXeeOgbzL")) {
+    show_questions(questionstYBjXeeOgbzL, tYBjXeeOgbzL);
   } else {
     setTimeout(try_show, 200);
   }
@@ -6208,15 +6245,17 @@ function try_show() {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.11.1. בשאלות הבאות נממש מספר פונקציות המחשבות מקסימום בין מספרים שונים</a></li>
 </ul>
   </nav></div>
@@ -6266,8 +6305,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -16,38 +16,41 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=dc79e408" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -61,40 +64,37 @@
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_12_model_comparison';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="11.13. נתונים מול מודל: הגרף המלא, savetxt" href="11_13_final_report_figure.html" />
     <link rel="prev" title="11.11. לינאריזציה: דעיכה מעריכית דרך ln" href="11_11_linearization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -102,7 +102,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,15 +109,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -127,7 +170,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,21 +201,17 @@
     
     
     <img src="../../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
-    <script>document.write(`<img src="../../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+    <img src="../../../_static/tau.png" class="logo__image only-dark pst-js-only" alt="Computers For physics - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -342,9 +382,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -541,7 +586,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -555,25 +600,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -595,7 +632,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r2">11.12.1. השוואה: R² מול חי-בריבוע מצומצם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.12.2. באג נפוץ: לבחור מודל לפי R² בלבד</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.12.3. נסו בעצמכם</a></li>
@@ -626,14 +663,14 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;lab_measurements.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"lab_measurements.csv"</span><span class="p">)</span>
 <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">angles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;angle_deg&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">angles</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;angle_deg&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">a</span><span class="p">][</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="n">a</span><span class="p">][</span><span class="s2">"range_measured"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">])</span>
 <span class="n">sigma_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-    <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;angle_deg&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">a</span><span class="p">][</span><span class="s2">&quot;range_measured&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">&quot;angle_deg&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">a</span><span class="p">]))</span>
+    <span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="n">a</span><span class="p">][</span><span class="s2">"range_measured"</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_clean</span><span class="p">[</span><span class="n">df_clean</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="n">a</span><span class="p">]))</span>
     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">angles</span>
 <span class="p">])</span>
 
@@ -647,8 +684,8 @@ document.write(`
 <span class="n">m_origin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
 <span class="n">pred_origin</span> <span class="o">=</span> <span class="n">m_origin</span><span class="o">*</span><span class="n">x</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;כללי:        m=</span><span class="si">{</span><span class="n">m_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;דרך הראשית:  m=</span><span class="si">{</span><span class="n">m_origin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"כללי:        m=</span><span class="si">{</span><span class="n">m_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"דרך הראשית:  m=</span><span class="si">{</span><span class="n">m_origin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -679,8 +716,8 @@ document.write(`
 <span class="n">rchi2_general</span> <span class="o">=</span> <span class="n">reduced_chi2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">pred_general</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">,</span> <span class="n">n_params</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">rchi2_origin</span> <span class="o">=</span> <span class="n">reduced_chi2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">pred_origin</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">,</span> <span class="n">n_params</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;מודל כללי:       R^2=</span><span class="si">{</span><span class="n">r2_general</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">   chi^2_nu=</span><span class="si">{</span><span class="n">rchi2_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;מודל דרך הראשית: R^2=</span><span class="si">{</span><span class="n">r2_origin</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">   chi^2_nu=</span><span class="si">{</span><span class="n">rchi2_origin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"מודל כללי:       R^2=</span><span class="si">{</span><span class="n">r2_general</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">   chi^2_nu=</span><span class="si">{</span><span class="n">rchi2_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"מודל דרך הראשית: R^2=</span><span class="si">{</span><span class="n">r2_origin</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">   chi^2_nu=</span><span class="si">{</span><span class="n">rchi2_origin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -698,9 +735,9 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(R^2\)</span> <strong>לעולם לא יורד</strong> כשמוסיפים פרמטר חופשי נוסף למודל (במקרה הגרוע ביותר הוא נשאר זהה) – גם אם הפרמטר לא מוסיף שום מידע פיזיקלי אמיתי. לכן “לבחור את המודל עם ה-<span class="math notranslate nohighlight">\(R^2\)</span> הגבוה ביותר” מטה את הבחירה באופן שיטתי לכיוון מודלים מורכבים יותר, גם כשהם לא באמת טובים יותר.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R^2 כללי (</span><span class="si">{</span><span class="mi">2</span><span class="si">}</span><span class="s2"> פרמטרים):        </span><span class="si">{</span><span class="n">r2_general</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R^2 דרך הראשית (</span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="s2"> פרמטר):    </span><span class="si">{</span><span class="n">r2_origin</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R^2 הכללי גבוה יותר (או שווה) כמעט תמיד - זו לא הוכחה שהוא המודל הנכון יותר.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"R^2 כללי (</span><span class="si">{</span><span class="mi">2</span><span class="si">}</span><span class="s2"> פרמטרים):        </span><span class="si">{</span><span class="n">r2_general</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"R^2 דרך הראשית (</span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="s2"> פרמטר):    </span><span class="si">{</span><span class="n">r2_origin</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"R^2 הכללי גבוה יותר (או שווה) כמעט תמיד - זו לא הוכחה שהוא המודל הנכון יותר."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -733,8 +770,8 @@ R^2 הכללי גבוה יותר (או שווה) כמעט תמיד - זו לא �
 <span class="n">s_y_origin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">resid_origin</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 <span class="n">SE_m_origin</span> <span class="o">=</span> <span class="n">s_y_origin</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SE_m (כללי):       </span><span class="si">{</span><span class="n">SE_m_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SE_m (דרך הראשית): </span><span class="si">{</span><span class="n">SE_m_origin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"SE_m (כללי):       </span><span class="si">{</span><span class="n">SE_m_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"SE_m (דרך הראשית): </span><span class="si">{</span><span class="n">SE_m_origin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -747,13 +784,13 @@ R^2 הכללי גבוה יותר (או שווה) כמעט תמיד - זו לא �
 
 <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
-        <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="s2">&quot;למה R^2 אינו כלי טוב, לבדו, להשוואה בין מודלים עם מספר פרמטרים שונה?&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;multiple_choice&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;answers&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי R^2 לא ניתן לחישוב עבור מודל דרך הראשית&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;ראינו שכן ניתן לחשב אותו.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי הוא לעולם לא יורד כשמוסיפים פרמטרים, ולכן תמיד &#39;מעדיף&#39; את המודל המורכב יותר, בלי קשר לתועלת האמיתית&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;נכון.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;אין שום בעיה - R^2 הוא הכלי הטוב ביותר להשוואת מודלים בכל מקרה&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא נכון - chi^2_nu מתחשב במספר הפרמטרים, R^2 לא.&quot;</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s2">&quot;כי R² לא ניתן לחישוב כלל עבור יותר משני פרמטרים&quot;</span><span class="p">,</span> <span class="s2">&quot;correct&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;feedback&quot;</span><span class="p">:</span> <span class="s2">&quot;לא — R² ניתן לחישוב עבור כל מספר פרמטרים; הבעיה היא בהטיה שלו לטובת מודלים מורכבים, לא במגבלה טכנית.&quot;</span><span class="p">}</span>
+        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"למה R^2 אינו כלי טוב, לבדו, להשוואה בין מודלים עם מספר פרמטרים שונה?"</span><span class="p">,</span>
+        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
+        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי R^2 לא ניתן לחישוב עבור מודל דרך הראשית"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"ראינו שכן ניתן לחשב אותו."</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי הוא לעולם לא יורד כשמוסיפים פרמטרים, ולכן תמיד 'מעדיף' את המודל המורכב יותר, בלי קשר לתועלת האמיתית"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"אין שום בעיה - R^2 הוא הכלי הטוב ביותר להשוואת מודלים בכל מקרה"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא נכון - chi^2_nu מתחשב במספר הפרמטרים, R^2 לא."</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי R² לא ניתן לחישוב כלל עבור יותר משני פרמטרים"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — R² ניתן לחישוב עבור כל מספר פרמטרים; הבעיה היא בהטיה שלו לטובת מודלים מורכבים, לא במגבלה טכנית."</span><span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">]</span>
@@ -762,8 +799,8 @@ R^2 הכללי גבוה יותר (או שווה) כמעט תמיד - זו לא �
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="IumSRsZrvjQk" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#IumSRsZrvjQk {
+<div class="output text_html"><div id="okySryCuUSHS" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#okySryCuUSHS {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -986,7 +1023,7 @@ R^2 הכללי גבוה יותר (או שווה) כמעט תמיד - זו לא �
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsIumSRsZrvjQk=[{"question": "\u05dc\u05de\u05d4 R^2 \u05d0\u05d9\u05e0\u05d5 \u05db\u05dc\u05d9 \u05d8\u05d5\u05d1, \u05dc\u05d1\u05d3\u05d5, \u05dc\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05d1\u05d9\u05df \u05de\u05d5\u05d3\u05dc\u05d9\u05dd \u05e2\u05dd \u05de\u05e1\u05e4\u05e8 \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 R^2 \u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e2\u05d1\u05d5\u05e8 \u05de\u05d5\u05d3\u05dc \u05d3\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d9\u05ea", "correct": false, "feedback": "\u05e8\u05d0\u05d9\u05e0\u05d5 \u05e9\u05db\u05df \u05e0\u05d9\u05ea\u05df \u05dc\u05d7\u05e9\u05d1 \u05d0\u05d5\u05ea\u05d5."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05dc\u05e2\u05d5\u05dc\u05dd \u05dc\u05d0 \u05d9\u05d5\u05e8\u05d3 \u05db\u05e9\u05de\u05d5\u05e1\u05d9\u05e4\u05d9\u05dd \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05ea\u05de\u05d9\u05d3 '\u05de\u05e2\u05d3\u05d9\u05e3' \u05d0\u05ea \u05d4\u05de\u05d5\u05d3\u05dc \u05d4\u05de\u05d5\u05e8\u05db\u05d1 \u05d9\u05d5\u05ea\u05e8, \u05d1\u05dc\u05d9 \u05e7\u05e9\u05e8 \u05dc\u05ea\u05d5\u05e2\u05dc\u05ea \u05d4\u05d0\u05de\u05d9\u05ea\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05d1\u05e2\u05d9\u05d4 - R^2 \u05d4\u05d5\u05d0 \u05d4\u05db\u05dc\u05d9 \u05d4\u05d8\u05d5\u05d1 \u05d1\u05d9\u05d5\u05ea\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05d0\u05ea \u05de\u05d5\u05d3\u05dc\u05d9\u05dd \u05d1\u05db\u05dc \u05de\u05e7\u05e8\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df - chi^2_nu \u05de\u05ea\u05d7\u05e9\u05d1 \u05d1\u05de\u05e1\u05e4\u05e8 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd, R^2 \u05dc\u05d0."}, {"answer": "\u05db\u05d9 R\u00b2 \u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05db\u05dc\u05dc \u05e2\u05d1\u05d5\u05e8 \u05d9\u05d5\u05ea\u05e8 \u05de\u05e9\u05e0\u05d9 \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 R\u00b2 \u05e0\u05d9\u05ea\u05df \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e2\u05d1\u05d5\u05e8 \u05db\u05dc \u05de\u05e1\u05e4\u05e8 \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05d4\u05d8\u05d9\u05d4 \u05e9\u05dc\u05d5 \u05dc\u05d8\u05d5\u05d1\u05ea \u05de\u05d5\u05d3\u05dc\u05d9\u05dd \u05de\u05d5\u05e8\u05db\u05d1\u05d9\u05dd, \u05dc\u05d0 \u05d1\u05de\u05d2\u05d1\u05dc\u05d4 \u05d8\u05db\u05e0\u05d9\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsokySryCuUSHS=[{"question": "\u05dc\u05de\u05d4 R^2 \u05d0\u05d9\u05e0\u05d5 \u05db\u05dc\u05d9 \u05d8\u05d5\u05d1, \u05dc\u05d1\u05d3\u05d5, \u05dc\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05d1\u05d9\u05df \u05de\u05d5\u05d3\u05dc\u05d9\u05dd \u05e2\u05dd \u05de\u05e1\u05e4\u05e8 \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 R^2 \u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e2\u05d1\u05d5\u05e8 \u05de\u05d5\u05d3\u05dc \u05d3\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d9\u05ea", "correct": false, "feedback": "\u05e8\u05d0\u05d9\u05e0\u05d5 \u05e9\u05db\u05df \u05e0\u05d9\u05ea\u05df \u05dc\u05d7\u05e9\u05d1 \u05d0\u05d5\u05ea\u05d5."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05dc\u05e2\u05d5\u05dc\u05dd \u05dc\u05d0 \u05d9\u05d5\u05e8\u05d3 \u05db\u05e9\u05de\u05d5\u05e1\u05d9\u05e4\u05d9\u05dd \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05ea\u05de\u05d9\u05d3 '\u05de\u05e2\u05d3\u05d9\u05e3' \u05d0\u05ea \u05d4\u05de\u05d5\u05d3\u05dc \u05d4\u05de\u05d5\u05e8\u05db\u05d1 \u05d9\u05d5\u05ea\u05e8, \u05d1\u05dc\u05d9 \u05e7\u05e9\u05e8 \u05dc\u05ea\u05d5\u05e2\u05dc\u05ea \u05d4\u05d0\u05de\u05d9\u05ea\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05d1\u05e2\u05d9\u05d4 - R^2 \u05d4\u05d5\u05d0 \u05d4\u05db\u05dc\u05d9 \u05d4\u05d8\u05d5\u05d1 \u05d1\u05d9\u05d5\u05ea\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05d0\u05ea \u05de\u05d5\u05d3\u05dc\u05d9\u05dd \u05d1\u05db\u05dc \u05de\u05e7\u05e8\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df - chi^2_nu \u05de\u05ea\u05d7\u05e9\u05d1 \u05d1\u05de\u05e1\u05e4\u05e8 \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd, R^2 \u05dc\u05d0."}, {"answer": "\u05db\u05d9 R\u00b2 \u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05db\u05dc\u05dc \u05e2\u05d1\u05d5\u05e8 \u05d9\u05d5\u05ea\u05e8 \u05de\u05e9\u05e0\u05d9 \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 R\u00b2 \u05e0\u05d9\u05ea\u05df \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e2\u05d1\u05d5\u05e8 \u05db\u05dc \u05de\u05e1\u05e4\u05e8 \u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05d4\u05d8\u05d9\u05d4 \u05e9\u05dc\u05d5 \u05dc\u05d8\u05d5\u05d1\u05ea \u05de\u05d5\u05d3\u05dc\u05d9\u05dd \u05de\u05d5\u05e8\u05db\u05d1\u05d9\u05dd, \u05dc\u05d0 \u05d1\u05de\u05d2\u05d1\u05dc\u05d4 \u05d8\u05db\u05e0\u05d9\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2048,8 +2085,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("IumSRsZrvjQk")) {
-    show_questions(questionsIumSRsZrvjQk, IumSRsZrvjQk);
+  if (document.getElementById("okySryCuUSHS")) {
+    show_questions(questionsokySryCuUSHS, okySryCuUSHS);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2079,8 +2116,8 @@ function try_show() {
 <span class="n">delta_chi2</span> <span class="o">=</span> <span class="n">chi2_origin</span> <span class="o">-</span> <span class="n">chi2_general</span>
 <span class="n">delta_dof</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># מודל אחד עם פרמטר אחד פחות</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chi^2 כללי: </span><span class="si">{</span><span class="n">chi2_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">,  chi^2 דרך הראשית: </span><span class="si">{</span><span class="n">chi2_origin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;הפרש: </span><span class="si">{</span><span class="n">delta_chi2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">  (דרגת חופש הפרש: </span><span class="si">{</span><span class="n">delta_dof</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"chi^2 כללי: </span><span class="si">{</span><span class="n">chi2_general</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">,  chi^2 דרך הראשית: </span><span class="si">{</span><span class="n">chi2_origin</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"הפרש: </span><span class="si">{</span><span class="n">delta_chi2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">  (דרגת חופש הפרש: </span><span class="si">{</span><span class="n">delta_dof</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2142,15 +2179,17 @@ function try_show() {
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r2">11.12.1. השוואה: R² מול חי-בריבוע מצומצם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.12.2. באג נפוץ: לבחור מודל לפי R² בלבד</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.12.3. נסו בעצמכם</a></li>
@@ -2204,8 +2243,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

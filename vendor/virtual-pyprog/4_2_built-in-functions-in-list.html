@@ -16,38 +16,41 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -59,40 +62,37 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/4_2_built-in-functions-in-list';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3.5. מתודות של רשימות" href="4_3_list-methods.html" />
     <link rel="prev" title="3.2. רשימות: אופרטורים בסיסיים ואינדקסים" href="4_1_list-operators-indices.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -100,7 +100,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,15 +107,55 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
     </header>
   
 
@@ -125,7 +164,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,21 +195,17 @@
     
     
     <img src="../../_static/tau.png" class="logo__image only-light" alt="Computers For physics - Home"/>
-    <script>document.write(`<img src="../../_static/tau.png" class="logo__image only-dark" alt="Computers For physics - Home"/>`);</script>
+    <img src="../../_static/tau.png" class="logo__image only-dark pst-js-only" alt="Computers For physics - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -340,9 +376,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -539,7 +580,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -553,24 +594,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 
 </div></div>
       
@@ -637,8 +670,8 @@ document.write(`
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="OxQekZTuABnm" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#OxQekZTuABnm {
+<div class="output text_html"><div id="ZOzBsetGNGXf" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ZOzBsetGNGXf {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -861,7 +894,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsOxQekZTuABnm=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc max(L1)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "5", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsZOzBsetGNGXf=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc max(L1)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "5", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1923,8 +1956,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("OxQekZTuABnm")) {
-    show_questions(questionsOxQekZTuABnm, OxQekZTuABnm);
+  if (document.getElementById("ZOzBsetGNGXf")) {
+    show_questions(questionsZOzBsetGNGXf, ZOzBsetGNGXf);
   } else {
     setTimeout(try_show, 200);
   }
@@ -1938,8 +1971,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="dOvJlCMpbSqu" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#dOvJlCMpbSqu {
+<div class="output text_html"><div id="yTQNumXhZeSB" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#yTQNumXhZeSB {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2162,7 +2195,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsdOvJlCMpbSqu=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc min(L2)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "6", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "7", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsyTQNumXhZeSB=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc min(L2)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "6", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "7", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3224,8 +3257,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("dOvJlCMpbSqu")) {
-    show_questions(questionsdOvJlCMpbSqu, dOvJlCMpbSqu);
+  if (document.getElementById("yTQNumXhZeSB")) {
+    show_questions(questionsyTQNumXhZeSB, yTQNumXhZeSB);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3239,8 +3272,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="HPBnJQKExtds" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#HPBnJQKExtds {
+<div class="output text_html"><div id="odzBhbDaszGG" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#odzBhbDaszGG {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3463,7 +3496,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsHPBnJQKExtds=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc min(L1) + max(L2)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "10", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "11", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsodzBhbDaszGG=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc min(L1) + max(L2)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "10", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "11", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -4525,8 +4558,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("HPBnJQKExtds")) {
-    show_questions(questionsHPBnJQKExtds, HPBnJQKExtds);
+  if (document.getElementById("odzBhbDaszGG")) {
+    show_questions(questionsodzBhbDaszGG, odzBhbDaszGG);
   } else {
     setTimeout(try_show, 200);
   }
@@ -4540,8 +4573,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="DMRvsNorflWV" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#DMRvsNorflWV {
+<div class="output text_html"><div id="ogOxlxkTVvEH" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ogOxlxkTVvEH {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -4764,7 +4797,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsDMRvsNorflWV=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc min(L3) + max(L2)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "7", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "6", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsogOxlxkTVvEH=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc min(L3) + max(L2)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "7", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "8", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "6", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -5826,8 +5859,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("DMRvsNorflWV")) {
-    show_questions(questionsDMRvsNorflWV, DMRvsNorflWV);
+  if (document.getElementById("ogOxlxkTVvEH")) {
+    show_questions(questionsogOxlxkTVvEH, ogOxlxkTVvEH);
   } else {
     setTimeout(try_show, 200);
   }
@@ -5841,8 +5874,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="eKnDASJtroXq" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#eKnDASJtroXq {
+<div class="output text_html"><div id="LulFkYkAOTOc" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#LulFkYkAOTOc {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -6065,7 +6098,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionseKnDASJtroXq=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc sorted(L2 + L1) == sorted(L2) + sorted(L1)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "False", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "True", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsLulFkYkAOTOc=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc sorted(L2 + L1) == sorted(L2) + sorted(L1)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "False", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "True", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -7127,8 +7160,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("eKnDASJtroXq")) {
-    show_questions(questionseKnDASJtroXq, eKnDASJtroXq);
+  if (document.getElementById("LulFkYkAOTOc")) {
+    show_questions(questionsLulFkYkAOTOc, LulFkYkAOTOc);
   } else {
     setTimeout(try_show, 200);
   }
@@ -7142,8 +7175,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="mnbiVAgKdrvp" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#mnbiVAgKdrvp {
+<div class="output text_html"><div id="QdFJhdVyhWlE" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#QdFJhdVyhWlE {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -7366,7 +7399,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsmnbiVAgKdrvp=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc sorted(L3)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "[]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "None", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsQdFJhdVyhWlE=[{"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc sorted(L3)?", "type": "many_choice", "answers": [{"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "[]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "None", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -8428,8 +8461,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("mnbiVAgKdrvp")) {
-    show_questions(questionsmnbiVAgKdrvp, mnbiVAgKdrvp);
+  if (document.getElementById("QdFJhdVyhWlE")) {
+    show_questions(questionsQdFJhdVyhWlE, QdFJhdVyhWlE);
   } else {
     setTimeout(try_show, 200);
   }
@@ -8449,8 +8482,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="GacMdrABDBoi" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#GacMdrABDBoi {
+<div class="output text_html"><div id="amoFSOMJuwGY" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#amoFSOMJuwGY {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -8673,7 +8706,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsGacMdrABDBoi=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05d1\u05e7\u05d5\u05d3 \u05e9\u05dc\u05de\u05e2\u05dc\u05d4?", "type": "many_choice", "answers": [{"answer": "3 2.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "4 1.5", "correct": false, "feedback": "\u05d0\u05e8\u05d1\u05e2 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05de\u05d2\u05d3\u05d9\u05e8\u05d5\u05ea \u05e9\u05dc\u05d5\u05e9\u05d4 \u05de\u05e8\u05d5\u05d5\u05d7\u05d9\u05dd, \u05dc\u05d0 \u05d0\u05e8\u05d1\u05e2\u05d4. \u05d4\u05e8\u05e9\u05d9\u05de\u05d4 intervals \u05de\u05db\u05d9\u05dc\u05d4 3 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05d4\u05e1\u05db\u05d5\u05dd 6.0 \u05de\u05ea\u05d7\u05dc\u05e7 \u05d1-3"}, {"answer": "3 6.0", "correct": false, "feedback": "\u05d4\u05d0\u05d5\u05e8\u05da \u05e0\u05db\u05d5\u05df, \u05d0\u05d1\u05dc \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05de\u05d7\u05dc\u05e7 \u05d0\u05ea \u05d4\u05e1\u05db\u05d5\u05dd \u05d1\u05d0\u05d5\u05e8\u05da \u05d4\u05e8\u05e9\u05d9\u05de\u05d4 \u05d5\u05dc\u05d0 \u05e8\u05e7 \u05de\u05e1\u05db\u05dd"}, {"answer": "4 2.0", "correct": false, "feedback": "\u05d0\u05d5\u05e8\u05da \u05d4\u05e8\u05e9\u05d9\u05de\u05d4 intervals \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05e8\u05d5\u05d5\u05d7\u05d9\u05dd, 3, \u05d5\u05dc\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05d3\u05d9\u05d3\u05d5\u05ea"}]}];
+</style></div><script type="application/javascript">var questionsamoFSOMJuwGY=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05d1\u05e7\u05d5\u05d3 \u05e9\u05dc\u05de\u05e2\u05dc\u05d4?", "type": "many_choice", "answers": [{"answer": "3 2.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "4 1.5", "correct": false, "feedback": "\u05d0\u05e8\u05d1\u05e2 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05de\u05d2\u05d3\u05d9\u05e8\u05d5\u05ea \u05e9\u05dc\u05d5\u05e9\u05d4 \u05de\u05e8\u05d5\u05d5\u05d7\u05d9\u05dd, \u05dc\u05d0 \u05d0\u05e8\u05d1\u05e2\u05d4. \u05d4\u05e8\u05e9\u05d9\u05de\u05d4 intervals \u05de\u05db\u05d9\u05dc\u05d4 3 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05d4\u05e1\u05db\u05d5\u05dd 6.0 \u05de\u05ea\u05d7\u05dc\u05e7 \u05d1-3"}, {"answer": "3 6.0", "correct": false, "feedback": "\u05d4\u05d0\u05d5\u05e8\u05da \u05e0\u05db\u05d5\u05df, \u05d0\u05d1\u05dc \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05de\u05d7\u05dc\u05e7 \u05d0\u05ea \u05d4\u05e1\u05db\u05d5\u05dd \u05d1\u05d0\u05d5\u05e8\u05da \u05d4\u05e8\u05e9\u05d9\u05de\u05d4 \u05d5\u05dc\u05d0 \u05e8\u05e7 \u05de\u05e1\u05db\u05dd"}, {"answer": "4 2.0", "correct": false, "feedback": "\u05d0\u05d5\u05e8\u05da \u05d4\u05e8\u05e9\u05d9\u05de\u05d4 intervals \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05e8\u05d5\u05d5\u05d7\u05d9\u05dd, 3, \u05d5\u05dc\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05d3\u05d9\u05d3\u05d5\u05ea"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -9735,8 +9768,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("GacMdrABDBoi")) {
-    show_questions(questionsGacMdrABDBoi, GacMdrABDBoi);
+  if (document.getElementById("amoFSOMJuwGY")) {
+    show_questions(questionsamoFSOMJuwGY, amoFSOMJuwGY);
   } else {
     setTimeout(try_show, 200);
   }
@@ -9848,8 +9881,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
