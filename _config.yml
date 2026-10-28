@@ -13,6 +13,7 @@ execute:
 # Vendored virtual-pyprog notebooks not referenced by any chapter in _toc.yml.
 # sphinx-external-toc errors on orphaned docs, so they must be excluded from the build.
 exclude_patterns:
+  - README.md
   - drafts/**
   - course/deprecated/**
   # Practice notebooks for download/Colab only — not site pages.
