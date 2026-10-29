@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=dc79e408" />
+    <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=49c4f17f" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -711,10 +711,10 @@
 </div>
 <ol class="arabic simple" start="2">
 <li><p>ממשו את הפונקציה count_char המופיעה בחלונית הקוד. הפונקציה מקבלת כקלט מחרוזת s ותו c. הפונקציה תעבור על תווי המחרוזת s, תספור כמה פעמים מופיע בה התו c, ותחזיר את מספר זה.<br />
-רמז: ניתו להיעזר בפונקציה הקודמת.</p></li>
+רמז: ניתן להיעזר בפונקציה הקודמת.</p></li>
 </ol>
 <p>לאחר שפתרתם את התרגיל, הריצו את הקוד וצפו בתוצאות בחלונית הפלט.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_char</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="c1"># delete pass and fill in your code below</span>
@@ -755,23 +755,16 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>********************
-Starting the test:
-********************
-Counting spaces in 'Hello world!'
-WRONG: 'Hello world!' has one space but the code returned None
-********************
-Counting 'a' in 'I hate bananas'
-WRONG: 'I hate bananas' has 4 a's but the code returned None
-********************
-Counting 'z' in 'it's not here'
-WRONG: 'it's not here' has no z's but the code returned None
-********************
-Tests concluded, add more tests of your own below!
-********************
-</pre></div>
 </div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_char</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+            <span class="n">cnt</span> <span class="o">=</span> <span class="n">cnt</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">cnt</span>
+</pre></div>
 </div>
 </div>
 <p>עכשיו כשאנחנו יודעים איך נראית לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code>, בואו נממש בעצמנו את הפונקציה שמוצאת מקסימום של רשימה.</p>
@@ -792,6 +785,18 @@ Tests concluded, add more tests of your own below!
 </pre></div>
 </div>
 </div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_min</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="n">minimum</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">minimum</span><span class="p">:</span>
+            <span class="n">minimum</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">minimum</span>
+</pre></div>
+</div>
+<p>שינינו את שם הפונקציה ואת שם המשתנה, והפכנו את כיוון ההשוואה: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">minimum</span></code>.</p>
 </div>
 </section>
 </section>
