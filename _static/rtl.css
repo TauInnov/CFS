@@ -40,3 +40,15 @@ div.output_area pre {
     white-space: pre-wrap; /* Prevent horizontal scrolling */
     word-wrap: break-word;
 }
+/* Admonition and dropdown titles ("לחצו כאן כדי לצפות בפתרון", "שימו לב"):
+   the same Hebrew font as the text, and **bold** inside a title stays at the title's
+   weight. Without this the bold text inside the title computes to weight 900, and on
+   Windows that weight can switch Arial to Arial Black, which has no Hebrew letters,
+   so the browser draws the Hebrew in a different font. */
+div.admonition > .admonition-title {
+    font-family: var(--pst-font-family-base);
+    font-weight: 600;
+}
+div.admonition > .admonition-title strong {
+    font-weight: inherit;
+}
