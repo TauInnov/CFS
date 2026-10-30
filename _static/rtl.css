@@ -1,4 +1,8 @@
 /* rtl.css */
+/* Load the Hebrew font that --pst-font-family-base names below; until now it was
+   never loaded, so every computer drew the text in its own default sans-serif. */
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+
 p, li, ul, h1, h2, h3, h4 {
     direction: rtl; 
     text-align: right;
