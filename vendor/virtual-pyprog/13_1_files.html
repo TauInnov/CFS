@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.6. קריאה וכתיבה מקבצים &#8212; Computers For physics</title>
+    <title>6.5. קריאה וכתיבה מקבצים &#8212; Computers For physics</title>
   
   
   
@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="7. שבוע 7 — יסודות NumPy: מבוא לעבודה עם מערכים מדעיים" href="../../course/weeks/week_7.html" />
-    <link rel="prev" title="6.5. פורמט מחרוזות (&#34;&#34;f)" href="13_0_string-formats.html" />
+    <link rel="prev" title="6.4. פורמט מחרוזות (&#34;&#34;f)" href="13_0_string-formats.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -285,10 +285,9 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../course/weeks/week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="12_0_data_structures.html">6.1. מבני נתונים</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_1_tuples.html">6.2. Tuples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="12_2_dicts.html">6.3. מילונים (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="13_0_string-formats.html">6.5. עיצוב מחרוזות</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.6. קריאה וכתיבה לקבצים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_2_dicts.html">6.3. מילונים (dict)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13_0_string-formats.html">6.4. עיצוב מחרוזות</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.5. קריאה וכתיבה לקבצים</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_7.html">7. שבוע 7 — NumPy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -630,46 +629,46 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.6.1. אג’נדה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.6.2. מהו קובץ?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.6.2.1. סיומות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.5.1. אג’נדה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.5.2. מהו קובץ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.5.2.1. סיומות</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.6.3. מערכת קבצים</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.6.3.1. למערכת קבצים מבנה היררכי</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-absolute">6.6.3.2. ניתוב יחסי (relative) ומלא (absolute)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.6.3.3. הסימונים <code class="docutils literal notranslate"><span class="pre">.</span></code> ו<code class="docutils literal notranslate"><span class="pre">..</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.6.3.4. תרגול</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.5.3. מערכת קבצים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.5.3.1. למערכת קבצים מבנה היררכי</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-absolute">6.5.3.2. ניתוב יחסי (relative) ומלא (absolute)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.5.3.3. הסימונים <code class="docutils literal notranslate"><span class="pre">.</span></code> ו<code class="docutils literal notranslate"><span class="pre">..</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.5.3.4. תרגול</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.6.4. קבצי טקסט</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.6.5. פתיחת וסגירת קבצים</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.6.5.1. גישה לקובץ</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.6.5.1.1. מצבי פתיחת קובץ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6.6.5.1.2. מה יקרה אם נפנה לקובץ שאינו קיים?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.5.4. קבצי טקסט</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.5.5. פתיחת וסגירת קבצים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.5.5.1. גישה לקובץ</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.5.5.1.1. מצבי פתיחת קובץ</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6.5.5.1.2. מה יקרה אם נפנה לקובץ שאינו קיים?</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.6.5.2. סגירת קובץ</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-context-manager">6.6.5.3. <code class="docutils literal notranslate"><span class="pre">with</span></code> context manager</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">6.6.5.4. תרגול</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.5.5.2. סגירת קובץ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-context-manager">6.5.5.3. <code class="docutils literal notranslate"><span class="pre">with</span></code> context manager</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">6.5.5.4. תרגול</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">6.6.6. קריאה מקובץ</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-read">6.6.6.1. <code class="docutils literal notranslate"><span class="pre">()f.read</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-readline">6.6.6.2. <code class="docutils literal notranslate"><span class="pre">()f.readline</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-readlines">6.6.6.3. <code class="docutils literal notranslate"><span class="pre">()f.readlines</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">6.6.6.4. לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> על הקובץ</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">6.6.6.5. פונקציות שימושיות לעריכת מחרוזות בקבצים</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split">6.6.6.5.1. <code class="docutils literal notranslate"><span class="pre">()split</span></code> - פירוק לתתי מחרוזות לפי תו מפריד</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strip">6.6.6.5.2. פונקציות <code class="docutils literal notranslate"><span class="pre">strip</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">6.5.6. קריאה מקובץ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-read">6.5.6.1. <code class="docutils literal notranslate"><span class="pre">()f.read</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-readline">6.5.6.2. <code class="docutils literal notranslate"><span class="pre">()f.readline</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-readlines">6.5.6.3. <code class="docutils literal notranslate"><span class="pre">()f.readlines</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">6.5.6.4. לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> על הקובץ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">6.5.6.5. פונקציות שימושיות לעריכת מחרוזות בקבצים</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split">6.5.6.5.1. <code class="docutils literal notranslate"><span class="pre">()split</span></code> - פירוק לתתי מחרוזות לפי תו מפריד</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strip">6.5.6.5.2. פונקציות <code class="docutils literal notranslate"><span class="pre">strip</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">6.6.6.6. תרגיל: הדפסת שכיחות מילים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">6.5.6.6. תרגיל: הדפסת שכיחות מילים</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">6.6.7. כתיבה לקובץ</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">6.6.7.1. דוגמא: כתיבת רשימת מספרים לקובץ טקסט</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">6.6.7.2. תרגול מסכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">6.5.7. כתיבה לקובץ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">6.5.7.1. דוגמא: כתיבת רשימת מספרים לקובץ טקסט</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">6.5.7.2. תרגול מסכם</a></li>
 </ul>
 </li>
 </ul>
@@ -684,25 +683,24 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">6.6. </span>קריאה וכתיבה מקבצים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6.5. </span>קריאה וכתיבה מקבצים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2><span class="section-number">6.6.1. </span>אג’נדה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5.1. </span>אג’נדה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>מבוא לקבצים</p></li>
 <li><p>פתיחה וסגירה של קבצים</p></li>
 <li><p>קריאה מקבצים</p></li>
 <li><p>כתיבה לקבצים</p></li>
 </ul>
-<p><span style="color: red;">TODO: סרטון מבוא לקבצים ותקיות.</span></p>
 <p>בחלק זה נלמד כיצד לעבוד עם קבצים בתוכניות פייתון, כלומר איך לקרוא מידע קיים ולכתוב מידע חדש אל מחוץ לקוד שלנו. שימוש בקבצים מאפשר לנו לשמור מידע בצורה <strong>קבועה</strong>, שאינה נעלמת עם סיום הריצה של התוכנית, להחזיק כמויות גדולות של נתונים, ולשתף מידע בין תוכניות שונות או בין מחשבים שונים.</p>
 <p>נלמד כיצד לפתוח קובץ, לקרוא את תוכנו, לעדכן או להוסיף מידע ולשמור אותו מחדש. בסיום החלק הזה תוכלו לכתוב תוכניות ששומרות מידע טקסטאולי בקבצים במחשב שלכם.</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">6.6.2. </span>מהו קובץ?<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5.2. </span>מהו קובץ?<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>קובץ במחשב הוא משאב לאחסון מידע - אפשר לחשוב עליו כ”מסמך” דיגיטלי.
 קבצים יכולים להכיל מידע מסוגים שונים - יש קבצי תמונה, מוזיקה, וידאו, טקסט, טבלאות ועוד.</p>
 <section id="id4">
-<h3><span class="section-number">6.6.2.1. </span>סיומות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.2.1. </span>סיומות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>לכל קובץ יש סיומת (extension), אשר מסמלת איזה סוג תוכן מאוחסן בקובץ. כך המחשב יודע מה רצף הביטים אמור לייצג - אם הסיומת אומרת שמדובר בשמע, הוא ימיר את הביטים לצלילים ברמקול. אם מדובר בטקסט, הוא ימיר את הביטים לתווים לפי טבלת ascii כפי שלמדנו.</p>
 <p>סיומת תופיע לאחר שם הקובץ, היא מסומנת ב-<code class="docutils literal notranslate"><span class="pre">.</span></code> ואחריה מספר אותיות. לדוגמא:</p>
 <ul class="simple">
@@ -715,9 +713,9 @@
 </section>
 </section>
 <section id="id5">
-<h2><span class="section-number">6.6.3. </span>מערכת קבצים<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5.3. </span>מערכת קבצים<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <section id="id6">
-<h3><span class="section-number">6.6.3.1. </span>למערכת קבצים מבנה היררכי<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.3.1. </span>למערכת קבצים מבנה היררכי<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>מערכת הקבצים של המחשב בנויה בצורה היררכית, כלומר כמו עץ: בראש ההיררכיה נמצא השורש (root) המשותף לכל העץ. במערכות הפעולה מסוג Windows ה-root הוא בד”כ נתיב לתחילת לכונן  (C:)<br />
 בתוך ה-root יש תיקיות שיכולות להכיל קבצים ותיקיות נוספות, וכל אחת מהתיקיות הללו יכולה להכיל תיקיות נוספות בעצמה. כך נוצרת מבנה מסודר שמאפשר לנו לארגן את המידע בצורה ברורה ולגשת אליו לפי מיקום (path) בתוך העץ הזה.</p>
 <p>להלן דוגמא של עץ היררכיית קבצים ותקיות במערכת הפעלה מסוג  Windows:</p>
@@ -725,7 +723,7 @@
 <p>מיקום של קובץ נקרא <strong>ניתוב</strong>. בדרך כלל נסמן את הירידה בעץ התיקיות באמצעות <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
 </section>
 <section id="relative-absolute">
-<h3><span class="section-number">6.6.3.2. </span>ניתוב יחסי (relative) ומלא (absolute)<a class="headerlink" href="#relative-absolute" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.3.2. </span>ניתוב יחסי (relative) ומלא (absolute)<a class="headerlink" href="#relative-absolute" title="Link to this heading">#</a></h3>
 <p>על מנת לפתוח קובץ מהקוד שלנו, עלינו לייצג במחרוזת את הניתוב המתאים לקובץ אליו אנו רוצים לגשת.</p>
 <p>ניתן לעשות זאת באחת משתי דרכי הניתוב הבאות:</p>
 <p><strong>ניתוב אבסולוטי/מלא (Absolute path)</strong> - לתאר את הניתוב של הקובץ מה<code class="docutils literal notranslate"><span class="pre">root</span></code> עד הקובץ הרצוי.<br />
@@ -737,11 +735,21 @@
 <p>אבל כיצד “נעלה” תיקיה אחת למעלה?</p>
 </section>
 <section id="id7">
-<h3><span class="section-number">6.6.3.3. </span>הסימונים <code class="docutils literal notranslate"><span class="pre">.</span></code> ו<code class="docutils literal notranslate"><span class="pre">..</span></code><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.3.3. </span>הסימונים <code class="docutils literal notranslate"><span class="pre">.</span></code> ו<code class="docutils literal notranslate"><span class="pre">..</span></code><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>יש שני סימונים מיוחדים כדי לייצג ניתובים יחסיים.</p>
-<p><code class="docutils literal notranslate"><span class="pre">.</span></code> - זו הדרך לסמן “התיקייה שבה אנחנו נמצאים”. לדוגמה, אם הקוד שלנו היה נמצא בתיקיית Data, הניתוב היחסי של הקובץ income יהיה “<code class="docutils literal notranslate"><span class="pre">income.txt/2024/.</span></code>”.</p>
-<p><code class="docutils literal notranslate"><span class="pre">..</span></code> - זו הדרך “לעלות תיקייה אחת למעלה”. לדוגמה, אם היינו רוצים להגיע ל <code class="docutils literal notranslate"><span class="pre">income.txt</span></code> מהמיקום של <code class="docutils literal notranslate"><span class="pre">analyze_data.py</span></code>, הניתוב היחסי יהיה “<code class="docutils literal notranslate"><span class="pre">Data/2024/income.txt/..</span></code>”.</p>
-<p>בנוסף - אם הקובץ נמצא בדיוק בתיקיה שבה הקוד, ניתן להמיר את “<code class="docutils literal notranslate"><span class="pre">file_name.txt/.</span></code>” ב”<code class="docutils literal notranslate"><span class="pre">filename.txt</span></code>”. כלומר לוותר על ה<code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.</span></code> - זו הדרך לסמן “התיקייה שבה אנחנו נמצאים”. לדוגמה, אם הקוד שלנו היה נמצא בתיקיית Data, הניתוב היחסי של הקובץ income יהיה:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="mi">2024</span><span class="o">/</span><span class="n">income</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">..</span></code> - זו הדרך “לעלות תיקייה אחת למעלה”. לדוגמה, אם היינו רוצים להגיע ל-<code class="docutils literal notranslate"><span class="pre">income.txt</span></code> מהמיקום של <code class="docutils literal notranslate"><span class="pre">analyze_data.py</span></code>, הניתוב היחסי יהיה:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">../</span><span class="n">Data</span><span class="o">/</span><span class="mi">2024</span><span class="o">/</span><span class="n">income</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>בנוסף, אם הקובץ נמצא בדיוק בתיקייה שבה הקוד, אפשר לוותר על ה-<code class="docutils literal notranslate"><span class="pre">.</span></code> ולכתוב רק את שם הקובץ. שני הניתובים הבאים שקולים:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">file_name</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">file_name</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 <div class="error admonition">
 <p class="admonition-title"><strong>שימו לב</strong></p>
 <p>זכרו כי הקו אלכסוני הפוך (<code class="docutils literal notranslate"><span class="pre">\</span></code>) נועד כדי לייצג תווים מיוחדים (כמו <code class="docutils literal notranslate"><span class="pre">\n</span></code>).<br />
@@ -784,12 +792,12 @@ C:/Users/Desktop/file.txt
 </div>
 </section>
 <section id="id8">
-<h3><span class="section-number">6.6.3.4. </span>תרגול<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.3.4. </span>תרגול<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>בשאלות הבאות נתמקד בעץ התיקיות הבא:</p>
 <img widht=200 height=400 src='data:image/png;base64,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' /><div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="gpQKHCngtCOH" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#gpQKHCngtCOH {
+<div class="output text_html"><div id="qZvWhOkewjUC" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#qZvWhOkewjUC {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1012,7 +1020,7 @@ C:/Users/Desktop/file.txt
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsgpQKHCngtCOH=[{"question": "\u05de\u05d4 \u05d4\u05e0\u05d9\u05ea\u05d5\u05d1 \u05d4\u05d0\u05d1\u05e1\u05d5\u05dc\u05d5\u05d8\u05d9 \u05e9\u05dc \u05d4\u05e7\u05d5\u05d1\u05e5 output?", "type": "many_choice", "answers": [{"answer": "C:/Projects/Python/Data/output.txt", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "C:/Projects/Python/Data", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "output.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "C:/Projects/Python/Data/output", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsqZvWhOkewjUC=[{"question": "\u05de\u05d4 \u05d4\u05e0\u05d9\u05ea\u05d5\u05d1 \u05d4\u05d0\u05d1\u05e1\u05d5\u05dc\u05d5\u05d8\u05d9 \u05e9\u05dc \u05d4\u05e7\u05d5\u05d1\u05e5 output?", "type": "many_choice", "answers": [{"answer": "C:/Projects/Python/Data/output.txt", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "C:/Projects/Python/Data", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "output.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "C:/Projects/Python/Data/output", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2074,8 +2082,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("gpQKHCngtCOH")) {
-    show_questions(questionsgpQKHCngtCOH, gpQKHCngtCOH);
+  if (document.getElementById("qZvWhOkewjUC")) {
+    show_questions(questionsqZvWhOkewjUC, qZvWhOkewjUC);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2089,8 +2097,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="hHHLQHarqYwu" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#hHHLQHarqYwu {
+<div class="output text_html"><div id="qTEaIxsZfRKP" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#qTEaIxsZfRKP {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2313,7 +2321,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionshHHLQHarqYwu=[{"question": "\u05de\u05d4 \u05d4\u05e0\u05d9\u05ea\u05d5\u05d1 \u05d4\u05d9\u05d7\u05e1\u05d9 \u05e9\u05dc \u05d4\u05e7\u05d5\u05d1\u05e5 output \u05db\u05e9\u05de\u05e1\u05ea\u05db\u05dc\u05d9\u05dd \u05de\u05d4\u05e7\u05d5\u05d1\u05e5 input?", "type": "many_choice", "answers": [{"answer": "C:/Projects/Python/Data/output.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "C:/Projects/Python/Data", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "output.txt", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "C:/Projects/Python/Data/output", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsqTEaIxsZfRKP=[{"question": "\u05de\u05d4 \u05d4\u05e0\u05d9\u05ea\u05d5\u05d1 \u05d4\u05d9\u05d7\u05e1\u05d9 \u05e9\u05dc \u05d4\u05e7\u05d5\u05d1\u05e5 output \u05db\u05e9\u05de\u05e1\u05ea\u05db\u05dc\u05d9\u05dd \u05de\u05d4\u05e7\u05d5\u05d1\u05e5 input?", "type": "many_choice", "answers": [{"answer": "C:/Projects/Python/Data/output.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "C:/Projects/Python/Data", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "output.txt", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "C:/Projects/Python/Data/output", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3375,8 +3383,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("hHHLQHarqYwu")) {
-    show_questions(questionshHHLQHarqYwu, hHHLQHarqYwu);
+  if (document.getElementById("qTEaIxsZfRKP")) {
+    show_questions(questionsqTEaIxsZfRKP, qTEaIxsZfRKP);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3390,8 +3398,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="OrQxKLshancN" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#OrQxKLshancN {
+<div class="output text_html"><div id="uVurHOiRdOov" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#uVurHOiRdOov {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3614,7 +3622,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsOrQxKLshancN=[{"question": "\u05d0\u05d9\u05da \u05e0\u05d9\u05ea\u05df \u05dc\u05d2\u05e9\u05ea \u05dc\u05e7\u05d5\u05d1\u05e5 summary \u05de\u05d4\u05e7\u05d5\u05d1\u05e5 main?", "type": "many_choice", "answers": [{"answer": "by: C:/Reports/2024/summary.txt", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "by: ../Reports/2024/summary.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "by: ../../Reports/2024/summary.txt", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "by: ././Reports/2024/summary.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "by: ./Reports/2024/summary.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsuVurHOiRdOov=[{"question": "\u05d0\u05d9\u05da \u05e0\u05d9\u05ea\u05df \u05dc\u05d2\u05e9\u05ea \u05dc\u05e7\u05d5\u05d1\u05e5 summary \u05de\u05d4\u05e7\u05d5\u05d1\u05e5 main?", "type": "many_choice", "answers": [{"answer": "by: C:/Reports/2024/summary.txt", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "by: ../Reports/2024/summary.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "by: ../../Reports/2024/summary.txt", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "by: ././Reports/2024/summary.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "by: ./Reports/2024/summary.txt", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -4676,8 +4684,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("OrQxKLshancN")) {
-    show_questions(questionsOrQxKLshancN, OrQxKLshancN);
+  if (document.getElementById("uVurHOiRdOov")) {
+    show_questions(questionsuVurHOiRdOov, uVurHOiRdOov);
   } else {
     setTimeout(try_show, 200);
   }
@@ -4692,7 +4700,7 @@ function try_show() {
 </section>
 </section>
 <section id="id9">
-<h2><span class="section-number">6.6.4. </span>קבצי טקסט<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5.4. </span>קבצי טקסט<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <p>קבצי טקסט מורכבים מ<strong>שורות</strong>.  כל שורה היא מחרוזת, כלומר <strong>רצף תווים</strong>.<br />
 התו האחרון בכל שורה הוא התו המיוחד (escape character) ירידת שורה (<code class="docutils literal notranslate"><span class="pre">n\</span></code>).</p>
 <p><strong>תזכורת:</strong> רצף תווים (בד”כ 2) המתחילים בקו אלכסוני הפוך -<code class="docutils literal notranslate"><span class="pre">\</span></code> - נקראים גם <strong>escape characters</strong>, והם נועדו לסמן תווים שלא ניתן להקיש במקלדת באופן פשוט.<br />
@@ -4701,9 +4709,9 @@ function try_show() {
 <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">line</span> <span class="pre">one\nThis</span> <span class="pre">is</span> <span class="pre">line</span> <span class="pre">two\nThis</span> <span class="pre">is</span> <span class="pre">linethree\nThis</span> <span class="pre">is</span> <span class="pre">line</span> <span class="pre">four\n</span></code></p>
 </section>
 <section id="id10">
-<h2><span class="section-number">6.6.5. </span>פתיחת וסגירת קבצים<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5.5. </span>פתיחת וסגירת קבצים<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <section id="id11">
-<h3><span class="section-number">6.6.5.1. </span>גישה לקובץ<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.5.1. </span>גישה לקובץ<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>כדי לגשת קובץ בפייתון, משתמשים בפקודה <code class="docutils literal notranslate"><span class="pre">open</span></code>, שמקבלת שני פרמטרים:<br />
 <code class="docutils literal notranslate"><span class="pre">filename</span></code> - מחרוזת המייצגת את הניתוב של הקובץ שמעוניינים לפתוח.<br />
 <code class="docutils literal notranslate"><span class="pre">mode</span></code> - פתיחת קובץ כוללת אילו פעולות ניתן לבצע עליו.</p>
@@ -4713,7 +4721,7 @@ function try_show() {
 <p>זכרו להמנע משימוש בקו אלכסוני הפוך (<code class="docutils literal notranslate"><span class="pre">\</span></code>) גם בשם הקובץ</p>
 </div>
 <section id="id12">
-<h4><span class="section-number">6.6.5.1.1. </span>מצבי פתיחת קובץ<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.5.5.1.1. </span>מצבי פתיחת קובץ<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">'r'</span></code> - קריאה בלבד.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'w'</span></code> - כתיבה בלבד (ימחק את הנתונים הקודמים)</p></li>
@@ -4725,8 +4733,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="dUucwJjncBiA" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#dUucwJjncBiA {
+<div class="output text_html"><div id="DwmxhVUAbKmw" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#DwmxhVUAbKmw {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -4949,7 +4957,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsdUucwJjncBiA=[{"question": "\u05d1\u05d3\u05d5\u05d2\u05de\u05d0 \u05dc\u05e2\u05d9\u05dc, \u05d4\u05d0\u05dd \u05d9\u05d4\u05d9\u05d4 \u05e0\u05d9\u05ea\u05df \u05dc\u05db\u05ea\u05d5\u05d1 \u05dc\u05ea\u05d5\u05da \u05d4\u05e7\u05d5\u05d1\u05e5 my_file?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05e8\u05e7 \u05dc\u05d4\u05d5\u05e1\u05d9\u05e3", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsDwmxhVUAbKmw=[{"question": "\u05d1\u05d3\u05d5\u05d2\u05de\u05d0 \u05dc\u05e2\u05d9\u05dc, \u05d4\u05d0\u05dd \u05d9\u05d4\u05d9\u05d4 \u05e0\u05d9\u05ea\u05df \u05dc\u05db\u05ea\u05d5\u05d1 \u05dc\u05ea\u05d5\u05da \u05d4\u05e7\u05d5\u05d1\u05e5 my_file?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05e8\u05e7 \u05dc\u05d4\u05d5\u05e1\u05d9\u05e3", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -6011,8 +6019,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("dUucwJjncBiA")) {
-    show_questions(questionsdUucwJjncBiA, dUucwJjncBiA);
+  if (document.getElementById("DwmxhVUAbKmw")) {
+    show_questions(questionsDwmxhVUAbKmw, DwmxhVUAbKmw);
   } else {
     setTimeout(try_show, 200);
   }
@@ -6026,21 +6034,11 @@ function try_show() {
 </div>
 </section>
 <section id="id13">
-<h4><span class="section-number">6.6.5.1.2. </span>מה יקרה אם נפנה לקובץ שאינו קיים?<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.5.5.1.2. </span>מה יקרה אם נפנה לקובץ שאינו קיים?<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <p>במצב קריאה (<code class="docutils literal notranslate"><span class="pre">r</span></code>), כמובן לא נוכל לקובץ, ולכן נקבל שגיאה</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"not_existing_file.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"not_existing_file.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: 'not_existing_file.txt'
 </pre></div>
 </div>
 </div>
@@ -6064,17 +6062,8 @@ function try_show() {
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"not_existing_folder/not_existing_file.txt"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>
-
-<span class="nn">File ~/micromamba/lib/python3.11/site-packages/IPython/core/interactiveshell.py:326,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span>         <span class="sa">f</span><span class="s2">"IPython won't let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default "</span>
-<span class="g g-Whitespace">    </span><span class="mi">322</span>         <span class="s2">"as it is likely to crash IPython. If you know what you are doing, "</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span>         <span class="s2">"you can use builtins' open."</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">326</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 <span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: 'not_existing_folder/not_existing_file.txt'
 </pre></div>
@@ -6084,7 +6073,7 @@ function try_show() {
 </section>
 </section>
 <section id="id14">
-<h3><span class="section-number">6.6.5.2. </span>סגירת קובץ<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.5.2. </span>סגירת קובץ<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>סגירה של קובץ מתבצעת על-ידי מתודה של אובייקט ה<code class="docutils literal notranslate"><span class="pre">file</span></code> שפתחנו. לדוגמה, אם שמרנו את האובייקט בשם f, נסגור את הקובץ על-ידי:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -6096,7 +6085,7 @@ function try_show() {
 </ol>
 </section>
 <section id="with-context-manager">
-<h3><span class="section-number">6.6.5.3. </span><code class="docutils literal notranslate"><span class="pre">with</span></code> context manager<a class="headerlink" href="#with-context-manager" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.5.3. </span><code class="docutils literal notranslate"><span class="pre">with</span></code> context manager<a class="headerlink" href="#with-context-manager" title="Link to this heading">#</a></h3>
 <p>כדי לא לקחת את הסיכון שנפתח קובץ ולא נסגור, ניתן להשתמש ב-<code class="docutils literal notranslate"><span class="pre">with</span></code> כדי להגדיר את הבלוק של הקוד, או את <strong>הקונטקסט</strong> בו קובץ יהיה זמין.<br />
 הקובץ יפתח בתחילת הבלוק, <strong>ויסגר אוטומטית</strong> בסופו.</p>
 <p>אם עד כה כתבנו כך:</p>
@@ -6128,7 +6117,7 @@ function try_show() {
 <p>הדוגמאות שנראה ישתמשו בשתי הדרכים, כדי להרגיל אתכם לשתי צורות הכתיבה.</p>
 </section>
 <section id="id15">
-<h3><span class="section-number">6.6.5.4. </span>תרגול<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.5.4. </span>תרגול<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>להלן ארבעה קטעי קוד:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code 1                       | # Code 2                   | # Code 3                    | # Code 4</span>
 <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>      <span class="o">|</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>  <span class="o">|</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">):</span> <span class="o">|</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">):</span>
@@ -6138,9 +6127,9 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="mztGnjFsuiGb" data-shufflequestions="False" data-shuffleanswers="False" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#mztGnjFsuiGb {
-   --jq-multiple-choice-bg: #6f78ffff;
+<div class="output text_html"><div id="vuBXjzBKYBoh" data-shufflequestions="False" data-shuffleanswers="False" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#vuBXjzBKYBoh {
+   --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
    --jq-mc-button-inset-shadow: #555555;
@@ -6153,6 +6142,7 @@ function try_show() {
    --jq-incorrect-color: #c80202;
    --jq-correct-color: #009113;
    --jq-text-color: #fafafa;
+   --jq-link-color: #9abafa;
 }
 
 .Quiz {
@@ -6199,6 +6189,11 @@ function try_show() {
     text-align: left;
 }
 
+
+.Quiz .JQLink {
+    color: var(--jq-link-color) !important;
+    text-decoration: underline;
+}
 
 
 
@@ -6356,7 +6351,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsmztGnjFsuiGb=[{"question": "\u05d1\u05d0\u05d9\u05dc\u05d5 \u05de\u05e7\u05d8\u05e2\u05d9 \u05d4\u05e7\u05d5\u05d3 \u05d4\u05e7\u05d5\u05d1\u05e5 \u05d9\u05d9\u05e1\u05d2\u05e8?", "type": "many_choice", "answers": [{"answer": "1", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}];
+</style></div><script type="application/javascript">var questionsvuBXjzBKYBoh=[{"question": "\u05d1\u05d0\u05d9\u05dc\u05d5 \u05de\u05e7\u05d8\u05e2\u05d9 \u05d4\u05e7\u05d5\u05d3 \u05d4\u05e7\u05d5\u05d1\u05e5 \u05d9\u05d9\u05e1\u05d2\u05e8?", "type": "many_choice", "answers": [{"answer": "1", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -6387,8 +6382,8 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
     }
     // Replace markdown links
-    mystring = mystring.replace(/<http(.*?)>/g, '<a href="http$1" target="_blank" class="Link">http$1</a>');
-    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/<http(.*?)>/g, '<a href="http$1" target="_blank" class="Quiz JQLink">http$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="Quiz JQLink">$1</a>');
     return mystring;
 }
 
@@ -6726,31 +6721,31 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
 
-        // Make input element
-        var inp = document.createElement("input");
-        inp.type = "radio";
-        inp.id = "quizo" + id + index;
-        inp.style = "display:none;";
-        aDiv.append(inp);
-
-        //Make label for input element
+        // Make label for input element
         var lab = document.createElement("label");
         lab.className = "MCButton";
         lab.id = id + '-' + index;
         lab.onclick = check_mc;
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type = "radio";
+        inp.id = "quizo" + id + index;
+        inp.name = "mcgroup-" + id; // for grouping radios
+        inp.className = "sr-only"; // or "visually-hidden" or whatever you call it
+
+
+        lab.append(inp); // input is now inside the label
+
         var aSpan = document.createElement('span');
-        aSpan.classsName = "";
-        //qDiv.id="quizQn"+id+index;
         if ("answer" in item) {
             aSpan.innerHTML = jaxify(item.answer);
-            //aSpan.innerHTML=item.answer;
         }
         lab.append(aSpan);
 
         // Create div for code inside question
-        var codeSpan;
         if ("code" in item) {
-            codeSpan = document.createElement('span');
+            var codeSpan = document.createElement('span');
             codeSpan.id = "code" + id + index;
             codeSpan.className = "QuizCode";
             var codePre = document.createElement('pre');
@@ -6759,10 +6754,7 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
             codePre.append(codeCode);
             codeCode.innerHTML = item.code;
             lab.append(codeSpan);
-            //console.log(codeSpan);
         }
-
-        //lab.textContent=item.answer;
 
         // Set the data attributes for the answer
         lab.setAttribute('data-correct', item.correct);
@@ -6774,7 +6766,9 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
         }
         lab.setAttribute('data-answered', 0);
 
+        // Only append the label (input is inside)
         aDiv.append(lab);
+
 
     });
 
@@ -6825,7 +6819,7 @@ function check_numeric(ths, event) {
         }
         //console.log("Reader entered", submission);
 
-        if ("precision" in ths.dataset) {
+        if (("precision" in ths.dataset) && (ths.dataset.precision > 0)) {
             var precision = ths.dataset.precision;
             submission = Number(Number(submission).toPrecision(precision));
         }
@@ -7419,8 +7413,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("mztGnjFsuiGb")) {
-    show_questions(questionsmztGnjFsuiGb, mztGnjFsuiGb);
+  if (document.getElementById("vuBXjzBKYBoh")) {
+    show_questions(questionsvuBXjzBKYBoh, vuBXjzBKYBoh);
   } else {
     setTimeout(try_show, 200);
   }
@@ -7435,10 +7429,10 @@ function try_show() {
 </section>
 </section>
 <section id="id16">
-<h2><span class="section-number">6.6.6. </span>קריאה מקובץ<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5.6. </span>קריאה מקובץ<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
 <p>לאחר שפתחנו את הקובץ (במצב קריאה) - ניתן להשתשמש ב-handle שלנו (בדוגמאות למעלה <code class="docutils literal notranslate"><span class="pre">f</span></code>) כדי לקרוא את התוכן השמור בקובץ. כעת נראה ארבע דרכים נפוצות לקריאה מתוך קובץ.</p>
 <section id="f-read">
-<h3><span class="section-number">6.6.6.1. </span><code class="docutils literal notranslate"><span class="pre">()f.read</span></code><a class="headerlink" href="#f-read" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.6.1. </span><code class="docutils literal notranslate"><span class="pre">()f.read</span></code><a class="headerlink" href="#f-read" title="Link to this heading">#</a></h3>
 <p>מתודה זו קוראת את כל תוכן הקובץ בבת אחת ומחזירה אותו כמחרוזת אחת ארוכה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7461,7 +7455,7 @@ The end
 <p>בהדפסה ראינו ירידת שורה מאחר שכך פייתון מדפיס את התו <code class="docutils literal notranslate"><span class="pre">n\</span></code>. עם זאת, הטקסט השמור ב<code class="docutils literal notranslate"><span class="pre">lines</span></code> הינו <code class="docutils literal notranslate"><span class="pre">'This</span> <span class="pre">is</span> <span class="pre">line1\nThis</span> <span class="pre">is</span> <span class="pre">line</span> <span class="pre">2\nThe</span> <span class="pre">end'</span></code>.</p>
 </section>
 <section id="f-readline">
-<h3><span class="section-number">6.6.6.2. </span><code class="docutils literal notranslate"><span class="pre">()f.readline</span></code><a class="headerlink" href="#f-readline" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.6.2. </span><code class="docutils literal notranslate"><span class="pre">()f.readline</span></code><a class="headerlink" href="#f-readline" title="Link to this heading">#</a></h3>
 <p>מתודה זו קוראת את השורה הבאה בלבד מתוך הקובץ, יחסית למיקום הנוכחי שבו אנחנו נמצאים.<br />
 שימושי כשאנחנו רוצים לעבור שורה-שורה באופן ידני.</p>
 <div class="cell docutils container">
@@ -7495,7 +7489,7 @@ This is line 2
 </div>
 </section>
 <section id="f-readlines">
-<h3><span class="section-number">6.6.6.3. </span><code class="docutils literal notranslate"><span class="pre">()f.readlines</span></code><a class="headerlink" href="#f-readlines" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.6.3. </span><code class="docutils literal notranslate"><span class="pre">()f.readlines</span></code><a class="headerlink" href="#f-readlines" title="Link to this heading">#</a></h3>
 <p>מתודה זו קוראת את <strong>כל השורות שנשארו בקובץ</strong> ומחזירה אותן כ<strong>רשימה של מחרוזות</strong> (כל איבר ברשימה הוא שורה אחת).
 מדובר בפקודה נוחה ביותר אם רוצים רשימה שאפשר לעבור עליה או לעבד אותה.</p>
 <div class="cell docutils container">
@@ -7522,7 +7516,7 @@ The end
 </div>
 </section>
 <section id="for">
-<h3><span class="section-number">6.6.6.4. </span>לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> על הקובץ<a class="headerlink" href="#for" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.6.4. </span>לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> על הקובץ<a class="headerlink" href="#for" title="Link to this heading">#</a></h3>
 <p>ניתן לעבור שורה-שורה באמצעות לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code>. הדרך הזו מתאימה במיוחד לקבצים גדולים, מאחר שהיא לא שומרת בזכרון את כל הקובץ בבת אחת.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7543,12 +7537,12 @@ The end
 </div>
 </section>
 <section id="id17">
-<h3><span class="section-number">6.6.6.5. </span>פונקציות שימושיות לעריכת מחרוזות בקבצים<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.6.5. </span>פונקציות שימושיות לעריכת מחרוזות בקבצים<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>כמו שראינו, כאשר אנחנו עובדים עם קבצים, אנחנו מקבלים טקסט גולמי.
 הטקסט הזה לא תמיד מוכן לשימוש ישיר: לעיתים הוא כולל פסיקים, רווחים מיותרים, ירידות שורה או סימנים נוספים.
 לכן חשוב להכיר כמה פונקציות בסיסיות שמאפשרות לנו לנקות, לפרק ולעבד מחרוזות, כדי שנוכל להפוך את המידע מהקובץ לנתונים שימושיים.</p>
 <section id="split">
-<h4><span class="section-number">6.6.6.5.1. </span><code class="docutils literal notranslate"><span class="pre">()split</span></code> - פירוק לתתי מחרוזות לפי תו מפריד<a class="headerlink" href="#split" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.5.6.5.1. </span><code class="docutils literal notranslate"><span class="pre">()split</span></code> - פירוק לתתי מחרוזות לפי תו מפריד<a class="headerlink" href="#split" title="Link to this heading">#</a></h4>
 <p>קבצים לעיתים מכילים טקסטים ארוכים, אפילו בשורה בודדתת. באמצעות <code class="docutils literal notranslate"><span class="pre">()split</span></code> ניתן יהיה לפרק טקסט ארוך לפי תו מפריד. מתודה זו “תחתוך” את המחרוזת ממנה הופעלה המתודה בכל המקומות בהם יופיעו תווים מפרידים, ותחזיר רשימה המכילה כל תתי-המחרוזות שנוצרו בעקבות החיתוך. ברירת המחדל המחרוזת תפורק בכל תו רווח שהוא (<code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;,</span> <span class="pre">\n,</span> <span class="pre">\t</span></code> וכו’).</p>
 <p>לדוגמא, במקרה הזה נפצל את המחרוזת לפי פסיקים.</p>
 <div class="cell docutils container">
@@ -7571,7 +7565,7 @@ The end
 <p>ניתן לראות כי קיבלנו מחרוזת אחת ריקה, וזאת מאחר שיש שני פסיקים ביניהם “אין כלום” - כלומר יש ביניהם מחרוזת ריקה.</p>
 </section>
 <section id="strip">
-<h4><span class="section-number">6.6.6.5.2. </span>פונקציות <code class="docutils literal notranslate"><span class="pre">strip</span></code><a class="headerlink" href="#strip" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.5.6.5.2. </span>פונקציות <code class="docutils literal notranslate"><span class="pre">strip</span></code><a class="headerlink" href="#strip" title="Link to this heading">#</a></h4>
 <p>ניתן לנקות תווים “מיותרים” <strong>מתחילת ומסוף המחרוזת</strong> על ידי הפונקציות <code class="docutils literal notranslate"><span class="pre">strip</span></code>, <code class="docutils literal notranslate"><span class="pre">rstrip</span></code>, <code class="docutils literal notranslate"><span class="pre">lstrip</span></code>.<br />
 אם לא נגדיר מראש, תווים מיותרים מוגדרים להיות כל תו רווח שהוא, אך ניתן להכניס כפרמטר אילו תווים נחשבים מיותרים.</p>
 <p><code class="docutils literal notranslate"><span class="pre">()strip</span></code> – מסיר תווים מיותרים משני הצדדים</p>
@@ -7630,7 +7624,7 @@ The end
 </section>
 </section>
 <section id="id18">
-<h3><span class="section-number">6.6.6.6. </span>תרגיל: הדפסת שכיחות מילים<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.6.6. </span>תרגיל: הדפסת שכיחות מילים<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <p>הדפיסו את המילים מהקובץ <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> לפי שכיחות יורדת. כלומר קודם את המילה הכי נפוצה בקובץ, לאחר מכן המילה השנייה הכי נפוצה, וכן הלאה.</p>
 <p>כדי לבדוק את הקוד שלנו, יצרנו עבורכם קובץ בשם <code class="docutils literal notranslate"><span class="pre">input.txt</span></code>.<br />
 עליכם לפתוח אותו, לקרוא את תוכנו, ולבצע את החישוב.</p>
@@ -7668,7 +7662,7 @@ The end
 </section>
 </section>
 <section id="id19">
-<h2><span class="section-number">6.6.7. </span>כתיבה לקובץ<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5.7. </span>כתיבה לקובץ<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
 <p>עד עכשיו למדנו רק כיצד ניתן לקרוא מקבצים. עכשיו נלמד לכתוב לקבצים בעצמנו.<br />
 ראשית, נצטרך לפתוח את הקובץ בהרשאות כתיבה מתאימות (write/append).
 לאחר שהקובץ פתוח, ניתן להשתמש בפקודה <code class="docutils literal notranslate"><span class="pre">f.write(string)</span></code> כדי לכתוב לתוך הקובץ מחרוזת. חשוב לשים לב שהפקודה <code class="docutils literal notranslate"><span class="pre">write</span></code> כותבת בדיוק את התוכן שנעביר לה, כולל רווחים ותווי ירידת שורה אם הוספנו כאלו.</p>
@@ -7714,7 +7708,7 @@ The end
 <p>שימו לב שירידת השורה אשר מופיעה בקובץ נובעת מכך שכתבנו <code class="docutils literal notranslate"><span class="pre">n\</span></code>. היא לא מתבצעת באופן אוטומטי</p>
 </div>
 <section id="id20">
-<h3><span class="section-number">6.6.7.1. </span>דוגמא: כתיבת רשימת מספרים לקובץ טקסט<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.7.1. </span>דוגמא: כתיבת רשימת מספרים לקובץ טקסט<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <p>בדוגמה זו נרצה לכתוב לתוך קובץ רשימה של המספרים הריבועיים של המספרים 1-10, כל אחד בשורה נפרדת.
 ראשית, ניצור רשימה של המספרים אותם אנחנו רוצים לרשום. נבצע זאת באמצעות <strong>list comprehension</strong>.</p>
 <div class="cell docutils container">
@@ -7749,12 +7743,26 @@ The end
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+</pre></div>
+</div>
+</div>
 </div>
 <p>מה היה קורה אם לא היינו מכניסים את תו ירידת השורה? בדקו זאת!<br />
 נסו לשנות את הקוד כך שהמספרים יופיעו בהפרש של שני רווחים אחד מהשני, במקום בשורות נפרדות.</p>
 </section>
 <section id="id21">
-<h3><span class="section-number">6.6.7.2. </span>תרגול מסכם<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.7.2. </span>תרגול מסכם<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
 <p>בחלק זה אתם תתנסו בעצמכם בקריאה ובכתיבה לקבצים.</p>
 <p><strong>הנחיות:</strong></p>
 <ol class="arabic simple">
@@ -7900,7 +7908,7 @@ The end
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.5. </span>פורמט מחרוזות (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;f</span></code>)</p>
+        <p class="prev-next-title"><span class="section-number">6.4. </span>פורמט מחרוזות (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;f</span></code>)</p>
       </div>
     </a>
     <a class="right-next"
@@ -7930,46 +7938,46 @@ The end
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.6.1. אג’נדה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.6.2. מהו קובץ?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.6.2.1. סיומות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.5.1. אג’נדה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.5.2. מהו קובץ?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.5.2.1. סיומות</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.6.3. מערכת קבצים</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.6.3.1. למערכת קבצים מבנה היררכי</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-absolute">6.6.3.2. ניתוב יחסי (relative) ומלא (absolute)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.6.3.3. הסימונים <code class="docutils literal notranslate"><span class="pre">.</span></code> ו<code class="docutils literal notranslate"><span class="pre">..</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.6.3.4. תרגול</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.5.3. מערכת קבצים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.5.3.1. למערכת קבצים מבנה היררכי</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-absolute">6.5.3.2. ניתוב יחסי (relative) ומלא (absolute)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.5.3.3. הסימונים <code class="docutils literal notranslate"><span class="pre">.</span></code> ו<code class="docutils literal notranslate"><span class="pre">..</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.5.3.4. תרגול</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.6.4. קבצי טקסט</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.6.5. פתיחת וסגירת קבצים</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.6.5.1. גישה לקובץ</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.6.5.1.1. מצבי פתיחת קובץ</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6.6.5.1.2. מה יקרה אם נפנה לקובץ שאינו קיים?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.5.4. קבצי טקסט</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.5.5. פתיחת וסגירת קבצים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.5.5.1. גישה לקובץ</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.5.5.1.1. מצבי פתיחת קובץ</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">6.5.5.1.2. מה יקרה אם נפנה לקובץ שאינו קיים?</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.6.5.2. סגירת קובץ</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-context-manager">6.6.5.3. <code class="docutils literal notranslate"><span class="pre">with</span></code> context manager</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">6.6.5.4. תרגול</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.5.5.2. סגירת קובץ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-context-manager">6.5.5.3. <code class="docutils literal notranslate"><span class="pre">with</span></code> context manager</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">6.5.5.4. תרגול</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">6.6.6. קריאה מקובץ</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-read">6.6.6.1. <code class="docutils literal notranslate"><span class="pre">()f.read</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-readline">6.6.6.2. <code class="docutils literal notranslate"><span class="pre">()f.readline</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-readlines">6.6.6.3. <code class="docutils literal notranslate"><span class="pre">()f.readlines</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">6.6.6.4. לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> על הקובץ</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">6.6.6.5. פונקציות שימושיות לעריכת מחרוזות בקבצים</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split">6.6.6.5.1. <code class="docutils literal notranslate"><span class="pre">()split</span></code> - פירוק לתתי מחרוזות לפי תו מפריד</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strip">6.6.6.5.2. פונקציות <code class="docutils literal notranslate"><span class="pre">strip</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">6.5.6. קריאה מקובץ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-read">6.5.6.1. <code class="docutils literal notranslate"><span class="pre">()f.read</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-readline">6.5.6.2. <code class="docutils literal notranslate"><span class="pre">()f.readline</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-readlines">6.5.6.3. <code class="docutils literal notranslate"><span class="pre">()f.readlines</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">6.5.6.4. לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> על הקובץ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">6.5.6.5. פונקציות שימושיות לעריכת מחרוזות בקבצים</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split">6.5.6.5.1. <code class="docutils literal notranslate"><span class="pre">()split</span></code> - פירוק לתתי מחרוזות לפי תו מפריד</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strip">6.5.6.5.2. פונקציות <code class="docutils literal notranslate"><span class="pre">strip</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">6.6.6.6. תרגיל: הדפסת שכיחות מילים</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">6.5.6.6. תרגיל: הדפסת שכיחות מילים</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">6.6.7. כתיבה לקובץ</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">6.6.7.1. דוגמא: כתיבת רשימת מספרים לקובץ טקסט</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">6.6.7.2. תרגול מסכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">6.5.7. כתיבה לקובץ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">6.5.7.1. דוגמא: כתיבת רשימת מספרים לקובץ טקסט</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">6.5.7.2. תרגול מסכם</a></li>
 </ul>
 </li>
 </ul>
