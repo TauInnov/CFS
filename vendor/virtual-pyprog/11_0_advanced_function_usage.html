@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=4b1b8121" />
   
   <!-- So that users can add custom icons -->
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -276,7 +276,7 @@
 <li class="toctree-l2"><a class="reference internal" href="8_3_list-comprehensions.html">4.11. List Comprehensions</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../course/weeks/week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../course/weeks/week_5.html">5. שבוע 5 — זיכרון ופונקציות מתקדמות</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="10_0_mutable-vs-immutable.html">5.1. Mutable vs Immutable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_1_memory-in-functions.html">5.2. זיכרון והתנהגות בפונקציות</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. שימושים מתקדמים בפונקציות</a></li>
@@ -284,7 +284,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="12_0_data_structures.html">6.1. מבני נתונים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="12_1_tuples.html">6.2. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_1_tuples.html">6.2. טאפלים (tuple)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_2_dicts.html">6.3. מילונים (dict)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_0_string-formats.html">6.4. עיצוב מחרוזות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_1_files.html">6.5. קריאה וכתיבה לקבצים</a></li>
@@ -636,12 +636,8 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.3.3. פונקציה כפרמטר</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">5.3.4. פונקציות אנונימיות (<code class="docutils literal notranslate"><span class="pre">lambda</span></code>)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.3.4.1. דוגמא: מחשבון</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key">5.3.4.2. שימוש בפרמטר <code class="docutils literal notranslate"><span class="pre">key</span></code> על מנת להגדיר יחס סדר בפונקציות מובנות</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.3.5. תרגול: פונקציה כפרמטר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">5.3.4. פונקציות אנונימיות (<code class="docutils literal notranslate"><span class="pre">lambda</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.3.5. תרגול: פונקציה כפרמטר</a></li>
 </ul>
             </nav>
         </div>
@@ -734,34 +730,7 @@
 </div>
 </div>
 </div>
-<p>זאת אומרת שניתן לא לתת לפונקציה אף משתנה אקטואלי, והיא תציב ערכי ברירת מחדל לכל אחד מהמשתנים.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-</pre></div>
-</div>
-</div>
-</div>
-<p>ומה אם היינו רוצים לדרוס רק את הערך של y? מה היה קורה אם נקרא לפונקציה עם ערך אחד?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
-</pre></div>
-</div>
-</div>
-</div>
-<p>פייתון (עדיין) לא קורא מחשבות. אם מוצב רק ערך אחד, הוא יניח שאנחנו מתכוונים לדרוס את המשתנה <strong>הראשון</strong> של הפונקציה.
-כדי לשנות ערכים אחרים ניתן להגדיר מפורשות איזה מהערכים אנחנו מציבים, בצורה הבאה:</p>
+<p><strong>קריאה לפי שם.</strong> ערכים שמועברים בקריאה בלי שם נכנסים לפרמטרים לפי הסדר. כדי לתת ערך רק לפרמטר <code class="docutils literal notranslate"><span class="pre">y</span></code> ולהשאיר לשאר הפרמטרים את ברירת המחדל, כותבים בקריאה את שם הפרמטר. כך כתובות קריאות רבות לפונקציות של הספריות שנכיר בהמשך הקורס.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f2</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>   <span class="c1"># in this call: x = 1, y = 5, z = 3</span>
@@ -770,36 +739,6 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
-</pre></div>
-</div>
-</div>
-</div>
-<p>אגב, ניתן להשתמש בהצבה הישירה הזו גם עבור משתנים ללא ערך ברירת מחדל. זה יכול להפוך את הקוד ליותר קריא כשקוראים לפונקציה עם הרבה פרמטרים.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># x does not have a default value</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>דוגמה:</strong> זוכרים שאמרנו שפרמטרים עם ערכי ברירת מחדל תמיד צריכים להופיע אחרי פרמטרים רגילים? האם פייתון ירשה לנו לשבור את החוקים?</p>
-<div class="cell tag_raises-exception docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>   <span class="c1"># Invalid syntax</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>   <span class="c1"># Invalid syntax</span>
-                <span class="o">^</span>
-<span class="ne">SyntaxError</span>: parameter without a default follows parameter with a default
 </pre></div>
 </div>
 </div>
@@ -820,8 +759,8 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="JUtuDwbWbvcs" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#JUtuDwbWbvcs {
+<div class="output text_html"><div id="IgXIgiwmKKiu" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#IgXIgiwmKKiu {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1044,7 +983,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsJUtuDwbWbvcs=[{"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 50.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! T_room \u05dc\u05d0 \u05d4\u05d5\u05e2\u05d1\u05e8, \u05d5\u05dc\u05db\u05df \u05d4\u05d5\u05d0 20.0: \u200f80.0 - 0.5 * 60.0."}, {"type": "default", "feedback": "\u05db\u05e9-T_room \u05dc\u05d0 \u05de\u05d5\u05e2\u05d1\u05e8 \u05d1\u05e7\u05e8\u05d9\u05d0\u05d4, \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05e9\u05ea\u05de\u05e9\u05ea \u05d1\u05e2\u05e8\u05da \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc 20.0."}]}, {"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 40.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05de\u05d7\u05dc\u05d9\u05e3 \u05d0\u05ea \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc, \u05d5\u05dc\u05db\u05df T_room \u05d4\u05d5\u05d0 0.0."}, {"type": "default", "feedback": "\u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d1\u05e7\u05e8\u05d9\u05d0\u05d4 \u05e0\u05db\u05e0\u05e1 \u05dc\u05e4\u05e8\u05de\u05d8\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9, T_room."}]}, {"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9\u05ea?", "type": "numeric", "answers": [{"type": "value", "value": 70.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05d4\u05d5\u05e2\u05d1\u05e8\u05d5 \u05dc\u05e4\u05d9 \u05d4\u05e9\u05dd: \u200f80.0 - 0.25 * 40.0."}, {"type": "default", "feedback": "k=0.25 \u05d5-T_room=40.0 \u05de\u05d5\u05e2\u05d1\u05e8\u05d9\u05dd \u05dc\u05e4\u05d9 \u05d4\u05e9\u05dd \u05e9\u05dc\u05d4\u05dd."}]}];
+</style></div><script type="application/javascript">var questionsIgXIgiwmKKiu=[{"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 50.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! T_room \u05dc\u05d0 \u05d4\u05d5\u05e2\u05d1\u05e8, \u05d5\u05dc\u05db\u05df \u05d4\u05d5\u05d0 20.0: \u200f80.0 - 0.5 * 60.0."}, {"type": "default", "feedback": "\u05db\u05e9-T_room \u05dc\u05d0 \u05de\u05d5\u05e2\u05d1\u05e8 \u05d1\u05e7\u05e8\u05d9\u05d0\u05d4, \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05de\u05e9\u05ea\u05de\u05e9\u05ea \u05d1\u05e2\u05e8\u05da \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc 20.0."}]}, {"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 40.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05de\u05d7\u05dc\u05d9\u05e3 \u05d0\u05ea \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc, \u05d5\u05dc\u05db\u05df T_room \u05d4\u05d5\u05d0 0.0."}, {"type": "default", "feedback": "\u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d1\u05e7\u05e8\u05d9\u05d0\u05d4 \u05e0\u05db\u05e0\u05e1 \u05dc\u05e4\u05e8\u05de\u05d8\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9, T_room."}]}, {"question": "\u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9\u05ea?", "type": "numeric", "answers": [{"type": "value", "value": 70.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e4\u05e8\u05de\u05d8\u05e8\u05d9\u05dd \u05d4\u05d5\u05e2\u05d1\u05e8\u05d5 \u05dc\u05e4\u05d9 \u05d4\u05e9\u05dd: \u200f80.0 - 0.25 * 40.0."}, {"type": "default", "feedback": "k=0.25 \u05d5-T_room=40.0 \u05de\u05d5\u05e2\u05d1\u05e8\u05d9\u05dd \u05dc\u05e4\u05d9 \u05d4\u05e9\u05dd \u05e9\u05dc\u05d4\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2106,8 +2045,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("JUtuDwbWbvcs")) {
-    show_questions(questionsJUtuDwbWbvcs, JUtuDwbWbvcs);
+  if (document.getElementById("IgXIgiwmKKiu")) {
+    show_questions(questionsIgXIgiwmKKiu, IgXIgiwmKKiu);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2137,43 +2076,7 @@ function try_show() {
 </div>
 </div>
 </div>
-<p>עכשיו נרצה לממש את הפונקציה הכללית שלנו. דרך שיכולנו לעשות זאת עד כה, היה להעביר לפונקציה משתנה שמסמן לה איזה פעולה רצינו לעשות.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pairs_op_long</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
-    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="s2">"add"</span><span class="p">:</span>
-            <span class="n">answer</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">elif</span> <span class="n">op</span> <span class="o">==</span> <span class="s2">"multiply"</span><span class="p">:</span>
-            <span class="n">answer</span> <span class="o">=</span> <span class="n">multiply</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"not legal operation"</span><span class="p">)</span>
-            <span class="k">return</span>
-        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">results</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>להלן דוגמא לשימוש בפונקציה זו:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pairs_op_long</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="s2">"add"</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pairs_op_long</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="s2">"multiply"</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 5, 7]
-[2, 6, 12]
-</pre></div>
-</div>
-</div>
-</div>
-<p>זה עובד, אבל יש לזה כמה חסרונות. קודם כול, הקוד יוצא ארוך ומסורבל. אם נרצה להוסיף פעולה נוספת, כמו למשל לקחת את הערך המקסימלי של כל זוג, נצטרך להוסיף עוד קוד ייעודי. ככל שנוסיף עוד ועוד פעולות, הפונקציה תתנפח ותהיה קשה יותר לתחזוקה. נוסף על כך, אם נרצה לשנות משהו קטן בלוגיקה של מעבר על הרשימה – למשל לעבור בקפיצות של 2 במקום בקפיצות של 1 – נצטרך לשכפל את השינוי הזה בכל אחת מהפונקציות, מה שמגביר את הסיכוי לטעויות.</p>
-<p>כדי לפתור את הבעיה, נשתמש בגישה הרבה יותר אלגנטית: במקום להעביר את <strong>השם</strong> של הפעולה שאנו רוצים, ולהפריד בין המקרים ע”י השוואה בין מחרוזות, <strong>נעביר את הפונקציה הרצויה כפרמטר</strong>.</p>
+<p>עכשיו נכתוב את הפונקציה הכללית. במקום לכתוב פונקציה נפרדת לכל פעולה, <strong>נעביר את הפעולה עצמה כפרמטר</strong>: הפרמטר <code class="docutils literal notranslate"><span class="pre">op</span></code> הוא פונקציה, ובתוך הלולאה קוראים לה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pairs_op</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
@@ -2185,8 +2088,7 @@ function try_show() {
 </div>
 </div>
 </div>
-<p>עכשיו הפונקציה שלנו קצרה, גמישה ויעילה. היא לא צריכה לדעת שום דבר על סוג הפעולה - כל עוד מדובר בפונקציה שמקבלת שני מספרים ומחזירה תוצאה, היא תעבוד.</p>
-<p>מה שעשינו כאן הוא גם <strong>הפרדה של תחומי אחריות</strong> - הפונקציה שמבצעת פעולה מסוימת על שני איברים לא יודעת כלום על הרשימה, והפונקציה שמריצה פעולות על כל הזוגות ברשימה לא יודעת מהי הפעולה. כל אחת מהפונקציות יכולה לפעול באופן עצמאי, בלי “לדאוג” או להיות תלויה במה שהפונקציה השנייה עושה.</p>
+<p>הפונקציה <code class="docutils literal notranslate"><span class="pre">pairs_op</span></code> לא צריכה לדעת מהי הפעולה: כל פונקציה שמקבלת שני מספרים ומחזירה תוצאה תתאים.</p>
 <p>כדי לקרוא לפונקציות כאלה, חשוב לזכור: מעבירים את שם הפונקציה בלבד כפרמטר. אם נצמיד לסוגריים את שם הפונקציה, זה אומר שאנחנו מפעילים אותה ברגע זה. כאן אנחנו לא רוצים את זה, אלא רק להעביר את הפונקציה עצמה כדי שהקוד יקרא לה מאוחר יותר.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2212,49 +2114,7 @@ function try_show() {
 </pre></div>
 </div>
 <p>כך אנחנו חוסכים גם ירידות שורה, אבל אפילו את הפקודה <code class="docutils literal notranslate"><span class="pre">return</span></code>!</p>
-<section id="id7">
-<h3><span class="section-number">5.3.4.1. </span>דוגמא: מחשבון<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
-<p>הפעם נגדיר את הפונקציות <code class="docutils literal notranslate"><span class="pre">add</span></code> ו<code class="docutils literal notranslate"><span class="pre">multiply</span></code> בתור פונקציות <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. עדיין ניתן לתת לפונקציות הללו שם - על-ידי השמה.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
-<span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multiply</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="n">x</span><span class="o">*</span><span class="n">y</span>
-<span class="n">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-</pre></div>
-</div>
-</div>
-</div>
-<p>ונניח שהיינו רוצים באופן חד פעמי לקרוא לפונקציה <code class="docutils literal notranslate"><span class="pre">pairs_op</span></code> עם פונקציית חיסור. במקום לרשום עכשיו את כל ההגדרה, יכולנו פשוט להעביר את הפונקציה ללא השם בכלל.</p>
-<p>תזכורת לפונקציה <code class="docutils literal notranslate"><span class="pre">pairs_op</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pairs_op</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
-    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
-    <span class="k">return</span> <span class="n">results</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>עכשיו נעביר לה פונקציה אשר מחסרת בין שני איברים, <strong>הפעם מבלי לתת לה שם</strong>.</p>
+<p>נניח שנרצה לקרוא פעם אחת לפונקציה <code class="docutils literal notranslate"><span class="pre">pairs_op</span></code> עם פעולת חיסור. במקום להגדיר פונקציה חדשה עם <code class="docutils literal notranslate"><span class="pre">def</span></code>, אפשר לכתוב את הפונקציה בתוך הקריאה עצמה, בלי לתת לה שם:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs_op</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
@@ -2267,101 +2127,34 @@ function try_show() {
 </div>
 </div>
 </div>
-<p>החיסרון המרכזי בשימוש בפונקציות אנונימיות הוא שהן עלולות להקשות על הקריאה וההבנה של הקוד, במיוחד אם הביטוי מורכב או ארוך. עם זאת, בעולם התכנות לעיתים נדרש איזון בין קריאות הקוד לבין קיצורו ויעילותו, ופונקציות <code class="docutils literal notranslate"><span class="pre">lambda</span></code> מספקות כלי נוח מאוד במצבים כאלה, כאשר רוצים להגדיר פונקציה קטנה ומהירה לשימוש רגעי.</p>
-</section>
-<section id="key">
-<h3><span class="section-number">5.3.4.2. </span>שימוש בפרמטר <code class="docutils literal notranslate"><span class="pre">key</span></code> על מנת להגדיר יחס סדר בפונקציות מובנות<a class="headerlink" href="#key" title="Link to this heading">#</a></h3>
-<p>עד כה ראינו מספר דוגמאות לפונקציות מובנות בשפת פייתון המשתמשות ביחס סדר על איברים באוסף על מנת להחזיר תוצאה. לדוגמא, הפונקציה <code class="docutils literal notranslate"><span class="pre">sorted</span></code> משתמשת ביחס הסדר בין האיברים כדי להחזירם באופן סדור.<br />
-דוגמא נוספת היא הפונקציה <code class="docutils literal notranslate"><span class="pre">max</span></code>, המחזירה את האיבר המקסימלי, כלומר, האיבר שמבחינת הסדר שהוגדר, הוא גדול (או שווה) ביחס לשאר האיברים באוסף.</p>
-<p>נתחיל מלבחון את הפונקציה <code class="docutils literal notranslate"><span class="pre">sorted</span></code>. עד עכשיו השתמשנו בה בסדר פשוט, לדוגמא:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">sorted_numbers</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sorted_numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 7, 10]
-</pre></div>
-</div>
-</div>
-</div>
-<p>כפי שראינו, <code class="docutils literal notranslate"><span class="pre">sorted</span></code> מחזירה רשימה ממוינת מהקטן לגדול.</p>
-<p>אבל מה אם נרצה למיין רשימה של מחרוזות לפי יחס סדר אחר? לדוגמא, במקום מיון לקסיקוגרפי, נרצה למיין את הרשימה לפי <strong>אורך המחרוזות</strong>? כאן נכנס שימוש בארגומנט <code class="docutils literal notranslate"><span class="pre">key</span></code>, שיכול לקבל פונקציה שמגדירה את יחס הסדר בין האיברים, או את <strong>קריטריון המיון</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"kiwi"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"fig"</span><span class="p">]</span>
-<span class="n">sorted_words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># Notice that we don't give "len()"</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sorted_words</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['fig', 'kiwi', 'apple', 'banana']
-</pre></div>
-</div>
-</div>
-</div>
-<p>כאן העברנו פונקצית <code class="docutils literal notranslate"><span class="pre">lambda</span></code> כפרמטר ל-<code class="docutils literal notranslate"><span class="pre">key</span></code>.
-עבור כל איבר ברשימה פונקצית ה<code class="docutils literal notranslate"><span class="pre">lambda</span></code> תשתמש בפונקציה <code class="docutils literal notranslate"><span class="pre">len</span></code> כדי להחזיר את אורכו, והמיון מתבצע לפי הערכים האלו.</p>
-<p>באופן דומה, ניתן להשתמש בפרמטר <code class="docutils literal notranslate"><span class="pre">key</span></code> כדי להגדיר יחס סדר עבור הפונקציות <code class="docutils literal notranslate"><span class="pre">min</span></code> ו-<code class="docutils literal notranslate"><span class="pre">max</span></code>.<br />
-בנוסף, שימו לב שמכיוון ש-<code class="docutils literal notranslate"><span class="pre">len</span></code> מקבלת פרמטר אחד בלבד (בדיוק כמו פונקצית הlambda שהגדרנו למעלה) ניתן להעבירה ישירות כפונקציה ל-<code class="docutils literal notranslate"><span class="pre">key</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fig
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>banana
-</pre></div>
-</div>
-</div>
-</div>
-<p>נסו כעת לכתוב שורת קוד בודדת, המדפיסה את המילה ה<strong>קצרה</strong> ביותר ברשימה, תוך שימוש בפונקציה המובנית <code class="docutils literal notranslate"><span class="pre">max</span></code> (זו לא טעות!) עם הארגומנט <code class="docutils literal notranslate"><span class="pre">key</span></code>:</p>
-<div class="dropdown tip admonition">
-<p class="admonition-title"><strong>רמז</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">max</span></code> מחזירה את האיבר שעבורו הפונקציה שב-<code class="docutils literal notranslate"><span class="pre">key</span></code> נותנת את הערך הגדול ביותר. איזו פונקציה של <code class="docutils literal notranslate"><span class="pre">len</span></code> גדולה ביותר דווקא עבור המילה הקצרה ביותר?</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"kiwi"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"fig"</span><span class="p">]</span>
-<span class="c1">## Write your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
+<p>פונקציית <code class="docutils literal notranslate"><span class="pre">lambda</span></code> מתאימה לביטוי קצר אחד. כשהחישוב ארוך יותר, פונקציה רגילה עם <code class="docutils literal notranslate"><span class="pre">def</span></code> ושם ברור קריאה יותר.</p>
+<div class="dropdown note admonition">
+<p class="admonition-title"><strong>להרחבה: מיון ובחירה לפי קריטריון</strong></p>
+<p>הפונקציות <code class="docutils literal notranslate"><span class="pre">sorted</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code> ו-<code class="docutils literal notranslate"><span class="pre">max</span></code> יכולות לקבל פרמטר בשם <code class="docutils literal notranslate"><span class="pre">key</span></code>: פונקציה שמחשבת לכל איבר את הערך שלפיו ממיינים או משווים. כך אפשר, למשל, למיין מילים לפי האורך שלהן ולא לפי סדר האלפבית:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"kiwi"</span><span class="p">,</span> <span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"fig"</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>   <span class="c1"># fig</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>                         <span class="c1"># ['apple', 'banana', 'fig', 'kiwi']</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>   <span class="c1"># ['fig', 'kiwi', 'apple', 'banana']</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>                <span class="c1"># ['fig', 'kiwi', 'apple', 'banana']</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>                   <span class="c1"># fig</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>                   <span class="c1"># banana</span>
 </pre></div>
 </div>
-<p>למילה הקצרה ביותר יש את הערך <code class="docutils literal notranslate"><span class="pre">-len(w)</span></code> הגדול ביותר (‏<code class="docutils literal notranslate"><span class="pre">-3</span></code> גדול מ-<code class="docutils literal notranslate"><span class="pre">-4</span></code>, ‏<code class="docutils literal notranslate"><span class="pre">-5</span></code> ו-<code class="docutils literal notranslate"><span class="pre">-6</span></code>), ולכן <code class="docutils literal notranslate"><span class="pre">max</span></code> בוחרת בה. כמובן שבקוד אמיתי נכתוב פשוט <code class="docutils literal notranslate"><span class="pre">min(words,</span> <span class="pre">key=len)</span></code>.</p>
+<p>בשורה השלישית מעבירים את הפונקציה <code class="docutils literal notranslate"><span class="pre">len</span></code> עצמה, בלי סוגריים, כמו כל פונקציה שמועברת כפרמטר.</p>
 </div>
 </section>
-</section>
-<section id="id8">
-<h2><span class="section-number">5.3.5. </span>תרגול: פונקציה כפרמטר<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
-<p>ממשו את הפונקציה <code class="docutils literal notranslate"><span class="pre">apply_to_all(f,</span> <span class="pre">values)</span></code>, שמקבלת פונקציה <code class="docutils literal notranslate"><span class="pre">f</span></code> ורשימה <code class="docutils literal notranslate"><span class="pre">values</span></code>, ומחזירה רשימה חדשה שבה כל איבר הוא <code class="docutils literal notranslate"><span class="pre">f</span></code> של האיבר המתאים ב-<code class="docutils literal notranslate"><span class="pre">values</span></code>. אחר כך השתמשו בה פעמיים, בכל פעם עם פונקציית <code class="docutils literal notranslate"><span class="pre">lambda</span></code> אחרת:</p>
+<section id="id7">
+<h2><span class="section-number">5.3.5. </span>תרגול: פונקציה כפרמטר<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>ממשו את הפונקציה <code class="docutils literal notranslate"><span class="pre">apply_to_all</span></code>, שמקבלת פונקציה <code class="docutils literal notranslate"><span class="pre">f</span></code> ורשימה <code class="docutils literal notranslate"><span class="pre">values</span></code>, ומחזירה רשימה חדשה שבה כל איבר הוא <code class="docutils literal notranslate"><span class="pre">f</span></code> של האיבר המתאים ב-<code class="docutils literal notranslate"><span class="pre">values</span></code>. אחר כך השתמשו בה פעמיים, בכל פעם עם פונקציית <code class="docutils literal notranslate"><span class="pre">lambda</span></code> אחרת:</p>
 <ol class="arabic simple">
-<li><p>המרה מצלזיוס לקלווין (מוסיפים 273.15). עבור <code class="docutils literal notranslate"><span class="pre">[20.0,</span> <span class="pre">100.0]</span></code> התוצאה היא <code class="docutils literal notranslate"><span class="pre">[293.15,</span> <span class="pre">373.15]</span></code>.</p></li>
-<li><p>צעד קירור אחד עם <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">0.5</span></code>, בעזרת <code class="docutils literal notranslate"><span class="pre">cool</span></code> מלמעלה. עבור <code class="docutils literal notranslate"><span class="pre">[80.0,</span> <span class="pre">50.0]</span></code> התוצאה היא <code class="docutils literal notranslate"><span class="pre">[50.0,</span> <span class="pre">35.0]</span></code>.</p></li>
+<li><p>המרה מצלזיוס לקלווין (מוסיפים 273.15).</p></li>
+<li><p>צעד קירור אחד עם ‎<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">0.5</span></code>‎, בעזרת <code class="docutils literal notranslate"><span class="pre">cool</span></code> מלמעלה.</p></li>
 </ol>
+<p>הקלט והתוצאה שצריכה להתקבל בכל אחד משני השימושים:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span>  <span class="p">[</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">]</span>  <span class="o">-&gt;</span>  <span class="p">[</span><span class="mf">293.15</span><span class="p">,</span> <span class="mf">373.15</span><span class="p">]</span>
+<span class="mf">2.</span>  <span class="p">[</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">]</span>   <span class="o">-&gt;</span>  <span class="p">[</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">35.0</span><span class="p">]</span>
+</pre></div>
+</div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cool</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">T_room</span><span class="o">=</span><span class="mf">20.0</span><span class="p">):</span>
@@ -2391,7 +2184,7 @@ function try_show() {
 <span class="nb">print</span><span class="p">(</span><span class="n">apply_to_all</span><span class="p">(</span><span class="k">lambda</span> <span class="n">T</span><span class="p">:</span> <span class="n">cool</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">[</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">]))</span>   <span class="c1"># [50.0, 35.0]</span>
 </pre></div>
 </div>
-<p>אפשר לכתוב את גוף הפונקציה גם בשורה אחת: <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">[f(v)</span> <span class="pre">for</span> <span class="pre">v</span> <span class="pre">in</span> <span class="pre">values]</span></code>. בקריאה השנייה ה-<code class="docutils literal notranslate"><span class="pre">lambda</span></code> מקבלת פרמטר אחד, <code class="docutils literal notranslate"><span class="pre">T</span></code>, וקוראת ל-<code class="docutils literal notranslate"><span class="pre">cool</span></code> עם <code class="docutils literal notranslate"><span class="pre">k</span></code> קבוע.</p>
+<p>אפשר לכתוב את גוף הפונקציה גם בשורה אחת: ‎<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">[f(v)</span> <span class="pre">for</span> <span class="pre">v</span> <span class="pre">in</span> <span class="pre">values]</span></code>‎. בקריאה השנייה ה-<code class="docutils literal notranslate"><span class="pre">lambda</span></code> מקבלת פרמטר אחד, <code class="docutils literal notranslate"><span class="pre">T</span></code>, וקוראת ל-<code class="docutils literal notranslate"><span class="pre">cool</span></code> עם <code class="docutils literal notranslate"><span class="pre">k</span></code> קבוע.</p>
 </div>
 </section>
 </section>
@@ -2469,12 +2262,8 @@ function try_show() {
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.3.3. פונקציה כפרמטר</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">5.3.4. פונקציות אנונימיות (<code class="docutils literal notranslate"><span class="pre">lambda</span></code>)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.3.4.1. דוגמא: מחשבון</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key">5.3.4.2. שימוש בפרמטר <code class="docutils literal notranslate"><span class="pre">key</span></code> על מנת להגדיר יחס סדר בפונקציות מובנות</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.3.5. תרגול: פונקציה כפרמטר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">5.3.4. פונקציות אנונימיות (<code class="docutils literal notranslate"><span class="pre">lambda</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.3.5. תרגול: פונקציה כפרמטר</a></li>
 </ul>
   </nav></div>
 

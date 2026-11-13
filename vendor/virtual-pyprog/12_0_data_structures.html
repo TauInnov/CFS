@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=4b1b8121" />
   
   <!-- So that users can add custom icons -->
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -153,10 +153,6 @@
     </div>
   
 
-  
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
   
 </div>
 
@@ -276,7 +272,7 @@
 <li class="toctree-l2"><a class="reference internal" href="8_3_list-comprehensions.html">4.11. List Comprehensions</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_5.html">5. שבוע 5 — זיכרון ופונקציות מתקדמות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="10_0_mutable-vs-immutable.html">5.1. Mutable vs Immutable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_1_memory-in-functions.html">5.2. זיכרון והתנהגות בפונקציות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="11_0_advanced_function_usage.html">5.3. שימושים מתקדמים בפונקציות</a></li>
@@ -284,7 +280,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../course/weeks/week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">6.1. מבני נתונים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="12_1_tuples.html">6.2. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_1_tuples.html">6.2. טאפלים (tuple)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_2_dicts.html">6.3. מילונים (dict)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_0_string-formats.html">6.4. עיצוב מחרוזות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_1_files.html">6.5. קריאה וכתיבה לקבצים</a></li>
@@ -606,9 +602,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -624,15 +618,6 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.1.1. רשימה כמבנה נתונים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-dict">6.1.2. מבני נתונים נוספים: טאפל (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) ומילון (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -644,22 +629,13 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1><span class="section-number">6.1. </span>מבני נתונים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<section id="id2">
-<h2><span class="section-number">6.1.1. </span>רשימה כמבנה נתונים<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>עד עכשיו הכרנו את רשימות כטיפוס בפייתון, שמאפשר לאחסן סדרה של ערכים לפי סדר מסוים (או במילים אחרות, לפי אינדקס). רשימה סיפקה לנו ממשק לאחסון ועיבוד של נתונים, ומסייע לנו לבצע פעולות כמו חיפוש, הוספה ושינוי איברים.</p>
-<p>לרשימות יש יתרונות רבים - הן גמישות, מאפשרות לשים ערכים מטיפוסים שונים באותה הרשימה, לגשת לאיברים לפי מיקומם ולעבוד עם כל סדרה של נתונים בצורה מסודרת.</p>
-<p>נשים לב שברגע שהחלטנו להשתמש במבנה נתונים מטיפוס רשימה, הנחנו למעשה מס’ הנחות לגבי הצורה בה אנו קוראים ועורכים את המידע.<br />
-לדוגמא, אנו מניחים שלמידע שלנו יש <strong>משמעות לסדר</strong>, כלומר, נכון להתבסס את סדר האיברים במבנה הנתונים על מנת לגשת/לערוך איבר מסוים.<br />
-הנחה נוספת היא שנרצה <strong>ערוך את מבנה הנתונים אחר יצירתו</strong>. כלומר, שמבנה הנתונים שלנו הוא בר שינוי.<br />
-בהמשך נראה ההנחות הללו לא תמיד רלוונטיות, וכי ישנם מבני נתונים אחרים שיתאימו יותר למידע שלנו.</p>
-</section>
-<section id="tuple-dict">
-<h2><span class="section-number">6.1.2. </span>מבני נתונים נוספים: טאפל (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) ומילון (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)<a class="headerlink" href="#tuple-dict" title="Link to this heading">#</a></h2>
-<p>במודולים הבאים נכיר טיפוסים חדשים: טאפל (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) ומילון (<code class="docutils literal notranslate"><span class="pre">dict</span></code>).<br />
-בדומה לרשימות, גם טיפוסים אלו הם סוג של <strong>מבני נתונים</strong>, והם ישמשו לשמירה של אוסף של איברים.
-לטיפוסים אלו יתרונות וחסרונות סוגים, והם יסייעו לנו בהרחבת ארגז הכלים שלנו לאחסון, ארגון, ועבודה עם נתונים.</p>
-<p>במודולים הבאים, נבחן באילו תרחישים נכון להשתמש בכל אחד ממבני נתונים אלו.</p>
-</section>
+<p>עד עכשיו שמרנו אוספים של ערכים ברשימות. רשימה היא <strong>מבנה נתונים</strong>: דרך לארגן כמה ערכים יחד. לאיברים ברשימה יש סדר, ניגשים אליהם לפי המיקום שלהם (אינדקס), ואפשר לשנות את הרשימה אחרי שנוצרה.</p>
+<p>השבוע נכיר שני מבני נתונים נוספים:</p>
+<ul class="simple">
+<li><p><strong>טאפל</strong> (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>): אוסף מסודר כמו רשימה, שאי אפשר לשנות אחרי שנוצר.</p></li>
+<li><p><strong>מילון</strong> (<code class="docutils literal notranslate"><span class="pre">dict</span></code>): אוסף שבו ניגשים לכל ערך לפי שם (מפתח) ולא לפי מיקום.</p></li>
+</ul>
+<p>בדפים הבאים נראה מתי מתאים להשתמש בכל אחד מהם.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -716,24 +692,6 @@
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.1.1. רשימה כמבנה נתונים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-dict">6.1.2. מבני נתונים נוספים: טאפל (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) ומילון (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

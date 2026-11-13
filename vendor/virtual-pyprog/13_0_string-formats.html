@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=4b1b8121" />
   
   <!-- So that users can add custom icons -->
@@ -56,7 +56,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -276,7 +276,7 @@
 <li class="toctree-l2"><a class="reference internal" href="8_3_list-comprehensions.html">4.11. List Comprehensions</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_5.html">5. שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_5.html">5. שבוע 5 — זיכרון ופונקציות מתקדמות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="10_0_mutable-vs-immutable.html">5.1. Mutable vs Immutable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_1_memory-in-functions.html">5.2. זיכרון והתנהגות בפונקציות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="11_0_advanced_function_usage.html">5.3. שימושים מתקדמים בפונקציות</a></li>
@@ -284,7 +284,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../course/weeks/week_6.html">6. שבוע 6 — מבני נתונים וקריאה וכתיבה של מידע</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="12_0_data_structures.html">6.1. מבני נתונים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="12_1_tuples.html">6.2. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12_1_tuples.html">6.2. טאפלים (tuple)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12_2_dicts.html">6.3. מילונים (dict)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">6.4. עיצוב מחרוזות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13_1_files.html">6.5. קריאה וכתיבה לקבצים</a></li>
@@ -629,7 +629,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">6.4.1. עריכת מחרוזות לפני פורמט: String Formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">6.4.1. עריכת מחרוזות לפי פורמט (String Formatting)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.4.2. בחנו את עצמכם</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.4.2.1. מצאו את 3 השגיאות</a></li>
 </ul>
@@ -648,26 +648,8 @@
   <section class="tex2jax_ignore mathjax_ignore" id="f">
 <h1><span class="section-number">6.4. </span>פורמט מחרוזות (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;f</span></code>)<a class="headerlink" href="#f" title="Link to this heading">#</a></h1>
 <section id="string-formatting">
-<h2><span class="section-number">6.4.1. </span>עריכת מחרוזות לפני פורמט: String Formatting<a class="headerlink" href="#string-formatting" title="Link to this heading">#</a></h2>
-<p>עד כה למדנו על סוגי טיפוסים שונים, החל מטיפוסים פשוטים כמו <code class="docutils literal notranslate"><span class="pre">int</span></code> ו<code class="docutils literal notranslate"><span class="pre">float</span></code> עד טיפוסים אשר יכולים להכיל מספר טיפוסים שונים כמו רשימות ומילונים.
-לעיתים קרובות נרצה לייצג את הטיפוסים הללו באמצעות מחרוזת. אבל רגע, למה שנרצה בעצם לעשות דבר כזה?</p>
-<p>הדוגמא הכי פשוטה היא הדפסה. על מנת להדפיס את האובייקט למסך, הפונקציה <code class="docutils literal notranslate"><span class="pre">print</span></code> ממירה מאחורי הקלעים את הקלט שניתן לה לטיפוס מטיפוס <code class="docutils literal notranslate"><span class="pre">str</span></code> ומדפיסה אותו למסך.</p>
-<p>כך, למשל, המספר <code class="docutils literal notranslate"><span class="pre">3</span></code> עובר המרה ל<code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span></code>, שלאחר מכן מודפס למסך</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<p>שימו לב כי למרות שמדובר במחרוזת, איננו רואים את המירכאות שמקיפות אותה בעת ההדפסה</p>
-<p>מה יקרה כאשר נרצה להדפיס חיבור של מספר ומחרוזת? כפי שראינו במודולים הקודמים, נוכל להשתמש בסימן <code class="docutils literal notranslate"><span class="pre">+</span></code> על מנת לייצג את החיבור של שני האלמנטים הללו כמחרוזת, אך עלינו תחילה <strong>לבצע המרה</strong> של המספר למחרוזת.</p>
-<p>לדוגמא, בהנתן 2 משתנים המחזיקים את שם הסטודנט וציונו, אם נרצה להדפיס מחרוזת שמייצגת ציון של סטודנט בפורמט name-grade נוכל לעשות זאת באופן הבא:</p>
+<h2><span class="section-number">6.4.1. </span>עריכת מחרוזות לפי פורמט (String Formatting)<a class="headerlink" href="#string-formatting" title="Link to this heading">#</a></h2>
+<p>לעיתים קרובות נרצה להדפיס הודעה שמשלבת טקסט עם ערכים של משתנים, למשל שם של סטודנט והציון שלו. דרך אחת היא לחבר מחרוזות בעזרת <code class="docutils literal notranslate"><span class="pre">+</span></code>, אבל אז צריך להמיר כל מספר למחרוזת בעזרת <code class="docutils literal notranslate"><span class="pre">str</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="o">=</span><span class="s2">"Avi"</span>
@@ -682,28 +664,9 @@
 </div>
 </div>
 </div>
-<p>ואם היה לנו מילון של סטודנטים עם ציונים כמו שראינו במודול על מילונים? במקרה זה היינו יכולים לעבור גם בלולאה ולהדפיס את כל הסטודנטים באותו הפורמט:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
-
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">grade</span> <span class="ow">in</span> <span class="n">studs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s2">"-"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">grade</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Avi-90
-Moshe-80
-Adam-70
-</pre></div>
-</div>
-</div>
-</div>
-<p>נשים לב שהקוד שכתבנו כאן מעט מסורבל. מעבר לפעולת החיבור בין השם לציון, היינו צריכים לחבר גם את המקף ביניהם, ולבצע המרה של ערך מטיפוס <code class="docutils literal notranslate"><span class="pre">int</span></code> ל<code class="docutils literal notranslate"><span class="pre">str</span></code>. הרבה פעולות בשביל מטרה מאוד פשוטה. כמובן שהקוד כזה יהפוך אף ליותר מסורבל ולא קריא ככל שמחברים יותר ערכים מטיפוסים שונים ומגוונים.</p>
-<p>כדי למנוע את הבעיות הללו, יצרנו עבורנו בפייתון כלי שנקרא String format, או <code class="docutils literal notranslate"><span class="pre">''f&quot;&quot;</span></code>/<code class="docutils literal notranslate"><span class="pre">f</span></code>.<br />
-באמצעות String format, ניתן לייצר את פורמט מחרוזת שאנו רוצים באמצעותה לייצג את האובייקטים שלנו כמחרוזת מיוחדת, שהיא בעצם שבלונה, או טמפלייט, המכיל נקודות כניסה לקוד המסומנות באמצעות סוגריים מסולסלים <code class="docutils literal notranslate"><span class="pre">{}</span></code>. הקוד שבתוך הסוגריים הללו זה ירוץ באופן אוטומטי, יומר למחרוזת ויחובר למחרוזת בדיוק במקום בו נכתב.</p>
-<p>נדגים זאת באמצעות שכתוב הקוד שלעיל עם String format:</p>
+<p>זה עובד, אבל הקוד מסורבל, והוא נעשה קשה יותר לקריאה ככל שמחברים יותר ערכים.</p>
+<p>פתרון נוח יותר הוא <strong>f-string</strong>: מחרוזת שלפני המירכאות שלה כותבים את האות f. בתוך המחרוזת אפשר לכתוב סוגריים מסולסלים, ובתוכם ביטוי בפייתון: שם של משתנה, חישוב או קריאה לפונקציה. פייתון מחשבת את הביטוי, ממירה את התוצאה למחרוזת ומשלבת אותה במקום שבו נכתבה.</p>
+<p>למשל, כך מדפיסים את כל השמות והציונים שבמילון הסטודנטים:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">studs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Avi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"Moshe"</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">"Adam"</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
@@ -727,19 +690,7 @@ Adam-70
 <p>מה לגבי פעולות קוד יותר מורכבות בתוך הString format? נניח כעת כי נרצה להדפיס את הציון לאחר פקטור של תוספת 10 נקודות. על מנת לבצע זאת, הוסיפו <code class="docutils literal notranslate"><span class="pre">10+</span></code> בתוך הסוגריים המסולסלים המכילים את המשתנה grade.</p>
 <p>אחרי שהצלחתם, נסו “לשחק” עם הפורמט: להוסיף פעולות יותר מורכבות בתוך הסוגריים המסולסלים, להוסיף זוגות של סוגריים מסולסלים נוספים וכו’</p>
 </div>
-<p>String format מגיע עם מגוון פעולות ייעודיות לעריכת קוד עבור מחרוזת המייצגות מספרים. לדוגמא, נניח כי נרצה לייצג את המספר פאי</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265359</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<p>זהו כמובן אינו המספר המלא, הנמשך למעשה אינסוף ספרות לאחר הנקודה. דוגמא נוספת למספר המכיל אינסוף ספרות לאחר הנקודה הוא <code class="docutils literal notranslate"><span class="pre">2/3</span></code>.<br />
-מובן שמספרים כאלו לא נרצה להדפיס במלואם. אפילו מספרים עם 5 או 10 ספרות אחר הנקודה נרצה לעיתים קרובות “לקצץ” לדיוק של 2 או 3 ספרות שלאחר הנקודה.</p>
-<p>ישנה כמובן דרך תכנותית פשוטה לעשות זאת באמצעות הפונקציה <code class="docutils literal notranslate"><span class="pre">round</span></code> (קראו עליה!). אך בדומה להמרות, אנחנו כאן מעוניינים לקצר את השימוש בפונקציות.<br />
-ומכיוון ש”קיצוץ” מספרים כזה היא פעולה נפוצה כאשר רוצים להדפיס מספר, או לייצג אותו כמחרוזת קריאה, יצרו עבורנו בString format פעולות המאפשרות קריאות נוחה יותר למספרים שנמצאים בתוך הסוגריים המסולסלים.</p>
-<p>נתבונן בדוגמא הבאה</p>
+<p>כשמדפיסים תוצאה של חישוב, בדרך כלל לא רוצים לראות את כל הספרות שאחרי הנקודה העשרונית. ניקח לדוגמה את המספר פאי:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Avi'</span>
@@ -767,44 +718,44 @@ Adam-70
 </div>
 </div>
 </div>
-<p>באופן כללי, קיימות מגוון אפשרות לתצוגות מספריות עבור <code class="docutils literal notranslate"><span class="pre">int</span></code> ו-<code class="docutils literal notranslate"><span class="pre">float</span></code> בString format, שניתן להפעיל עם <code><span style='color:green'>S</span><span style='color:blue'>.d</span><span style='color:red'>:</span></code> בסוף הסוגריים המסולסלים, כאשר:</p>
+<p>באופן כללי, אחרי הערך כותבים נקודתיים, ואחריהן את צורת התצוגה:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">value</span><span class="p">:</span><span class="mf">.2</span><span class="n">f</span><span class="p">}</span>
+</pre></div>
+</div>
 <ul class="simple">
-<li><p><code><span style='color:red'>:</span></code> מציין היכן מתחילה עריכת התצוגה</p></li>
-<li><p><code><span style='color:blue'>.d</span></code> רמת הדיוק — כמה ספרות אחרי הנקודה העשרונית</p></li>
-<li><p><code><span style='color:green'>S</span></code> סגנון מספרי (נקודה עשרונית, מדעי וכו’)</p></li>
+<li><p>הנקודתיים מפרידות בין הערך לבין צורת התצוגה.</p></li>
+<li><p>המספר שאחרי הנקודה קובע כמה ספרות יוצגו אחרי הנקודה העשרונית.</p></li>
+<li><p>האות האחרונה קובעת את סגנון התצוגה: f לתצוגה עשרונית רגילה, e לתצוגה מדעית.</p></li>
 </ul>
-<p>נבחן כעת תצוגה מספרית נוספת - תצוגה מדעית - בה המספר מוכפל בחזקה של 10. תצוגה זו נועדה כדי לייצג באמצעות מחרוזת מספרים מאוד קטנים (כלומר, הרבה אפסים אחר הנקודה) מבלי להחשיבם פשוט כ-0.</p>
-<p>לדוגמא, נניח שנרצה לייצג כמחרוזת את המספר 0.0000000314159265359 . על מנת להציגו באמצעות מספר תווים מצומצם, נוכל להשתמש בString format כפי שעשינו קודם:</p>
+<p>המספר מעוגל לצורך התצוגה בלבד, והערך ששמור במשתנה לא משתנה.</p>
+<p>בפיזיקה פוגשים הרבה מספרים קטנים מאוד או גדולים מאוד. ניקח לדוגמה את קבוע פלאנק, ביחידות של ג’ול כפול שנייה. בקוד כותבים מספר כזה בעזרת האות e, שפירושה “כפול 10 בחזקת”. אם נדפיס אותו בתצוגה עשרונית רגילה נקבל אפס, וזה לא שימושי:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Avi'</span>
-<span class="n">small_pi</span><span class="o">=</span><span class="mf">0.0000000314159265359</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I like </span><span class="si">{</span><span class="n">small_pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"h = </span><span class="si">{</span><span class="n">h</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Avi and I like 0.00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h = 0.00
 </pre></div>
 </div>
 </div>
 </div>
-<p>אבל כך נקבל פשוט 0, וזה כמובן לא ייצוג אינפורמטיבי.</p>
-<p>לעומת זאת, באמצעות תצוגה מדעית (<code class="docutils literal notranslate"><span class="pre">e</span></code> כמו אקספוננט) אנו יכולים “לחתוך” את כל האפסים שנמצאים בתחילת המספר עד שנגיע למספר שאינו 0</p>
+<p>ב<strong>תצוגה מדעית</strong> (האות e, כמו אקספוננט) המספר מוצג כמספר בין 1 ל-10, כפול חזקה של 10:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I like </span><span class="si">{</span><span class="n">small_pi</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"h = </span><span class="si">{</span><span class="n">h</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Avi and I like 3.14e-08
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h = 6.63e-34
 </pre></div>
 </div>
 </div>
 </div>
-<p>התצוגה המדעית זו בעצם אומרת לנו שלפני שנראה את ספרות 314, נראה גם 8 אפסים.<br />
-שימו לב שגם פה חתכנו את כל הספרות בדיוק של 2 לאחר הנקודה, לאחר ההמרה לתצוגה המדעית.</p>
+<p>הפלט פירושו 6.63 כפול 10 בחזקת מינוס 34. גם כאן המספר שאחרי הנקודה קובע כמה ספרות יוצגו אחרי הנקודה העשרונית.</p>
 <div class="caution admonition">
 <p class="admonition-title"><strong>נסו בעצמכם</strong></p>
 <p>נסו להשתמש בתצוגה מדעית על מנת לייצג גם מספרים מאוד גדולים, כמו 31415926535900000</p>
@@ -814,7 +765,7 @@ Adam-70
 </section>
 <section id="id1">
 <h2><span class="section-number">6.4.2. </span>בחנו את עצמכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>נחזור לפונקציית הקירור משבוע 5, הפעם עם מילון שמחזיק את טמפרטורת החדר במקומות שונים. מה ידפיס הקוד הבא? ענו לפני שאתם מריצים.</p>
+<p>נחזור לפונקציית הקירור משבוע 5 ולמילון <code class="docutils literal notranslate"><span class="pre">rooms</span></code> מהדף הקודם, שמחזיק את טמפרטורת החדר במקומות שונים. מה ידפיס הקוד הבא? ענו לפני שאתם מריצים.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cool</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">T_room</span><span class="o">=</span><span class="mf">20.0</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">T</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="n">T_room</span><span class="p">)</span>
 
@@ -826,8 +777,8 @@ Adam-70
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="mBISvHiKolQL" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#mBISvHiKolQL {
+<div class="output text_html"><div id="UYxRPHnLnGvC" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#UYxRPHnLnGvC {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1050,7 +1001,7 @@ Adam-70
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsmBISvHiKolQL=[{"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d3\u05e4\u05d9\u05e1 \u05d4\u05e7\u05d5\u05d3?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05dc\u05db\u05dc \u05d6\u05d5\u05d2 \u05e9\u05dc \u05de\u05e4\u05ea\u05d7 \u05d5\u05e2\u05e8\u05da \u05d1\u05de\u05d9\u05dc\u05d5\u05df."}, {"type": "default", "feedback": "\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05d1\u05e8\u05ea \u05e2\u05dc \u05d4\u05d6\u05d5\u05d2\u05d5\u05ea \u05d1\u05de\u05d9\u05dc\u05d5\u05df. \u05db\u05de\u05d4 \u05d6\u05d5\u05d2\u05d5\u05ea \u05d9\u05e9 \u05d1\u05d5?"}]}, {"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05ea\u05d5\u05d3\u05e4\u05e1?", "type": "many_choice", "answers": [{"answer": "fridge: 42.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 80.0 - 0.5 * (80.0 - 4.0) \u05d4\u05d5\u05d0 42.0, \u05d5-.1f \u05de\u05e6\u05d9\u05d2 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 42", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05e4\u05d5\u05e8\u05de\u05d8 .1f \u05de\u05e6\u05d9\u05d2 \u05ea\u05de\u05d9\u05d3 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 50.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05db\u05d0\u05df T_room \u05d4\u05d5\u05d0 4.0, \u05d4\u05e2\u05e8\u05da \u05e9\u05dc fridge \u05d1\u05de\u05d9\u05dc\u05d5\u05df, \u05d5\u05dc\u05d0 \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc 20.0."}, {"answer": "4.0: 42.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. name \u05de\u05e7\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e4\u05ea\u05d7 \u05d5-T_room \u05d0\u05ea \u05d4\u05e2\u05e8\u05da."}]}];
+</style></div><script type="application/javascript">var questionsUYxRPHnLnGvC=[{"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d3\u05e4\u05d9\u05e1 \u05d4\u05e7\u05d5\u05d3?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05dc\u05db\u05dc \u05d6\u05d5\u05d2 \u05e9\u05dc \u05de\u05e4\u05ea\u05d7 \u05d5\u05e2\u05e8\u05da \u05d1\u05de\u05d9\u05dc\u05d5\u05df."}, {"type": "default", "feedback": "\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05d1\u05e8\u05ea \u05e2\u05dc \u05d4\u05d6\u05d5\u05d2\u05d5\u05ea \u05d1\u05de\u05d9\u05dc\u05d5\u05df. \u05db\u05de\u05d4 \u05d6\u05d5\u05d2\u05d5\u05ea \u05d9\u05e9 \u05d1\u05d5?"}]}, {"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05ea\u05d5\u05d3\u05e4\u05e1?", "type": "many_choice", "answers": [{"answer": "fridge: 42.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 80.0 - 0.5 * (80.0 - 4.0) \u05d4\u05d5\u05d0 42.0, \u05d5-.1f \u05de\u05e6\u05d9\u05d2 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 42", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05e4\u05d5\u05e8\u05de\u05d8 .1f \u05de\u05e6\u05d9\u05d2 \u05ea\u05de\u05d9\u05d3 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 50.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05db\u05d0\u05df T_room \u05d4\u05d5\u05d0 4.0, \u05d4\u05e2\u05e8\u05da \u05e9\u05dc fridge \u05d1\u05de\u05d9\u05dc\u05d5\u05df, \u05d5\u05dc\u05d0 \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc 20.0."}, {"answer": "4.0: 42.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. name \u05de\u05e7\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e4\u05ea\u05d7 \u05d5-T_room \u05d0\u05ea \u05d4\u05e2\u05e8\u05da."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2112,8 +2063,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("mBISvHiKolQL")) {
-    show_questions(questionsmBISvHiKolQL, mBISvHiKolQL);
+  if (document.getElementById("UYxRPHnLnGvC")) {
+    show_questions(questionsUYxRPHnLnGvC, UYxRPHnLnGvC);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2157,9 +2108,9 @@ function try_show() {
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">name,</span> <span class="pre">T_room</span> <span class="pre">in</span> <span class="pre">rooms</span></code>.</strong> לולאה על מילון עוברת רק על המפתחות. כל מפתח הוא מחרוזת אחת, ופייתון מנסה לפרק אותה לשני משתנים, ולכן מתקבלת <code class="docutils literal notranslate"><span class="pre">ValueError:</span> <span class="pre">too</span> <span class="pre">many</span> <span class="pre">values</span> <span class="pre">to</span> <span class="pre">unpack</span></code>. כדי לקבל זוגות של מפתח וערך צריך <code class="docutils literal notranslate"><span class="pre">rooms.items()</span></code>.</p></li>
-<li><p><strong>חסר <code class="docutils literal notranslate"><span class="pre">f</span></code> לפני המחרוזת.</strong> בלי <code class="docutils literal notranslate"><span class="pre">f</span></code>, הסוגריים המסולסלים הם סתם תווים, ויודפס <code class="docutils literal notranslate"><span class="pre">{name}:</span> <span class="pre">{T:.1f}</span></code> כמו שהוא.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">rooms[&quot;Lab&quot;]</span></code>.</strong> מפתחות במילון רגישים לאותיות גדולות וקטנות: <code class="docutils literal notranslate"><span class="pre">&quot;Lab&quot;</span></code> ו-<code class="docutils literal notranslate"><span class="pre">&quot;lab&quot;</span></code> הם מפתחות שונים, ולכן מתקבלת <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">name,</span> <span class="pre">T_room</span> <span class="pre">in</span> <span class="pre">rooms</span></code>‎.</strong> לולאה על מילון עוברת רק על המפתחות. כל מפתח הוא מחרוזת אחת, ופייתון מנסה לפרק אותה לשני משתנים, ולכן מתקבלת ‎<code class="docutils literal notranslate"><span class="pre">ValueError:</span> <span class="pre">too</span> <span class="pre">many</span> <span class="pre">values</span> <span class="pre">to</span> <span class="pre">unpack</span></code>‎. כדי לקבל זוגות של מפתח וערך צריך ‎<code class="docutils literal notranslate"><span class="pre">rooms.items()</span></code>‎.</p></li>
+<li><p><strong>חסר <code class="docutils literal notranslate"><span class="pre">f</span></code> לפני המחרוזת.</strong> בלי <code class="docutils literal notranslate"><span class="pre">f</span></code>, הסוגריים המסולסלים הם סתם תווים, ויודפס ‎<code class="docutils literal notranslate"><span class="pre">{name}:</span> <span class="pre">{T:.1f}</span></code>‎ כמו שהוא.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">rooms[&quot;Lab&quot;]</span></code>‎.</strong> מפתחות במילון רגישים לאותיות גדולות וקטנות: ‎<code class="docutils literal notranslate"><span class="pre">&quot;Lab&quot;</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">&quot;lab&quot;</span></code>‎ הם מפתחות שונים, ולכן מתקבלת <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p></li>
 </ol>
 <p><strong>מה רואים בהרצה?</strong> קודם <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, בשורת הלולאה. היא מסתירה את שתי האחרות: אחרי התיקון הראשון מודפסות השורות בלי ערכים (שגיאה 2), ובסוף מתקבלת <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> (שגיאה 3).</p>
 </div>
@@ -2233,7 +2184,7 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">6.4.1. עריכת מחרוזות לפני פורמט: String Formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-formatting">6.4.1. עריכת מחרוזות לפי פורמט (String Formatting)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.4.2. בחנו את עצמכם</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.4.2.1. מצאו את 3 השגיאות</a></li>
 </ul>
