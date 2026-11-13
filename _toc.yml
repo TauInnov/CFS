@@ -106,7 +106,7 @@ parts:
             title: "List Comprehensions"
 
       - file: course/weeks/week_5
-        title: "שבוע 5 — זיכרון, פונקציות מתקדמות ומבנים בלתי־משתנים"
+        title: "שבוע 5 — זיכרון ופונקציות מתקדמות"
         sections:
           - file: vendor/virtual-pyprog/10_0_mutable-vs-immutable
             title: "Mutable vs Immutable"
@@ -121,7 +121,7 @@ parts:
           - file: vendor/virtual-pyprog/12_0_data_structures
             title: "מבני נתונים"
           - file: vendor/virtual-pyprog/12_1_tuples
-            title: "Tuples"
+            title: "טאפלים (tuple)"
           - file: vendor/virtual-pyprog/12_2_dicts
             title: "מילונים (dict)"
           - file: vendor/virtual-pyprog/13_0_string-formats
