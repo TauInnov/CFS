@@ -660,7 +660,7 @@
 </div>
 <p>כאשר n הוא מספר הפעמים שרוצים לבצע את הפעולה.</p>
 <ul class="simple">
-<li><p>לולאות <code class="docutils literal notranslate"><span class="pre">while</span></code>: משמשות לביצוע קטע קוד באופן חזרתי כל עוד מתקיים תנאי מסויים. לולאות אלו הכרחיות כאשר לא ידוע לנו מראש מספר האיטרציות, כפי שראינו בדוגמת הטלת הקוביה עד להשגת התוצאה 6. יחד עם זאת, אפשר כמובן להשתמש בלולאות <code class="docutils literal notranslate"><span class="pre">while</span></code> גם כאשר ידוע מראש מספר האיטרציות. תמיד אפשר לכתוב למשל לולאה כזו:</p></li>
+<li><p>לולאות <code class="docutils literal notranslate"><span class="pre">while</span></code>: משמשות לביצוע קטע קוד באופן חזרתי כל עוד מתקיים תנאי מסויים. לולאות אלו הכרחיות כאשר לא ידוע לנו מראש מספר האיטרציות, כפי שראינו בחישוב מספר הצעדים עד שיווי משקל (ובדוגמת הטלת הקוביה). יחד עם זאת, אפשר כמובן להשתמש בלולאות <code class="docutils literal notranslate"><span class="pre">while</span></code> גם כאשר ידוע מראש מספר האיטרציות. תמיד אפשר לכתוב למשל לולאה כזו:</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">:</span>
@@ -669,10 +669,14 @@
 </pre></div>
 </div>
 <p>לולאה זו למעשה שקולה ללולאת ה-<code class="docutils literal notranslate"><span class="pre">for</span></code> שלעיל, וגם היא מבצעת פעולה מסויימת בדיוק n פעמים.</p>
-<p>לולאות <code class="docutils literal notranslate"><span class="pre">while</span></code> בפייתון דורשות זהירות מסויימת, כי המתכנת אחראי להגדרת הלולאה באופן תקין, שתעצור אחרי מספר סופי של איטרציות (כלומר שלא תיכנס ללולאה אינסופית). הטעות הנפוצה בעניין זה היא לשכוח לקדם את הלולאה אל עבר סיומה. בדוגמה הנ”ל זוהי הפקודה <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i+1</span></code> שדואגת שאכן הלולאה תסתיים, כי בכל פעם i מתקרב ל-n (בהנחה ש-n לא מספר שלילי!). אבל לולאה אינסופית יכולה להיגרם גם מטעות בתנאי הלולאה או מאיתחול לא נכון של משתנה הלולאה (i בדוגמה הנ”ל).</p>
+<p>לולאות <code class="docutils literal notranslate"><span class="pre">while</span></code> בפייתון דורשות זהירות מסויימת, כי המתכנת אחראי להגדרת הלולאה באופן תקין, שתעצור אחרי מספר סופי של איטרציות (כלומר שלא תיכנס ללולאה אינסופית). הטעות הנפוצה בעניין זה היא לשכוח לקדם את הלולאה אל עבר סיומה. בדוגמה הנ”ל זוהי הפקודה ‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i+1</span></code>‎ שדואגת שאכן הלולאה תסתיים, כי בכל פעם i מתקרב ל-n (בהנחה ש-n לא מספר שלילי!). אבל לולאה אינסופית יכולה להיגרם גם מטעות בתנאי הלולאה או מאיתחול לא נכון של משתנה הלולאה (i בדוגמה הנ”ל).</p>
 <p>בחלק הבא נראה עוד שתי דוגמאות מעניינות לשימוש בלולאות (דוגמה אחת לכל סוג לולאה), ונקדיש עוד קצת זמן לתרגול הנושא החשוב הזה.</p>
 <section id="id1">
 <h2><span class="section-number">4.8.1. </span>זיהוי פלינדרום<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="note admonition">
+<p class="admonition-title">להרחבה</p>
+<p>מכאן ועד הכותרת “חישוב עצרת”, החלק אינו חלק מהמסלול המרכזי של השבוע, ואפשר לדלג עליו.</p>
+</div>
 <div class="dropdown info admonition">
 <p class="admonition-title"><strong>זוכרים מהו פלינדרום?</strong></p>
 <p>את השפה העברית אנחנו כותבים וקוראים בד”כ מימין לשמאל. כך גם בערבית. לעומת זאת בשפות כמו אנגלית, רוסית, צרפתית וגם באמהרית כותבים וקוראים משמאל לימין. בכל השפות האלו ובאחרות ישנן מילים שאפשר לקרוא אותן בשני הכיוונים באותו אופן. למשל, המילה ‘אמא’ בעברית, או המילה radar באנגלית. מילים כאלו נקראות “פלינדרום”.</p>
@@ -689,22 +693,22 @@
 <p>לפני שנקפוץ לממש את האלגוריתם הזה בפייתון, בואו נכתוב אותו בפסאודו קוד. נשתמש בשני משתנים שיכילו אינדקסים במחרוזת. הם יאותחלו לקצוות, ויזוזו פנימה בכל איטרציה.</p>
 <p><strong>זיהוי פלינדרום (קלט: המחרוזת st)</strong></p>
 <ol class="arabic simple">
-<li><p>אתחל <code class="docutils literal notranslate"><span class="pre">l=0,</span> <span class="pre">r=len(st)-1</span></code></p></li>
-<li><p>כל עוד <code class="docutils literal notranslate"><span class="pre">l&lt;r</span></code>:<br />
-2.1 אם <code class="docutils literal notranslate"><span class="pre">st[l]</span></code> לא שווה ל-<code class="docutils literal notranslate"><span class="pre">st[r]</span></code>:<br />
+<li><p>אתחל ‎<code class="docutils literal notranslate"><span class="pre">l=0,</span> <span class="pre">r=len(st)-1</span></code>‎</p></li>
+<li><p>כל עוד ‎<code class="docutils literal notranslate"><span class="pre">l&lt;r</span></code>‎:<br />
+2.1 אם ‎<code class="docutils literal notranslate"><span class="pre">st[l]</span></code>‎ לא שווה ל-‎<code class="docutils literal notranslate"><span class="pre">st[r]</span></code>‎:<br />
 2.1.1. החזר <code class="docutils literal notranslate"><span class="pre">False</span></code> וסיים<br />
 2.2 הגדל את <code class="docutils literal notranslate"><span class="pre">l</span></code> ב- 1 והקטן את <code class="docutils literal notranslate"><span class="pre">r</span></code> ב- 1</p></li>
 <li><p>החזר <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ol>
-<p>בהתחלה נגדיר שני משתנים עם השמות <code class="docutils literal notranslate"><span class="pre">l</span></code> (left) ו-<code class="docutils literal notranslate"><span class="pre">r</span></code> (right) . נאתחל את <code class="docutils literal notranslate"><span class="pre">l</span></code> לאינדקס השמאלי ביותר של המחרוזת, כלומר 0, ואת <code class="docutils literal notranslate"><span class="pre">r</span></code> לימני ביותר, כלומר אורך המחרוזת פחות 1 (פחות 1, כי מתחילים ב-0). ואז נריץ בלולאה כל עוד <code class="docutils literal notranslate"><span class="pre">l&lt;r</span></code>, ונשווה את תווי המחרוזת באינדקסים <code class="docutils literal notranslate"><span class="pre">l</span></code> ו-<code class="docutils literal notranslate"><span class="pre">r</span></code>.<br />
+<p>בהתחלה נגדיר שני משתנים עם השמות <code class="docutils literal notranslate"><span class="pre">l</span></code> (left) ו-<code class="docutils literal notranslate"><span class="pre">r</span></code> (right) . נאתחל את <code class="docutils literal notranslate"><span class="pre">l</span></code> לאינדקס השמאלי ביותר של המחרוזת, כלומר 0, ואת <code class="docutils literal notranslate"><span class="pre">r</span></code> לימני ביותר, כלומר אורך המחרוזת פחות 1 (פחות 1, כי מתחילים ב-0). ואז נריץ בלולאה כל עוד ‎<code class="docutils literal notranslate"><span class="pre">l&lt;r</span></code>‎, ונשווה את תווי המחרוזת באינדקסים <code class="docutils literal notranslate"><span class="pre">l</span></code> ו-<code class="docutils literal notranslate"><span class="pre">r</span></code>.<br />
 אם הם שונים אנחנו יודעים בדיוק מה לעשות – לסיים את ריצת האלגוריתם ולהחזיר <code class="docutils literal notranslate"><span class="pre">False</span></code>.<br />
 אם הם שווים, צריך להמשיך בלולאה, אבל לא לפני שנזיז את <code class="docutils literal notranslate"><span class="pre">l</span></code> מקום אחד ימינה, כלומר נגדיל אותו ב-1, ואת <code class="docutils literal notranslate"><span class="pre">r</span></code> נזיז שמאלה, כלומר נקטין אותו ב-1. משורה 2.2 חוזרים לבדוק את התנאי שבשורה 2 פעם נוספת.<br />
 כך ממשיך התהליך עד שקורה אחד משניים: או שמתישהו מגלים תווים מתאימים ששונים זה מזה, ומחזירים <code class="docutils literal notranslate"><span class="pre">False</span></code>, או שהלולאה מסתיימת כי האינדקס <code class="docutils literal notranslate"><span class="pre">l</span></code> כבר לא קטן מהאינדקס <code class="docutils literal notranslate"><span class="pre">r</span></code>, כלומר או שהמשתנים <code class="docutils literal notranslate"><span class="pre">l</span></code> ו-<code class="docutils literal notranslate"><span class="pre">r</span></code> נפגשו, או שהם חלפו זה על פני זה. אחד מהשניים בטוח יקרה בשלב מוקדם או מאוחר. אם הלולאה הסתיימה מהסיבה השניה, אפשר סוף סוף להחזיר <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p><strong>שימו לב:</strong> ניתן לכתוב פונקציה אשר תעבוד עבור מחרוזות ורשימות, בלי שינוי בקוד.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="vvhKmjlzwcdg" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#vvhKmjlzwcdg {
+<div class="output text_html"><div id="cdHvLNqYOjIL" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#cdHvLNqYOjIL {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -927,7 +931,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsvvhKmjlzwcdg=[{"type": "numeric", "question": "\u05e0\u05e0\u05d9\u05d7 \u05db\u05d9 \u05d0\u05e0\u05d5 \u05de\u05e8\u05d9\u05e6\u05d9\u05dd \u05d0\u05ea \u05d4\u05d0\u05dc\u05d2\u05d5\u05e8\u05d9\u05ea\u05dd \u05dc\u05e2\u05d9\u05dc \u05e2\u05dc \u05d4\u05de\u05d9\u05dc\u05d4 'racekar', \u05db\u05de\u05d4 \u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05e9\u05dc \u05d1\u05d3\u05d9\u05e7\u05d4 \u05e0\u05d1\u05e6\u05e2 \u05e2\u05d3 \u05e9\u05e0\u05d7\u05d6\u05d9\u05e8 False (\u05db\u05d5\u05dc\u05dc \u05d4\u05d1\u05d3\u05d9\u05e7\u05d4 \u05e9\u05d1\u05e1\u05d5\u05e4\u05d4 \u05e0\u05d7\u05d6\u05d9\u05e8 False)?", "answers": [{"type": "value", "value": 3, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"type": "default", "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}, {"type": "many_choice", "question": "\u05de\u05d4 \u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05d4\u05de\u05e7\u05e1\u05d9\u05de\u05dc\u05d9 \u05e9\u05d9\u05d1\u05e6\u05e2 \u05d4\u05d0\u05dc\u05d2\u05d5\u05e8\u05d9\u05ea\u05dd \u05e9\u05dc\u05e0\u05d5, \u05e2\u05d1\u05d5\u05e8 \u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05d1\u05d0\u05d5\u05e8\u05da n? \u05db\u05dc\u05d5\u05de\u05e8 \u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05dc\u05db\u05dc \u05d4\u05d9\u05d5\u05ea\u05e8 \u05e0\u05d9\u05db\u05e0\u05e1 \u05dc\u05d2\u05d5\u05e3 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4?", "answers": [{"answer": "\u05de\u05d7\u05e6\u05d9\u05ea \u05de\u05d0\u05d5\u05e8\u05da \u05d4\u05de\u05d7\u05e8\u05d5\u05d6\u05ea (n/2, \u05de\u05e2\u05d5\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05de\u05d7\u05e6\u05d9\u05ea \u05d4\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05d5\u05e2\u05d5\u05d3 1", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05ea\u05dc\u05d5\u05d9 \u05d0\u05dd n \u05d6\u05d5\u05d2\u05d9 \u05d0\u05d5 \u05d0\u05d9-\u05d6\u05d5\u05d2\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05de\u05d7\u05e6\u05d9\u05ea \u05de\u05d0\u05d5\u05e8\u05da \u05d4\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e4\u05d7\u05d5\u05ea 1 (n//2 - 1)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionscdHvLNqYOjIL=[{"type": "numeric", "question": "\u05e0\u05e0\u05d9\u05d7 \u05db\u05d9 \u05d0\u05e0\u05d5 \u05de\u05e8\u05d9\u05e6\u05d9\u05dd \u05d0\u05ea \u05d4\u05d0\u05dc\u05d2\u05d5\u05e8\u05d9\u05ea\u05dd \u05dc\u05e2\u05d9\u05dc \u05e2\u05dc \u05d4\u05de\u05d9\u05dc\u05d4 'racekar', \u05db\u05de\u05d4 \u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05e9\u05dc \u05d1\u05d3\u05d9\u05e7\u05d4 \u05e0\u05d1\u05e6\u05e2 \u05e2\u05d3 \u05e9\u05e0\u05d7\u05d6\u05d9\u05e8 False (\u05db\u05d5\u05dc\u05dc \u05d4\u05d1\u05d3\u05d9\u05e7\u05d4 \u05e9\u05d1\u05e1\u05d5\u05e4\u05d4 \u05e0\u05d7\u05d6\u05d9\u05e8 False)?", "answers": [{"type": "value", "value": 3, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"type": "default", "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}, {"type": "many_choice", "question": "\u05de\u05d4 \u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05d4\u05de\u05e7\u05e1\u05d9\u05de\u05dc\u05d9 \u05e9\u05d9\u05d1\u05e6\u05e2 \u05d4\u05d0\u05dc\u05d2\u05d5\u05e8\u05d9\u05ea\u05dd \u05e9\u05dc\u05e0\u05d5, \u05e2\u05d1\u05d5\u05e8 \u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05d1\u05d0\u05d5\u05e8\u05da n? \u05db\u05dc\u05d5\u05de\u05e8 \u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05dc\u05db\u05dc \u05d4\u05d9\u05d5\u05ea\u05e8 \u05e0\u05d9\u05db\u05e0\u05e1 \u05dc\u05d2\u05d5\u05e3 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4?", "answers": [{"answer": "\u05de\u05d7\u05e6\u05d9\u05ea \u05de\u05d0\u05d5\u05e8\u05da \u05d4\u05de\u05d7\u05e8\u05d5\u05d6\u05ea (n/2, \u05de\u05e2\u05d5\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "\u05de\u05d7\u05e6\u05d9\u05ea \u05d4\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05d5\u05e2\u05d5\u05d3 1", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05ea\u05dc\u05d5\u05d9 \u05d0\u05dd n \u05d6\u05d5\u05d2\u05d9 \u05d0\u05d5 \u05d0\u05d9-\u05d6\u05d5\u05d2\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "\u05de\u05d7\u05e6\u05d9\u05ea \u05de\u05d0\u05d5\u05e8\u05da \u05d4\u05de\u05d7\u05e8\u05d5\u05d6\u05ea \u05e4\u05d7\u05d5\u05ea 1 (n//2 - 1)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1989,8 +1993,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("vvhKmjlzwcdg")) {
-    show_questions(questionsvvhKmjlzwcdg, vvhKmjlzwcdg);
+  if (document.getElementById("cdHvLNqYOjIL")) {
+    show_questions(questionscdHvLNqYOjIL, cdHvLNqYOjIL);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2005,15 +2009,15 @@ function try_show() {
 <p><strong>עצרו וחשבו:</strong> עבור אילו אורכים של מחרוזות המשתנים <code class="docutils literal notranslate"><span class="pre">l</span></code> ו-<code class="docutils literal notranslate"><span class="pre">r</span></code> ייפגשו באמצע, ועבור אילו הם יחלפו זה על פני זה?</p>
 <div class="dropdown caution admonition">
 <p class="admonition-title">לחצו כאן כדי לצפות בתשובה</p>
-<p>באורך אי-זוגי <code class="docutils literal notranslate"><span class="pre">l</span></code> ו-<code class="docutils literal notranslate"><span class="pre">r</span></code> מגיעים בסוף לאותו תו, האמצעי. אז <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">&lt;</span> <span class="pre">r</span></code> כבר לא מתקיים והלולאה נעצרת, ואין צורך להשוות את התו האמצעי לעצמו. באורך זוגי הם חולפים זה על פני זה מיד אחרי ההשוואה של שני התווים האמצעיים.</p>
+<p>באורך אי-זוגי <code class="docutils literal notranslate"><span class="pre">l</span></code> ו-<code class="docutils literal notranslate"><span class="pre">r</span></code> מגיעים בסוף לאותו תו, האמצעי. אז ‎<code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">&lt;</span> <span class="pre">r</span></code>‎ כבר לא מתקיים והלולאה נעצרת, ואין צורך להשוות את התו האמצעי לעצמו. באורך זוגי הם חולפים זה על פני זה מיד אחרי ההשוואה של שני התווים האמצעיים.</p>
 </div>
 <p>בתרגיל זה נכתוב שתי פונקציות - אחת לזיהוי פלינדרום מושלם ואחת לזיהוי פלינדרום “כללי”.</p>
 <p>בואו נתחיל מזיהוי פלינדרום מושלם - הפונקציה שנכתוב נקראת <code class="docutils literal notranslate"><span class="pre">is_palindrome</span></code> ומקבלת כקלט מחרוזת <code class="docutils literal notranslate"><span class="pre">st</span></code>, להלן תזכורת לפסאודו-קוד שתארנו כעת:</p>
 <p><strong>זיהוי פלינדרום (קלט: המחרוזת st)</strong></p>
 <ol class="arabic simple">
-<li><p>אתחל <code class="docutils literal notranslate"><span class="pre">l=0,</span> <span class="pre">r=len(st)-1</span></code></p></li>
-<li><p>כל עוד <code class="docutils literal notranslate"><span class="pre">l&lt;r</span></code>:<br />
-2.1 אם <code class="docutils literal notranslate"><span class="pre">st[l]</span></code> לא שווה ל-<code class="docutils literal notranslate"><span class="pre">st[r]</span></code>:<br />
+<li><p>אתחל ‎<code class="docutils literal notranslate"><span class="pre">l=0,</span> <span class="pre">r=len(st)-1</span></code>‎</p></li>
+<li><p>כל עוד ‎<code class="docutils literal notranslate"><span class="pre">l&lt;r</span></code>‎:<br />
+2.1 אם ‎<code class="docutils literal notranslate"><span class="pre">st[l]</span></code>‎ לא שווה ל-‎<code class="docutils literal notranslate"><span class="pre">st[r]</span></code>‎:<br />
 2.1.1. החזר <code class="docutils literal notranslate"><span class="pre">False</span></code> וסיים<br />
 2.2 הגדל את <code class="docutils literal notranslate"><span class="pre">l</span></code> ב- 1 והקטן את <code class="docutils literal notranslate"><span class="pre">r</span></code> ב- 1</p></li>
 <li><p>החזר <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
@@ -2227,7 +2231,7 @@ A man, a plan, a canal, Panama.</p>
     <span class="k">return</span> <span class="n">fact</span>
 </pre></div>
 </div>
-<p>גם כאן צריך לאתחל את <code class="docutils literal notranslate"><span class="pre">fact</span></code> ל-1 לפני הלולאה. בלי האתחול, בפעם הראשונה ש-<code class="docutils literal notranslate"><span class="pre">fact</span> <span class="pre">=</span> <span class="pre">fact</span> <span class="pre">*</span> <span class="pre">i</span></code> רצה, <code class="docutils literal notranslate"><span class="pre">fact</span></code> עוד לא קיים ומתקבלת שגיאה.</p>
+<p>גם כאן צריך לאתחל את <code class="docutils literal notranslate"><span class="pre">fact</span></code> ל-1 לפני הלולאה. בלי האתחול, בפעם הראשונה ש-‎<code class="docutils literal notranslate"><span class="pre">fact</span> <span class="pre">=</span> <span class="pre">fact</span> <span class="pre">*</span> <span class="pre">i</span></code>‎ רצה, <code class="docutils literal notranslate"><span class="pre">fact</span></code> עוד לא קיים ומתקבלת שגיאה.</p>
 </div>
 </section>
 </section>
