@@ -58,10 +58,10 @@ parts:
             title: "בניית פונקציות משלכם"
           - file: vendor/virtual-pyprog/3_3_formal-and-actual-variables
             title: "פרמטרים וארגומנטים"
-          - file: vendor/virtual-pyprog/3_5_caller-callee
-            title: "קריאה הדדית בין פונקציות"
           - file: vendor/virtual-pyprog/3_4_advanced-examples
             title: "דוגמאות מתקדמות"
+          - file: vendor/virtual-pyprog/3_5_caller-callee
+            title: "קריאה הדדית בין פונקציות"
 
       - file: course/weeks/week_3
         title: "שבוע 3 — רשימות"
