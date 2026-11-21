@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -631,9 +631,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.1. סיכום</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.2. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.1. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.2. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. מנוסחה לפונקציה: חתימה ודוגמה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.4. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.5. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.6. באג 1: קדימות פעולות</a></li>
@@ -655,44 +655,23 @@
   <section id="id1">
 <h1><span class="section-number">7.10. </span>מנוסחה לקוד: תהליך התרגום ושגיאות נפוצות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>לתרגם משוואה פיזיקלית לקוד זו לא רק “העתקת סימנים” — יש לזה תהליך שיטתי, שאפשר וכדאי להפעיל בכל פעם מחדש. בסעיף הזה נעבור על התהליך הזה צעד-צעד על דוגמה מלאה, ואז נבנה יחד “מאגר באגים”: שלושת סוגי הטעויות הנפוצים ביותר כשהתהליך משתבש. באגים מהסוג הזה מסוכנים במיוחד, כי הקוד <strong>רץ בלי שגיאה</strong> — הוא פשוט מחזיר תוצאה פיזיקלית לא נכונה, בלי שום התראה.</p>
-<p>סרטון: <strong>“מסכות בוליאניות עם &amp; ו-|: נוסחה שמוגדרת בקטעים”</strong> — הקלטת מסך של המחברת עם קול.</p>
-<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-  <iframe src="https://www.youtube-nocookie.com/embed/EAt93dTWIXg?rel=0"
-          style="position:absolute; top:0; left:0; width:100%; height:100%;"
-          frameborder="0" allowfullscreen></iframe>
-</div>
-<section id="id2">
-<h2><span class="section-number">7.10.1. </span>סיכום<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>כל מקרה של הנוסחה הופך למסכה: <code class="docutils literal notranslate"><span class="pre">(t</span> <span class="pre">&gt;=</span> <span class="pre">0)</span> <span class="pre">&amp;</span> <span class="pre">(t</span> <span class="pre">&lt;</span> <span class="pre">4)</span></code>.</p></li>
-<li><p>משתמשים ב-<code class="docutils literal notranslate"><span class="pre">&amp;</span></code> וב-<code class="docutils literal notranslate"><span class="pre">|</span></code> עם סוגריים סביב כל השוואה. <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> ו-<code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">t</span> <span class="pre">&lt;</span> <span class="pre">4</span></code> נכשלים על מערכים.</p></li>
-<li><p>בודקים שהמקרים מכסים כל נקודה ואינם חופפים: <code class="docutils literal notranslate"><span class="pre">np.all(m1</span> <span class="pre">|</span> <span class="pre">m2</span> <span class="pre">|</span> <span class="pre">m3)</span></code>, <code class="docutils literal notranslate"><span class="pre">np.any(m1</span> <span class="pre">&amp;</span> <span class="pre">m2)</span></code>.</p></li>
-<li><p>בגבולות (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code> או <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>) קל לטעות בלי שתתקבל שגיאה.</p></li>
-</ul>
-<p><strong>תרגול עצמי:</strong></p>
-<p><a class="reference external" href="https://colab.research.google.com/github/TauInnov/CFS/blob/main/exercises/week7_10_practice.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<p>או להורדה: <a class="reference download internal" download="" href="../../../_downloads/1bc944848bd07a39cfa60302e400c3ed/week7_10_practice.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">week7_10_practice.ipynb</span></code></a></p>
-<blockquote>
-<div><p>בפתיחה ב־Colab: File ← Save a copy in Drive לפני שמתחילים, אחרת העבודה לא תישמר.</p>
-</div></blockquote>
-</section>
 <section id="numpy">
-<h2><span class="section-number">7.10.2. </span>תהליך שיטתי: מנוסחה לביטוי ב-NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.10.1. </span>תהליך שיטתי: מנוסחה לביטוי ב-NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
 <p>בכל פעם שמתרגמים משוואה פיזיקלית לקוד, שווה לעבור על ארבעה שלבים, בסדר הזה:</p>
 <ol class="arabic simple">
-<li><p><strong>זיהוי כל גורם במשוואה</strong> — האם הוא סקלר קבוע (מספר בודד, כמו מהירות התחלתית אחת), מערך (למשל טווח זמנים, או תוצאה של כמה ריצות), או קבוע פיזיקלי (<code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>)?</p></li>
+<li><p><strong>זיהוי כל גורם במשוואה</strong> — האם הוא סקלר קבוע (מספר בודד, כמו מהירות התחלתית אחת), מערך (למשל טווח זמנים, או תוצאה של כמה ריצות), או קבוע פיזיקלי (‎<code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>‎)?</p></li>
 <li><p><strong>החלטה על סדר הפעולות והביטוי המתאים ב-NumPy</strong> — אילו סוגריים נדרשים כדי שסדר החישוב יתאים לנוסחה? אילו פעולות פועלות איבר-איבר (סעיף 7.7), ואילו הן סקלר מול מערך?</p></li>
 <li><p><strong>כתיבת הביטוי שורה-שורה</strong> — לא לנסות לדחוס את כל הנוסחה לשורה אחת מסובכת בניסיון הראשון. לבנות בהדרגה, ולהדפיס תוצאות ביניים כדי לוודא שכל שלב עשה מה שהתכוונתם.</p></li>
 <li><p><strong>בדיקת סבירות בסוף</strong> — יחידות (כל הגדלים עדיין ב-SI?), סדר גודל (התוצאה הגיונית פיזיקלית?), ומקרי קצה (מה קורה בערכי קיצון, כמו זווית של <span class="math notranslate nohighlight">\(0°\)</span> או <span class="math notranslate nohighlight">\(90°\)</span>?).</p></li>
 </ol>
 </section>
-<section id="id3">
-<h2><span class="section-number">7.10.3. </span>דוגמה: מהנוסחה לקוד — טווח הזריקה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2><span class="section-number">7.10.2. </span>דוגמה: מהנוסחה לקוד — טווח הזריקה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>נתרגם את נוסחת הטווח האופקי של זריקה:</p>
 <div class="math notranslate nohighlight">
 \[R(v_0,\theta) = \frac{v_0^2 \sin(2\theta)}{g}\]</div>
-<p><strong>שלב 1 — זיהוי גורמים:</strong> <span class="math notranslate nohighlight">\(v_0\)</span> ו-<span class="math notranslate nohighlight">\(\theta\)</span> הם סקלרים (מהירות שיגור וזווית שיגור בודדות), <span class="math notranslate nohighlight">\(g\)</span> הוא קבוע פיזיקלי. הזווית <span class="math notranslate nohighlight">\(\theta\)</span> נתונה במעלות — ולכן, כמו בכל שימוש בפונקציה טריגונומטרית של NumPy (סעיף 7.7), חייבים להמיר אותה לרדיאנים <strong>לפני</strong> שמכניסים אותה ל-<code class="docutils literal notranslate"><span class="pre">np.sin</span></code>.</p>
-<p><strong>שלב 2 — סדר הפעולות:</strong> קודם <code class="docutils literal notranslate"><span class="pre">2*theta</span></code> (בתוך ה-<code class="docutils literal notranslate"><span class="pre">sin</span></code>), אז <code class="docutils literal notranslate"><span class="pre">np.sin(...)</span></code>, אז <code class="docutils literal notranslate"><span class="pre">v0**2</span> <span class="pre">*</span> <span class="pre">...</span></code>, ולבסוף חילוק ב-<code class="docutils literal notranslate"><span class="pre">g</span></code>. כל צעד כזה יהפוך לשורת קוד נפרדת.</p>
+<p><strong>שלב 1 — זיהוי גורמים:</strong> <span class="math notranslate nohighlight">\(v_0\)</span> ו-<span class="math notranslate nohighlight">\(\theta\)</span> הם סקלרים (מהירות שיגור וזווית שיגור בודדות), <span class="math notranslate nohighlight">\(g\)</span> הוא קבוע פיזיקלי. הזווית <span class="math notranslate nohighlight">\(\theta\)</span> נתונה במעלות — ולכן, כמו בכל שימוש בפונקציה טריגונומטרית של NumPy (סעיף 7.7), חייבים להמיר אותה לרדיאנים <strong>לפני</strong> שמכניסים אותה ל-‎<code class="docutils literal notranslate"><span class="pre">np.sin</span></code>‎.</p>
+<p><strong>שלב 2 — סדר הפעולות:</strong> קודם ‎<code class="docutils literal notranslate"><span class="pre">2*theta</span></code>‎ (בתוך ה-‎<code class="docutils literal notranslate"><span class="pre">sin</span></code>‎), אז ‎<code class="docutils literal notranslate"><span class="pre">np.sin(...)</span></code>‎, אז ‎<code class="docutils literal notranslate"><span class="pre">v0**2</span> <span class="pre">*</span> <span class="pre">...</span></code>‎, ולבסוף חילוק ב-‎<code class="docutils literal notranslate"><span class="pre">g</span></code>‎. כל צעד כזה יהפוך לשורת קוד נפרדת.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -725,42 +704,50 @@ R בזווית 90°: 0.0
 </div>
 <p>התוצאה, כ-40.8 מטר עבור <span class="math notranslate nohighlight">\(v_0=20\)</span> מ/ש בזווית <span class="math notranslate nohighlight">\(45°\)</span>, נמצאת בסדר גודל סביר לזריקת כדור ביד. בדיקת מקרי הקצה מאששת את הפיזיקה: בזווית <span class="math notranslate nohighlight">\(0°\)</span> הכדור לא עף אופקית בכלל (הטווח 0), ובזווית <span class="math notranslate nohighlight">\(90°\)</span> הוא עולה ויורד באותה נקודה (הטווח גם כן 0) — בדיוק כפי שמצפים ממשוואת הטווח.</p>
 </section>
-<section id="id4">
-<h2><span class="section-number">7.10.4. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2><span class="section-number">7.10.3. </span>מנוסחה לפונקציה: חתימה ודוגמה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>כשנוסחה עובדת, כדאי לעטוף אותה בפונקציה, כדי להשתמש בה שוב עם מספרים אחרים. שני דברים מגדירים פונקציה כזו עוד לפני שכותבים אותה:</p>
+<ul class="simple">
+<li><p><strong>חתימה</strong>: שם הפונקציה והפרמטרים, עם היחידות של כל אחד. למשל ‎<code class="docutils literal notranslate"><span class="pre">launch_range(v0,</span> <span class="pre">theta_deg,</span> <span class="pre">g)</span></code>‎.</p></li>
+<li><p><strong>דוגמה</strong>: קריאה אחת שאת התוצאה שלה יודעים מראש. עם <span class="math notranslate nohighlight">\(g = 10\)</span>, <span class="math notranslate nohighlight">\(v_0 = 20\)</span> ו-<span class="math notranslate nohighlight">\(\theta = 45°\)</span> הנוסחה נותנת <span class="math notranslate nohighlight">\(20^2 \cdot \sin 90° / 10 = 40\)</span> מטר.</p></li>
+</ul>
+<p>כותבים את הפונקציה, ומיד מריצים את הדוגמה: אם יוצא 40.0, הפונקציה עושה מה שהחתימה מבטיחה. מכאן אפשר לבנות עליה פונקציה נוספת <strong>בלי לכתוב את הנוסחה שוב</strong>: ‎<code class="docutils literal notranslate"><span class="pre">lands_beyond</span></code>‎ משתמשת ב-‎<code class="docutils literal notranslate"><span class="pre">launch_range</span></code>‎ כדי לבדוק אם הכדור נוחת רחוק יותר ממרחק נתון.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">launch_range</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">theta_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Range (m); v0 in m/s, theta_deg in degrees, g in m/s^2."""</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
 
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"לפי התהליך שראינו, מה השלב הראשון בתרגום משוואה לקוד — עוד לפני כתיבת שורת קוד אחת?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"לכתוב את כל הביטוי בשורה אחת ואז לתקן שגיאות אם יש"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — זה בדיוק ההפך מהתהליך המומלץ; עדיף לבנות בהדרגה."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"לזהות כל גורם במשוואה: האם הוא סקלר קבוע, מערך, או קבוע פיזיקלי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"לבדוק את יחידות המידה של התוצאה הסופית"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"זה שלב חשוב — אבל הוא שלב 4, בדיקת הסבירות בסוף, לא הראשון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"לחפש את הנוסחה המדויקת בספר לימוד"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא קשור לתהליך התרגום עצמו — התהליך מתחיל מרגע שהנוסחה כבר בידיכם."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"בדוגמת הטווח, למה חובה להפעיל את &lt;code&gt;np.radians&lt;/code&gt; על הזווית לפני &lt;code&gt;np.sin&lt;/code&gt;, ולא בשלב כלשהו אחרי?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי np.radians משנה גם את הערך של g"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — np.radians פועל רק על הזווית שהועברה לו, ולא נוגע במשתנים אחרים."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"זה לא באמת משנה — אפשר להמיר בכל שלב בתהליך, גם אחרי החישוב"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — זה בדיוק ההפך; ראינו בסעיף 7.7 שהמרה בשלב הלא נכון נותנת תוצאה פיזיקלית שגויה."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי np.sin לא מקבל בכלל משתנים מטיפוס float"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא נכון — np.sin מקבל בדיוק מספרים מטיפוס float; הבעיה היא ביחידה, לא בטיפוס."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי np.sin מצפה שהערך שהיא מקבלת כבר יהיה ברדיאנים; קלט במעלות מחושב כאילו הוא רדיאנים, וזו זווית אחרת לגמרי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">launch_range</span><span class="p">(</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">))</span>   <span class="c1"># the example: 40.0</span>
 
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">lands_beyond</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">theta_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""True if the ball lands farther than distance (m)."""</span>
+    <span class="k">return</span> <span class="n">launch_range</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">theta_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">distance</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lands_beyond</span><span class="p">(</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">))</span>   <span class="c1"># 40 &gt; 30, so True</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="TZwpVKNskmCt" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#TZwpVKNskmCt {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.0
+True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2><span class="section-number">7.10.4. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">10.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="gTGMApvSaMys" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#gTGMApvSaMys {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -983,7 +970,7 @@ R בזווית 90°: 0.0
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsTZwpVKNskmCt=[{"question": "\u05dc\u05e4\u05d9 \u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05e9\u05e8\u05d0\u05d9\u05e0\u05d5, \u05de\u05d4 \u05d4\u05e9\u05dc\u05d1 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05ea\u05e8\u05d2\u05d5\u05dd \u05de\u05e9\u05d5\u05d5\u05d0\u05d4 \u05dc\u05e7\u05d5\u05d3 \u2014 \u05e2\u05d5\u05d3 \u05dc\u05e4\u05e0\u05d9 \u05db\u05ea\u05d9\u05d1\u05ea \u05e9\u05d5\u05e8\u05ea \u05e7\u05d5\u05d3 \u05d0\u05d7\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05dc\u05db\u05ea\u05d5\u05d1 \u05d0\u05ea \u05db\u05dc \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d5\u05d0\u05d6 \u05dc\u05ea\u05e7\u05df \u05e9\u05d2\u05d9\u05d0\u05d5\u05ea \u05d0\u05dd \u05d9\u05e9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05e4\u05da \u05de\u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05d4\u05de\u05d5\u05de\u05dc\u05e5; \u05e2\u05d3\u05d9\u05e3 \u05dc\u05d1\u05e0\u05d5\u05ea \u05d1\u05d4\u05d3\u05e8\u05d2\u05d4."}, {"answer": "\u05dc\u05d6\u05d4\u05d5\u05ea \u05db\u05dc \u05d2\u05d5\u05e8\u05dd \u05d1\u05de\u05e9\u05d5\u05d5\u05d0\u05d4: \u05d4\u05d0\u05dd \u05d4\u05d5\u05d0 \u05e1\u05e7\u05dc\u05e8 \u05e7\u05d1\u05d5\u05e2, \u05de\u05e2\u05e8\u05da, \u05d0\u05d5 \u05e7\u05d1\u05d5\u05e2 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05ea \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05d4\u05de\u05d9\u05d3\u05d4 \u05e9\u05dc \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05e1\u05d5\u05e4\u05d9\u05ea", "correct": false, "feedback": "\u05d6\u05d4 \u05e9\u05dc\u05d1 \u05d7\u05e9\u05d5\u05d1 \u2014 \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05e9\u05dc\u05d1 4, \u05d1\u05d3\u05d9\u05e7\u05ea \u05d4\u05e1\u05d1\u05d9\u05e8\u05d5\u05ea \u05d1\u05e1\u05d5\u05e3, \u05dc\u05d0 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df."}, {"answer": "\u05dc\u05d7\u05e4\u05e9 \u05d0\u05ea \u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05d4\u05de\u05d3\u05d5\u05d9\u05e7\u05ea \u05d1\u05e1\u05e4\u05e8 \u05dc\u05d9\u05de\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05ea\u05d4\u05dc\u05d9\u05da \u05d4\u05ea\u05e8\u05d2\u05d5\u05dd \u05e2\u05e6\u05de\u05d5 \u2014 \u05d4\u05ea\u05d4\u05dc\u05d9\u05da \u05de\u05ea\u05d7\u05d9\u05dc \u05de\u05e8\u05d2\u05e2 \u05e9\u05d4\u05e0\u05d5\u05e1\u05d7\u05d4 \u05db\u05d1\u05e8 \u05d1\u05d9\u05d3\u05d9\u05db\u05dd."}]}, {"question": "\u05d1\u05d3\u05d5\u05d2\u05de\u05ea \u05d4\u05d8\u05d5\u05d5\u05d7, \u05dc\u05de\u05d4 \u05d7\u05d5\u05d1\u05d4 \u05dc\u05d4\u05e4\u05e2\u05d9\u05dc \u05d0\u05ea <code>np.radians</code> \u05e2\u05dc \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05dc\u05e4\u05e0\u05d9 <code>np.sin</code>, \u05d5\u05dc\u05d0 \u05d1\u05e9\u05dc\u05d1 \u05db\u05dc\u05e9\u05d4\u05d5 \u05d0\u05d7\u05e8\u05d9?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 np.radians \u05de\u05e9\u05e0\u05d4 \u05d2\u05dd \u05d0\u05ea \u05d4\u05e2\u05e8\u05da \u05e9\u05dc g", "correct": false, "feedback": "\u05dc\u05d0 \u2014 np.radians \u05e4\u05d5\u05e2\u05dc \u05e8\u05e7 \u05e2\u05dc \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05e9\u05d4\u05d5\u05e2\u05d1\u05e8\u05d4 \u05dc\u05d5, \u05d5\u05dc\u05d0 \u05e0\u05d5\u05d2\u05e2 \u05d1\u05de\u05e9\u05ea\u05e0\u05d9\u05dd \u05d0\u05d7\u05e8\u05d9\u05dd."}, {"answer": "\u05d6\u05d4 \u05dc\u05d0 \u05d1\u05d0\u05de\u05ea \u05de\u05e9\u05e0\u05d4 \u2014 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05de\u05d9\u05e8 \u05d1\u05db\u05dc \u05e9\u05dc\u05d1 \u05d1\u05ea\u05d4\u05dc\u05d9\u05da, \u05d2\u05dd \u05d0\u05d7\u05e8\u05d9 \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d4\u05e4\u05da; \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d1\u05e1\u05e2\u05d9\u05e3 7.7 \u05e9\u05d4\u05de\u05e8\u05d4 \u05d1\u05e9\u05dc\u05d1 \u05d4\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u05e0\u05d5\u05ea\u05e0\u05ea \u05ea\u05d5\u05e6\u05d0\u05d4 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9\u05d4."}, {"answer": "\u05db\u05d9 np.sin \u05dc\u05d0 \u05de\u05e7\u05d1\u05dc \u05d1\u05db\u05dc\u05dc \u05de\u05e9\u05ea\u05e0\u05d9\u05dd \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 float", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 np.sin \u05de\u05e7\u05d1\u05dc \u05d1\u05d3\u05d9\u05d5\u05e7 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05de\u05d8\u05d9\u05e4\u05d5\u05e1 float; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05d9\u05d7\u05d9\u05d3\u05d4, \u05dc\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1."}, {"answer": "\u05db\u05d9 np.sin \u05de\u05e6\u05e4\u05d4 \u05e9\u05d4\u05e2\u05e8\u05da \u05e9\u05d4\u05d9\u05d0 \u05de\u05e7\u05d1\u05dc\u05ea \u05db\u05d1\u05e8 \u05d9\u05d4\u05d9\u05d4 \u05d1\u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd; \u05e7\u05dc\u05d8 \u05d1\u05de\u05e2\u05dc\u05d5\u05ea \u05de\u05d7\u05d5\u05e9\u05d1 \u05db\u05d0\u05d9\u05dc\u05d5 \u05d4\u05d5\u05d0 \u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd, \u05d5\u05d6\u05d5 \u05d6\u05d5\u05d5\u05d9\u05ea \u05d0\u05d7\u05e8\u05ea \u05dc\u05d2\u05de\u05e8\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsgTGMApvSaMys=[{"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "2000.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d7\u05d9\u05dc\u05d5\u05e7 \u05d5\u05db\u05e4\u05dc \u05de\u05d7\u05d5\u05e9\u05d1\u05d9\u05dd \u05de\u05e9\u05de\u05d0\u05dc \u05dc\u05d9\u05de\u05d9\u05df: \u05e7\u05d5\u05d3\u05dd 400 \u05d7\u05dc\u05e7\u05d9 2, \u05d5\u05d0\u05d6 \u05db\u05e4\u05d5\u05dc 10. \u05db\u05d3\u05d9 \u05dc\u05d7\u05dc\u05e7 \u05d1-2g \u05e6\u05e8\u05d9\u05da \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd."}, {"answer": "20.0", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d4 \u05d4\u05d2\u05d5\u05d1\u05d4 \u05d4\u05de\u05e8\u05d1\u05d9 \u05d4\u05e0\u05db\u05d5\u05df, \u05d0\u05d1\u05dc \u05d1\u05dc\u05d9 \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 2 \u05db\u05e4\u05d5\u05dc g \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05de\u05e9\u05d4\u05d5 \u05d0\u05d7\u05e8."}, {"answer": "200.0", "correct": false, "feedback": "\u05dc\u05d0: \u05d0\u05d7\u05e8\u05d9 \u05d4\u05d7\u05d9\u05dc\u05d5\u05e7 \u05d1-2 \u05e2\u05d5\u05d3 \u05db\u05d5\u05e4\u05dc\u05d9\u05dd \u05d1-10."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05d7\u05d5\u05e7\u05d9, \u05d5\u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05db\u05e0\u05d4."}]}, {"question": "\u05d1\u05ea\u05e8\u05d2\u05d5\u05dd \u05e0\u05d5\u05e1\u05d7\u05d4 \u05e2\u05dd \u05e1\u05d9\u05e0\u05d5\u05e1 \u05e9\u05dc \u05d6\u05d5\u05d5\u05d9\u05ea \u05e9\u05e0\u05ea\u05d5\u05e0\u05d4 \u05d1\u05de\u05e2\u05dc\u05d5\u05ea, \u05de\u05ea\u05d9 \u05de\u05de\u05d9\u05e8\u05d9\u05dd \u05d0\u05ea \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05dc\u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd?", "type": "multiple_choice", "answers": [{"answer": "\u05dc\u05e4\u05e0\u05d9 \u05e9\u05de\u05db\u05e0\u05d9\u05e1\u05d9\u05dd \u05d0\u05d5\u05ea\u05d4 \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d9\u05ea \u05d4\u05e1\u05d9\u05e0\u05d5\u05e1 \u05e9\u05dc NumPy, \u05db\u05d9 \u05d4\u05d9\u05d0 \u05de\u05e6\u05e4\u05d4 \u05dc\u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e7\u05dc\u05d8 \u05d1\u05de\u05e2\u05dc\u05d5\u05ea \u05de\u05d7\u05d5\u05e9\u05d1 \u05db\u05d0\u05d9\u05dc\u05d5 \u05d4\u05d5\u05d0 \u05d1\u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd, \u05d5\u05d6\u05d5 \u05d6\u05d5\u05d5\u05d9\u05ea \u05d0\u05d7\u05e8\u05ea \u05dc\u05d2\u05de\u05e8\u05d9."}, {"answer": "\u05d1\u05e1\u05d5\u05e3, \u05e2\u05dc \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: \u05d0\u05d7\u05e8\u05d9 \u05e9\u05d4\u05e1\u05d9\u05e0\u05d5\u05e1 \u05d7\u05d5\u05e9\u05d1 \u05e2\u05dc \u05d6\u05d5\u05d5\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9\u05d4, \u05db\u05d1\u05e8 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05ea\u05e7\u05df."}, {"answer": "\u05dc\u05d0 \u05e6\u05e8\u05d9\u05da: NumPy \u05de\u05d6\u05d4\u05d4 \u05e9\u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05d1\u05de\u05e2\u05dc\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0: NumPy \u05dc\u05d0 \u05d9\u05d5\u05d3\u05e2 \u05d1\u05d0\u05d9\u05d6\u05d5 \u05d9\u05d7\u05d9\u05d3\u05d4 \u05d4\u05d6\u05d5\u05d5\u05d9\u05ea; \u05d4\u05d5\u05d0 \u05ea\u05de\u05d9\u05d3 \u05de\u05e0\u05d9\u05d7 \u05e8\u05d3\u05d9\u05d0\u05e0\u05d9\u05dd."}, {"answer": "\u05e8\u05e7 \u05db\u05e9\u05d4\u05d6\u05d5\u05d5\u05d9\u05ea \u05d2\u05d3\u05d5\u05dc\u05d4 \u05de-90 \u05de\u05e2\u05dc\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0: \u05db\u05dc \u05d6\u05d5\u05d5\u05d9\u05ea \u05d1\u05de\u05e2\u05dc\u05d5\u05ea \u05e6\u05e8\u05d9\u05db\u05d4 \u05d4\u05de\u05e8\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2045,8 +2032,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("TZwpVKNskmCt")) {
-    show_questions(questionsTZwpVKNskmCt, TZwpVKNskmCt);
+  if (document.getElementById("gTGMApvSaMys")) {
+    show_questions(questionsgTGMApvSaMys, gTGMApvSaMys);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2061,34 +2048,31 @@ function try_show() {
 </section>
 <section id="id5">
 <h2><span class="section-number">7.10.5. </span>נסו בעצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>הפעילו את התהליך בעצמכם על נוסחת <strong>הגובה המרבי</strong> של הזריקה:</p>
+<p>הפעילו את אותו תהליך על נוסחת <strong>הגובה המרבי</strong> של הזריקה:</p>
 <div class="math notranslate nohighlight">
 \[y_{max}(v_0,\theta) = \frac{(v_0\sin\theta)^2}{2g}\]</div>
-<p>עברו על ארבעת השלבים: אילו גורמים יש כאן, מה סדר הפעולות הנכון (שימו לב: הריבוע חל על <strong>התוצאה</strong> של <span class="math notranslate nohighlight">\(v_0\sin\theta\)</span>, לא על <span class="math notranslate nohighlight">\(v_0\)</span> בלבד!), כתבו את הביטוי שורה-שורה, ובדקו סבירות עבור <span class="math notranslate nohighlight">\(v_0=20\)</span> מ/ש ו-<span class="math notranslate nohighlight">\(\theta=45°\)</span>.</p>
-<div class="cell docutils container">
+<p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">max_height(v0,</span> <span class="pre">theta_deg,</span> <span class="pre">g)</span></code>‎ לפי החתימה, ובדקו אותה מול הדוגמה שבתא: בזריקה אנכית (<span class="math notranslate nohighlight">\(\theta = 90°\)</span>) עם <span class="math notranslate nohighlight">\(v_0 = 20\)</span> ו-<span class="math notranslate nohighlight">\(g = 10\)</span>, הגובה הוא <span class="math notranslate nohighlight">\(20^2/20 = 20\)</span> מטר. שימו לב: הריבוע חל על <strong>התוצאה</strong> של <span class="math notranslate nohighlight">\(v_0\sin\theta\)</span>, לא על <span class="math notranslate nohighlight">\(v_0\)</span> בלבד.</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># v0 = 20.0</span>
-<span class="c1"># theta_deg = 45</span>
-<span class="c1">#</span>
-<span class="c1"># שלב 1: מהם הגורמים כאן? (סקלר קבוע / קבוע פיזיקלי)</span>
-<span class="c1"># שלב 2-3: כתבו כאן, שורה-שורה</span>
-<span class="c1"># y_max = ...</span>
-<span class="c1">#</span>
-<span class="c1"># שלב 4: בדיקת סבירות</span>
-<span class="c1"># print(y_max)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">max_height</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">theta_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Maximum height (m); v0 in m/s, theta_deg in degrees, g in m/s^2."""</span>
+    <span class="c1"># complete here</span>
+    <span class="k">pass</span>
+
+<span class="c1"># expected: 20.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_height</span><span class="p">(</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span> <span class="o">=</span> <span class="mf">20.0</span>
-<span class="n">theta_deg</span> <span class="o">=</span> <span class="mi">45</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">max_height</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">theta_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Maximum height (m); v0 in m/s, theta_deg in degrees, g in m/s^2."""</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>              <span class="c1"># convert before np.sin</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>   <span class="c1"># square of v0*sin(theta)</span>
 
-<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>               <span class="c1"># שלב 1+2: המרה לרדיאנים לפני sin</span>
-<span class="n">y_max</span> <span class="o">=</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>   <span class="c1"># שלב 3: הריבוע חל על התוצאה של v0*sin(theta)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"y_max = </span><span class="si">{</span><span class="n">y_max</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> m"</span><span class="p">)</span>             <span class="c1"># שלב 4: כ-10.2 מ' — סביר, וכרבע מגודל הטווח שחישבנו למעלה</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_height</span><span class="p">(</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">))</span>   <span class="c1"># 20.0</span>
 </pre></div>
 </div>
 </div>
@@ -2096,42 +2080,39 @@ function try_show() {
 </section>
 <section id="id6">
 <h2><span class="section-number">7.10.6. </span>באג 1: קדימות פעולות<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<p>הנוסחה לתקופת מטוטלת פשוטה היא <span class="math notranslate nohighlight">\(T = 2\pi\sqrt{L/g}\)</span>. הקוד הבא ניסה לממש אותה — אבל התוצאה שגויה. מצאו את הבאג לפני שתגלו את הפתרון:</p>
+<p>כדור שמשחררים ממנוחה מגובה <span class="math notranslate nohighlight">\(h\)</span> פוגע בקרקע אחרי <span class="math notranslate nohighlight">\(t = \sqrt{2h/g}\)</span> שניות. הקוד הבא מחשב זאת עבור <span class="math notranslate nohighlight">\(h = 20\)</span> מטר ו-<span class="math notranslate nohighlight">\(g = 10\)</span>, כלומר הציפייה היא <span class="math notranslate nohighlight">\(\sqrt{4} = 2\)</span> שניות. אבל שורה 3 מדפיסה ‎<code class="docutils literal notranslate"><span class="pre">0.6324555320336759</span></code>‎. באיזו שורה הבאג? מצאו אותו לפני שתפתחו את הפתרון.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
-
-<span class="n">L</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># מטר</span>
-<span class="n">T_buggy</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span>   <span class="c1"># מה פה לא בסדר?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">T_buggy</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">h</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">10.0</span>                   <span class="c1"># m, m/s^2</span>
+<span class="linenos">2</span><span class="n">t_fall_buggy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">t_fall_buggy</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6407065926875729
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6324555320336759
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<p>הבאג: <code class="docutils literal notranslate"><span class="pre">np.sqrt(L)</span> <span class="pre">/</span> <span class="pre">constants.g</span></code> מחשב <span class="math notranslate nohighlight">\(\sqrt{L}/g\)</span>, לא <span class="math notranslate nohighlight">\(\sqrt{L/g}\)</span>. כדי לחשב את השורש של המנה כולה, צריך את ה-<code class="docutils literal notranslate"><span class="pre">g</span></code> <strong>בתוך</strong> ה-<code class="docutils literal notranslate"><span class="pre">sqrt</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">T_fixed</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">L</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">T_fixed</span><span class="p">)</span>
+<p>הבאג בשורה 2: ‎<code class="docutils literal notranslate"><span class="pre">np.sqrt(2</span> <span class="pre">*</span> <span class="pre">h)</span> <span class="pre">/</span> <span class="pre">g</span></code>‎ מחשב <span class="math notranslate nohighlight">\(\sqrt{2h}/g\)</span>, לא <span class="math notranslate nohighlight">\(\sqrt{2h/g}\)</span>. החלוקה ב-‎<code class="docutils literal notranslate"><span class="pre">g</span></code>‎ צריכה להיות <strong>בתוך</strong> השורש:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_fall_fixed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span> <span class="o">/</span> <span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t_fall_fixed</span><span class="p">)</span>   <span class="c1"># 2.0</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="id7">
 <h2><span class="section-number">7.10.7. </span>באג 2: חילוק שלמים<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
-<p>רוצים לחשב את מהירות הממוצע של כדור שעבר מרחק 7 מטרים ב-2 שניות (<span class="math notranslate nohighlight">\(v=d/t\)</span>):</p>
+<p>רוצים לחשב את מהירות הממוצע של כדור שעבר 7 מטרים ב-2 שניות, <span class="math notranslate nohighlight">\(v = d/t\)</span>, כלומר 3.5 מ’/ש’. אבל שורה 4 מדפיסה 3. באיזו שורה הבאג?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1"># מטר</span>
-<span class="n">t</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># שניות</span>
-<span class="n">v_buggy</span> <span class="o">=</span> <span class="n">d</span> <span class="o">//</span> <span class="n">t</span>   <span class="c1"># מה פה לא בסדר?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v_buggy</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">d</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1"># m</span>
+<span class="linenos">2</span><span class="n">t</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># s</span>
+<span class="linenos">3</span><span class="n">v_buggy</span> <span class="o">=</span> <span class="n">d</span> <span class="o">//</span> <span class="n">t</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">v_buggy</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2143,7 +2124,7 @@ function try_show() {
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<p>הבאג: <code class="docutils literal notranslate"><span class="pre">//</span></code> הוא חילוק שלמים (מחזיר את החלק השלם, מעוגל כלפי מטה) — <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">//</span> <span class="pre">2</span></code> נותן <code class="docutils literal notranslate"><span class="pre">3</span></code>, לא <code class="docutils literal notranslate"><span class="pre">3.5</span></code>. עבור גדלים פיזיקליים רציפים צריך את אופרטור החילוק הרגיל <code class="docutils literal notranslate"><span class="pre">/</span></code>:</p>
+<p>הבאג בשורה 3: ‎<code class="docutils literal notranslate"><span class="pre">//</span></code>‎ הוא חילוק שלמים (מחזיר את החלק השלם, מעוגל כלפי מטה) — ‎<code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">//</span> <span class="pre">2</span></code>‎ נותן ‎<code class="docutils literal notranslate"><span class="pre">3</span></code>‎, לא ‎<code class="docutils literal notranslate"><span class="pre">3.5</span></code>‎. עבור גדלים פיזיקליים רציפים צריך את אופרטור החילוק הרגיל ‎<code class="docutils literal notranslate"><span class="pre">/</span></code>‎:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v_fixed</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">t</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">v_fixed</span><span class="p">)</span>   <span class="c1"># 3.5</span>
 </pre></div>
@@ -2153,13 +2134,13 @@ function try_show() {
 </section>
 <section id="id8">
 <h2><span class="section-number">7.10.8. </span>באג 3: יחידות<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
-<p>מודדים זווית שיגור של <span class="math notranslate nohighlight">\(30°\)</span> ורוצים את רכיב המהירות האנכי, <span class="math notranslate nohighlight">\(v_y = v_0 \sin\theta\)</span>:</p>
+<p>מודדים זווית שיגור של <span class="math notranslate nohighlight">\(30°\)</span> ורוצים את רכיב המהירות האנכי, <span class="math notranslate nohighlight">\(v_y = v_0 \sin\theta\)</span>, כלומר <span class="math notranslate nohighlight">\(20 \cdot 0.5 = 10\)</span> מ’/ש’. אבל שורה 4 מדפיסה מספר שלילי, ‎<code class="docutils literal notranslate"><span class="pre">-19.760632481857236</span></code>‎. באיזו שורה הבאג?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span> <span class="o">=</span> <span class="mf">20.0</span>
-<span class="n">theta_deg</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="n">vy_buggy</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>   <span class="c1"># מה פה לא בסדר?</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vy_buggy</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">v0</span> <span class="o">=</span> <span class="mf">20.0</span>         <span class="c1"># m/s</span>
+<span class="linenos">2</span><span class="n">theta_deg</span> <span class="o">=</span> <span class="mi">30</span>    <span class="c1"># degrees</span>
+<span class="linenos">3</span><span class="n">vy_buggy</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">vy_buggy</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2171,76 +2152,53 @@ function try_show() {
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<p>הבאג: <code class="docutils literal notranslate"><span class="pre">np.sin</span></code> מצפה לזווית ברדיאנים, ו-<code class="docutils literal notranslate"><span class="pre">theta_deg</span></code> הוא במעלות. חייבים להמיר קודם עם <code class="docutils literal notranslate"><span class="pre">np.radians</span></code>:</p>
+<p>הבאג בשורה 3: ‎<code class="docutils literal notranslate"><span class="pre">np.sin</span></code>‎ מצפה לזווית ברדיאנים, ו-‎<code class="docutils literal notranslate"><span class="pre">theta_deg</span></code>‎ הוא במעלות. חייבים להמיר קודם עם ‎<code class="docutils literal notranslate"><span class="pre">np.radians</span></code>‎:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vy_fixed</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vy_fixed</span><span class="p">)</span>   <span class="c1"># 10.0, כצפוי מ- v0 * sin(30°) = v0 * 0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">vy_fixed</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>   <span class="c1"># 10.0</span>
 </pre></div>
 </div>
+<p>בלי ‎<code class="docutils literal notranslate"><span class="pre">round</span></code>‎ השורה מדפיסה ‎<code class="docutils literal notranslate"><span class="pre">9.999999999999998</span></code>‎: מספרים עשרוניים במחשב מדויקים רק עד כ-16 ספרות.</p>
 </div>
 </section>
 <section id="id9">
 <h2><span class="section-number">7.10.9. </span>נסו בעצמכם<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
-<p>הקוד הבא מנסה לחשב את האנרגיה הפוטנציאלית הממוצעת של שלושה גופים, <span class="math notranslate nohighlight">\(\bar{E} = mg\bar{h}\)</span>, כאשר <code class="docutils literal notranslate"><span class="pre">heights</span></code> הוא מערך גבהים בס”מ (לא במטר!). יש כאן שילוב של שני סוגי הבאגים שראינו. אתרו ותקנו:</p>
+<p>הקוד הבא מחשב את האנרגיה הפוטנציאלית הממוצעת של שלושה גופים, <span class="math notranslate nohighlight">\(\bar{E} = mg\bar{h}\)</span>, כאשר ‎<code class="docutils literal notranslate"><span class="pre">heights_cm</span></code>‎ הוא מערך גבהים בסנטימטרים. גובה ממוצע של כ-1.4 מטר וגוף של 2 ק”ג נותנים כ-28 ג’אול, אבל שורה 4 מדפיסה ‎<code class="docutils literal notranslate"><span class="pre">2811.239666666667</span></code>‎. איזה מסוגי הבאגים שראינו יש כאן, ובאיזו שורה? תקנו אותו.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mf">2.0</span>  <span class="c1"># ק"ג</span>
-<span class="n">heights_cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span>   <span class="c1"># ס"מ</span>
-
-<span class="c1"># avg_energy_buggy = m * constants.g * heights_cm.mean()</span>
-<span class="c1"># print(avg_energy_buggy)</span>
-
-<span class="c1"># תקנו כאן:</span>
-<span class="c1"># avg_energy_fixed = ...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">m</span> <span class="o">=</span> <span class="mf">2.0</span>                                 <span class="c1"># kg</span>
+<span class="linenos">2</span><span class="n">heights_cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span>   <span class="c1"># cm</span>
+<span class="linenos">3</span><span class="n">avg_energy_buggy</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span> <span class="o">*</span> <span class="n">heights_cm</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">avg_energy_buggy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2811.239666666667
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># הבאג: heights_cm הוא בסנטימטרים, ו-g בנוסחה מצפה למטרים.</span>
-<span class="n">heights_m</span> <span class="o">=</span> <span class="n">heights_cm</span> <span class="o">/</span> <span class="mi">100</span>
+<p>באג יחידות בשורה 3: הגבהים בסנטימטרים, ו-‎<code class="docutils literal notranslate"><span class="pre">constants.g</span></code>‎ במטרים לשנייה בריבוע, ולכן התוצאה גדולה פי 100. ממירים למטרים לפני החישוב:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">heights_m</span> <span class="o">=</span> <span class="n">heights_cm</span> <span class="o">/</span> <span class="mi">100</span>                       <span class="c1"># cm to m</span>
 <span class="n">avg_energy_fixed</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span> <span class="o">*</span> <span class="n">heights_m</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">avg_energy_fixed</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">avg_energy_fixed</span><span class="p">)</span>   <span class="c1"># 28.112396666666665</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="id10">
 <h2><span class="section-number">7.10.10. </span>בדקו את עצמכם<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מה התוצאה של &lt;code&gt;9 // 2&lt;/code&gt; בפייתון?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"4.5"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"זו הייתה התוצאה של / (חילוק רגיל), לא של // (חילוק שלמים)."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — // מעגל כלפי מטה, לא כלפי מעלה."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"-4"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — שני המספרים חיוביים, אז אין סיבה לתוצאה שלילית."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"4"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון: // מעגל כלפי מטה לשלם הקרוב."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מדוע באג של קדימות פעולות (כמו sqrt(L)/g במקום sqrt(L/g)) מסוכן במיוחד?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי הקוד רץ בהצלחה ומחזיר מספר, אבל הוא פיזיקלית שגוי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון. זו בדיוק הסיבה שקשה לתפוס באגים כאלה — אין הודעת שגיאה שמצביעה עליהם."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי פייתון זורק שגיאת תחביר"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — התחביר תקין לגמרי, הקוד רץ בלי בעיה."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי NumPy לא תומך בחילוק בתוך sqrt"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — NumPy תומך בכך היטב, השאלה היא רק סדר הפעולות שכתבתם."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי הוא גורם ל-Python לקרוס לגמרי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — הקוד ממשיך לרוץ כרגיל; זו בדיוק הבעיה, שאין שום קריסה שתסמן את הטעות."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">10.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">9</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>               <span class="c1"># print 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span> <span class="o">/</span> <span class="n">g</span><span class="p">))</span>   <span class="c1"># print 2</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="TFDbOCKXqVkF" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#TFDbOCKXqVkF {
+<div class="output text_html"><div id="euxGSZPRaTfY" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#euxGSZPRaTfY {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2463,7 +2421,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsTFDbOCKXqVkF=[{"question": "\u05de\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc <code>9 // 2</code> \u05d1\u05e4\u05d9\u05d9\u05ea\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "4.5", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05d9\u05d9\u05ea\u05d4 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc / (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e8\u05d2\u05d9\u05dc), \u05dc\u05d0 \u05e9\u05dc // (\u05d7\u05d9\u05dc\u05d5\u05e7 \u05e9\u05dc\u05de\u05d9\u05dd)."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0 \u2014 // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4, \u05dc\u05d0 \u05db\u05dc\u05e4\u05d9 \u05de\u05e2\u05dc\u05d4."}, {"answer": "-4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05e0\u05d9 \u05d4\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05d7\u05d9\u05d5\u05d1\u05d9\u05d9\u05dd, \u05d0\u05d6 \u05d0\u05d9\u05df \u05e1\u05d9\u05d1\u05d4 \u05dc\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc\u05d9\u05dc\u05d9\u05ea."}, {"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: // \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4 \u05dc\u05e9\u05dc\u05dd \u05d4\u05e7\u05e8\u05d5\u05d1."}]}, {"question": "\u05de\u05d3\u05d5\u05e2 \u05d1\u05d0\u05d2 \u05e9\u05dc \u05e7\u05d3\u05d9\u05de\u05d5\u05ea \u05e4\u05e2\u05d5\u05dc\u05d5\u05ea (\u05db\u05de\u05d5 sqrt(L)/g \u05d1\u05de\u05e7\u05d5\u05dd sqrt(L/g)) \u05de\u05e1\u05d5\u05db\u05df \u05d1\u05de\u05d9\u05d5\u05d7\u05d3?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05d4\u05e6\u05dc\u05d7\u05d4 \u05d5\u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05e1\u05e4\u05e8, \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9\u05ea \u05e9\u05d2\u05d5\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05d9\u05d1\u05d4 \u05e9\u05e7\u05e9\u05d4 \u05dc\u05ea\u05e4\u05d5\u05e1 \u05d1\u05d0\u05d2\u05d9\u05dd \u05db\u05d0\u05dc\u05d4 \u2014 \u05d0\u05d9\u05df \u05d4\u05d5\u05d3\u05e2\u05ea \u05e9\u05d2\u05d9\u05d0\u05d4 \u05e9\u05de\u05e6\u05d1\u05d9\u05e2\u05d4 \u05e2\u05dc\u05d9\u05d4\u05dd."}, {"answer": "\u05db\u05d9 \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05ea \u05ea\u05d7\u05d1\u05d9\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05ea\u05d7\u05d1\u05d9\u05e8 \u05ea\u05e7\u05d9\u05df \u05dc\u05d2\u05de\u05e8\u05d9, \u05d4\u05e7\u05d5\u05d3 \u05e8\u05e5 \u05d1\u05dc\u05d9 \u05d1\u05e2\u05d9\u05d4."}, {"answer": "\u05db\u05d9 NumPy \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05dc\u05d5\u05e7 \u05d1\u05ea\u05d5\u05da sqrt", "correct": false, "feedback": "\u05dc\u05d0 \u2014 NumPy \u05ea\u05d5\u05de\u05da \u05d1\u05db\u05da \u05d4\u05d9\u05d8\u05d1, \u05d4\u05e9\u05d0\u05dc\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05e1\u05d3\u05e8 \u05d4\u05e4\u05e2\u05d5\u05dc\u05d5\u05ea \u05e9\u05db\u05ea\u05d1\u05ea\u05dd."}, {"answer": "\u05db\u05d9 \u05d4\u05d5\u05d0 \u05d2\u05d5\u05e8\u05dd \u05dc-Python \u05dc\u05e7\u05e8\u05d5\u05e1 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e7\u05d5\u05d3 \u05de\u05de\u05e9\u05d9\u05da \u05dc\u05e8\u05d5\u05e5 \u05db\u05e8\u05d2\u05d9\u05dc; \u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05d1\u05e2\u05d9\u05d4, \u05e9\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05e7\u05e8\u05d9\u05e1\u05d4 \u05e9\u05ea\u05e1\u05de\u05df \u05d0\u05ea \u05d4\u05d8\u05e2\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionseuxGSZPRaTfY=[{"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d7\u05d9\u05dc\u05d5\u05e7 \u05e9\u05dc\u05de\u05d9\u05dd \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4, \u05dc-4."}, {"answer": "4.5", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc \u05d7\u05d9\u05dc\u05d5\u05e7 \u05e8\u05d2\u05d9\u05dc, \u05dc\u05d0 \u05e9\u05dc \u05d7\u05d9\u05dc\u05d5\u05e7 \u05e9\u05dc\u05de\u05d9\u05dd."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: \u05d7\u05d9\u05dc\u05d5\u05e7 \u05e9\u05dc\u05de\u05d9\u05dd \u05de\u05e2\u05d2\u05dc \u05db\u05dc\u05e4\u05d9 \u05de\u05d8\u05d4, \u05dc\u05d0 \u05db\u05dc\u05e4\u05d9 \u05de\u05e2\u05dc\u05d4."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d4 \u05d1\u05d9\u05d8\u05d5\u05d9 \u05d7\u05d5\u05e7\u05d9 \u05dc\u05d2\u05de\u05e8\u05d9."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4?", "type": "multiple_choice", "answers": [{"answer": "2.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d1\u05ea\u05d5\u05da \u05d4\u05e9\u05d5\u05e8\u05e9 \u05d9\u05e9 2 \u05db\u05e4\u05d5\u05dc 20 \u05d7\u05dc\u05e7\u05d9 10, \u05db\u05dc\u05d5\u05de\u05e8 4, \u05d5\u05d4\u05e9\u05d5\u05e8\u05e9 \u05e9\u05dc 4 \u05d4\u05d5\u05d0 2."}, {"answer": "\u05d1\u05e2\u05e8\u05da 0.632", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc \u05d4\u05d2\u05e8\u05e1\u05d4 \u05e2\u05dd \u05d4\u05d1\u05d0\u05d2, \u05e9\u05d1\u05d4 \u05d4\u05d7\u05dc\u05d5\u05e7\u05d4 \u05d1-g \u05e0\u05de\u05e6\u05d0\u05ea \u05de\u05d7\u05d5\u05e5 \u05dc\u05e9\u05d5\u05e8\u05e9."}, {"answer": "4.0", "correct": false, "feedback": "\u05dc\u05d0: 4 \u05d4\u05d5\u05d0 \u05de\u05d4 \u05e9\u05d1\u05ea\u05d5\u05da \u05d4\u05e9\u05d5\u05e8\u05e9; \u05d4\u05e9\u05d5\u05e8\u05e9 \u05e9\u05dc\u05d5 \u05d4\u05d5\u05d0 2."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e7\u05d5\u05d3 \u05d7\u05d5\u05e7\u05d9."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3525,8 +3483,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("TFDbOCKXqVkF")) {
-    show_questions(questionsTFDbOCKXqVkF, TFDbOCKXqVkF);
+  if (document.getElementById("euxGSZPRaTfY")) {
+    show_questions(questionseuxGSZPRaTfY, euxGSZPRaTfY);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3607,9 +3565,9 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.1. סיכום</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.2. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.10.1. תהליך שיטתי: מנוסחה לביטוי ב-NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.10.2. דוגמה: מהנוסחה לקוד — טווח הזריקה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.10.3. מנוסחה לפונקציה: חתימה ודוגמה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.10.4. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.10.5. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.10.6. באג 1: קדימות פעולות</a></li>

@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -635,7 +635,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.3.2. באג נפוץ: תווית בלי יחידה, או עם יחידה שגויה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.3.3. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.3.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.3.5. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -649,16 +648,13 @@
                   
   <section id="id1">
 <h1><span class="section-number">8.3. </span>צירים, תוויות ויחידות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<div class="seealso admonition">
-<p class="admonition-title">המשך סרטון 8.1</p>
-<p>הסרטון שהתחיל בסעיף 8.1 (“התבנית הבסיסית”) ממשיך לכסות גם את הנושא הזה — אין סרטון נוסף כאן.</p>
-</div>
-<p>בדוח מעבדה, גרף בלי תוויות צירים עם יחידות הוא גרף לא קביל — גם אם הנתונים שבו נכונים. שתי הפקודות המרכזיות:</p>
+<p>בדוח מעבדה, גרף בלי תוויות צירים עם יחידות הוא גרף לא קביל — גם אם הנתונים שבו נכונים. הפקודות המרכזיות:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$y(x)$ עבור $\theta=45^\circ$"</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>ה-‎<code class="docutils literal notranslate"><span class="pre">r</span></code>‎ שלפני מחרוזת הכותרת שומר את הלוכסן ההפוך של ‎<code class="docutils literal notranslate"><span class="pre">\theta</span></code>‎ כמו שהוא, וטקסט שבין שני סימני ‎<code class="docutils literal notranslate"><span class="pre">$</span></code>‎ מצויר כנוסחה: ‎<code class="docutils literal notranslate"><span class="pre">$\theta=45^\circ$</span></code>‎ מופיע בגרף כ-<span class="math notranslate nohighlight">\(\theta=45^\circ\)</span>.</p>
 <p>הכלל הפשוט: <strong>כל תווית ציר כוללת גם את היחידה בסוגריים</strong>, לא רק את שם המשתנה.</p>
 <section id="id2">
 <h2><span class="section-number">8.3.1. </span>דוגמה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
@@ -684,13 +680,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/b754a82b102a90adc7351e7fd374646f20e11448ffef80c82ca450b1845f5805.png" src="../../../_images/b754a82b102a90adc7351e7fd374646f20e11448ffef80c82ca450b1845f5805.png" />
+<img alt="../../../_images/4f508207229b353fc5e3010d4f84a6b71c0829415f75276014430f34b1734fc4.png" src="../../../_images/4f508207229b353fc5e3010d4f84a6b71c0829415f75276014430f34b1734fc4.png" />
 </div>
 </div>
 </section>
 <section id="id3">
 <h2><span class="section-number">8.3.2. </span>באג נפוץ: תווית בלי יחידה, או עם יחידה שגויה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>תווית כמו <code class="docutils literal notranslate"><span class="pre">&quot;y&quot;</span></code> בלבד אינה אומרת לקורא הדוח אם <span class="math notranslate nohighlight">\(y\)</span> נמדד במטרים, בסנטימטרים, או ביחידות שרירותיות. גרוע מזה — תווית עם <strong>יחידה שגויה</strong> (למשל <code class="docutils literal notranslate"><span class="pre">&quot;y</span> <span class="pre">(cm)&quot;</span></code> כשהערכים בפועל במטרים) מטעה יותר מאשר תווית חסרה, כי היא נראית תקינה במבט ראשון.</p>
+<p>תווית כמו ‎<code class="docutils literal notranslate"><span class="pre">&quot;y&quot;</span></code>‎ בלבד אינה אומרת לקורא הדוח אם <span class="math notranslate nohighlight">\(y\)</span> נמדד במטרים, בסנטימטרים, או ביחידות שרירותיות. גרוע מזה — תווית עם <strong>יחידה שגויה</strong> (למשל ‎<code class="docutils literal notranslate"><span class="pre">&quot;y</span> <span class="pre">(cm)&quot;</span></code>‎ כשהערכים בפועל במטרים) מטעה יותר מאשר תווית חסרה, כי היא נראית תקינה במבט ראשון.</p>
 </section>
 <section id="id4">
 <h2><span class="section-number">8.3.3. </span>נסו בעצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
@@ -699,19 +695,19 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (cm)"</span><span class="p">)</span>   <span class="c1"># &lt;- יש כאן טעות</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (cm)"</span><span class="p">)</span>   <span class="c1"># &lt;- there is a mistake here</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/ce225a8efa826e655f54687a044ae50ab24ce625e1b70508500eb9a07a770882.png" src="../../../_images/ce225a8efa826e655f54687a044ae50ab24ce625e1b70508500eb9a07a770882.png" />
+<img alt="../../../_images/27b4bf0622a024f664dd851dd2ef22c7097b60a311bf20114dee3995b346b46f.png" src="../../../_images/27b4bf0622a024f664dd851dd2ef22c7097b60a311bf20114dee3995b346b46f.png" />
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<p>היחידה בתווית ה-x שגויה — הערכים ב-<code class="docutils literal notranslate"><span class="pre">x</span></code> מחושבים במטרים (<code class="docutils literal notranslate"><span class="pre">v0</span> <span class="pre">*</span> <span class="pre">np.cos(theta)</span> <span class="pre">*</span> <span class="pre">t</span></code> עם <code class="docutils literal notranslate"><span class="pre">v0</span></code> ב-m/s), לא בסנטימטרים:</p>
+<p>היחידה בתווית ה-x שגויה — הערכים ב-‎<code class="docutils literal notranslate"><span class="pre">x</span></code>‎ מחושבים במטרים (‎<code class="docutils literal notranslate"><span class="pre">v0</span> <span class="pre">*</span> <span class="pre">np.cos(theta)</span> <span class="pre">*</span> <span class="pre">t</span></code>‎ עם ‎<code class="docutils literal notranslate"><span class="pre">v0</span></code>‎ ב-m/s), לא בסנטימטרים:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
@@ -723,29 +719,10 @@
 </section>
 <section id="id5">
 <h2><span class="section-number">8.3.4. </span>בדקו את עצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מדוע תווית ציר בלי יחידה נחשבת לבעיה בדוח מעבדה, גם אם הגרף עצמו נכון?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי Matplotlib לא מאפשר לשמור גרף כזה"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — מבחינה טכנית זה עובד."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי אי אפשר לדעת בערכים מהו סדר הגודל הפיזיקלי בלי היחידה"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי הגרף לא יוצג בכלל"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא נכון — הגרף כן יוצג."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי זה פוגע בביצועי הריצה של הקוד"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא קשור לביצועים — זו בעיה של קריאות ופרשנות מדעית, לא של מהירות."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="gznLeCZSPWVA" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#gznLeCZSPWVA {
+<div class="output text_html"><div id="TdUcneowOuPr" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#TdUcneowOuPr {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -968,7 +945,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsgznLeCZSPWVA=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05ea\u05d5\u05d5\u05d9\u05ea \u05e6\u05d9\u05e8 \u05d1\u05dc\u05d9 \u05d9\u05d7\u05d9\u05d3\u05d4 \u05e0\u05d7\u05e9\u05d1\u05ea \u05dc\u05d1\u05e2\u05d9\u05d4 \u05d1\u05d3\u05d5\u05d7 \u05de\u05e2\u05d1\u05d3\u05d4, \u05d2\u05dd \u05d0\u05dd \u05d4\u05d2\u05e8\u05e3 \u05e2\u05e6\u05de\u05d5 \u05e0\u05db\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 Matplotlib \u05dc\u05d0 \u05de\u05d0\u05e4\u05e9\u05e8 \u05dc\u05e9\u05de\u05d5\u05e8 \u05d2\u05e8\u05e3 \u05db\u05d6\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05de\u05d1\u05d7\u05d9\u05e0\u05d4 \u05d8\u05db\u05e0\u05d9\u05ea \u05d6\u05d4 \u05e2\u05d5\u05d1\u05d3."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d3\u05e2\u05ea \u05d1\u05e2\u05e8\u05db\u05d9\u05dd \u05de\u05d4\u05d5 \u05e1\u05d3\u05e8 \u05d4\u05d2\u05d5\u05d3\u05dc \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9 \u05d1\u05dc\u05d9 \u05d4\u05d9\u05d7\u05d9\u05d3\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d4\u05d2\u05e8\u05e3 \u05dc\u05d0 \u05d9\u05d5\u05e6\u05d2 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05d2\u05e8\u05e3 \u05db\u05df \u05d9\u05d5\u05e6\u05d2."}, {"answer": "\u05db\u05d9 \u05d6\u05d4 \u05e4\u05d5\u05d2\u05e2 \u05d1\u05d1\u05d9\u05e6\u05d5\u05e2\u05d9 \u05d4\u05e8\u05d9\u05e6\u05d4 \u05e9\u05dc \u05d4\u05e7\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05d1\u05d9\u05e6\u05d5\u05e2\u05d9\u05dd \u2014 \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05e9\u05dc \u05e7\u05e8\u05d9\u05d0\u05d5\u05ea \u05d5\u05e4\u05e8\u05e9\u05e0\u05d5\u05ea \u05de\u05d3\u05e2\u05d9\u05ea, \u05dc\u05d0 \u05e9\u05dc \u05de\u05d4\u05d9\u05e8\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsTdUcneowOuPr=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05ea\u05d5\u05d5\u05d9\u05ea \u05e6\u05d9\u05e8 \u05d1\u05dc\u05d9 \u05d9\u05d7\u05d9\u05d3\u05d4 \u05e0\u05d7\u05e9\u05d1\u05ea \u05dc\u05d1\u05e2\u05d9\u05d4 \u05d1\u05d3\u05d5\u05d7 \u05de\u05e2\u05d1\u05d3\u05d4, \u05d2\u05dd \u05d0\u05dd \u05d4\u05d2\u05e8\u05e3 \u05e2\u05e6\u05de\u05d5 \u05e0\u05db\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 Matplotlib \u05dc\u05d0 \u05de\u05d0\u05e4\u05e9\u05e8 \u05dc\u05e9\u05de\u05d5\u05e8 \u05d2\u05e8\u05e3 \u05db\u05d6\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05de\u05d1\u05d7\u05d9\u05e0\u05d4 \u05d8\u05db\u05e0\u05d9\u05ea \u05d6\u05d4 \u05e2\u05d5\u05d1\u05d3."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d3\u05e2\u05ea \u05d1\u05e2\u05e8\u05db\u05d9\u05dd \u05de\u05d4\u05d5 \u05e1\u05d3\u05e8 \u05d4\u05d2\u05d5\u05d3\u05dc \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9 \u05d1\u05dc\u05d9 \u05d4\u05d9\u05d7\u05d9\u05d3\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d4\u05d2\u05e8\u05e3 \u05dc\u05d0 \u05d9\u05d5\u05e6\u05d2 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05d2\u05e8\u05e3 \u05db\u05df \u05d9\u05d5\u05e6\u05d2."}, {"answer": "\u05db\u05d9 \u05d6\u05d4 \u05e4\u05d5\u05d2\u05e2 \u05d1\u05d1\u05d9\u05e6\u05d5\u05e2\u05d9 \u05d4\u05e8\u05d9\u05e6\u05d4 \u05e9\u05dc \u05d4\u05e7\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05d1\u05d9\u05e6\u05d5\u05e2\u05d9\u05dd \u2014 \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05e9\u05dc \u05e7\u05e8\u05d9\u05d0\u05d5\u05ea \u05d5\u05e4\u05e8\u05e9\u05e0\u05d5\u05ea \u05de\u05d3\u05e2\u05d9\u05ea, \u05dc\u05d0 \u05e9\u05dc \u05de\u05d4\u05d9\u05e8\u05d5\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2030,8 +2007,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("gznLeCZSPWVA")) {
-    show_questions(questionsgznLeCZSPWVA, gznLeCZSPWVA);
+  if (document.getElementById("TdUcneowOuPr")) {
+    show_questions(questionsTdUcneowOuPr, TdUcneowOuPr);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2043,17 +2020,12 @@ function try_show() {
 }
 </script></div>
 </div>
-</section>
-<section id="id6">
-<h2><span class="section-number">8.3.5. </span>תרגול עצמי<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
 <p>ציירו את מסלול הזריקה עבור <span class="math notranslate nohighlight">\(\theta=60^\circ\)</span>, עם תוויות צירים ויחידות נכונות וכותרת עם <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># theta = np.radians(60)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># theta = np.radians(60)</span>
 <span class="c1"># ...</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
@@ -2070,6 +2042,7 @@ function try_show() {
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"מסלול הזריקה ($\theta=60^\circ$)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2145,7 +2118,6 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.3.2. באג נפוץ: תווית בלי יחידה, או עם יחידה שגויה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.3.3. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.3.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.3.5. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

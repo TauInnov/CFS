@@ -67,7 +67,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.2. פריסה לפי צירים: a[0], a[:,2], a[...,0]" href="9_2_axis_indexing.html" />
+    <link rel="next" title="9.2. פריסה לפי צירים" href="9_2_axis_indexing.html" />
     <link rel="prev" title="9. שבוע 9 — NumPy מתקדם ואינטגרציה" href="../week_9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -635,7 +635,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.1.2. הרחבה לתלת-ממד: ציר קואורדינטה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.1.3. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.1.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.1.5. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -654,41 +653,31 @@
 <p class="admonition-title">ארבעת הכללים לעבודה עם מערכים רב-ממדיים</p>
 <p>הרעיון המארגן: <strong>ציר הוא משמעות פיזיקלית, לא מספר</strong>.</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code> היא רשימת הצירים, ולכל מיקום יש שם — למשל (ריצה, זמן, קואורדינטה).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">axis=k</span></code> הוא הציר <strong>שנעלם</strong>. <code class="docutils literal notranslate"><span class="pre">mean(axis=0)</span></code> על מערך בצורה <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">200)</span></code> מחזיר <code class="docutils literal notranslate"><span class="pre">(200,)</span></code> — ממוצע על הריצות.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">shape</span></code>‎ היא רשימת הצירים, ולכל מיקום יש שם — למשל (ריצה, זמן, קואורדינטה).</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">axis=k</span></code>‎ הוא הציר <strong>שנעלם</strong>. ‎<code class="docutils literal notranslate"><span class="pre">mean(axis=0)</span></code>‎ על מערך בצורה ‎<code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">200)</span></code>‎ מחזיר ‎<code class="docutils literal notranslate"><span class="pre">(200,)</span></code>‎ — ממוצע על הריצות.</p></li>
 <li><p>שני מערכים מתחברים אם, מימין לשמאל, כל זוג צירים או שווה או שאחד מהם 1.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> מוסיף ציר בגודל 1 — כלומר “המערך הזה קבוע לאורך הציר הזה”.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">None</span></code>‎ מוסיף ציר בגודל 1 — כלומר “המערך הזה קבוע לאורך הציר הזה”.</p></li>
 </ol>
 </div>
 <p>בסעיף הזה נעסוק בכלל הראשון: לכל ציר יש <strong>שם</strong>, לא רק מספר. לשאלה “מה ה-shape המתקבל?” יש טעם רק אם אפשר לענות גם על “ומה זה אומר פיזיקלית?”.</p>
-<div class="seealso admonition">
-<p class="admonition-title">🎥 כאן נכנס סרטון השבוע</p>
-<p><strong>“צירים ומערכים רב-ממדיים — ארבעת הכללים”</strong> (כ-6–10 דקות, הקלטת מסך של המחברת עם קול). (הסרטון פרוש על סעיפים 9.1–9.7 כולם — כל אחד מהם מעמיק כלל אחר מתוך הארבעה. דוגמה נוספת בסרטון: סרטון וידאו עצמו הוא מערך תלת-ממדי (פריים, y, x).)</p>
-<!-- TODO (למפיק/ה): להחליף תא זה בהטמעת הסרטון בפועל, למשל:
-<iframe width="100%" height="400" src="VIDEO_URL_HERE" title="שבוע 9 — צירים ומערכים רב-ממדיים — ארבעת הכללים" frameborder="0" allowfullscreen></iframe>
--->
-</div>
 <section id="id2">
 <h2><span class="section-number">9.1.1. </span>דוגמה: אותה זריקה, כמה ריצות<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>בפועל לא זורקים פעם אחת — חוזרים על הניסוי כמה פעמים. נדמה 5 חזרות על אותה זריקה (<span class="math notranslate nohighlight">\(\theta=45^\circ\)</span>), כל פעם עם מהירות שיגור מעט שונה (רעש ניסוי), ונמדוד את הגובה <span class="math notranslate nohighlight">\(y\)</span> באותן נקודות זמן בכל ריצה.</p>
+<p>בפועל לא זורקים פעם אחת: חוזרים על הניסוי כמה פעמים. נניח שחזרנו 5 פעמים על אותה זריקה (<span class="math notranslate nohighlight">\(\theta=45^\circ\)</span>), ומדדנו בכל פעם את מהירות השיגור, שיוצאת מעט שונה בכל ריצה. נחשב את הגובה <span class="math notranslate nohighlight">\(y\)</span> באותן נקודות זמן בכל ריצה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">v0_nom</span> <span class="o">=</span> <span class="mf">20.0</span>
-
-<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">v0_nom</span> <span class="o">=</span> <span class="mf">20.0</span>                       <span class="c1"># nominal launch speed (m/s)</span>
+<span class="c1"># measured launch speed of each run (m/s):</span>
+<span class="n">v0_runs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">18.0</span><span class="p">,</span> <span class="mf">19.5</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">20.5</span><span class="p">,</span> <span class="mf">22.0</span><span class="p">])</span>
 <span class="n">n_runs</span><span class="p">,</span> <span class="n">n_t</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">60</span>
-<span class="n">v0_runs</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">v0_nom</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_runs</span><span class="p">)</span>     <span class="c1"># מהירות שיגור מעט שונה בכל ריצה</span>
-
 <span class="n">t_flight_nom</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0_nom</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight_nom</span><span class="p">,</span> <span class="n">n_t</span><span class="p">)</span>              <span class="c1"># אותה רשת זמן לכל הריצות</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight_nom</span><span class="p">,</span> <span class="n">n_t</span><span class="p">)</span>   <span class="c1"># the same time grid for all runs</span>
 
-<span class="c1"># בונים את Y ריצה-ריצה, במפורש (עוד לא בווקטורים - זה יבוא בסעיף 9.5)</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">n_runs</span><span class="p">,</span> <span class="n">n_t</span><span class="p">))</span>
+<span class="c1"># build Y run by run, with a loop (9.5 does it without one)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_runs</span><span class="p">,</span> <span class="n">n_t</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_runs</span><span class="p">):</span>
     <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0_runs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
 
@@ -702,18 +691,18 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Y.shape</span></code> הוא <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code>: <strong>ציר 0</strong> הוא הריצה (5 ריצות שונות), <strong>ציר 1</strong> הוא הזמן (60 נקודות). זו לא עובדה שרירותית על מספרים — <code class="docutils literal notranslate"><span class="pre">Y[2]</span></code> הוא <strong>כל מסלול הריצה השלישית</strong>, ו-<code class="docutils literal notranslate"><span class="pre">Y[:,</span> <span class="pre">0]</span></code> הוא <strong>הגובה ההתחלתי בכל הריצות</strong> (שכולן מתחילות מ-<span class="math notranslate nohighlight">\(y=0\)</span>).</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">Y.shape</span></code>‎ הוא ‎<code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code>‎: <strong>ציר 0</strong> הוא הריצה (5 ריצות שונות), <strong>ציר 1</strong> הוא הזמן (60 נקודות). זו לא עובדה שרירותית על מספרים — ‎<code class="docutils literal notranslate"><span class="pre">Y[2]</span></code>‎ הוא <strong>כל מסלול הריצה השלישית</strong>, ו-‎<code class="docutils literal notranslate"><span class="pre">Y[:,</span> <span class="pre">0]</span></code>‎ הוא <strong>הגובה ההתחלתי בכל הריצות</strong> (שכולן מתחילות מ-<span class="math notranslate nohighlight">\(y=0\)</span>).</p>
 </section>
 <section id="id3">
 <h2><span class="section-number">9.1.2. </span>הרחבה לתלת-ממד: ציר קואורדינטה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>אפשר להוסיף ציר שלישי: לא רק הגובה <span class="math notranslate nohighlight">\(y\)</span>, אלא גם המיקום האופקי <span class="math notranslate nohighlight">\(x\)</span> — כך שכל ריצה, בכל זמן, מתוארת בשתי קואורדינטות.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">n_runs</span><span class="p">,</span> <span class="n">n_t</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_runs</span><span class="p">,</span> <span class="n">n_t</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_runs</span><span class="p">):</span>
     <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0_runs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
 
-<span class="n">XY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># נעמיק ב-stack בסעיף 9.4</span>
+<span class="n">XY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># np.stack is explained in 9.4</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"XY.shape ="</span><span class="p">,</span> <span class="n">XY</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -724,14 +713,14 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">XY.shape</span></code> הוא <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60,</span> <span class="pre">2)</span></code>: ריצה, זמן, קואורדינטה (0=<span class="math notranslate nohighlight">\(x\)</span>, 1=<span class="math notranslate nohighlight">\(y\)</span>). <code class="docutils literal notranslate"><span class="pre">XY[2,</span> <span class="pre">10,</span> <span class="pre">1]</span></code> הוא הגובה <span class="math notranslate nohighlight">\(y\)</span> של הריצה השלישית, בנקודת הזמן ה-11. שלוש שאלות אפשר לשאול על כל מספר במערך: איזו ריצה? איזה זמן? איזו קואורדינטה? — וזו בדיוק המשמעות של “ציר בעל שם”.</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">XY.shape</span></code>‎ הוא ‎<code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60,</span> <span class="pre">2)</span></code>‎: ריצה, זמן, קואורדינטה (0=<span class="math notranslate nohighlight">\(x\)</span>, 1=<span class="math notranslate nohighlight">\(y\)</span>). ‎<code class="docutils literal notranslate"><span class="pre">XY[2,</span> <span class="pre">10,</span> <span class="pre">1]</span></code>‎ הוא הגובה <span class="math notranslate nohighlight">\(y\)</span> של הריצה השלישית, בנקודת הזמן ה-11. שלוש שאלות אפשר לשאול על כל מספר במערך: איזו ריצה? איזה זמן? איזו קואורדינטה? — וזו בדיוק המשמעות של “ציר בעל שם”.</p>
 </section>
 <section id="id4">
 <h2><span class="section-number">9.1.3. </span>נסו בעצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>בנו מערך <code class="docutils literal notranslate"><span class="pre">V</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(n_runs,</span> <span class="pre">n_t)</span></code> של <strong>גודל המהירות</strong> <span class="math notranslate nohighlight">\(|v(t)| = \sqrt{v_x^2+v_y^2}\)</span> בכל ריצה ובכל זמן, בעזרת לולאה על הריצות (כמו ש-<code class="docutils literal notranslate"><span class="pre">Y</span></code> נבנה למעלה).</p>
+<p>בנו מערך ‎<code class="docutils literal notranslate"><span class="pre">V</span></code>‎ בצורה ‎<code class="docutils literal notranslate"><span class="pre">(n_runs,</span> <span class="pre">n_t)</span></code>‎ של <strong>גודל המהירות</strong> <span class="math notranslate nohighlight">\(|v(t)| = \sqrt{v_x^2+v_y^2}\)</span> בכל ריצה ובכל זמן, בעזרת לולאה על הריצות (כמו ש-‎<code class="docutils literal notranslate"><span class="pre">Y</span></code>‎ נבנה למעלה). בדקו את התוצאה: ב-‎<code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">0</span></code>‎ גודל המהירות של כל ריצה שווה למהירות השיגור שלה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># V = np.empty((n_runs, n_t))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># V = np.zeros((n_runs, n_t))</span>
 <span class="c1"># for i in range(n_runs):</span>
 <span class="c1">#     vx_i = ...</span>
 <span class="c1">#     vy_i = ...</span>
@@ -742,53 +731,30 @@
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">n_runs</span><span class="p">,</span> <span class="n">n_t</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_runs</span><span class="p">,</span> <span class="n">n_t</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_runs</span><span class="p">):</span>
     <span class="n">vx_i</span> <span class="o">=</span> <span class="n">v0_runs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
     <span class="n">vy_i</span> <span class="o">=</span> <span class="n">v0_runs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span>
     <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vx_i</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">vy_i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>      <span class="c1"># (5, 60)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>      <span class="c1"># the speed of every run at t = 0: its launch speed</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="id5">
 <h2><span class="section-number">9.1.4. </span>בדקו את עצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מערך &lt;code&gt;Y&lt;/code&gt; בצורה &lt;code&gt;(5, 60)&lt;/code&gt; מייצג 5 ריצות של 60 מדידות זמן כל אחת. מה זה &lt;code&gt;Y[3]&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"המדידה ה-4 בזמן, בכל הריצות"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"זה Y[:, 3]."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"מספר בודד"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — עם אינדקס בודד על מערך דו-ממדי מקבלים שורה שלמה, לא מספר."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כל 5 הריצות בזמן ה-4"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — עם אינדקס בודד על הציר הראשון (הריצות) מקבלים ריצה אחת שלמה, לא את כל הריצות."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כל מסלול הריצה ה-4 (כל 60 נקודות הזמן שלה)"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון — האינדוקס הראשון הוא ציר הריצה."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"במערך &lt;code&gt;XY&lt;/code&gt; בצורה &lt;code&gt;(5, 60, 2)&lt;/code&gt;, מה מייצג הציר האחרון (גודל 2)?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"הקואורדינטות x ו-y של כל נקודה"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"שתי ריצות נוספות"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — ציר הריצות הוא הראשון, בגודל 5."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"שני מכשירי מדידה שונים"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא בהכרח נכון בהקשר הזה — כאן זה x ו-y."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"שני סוגי חיישנים שונים"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא בהכרח נכון בהקשר הזה — כאן הגודל 2 מייצג את x ו-y של אותה נקודה, לא חיישנים שונים."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<p>השאלה הראשונה מתייחסת לקוד הבא (2 ריצות, 3 נקודות זמן):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="ROZomqZVmdaC" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#ROZomqZVmdaC {
+<div class="output text_html"><div id="UjHYQjmxDvMH" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#UjHYQjmxDvMH {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1011,7 +977,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsROZomqZVmdaC=[{"question": "\u05de\u05e2\u05e8\u05da <code>Y</code> \u05d1\u05e6\u05d5\u05e8\u05d4 <code>(5, 60)</code> \u05de\u05d9\u05d9\u05e6\u05d2 5 \u05e8\u05d9\u05e6\u05d5\u05ea \u05e9\u05dc 60 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d6\u05de\u05df \u05db\u05dc \u05d0\u05d7\u05ea. \u05de\u05d4 \u05d6\u05d4 <code>Y[3]</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05de\u05d3\u05d9\u05d3\u05d4 \u05d4-4 \u05d1\u05d6\u05de\u05df, \u05d1\u05db\u05dc \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea", "correct": false, "feedback": "\u05d6\u05d4 Y[:, 3]."}, {"answer": "\u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e2\u05dd \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d1\u05d5\u05d3\u05d3 \u05e2\u05dc \u05de\u05e2\u05e8\u05da \u05d3\u05d5-\u05de\u05de\u05d3\u05d9 \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05e9\u05d5\u05e8\u05d4 \u05e9\u05dc\u05de\u05d4, \u05dc\u05d0 \u05de\u05e1\u05e4\u05e8."}, {"answer": "\u05db\u05dc 5 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea \u05d1\u05d6\u05de\u05df \u05d4-4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e2\u05dd \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d1\u05d5\u05d3\u05d3 \u05e2\u05dc \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df (\u05d4\u05e8\u05d9\u05e6\u05d5\u05ea) \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05e8\u05d9\u05e6\u05d4 \u05d0\u05d7\u05ea \u05e9\u05dc\u05de\u05d4, \u05dc\u05d0 \u05d0\u05ea \u05db\u05dc \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea."}, {"answer": "\u05db\u05dc \u05de\u05e1\u05dc\u05d5\u05dc \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4-4 (\u05db\u05dc 60 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d4\u05d6\u05de\u05df \u05e9\u05dc\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05d0\u05d9\u05e0\u05d3\u05d5\u05e7\u05e1 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d4\u05d5\u05d0 \u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d4."}]}, {"question": "\u05d1\u05de\u05e2\u05e8\u05da <code>XY</code> \u05d1\u05e6\u05d5\u05e8\u05d4 <code>(5, 60, 2)</code>, \u05de\u05d4 \u05de\u05d9\u05d9\u05e6\u05d2 \u05d4\u05e6\u05d9\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df (\u05d2\u05d5\u05d3\u05dc 2)?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05e7\u05d5\u05d0\u05d5\u05e8\u05d3\u05d9\u05e0\u05d8\u05d5\u05ea x \u05d5-y \u05e9\u05dc \u05db\u05dc \u05e0\u05e7\u05d5\u05d3\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05ea\u05d9 \u05e8\u05d9\u05e6\u05d5\u05ea \u05e0\u05d5\u05e1\u05e4\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea \u05d4\u05d5\u05d0 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df, \u05d1\u05d2\u05d5\u05d3\u05dc 5."}, {"answer": "\u05e9\u05e0\u05d9 \u05de\u05db\u05e9\u05d9\u05e8\u05d9 \u05de\u05d3\u05d9\u05d3\u05d4 \u05e9\u05d5\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7 \u05e0\u05db\u05d5\u05df \u05d1\u05d4\u05e7\u05e9\u05e8 \u05d4\u05d6\u05d4 \u2014 \u05db\u05d0\u05df \u05d6\u05d4 x \u05d5-y."}, {"answer": "\u05e9\u05e0\u05d9 \u05e1\u05d5\u05d2\u05d9 \u05d7\u05d9\u05d9\u05e9\u05e0\u05d9\u05dd \u05e9\u05d5\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7 \u05e0\u05db\u05d5\u05df \u05d1\u05d4\u05e7\u05e9\u05e8 \u05d4\u05d6\u05d4 \u2014 \u05db\u05d0\u05df \u05d4\u05d2\u05d5\u05d3\u05dc 2 \u05de\u05d9\u05d9\u05e6\u05d2 \u05d0\u05ea x \u05d5-y \u05e9\u05dc \u05d0\u05d5\u05ea\u05d4 \u05e0\u05e7\u05d5\u05d3\u05d4, \u05dc\u05d0 \u05d7\u05d9\u05d9\u05e9\u05e0\u05d9\u05dd \u05e9\u05d5\u05e0\u05d9\u05dd."}]}];
+</style></div><script type="application/javascript">var questionsUjHYQjmxDvMH=[{"question": "\u05db\u05de\u05d4 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "3", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d0\u05d7\u05d3 \u05d1\u05d5\u05d7\u05e8 \u05e8\u05d9\u05e6\u05d4 \u05e9\u05dc\u05de\u05d4, \u05db\u05dc\u05d5\u05de\u05e8 \u05d0\u05ea \u05d4\u05d2\u05d5\u05d1\u05d4 \u05d1\u05db\u05dc 3 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d4\u05d6\u05de\u05df \u05e9\u05dc\u05d4."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea. \u05d2\u05d5\u05d1\u05d4 \u05d0\u05d7\u05d3 \u05de\u05db\u05dc \u05e8\u05d9\u05e6\u05d4, \u05d1\u05d6\u05de\u05df \u05d0\u05d7\u05d3, \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05e2\u05dd \u05e0\u05e7\u05d5\u05d3\u05ea\u05d9\u05d9\u05dd \u05d1\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3 \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05e8\u05e7 \u05e2\u05dd \u05e9\u05e0\u05d9 \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd, \u05e8\u05d9\u05e6\u05d4 \u05d5\u05d6\u05de\u05df."}, {"answer": "6", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05db\u05dc \u05d4\u05de\u05e2\u05e8\u05da; \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d0\u05d7\u05d3 \u05d1\u05d5\u05d7\u05e8 \u05e8\u05e7 \u05e8\u05d9\u05e6\u05d4 \u05d0\u05d7\u05ea."}]}, {"question": "\u05d1\u05de\u05e2\u05e8\u05da XY \u05de\u05d4\u05d3\u05d5\u05d2\u05de\u05d4, \u05de\u05d4 \u05de\u05d9\u05d9\u05e6\u05d2 \u05d4\u05e6\u05d9\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df, \u05e9\u05d2\u05d5\u05d3\u05dc\u05d5 2?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05e7\u05d5\u05d0\u05d5\u05e8\u05d3\u05d9\u05e0\u05d8\u05d5\u05ea x \u05d5-y \u05e9\u05dc \u05db\u05dc \u05e0\u05e7\u05d5\u05d3\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05ea\u05d9 \u05e8\u05d9\u05e6\u05d5\u05ea \u05e0\u05d5\u05e1\u05e4\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea \u05d4\u05d5\u05d0 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df, \u05d1\u05d2\u05d5\u05d3\u05dc 5."}, {"answer": "\u05e9\u05e0\u05d9 \u05de\u05db\u05e9\u05d9\u05e8\u05d9 \u05de\u05d3\u05d9\u05d3\u05d4 \u05e9\u05d5\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7 \u05e0\u05db\u05d5\u05df \u05d1\u05d4\u05e7\u05e9\u05e8 \u05d4\u05d6\u05d4 \u2014 \u05db\u05d0\u05df \u05d6\u05d4 x \u05d5-y."}, {"answer": "\u05e9\u05e0\u05d9 \u05e1\u05d5\u05d2\u05d9 \u05d7\u05d9\u05d9\u05e9\u05e0\u05d9\u05dd \u05e9\u05d5\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7 \u05e0\u05db\u05d5\u05df \u05d1\u05d4\u05e7\u05e9\u05e8 \u05d4\u05d6\u05d4 \u2014 \u05db\u05d0\u05df \u05d4\u05d2\u05d5\u05d3\u05dc 2 \u05de\u05d9\u05d9\u05e6\u05d2 \u05d0\u05ea x \u05d5-y \u05e9\u05dc \u05d0\u05d5\u05ea\u05d4 \u05e0\u05e7\u05d5\u05d3\u05d4, \u05dc\u05d0 \u05d7\u05d9\u05d9\u05e9\u05e0\u05d9\u05dd \u05e9\u05d5\u05e0\u05d9\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2073,8 +2039,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("ROZomqZVmdaC")) {
-    show_questions(questionsROZomqZVmdaC, ROZomqZVmdaC);
+  if (document.getElementById("UjHYQjmxDvMH")) {
+    show_questions(questionsUjHYQjmxDvMH, UjHYQjmxDvMH);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2086,26 +2052,22 @@ function try_show() {
 }
 </script></div>
 </div>
-</section>
-<section id="id6">
-<h2><span class="section-number">9.1.5. </span>תרגול עצמי<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<p>בנו מערך <code class="docutils literal notranslate"><span class="pre">A</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">n_t)</span></code> המייצג את <strong>התאוצה</strong> (קבועה, <span class="math notranslate nohighlight">\(-g\)</span>, בכל ריצה ובכל זמן) עבור 3 ריצות בלבד — בעזרת לולאה. ודאו ש-<code class="docutils literal notranslate"><span class="pre">A.shape</span> <span class="pre">==</span> <span class="pre">(3,</span> <span class="pre">n_t)</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A = np.empty((3, n_t))</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
+<p>בנו מערך ‎<code class="docutils literal notranslate"><span class="pre">A</span></code>‎ בצורה ‎<code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">n_t)</span></code>‎ של <strong>התאוצה</strong> האנכית (<span class="math notranslate nohighlight">\(-g\)</span>, קבועה בכל ריצה ובכל זמן) עבור 3 ריצות, בעזרת לולאה. ודאו ש-‎<code class="docutils literal notranslate"><span class="pre">A.shape</span></code>‎ הוא ‎<code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">n_t)</span></code>‎.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_t</span><span class="p">))</span>
 <span class="c1"># ...</span>
 </pre></div>
 </div>
-</div>
-</div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_t</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_t</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">g</span>   <span class="c1"># תאוצה קבועה על פני כל ציר הזמן</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">g</span>   <span class="c1"># the same acceleration at every time</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2155,7 +2117,7 @@ function try_show() {
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.2. </span>פריסה לפי צירים: <code class="docutils literal notranslate"><span class="pre">a[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">a[:,2]</span></code>, <code class="docutils literal notranslate"><span class="pre">a[...,0]</span></code></p>
+        <p class="prev-next-title"><span class="section-number">9.2. </span>פריסה לפי צירים</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2181,7 +2143,6 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.1.2. הרחבה לתלת-ממד: ציר קואורדינטה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.1.3. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.1.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.1.5. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -635,7 +635,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label">8.5.2. באג נפוץ: label קבוע בתוך לולאה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.5.3. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.5.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.5.5. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -649,7 +648,7 @@
                   
   <section id="id1">
 <h1><span class="section-number">8.5. </span>כמה עקומות באותו גרף<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>השוואה בין כמה תרחישים פיזיקליים נעשית בדרך כלל על אותו גרף, לא בגרפים נפרדים. הדפוס הנפוץ: לולאה שבכל איטרציה מוסיפה עקומה נוספת לאותו <code class="docutils literal notranslate"><span class="pre">ax</span></code>, כשלכל עקומה <code class="docutils literal notranslate"><span class="pre">label</span></code> משלה — כדי שהמקרא יבדיל ביניהן.</p>
+<p>השוואה בין כמה תרחישים פיזיקליים נעשית בדרך כלל על אותו גרף, לא בגרפים נפרדים. הדפוס הנפוץ: לולאה שבכל איטרציה מוסיפה עקומה נוספת לאותו ‎<code class="docutils literal notranslate"><span class="pre">ax</span></code>‎, כשלכל עקומה ‎<code class="docutils literal notranslate"><span class="pre">label</span></code>‎ משלה — כדי שהמקרא יבדיל ביניהן.</p>
 <section id="id2">
 <h2><span class="section-number">8.5.1. </span>דוגמה מובילה: מסלול הזריקה עבור שלוש זוויות שיגור<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>זו הדוגמה שתלווה את שאר השבוע: אותה מהירות התחלתית <span class="math notranslate nohighlight">\(v_0\)</span>, שלוש זוויות שיגור שונות — כולן על אותו גרף.</p>
@@ -679,13 +678,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/37d7571907e25c8ab219548b37d6cbbf7d74ad6b0c5373c18ea8890b520dc92e.png" src="../../../_images/37d7571907e25c8ab219548b37d6cbbf7d74ad6b0c5373c18ea8890b520dc92e.png" />
+<img alt="../../../_images/e4f8cd4a5e565760c6eeb383b39a197d97397677d76079f3438c4dc612823e7a.png" src="../../../_images/e4f8cd4a5e565760c6eeb383b39a197d97397677d76079f3438c4dc612823e7a.png" />
 </div>
 </div>
 </section>
 <section id="label">
 <h2><span class="section-number">8.5.2. </span>באג נפוץ: label קבוע בתוך לולאה<a class="headerlink" href="#label" title="Link to this heading">#</a></h2>
-<p>אם כותבים <code class="docutils literal notranslate"><span class="pre">ax.plot(x,</span> <span class="pre">y,</span> <span class="pre">label=&quot;זריקה&quot;)</span></code> בתוך הלולאה — כלומר אותו <code class="docutils literal notranslate"><span class="pre">label</span></code> בכל איטרציה — המקרא יציג את אותה תווית שלוש פעמים, במקום להבדיל בין הזוויות. הפתרון: לבנות את המחרוזת דינמית מתוך משתנה הלולאה, כמו ב-<code class="docutils literal notranslate"><span class="pre">f&quot;...&quot;</span> <span class="pre">/</span> <span class="pre">fr&quot;...&quot;</span></code> שלמעלה.</p>
+<p>אם כותבים ‎<code class="docutils literal notranslate"><span class="pre">ax.plot(x,</span> <span class="pre">y,</span> <span class="pre">label=&quot;זריקה&quot;)</span></code>‎ בתוך הלולאה — כלומר אותו ‎<code class="docutils literal notranslate"><span class="pre">label</span></code>‎ בכל איטרציה — המקרא יציג את אותה תווית שלוש פעמים, במקום להבדיל בין הזוויות. הפתרון: לבנות את המחרוזת דינמית מתוך משתנה הלולאה, כמו ב-‎<code class="docutils literal notranslate"><span class="pre">f&quot;...&quot;</span> <span class="pre">/</span> <span class="pre">fr&quot;...&quot;</span></code>‎ שלמעלה.</p>
 </section>
 <section id="id3">
 <h2><span class="section-number">8.5.3. </span>נסו בעצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
@@ -720,29 +719,22 @@
 </section>
 <section id="id4">
 <h2><span class="section-number">8.5.4. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מה יקרה אם בתוך לולאת ציור נכתוב &lt;code&gt;ax.plot(x, y, label=</span><span class="se">\"</span><span class="s2">זריקה</span><span class="se">\"</span><span class="s2">)&lt;/code&gt; עבור כל זווית?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"המקרא יבדיל אוטומטית בין הזוויות לפי הצבע"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"הצבע אכן שונה, אבל השאלה היא על תוכן המקרא עצמו."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"Matplotlib יזרוק שגיאה"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — זה קוד תקין, רק לא שימושי."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"רק העקומה האחרונה תופיע בגרף, השאר יימחקו"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — כל העקומות ייצוירו; הבעיה היא רק בתוכן המקרא, לא בציור עצמו."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כל העקומות יופיעו במקרא עם אותה תווית </span><span class="se">\"</span><span class="s2">זריקה</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון — צריך תווית דינמית התלויה בזווית."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<p>שתי השאלות מתייחסות לקוד הבא, שבו לכל העקומות אותה תווית:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">angles_deg</span><span class="p">:</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"זריקה"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"קרקע"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="EhLBUKEUkVen" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#EhLBUKEUkVen {
+<div class="output text_html"><div id="zRFZCOCdkmhN" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#zRFZCOCdkmhN {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -965,7 +957,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsEhLBUKEUkVen=[{"question": "\u05de\u05d4 \u05d9\u05e7\u05e8\u05d4 \u05d0\u05dd \u05d1\u05ea\u05d5\u05da \u05dc\u05d5\u05dc\u05d0\u05ea \u05e6\u05d9\u05d5\u05e8 \u05e0\u05db\u05ea\u05d5\u05d1 <code>ax.plot(x, y, label=\"\u05d6\u05e8\u05d9\u05e7\u05d4\")</code> \u05e2\u05d1\u05d5\u05e8 \u05db\u05dc \u05d6\u05d5\u05d5\u05d9\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05de\u05e7\u05e8\u05d0 \u05d9\u05d1\u05d3\u05d9\u05dc \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9\u05ea \u05d1\u05d9\u05df \u05d4\u05d6\u05d5\u05d5\u05d9\u05d5\u05ea \u05dc\u05e4\u05d9 \u05d4\u05e6\u05d1\u05e2", "correct": false, "feedback": "\u05d4\u05e6\u05d1\u05e2 \u05d0\u05db\u05df \u05e9\u05d5\u05e0\u05d4, \u05d0\u05d1\u05dc \u05d4\u05e9\u05d0\u05dc\u05d4 \u05d4\u05d9\u05d0 \u05e2\u05dc \u05ea\u05d5\u05db\u05df \u05d4\u05de\u05e7\u05e8\u05d0 \u05e2\u05e6\u05de\u05d5."}, {"answer": "Matplotlib \u05d9\u05d6\u05e8\u05d5\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df, \u05e8\u05e7 \u05dc\u05d0 \u05e9\u05d9\u05de\u05d5\u05e9\u05d9."}, {"answer": "\u05e8\u05e7 \u05d4\u05e2\u05e7\u05d5\u05de\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05ea\u05d5\u05e4\u05d9\u05e2 \u05d1\u05d2\u05e8\u05e3, \u05d4\u05e9\u05d0\u05e8 \u05d9\u05d9\u05de\u05d7\u05e7\u05d5", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05db\u05dc \u05d4\u05e2\u05e7\u05d5\u05de\u05d5\u05ea \u05d9\u05d9\u05e6\u05d5\u05d9\u05e8\u05d5; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05d1\u05ea\u05d5\u05db\u05df \u05d4\u05de\u05e7\u05e8\u05d0, \u05dc\u05d0 \u05d1\u05e6\u05d9\u05d5\u05e8 \u05e2\u05e6\u05de\u05d5."}, {"answer": "\u05db\u05dc \u05d4\u05e2\u05e7\u05d5\u05de\u05d5\u05ea \u05d9\u05d5\u05e4\u05d9\u05e2\u05d5 \u05d1\u05de\u05e7\u05e8\u05d0 \u05e2\u05dd \u05d0\u05d5\u05ea\u05d4 \u05ea\u05d5\u05d5\u05d9\u05ea \"\u05d6\u05e8\u05d9\u05e7\u05d4\"", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05e6\u05e8\u05d9\u05da \u05ea\u05d5\u05d5\u05d9\u05ea \u05d3\u05d9\u05e0\u05de\u05d9\u05ea \u05d4\u05ea\u05dc\u05d5\u05d9\u05d4 \u05d1\u05d6\u05d5\u05d5\u05d9\u05ea."}]}];
+</style></div><script type="application/javascript">var questionszRFZCOCdkmhN=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05e4\u05d9\u05e2 \u05d1\u05de\u05e7\u05e8\u05d0 \u05e2\u05d1\u05d5\u05e8 \u05e9\u05dc\u05d5\u05e9 \u05e2\u05e7\u05d5\u05de\u05d5\u05ea \u05d4\u05d6\u05e8\u05d9\u05e7\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05e9\u05dc\u05d5\u05e9 \u05e9\u05d5\u05e8\u05d5\u05ea \u05e2\u05dd \u05d0\u05d5\u05ea\u05d4 \u05ea\u05d5\u05d5\u05d9\u05ea, \u05d6\u05e8\u05d9\u05e7\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05db\u05dc \u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc-plot \u05de\u05d5\u05e1\u05d9\u05e4\u05d4 \u05e9\u05d5\u05e8\u05d4 \u05dc\u05de\u05e7\u05e8\u05d0, \u05d5\u05d4\u05ea\u05d5\u05d5\u05d9\u05ea \u05d6\u05d4\u05d4 \u05d1\u05db\u05dc \u05d4\u05e7\u05e8\u05d9\u05d0\u05d5\u05ea."}, {"answer": "\u05e9\u05dc\u05d5\u05e9 \u05e9\u05d5\u05e8\u05d5\u05ea \u05e2\u05dd \u05d4\u05d6\u05d5\u05d5\u05d9\u05d5\u05ea 30, 45 \u05d5-60", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05de\u05e7\u05e8\u05d0 \u05de\u05e6\u05d9\u05d2 \u05e8\u05e7 \u05d0\u05ea \u05de\u05d4 \u05e9\u05e0\u05db\u05ea\u05d1 \u05d1-label, \u05d5\u05d4\u05ea\u05d5\u05d5\u05d9\u05ea \u05db\u05d0\u05df \u05dc\u05d0 \u05ea\u05dc\u05d5\u05d9\u05d4 \u05d1\u05d6\u05d5\u05d5\u05d9\u05ea."}, {"answer": "\u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d1\u05dc\u05d1\u05d3, \u05d6\u05e8\u05d9\u05e7\u05d4", "correct": false, "feedback": "\u05dc\u05d0: Matplotlib \u05dc\u05d0 \u05de\u05d0\u05d7\u05d3 \u05ea\u05d5\u05d5\u05d9\u05d5\u05ea \u05d6\u05d4\u05d5\u05ea; \u05db\u05dc \u05e2\u05e7\u05d5\u05de\u05d4 \u05de\u05e7\u05d1\u05dc\u05ea \u05e9\u05d5\u05e8\u05d4 \u05de\u05e9\u05dc\u05d4."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4, \u05db\u05d9 \u05d0\u05d5\u05ea\u05d4 \u05ea\u05d5\u05d5\u05d9\u05ea \u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05e4\u05e2\u05de\u05d9\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df \u05d5\u05e8\u05e5; \u05d4\u05d5\u05d0 \u05e4\u05e9\u05d5\u05d8 \u05dc\u05d0 \u05de\u05d1\u05d3\u05d9\u05dc \u05d1\u05d9\u05df \u05d4\u05e2\u05e7\u05d5\u05de\u05d5\u05ea."}]}, {"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05e9 \u05d1\u05de\u05e7\u05e8\u05d0 \u05d1\u05e1\u05da \u05d4\u05db\u05d5\u05dc?", "type": "multiple_choice", "answers": [{"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e9\u05dc\u05d5\u05e9 \u05e2\u05e7\u05d5\u05de\u05d5\u05ea \u05d4\u05d6\u05e8\u05d9\u05e7\u05d4, \u05d5\u05e2\u05d5\u05d3 \u05d4\u05e7\u05d5 \u05e9\u05dc \u05d4\u05e7\u05e8\u05e7\u05e2, \u05e9\u05d2\u05dd \u05dc\u05d5 \u05d9\u05e9 label."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: \u05d2\u05dd \u05dc\u05e7\u05d5 \u05d4\u05d0\u05d5\u05e4\u05e7\u05d9 \u05e9\u05dc \u05d4\u05e7\u05e8\u05e7\u05e2 \u05d9\u05e9 label, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05d5\u05d0 \u05de\u05e7\u05d1\u05dc \u05e9\u05d5\u05e8\u05d4."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: \u05ea\u05d5\u05d5\u05d9\u05d5\u05ea \u05d6\u05d4\u05d5\u05ea \u05dc\u05d0 \u05de\u05ea\u05d0\u05d7\u05d3\u05d5\u05ea; \u05db\u05dc \u05d0\u05d7\u05ea \u05de\u05e9\u05dc\u05d5\u05e9 \u05d4\u05e2\u05e7\u05d5\u05de\u05d5\u05ea \u05de\u05e7\u05d1\u05dc\u05ea \u05e9\u05d5\u05e8\u05d4."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05db\u05dc \u05e7\u05e8\u05d9\u05d0\u05d4 \u05e2\u05dd label \u05de\u05d5\u05e1\u05d9\u05e4\u05d4 \u05e9\u05d5\u05e8\u05d4 \u05de\u05e9\u05dc\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2027,8 +2019,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("EhLBUKEUkVen")) {
-    show_questions(questionsEhLBUKEUkVen, EhLBUKEUkVen);
+  if (document.getElementById("zRFZCOCdkmhN")) {
+    show_questions(questionszRFZCOCdkmhN, zRFZCOCdkmhN);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2040,16 +2032,11 @@ function try_show() {
 }
 </script></div>
 </div>
-</section>
-<section id="id5">
-<h2><span class="section-number">8.5.5. </span>תרגול עצמי<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>ציירו את שלוש הזוויות (30°, 45°, 60°) על אותו גרף, והוסיפו קו אופקי ב-<span class="math notranslate nohighlight">\(y=0\)</span> (<code class="docutils literal notranslate"><span class="pre">ax.axhline(0,</span> <span class="pre">color=&quot;gray&quot;,</span> <span class="pre">linewidth=0.8)</span></code>) שמייצג את הקרקע.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
+<p>ציירו את שלוש הזוויות (30°, 45°, 60°) על אותו גרף, והוסיפו קו אופקי ב-<span class="math notranslate nohighlight">\(y=0\)</span> (‎<code class="docutils literal notranslate"><span class="pre">ax.axhline(0,</span> <span class="pre">color=&quot;gray&quot;,</span> <span class="pre">linewidth=0.8)</span></code>‎) שמייצג את הקרקע.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
@@ -2068,6 +2055,7 @@ function try_show() {
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2143,7 +2131,6 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label">8.5.2. באג נפוץ: label קבוע בתוך לולאה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.5.3. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.5.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.5.5. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

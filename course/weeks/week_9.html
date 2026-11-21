@@ -247,8 +247,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -322,7 +322,7 @@
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -631,27 +631,18 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
 <h1><span class="section-number">9. </span>שבוע 9 — NumPy מתקדם ואינטגרציה<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
-<p>רב-ממד וצירים, ופעולות חשבון אינפיניטסימלי כקריאה לפונקציה. השבוע ממשיך ישירות את דוגמת מסלול הזריקה משבועות 7–8, הפעם עם <strong>כמה ריצות של אותה זריקה</strong> — בדיוק הדוגמה שמארגנת את ארבעת הכללים לעבודה עם מערכים רב-ממדיים: מערך בצורה (ריצה, זמן, קואורדינטה).</p>
-<div class="tip admonition">
-<p class="admonition-title">ארבעת הכללים לעבודה עם מערכים רב-ממדיים</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code> היא רשימת הצירים, ולכל מיקום יש שם.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">axis=k</span></code> הוא הציר שנעלם בפעולת צמצום.</p></li>
-<li><p>שני מערכים מתחברים אם, מימין לשמאל, כל זוג צירים שווה או שאחד מהם 1.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> מוסיף ציר בגודל 1.</p></li>
-</ol>
-</div>
+<p>רב-ממד וצירים, ופעולות חשבון אינפיניטסימלי כקריאה לפונקציה. השבוע ממשיך ישירות את דוגמת מסלול הזריקה משבועות 7 ו-8, הפעם עם <strong>כמה ריצות של אותה זריקה</strong>: מערך בצורה (ריצה, זמן, קואורדינטה). את העבודה עם מערכים כאלה מארגנים ארבעה כללים, שמוצגים בתחילת סעיף 9.1.</p>
 <p>בסוף השבוע תדעו:</p>
 <ul class="simple">
-<li><p>לקרוא ולפרש <code class="docutils literal notranslate"><span class="pre">shape</span></code> של מערך רב-ממדי לפי המשמעות הפיזיקלית של כל ציר</p></li>
-<li><p>לפרוס מערכים לפי צירים (<code class="docutils literal notranslate"><span class="pre">a[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">a[:,2]</span></code>, <code class="docutils literal notranslate"><span class="pre">a[...,0]</span></code>)</p></li>
-<li><p>להבדיל בין <code class="docutils literal notranslate"><span class="pre">reshape</span></code> (סידור מחדש) ל-<code class="docutils literal notranslate"><span class="pre">transpose</span></code> (החלפת צירים)</p></li>
-<li><p>לאחד מערכים עם <code class="docutils literal notranslate"><span class="pre">stack</span></code> ו-<code class="docutils literal notranslate"><span class="pre">concatenate</span></code></p></li>
-<li><p>להתאים צירים בין מערכים בעזרת broadcasting ו-<code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
-<li><p>לבנות רשתות דו-ממדיות עם <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code></p></li>
-<li><p>לצמצם מערך לפי ציר נבחר (<code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">std</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">argmax</span></code>…)</p></li>
-<li><p>לקרב נגזרת ואינטגרל עם <code class="docutils literal notranslate"><span class="pre">diff</span></code>, <code class="docutils literal notranslate"><span class="pre">cumsum</span></code>, <code class="docutils literal notranslate"><span class="pre">trapezoid</span></code> ו-<code class="docutils literal notranslate"><span class="pre">quad</span></code></p></li>
+<li><p>לקרוא ולפרש ‎<code class="docutils literal notranslate"><span class="pre">shape</span></code>‎ של מערך רב-ממדי לפי המשמעות הפיזיקלית של כל ציר</p></li>
+<li><p>לפרוס מערכים לפי צירים (‎<code class="docutils literal notranslate"><span class="pre">a[0]</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">a[:,</span> <span class="pre">2]</span></code>‎)</p></li>
+<li><p>להבדיל בין ‎<code class="docutils literal notranslate"><span class="pre">reshape</span></code>‎ (סידור מחדש) ל-‎<code class="docutils literal notranslate"><span class="pre">transpose</span></code>‎ (החלפת צירים)</p></li>
+<li><p>לאחד מערכים עם ‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎</p></li>
+<li><p>להתאים צירים בין מערכים בעזרת broadcasting ו-‎<code class="docutils literal notranslate"><span class="pre">None</span></code>‎</p></li>
+<li><p>לצמצם מערך לפי ציר נבחר (‎<code class="docutils literal notranslate"><span class="pre">mean</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">std</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">sum</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">argmax</span></code>‎…)</p></li>
+<li><p>לקרב נגזרת ואינטגרל עם ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎</p></li>
 <li><p>לזהות מתי לא ניתן לוקטר (יחס נסיגה), ולכתוב לולאת עדכון נכונה</p></li>
+<li><p>לעקוב אחרי לולאת עדכון בטבלה של ‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ והערכים, ולמצוא את השורה שגרמה לפלט שגוי</p></li>
 </ul>
 <p><strong>Materials</strong></p>
 <ul class="simple">
@@ -660,7 +651,7 @@
 <li><p><a class="reference internal" href="week_9/9_3_reshape_transpose.html"><span class="doc">9.3 • reshape ו-transpose</span></a></p></li>
 <li><p><a class="reference internal" href="week_9/9_4_stack_concatenate.html"><span class="doc">9.4 • stack ו-concatenate — לאחד ריצות</span></a></p></li>
 <li><p><a class="reference internal" href="week_9/9_5_broadcasting.html"><span class="doc">9.5 • התאמת צירים בין שני מערכים (Broadcasting)</span></a></p></li>
-<li><p><a class="reference internal" href="week_9/9_6_none_meshgrid.html"><span class="doc">9.6 • None ו-meshgrid</span></a></p></li>
+<li><p><a class="reference internal" href="week_9/9_6_none_meshgrid.html"><span class="doc">9.6 • הוספת ציר עם None</span></a></p></li>
 <li><p><a class="reference internal" href="week_9/9_7_axis_reductions.html"><span class="doc">9.7 • צמצום לפי ציר</span></a></p></li>
 <li><p><a class="reference internal" href="week_9/9_8_diff_cumsum.html"><span class="doc">9.8 • diff ו-cumsum — נגזרת וסכום מצטבר</span></a></p></li>
 <li><p><a class="reference internal" href="week_9/9_9_trapezoid_quad.html"><span class="doc">9.9 • אינטגרציה: trapezoid ו-quad</span></a></p></li>

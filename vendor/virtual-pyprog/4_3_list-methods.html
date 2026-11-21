@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../course/weeks/week_3.html">3. שבוע 3 — רשימות</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -1000,8 +1000,8 @@ None
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="OikorMnqpwQT" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#OikorMnqpwQT {
+<div class="output text_html"><div id="HabVpceHgtFl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#HabVpceHgtFl {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1224,7 +1224,7 @@ None
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsOikorMnqpwQT=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05d1\u05e7\u05d5\u05d3 \u05e9\u05dc\u05de\u05e2\u05dc\u05d4?", "type": "many_choice", "answers": [{"answer": "3 [20, 25, 30] 30 303", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "3 [20, 25] 30 303", "correct": false, "feedback": "add_reading \u05de\u05e9\u05e0\u05d4 \u05d0\u05ea \u05d4\u05e8\u05e9\u05d9\u05de\u05d4 \u05e2\u05e6\u05de\u05d4, \u05d5\u05dc\u05db\u05df temps \u05db\u05d5\u05dc\u05dc\u05ea \u05d0\u05ea 30 \u05d2\u05dd \u05de\u05d7\u05d5\u05e5 \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4"}, {"answer": "3 [20, 25, 30] 303 303", "correct": false, "feedback": "\u05d4\u05e9\u05d5\u05e8\u05d4 to_kelvin(T0) \u05de\u05d7\u05e9\u05d1\u05ea \u05e2\u05e8\u05da \u05d7\u05d3\u05e9 \u05d0\u05d1\u05dc \u05dc\u05d0 \u05e9\u05d5\u05de\u05e8\u05ea \u05d0\u05d5\u05ea\u05d5, \u05d5\u05dc\u05db\u05df T0 \u05e0\u05e9\u05d0\u05e8 30"}, {"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsHabVpceHgtFl=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05d1\u05e7\u05d5\u05d3 \u05e9\u05dc\u05de\u05e2\u05dc\u05d4?", "type": "many_choice", "answers": [{"answer": "3 [20, 25, 30] 30 303", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "3 [20, 25] 30 303", "correct": false, "feedback": "add_reading \u05de\u05e9\u05e0\u05d4 \u05d0\u05ea \u05d4\u05e8\u05e9\u05d9\u05de\u05d4 \u05e2\u05e6\u05de\u05d4, \u05d5\u05dc\u05db\u05df temps \u05db\u05d5\u05dc\u05dc\u05ea \u05d0\u05ea 30 \u05d2\u05dd \u05de\u05d7\u05d5\u05e5 \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4"}, {"answer": "3 [20, 25, 30] 303 303", "correct": false, "feedback": "\u05d4\u05e9\u05d5\u05e8\u05d4 to_kelvin(T0) \u05de\u05d7\u05e9\u05d1\u05ea \u05e2\u05e8\u05da \u05d7\u05d3\u05e9 \u05d0\u05d1\u05dc \u05dc\u05d0 \u05e9\u05d5\u05de\u05e8\u05ea \u05d0\u05d5\u05ea\u05d5, \u05d5\u05dc\u05db\u05df T0 \u05e0\u05e9\u05d0\u05e8 30"}, {"answer": "\u05d4\u05e4\u05e7\u05d5\u05d3\u05d4 \u05d2\u05d5\u05e8\u05de\u05ea \u05dc\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2286,8 +2286,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("OikorMnqpwQT")) {
-    show_questions(questionsOikorMnqpwQT, OikorMnqpwQT);
+  if (document.getElementById("HabVpceHgtFl")) {
+    show_questions(questionsHabVpceHgtFl, HabVpceHgtFl);
   } else {
     setTimeout(try_show, 200);
   }

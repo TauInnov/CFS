@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -634,7 +634,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.7.1. דוגמה: טווח הזריקה כתלות במהירות ההתחלתית</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.7.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.7.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.7.4. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -664,7 +663,7 @@
 
 <span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">20.0</span>          <span class="c1"># m/s^2, m/s</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">v0_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>     <span class="c1"># 1 ... 1000, פרוש לוגריתמי</span>
+<span class="n">v0_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>     <span class="c1"># 1 ... 1000, log-spaced</span>
 <span class="n">R_range</span> <span class="o">=</span> <span class="n">v0_range</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -686,15 +685,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/e8a3fd6092132833d6654ca2fd25267bebeeeaf967f1d39cb091692282757556.png" src="../../../_images/e8a3fd6092132833d6654ca2fd25267bebeeeaf967f1d39cb091692282757556.png" />
+<img alt="../../../_images/1e1949b9bc429814c0e3afa1be79c1453724f39a3b7504be1045a982ce37e600.png" src="../../../_images/1e1949b9bc429814c0e3afa1be79c1453724f39a3b7504be1045a982ce37e600.png" />
 </div>
 </div>
-<p>בגרף הליניארי (משמאל) כמעט כל המידע על ערכי <span class="math notranslate nohighlight">\(v_0\)</span> הקטנים “נעלם” צמוד לציר. בגרף ה-log-log (מימין) רואים קו ישר — תוצאה של חוק חזקה (<span class="math notranslate nohighlight">\(R\propto v_0^2\)</span>); לחילוץ השיפוע כדי לזהות את המעריך נחזור בסעיף 12.3.</p>
-<p>חשוב: <code class="docutils literal notranslate"><span class="pre">np.logspace(0,</span> <span class="pre">3,</span> <span class="pre">200)</span></code> יוצר רשת של 200 נקודות הפרוסות <strong>אחיד בסולם הלוגריתמי</strong> בין <span class="math notranslate nohighlight">\(10^0\)</span> ל-<span class="math notranslate nohighlight">\(10^3\)</span> — לא בין 0 ל-1000 ליניארית. זה ההבדל בינה לבין <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>.</p>
+<p>בגרף הליניארי (משמאל) כמעט כל המידע על ערכי <span class="math notranslate nohighlight">\(v_0\)</span> הקטנים “נעלם” צמוד לציר. בגרף ה-log-log (מימין) רואים קו ישר — תוצאה של חוק חזקה (<span class="math notranslate nohighlight">\(R\propto v_0^2\)</span>). השיפוע של הקו הישר הוא החזקה, 2: כשה-<span class="math notranslate nohighlight">\(v_0\)</span> גדל פי 10, הטווח גדל פי <span class="math notranslate nohighlight">\(10^2 = 100\)</span>.</p>
+<p>חשוב: ‎<code class="docutils literal notranslate"><span class="pre">np.logspace(0,</span> <span class="pre">3,</span> <span class="pre">200)</span></code>‎ יוצר רשת של 200 נקודות הפרוסות <strong>אחיד בסולם הלוגריתמי</strong> בין <span class="math notranslate nohighlight">\(10^0\)</span> ל-<span class="math notranslate nohighlight">\(10^3\)</span> — לא בין 0 ל-1000 ליניארית. זה ההבדל בינה לבין ‎<code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>‎.</p>
 </section>
 <section id="id3">
 <h2><span class="section-number">8.7.2. </span>נסו בעצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>לפעמים רק ציר אחד דורש סולם לוגריתמי (למשל כשהערכים חיוביים אך משתנים בכמה סדרי גודל, וציר ה-x נשאר ליניארי). ציירו את <code class="docutils literal notranslate"><span class="pre">R_range</span></code> כתלות ב-<code class="docutils literal notranslate"><span class="pre">v0_range</span></code> עם <code class="docutils literal notranslate"><span class="pre">ax.set_yscale(&quot;log&quot;)</span></code> בלבד (בלי log על ה-x).</p>
+<p>לפעמים רק ציר אחד דורש סולם לוגריתמי (למשל כשהערכים חיוביים אך משתנים בכמה סדרי גודל, וציר ה-x נשאר ליניארי). ציירו את ‎<code class="docutils literal notranslate"><span class="pre">R_range</span></code>‎ כתלות ב-‎<code class="docutils literal notranslate"><span class="pre">v0_range</span></code>‎ עם ‎<code class="docutils literal notranslate"><span class="pre">ax.set_yscale(&quot;log&quot;)</span></code>‎ בלבד (בלי log על ה-x).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig, ax = plt.subplots()</span>
@@ -719,39 +718,14 @@
 </section>
 <section id="id4">
 <h2><span class="section-number">8.7.3. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מתי הכי הגיוני להשתמש בסולם לוגריתמי בציר?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כשכל הערכים דומים בגודלם"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"אז דווקא סולם ליניארי מספיק ואף עדיף."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כשהערכים משתרעים על פני כמה סדרי גודל"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"תמיד, בכל גרף"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — יש מקרים שסולם לוגריתמי מטעה או מיותר."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"רק כשיש ערכים שליליים בנתונים"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא קשור — לוג לא מוגדר עבור ערכים שליליים או אפס, כך שדווקא אז אי אפשר להשתמש בו ישירות."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מה ההבדל בין &lt;code&gt;np.linspace(1, 1000, 200)&lt;/code&gt; ל-&lt;code&gt;np.logspace(0, 3, 200)&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"אין הבדל, שתיהן זהות"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"logspace תמיד מחזיר מספרים שלמים"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"linspace פורש נקודות אחיד בסולם ליניארי; logspace פורש אחיד בסולם הלוגריתמי (בין 10^0 ל-10^3)"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"linspace תמיד מתחיל מ-0, logspace לא"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — שתי הפונקציות מקבלות נקודת התחלה כפרמטר; ההבדל הוא בפריסה (ליניארית מול לוגריתמית), לא בנקודת ההתחלה."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<p>השאלה השנייה מתייחסת לשורה הבאה:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="EYMGkYnXEFqq" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#EYMGkYnXEFqq {
+<div class="output text_html"><div id="xnMPxJvyVaTu" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#xnMPxJvyVaTu {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -974,7 +948,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsEYMGkYnXEFqq=[{"question": "\u05de\u05ea\u05d9 \u05d4\u05db\u05d9 \u05d4\u05d2\u05d9\u05d5\u05e0\u05d9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05e1\u05d5\u05dc\u05dd \u05dc\u05d5\u05d2\u05e8\u05d9\u05ea\u05de\u05d9 \u05d1\u05e6\u05d9\u05e8?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05e9\u05db\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d3\u05d5\u05de\u05d9\u05dd \u05d1\u05d2\u05d5\u05d3\u05dc\u05dd", "correct": false, "feedback": "\u05d0\u05d6 \u05d3\u05d5\u05d5\u05e7\u05d0 \u05e1\u05d5\u05dc\u05dd \u05dc\u05d9\u05e0\u05d9\u05d0\u05e8\u05d9 \u05de\u05e1\u05e4\u05d9\u05e7 \u05d5\u05d0\u05e3 \u05e2\u05d3\u05d9\u05e3."}, {"answer": "\u05db\u05e9\u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05de\u05e9\u05ea\u05e8\u05e2\u05d9\u05dd \u05e2\u05dc \u05e4\u05e0\u05d9 \u05db\u05de\u05d4 \u05e1\u05d3\u05e8\u05d9 \u05d2\u05d5\u05d3\u05dc", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05ea\u05de\u05d9\u05d3, \u05d1\u05db\u05dc \u05d2\u05e8\u05e3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d9\u05e9 \u05de\u05e7\u05e8\u05d9\u05dd \u05e9\u05e1\u05d5\u05dc\u05dd \u05dc\u05d5\u05d2\u05e8\u05d9\u05ea\u05de\u05d9 \u05de\u05d8\u05e2\u05d4 \u05d0\u05d5 \u05de\u05d9\u05d5\u05ea\u05e8."}, {"answer": "\u05e8\u05e7 \u05db\u05e9\u05d9\u05e9 \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd \u05d1\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u2014 \u05dc\u05d5\u05d2 \u05dc\u05d0 \u05de\u05d5\u05d2\u05d3\u05e8 \u05e2\u05d1\u05d5\u05e8 \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd \u05d0\u05d5 \u05d0\u05e4\u05e1, \u05db\u05da \u05e9\u05d3\u05d5\u05d5\u05e7\u05d0 \u05d0\u05d6 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05d5 \u05d9\u05e9\u05d9\u05e8\u05d5\u05ea."}]}, {"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df <code>np.linspace(1, 1000, 200)</code> \u05dc-<code>np.logspace(0, 3, 200)</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05e9\u05ea\u05d9\u05d4\u05df \u05d6\u05d4\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "logspace \u05ea\u05de\u05d9\u05d3 \u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "linspace \u05e4\u05d5\u05e8\u05e9 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d0\u05d7\u05d9\u05d3 \u05d1\u05e1\u05d5\u05dc\u05dd \u05dc\u05d9\u05e0\u05d9\u05d0\u05e8\u05d9; logspace \u05e4\u05d5\u05e8\u05e9 \u05d0\u05d7\u05d9\u05d3 \u05d1\u05e1\u05d5\u05dc\u05dd \u05d4\u05dc\u05d5\u05d2\u05e8\u05d9\u05ea\u05de\u05d9 (\u05d1\u05d9\u05df 10^0 \u05dc-10^3)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "linspace \u05ea\u05de\u05d9\u05d3 \u05de\u05ea\u05d7\u05d9\u05dc \u05de-0, logspace \u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05ea\u05d9 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05de\u05e7\u05d1\u05dc\u05d5\u05ea \u05e0\u05e7\u05d5\u05d3\u05ea \u05d4\u05ea\u05d7\u05dc\u05d4 \u05db\u05e4\u05e8\u05de\u05d8\u05e8; \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e4\u05e8\u05d9\u05e1\u05d4 (\u05dc\u05d9\u05e0\u05d9\u05d0\u05e8\u05d9\u05ea \u05de\u05d5\u05dc \u05dc\u05d5\u05d2\u05e8\u05d9\u05ea\u05de\u05d9\u05ea), \u05dc\u05d0 \u05d1\u05e0\u05e7\u05d5\u05d3\u05ea \u05d4\u05d4\u05ea\u05d7\u05dc\u05d4."}]}];
+</style></div><script type="application/javascript">var questionsxnMPxJvyVaTu=[{"question": "\u05de\u05ea\u05d9 \u05d4\u05db\u05d9 \u05d4\u05d2\u05d9\u05d5\u05e0\u05d9 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05e1\u05d5\u05dc\u05dd \u05dc\u05d5\u05d2\u05e8\u05d9\u05ea\u05de\u05d9 \u05d1\u05e6\u05d9\u05e8?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05e9\u05db\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d3\u05d5\u05de\u05d9\u05dd \u05d1\u05d2\u05d5\u05d3\u05dc\u05dd", "correct": false, "feedback": "\u05d0\u05d6 \u05d3\u05d5\u05d5\u05e7\u05d0 \u05e1\u05d5\u05dc\u05dd \u05dc\u05d9\u05e0\u05d9\u05d0\u05e8\u05d9 \u05de\u05e1\u05e4\u05d9\u05e7 \u05d5\u05d0\u05e3 \u05e2\u05d3\u05d9\u05e3."}, {"answer": "\u05db\u05e9\u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05de\u05e9\u05ea\u05e8\u05e2\u05d9\u05dd \u05e2\u05dc \u05e4\u05e0\u05d9 \u05db\u05de\u05d4 \u05e1\u05d3\u05e8\u05d9 \u05d2\u05d5\u05d3\u05dc", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05ea\u05de\u05d9\u05d3, \u05d1\u05db\u05dc \u05d2\u05e8\u05e3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d9\u05e9 \u05de\u05e7\u05e8\u05d9\u05dd \u05e9\u05e1\u05d5\u05dc\u05dd \u05dc\u05d5\u05d2\u05e8\u05d9\u05ea\u05de\u05d9 \u05de\u05d8\u05e2\u05d4 \u05d0\u05d5 \u05de\u05d9\u05d5\u05ea\u05e8."}, {"answer": "\u05e8\u05e7 \u05db\u05e9\u05d9\u05e9 \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd \u05d1\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u2014 \u05dc\u05d5\u05d2 \u05dc\u05d0 \u05de\u05d5\u05d2\u05d3\u05e8 \u05e2\u05d1\u05d5\u05e8 \u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd \u05d0\u05d5 \u05d0\u05e4\u05e1, \u05db\u05da \u05e9\u05d3\u05d5\u05d5\u05e7\u05d0 \u05d0\u05d6 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05d5 \u05d9\u05e9\u05d9\u05e8\u05d5\u05ea."}]}, {"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e9\u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "100", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: logspace \u05e4\u05d5\u05e8\u05e9 4 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05e9\u05d4\u05de\u05e2\u05e8\u05d9\u05db\u05d9\u05dd \u05e9\u05dc\u05d4\u05df 0, 1, 2 \u05d5-3, \u05db\u05dc\u05d5\u05de\u05e8 1, 10, 100 \u05d5-1000."}, {"answer": "667", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d1\u05e4\u05e8\u05d9\u05e1\u05d4 \u05dc\u05d9\u05e0\u05d9\u05d0\u05e8\u05d9\u05ea \u05e9\u05dc 4 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d1\u05d9\u05df 1 \u05dc-1000 (linspace)."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d4\u05de\u05e2\u05e8\u05d9\u05da; \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05d5\u05d3\u05e4\u05e1 \u05d4\u05d5\u05d0 10 \u05d1\u05d7\u05d6\u05e7\u05ea 2."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: 3 \u05d4\u05d5\u05d0 \u05d4\u05de\u05e2\u05e8\u05d9\u05da \u05d4\u05d0\u05d7\u05e8\u05d5\u05df, \u05d5\u05dc\u05d0 \u05d0\u05d7\u05d3 \u05d4\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05d4\u05de\u05d5\u05d3\u05e4\u05e1\u05d9\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2036,8 +2010,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("EYMGkYnXEFqq")) {
-    show_questions(questionsEYMGkYnXEFqq, EYMGkYnXEFqq);
+  if (document.getElementById("xnMPxJvyVaTu")) {
+    show_questions(questionsxnMPxJvyVaTu, xnMPxJvyVaTu);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2049,17 +2023,12 @@ function try_show() {
 }
 </script></div>
 </div>
-</section>
-<section id="id5">
-<h2><span class="section-number">8.7.4. </span>תרגול עצמי<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
 <p>ציירו את <span class="math notranslate nohighlight">\(R(v_0)\)</span> עבור שלוש זוויות שונות (30°, 45°, 60°) יחד על אותו גרף log-log, עם מקרא.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for angle in [30, 45, 60]:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for angle in [30, 45, 60]:</span>
 <span class="c1">#     ...</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
@@ -2076,6 +2045,7 @@ function try_show() {
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2150,7 +2120,6 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.7.1. דוגמה: טווח הזריקה כתלות במהירות ההתחלתית</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.7.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.7.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.7.4. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

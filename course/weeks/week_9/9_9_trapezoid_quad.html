@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -631,8 +631,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid">9.9.1. דוגמה: טווח מתוך “מדידות” מהירות, עם <code class="docutils literal notranslate"><span class="pre">trapezoid</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quad">9.9.2. דוגמה: אותו טווח, עם <code class="docutils literal notranslate"><span class="pre">quad</span></code> על הנוסחה האנליטית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid">9.9.1. דוגמה: טווח מתוך “מדידות” מהירות, עם ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quad">9.9.2. דוגמה: אותו טווח, עם ‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ על הנוסחה האנליטית</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.9.3. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.9.4. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.9.5. תרגול עצמי</a></li>
@@ -649,12 +649,12 @@
                   
   <section id="trapezoid-quad">
 <h1><span class="section-number">9.9. </span>אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)<a class="headerlink" href="#trapezoid-quad" title="Link to this heading">#</a></h1>
-<p>(המשך הסרטון מ-9.8.) <code class="docutils literal notranslate"><span class="pre">cumsum</span></code> נתן קירוב גס לאינטגרל. ל-SciPy יש שני כלים מדויקים יותר, לשני מצבים שונים:</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ נתן קירוב גס לאינטגרל. ל-SciPy יש שני כלים מדויקים יותר, לשני מצבים שונים:</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">scipy.integrate.trapezoid(y,</span> <span class="pre">x)</span></code></strong> — מקבל <strong>מדידות בדידות</strong> (<span class="math notranslate nohighlight">\(y\)</span> בנקודות <span class="math notranslate nohighlight">\(x\)</span>), ומחשב את השטח שמתחתן בשיטת הטרפזים. מתאים לנתוני ניסוי.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad(f,</span> <span class="pre">a,</span> <span class="pre">b)</span></code></strong> — מקבל <strong>פונקציה אנליטית</strong> (callable) וגבולות אינטגרציה, ומחשב את האינטגרל שלה בשיטה נומרית מדויקת בהרבה. מתאים כשיש נוסחה סגורה.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">scipy.integrate.trapezoid(y,</span> <span class="pre">x)</span></code>‎</strong> — מקבל <strong>מדידות בדידות</strong> (<span class="math notranslate nohighlight">\(y\)</span> בנקודות <span class="math notranslate nohighlight">\(x\)</span>), ומחשב את השטח שמתחתן בשיטת הטרפזים. מתאים לנתוני ניסוי.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad(f,</span> <span class="pre">a,</span> <span class="pre">b)</span></code>‎</strong> — מקבל <strong>פונקציה אנליטית</strong> (callable) וגבולות אינטגרציה, ומחשב את האינטגרל שלה בשיטה נומרית מדויקת בהרבה. מתאים כשיש נוסחה סגורה.</p></li>
 </ul>
-<p>הכלל המעשי מהצעת הקורס: קריאה ל-<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code> או ל-<code class="docutils literal notranslate"><span class="pre">quad</span></code> היא שימוש בכלי מוכן — לא שיטה נומרית שלומדים לבנות (זה בקורס ההמשך).</p>
+<p>קריאה ל-‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎ או ל-‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ היא שימוש בכלי מוכן. איך בונים שיטות כאלה לומדים בקורס אחר.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -668,12 +668,12 @@
 </div>
 </div>
 <section id="trapezoid">
-<h2><span class="section-number">9.9.1. </span>דוגמה: טווח מתוך “מדידות” מהירות, עם <code class="docutils literal notranslate"><span class="pre">trapezoid</span></code><a class="headerlink" href="#trapezoid" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.9.1. </span>דוגמה: טווח מתוך “מדידות” מהירות, עם ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎<a class="headerlink" href="#trapezoid" title="Link to this heading">#</a></h2>
 <p>יש לנו מדגם של <span class="math notranslate nohighlight">\(v_x(t)\)</span> (בדידות, כמו נתוני ניסוי), ורוצים למצוא כמה מרחק הצטבר — האינטגרל של המהירות על הזמן.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-<span class="n">t_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>     <span class="c1"># מדגם דליל יחסית, כמו במדידה אמיתית</span>
+<span class="n">t_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>     <span class="c1"># sparse, like a real measurement</span>
 <span class="n">vx_samples</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">t_samples</span><span class="p">)</span>
 
 <span class="n">R_trapz</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">vx_samples</span><span class="p">,</span> <span class="n">t_samples</span><span class="p">)</span>
@@ -693,8 +693,8 @@
 </div>
 </section>
 <section id="quad">
-<h2><span class="section-number">9.9.2. </span>דוגמה: אותו טווח, עם <code class="docutils literal notranslate"><span class="pre">quad</span></code> על הנוסחה האנליטית<a class="headerlink" href="#quad" title="Link to this heading">#</a></h2>
-<p>הפעם יש לנו את <span class="math notranslate nohighlight">\(v_x(t)=v_0\cos\theta\)</span> כפונקציה ממש (לא מדגם), אז אפשר להעביר אותה ישירות ל-<code class="docutils literal notranslate"><span class="pre">quad</span></code>.</p>
+<h2><span class="section-number">9.9.2. </span>דוגמה: אותו טווח, עם ‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ על הנוסחה האנליטית<a class="headerlink" href="#quad" title="Link to this heading">#</a></h2>
+<p>הפעם יש לנו את <span class="math notranslate nohighlight">\(v_x(t)=v_0\cos\theta\)</span> כפונקציה ממש (לא מדגם), אז אפשר להעביר אותה ישירות ל-‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vx_func</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
@@ -711,60 +711,55 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">quad</span></code> מחזיר <strong>זוג</strong>: הערך המשוער, והערכת שגיאת הקירוב שלו — כדאי תמיד לזרוק עין על הרכיב השני, גם בלי לנתח אותו לעומק.</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ מחזיר <strong>זוג</strong>: הערך המשוער, והערכת שגיאת הקירוב שלו — כדאי תמיד לזרוק עין על הרכיב השני, גם בלי לנתח אותו לעומק.</p>
 </section>
 <section id="id1">
 <h2><span class="section-number">9.9.3. </span>נסו בעצמכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>חשבו את הגובה המרבי <span class="math notranslate nohighlight">\(y_{max}\)</span> באמצעות <code class="docutils literal notranslate"><span class="pre">trapezoid</span></code> על מדגם <span class="math notranslate nohighlight">\(v_y(t)\)</span> בין <span class="math notranslate nohighlight">\(t=0\)</span> לזמן השיא <span class="math notranslate nohighlight">\(t_{peak}=v_0\sin\theta/g\)</span>, והשוו לנוסחה <span class="math notranslate nohighlight">\(y_{max}=(v_0\sin\theta)^2/(2g)\)</span>.</p>
-<div class="cell docutils container">
+<p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">height_gain</span></code>‎, שמקבלת מדגם של המהירות האנכית <span class="math notranslate nohighlight">\(v_y\)</span> ואת זמני המדידה, ומחזירה את הגובה שהגוף צבר: האינטגרל של המהירות על הזמן. בדקו אותה על הדוגמה שבתא, והשוו לנוסחה <span class="math notranslate nohighlight">\(y_{max}=v_0^2/(2g)\)</span> לזריקה אנכית.</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># t_peak = v0 * np.sin(theta) / g</span>
-<span class="c1"># t_up = np.linspace(0, t_peak, 25)</span>
-<span class="c1"># vy_up = v0*np.sin(theta) - g*t_up</span>
-<span class="c1"># y_max_trapz = integrate.trapezoid(vy_up, t_up)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">height_gain</span><span class="p">(</span><span class="n">vy</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Height (m) gained over the times t: the integral of vy over t."""</span>
+    <span class="k">pass</span>   <span class="c1"># replace with your code</span>
+
+<span class="n">vy_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+<span class="n">t_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">height_gain</span><span class="p">(</span><span class="n">vy_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>
+<span class="c1"># expected: 5.0</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_peak</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">height_gain</span><span class="p">(</span><span class="n">vy</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Height (m) gained over the times t: the integral of vy over t."""</span>
+    <span class="k">return</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">vy</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">height_gain</span><span class="p">(</span><span class="n">vy_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>   <span class="c1"># 5.0</span>
+
+<span class="c1"># the throw of this page, up to the top:</span>
+<span class="n">t_peak</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
 <span class="n">t_up</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_peak</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">vy_up</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_up</span>
-
-<span class="n">y_max_trapz</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">vy_up</span><span class="p">,</span> <span class="n">t_up</span><span class="p">)</span>
-<span class="n">y_max_theory</span> <span class="o">=</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">y_max_trapz</span><span class="p">,</span> <span class="n">y_max_theory</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">height_gain</span><span class="p">(</span><span class="n">vy_up</span><span class="p">,</span> <span class="n">t_up</span><span class="p">),</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">))</span>
 </pre></div>
 </div>
+<p>הדוגמה היא זריקה אנכית במהירות 10 מטר לשנייה עם ‎<code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">10</span></code>‎: המהירות יורדת בקו ישר ל-0 תוך שנייה, ולכן כלל הטרפז מדויק כאן, 5.0, בדיוק <span class="math notranslate nohighlight">\(v_0^2/(2g)\)</span>.</p>
 </div>
 </section>
 <section id="id2">
 <h2><span class="section-number">9.9.4. </span>בדקו את עצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מתי משתמשים ב-&lt;code&gt;trapezoid&lt;/code&gt; ומתי ב-&lt;code&gt;quad&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"הן זהות לחלוטין, אפשר להשתמש בכל אחת בכל מצב"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — quad דורש פונקציה קריאה, לא מערך נתונים."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"trapezoid למהירות, quad לתאוצה בלבד"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — ההבדל הוא בסוג הקלט (נתונים מול פונקציה), לא בגודל הפיזיקלי."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"trapezoid למדידות בדידות; quad כשיש נוסחה אנליטית (פונקציית פייתון)"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"trapezoid לאינטגרל מוגדר, quad לאינטגרל בלתי מוגדר בלבד"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא מדויק — ההבדל הוא בסוג הקלט (מערך נתונים מול פונקציה קריאה), לא בסוג האינטגרל."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<p>השאלה השנייה מתייחסת לקוד הבא:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="kBSSizzjCHkR" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#kBSSizzjCHkR {
+<div class="output text_html"><div id="RKcnWkSxeEoh" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#RKcnWkSxeEoh {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -987,7 +982,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionskBSSizzjCHkR=[{"question": "\u05de\u05ea\u05d9 \u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1-<code>trapezoid</code> \u05d5\u05de\u05ea\u05d9 \u05d1-<code>quad</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05df \u05d6\u05d4\u05d5\u05ea \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df, \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05db\u05dc \u05d0\u05d7\u05ea \u05d1\u05db\u05dc \u05de\u05e6\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u2014 quad \u05d3\u05d5\u05e8\u05e9 \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05e8\u05d9\u05d0\u05d4, \u05dc\u05d0 \u05de\u05e2\u05e8\u05da \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd."}, {"answer": "trapezoid \u05dc\u05de\u05d4\u05d9\u05e8\u05d5\u05ea, quad \u05dc\u05ea\u05d0\u05d5\u05e6\u05d4 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05e7\u05dc\u05d8 (\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05de\u05d5\u05dc \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4), \u05dc\u05d0 \u05d1\u05d2\u05d5\u05d3\u05dc \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9."}, {"answer": "trapezoid \u05dc\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d1\u05d3\u05d9\u05d3\u05d5\u05ea; quad \u05db\u05e9\u05d9\u05e9 \u05e0\u05d5\u05e1\u05d7\u05d4 \u05d0\u05e0\u05dc\u05d9\u05d8\u05d9\u05ea (\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d9\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "trapezoid \u05dc\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05dc \u05de\u05d5\u05d2\u05d3\u05e8, quad \u05dc\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05dc \u05d1\u05dc\u05ea\u05d9 \u05de\u05d5\u05d2\u05d3\u05e8 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05e7\u05dc\u05d8 (\u05de\u05e2\u05e8\u05da \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05de\u05d5\u05dc \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05e8\u05d9\u05d0\u05d4), \u05dc\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05dc."}]}];
+</style></div><script type="application/javascript">var questionsRKcnWkSxeEoh=[{"question": "\u05de\u05ea\u05d9 \u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1-trapezoid \u05d5\u05de\u05ea\u05d9 \u05d1-quad?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05df \u05d6\u05d4\u05d5\u05ea \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df, \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05db\u05dc \u05d0\u05d7\u05ea \u05d1\u05db\u05dc \u05de\u05e6\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u2014 quad \u05d3\u05d5\u05e8\u05e9 \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05e8\u05d9\u05d0\u05d4, \u05dc\u05d0 \u05de\u05e2\u05e8\u05da \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd."}, {"answer": "trapezoid \u05dc\u05de\u05d4\u05d9\u05e8\u05d5\u05ea, quad \u05dc\u05ea\u05d0\u05d5\u05e6\u05d4 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05e7\u05dc\u05d8 (\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05de\u05d5\u05dc \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4), \u05dc\u05d0 \u05d1\u05d2\u05d5\u05d3\u05dc \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9."}, {"answer": "trapezoid \u05dc\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d1\u05d3\u05d9\u05d3\u05d5\u05ea; quad \u05db\u05e9\u05d9\u05e9 \u05e0\u05d5\u05e1\u05d7\u05d4 \u05d0\u05e0\u05dc\u05d9\u05d8\u05d9\u05ea (\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d9\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "trapezoid \u05dc\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05dc \u05de\u05d5\u05d2\u05d3\u05e8, quad \u05dc\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05dc \u05d1\u05dc\u05ea\u05d9 \u05de\u05d5\u05d2\u05d3\u05e8 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05e7\u05dc\u05d8 (\u05de\u05e2\u05e8\u05da \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05de\u05d5\u05dc \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05e8\u05d9\u05d0\u05d4), \u05dc\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05dc."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "4.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e9\u05d8\u05d7 \u05de\u05ea\u05d7\u05ea \u05dc\u05e7\u05d5 \u05e9\u05e2\u05d5\u05dc\u05d4 \u05de-0 \u05dc-4 \u05dc\u05d0\u05d5\u05e8\u05da 2 \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05d4\u05d5\u05d0 \u05de\u05e9\u05d5\u05dc\u05e9, 2 \u05db\u05e4\u05d5\u05dc 4 \u05d7\u05dc\u05e7\u05d9 2."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05e1\u05db\u05d5\u05dd \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05dc\u05d0 \u05d4\u05e9\u05d8\u05d7 \u05e9\u05de\u05ea\u05d7\u05ea\u05dd."}, {"answer": "8.0", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05e9\u05d8\u05d7 \u05e9\u05dc \u05de\u05dc\u05d1\u05df \u05d1\u05d2\u05d5\u05d1\u05d4 4; \u05d4\u05e7\u05d5 \u05de\u05ea\u05d7\u05d9\u05dc \u05d1-0."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d4\u05e9\u05d8\u05d7 \u05e9\u05dc \u05d4\u05de\u05e8\u05d5\u05d5\u05d7 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05dc\u05d1\u05d3; \u05d9\u05e9 \u05d2\u05dd \u05de\u05e8\u05d5\u05d5\u05d7 \u05e9\u05e0\u05d9, \u05e9\u05e9\u05d8\u05d7\u05d5 3."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2049,8 +2044,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("kBSSizzjCHkR")) {
-    show_questions(questionskBSSizzjCHkR, kBSSizzjCHkR);
+  if (document.getElementById("RKcnWkSxeEoh")) {
+    show_questions(questionsRKcnWkSxeEoh, RKcnWkSxeEoh);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2065,7 +2060,7 @@ function try_show() {
 </section>
 <section id="id3">
 <h2><span class="section-number">9.9.5. </span>תרגול עצמי<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>חשבו את הטווח הכולל <span class="math notranslate nohighlight">\(R\)</span> בשתי הדרכים — <code class="docutils literal notranslate"><span class="pre">trapezoid</span></code> על מדגם <span class="math notranslate nohighlight">\(v_x(t)\)</span> עם 100 נקודות, ו-<code class="docutils literal notranslate"><span class="pre">quad</span></code> על הפונקציה האנליטית — והשוו את שתי התוצאות ביניהן.</p>
+<p>חשבו את הטווח הכולל <span class="math notranslate nohighlight">\(R\)</span> בשתי הדרכים — ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎ על מדגם <span class="math notranslate nohighlight">\(v_x(t)\)</span> עם 100 נקודות, ו-‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ על הפונקציה האנליטית — והשוו את שתי התוצאות ביניהן.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
@@ -2154,8 +2149,8 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid">9.9.1. דוגמה: טווח מתוך “מדידות” מהירות, עם <code class="docutils literal notranslate"><span class="pre">trapezoid</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quad">9.9.2. דוגמה: אותו טווח, עם <code class="docutils literal notranslate"><span class="pre">quad</span></code> על הנוסחה האנליטית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid">9.9.1. דוגמה: טווח מתוך “מדידות” מהירות, עם ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quad">9.9.2. דוגמה: אותו טווח, עם ‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ על הנוסחה האנליטית</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.9.3. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.9.4. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.9.5. תרגול עצמי</a></li>

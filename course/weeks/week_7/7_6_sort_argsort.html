@@ -249,8 +249,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -324,7 +324,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -632,7 +632,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.6.1. דוגמה: גבהי קפיצה במספר ניסויים</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.6.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.6.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.6.4. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -646,14 +645,13 @@
                   
   <section id="sort-argsort">
 <h1><span class="section-number">7.6. </span>sort ו-argsort<a class="headerlink" href="#sort-argsort" title="Link to this heading">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">np.sort(a)</span></code> מחזיר עותק ממוין של המערך. לעיתים קרובות יש לנו כמה מערכים “מקבילים” — לכל איבר במערך אחד יש איבר מתאים באחר (למשל: זמן מדידה וטמפרטורה, לפי אותו סדר ניסויים) — ורוצים למיין את כולם לפי אותו סדר. לשם כך משמש <code class="docutils literal notranslate"><span class="pre">np.argsort(a)</span></code>, שמחזיר לא את הערכים הממוינים אלא את <strong>האינדקסים</strong> שיסדרו את המערך.</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">np.sort(a)</span></code>‎ מחזיר עותק ממוין של המערך. לעיתים קרובות יש לנו כמה מערכים “מקבילים” — לכל איבר במערך אחד יש איבר מתאים באחר (למשל: זמן מדידה וטמפרטורה, לפי אותו סדר ניסויים) — ורוצים למיין את כולם לפי אותו סדר. לשם כך משמש ‎<code class="docutils literal notranslate"><span class="pre">np.argsort(a)</span></code>‎, שמחזיר לא את הערכים הממוינים אלא את <strong>האינדקסים</strong> שיסדרו את המערך.</p>
 <section id="id1">
 <h2><span class="section-number">7.6.1. </span>דוגמה: גבהי קפיצה במספר ניסויים<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>מדדנו את הגובה המרבי שכדור הגיע אליו בחמישה ניסויי זריקה, וגם רשמנו את חותמת הזמן (בשניות מתחילת היום) שבה כל ניסוי בוצע. רוצים להציג את הניסויים ממוינים לפי גובה — אך לשמור על ההתאמה לחותמות הזמן.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">11.2</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mf">14.7</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">])</span>
 <span class="n">timestamps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">540</span><span class="p">,</span> <span class="mi">555</span><span class="p">,</span> <span class="mi">561</span><span class="p">,</span> <span class="mi">570</span><span class="p">,</span> <span class="mi">588</span><span class="p">])</span>   <span class="c1"># דקה מתחילת המדידות</span>
@@ -677,72 +675,45 @@
 </div>
 </div>
 </div>
-<p>שימו לב: <code class="docutils literal notranslate"><span class="pre">timestamps[order]</span></code> ולא <code class="docutils literal notranslate"><span class="pre">np.sort(timestamps)</span></code> — אילו מיינו כל מערך בנפרד היינו מאבדים את ההתאמה בין ניסוי לניסוי. נציג את זה גרפית:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">heights_sorted</span><span class="p">)),</span> <span class="n">heights_sorted</span><span class="p">,</span>
-       <span class="n">tick_label</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s2">"t=</span><span class="si">{</span><span class="n">ts</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="n">timestamps_sorted</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Max height (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Trial (by timestamp)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"גבהי קפיצה, ממוינים מהנמוך לגבוה"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<p>שימו לב: ‎<code class="docutils literal notranslate"><span class="pre">timestamps[order]</span></code>‎ ולא ‎<code class="docutils literal notranslate"><span class="pre">np.sort(timestamps)</span></code>‎ — אילו מיינו כל מערך בנפרד היינו מאבדים את ההתאמה בין ניסוי לניסוי. נציג את זה גרפית:</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../../_images/e5040e2dad18c976e4b3c279c012309bcc1aba347eb8229ce7c366cccc0eb8c9.png" src="../../../_images/e5040e2dad18c976e4b3c279c012309bcc1aba347eb8229ce7c366cccc0eb8c9.png" />
+<img alt="../../../_images/a2cea25d78c53e7135df0bd85cf2084f8cf2746ab799d3de58ae4ada3567ec7c.png" src="../../../_images/a2cea25d78c53e7135df0bd85cf2084f8cf2746ab799d3de58ae4ada3567ec7c.png" />
 </div>
 </div>
 </section>
 <section id="id2">
 <h2><span class="section-number">7.6.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>השתמשו ב-<code class="docutils literal notranslate"><span class="pre">argsort</span></code> כדי לסדר את <code class="docutils literal notranslate"><span class="pre">heights</span></code> וגם מערך שלישי, <code class="docutils literal notranslate"><span class="pre">trial_id</span></code>, לפי אותו סדר:</p>
-<div class="cell docutils container">
+<p>בתא הבא מסדרים מערך שלישי, ‎<code class="docutils literal notranslate"><span class="pre">trial_id</span></code>‎, לפי סדר הגבהים. <strong>לפני שמריצים</strong>: בעזרת ‎<code class="docutils literal notranslate"><span class="pre">order</span></code>‎ שהודפס בדוגמה למעלה, מה תדפיס שורת ההדפסה? רק אחר כך הריצו ובדקו.</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trial_id</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">105</span><span class="p">])</span>
-<span class="c1"># order2 = ...</span>
-<span class="c1"># trial_id_sorted = ...</span>
-<span class="c1"># print(trial_id_sorted)</span>
+<span class="n">order2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trial_id</span><span class="p">[</span><span class="n">order2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">order2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
-<span class="n">trial_id_sorted</span> <span class="o">=</span> <span class="n">trial_id</span><span class="p">[</span><span class="n">order2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">trial_id_sorted</span><span class="p">)</span>
+<p>‎<code class="docutils literal notranslate"><span class="pre">order</span></code>‎ הוא ‎<code class="docutils literal notranslate"><span class="pre">[1</span> <span class="pre">3</span> <span class="pre">0</span> <span class="pre">4</span> <span class="pre">2]</span></code>‎, ולכן לוקחים את האיברים של ‎<code class="docutils literal notranslate"><span class="pre">trial_id</span></code>‎ לפי הסדר הזה: קודם את האיבר שבאינדקס 1, אחריו את זה שבאינדקס 3, וכן הלאה.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">trial_id</span><span class="p">[</span><span class="n">order2</span><span class="p">])</span>   <span class="c1"># [102 104 101 105 103]</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="id3">
 <h2><span class="section-number">7.6.3. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"בהינתן &lt;code&gt;a = np.array([30, 10, 20])&lt;/code&gt;, מה מחזיר &lt;code&gt;np.argsort(a)&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[10, 20, 30] — הערכים הממוינים"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"זו התוצאה של np.sort(a), לא של argsort."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[2, 1, 0] — סדר יורד"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — argsort ברירת מחדל ממיין בסדר עולה."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[1, 2, 0] — האינדקסים שיסדרו את a"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון: a[1]=10 (הכי קטן), a[2]=20, a[0]=30 (הכי גדול)."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[0, 1, 2] — אותם אינדקסים בסדר המקורי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — argsort לא מחזיר את הסדר המקורי; הוא מחזיר את הסדר שממיין את a."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">12.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">])</span>   <span class="c1"># m</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">])</span>
+<span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ids</span><span class="p">[</span><span class="n">order</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="gObgAsuJXOir" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#gObgAsuJXOir {
+<div class="output text_html"><div id="hyHWyncVzGQn" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#hyHWyncVzGQn {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -965,7 +936,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsgObgAsuJXOir=[{"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df <code>a = np.array([30, 10, 20])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>np.argsort(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "[10, 20, 30] \u2014 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d4\u05de\u05de\u05d5\u05d9\u05e0\u05d9\u05dd", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc np.sort(a), \u05dc\u05d0 \u05e9\u05dc argsort."}, {"answer": "[2, 1, 0] \u2014 \u05e1\u05d3\u05e8 \u05d9\u05d5\u05e8\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 argsort \u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc \u05de\u05de\u05d9\u05d9\u05df \u05d1\u05e1\u05d3\u05e8 \u05e2\u05d5\u05dc\u05d4."}, {"answer": "[1, 2, 0] \u2014 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05e9\u05d9\u05e1\u05d3\u05e8\u05d5 \u05d0\u05ea a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: a[1]=10 (\u05d4\u05db\u05d9 \u05e7\u05d8\u05df), a[2]=20, a[0]=30 (\u05d4\u05db\u05d9 \u05d2\u05d3\u05d5\u05dc)."}, {"answer": "[0, 1, 2] \u2014 \u05d0\u05d5\u05ea\u05dd \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05d1\u05e1\u05d3\u05e8 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 argsort \u05dc\u05d0 \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05e1\u05d3\u05e8 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9; \u05d4\u05d5\u05d0 \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05e1\u05d3\u05e8 \u05e9\u05de\u05de\u05d9\u05d9\u05df \u05d0\u05ea a."}]}];
+</style></div><script type="application/javascript">var questionshyHWyncVzGQn=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "102", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05d2\u05d5\u05d1\u05d4 \u05d4\u05e0\u05de\u05d5\u05da \u05d1\u05d9\u05d5\u05ea\u05e8, 8, \u05e0\u05de\u05e6\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 1. \u05dc\u05db\u05df argsort \u05de\u05ea\u05d7\u05d9\u05dc \u05d1-1, \u05d5\u05d4\u05de\u05d6\u05d4\u05d4 \u05e9\u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d4\u05d6\u05d4 \u05d4\u05d5\u05d0 102."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d4 \u05d4\u05de\u05d6\u05d4\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05e1\u05d3\u05e8 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9, \u05dc\u05d0 \u05d1\u05e1\u05d3\u05e8 \u05dc\u05e4\u05d9 \u05d2\u05d5\u05d1\u05d4."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: 1 \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9-argsort \u05de\u05d7\u05d6\u05d9\u05e8; \u05d4\u05e9\u05d5\u05e8\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4 \u05d0\u05ea \u05d4\u05de\u05d6\u05d4\u05d4 \u05e9\u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d4\u05d6\u05d4."}, {"answer": "8", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05d2\u05d5\u05d1\u05d4; \u05d4\u05e9\u05d5\u05e8\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4 \u05de\u05d6\u05d4\u05d9\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2027,8 +1998,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("gObgAsuJXOir")) {
-    show_questions(questionsgObgAsuJXOir, gObgAsuJXOir);
+  if (document.getElementById("hyHWyncVzGQn")) {
+    show_questions(questionshyHWyncVzGQn, hyHWyncVzGQn);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2040,30 +2011,32 @@ function try_show() {
 }
 </script></div>
 </div>
-</section>
-<section id="id4">
-<h2><span class="section-number">7.6.4. </span>תרגול עצמי<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>נמדדו זמני נפילה רועשים במספר ניסויים, ולצידם טמפרטורת החדר בזמן כל ניסוי. סדרו את שני המערכים לפי זמן הנפילה, מהקצר לארוך:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fall_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.03</span><span class="p">,</span> <span class="mf">1.98</span><span class="p">,</span> <span class="mf">2.15</span><span class="p">,</span> <span class="mf">1.87</span><span class="p">,</span> <span class="mf">2.01</span><span class="p">])</span>
-<span class="n">room_temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">21.5</span><span class="p">,</span> <span class="mf">22.0</span><span class="p">,</span> <span class="mf">20.8</span><span class="p">,</span> <span class="mf">22.3</span><span class="p">,</span> <span class="mf">21.7</span><span class="p">])</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
+<p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">sort_by(keys,</span> <span class="pre">values)</span></code>‎: היא מחזירה את האיברים של ‎<code class="docutils literal notranslate"><span class="pre">values</span></code>‎ מסודרים לפי הסדר שממיין את ‎<code class="docutils literal notranslate"><span class="pre">keys</span></code>‎ מהקטן לגדול (שני המערכים באותו אורך). השורה הראשונה שמדפיסה בודקת אותה מול דוגמה. אחר כך השתמשו בה כדי לסדר זוויות שיגור לפי הטווח שנמדד בכל זווית.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_by</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return values ordered so that keys go from smallest to largest."""</span>
+    <span class="c1"># complete here</span>
+    <span class="k">pass</span>
 
-<span class="c1"># order3 = ...</span>
-<span class="c1"># fall_times_sorted = ...</span>
-<span class="c1"># room_temp_sorted = ...</span>
-<span class="c1"># print(fall_times_sorted, room_temp_sorted)</span>
+<span class="c1"># expected: [10 20 30]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_by</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])))</span>
+
+<span class="n">ranges_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">8.7</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">])</span>   <span class="c1"># measured range (m)</span>
+<span class="n">angles_deg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">45</span><span class="p">])</span>     <span class="c1"># launch angle (degrees)</span>
+<span class="c1"># print(sort_by(ranges_m, angles_deg))</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">order3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">fall_times</span><span class="p">)</span>
-<span class="n">fall_times_sorted</span> <span class="o">=</span> <span class="n">fall_times</span><span class="p">[</span><span class="n">order3</span><span class="p">]</span>
-<span class="n">room_temp_sorted</span> <span class="o">=</span> <span class="n">room_temp</span><span class="p">[</span><span class="n">order3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fall_times_sorted</span><span class="p">,</span> <span class="n">room_temp_sorted</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sort_by</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return values ordered so that keys go from smallest to largest."""</span>
+    <span class="k">return</span> <span class="n">values</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">keys</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_by</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])))</span>  <span class="c1"># [10 20 30]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sort_by</span><span class="p">(</span><span class="n">ranges_m</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">))</span>                               <span class="c1"># [15 30 45]</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2138,7 +2111,6 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.6.1. דוגמה: גבהי קפיצה במספר ניסויים</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.6.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.6.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.6.4. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

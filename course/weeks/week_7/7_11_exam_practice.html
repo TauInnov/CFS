@@ -156,6 +156,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -247,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -322,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -604,7 +608,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -620,6 +626,16 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.11.1. משימה 1: אילו זוויות מתאימות?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.11.2. משימה 2: מה יודפס?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.11.3. משימה 3: מצאו את השגיאות</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -631,88 +647,137 @@
                   
   <section id="id1">
 <h1><span class="section-number">7.11. </span>תרגול מסכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>בלי להריץ, תארו במילים מה מחשב הקוד הבא, ומה יהיה ה-<code class="docutils literal notranslate"><span class="pre">shape</span></code> של <code class="docutils literal notranslate"><span class="pre">result</span></code>:</p>
-<div class="cell docutils container">
+<p>שלוש משימות על אותו נושא: הטווח והגובה של זריקה בכמה זוויות שיגור. המשימה הראשונה בנויה מארבעה חלקים שתלויים זה בזה; פתרו אותם לפי הסדר.</p>
+<section id="id2">
+<h2><span class="section-number">7.11.1. </span>משימה 1: אילו זוויות מתאימות?<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>רוצים לבחור זוויות שיגור שבהן הכדור עף רחוק, אבל לא עולה גבוה מדי. בכל החלקים <span class="math notranslate nohighlight">\(g\)</span> מועבר כפרמטר, ובדוגמאות <span class="math notranslate nohighlight">\(g = 10\)</span> ו-<span class="math notranslate nohighlight">\(v_0 = 10\)</span> מ’/ש’. <strong>אם לא פתרתם חלק, הניחו שהפונקציות מהחלקים הקודמים עובדות לפי החתימה והדוגמה שלהן</strong>, והמשיכו.</p>
+<p><strong>א.</strong> השלימו את ‎<code class="docutils literal notranslate"><span class="pre">ranges(v0,</span> <span class="pre">angles_deg,</span> <span class="pre">g)</span></code>‎: הטווח <span class="math notranslate nohighlight">\(R = v_0^2 \sin(2\theta)/g\)</span> לכל זווית במערך ‎<code class="docutils literal notranslate"><span class="pre">angles_deg</span></code>‎ (במעלות).</p>
+<p><strong>ב.</strong> השלימו את ‎<code class="docutils literal notranslate"><span class="pre">heights(v0,</span> <span class="pre">angles_deg,</span> <span class="pre">g)</span></code>‎: הגובה המרבי <span class="math notranslate nohighlight">\(H = (v_0 \sin\theta)^2 / (2g)\)</span> לכל זווית.</p>
+<p><strong>ג.</strong> השלימו את ‎<code class="docutils literal notranslate"><span class="pre">good_angles(v0,</span> <span class="pre">angles_deg,</span> <span class="pre">g,</span> <span class="pre">min_range,</span> <span class="pre">max_height)</span></code>‎: היא מחזירה את הזוויות שבהן הטווח הוא לפחות ‎<code class="docutils literal notranslate"><span class="pre">min_range</span></code>‎ <strong>וגם</strong> הגובה הוא לכל היותר ‎<code class="docutils literal notranslate"><span class="pre">max_height</span></code>‎. השתמשו בשתי הפונקציות הקודמות.</p>
+<p>שלוש שורות ההדפסה בסוף התא בודקות את שלושת החלקים מול הדוגמאות.</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">v0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">])</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">v0</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="mf">9.8</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<p>הקוד מחשב את גובה הזריקה <span class="math notranslate nohighlight">\(y(t) = v_0 t - \tfrac{1}{2} g t^2\)</span> עבור <strong>שלוש מהירויות שיגור שונות בו-זמנית</strong>, על פני 50 נקודות זמן. השורה <code class="docutils literal notranslate"><span class="pre">v0[:,</span> <span class="pre">None]</span></code> הופכת את <code class="docutils literal notranslate"><span class="pre">v0</span></code> מווקטור באורך 3 למערך בצורת <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">1)</span></code>, כך שכל מהירות “מוכפלת” כנגד כל נקודות הזמן.</p>
-<p><code class="docutils literal notranslate"><span class="pre">result.shape</span></code> הוא <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">50)</span></code>: שורה לכל מהירות שיגור, עמודה לכל נקודת זמן — בדיוק כמו התבנית שראינו בסעיף 7.3.</p>
-</div>
-<hr class="docutils" />
-<p>הקוד הבא נועד לחשב את זמן הטיסה הכולל של כדור שנזרק אנכית כלפי מעלה במהירות <span class="math notranslate nohighlight">\(v_0\)</span> וחוזר לאותו גובה: <span class="math notranslate nohighlight">\(t_{flight} = 2v_0/g\)</span>, וכן את גובהו המרבי <span class="math notranslate nohighlight">\(h_{max} = v_0^2/(2g)\)</span>. יש בו באג. אתרו ותקנו:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
-
-<span class="n">v0</span> <span class="o">=</span> <span class="mf">12.0</span>   <span class="c1"># m/s</span>
-
-<span class="n">t_flight_buggy</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">G</span>     <span class="c1"># שימו לב לאות</span>
-<span class="n">h_max_buggy</span> <span class="o">=</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span>     <span class="c1"># ולכאן</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">t_flight_buggy</span><span class="p">,</span> <span class="n">h_max_buggy</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>359588271429.21356 706.0788
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<p>שני באגים:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">constants.G</span></code> (קבוע הכבידה האוניברסלי) נכתב במקום <code class="docutils literal notranslate"><span class="pre">constants.g</span></code> (תאוצת הנפילה החופשית) — טעות שראינו בסעיף 7.9.</p></li>
-<li><p>סדר הפעולות ב-<code class="docutils literal notranslate"><span class="pre">h_max_buggy</span></code> שגוי: <code class="docutils literal notranslate"><span class="pre">v0**2</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">constants.g</span></code> מחשב <span class="math notranslate nohighlight">\((v_0^2/2)\cdot g\)</span> במקום <span class="math notranslate nohighlight">\(v_0^2/(2g)\)</span>.</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_flight_fixed</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span>
-<span class="n">h_max_fixed</span> <span class="o">=</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t_flight_fixed</span><span class="p">,</span> <span class="n">h_max_fixed</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<hr class="docutils" />
-<p>כדור נזרק מגובה <span class="math notranslate nohighlight">\(y_0\)</span> במהירות אופקית <span class="math notranslate nohighlight">\(v_0\)</span> בלבד (ללא רכיב אנכי התחלתי). הגובה בזמן <span class="math notranslate nohighlight">\(t\)</span> נתון על ידי:</p>
-<div class="math notranslate nohighlight">
-\[y(t) = y_0 - \tfrac{1}{2} g t^2\]</div>
-<p>כתבו פונקציה <code class="docutils literal notranslate"><span class="pre">time_to_ground(y0,</span> <span class="pre">v0)</span></code> שמקבלת גובה התחלתי <code class="docutils literal notranslate"><span class="pre">y0</span></code> ומהירות אופקית <code class="docutils literal notranslate"><span class="pre">v0</span></code> (לא בשימוש בנוסחה, אך מופיעה בחתימה), ומחזירה את הזמן שבו הכדור מגיע לקרקע (<span class="math notranslate nohighlight">\(y=0\)</span>), על ידי בידוד <span class="math notranslate nohighlight">\(t\)</span> מהמשוואה.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">time_to_ground</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">v0</span><span class="p">):</span>
-    <span class="c1"># כתבו כאן</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ranges</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Range (m) at each angle in angles_deg (degrees); v0 in m/s."""</span>
+    <span class="c1"># part a: one line</span>
     <span class="k">pass</span>
 
-<span class="c1"># בדיקה:</span>
-<span class="c1"># print(time_to_ground(20.0, 5.0))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">heights</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Maximum height (m) at each angle in angles_deg (degrees); v0 in m/s."""</span>
+    <span class="c1"># part b: one line</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">good_angles</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">min_range</span><span class="p">,</span> <span class="n">max_height</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Angles with range &gt;= min_range and height &lt;= max_height (m)."""</span>
+    <span class="c1"># part c</span>
+    <span class="k">pass</span>
+
+
+<span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">15.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">60.0</span><span class="p">,</span> <span class="mf">75.0</span><span class="p">])</span>
+<span class="c1"># expected: [ 5. 10.  5.]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ranges</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">15.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">75.0</span><span class="p">]),</span> <span class="mf">10.0</span><span class="p">))</span>
+<span class="c1"># expected: [1.25 5.  ]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heights</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">30.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">]),</span> <span class="mf">10.0</span><span class="p">))</span>
+<span class="c1"># expected: [30. 45.]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">good_angles</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>ד.</strong> הקוד הבא משתמש בפונקציות מחלקים א–ג. <strong>בלי להריץ</strong>: מה ידפיסו שורות 3 ו-4?</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">r</span> <span class="o">=</span> <span class="n">ranges</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="linenos">2</span><span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">order</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">r</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<p>מבידוד <span class="math notranslate nohighlight">\(t\)</span> מהמשוואה <span class="math notranslate nohighlight">\(0 = y_0 - \tfrac{1}{2}gt^2\)</span> מקבלים <span class="math notranslate nohighlight">\(t=\sqrt{2y_0/g}\)</span>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ranges</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Range (m) at each angle in angles_deg (degrees); v0 in m/s."""</span>
+    <span class="k">return</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">))</span> <span class="o">/</span> <span class="n">g</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">time_to_ground</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">v0</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">y0</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">g</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">time_to_ground</span><span class="p">(</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">heights</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Maximum height (m) at each angle in angles_deg (degrees); v0 in m/s."""</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">good_angles</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">min_range</span><span class="p">,</span> <span class="n">max_height</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Angles with range &gt;= min_range and height &lt;= max_height (m)."""</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">ranges</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">heights</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">&gt;=</span> <span class="n">min_range</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">h</span> <span class="o">&lt;=</span> <span class="n">max_height</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">angles_deg</span><span class="p">[</span><span class="n">ok</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>ד.</strong> הטווחים בחמש הזוויות הם בערך 5, 8.66, 10, 8.66 ו-5 מטר. ‎<code class="docutils literal notranslate"><span class="pre">argsort</span></code>‎ מסדר אותם מהקטן לגדול, והאחרון בסדר הוא הטווח הגדול ביותר, 10, בזווית 45: שורה 3 מדפיסה ‎<code class="docutils literal notranslate"><span class="pre">45.0</span></code>‎. שלושה טווחים גדולים מ-8 (בזוויות 30, 45 ו-60), ולכן שורה 4 מדפיסה ‎<code class="docutils literal notranslate"><span class="pre">3</span></code>‎.</p>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">7.11.2. </span>משימה 2: מה יודפס?<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p><strong>בלי להריץ</strong>: מה ידפיסו שורות 3, 4 ו-5? כתבו כל שורה כפי ש-NumPy מדפיס אותה.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>   <span class="c1"># time (s)</span>
+<span class="linenos">2</span><span class="n">y</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">5.0</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>                  <span class="c1"># height (m), with g = 10</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">])</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<p>הגבהים הם 0, 3.75, 5, 3.75 ו-0 מטר. הגובה הוא לפחות 3 בזמנים 0.5, 1 ו-1.5, וחיובי בשלוש הנקודות האמצעיות.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>               <span class="c1"># [0.   3.75 5.   3.75 0.  ]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">])</span>       <span class="c1"># [0.5 1.  1.5]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span>   <span class="c1"># 3</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2><span class="section-number">7.11.3. </span>משימה 3: מצאו את השגיאות<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>מישהו כתב גרסה משלו ל-‎<code class="docutils literal notranslate"><span class="pre">heights</span></code>‎ ממשימה 1. הקריאה בשורה 5 צריכה להדפיס ‎<code class="docutils literal notranslate"><span class="pre">[5.]</span></code>‎ (בזריקה אנכית: <span class="math notranslate nohighlight">\(10^2/20 = 5\)</span> מטר), אבל היא מדפיסה ‎<code class="docutils literal notranslate"><span class="pre">[399.61501726]</span></code>‎. קראו את הקוד לפני שאתם מריצים אותו: יש בו שתי שגיאות. מצאו אותן, תקנו אותן, והסבירו כל אחת במשפט אחד.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span><span class="w"> </span><span class="nf">heights_v2</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="linenos">2</span><span class="w">    </span><span class="sd">"""Maximum height (m) at each angle (degrees); v0 in m/s."""</span>
+<span class="linenos">3</span>    <span class="k">return</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">heights_v2</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">90.0</span><span class="p">]),</span> <span class="mf">10.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<p>שתי השגיאות בשורה 3:</p>
+<ol class="arabic simple">
+<li><p><strong>יחידות:</strong> ‎<code class="docutils literal notranslate"><span class="pre">np.sin</span></code>‎ מקבל רדיאנים, והזוויות נתונות במעלות. צריך ‎<code class="docutils literal notranslate"><span class="pre">np.sin(np.radians(angles_deg))</span></code>‎.</p></li>
+<li><p><strong>קדימות פעולות:</strong> ‎<code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">g</span></code>‎ מחלק ב-2 ואז <strong>כופל</strong> ב-‎<code class="docutils literal notranslate"><span class="pre">g</span></code>‎. צריך ‎<code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">(2</span> <span class="pre">*</span> <span class="pre">g)</span></code>‎.</p></li>
+</ol>
+<p>אם מתקנים רק את הראשונה מקבלים ‎<code class="docutils literal notranslate"><span class="pre">[500.]</span></code>‎, ואם רק את השנייה, ‎<code class="docutils literal notranslate"><span class="pre">[3.99615017]</span></code>‎: כל אחת מהשגיאות מסתירה את השנייה.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">heights_v2</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Maximum height (m) at each angle (degrees); v0 in m/s."""</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">heights_v2</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">90.0</span><span class="p">]),</span> <span class="mf">10.0</span><span class="p">))</span>   <span class="c1"># [5.]</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -769,6 +834,25 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.11.1. משימה 1: אילו זוויות מתאימות?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.11.2. משימה 2: מה יודפס?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.11.3. משימה 3: מצאו את השגיאות</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

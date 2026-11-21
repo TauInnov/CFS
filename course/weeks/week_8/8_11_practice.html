@@ -156,6 +156,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -247,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -322,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -604,7 +608,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -620,6 +626,17 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.11.1. לקרוא קוד ציור בלי להריץ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.11.2. משימה 1: מה הקוד מצייר?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.11.3. משימה 2: פונקציה שמחזירה את הנתונים לגרף</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.11.4. משימה 3: מצאו את שלוש הטעויות</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -631,102 +648,186 @@
                   
   <section id="id1">
 <h1><span class="section-number">8.11. </span>תרגול מסכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>בלי להריץ, תארו במילים מה מצייר הקוד הבא, וכמה עקומות יופיעו על כל אחד משני הצירים:</p>
-<div class="cell docutils container">
+<p>שלוש המשימות בעמוד הזה ממשיכות את הזריקה. משימה 1 מציגה כגרף את הטווח כתלות בזווית, כמו במשימה 1 של סעיף 7.11. נסו לפתור כל משימה על דף, בלי להריץ, ורק אחר כך הריצו ובדקו.</p>
+<section id="id2">
+<h2><span class="section-number">8.11.1. </span>לקרוא קוד ציור בלי להריץ<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>כדי לדעת מה קוד ציור יצייר, עברו עליו שורה אחר שורה ושאלו מה כל שורה מוסיפה לתמונה:</p>
+<ul class="simple">
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">plt.subplots(...)</span></code>‎ קובע כמה צירים יש ואיך הם מסודרים.</p></li>
+<li><p>כל קריאה ל-‎<code class="docutils literal notranslate"><span class="pre">plot</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">scatter</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">errorbar</span></code>‎ או ‎<code class="docutils literal notranslate"><span class="pre">hist</span></code>‎ מוסיפה לציר שלה דבר אחד: קו, נקודות נפרדות, נקודות עם קווי שגיאה או עמודות. הארגומנטים ‎<code class="docutils literal notranslate"><span class="pre">linestyle</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">marker</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">fmt</span></code>‎ קובעים איך הוא נראה.</p></li>
+<li><p>כל ‎<code class="docutils literal notranslate"><span class="pre">label=</span></code>‎ הופך לשורה במקרא, אבל רק אם בהמשך נקרא ‎<code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>‎.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">set_xlabel</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">set_ylabel</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">set_title</span></code>‎ כותבים את הטקסט על הצירים, ו-‎<code class="docutils literal notranslate"><span class="pre">set_xscale(&quot;log&quot;)</span></code>‎ משנה את סולם הציר.</p></li>
+<li><p>כדי לדעת איך עקומה נראית, חשבו כמה ערכים של המערכים שהיא מציירת: הראשון, האחרון והגדול ביותר.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2><span class="section-number">8.11.2. </span>משימה 1: מה הקוד מצייר?<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>הקוד הבא משווה את הטווח שהמודל <span class="math notranslate nohighlight">\(R = v_0^2 \sin(2\theta)/g\)</span> מנבא לטווחים שנמדדו בשלוש זוויות. קראו אותו בלי להריץ וענו:</p>
+<p>א. מה תדפיס הפקודה ‎<code class="docutils literal notranslate"><span class="pre">print(angles)</span></code>‎ אחרי שורה 5? מהו הערך הגדול ביותר במערך ‎<code class="docutils literal notranslate"><span class="pre">R_model</span></code>‎, ובאיזו זווית?</p>
+<p>ב. מה כתוב על כל ציר, מה מצויר על הגרף, ומה יופיע במקרא? בין אילו ערכים נמתח קו השגיאה של המדידה ב-45°?</p>
+<p>ג. איזה מארבעת השרטוטים שמתחת לקוד הוא הגרף שהקוד מצייר?</p>
+<p>ד. משנים את שורה 5 ל-‎<code class="docutils literal notranslate"><span class="pre">angles</span> <span class="pre">=</span> <span class="pre">np.linspace(0,</span> <span class="pre">90,</span> <span class="pre">4)</span></code>‎. מהו עכשיו הערך הגדול ביותר בקו המקווקו, ובאילו זוויות?</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">20.0</span>
-<span class="n">angles_deg</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">angle</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">):</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-    <span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">"$\theta=</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">^\circ$"</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="linenos"> 2</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span>
+<span class="linenos"> 5</span><span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="n">R_model</span> <span class="o">=</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">angles</span><span class="p">))</span> <span class="o">/</span> <span class="n">g</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">angles_meas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">15.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">75.0</span><span class="p">])</span>
+<span class="linenos"> 9</span><span class="n">R_meas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">21.0</span><span class="p">,</span> <span class="mf">39.0</span><span class="p">,</span> <span class="mf">19.0</span><span class="p">])</span>
+<span class="linenos">10</span><span class="n">R_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">R_model</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"model"</span><span class="p">)</span>
+<span class="linenos">14</span><span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">angles_meas</span><span class="p">,</span> <span class="n">R_meas</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">R_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"measured"</span><span class="p">)</span>
+<span class="linenos">15</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"launch angle (degrees)"</span><span class="p">)</span>
+<span class="linenos">16</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"range (m)"</span><span class="p">)</span>
+<span class="linenos">17</span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="linenos">18</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../../_images/84b48ad56231a6eba43e74a31695012c1e7a0ccc62fb2d05e5557a4183de8002.png" src="../../../_images/84b48ad56231a6eba43e74a31695012c1e7a0ccc62fb2d05e5557a4183de8002.png" />
+<img alt="../../../_images/94a3caaafd89d9f1d535f35317291d83ceb4c8e70d4f55464df3a15a512c577e.png" src="../../../_images/94a3caaafd89d9f1d535f35317291d83ceb4c8e70d4f55464df3a15a512c577e.png" />
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<p>הקוד יוצר figure עם <strong>שני צירים זה לצד זה</strong> (<code class="docutils literal notranslate"><span class="pre">1×2</span></code>), שחולקים את אותו ציר <span class="math notranslate nohighlight">\(y\)</span> (<code class="docutils literal notranslate"><span class="pre">sharey=True</span></code>). על כל ציר מצוירת <strong>עקומה אחת</strong> — מסלול הזריקה עבור זווית אחת (30° בציר השמאלי, 60° בציר הימני), עם מקרא שמציג את הזווית באמצעות <span class="math notranslate nohighlight">\(\theta\)</span>. שני הצירים לא מוצגים על אותו גרף — זו טעות נפוצה לבלבל בין <code class="docutils literal notranslate"><span class="pre">subplots(1,</span> <span class="pre">2)</span></code> (שני גרפים נפרדים) לבין לולאה שמציירת הכול על <code class="docutils literal notranslate"><span class="pre">ax</span></code> יחיד (סעיף 8.5).</p>
+<p><strong>א.</strong> ‎<code class="docutils literal notranslate"><span class="pre">np.linspace(0,</span> <span class="pre">90,</span> <span class="pre">7)</span></code>‎ פורש 7 נקודות במרווחים של 15°:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="mf">0.</span> <span class="mf">15.</span> <span class="mf">30.</span> <span class="mf">45.</span> <span class="mf">60.</span> <span class="mf">75.</span> <span class="mf">90.</span><span class="p">]</span>
+</pre></div>
 </div>
-<hr class="docutils" />
-<p>בקוד הבא יש כוונה לצייר את הטווח הנמדד עם קווי שגיאה מול התיאוריה. יש בו באג — אתרו ותקנו:</p>
-<div class="cell docutils container">
+<p>הסינוס של <span class="math notranslate nohighlight">\(2\theta\)</span> מגיע ל-1 כש-<span class="math notranslate nohighlight">\(2\theta = 90^\circ\)</span>, כלומר בזווית 45°. שם <span class="math notranslate nohighlight">\(R = 20^2 \cdot 1 / 10 = 40\)</span>, ולכן הערך הגדול ביותר ב-‎<code class="docutils literal notranslate"><span class="pre">R_model</span></code>‎ הוא 40.0, בזווית 45°.</p>
+<p><strong>ב.</strong> על הציר האופקי כתוב ‎<code class="docutils literal notranslate"><span class="pre">launch</span> <span class="pre">angle</span> <span class="pre">(degrees)</span></code>‎, ועל האנכי ‎<code class="docutils literal notranslate"><span class="pre">range</span> <span class="pre">(m)</span></code>‎. על הגרף יש קו מקווקו שמחבר את 7 נקודות המודל, ושלוש נקודות מדידה, בלי קו ביניהן, עם קווי שגיאה. במקרא שתי שורות: ‎<code class="docutils literal notranslate"><span class="pre">model</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">measured</span></code>‎. במדידה של 45° הטווח 39 והשגיאה 2, ולכן קו השגיאה נמתח מ-37 עד 41.</p>
+<p><strong>ג.</strong> שרטוט B. ב-A קו המודל רציף ולא מקווקו; ב-C המודל מגיע לשיא ב-90°, כאילו נכתב <span class="math notranslate nohighlight">\(\sin\theta\)</span> במקום <span class="math notranslate nohighlight">\(\sin 2\theta\)</span>; ב-D המדידות מחוברות בקו ואין להן קווי שגיאה.</p>
+<p><strong>ד.</strong> עכשיו ‎<code class="docutils literal notranslate"><span class="pre">angles</span></code>‎ הוא ‎<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">0.</span> <span class="pre">30.</span> <span class="pre">60.</span> <span class="pre">90.]</span></code>‎, ואין נקודה ב-45°. הערך הגדול ביותר הוא <span class="math notranslate nohighlight">\(40 \sin 60^\circ \approx 34.6\)</span>, בזוויות 30° ו-60°. הקו המקווקו מחבר רק ארבע נקודות, ולכן השיא שלו נמוך מהשיא האמיתי, 40.</p>
+</div>
+</section>
+<section id="id4">
+<h2><span class="section-number">8.11.3. </span>משימה 2: פונקציה שמחזירה את הנתונים לגרף<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>בזריקה אנכית כלפי מעלה, הגובה בזמן <span class="math notranslate nohighlight">\(t\)</span> הוא <span class="math notranslate nohighlight">\(y(t) = v_0 t - \tfrac{1}{2} g t^2\)</span>, והגוף חוזר לקרקע בזמן <span class="math notranslate nohighlight">\(t = 2v_0/g\)</span>.</p>
+<p>א. השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">height_curve(v0,</span> <span class="pre">g,</span> <span class="pre">n)</span></code>‎: היא מחזירה שני מערכים, ‎<code class="docutils literal notranslate"><span class="pre">n</span></code>‎ זמנים במרווחים שווים מרגע הזריקה (0) עד רגע הנחיתה, ואת הגובה בכל אחד מהזמנים האלה. שתי שורות ההדפסה בודקות אותה מול דוגמה.</p>
+<p>ב. הקוד שבתא שאחריה משתמש בפונקציה כדי לצייר את המודל לכדור שנזרק ב-10 מ’/ש’, ומוסיף שלוש מדידות. השלימו את שלוש השורות המסומנות:</p>
+<ol class="arabic simple">
+<li><p>המדידות כנקודות עם קווי השגיאה ‎<code class="docutils literal notranslate"><span class="pre">y_err</span></code>‎, עם התווית ‎<code class="docutils literal notranslate"><span class="pre">measured</span></code>‎;</p></li>
+<li><p>תווית לציר האנכי: גובה, במטרים;</p></li>
+<li><p>שמירת הגרף לקובץ ‎<code class="docutils literal notranslate"><span class="pre">height.png</span></code>‎ ברזולוציה של 300 dpi.</p></li>
+</ol>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">angles_deg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">75</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">height_curve</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""n times t (s) from launch to landing, and the heights y (m)."""</span>
+    <span class="c1"># complete here</span>
+    <span class="k">pass</span>
 
-<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">means</span><span class="p">,</span> <span class="n">stds</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">angles_deg</span><span class="p">:</span>
-    <span class="n">theta_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-    <span class="n">v0_trials</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">R_trials</span> <span class="o">=</span> <span class="n">v0_trials</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta_i</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-    <span class="n">means</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">R_trials</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-    <span class="n">stds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">R_trials</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">height_curve</span><span class="p">(</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1"># expected: [0. 1. 2. 3. 4.]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="c1"># expected: [ 0. 15. 20. 15.  0.]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">t_meas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>   <span class="c1"># s</span>
+<span class="linenos"> 2</span><span class="n">y_meas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">])</span>   <span class="c1"># m</span>
+<span class="linenos"> 3</span><span class="n">y_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>    <span class="c1"># m</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">height_curve</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="linenos"> 8</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"model"</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="c1"># (1) measurements with error bars</span>
+<span class="linenos">10</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"t (s)"</span><span class="p">)</span>
+<span class="linenos">11</span><span class="c1"># (2) label of the vertical axis</span>
+<span class="linenos">12</span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="linenos">13</span><span class="c1"># (3) save to height.png at 300 dpi</span>
+<span class="linenos">14</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<p><strong>א.</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">height_curve</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""n times t (s) from launch to landing, and the heights y (m)."""</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">height_curve</span><span class="p">(</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>   <span class="c1"># [0. 1. 2. 3. 4.]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># [ 0. 15. 20. 15.  0.]</span>
+</pre></div>
+</div>
+<p><strong>ב.</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (1)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">t_meas</span><span class="p">,</span> <span class="n">y_meas</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">y_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"measured"</span><span class="p">)</span>
+<span class="c1"># (2)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
+<span class="c1"># (3)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"height.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>שורה (1) באה לפני ‎<code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>‎, כדי שהתווית שלה תופיע במקרא, ושורה (3) באה לפני ‎<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>‎, כמו בסעיף 8.10.</p>
+</div>
+</section>
+<section id="id5">
+<h2><span class="section-number">8.11.4. </span>משימה 3: מצאו את שלוש הטעויות<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>הקוד הבא אמור לצייר את מסלולי הזריקה בשלוש זוויות <strong>על גרף אחד</strong>, עם מקרא שמבדיל בין הזוויות. הוא רץ בלי שגיאה, אבל מתקבלות שלוש תמונות נפרדות, מקרא מופיע רק באחרונה, והעקומה של 30° נוחתת ב-x שלילי, משמאל לנקודת הזריקה.</p>
+<p><strong>לפני שמריצים</strong>: מצאו את שלוש הטעויות לפי מספרי השורות, תקנו כל אחת והסבירו במשפט אחד. שימו לב שטעות אחת יכולה להסתיר טעות אחרת.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span>
+<span class="linenos"> 2</span><span class="n">angles_deg</span> <span class="o">=</span> <span class="p">[</span><span class="mf">30.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">60.0</span><span class="p">]</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">angles_deg</span><span class="p">:</span>
+<span class="linenos"> 5</span>    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="linenos"> 6</span>    <span class="n">theta</span> <span class="o">=</span> <span class="n">angle</span>
+<span class="linenos"> 7</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
+<span class="linenos"> 9</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+<span class="linenos">10</span>    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"trajectory"</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="linenos">13</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<ol class="arabic simple">
+<li><p><strong>שורה 5:</strong> ‎<code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>‎ בתוך הלולאה יוצר figure חדש בכל סיבוב, ולכן כל עקומה מצוירת בתמונה משלה, ו-‎<code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>‎ שאחרי הלולאה פועל רק על הציר האחרון. צריך ליצור את ‎<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span></code>‎ פעם אחת, לפני הלולאה.</p></li>
+<li><p><strong>שורה 6:</strong> ‎<code class="docutils literal notranslate"><span class="pre">np.sin</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">np.cos</span></code>‎ מצפות לזווית ברדיאנים, ו-30 רדיאנים הם זווית אחרת לגמרי (הסינוס שלה שלילי). צריך ‎<code class="docutils literal notranslate"><span class="pre">theta</span> <span class="pre">=</span> <span class="pre">np.radians(angle)</span></code>‎.</p></li>
+<li><p><strong>שורה 10:</strong> אותה תווית לכל העקומות. אחרי התיקון של שורה 5 כל העקומות על אותו גרף, ואז רואים שבמקרא שלוש שורות זהות. צריך תווית שתלויה בזווית.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span>
+<span class="n">angles_deg</span> <span class="o">=</span> <span class="p">[</span><span class="mf">30.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">60.0</span><span class="p">]</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">,</span> <span class="n">means</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">stds</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"-"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"tab:red"</span><span class="p">)</span>   <span class="c1"># &lt;- שימו לב כאן</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Launch angle (degrees)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Range R (m)"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">angles_deg</span><span class="p">:</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2"> deg"</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>הטעות של שורה 5 מסתירה את זו של שורה 10: כל עוד כל עקומה בתמונה משלה, אי אפשר לראות שהתוויות זהות.</p>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/5a51ce95b8cc03b91edd8468e08c7dc9223f535f5654b6d5eec9fca604d9d553.png" src="../../../_images/5a51ce95b8cc03b91edd8468e08c7dc9223f535f5654b6d5eec9fca604d9d553.png" />
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<p>הבאג הוא ב-<code class="docutils literal notranslate"><span class="pre">fmt=&quot;-&quot;</span></code>: זה מחבר את נקודות המדידה בקו רציף, כאילו יש מודל רציף בין הזוויות שנמדדו בפועל — בניגוד לעקרון שראינו בסעיף 8.9, שלפיו נקודות מדידה בדידות מוצגות כסמלים בלי קו מחבר.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">,</span> <span class="n">means</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">stds</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"tab:red"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<hr class="docutils" />
-<p>כדור נזרק במהירות התחלתית <span class="math notranslate nohighlight">\(v_0\)</span> בזווית <span class="math notranslate nohighlight">\(\theta\)</span>. כתבו פונקציה <code class="docutils literal notranslate"><span class="pre">plot_range_vs_v0(v0_array,</span> <span class="pre">theta_deg)</span></code> שמקבלת מערך מהירויות התחלתיות ווזווית קבועה (במעלות), ומציגה גרף של הטווח <span class="math notranslate nohighlight">\(R = v_0^2\sin(2\theta)/g\)</span> כתלות ב-<span class="math notranslate nohighlight">\(v_0\)</span>, עם תוויות צירים ויחידות. השתמשו ב-<span class="math notranslate nohighlight">\(g=9.8\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_range_vs_v0</span><span class="p">(</span><span class="n">v0_array</span><span class="p">,</span> <span class="n">theta_deg</span><span class="p">):</span>
-    <span class="c1"># כתבו כאן</span>
-    <span class="k">pass</span>
-
-<span class="c1"># בדיקה:</span>
-<span class="c1"># plot_range_vs_v0(np.linspace(5, 30, 50), 45)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_range_vs_v0</span><span class="p">(</span><span class="n">v0_array</span><span class="p">,</span> <span class="n">theta_deg</span><span class="p">):</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>
-    <span class="n">R</span> <span class="o">=</span> <span class="n">v0_array</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v0_array</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$v_0$ (m/s)"</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"R (m)"</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">fr</span><span class="s2">"$\theta=</span><span class="si">{</span><span class="n">theta_deg</span><span class="si">}</span><span class="s2">^\circ$"</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="n">plot_range_vs_v0</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">45</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -783,6 +884,26 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.11.1. לקרוא קוד ציור בלי להריץ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.11.2. משימה 1: מה הקוד מצייר?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.11.3. משימה 2: פונקציה שמחזירה את הנתונים לגרף</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.11.4. משימה 3: מצאו את שלוש הטעויות</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

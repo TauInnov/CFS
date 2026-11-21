@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -631,10 +631,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.8.1. דוגמה: מציאת רגע הנחיתה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.8.2. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.8.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.8.4. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.8.1. סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.8.2. דוגמה: מציאת רגע הנחיתה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.8.3. שני תנאים יחד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.8.4. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.8.5. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.8.6. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -648,20 +650,41 @@
                   
   <section id="where-any-all">
 <h1><span class="section-number">7.8. </span>השוואות ומסכות בוליאניות, where, any, all<a class="headerlink" href="#where-any-all" title="Link to this heading">#</a></h1>
-<p>אופרטורי השוואה (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code> וכו’) על מערך NumPy אינם מחזירים ערך יחיד — הם מחזירים <strong>מערך בוליאני</strong> באותו גודל, עם <code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code> לכל איבר. מערך כזה נקרא <strong>מסכה (mask)</strong>, ואפשר להשתמש בו כדי לסנן את המערך המקורי: <code class="docutils literal notranslate"><span class="pre">a[mask]</span></code> מחזיר רק את האיברים שבהם המסכה <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>אופרטורי השוואה (‎<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">==</span></code>‎ וכו’) על מערך NumPy אינם מחזירים ערך יחיד — הם מחזירים <strong>מערך בוליאני</strong> באותו גודל, עם ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎/‎<code class="docutils literal notranslate"><span class="pre">False</span></code>‎ לכל איבר. מערך כזה נקרא <strong>מסכה (mask)</strong>, ואפשר להשתמש בו כדי לסנן את המערך המקורי: ‎<code class="docutils literal notranslate"><span class="pre">a[mask]</span></code>‎ מחזיר רק את האיברים שבהם המסכה ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎.</p>
 <p>שלוש פונקציות שימושיות שמבוססות על מסכות:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">np.where(mask)</span></code> — מחזיר את <strong>האינדקסים</strong> שבהם המסכה <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.any(mask)</span></code> — <code class="docutils literal notranslate"><span class="pre">True</span></code> אם <strong>לפחות</strong> איבר אחד במסכה הוא <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.all(mask)</span></code> — <code class="docutils literal notranslate"><span class="pre">True</span></code> רק אם <strong>כל</strong> האיברים במסכה הם <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">np.where(mask)</span></code>‎ — מחזיר את <strong>האינדקסים</strong> שבהם המסכה ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">np.any(mask)</span></code>‎ — ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎ אם <strong>לפחות</strong> איבר אחד במסכה הוא ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">np.all(mask)</span></code>‎ — ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎ רק אם <strong>כל</strong> האיברים במסכה הם ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">np.sum(mask)</span></code>‎ — <strong>כמה</strong> איברים במסכה הם ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎: כל ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎ נספר כ-1, וכל ‎<code class="docutils literal notranslate"><span class="pre">False</span></code>‎ כ-0.</p></li>
 </ul>
+<p>סרטון: <strong>“מסכות בוליאניות עם &amp; ו-|: נוסחה שמוגדרת בקטעים”</strong> — הקלטת מסך של המחברת עם קול.</p>
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/EAt93dTWIXg?rel=0"
+          style="position:absolute; top:0; left:0; width:100%; height:100%;"
+          frameborder="0" allowfullscreen></iframe>
+</div>
 <section id="id1">
-<h2><span class="section-number">7.8.1. </span>דוגמה: מציאת רגע הנחיתה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8.1. </span>סיכום<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>כל מקרה של הנוסחה הופך למסכה: ‎<code class="docutils literal notranslate"><span class="pre">(t</span> <span class="pre">&gt;=</span> <span class="pre">0)</span> <span class="pre">&amp;</span> <span class="pre">(t</span> <span class="pre">&lt;</span> <span class="pre">4)</span></code>‎.</p></li>
+<li><p>משתמשים ב-‎<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>‎ וב-‎<code class="docutils literal notranslate"><span class="pre">|</span></code>‎ עם סוגריים סביב כל השוואה. ‎<code class="docutils literal notranslate"><span class="pre">and</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">or</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">t</span> <span class="pre">&lt;</span> <span class="pre">4</span></code>‎ נכשלים על מערכים.</p></li>
+<li><p>בודקים שהמקרים מכסים כל נקודה ואינם חופפים: ‎<code class="docutils literal notranslate"><span class="pre">np.all(m1</span> <span class="pre">|</span> <span class="pre">m2</span> <span class="pre">|</span> <span class="pre">m3)</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">np.any(m1</span> <span class="pre">&amp;</span> <span class="pre">m2)</span></code>‎.</p></li>
+<li><p>בגבולות (‎<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>‎ או ‎<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>‎) קל לטעות בלי שתתקבל שגיאה.</p></li>
+</ul>
+<p><strong>תרגול עצמי:</strong></p>
+<p><a class="reference external" href="https://colab.research.google.com/github/TauInnov/CFS/blob/main/exercises/week7_10_practice.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p>או להורדה: <a class="reference download internal" download="" href="../../../_downloads/1bc944848bd07a39cfa60302e400c3ed/week7_10_practice.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">week7_10_practice.ipynb</span></code></a></p>
+<blockquote>
+<div><p>בפתיחה ב־Colab: File ← Save a copy in Drive לפני שמתחילים, אחרת העבודה לא תישמר.</p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h2><span class="section-number">7.8.2. </span>דוגמה: מציאת רגע הנחיתה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>עבור מסלול הזריקה <span class="math notranslate nohighlight">\(y(t) = v_0 t - \tfrac{1}{2} g t^2\)</span>, הביטוי הזה ממשיך להיות מוגדר מתמטית גם לאחר שהכדור פגע בקרקע (<span class="math notranslate nohighlight">\(y&lt;0\)</span>) — אבל פיזיקלית זה חסר משמעות. נשתמש במסכה כדי לזהות ולחתוך את החלק הרלוונטי בלבד.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">15.0</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
@@ -669,7 +692,7 @@
 
 <span class="n">above_ground</span> <span class="o">=</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"מסכה (10 ראשונים):"</span><span class="p">,</span> <span class="n">above_ground</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"יש נקודות מתחת לקרקע?"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="o">~</span><span class="n">above_ground</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"יש נקודות מתחת לקרקע?"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"כל הנקודות מעל הקרקע?"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">above_ground</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -684,7 +707,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">landing_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">~</span><span class="n">above_ground</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>   <span class="c1"># האינדקס הראשון שבו y שלילי</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">below</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>   <span class="c1"># indices where the ball is below ground</span>
+<span class="n">landing_idx</span> <span class="o">=</span> <span class="n">below</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>       <span class="c1"># the first of them</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"אינדקס הנחיתה:"</span><span class="p">,</span> <span class="n">landing_idx</span><span class="p">,</span> <span class="s2">" t ="</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">landing_idx</span><span class="p">])</span>
 
 <span class="n">t_flight</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">above_ground</span><span class="p">]</span>
@@ -698,26 +722,31 @@
 </div>
 </div>
 </div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/867465dfc5abd36b06a3dd3784b8f6144d74437e2c1a8d98601c1f11ffa8dabd.png" src="../../../_images/867465dfc5abd36b06a3dd3784b8f6144d74437e2c1a8d98601c1f11ffa8dabd.png" />
+</div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">7.8.3. </span>שני תנאים יחד<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>כדי לבחור נקודות שמקיימות שני תנאים בבת אחת, מחברים שתי מסכות באופרטור ‎<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>‎ (“וגם”), וכל השוואה עוטפים בסוגריים: ‎<code class="docutils literal notranslate"><span class="pre">(y</span> <span class="pre">&gt;</span> <span class="pre">5)</span> <span class="pre">&amp;</span> <span class="pre">(t</span> <span class="pre">&lt;</span> <span class="pre">2)</span></code>‎. בלי הסוגריים פייתון מחשב את ‎<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>‎ לפני ההשוואות, והקוד נכשל; המילה ‎<code class="docutils literal notranslate"><span class="pre">and</span></code>‎ לא עובדת על מערכים. כמה נקודות במסלול נמצאות מעל 5 מטרים בשתי השניות הראשונות?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"lightgray"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"הנוסחה ללא חיתוך"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_flight</span><span class="p">,</span> <span class="n">y_flight</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"tab:blue"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"מסלול פיזיקלי (y ≥ 0)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"t (s)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rising_high</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># above 5 m and before t = 2 s</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rising_high</span><span class="p">))</span>        <span class="c1"># each True counts as 1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/428e0c25360cff8022f8cfd162a875e9701fb2747e64b58b900d9ee5841c432e.png" src="../../../_images/428e0c25360cff8022f8cfd162a875e9701fb2747e64b58b900d9ee5841c432e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+</pre></div>
+</div>
 </div>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">7.8.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2><span class="section-number">7.8.4. </span>נסו בעצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>בנו מסכה של הנקודות שבהן הגובה עולה על 5 מטרים, וספרו כמה נקודות כאלה יש:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -737,32 +766,17 @@
 </div>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">7.8.3. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"בהינתן &lt;code&gt;a = np.array([1, -2, 3, -4])&lt;/code&gt;, מה מחזיר &lt;code&gt;a[a &gt; 0]&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[True, False, True, False]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"זו התוצאה של a &gt; 0 עצמו, לא של a[a &gt; 0]."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[1, 3]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון: המסכה משמשת לסינון — רק האיברים החיוביים נשארים."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"שגיאה, כי אי אפשר לאנדקס עם מערך בוליאני"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — זה בדיוק השימוש המרכזי במסכות."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[-2, -4]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — המסכה משאירה רק את האיברים שמקיימים את התנאי (חיוביים), לא את השליליים."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<section id="id5">
+<h2><span class="section-number">7.8.5. </span>בדקו את עצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>                    <span class="c1"># print 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)))</span>   <span class="c1"># print 2</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="RgqmyhbkYeze" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#RgqmyhbkYeze {
+<div class="output text_html"><div id="cpFacqupfXMx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#cpFacqupfXMx {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -985,7 +999,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsRgqmyhbkYeze=[{"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df <code>a = np.array([1, -2, 3, -4])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>a[a > 0]</code>?", "type": "multiple_choice", "answers": [{"answer": "[True, False, True, False]", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc a > 0 \u05e2\u05e6\u05de\u05d5, \u05dc\u05d0 \u05e9\u05dc a[a > 0]."}, {"answer": "[1, 3]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05de\u05e1\u05db\u05d4 \u05de\u05e9\u05de\u05e9\u05ea \u05dc\u05e1\u05d9\u05e0\u05d5\u05df \u2014 \u05e8\u05e7 \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d4\u05d7\u05d9\u05d5\u05d1\u05d9\u05d9\u05dd \u05e0\u05e9\u05d0\u05e8\u05d9\u05dd."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4, \u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d0\u05e0\u05d3\u05e7\u05e1 \u05e2\u05dd \u05de\u05e2\u05e8\u05da \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e9\u05d9\u05de\u05d5\u05e9 \u05d4\u05de\u05e8\u05db\u05d6\u05d9 \u05d1\u05de\u05e1\u05db\u05d5\u05ea."}, {"answer": "[-2, -4]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05de\u05e1\u05db\u05d4 \u05de\u05e9\u05d0\u05d9\u05e8\u05d4 \u05e8\u05e7 \u05d0\u05ea \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e9\u05de\u05e7\u05d9\u05d9\u05de\u05d9\u05dd \u05d0\u05ea \u05d4\u05ea\u05e0\u05d0\u05d9 (\u05d7\u05d9\u05d5\u05d1\u05d9\u05d9\u05dd), \u05dc\u05d0 \u05d0\u05ea \u05d4\u05e9\u05dc\u05d9\u05dc\u05d9\u05d9\u05dd."}]}];
+</style></div><script type="application/javascript">var questionscpFacqupfXMx=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "5", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05d7\u05e8\u05ea \u05d0\u05ea \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d4\u05d7\u05d9\u05d5\u05d1\u05d9\u05d9\u05dd, 1, 3 \u05d5-5, \u05dc\u05e4\u05d9 \u05d4\u05e1\u05d3\u05e8."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: \u05d2\u05dd 5 \u05d7\u05d9\u05d5\u05d1\u05d9, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05d5\u05d0 \u05e0\u05d1\u05d7\u05e8."}, {"answer": "4", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e8\u05d1\u05d9\u05e2\u05d9 \u05e9\u05dc\u05d9\u05dc\u05d9, \u05d5\u05d4\u05de\u05e1\u05db\u05d4 \u05dc\u05d0 \u05d1\u05d5\u05d7\u05e8\u05ea \u05d0\u05d5\u05ea\u05d5."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: \u05d0\u05d9\u05e0\u05d3\u05d5\u05e7\u05e1 \u05e2\u05dd \u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9\u05ea \u05d4\u05d5\u05d0 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e9\u05d9\u05de\u05d5\u05e9 \u05d4\u05de\u05e8\u05db\u05d6\u05d9 \u05d1\u05de\u05e1\u05db\u05d5\u05ea."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e8\u05e7 1 \u05d5-3 \u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05de-0 \u05d5\u05d2\u05dd \u05e7\u05d8\u05e0\u05d9\u05dd \u05de-4, \u05d5\u05db\u05dc True \u05e0\u05e1\u05e4\u05e8 \u05db-1."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d2\u05d3\u05d5\u05dc \u05de-0, \u05d0\u05d1\u05dc \u05d4\u05d5\u05d0 \u05dc\u05d0 \u05e7\u05d8\u05df \u05de-4."}, {"answer": "4", "correct": false, "feedback": "\u05dc\u05d0: 4 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd 1 \u05d5-3. \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc \u05d4\u05de\u05e1\u05db\u05d4 \u05e1\u05d5\u05e4\u05e8 \u05db\u05de\u05d4 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05de\u05e7\u05d9\u05d9\u05de\u05d9\u05dd \u05d0\u05ea \u05e9\u05e0\u05d9 \u05d4\u05ea\u05e0\u05d0\u05d9\u05dd."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: \u05e8\u05e7 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e9\u05de\u05e7\u05d9\u05d9\u05de\u05d9\u05dd \u05d0\u05ea \u05e9\u05e0\u05d9 \u05d4\u05ea\u05e0\u05d0\u05d9\u05dd \u05e0\u05e1\u05e4\u05e8\u05d9\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2047,8 +2061,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("RgqmyhbkYeze")) {
-    show_questions(questionsRgqmyhbkYeze, RgqmyhbkYeze);
+  if (document.getElementById("cpFacqupfXMx")) {
+    show_questions(questionscpFacqupfXMx, cpFacqupfXMx);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2061,8 +2075,8 @@ function try_show() {
 </script></div>
 </div>
 </section>
-<section id="id4">
-<h2><span class="section-number">7.8.4. </span>תרגול עצמי<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h2><span class="section-number">7.8.6. </span>תרגול עצמי<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>חיישן מדד את גובה כדור לאורך ניסוי, אך עקב תקלה חשמלית חלק מהקריאות יצאו שליליות — דבר בלתי אפשרי פיזיקלית עבור הניסוי הזה. סננו את כל הקריאות התקינות (הלא-שליליות) בלבד:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2079,7 +2093,7 @@ function try_show() {
 <p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">valid_mask</span> <span class="o">=</span> <span class="n">sensor_readings</span> <span class="o">&gt;=</span> <span class="mi">0</span>
 <span class="n">valid_readings</span> <span class="o">=</span> <span class="n">sensor_readings</span><span class="p">[</span><span class="n">valid_mask</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">valid_readings</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valid_readings</span><span class="p">)</span>   <span class="c1"># [2.1 3.4 4.  5.5 0. ]</span>
 </pre></div>
 </div>
 </div>
@@ -2152,10 +2166,12 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.8.1. דוגמה: מציאת רגע הנחיתה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.8.2. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.8.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.8.4. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.8.1. סיכום</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.8.2. דוגמה: מציאת רגע הנחיתה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.8.3. שני תנאים יחד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.8.4. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.8.5. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.8.6. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

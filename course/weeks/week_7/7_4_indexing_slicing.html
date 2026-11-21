@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -634,7 +634,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.1. דוגמה: חיתוך מסלול הזריקה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.4.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.4.4. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -648,14 +647,13 @@
                   
   <section id="id1">
 <h1><span class="section-number">7.4. </span>אינדוקס ופריסה בציר אחד<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>אינדוקס ופריסה (slicing) של מערך חד-ממדי כמעט זהים לאלה של רשימה: <code class="docutils literal notranslate"><span class="pre">a[i]</span></code> לאיבר בודד, <code class="docutils literal notranslate"><span class="pre">a[start:stop]</span></code> לטווח, <code class="docutils literal notranslate"><span class="pre">a[start:stop:step]</span></code> עם קפיצה, ואינדקסים שליליים סופרים מהסוף. ההבדל המרכזי בין השניים יידון בסעיף הבא (views מול copies).</p>
+<p>אינדוקס ופריסה (slicing) של מערך חד-ממדי כמעט זהים לאלה של רשימה: ‎<code class="docutils literal notranslate"><span class="pre">a[i]</span></code>‎ לאיבר בודד, ‎<code class="docutils literal notranslate"><span class="pre">a[start:stop]</span></code>‎ לטווח, ‎<code class="docutils literal notranslate"><span class="pre">a[start:stop:step]</span></code>‎ עם קפיצה, ואינדקסים שליליים סופרים מהסוף. ההבדל המרכזי בין השניים יידון בסעיף הבא (views מול copies).</p>
 <section id="id2">
 <h2><span class="section-number">7.4.1. </span>דוגמה: חיתוך מסלול הזריקה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>נחזור למסלול הזריקה <span class="math notranslate nohighlight">\(y(t) = v_0 t - \tfrac{1}{2} g t^2\)</span> ונשלוף ממנו חלקים שונים.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">15.0</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
@@ -680,26 +678,15 @@
 </div>
 </div>
 <p>נסמן על גבי הגרף אילו נקודות נכללות במחצית הראשונה, כדי לחדד את המשמעות של הפריסה:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">"o-"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"lightgray"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"כל המסלול"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="mi">8</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="mi">8</span><span class="p">],</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"tab:blue"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"y[:8]"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"t (s)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../../_images/8cce8921304283e80a503f2a9991448d36ce85415bd8385a124289ac62c3e7c3.png" src="../../../_images/8cce8921304283e80a503f2a9991448d36ce85415bd8385a124289ac62c3e7c3.png" />
+<img alt="../../../_images/d9f3b81952d2478f89dc2dffe28adf8be59be3c216522185afd96464d01eb7a2.png" src="../../../_images/d9f3b81952d2478f89dc2dffe28adf8be59be3c216522185afd96464d01eb7a2.png" />
 </div>
 </div>
 </section>
 <section id="id3">
 <h2><span class="section-number">7.4.2. </span>נסו בעצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>שלפו כל נקודה שנייה, החל מהאינדקס השני (כלומר <code class="docutils literal notranslate"><span class="pre">t[1],</span> <span class="pre">t[3],</span> <span class="pre">t[5],</span> <span class="pre">...</span></code>):</p>
+<p>שלפו כל נקודה שנייה, החל מהאינדקס השני (כלומר ‎<code class="docutils literal notranslate"><span class="pre">t[1],</span> <span class="pre">t[3],</span> <span class="pre">t[5],</span> <span class="pre">...</span></code>‎):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># odd_points = ...</span>
@@ -718,30 +705,15 @@
 </section>
 <section id="id4">
 <h2><span class="section-number">7.4.3. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"בהינתן &lt;code&gt;a = np.array([10, 20, 30, 40, 50])&lt;/code&gt;, מה מחזיר &lt;code&gt;a[-2:]&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[40, 50]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון: -2 מציין את האיבר הלפני-אחרון, ועד הסוף."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[50]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — a[-2:] מחזיר יותר מאיבר אחד."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[30, 40, 50]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — זה יהיה a[-3:]."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"[20, 30, 40, 50]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — a[-2:] לוקח רק משני האיברים האחרונים, לא מהאמצע."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>    <span class="c1"># print 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>    <span class="c1"># print 2</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="SonWnHZVhbXz" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#SonWnHZVhbXz {
+<div class="output text_html"><div id="rKcCFhpSvAqJ" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#rKcCFhpSvAqJ {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -964,7 +936,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsSonWnHZVhbXz=[{"question": "\u05d1\u05d4\u05d9\u05e0\u05ea\u05df <code>a = np.array([10, 20, 30, 40, 50])</code>, \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>a[-2:]</code>?", "type": "multiple_choice", "answers": [{"answer": "[40, 50]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: -2 \u05de\u05e6\u05d9\u05d9\u05df \u05d0\u05ea \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05dc\u05e4\u05e0\u05d9-\u05d0\u05d7\u05e8\u05d5\u05df, \u05d5\u05e2\u05d3 \u05d4\u05e1\u05d5\u05e3."}, {"answer": "[50]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 a[-2:] \u05de\u05d7\u05d6\u05d9\u05e8 \u05d9\u05d5\u05ea\u05e8 \u05de\u05d0\u05d9\u05d1\u05e8 \u05d0\u05d7\u05d3."}, {"answer": "[30, 40, 50]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d9\u05d4\u05d9\u05d4 a[-3:]."}, {"answer": "[20, 30, 40, 50]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 a[-2:] \u05dc\u05d5\u05e7\u05d7 \u05e8\u05e7 \u05de\u05e9\u05e0\u05d9 \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d9\u05dd, \u05dc\u05d0 \u05de\u05d4\u05d0\u05de\u05e6\u05e2."}]}];
+</style></div><script type="application/javascript">var questionsrKcCFhpSvAqJ=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "40", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e4\u05e8\u05d9\u05e1\u05d4 \u05de\u05ea\u05d7\u05d9\u05dc\u05d4 \u05d1\u05d0\u05d9\u05d1\u05e8 \u05d4\u05dc\u05e4\u05e0\u05d9 \u05d0\u05d7\u05e8\u05d5\u05df \u05d5\u05de\u05de\u05e9\u05d9\u05db\u05d4 \u05e2\u05d3 \u05d4\u05e1\u05d5\u05e3, \u05d5\u05dc\u05db\u05df \u05de\u05d5\u05d3\u05e4\u05e1\u05d9\u05dd 40 \u05d5-50."}, {"answer": "50", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e4\u05e8\u05d9\u05e1\u05d4 \u05de\u05ea\u05d7\u05d9\u05dc\u05d4 \u05d1\u05d0\u05d9\u05d1\u05e8 \u05d4\u05dc\u05e4\u05e0\u05d9 \u05d0\u05d7\u05e8\u05d5\u05df, \u05dc\u05d0 \u05d1\u05d0\u05d7\u05e8\u05d5\u05df."}, {"answer": "30", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d4 \u05d4\u05d9\u05d4 \u05e0\u05db\u05d5\u05df \u05d0\u05d9\u05dc\u05d5 \u05d4\u05e4\u05e8\u05d9\u05e1\u05d4 \u05d4\u05ea\u05d7\u05d9\u05dc\u05d4 \u05e9\u05dc\u05d5\u05e9\u05d4 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05de\u05d4\u05e1\u05d5\u05e3."}, {"answer": "20", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e4\u05e8\u05d9\u05e1\u05d4 \u05dc\u05d5\u05e7\u05d7\u05ea \u05e8\u05e7 \u05d0\u05ea \u05e9\u05e0\u05d9 \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d9\u05dd."}]}, {"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "50", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e7\u05e4\u05d9\u05e6\u05d5\u05ea \u05e9\u05dc 2 \u05de\u05ea\u05d7\u05d9\u05dc\u05ea \u05d4\u05de\u05e2\u05e8\u05da: \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd 0, 2 \u05d5-4, \u05db\u05dc\u05d5\u05de\u05e8 10, 30 \u05d5-50."}, {"answer": "40", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e7\u05e4\u05d9\u05e6\u05d5\u05ea \u05de\u05ea\u05d7\u05d9\u05dc\u05d5\u05ea \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 0, \u05d5\u05dc\u05db\u05df \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 3 \u05dc\u05d0 \u05e0\u05dc\u05e7\u05d7."}, {"answer": "30", "correct": false, "feedback": "\u05dc\u05d0: \u05d2\u05dd \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 4 \u05e0\u05dc\u05e7\u05d7, \u05db\u05d9 \u05d4\u05e4\u05e8\u05d9\u05e1\u05d4 \u05de\u05de\u05e9\u05d9\u05db\u05d4 \u05e2\u05d3 \u05d4\u05e1\u05d5\u05e3."}, {"answer": "20", "correct": false, "feedback": "\u05dc\u05d0: 20 \u05e0\u05de\u05e6\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 1, \u05d5\u05d4\u05e7\u05e4\u05d9\u05e6\u05d5\u05ea \u05de\u05ea\u05d7\u05d9\u05dc\u05d5\u05ea \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 0."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2026,8 +1998,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("SonWnHZVhbXz")) {
-    show_questions(questionsSonWnHZVhbXz, SonWnHZVhbXz);
+  if (document.getElementById("rKcCFhpSvAqJ")) {
+    show_questions(questionsrKcCFhpSvAqJ, rKcCFhpSvAqJ);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2039,27 +2011,27 @@ function try_show() {
 }
 </script></div>
 </div>
-</section>
-<section id="id5">
-<h2><span class="section-number">7.4.4. </span>תרגול עצמי<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>שלפו מתוך <code class="docutils literal notranslate"><span class="pre">t</span></code> ו-<code class="docutils literal notranslate"><span class="pre">y</span></code> רק את הנקודות שבהן <span class="math notranslate nohighlight">\(t &gt; 1.5\)</span> שניות. (בסעיף הבא נלמד דרך נוחה יותר לעשות זאת עם מסכה בוליאנית — כאן נסתפקו באינדוקס ידני, אחרי שמוצאים את האינדקס המתאים).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># idx = ...       # מצאו את האינדקס הראשון שבו t &gt; 1.5</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
+<p>שלפו מתוך ‎<code class="docutils literal notranslate"><span class="pre">t</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">y</span></code>‎ רק את הנקודות שבהן <span class="math notranslate nohighlight">\(t &gt; 1.5\)</span> שניות. בסעיף 7.8 נלמד לעשות זאת עם מסכה בוליאנית; כאן הדפיסו את ‎<code class="docutils literal notranslate"><span class="pre">t</span></code>‎, מצאו בעין את האינדקס הראשון שבו <span class="math notranslate nohighlight">\(t &gt; 1.5\)</span>, ופרסו ממנו עד הסוף.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(t)</span>
+<span class="c1"># idx = ...        # the first index where t &gt; 1.5, read from the printout</span>
 <span class="c1"># t_late = t[idx:]</span>
 <span class="c1"># y_late = y[idx:]</span>
 <span class="c1"># print(t_late)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">t</span> <span class="o">&gt;</span> <span class="mf">1.5</span><span class="p">)</span>   <span class="c1"># האינדקס הראשון שבו התנאי מתקיים</span>
+<p>‎<code class="docutils literal notranslate"><span class="pre">t</span></code>‎ הוא 16 נקודות בין 0 ל-3, כלומר בקפיצות של 0.2: ‎<code class="docutils literal notranslate"><span class="pre">t[7]</span></code>‎ הוא 1.4 ו-‎<code class="docutils literal notranslate"><span class="pre">t[8]</span></code>‎ הוא 1.6, ולכן האינדקס הוא 8.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="c1"># [0.  0.2 0.4 0.6 0.8 1.  1.2 1.4 1.6 1.8 2.  2.2 2.4 2.6 2.8 3. ]</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">t_late</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">idx</span><span class="p">:]</span>
 <span class="n">y_late</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">idx</span><span class="p">:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t_late</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t_late</span><span class="p">)</span>     <span class="c1"># [1.6 1.8 2.  2.2 2.4 2.6 2.8 3. ]</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2134,7 +2106,6 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.1. דוגמה: חיתוך מסלול הזריקה</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.4.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.4.4. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

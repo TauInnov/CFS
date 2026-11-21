@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -634,7 +634,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.4.1. דוגמה: סימון נקודת השיא במסלול</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.4.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.4.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.4.4. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -650,15 +649,15 @@
 <h1><span class="section-number">8.4. </span>תיוג הגרף: legend, גבולות וסימוני ציר, טקסט וחצים<a class="headerlink" href="#legend" title="Link to this heading">#</a></h1>
 <p>כלים נוספים לתיוג גרף מדעי:</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ax.legend(loc=...)</span></code></strong> — מקרא, בונה את עצמו מתוך <code class="docutils literal notranslate"><span class="pre">label=</span></code> שהעברתם ל-<code class="docutils literal notranslate"><span class="pre">plot</span></code>/<code class="docutils literal notranslate"><span class="pre">scatter</span></code>.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ax.set_xlim(xmin,</span> <span class="pre">xmax)</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">ax.set_ylim(ymin,</span> <span class="pre">ymax)</span></code></strong> — קביעת תחום הצירים ידנית.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ax.set_xticks([...])</span></code></strong> — קביעת מיקומי הסימונים על הציר במפורש.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ax.text(x,</span> <span class="pre">y,</span> <span class="pre">&quot;...&quot;)</span></code></strong> — טקסט חופשי בנקודה מסוימת על הגרף.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ax.annotate(&quot;...&quot;,</span> <span class="pre">xy=...,</span> <span class="pre">xytext=...,</span> <span class="pre">arrowprops=...)</span></code></strong> — טקסט <strong>עם חץ</strong> שמצביע על נקודה ספציפית.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">ax.legend(loc=...)</span></code>‎</strong> — מקרא, בונה את עצמו מתוך ‎<code class="docutils literal notranslate"><span class="pre">label=</span></code>‎ שהעברתם ל-‎<code class="docutils literal notranslate"><span class="pre">plot</span></code>‎/‎<code class="docutils literal notranslate"><span class="pre">scatter</span></code>‎.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">ax.set_xlim(xmin,</span> <span class="pre">xmax)</span></code>‎</strong>, <strong>‎<code class="docutils literal notranslate"><span class="pre">ax.set_ylim(ymin,</span> <span class="pre">ymax)</span></code>‎</strong> — קביעת תחום הצירים ידנית.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">ax.set_xticks([...])</span></code>‎</strong> — קביעת מיקומי הסימונים על הציר במפורש.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">ax.text(x,</span> <span class="pre">y,</span> <span class="pre">&quot;...&quot;)</span></code>‎</strong> — טקסט חופשי בנקודה מסוימת על הגרף.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">ax.annotate(&quot;...&quot;,</span> <span class="pre">xy=...,</span> <span class="pre">xytext=...,</span> <span class="pre">arrowprops=...)</span></code>‎</strong> — טקסט <strong>עם חץ</strong> שמצביע על נקודה ספציפית.</p></li>
 </ul>
 <section id="id1">
 <h2><span class="section-number">8.4.1. </span>דוגמה: סימון נקודת השיא במסלול<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>הגובה המרבי של הזריקה מתקבל ב-<span class="math notranslate nohighlight">\(t_{peak} = v_0\sin\theta / g\)</span>, ושווה <span class="math notranslate nohighlight">\(y_{max} = (v_0\sin\theta)^2 / (2g)\)</span>. נסמן את הנקודה הזו על הגרף עם חץ וטקסט.</p>
+<p>הגובה המרבי של הזריקה מתקבל ב-<span class="math notranslate nohighlight">\(t_{peak} = v_0\sin\theta / g\)</span>, ושווה <span class="math notranslate nohighlight">\(y_{max} = (v_0\sin\theta)^2 / (2g)\)</span>. נסמן את הנקודה הזו על הגרף עם חץ וטקסט. ב-‎<code class="docutils literal notranslate"><span class="pre">ax.annotate</span></code>‎, הארגומנט ‎<code class="docutils literal notranslate"><span class="pre">xy</span></code>‎ הוא הנקודה שהחץ מצביע עליה, ו-‎<code class="docutils literal notranslate"><span class="pre">xytext</span></code>‎ הוא המקום שבו נכתב הטקסט (ממנו יוצא החץ). ‎<code class="docutils literal notranslate"><span class="pre">arrowprops</span></code>‎ הוא מילון שקובע איך החץ נראה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -679,7 +678,7 @@
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$\theta=45^\circ$"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"גובה מרבי"</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x_peak</span><span class="p">,</span> <span class="n">y_peak</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">x_peak</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y_peak</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span>
-            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-&gt;"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">))</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"gray"</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"upper right"</span><span class="p">)</span>
@@ -688,63 +687,53 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/f31734b9bd121e5e985d28f7b1431f6c75ed07a8f791c7727cf4206a0f6e7a8e.png" src="../../../_images/f31734b9bd121e5e985d28f7b1431f6c75ed07a8f791c7727cf4206a0f6e7a8e.png" />
+<img alt="../../../_images/004c75a782b99e16970a75909f436d5d4e5e1a13f4253cfb60d4483b5614b2c5.png" src="../../../_images/004c75a782b99e16970a75909f436d5d4e5e1a13f4253cfb60d4483b5614b2c5.png" />
 </div>
 </div>
 </section>
 <section id="id2">
 <h2><span class="section-number">8.4.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>הוסיפו לגרף סימון (<code class="docutils literal notranslate"><span class="pre">ax.annotate</span></code>) עבור <strong>נקודת הנחיתה</strong> — <span class="math notranslate nohighlight">\((x, y) = (R, 0)\)</span> כאשר <span class="math notranslate nohighlight">\(R\)</span> הוא הטווח הכולל.</p>
-<div class="cell docutils container">
+<p>בקוד הבא <span class="math notranslate nohighlight">\(v_0 = 20\)</span> מ’/ש’, הזווית 45° ו-<span class="math notranslate nohighlight">\(g = 10\)</span> מ’/ש², מספרים עגולים שאפשר לחשב איתם בראש. שורה 9 חסרה: השלימו אותה כך שחץ יצביע על <strong>נקודת הנחיתה</strong>, והמילה “נחיתה” תיכתב בנקודה ‎<code class="docutils literal notranslate"><span class="pre">(32,</span> <span class="pre">3)</span></code>‎. חשבו קודם את הטווח <span class="math notranslate nohighlight">\(R = v_0^2\sin(2\theta)/g\)</span>: באיזו נקודה החץ צריך לגעת בקרקע?</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># R = v0**2 * np.sin(2*theta) / g</span>
-<span class="c1"># ax.annotate("נחיתה", xy=(R, 0), xytext=(...), arrowprops=...)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span>
+<span class="linenos"> 2</span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="linenos"> 3</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
+<span class="linenos"> 5</span><span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="linenos"> 8</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="c1"># line 9: ax.annotate(...)</span>
+<span class="linenos">10</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
+<span class="linenos">11</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
+<span class="linenos">12</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$\theta=45^\circ$"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"נחיתה"</span><span class="p">,</span>
-            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">R</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
-            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-&gt;"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<p>הטווח הוא <span class="math notranslate nohighlight">\(R = 20^2 \cdot \sin 90^\circ / 10 = 40\)</span> מ’, ולכן החץ מצביע על הנקודה ‎<code class="docutils literal notranslate"><span class="pre">(40,</span> <span class="pre">0)</span></code>‎:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"נחיתה"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"gray"</span><span class="p">})</span>
 </pre></div>
 </div>
+<p>אפשר גם לחשב את הטווח בקוד, ‎<code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">=</span> <span class="pre">v0**2</span> <span class="pre">*</span> <span class="pre">np.sin(2</span> <span class="pre">*</span> <span class="pre">theta)</span> <span class="pre">/</span> <span class="pre">g</span></code>‎, ולכתוב ‎<code class="docutils literal notranslate"><span class="pre">xy=(R,</span> <span class="pre">0)</span></code>‎.</p>
 </div>
 </section>
 <section id="id3">
 <h2><span class="section-number">8.4.3. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מה ההבדל בין &lt;code&gt;ax.text&lt;/code&gt; ל-&lt;code&gt;ax.annotate&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"אין הבדל, הן שקולות לגמרי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — ל-annotate יש יכולת חץ."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"text עובד רק על גרפי scatter"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"annotate מאפשרת גם לצייר חץ מהטקסט אל נקודה מסוימת בגרף"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"annotate תמיד ממוקמת במרכז הגרף, ולא ניתן להזיז אותה"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא נכון — annotate מקבלת קואורדינטות מדויקות למיקום הטקסט ולנקודת החץ."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"שיא"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">})</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="MoUauZFrddUw" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#MoUauZFrddUw {
+<div class="output text_html"><div id="QLukbGohuhPp" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#QLukbGohuhPp {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -967,7 +956,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsMoUauZFrddUw=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d1\u05d9\u05df <code>ax.text</code> \u05dc-<code>ax.annotate</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05d4\u05df \u05e9\u05e7\u05d5\u05dc\u05d5\u05ea \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05dc-annotate \u05d9\u05e9 \u05d9\u05db\u05d5\u05dc\u05ea \u05d7\u05e5."}, {"answer": "text \u05e2\u05d5\u05d1\u05d3 \u05e8\u05e7 \u05e2\u05dc \u05d2\u05e8\u05e4\u05d9 scatter", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "annotate \u05de\u05d0\u05e4\u05e9\u05e8\u05ea \u05d2\u05dd \u05dc\u05e6\u05d9\u05d9\u05e8 \u05d7\u05e5 \u05de\u05d4\u05d8\u05e7\u05e1\u05d8 \u05d0\u05dc \u05e0\u05e7\u05d5\u05d3\u05d4 \u05de\u05e1\u05d5\u05d9\u05de\u05ea \u05d1\u05d2\u05e8\u05e3", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "annotate \u05ea\u05de\u05d9\u05d3 \u05de\u05de\u05d5\u05e7\u05de\u05ea \u05d1\u05de\u05e8\u05db\u05d6 \u05d4\u05d2\u05e8\u05e3, \u05d5\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d4\u05d6\u05d9\u05d6 \u05d0\u05d5\u05ea\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 annotate \u05de\u05e7\u05d1\u05dc\u05ea \u05e7\u05d5\u05d0\u05d5\u05e8\u05d3\u05d9\u05e0\u05d8\u05d5\u05ea \u05de\u05d3\u05d5\u05d9\u05e7\u05d5\u05ea \u05dc\u05de\u05d9\u05e7\u05d5\u05dd \u05d4\u05d8\u05e7\u05e1\u05d8 \u05d5\u05dc\u05e0\u05e7\u05d5\u05d3\u05ea \u05d4\u05d7\u05e5."}]}];
+</style></div><script type="application/javascript">var questionsQLukbGohuhPp=[{"question": "\u05d1\u05d2\u05e8\u05e3 \u05e9\u05d4\u05e7\u05d5\u05d3 \u05de\u05e6\u05d9\u05d9\u05e8, \u05de\u05d4\u05d5 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-x \u05e9\u05dc \u05e7\u05e6\u05d4 \u05d4\u05d7\u05e5, \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05e9\u05d4\u05d7\u05e5 \u05de\u05e6\u05d1\u05d9\u05e2 \u05e2\u05dc\u05d9\u05d4?", "type": "multiple_choice", "answers": [{"answer": "20", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: xy \u05d4\u05d5\u05d0 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05e9\u05d4\u05d7\u05e5 \u05de\u05e6\u05d1\u05d9\u05e2 \u05e2\u05dc\u05d9\u05d4, \u05d5\u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-x \u05e9\u05dc\u05d4 \u05d4\u05d5\u05d0 20."}, {"answer": "26", "correct": false, "feedback": "\u05dc\u05d0: 26 \u05d4\u05d5\u05d0 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-x \u05e9\u05dc \u05d4\u05d8\u05e7\u05e1\u05d8 (xytext), \u05d4\u05de\u05e7\u05d5\u05dd \u05e9\u05de\u05de\u05e0\u05d5 \u05d4\u05d7\u05e5 \u05d9\u05d5\u05e6\u05d0."}, {"answer": "10", "correct": false, "feedback": "\u05dc\u05d0: 10 \u05d4\u05d5\u05d0 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-y \u05e9\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4, \u05d4\u05d2\u05d5\u05d1\u05d4 \u05e9\u05dc\u05d4."}, {"answer": "8", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-y \u05e9\u05dc \u05d4\u05d8\u05e7\u05e1\u05d8."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2029,8 +2018,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("MoUauZFrddUw")) {
-    show_questions(questionsMoUauZFrddUw, MoUauZFrddUw);
+  if (document.getElementById("QLukbGohuhPp")) {
+    show_questions(questionsQLukbGohuhPp, QLukbGohuhPp);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2042,42 +2031,26 @@ function try_show() {
 }
 </script></div>
 </div>
-</section>
-<section id="id4">
-<h2><span class="section-number">8.4.4. </span>תרגול עצמי<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>צרו את הגרף עבור <span class="math notranslate nohighlight">\(\theta=30^\circ\)</span>, וסמנו עליו הן את נקודת השיא והן את נקודת הנחיתה, עם מקרא.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># theta = np.radians(30)</span>
-<span class="c1"># ...</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף: מצאו את הטעות</p>
+<p>הקוד הבא אמור לכתוב את המילה “שיא” בנקודה ‎<code class="docutils literal notranslate"><span class="pre">(26,</span> <span class="pre">8)</span></code>‎, עם חץ שמצביע על נקודת השיא ‎<code class="docutils literal notranslate"><span class="pre">(20,</span> <span class="pre">10)</span></code>‎ של אותה זריקה. הוא רץ בלי שגיאה, אבל המילה נכתבת על השיא עצמו, והחץ מצביע על מקום ריק בגרף.</p>
+<p><strong>לפני שמריצים</strong>: באילו שורות הטעות? תקנו אותה והסבירו במשפט אחד.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"שיא"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"gray"</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="n">t_peak</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-<span class="n">x_peak</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t_peak</span>
-<span class="n">y_peak</span> <span class="o">=</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$\theta=30^\circ$"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"גובה מרבי"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x_peak</span><span class="p">,</span> <span class="n">y_peak</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">x_peak</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y_peak</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
-            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-&gt;"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"נחיתה"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">R</span> <span class="o">-</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-&gt;"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<p>הטעות בשורות 3 ו-4: ‎<code class="docutils literal notranslate"><span class="pre">xy</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">xytext</span></code>‎ הוחלפו. ‎<code class="docutils literal notranslate"><span class="pre">xy</span></code>‎ היא הנקודה שהחץ מצביע עליה, ו-‎<code class="docutils literal notranslate"><span class="pre">xytext</span></code>‎ היא המקום שבו נכתב הטקסט:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"שיא"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"gray"</span><span class="p">})</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2152,7 +2125,6 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.4.1. דוגמה: סימון נקודת השיא במסלול</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.4.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.4.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.4.4. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

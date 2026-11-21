@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -631,9 +631,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">9.8.1. דוגמה: מהירות מתוך מיקום, בעזרת <code class="docutils literal notranslate"><span class="pre">diff</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff-1">9.8.2. באג נפוץ: אורך <code class="docutils literal notranslate"><span class="pre">diff</span></code> קצר ב-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumsum">9.8.3. דוגמה: מרחק כולל שהוטס, בעזרת <code class="docutils literal notranslate"><span class="pre">cumsum</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">9.8.1. דוגמה: מהירות מתוך מיקום, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff-1">9.8.2. באג נפוץ: אורך ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ קצר ב-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumsum">9.8.3. דוגמה: מרחק כולל שהוטס, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.8.4. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.8.5. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.8.6. תרגול עצמי</a></li>
@@ -652,23 +652,15 @@
 <h1><span class="section-number">9.8. </span>diff ו-cumsum — נגזרת וסכום מצטבר<a class="headerlink" href="#diff-cumsum" title="Link to this heading">#</a></h1>
 <p>עכשיו עוברים מ<strong>מבנה נתונים</strong> ל<strong>חשבון אינפיניטסימלי כקריאה לפונקציה</strong> — נגזרת ואינטגרל, כשתי פעולות NumPy על מערך:</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">np.diff(a)</span></code></strong> — ההפרש בין כל שני איברים סמוכים: קירוב לנגזרת. מערך באורך <span class="math notranslate nohighlight">\(n\)</span> נותן <code class="docutils literal notranslate"><span class="pre">diff</span></code> באורך <span class="math notranslate nohighlight">\(n-1\)</span>.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">np.cumsum(a)</span></code></strong> — סכום מצטבר: קירוב לאינטגרל (הסכום ההולך וגדל). מערך באורך <span class="math notranslate nohighlight">\(n\)</span> נותן <code class="docutils literal notranslate"><span class="pre">cumsum</span></code> <strong>גם</strong> באורך <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">np.diff(a)</span></code>‎</strong> — ההפרש בין כל שני איברים סמוכים: קירוב לנגזרת. מערך באורך <span class="math notranslate nohighlight">\(n\)</span> נותן ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ באורך <span class="math notranslate nohighlight">\(n-1\)</span>.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">np.cumsum(a)</span></code>‎</strong> — סכום מצטבר: קירוב לאינטגרל (הסכום ההולך וגדל). מערך באורך <span class="math notranslate nohighlight">\(n\)</span> נותן ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ <strong>גם</strong> באורך <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
 </ul>
-<div class="seealso admonition">
-<p class="admonition-title">🎥 כאן נכנס סרטון השבוע</p>
-<p><strong>“נגזרת ואינטגרל: diff, cumsum, trapezoid, quad, ולולאת עדכון”</strong> (כ-6–10 דקות, הקלטת מסך של המחברת עם קול). (הסרטון פרוש על סעיפים 9.8–9.10)</p>
-<!-- TODO (למפיק/ה): להחליף תא זה בהטמעת הסרטון בפועל, למשל:
-<iframe width="100%" height="400" src="VIDEO_URL_HERE" title="שבוע 9 — נגזרת ואינטגרל: diff, cumsum, trapezoid, quad, ולולאת עדכון" frameborder="0" allowfullscreen></iframe>
--->
-</div>
 <section id="diff">
-<h2><span class="section-number">9.8.1. </span>דוגמה: מהירות מתוך מיקום, בעזרת <code class="docutils literal notranslate"><span class="pre">diff</span></code><a class="headerlink" href="#diff" title="Link to this heading">#</a></h2>
-<p>יש לנו את מיקום <span class="math notranslate nohighlight">\(x(t)\)</span> של הזריקה, אבל לא נתנו לנו את הנוסחה למהירות — רק את המדידות. <code class="docutils literal notranslate"><span class="pre">np.diff</span></code> מקרב את הנגזרת: <span class="math notranslate nohighlight">\(v_x \approx \Delta x/\Delta t\)</span>.</p>
+<h2><span class="section-number">9.8.1. </span>דוגמה: מהירות מתוך מיקום, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎<a class="headerlink" href="#diff" title="Link to this heading">#</a></h2>
+<p>יש לנו את מיקום <span class="math notranslate nohighlight">\(x(t)\)</span> של הזריקה, אבל לא נתנו לנו את הנוסחה למהירות — רק את המדידות. ‎<code class="docutils literal notranslate"><span class="pre">np.diff</span></code>‎ מקרב את הנגזרת: <span class="math notranslate nohighlight">\(v_x \approx \Delta x/\Delta t\)</span>. בגרף שמתחת לתא: הנקודות הן הקירוב, והקו המקווקו הוא הערך המדויק.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
@@ -680,33 +672,37 @@
 
 <span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">vx_approx</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">/</span> <span class="n">dt</span>              <span class="c1"># אורך 59, לא 60!</span>
-<span class="n">t_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>      <span class="c1"># נקודות הזמן "בין" המדידות, כדי להתאים לאורך 59</span>
+<span class="n">vx_approx</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">/</span> <span class="n">dt</span>              <span class="c1"># length 59, not 60</span>
+<span class="n">t_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>     <span class="c1"># the times between the measurements: also 59</span>
 
-<span class="n">vx_exact</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>     <span class="c1"># קבועה, בלי חיכוך</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_mid</span><span class="p">,</span> <span class="n">vx_approx</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"קירוב מ-diff"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">vx_exact</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"ערך מדויק"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"t (s)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$v_x$ (m/s)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">vx_exact</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>    <span class="c1"># constant, no air resistance</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">vx_approx</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_mid</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/89d4881c384a332b858f5d70c081b8c6a0fa01c619086b3cc22842ce65c3a198.png" src="../../../_images/89d4881c384a332b858f5d70c081b8c6a0fa01c619086b3cc22842ce65c3a198.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60 59 59
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/00f289bb7acc18662a946f1c3020fec61eaeb5cc0c3afa50332d34cf1f699781.png" src="../../../_images/00f289bb7acc18662a946f1c3020fec61eaeb5cc0c3afa50332d34cf1f699781.png" />
 </div>
 </div>
 </section>
 <section id="diff-1">
-<h2><span class="section-number">9.8.2. </span>באג נפוץ: אורך <code class="docutils literal notranslate"><span class="pre">diff</span></code> קצר ב-1<a class="headerlink" href="#diff-1" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">np.diff(x)</span></code> על מערך באורך 60 מחזיר מערך באורך <strong>59</strong> — לא 60. אם מנסים לצייר אותו ישירות מול <code class="docutils literal notranslate"><span class="pre">t</span></code> המקורי (גם באורך 60), מקבלים שגיאת אי-התאמת צורה (<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>), או גרוע מזה — אם משתמשים ב-<code class="docutils literal notranslate"><span class="pre">t[:-1]</span></code> בהיסח הדעת, מקבלים ציר זמן ש”מוזז” בחצי צעד ביחס למה שהמהירות באמת מייצגת (ראו <code class="docutils literal notranslate"><span class="pre">t_mid</span></code> בדוגמה למעלה, שזה בדיוק הפתרון הנכון).</p>
+<h2><span class="section-number">9.8.2. </span>באג נפוץ: אורך ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ קצר ב-1<a class="headerlink" href="#diff-1" title="Link to this heading">#</a></h2>
+<p>‎<code class="docutils literal notranslate"><span class="pre">np.diff(x)</span></code>‎ על מערך באורך 60 מחזיר מערך באורך <strong>59</strong>, לא 60. ציור שלו מול ‎<code class="docutils literal notranslate"><span class="pre">t</span></code>‎ המקורי, שאורכו 60, נעצר בשגיאה:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ValueError: x and y must have same first dimension, but have shapes (60,) and (59,)
+</pre></div>
+</div>
+<p>גרוע מזה: אם משתמשים בהיסח הדעת ב-‎<code class="docutils literal notranslate"><span class="pre">t[:-1]</span></code>‎, האורכים מתאימים ואין שגיאה, אבל ציר הזמן מוזז בחצי צעד ביחס למה שהמהירות מייצגת. ‎<code class="docutils literal notranslate"><span class="pre">t_mid</span></code>‎ שבדוגמה הוא הפתרון הנכון.</p>
 </section>
 <section id="cumsum">
-<h2><span class="section-number">9.8.3. </span>דוגמה: מרחק כולל שהוטס, בעזרת <code class="docutils literal notranslate"><span class="pre">cumsum</span></code><a class="headerlink" href="#cumsum" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code> על גודל המהירות, כפול צעד הזמן, נותן קירוב למרחק המצטבר שנסע הגוף (לא רק הטווח האופקי הסופי — האורך <strong>לאורך המסלול</strong>).</p>
+<h2><span class="section-number">9.8.3. </span>דוגמה: מרחק כולל שהוטס, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎<a class="headerlink" href="#cumsum" title="Link to this heading">#</a></h2>
+<p>‎<code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code>‎ על גודל המהירות, כפול צעד הזמן, נותן קירוב למרחק המצטבר שנסע הגוף (לא רק הטווח האופקי הסופי — האורך <strong>לאורך המסלול</strong>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
@@ -715,75 +711,65 @@
 <span class="n">speed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">vy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">dt_uniform</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">distance_traveled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">speed</span> <span class="o">*</span> <span class="n">dt_uniform</span><span class="p">)</span>   <span class="c1"># shape (60,) - אותו אורך כמו t</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">distance_traveled</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"t (s)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Cumulative distance along the path (m)"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">distance_traveled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">speed</span> <span class="o">*</span> <span class="n">dt_uniform</span><span class="p">)</span>   <span class="c1"># same length as t</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distance_traveled</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/862dc7fe8f88d05ef139d563c31a0172e31b31fabb5bfff968c7500fa473ba09.png" src="../../../_images/862dc7fe8f88d05ef139d563c31a0172e31b31fabb5bfff968c7500fa473ba09.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47.82983706703718
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/3773830953d7725a3a9b32ca599f077598bf98a9afb6e13de5dd02cd0c4bc00d.png" src="../../../_images/3773830953d7725a3a9b32ca599f077598bf98a9afb6e13de5dd02cd0c4bc00d.png" />
 </div>
 </div>
 </section>
 <section id="id1">
 <h2><span class="section-number">9.8.4. </span>נסו בעצמכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>חשבו את התאוצה המקורבת <span class="math notranslate nohighlight">\(a_y\approx \Delta v_y/\Delta t\)</span> מתוך <code class="docutils literal notranslate"><span class="pre">vy</span></code> שחושב למעלה, בעזרת <code class="docutils literal notranslate"><span class="pre">np.diff</span></code>, והשוו לערך המדויק <code class="docutils literal notranslate"><span class="pre">-g</span></code>.</p>
-<div class="cell docutils container">
+<p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">acceleration</span></code>‎, שמקבלת מהירויות ואת זמני המדידה, ומחזירה את התאוצה המקורבת <span class="math notranslate nohighlight">\(a\approx\Delta v/\Delta t\)</span> בכל מרווח. בדקו אותה על הדוגמה שבתא, ואחר כך על ‎<code class="docutils literal notranslate"><span class="pre">vy</span></code>‎ מהדוגמה: התוצאה צריכה להיות קרובה ל-<span class="math notranslate nohighlight">\(-g\)</span>.</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ay_approx = np.diff(vy) / np.diff(t)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">acceleration</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Approximate acceleration (m/s^2) in each interval: one fewer than v."""</span>
+    <span class="k">pass</span>   <span class="c1"># replace with your code</span>
+
+<span class="n">v_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">])</span>
+<span class="n">t_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">acceleration</span><span class="p">(</span><span class="n">v_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>
+<span class="c1"># expected: [-10. -10.]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ay_approx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">vy</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ay_approx</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>       <span class="c1"># אמור להיות קרוב מאוד ל- -9.8 בכל מקום</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">ay_approx</span><span class="p">,</span> <span class="o">-</span><span class="n">g</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">acceleration</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Approximate acceleration (m/s^2) in each interval: one fewer than v."""</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">acceleration</span><span class="p">(</span><span class="n">v_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>   <span class="c1"># [-10. -10.]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">acceleration</span><span class="p">(</span><span class="n">vy</span><span class="p">,</span> <span class="n">t</span><span class="p">)[:</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
+<p>שלוש מהירויות נותנות שני מרווחים, ולכן שתי תאוצות. ב-‎<code class="docutils literal notranslate"><span class="pre">vy</span></code>‎ של הדוגמה המהירות יורדת קווית, ולכן כל התאוצות שוות ל-<span class="math notranslate nohighlight">\(-g\)</span>.</p>
 </div>
 </section>
 <section id="id2">
 <h2><span class="section-number">9.8.5. </span>בדקו את עצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"אם &lt;code&gt;a&lt;/code&gt; באורך 100, מה אורך &lt;code&gt;np.diff(a)&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"99"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון — יש 99 הפרשים בין 100 איברים סמוכים."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"100"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — diff מקצר את המערך באחד."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"101"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"50"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — diff מקצר את המערך רק באחד, לא בחצי."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מה אורך &lt;code&gt;np.cumsum(a)&lt;/code&gt; עבור &lt;code&gt;a&lt;/code&gt; באורך 100?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"99, כמו diff"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — cumsum לא מקצר את המערך."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"100 - אותו אורך כמו a"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון — לכל איבר יש סכום מצטבר עד אותו מקום."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"1 - רק הסכום הסופי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"זה מה ש-np.sum (בלי cum) מחזיר, לא cumsum."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"101"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — cumsum לא מוסיף איברים; האורך נשאר בדיוק כמו של a."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<p>שתי השאלות מתייחסות לקוד הבא:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>      <span class="c1"># line A</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>    <span class="c1"># line B</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="cyhUNuEBcVGE" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#cyhUNuEBcVGE {
+<div class="output text_html"><div id="oElddWMPdtQI" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#oElddWMPdtQI {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1006,7 +992,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionscyhUNuEBcVGE=[{"question": "\u05d0\u05dd <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100, \u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.diff(a)</code>?", "type": "multiple_choice", "answers": [{"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 99 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd \u05d1\u05d9\u05df 100 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e1\u05de\u05d5\u05db\u05d9\u05dd."}, {"answer": "100", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d1\u05d0\u05d7\u05d3."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "50", "correct": false, "feedback": "\u05dc\u05d0 \u2014 diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05e8\u05e7 \u05d1\u05d0\u05d7\u05d3, \u05dc\u05d0 \u05d1\u05d7\u05e6\u05d9."}]}, {"question": "\u05de\u05d4 \u05d0\u05d5\u05e8\u05da <code>np.cumsum(a)</code> \u05e2\u05d1\u05d5\u05e8 <code>a</code> \u05d1\u05d0\u05d5\u05e8\u05da 100?", "type": "multiple_choice", "answers": [{"answer": "99, \u05db\u05de\u05d5 diff", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da."}, {"answer": "100 - \u05d0\u05d5\u05ea\u05d5 \u05d0\u05d5\u05e8\u05da \u05db\u05de\u05d5 a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05dc\u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d9\u05e9 \u05e1\u05db\u05d5\u05dd \u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d0\u05d5\u05ea\u05d5 \u05de\u05e7\u05d5\u05dd."}, {"answer": "1 - \u05e8\u05e7 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05e1\u05d5\u05e4\u05d9", "correct": false, "feedback": "\u05d6\u05d4 \u05de\u05d4 \u05e9-np.sum (\u05d1\u05dc\u05d9 cum) \u05de\u05d7\u05d6\u05d9\u05e8, \u05dc\u05d0 cumsum."}, {"answer": "101", "correct": false, "feedback": "\u05dc\u05d0 \u2014 cumsum \u05dc\u05d0 \u05de\u05d5\u05e1\u05d9\u05e3 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd; \u05d4\u05d0\u05d5\u05e8\u05da \u05e0\u05e9\u05d0\u05e8 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05db\u05de\u05d5 \u05e9\u05dc a."}]}];
+</style></div><script type="application/javascript">var questionsoElddWMPdtQI=[{"question": "\u05db\u05de\u05d4 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "3", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d1\u05d9\u05df 4 \u05e2\u05e8\u05db\u05d9\u05dd \u05d9\u05e9 3 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd: 3, 5 \u05d5-7."}, {"answer": "4", "correct": false, "feedback": "\u05dc\u05d0: diff \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05d4\u05e4\u05e8\u05e9\u05d9\u05dd \u05d1\u05d9\u05df \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05de\u05d5\u05db\u05d9\u05dd, \u05d5\u05d9\u05e9 \u05d0\u05d7\u05d3 \u05e4\u05d7\u05d5\u05ea \u05de\u05d4\u05dd."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d1\u05d0\u05d7\u05d3 \u05d1\u05dc\u05d1\u05d3."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e4\u05e8\u05e9 \u05d1\u05d5\u05d3\u05d3 \u05d1\u05d9\u05df \u05d4\u05e2\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05dc\u05d0\u05d7\u05e8\u05d5\u05df \u05dc\u05d0 \u05de\u05d7\u05d5\u05e9\u05d1 \u05db\u05d0\u05df."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "14.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d4\u05d5\u05d0 1 \u05d5\u05e2\u05d5\u05d3 4 \u05d5\u05e2\u05d5\u05d3 9."}, {"answer": "9.0", "correct": false, "feedback": "\u05dc\u05d0: 9.0 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e2\u05e6\u05de\u05d5; cumsum \u05de\u05d7\u05d1\u05e8 \u05d0\u05ea \u05db\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e2\u05d3 \u05d0\u05dc\u05d9\u05d5."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9, 1 \u05d5\u05e2\u05d5\u05d3 4."}, {"answer": "30.0", "correct": false, "feedback": "\u05dc\u05d0: 30.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc \u05db\u05dc \u05d0\u05e8\u05d1\u05e2\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2068,8 +2054,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("cyhUNuEBcVGE")) {
-    show_questions(questionscyhUNuEBcVGE, cyhUNuEBcVGE);
+  if (document.getElementById("oElddWMPdtQI")) {
+    show_questions(questionsoElddWMPdtQI, oElddWMPdtQI);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2084,7 +2070,7 @@ function try_show() {
 </section>
 <section id="id3">
 <h2><span class="section-number">9.8.6. </span>תרגול עצמי<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>חשבו מהו הטווח האופקי הכולל בעזרת <code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code> על <code class="docutils literal notranslate"><span class="pre">vx</span></code> (כפול <code class="docutils literal notranslate"><span class="pre">dt_uniform</span></code>), והשוו לערך התיאורטי <span class="math notranslate nohighlight">\(R=v_0^2\sin(2\theta)/g\)</span>.</p>
+<p>חשבו מהו הטווח האופקי הכולל בעזרת ‎<code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code>‎ על ‎<code class="docutils literal notranslate"><span class="pre">vx</span></code>‎ (כפול ‎<code class="docutils literal notranslate"><span class="pre">dt_uniform</span></code>‎), והשוו לערך התיאורטי <span class="math notranslate nohighlight">\(R=v_0^2\sin(2\theta)/g\)</span>. מה ההפרש ביניהם, ומאיפה הוא בא?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x_cumsum = np.cumsum(vx * dt_uniform)</span>
@@ -2100,8 +2086,10 @@ function try_show() {
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"קירוב cumsum:"</span><span class="p">,</span> <span class="n">x_cumsum</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"תיאוריה:"</span><span class="p">,</span> <span class="n">R_theory</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"59 מרווחים:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">vx</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt_uniform</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
+<p>הסכום המצטבר יוצא כ-41.5 מטרים, כ-0.7 מטר יותר מהתיאוריה (40.8). הסיבה: ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ מחבר 60 פרוסות של ‎<code class="docutils literal notranslate"><span class="pre">dt_uniform</span></code>‎, אבל בין 60 נקודות זמן יש רק 59 מרווחים, כך שהמעוף “מתארך” בצעד אחד. סכום של 59 פרוסות בלבד נותן את הערך התיאורטי.</p>
 </div>
 </section>
 </section>
@@ -2172,9 +2160,9 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">9.8.1. דוגמה: מהירות מתוך מיקום, בעזרת <code class="docutils literal notranslate"><span class="pre">diff</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff-1">9.8.2. באג נפוץ: אורך <code class="docutils literal notranslate"><span class="pre">diff</span></code> קצר ב-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumsum">9.8.3. דוגמה: מרחק כולל שהוטס, בעזרת <code class="docutils literal notranslate"><span class="pre">cumsum</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">9.8.1. דוגמה: מהירות מתוך מיקום, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff-1">9.8.2. באג נפוץ: אורך ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ קצר ב-1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumsum">9.8.3. דוגמה: מרחק כולל שהוטס, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.8.4. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.8.5. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.8.6. תרגול עצמי</a></li>

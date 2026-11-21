@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -631,9 +631,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">9.4.1. דוגמה: איחוד ריצות נפרדות ל-<code class="docutils literal notranslate"><span class="pre">stack</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate">9.4.2. דוגמה: הוספת ריצה חדשה עם <code class="docutils literal notranslate"><span class="pre">concatenate</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.4.3. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">stack</span></code> במקום <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> (או להפך)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">9.4.1. דוגמה: איחוד ריצות נפרדות ל-‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate">9.4.2. דוגמה: הוספת ריצה חדשה עם ‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.4.3. באג נפוץ: ‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎ במקום ‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎ (או להפך)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4.4. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.4.5. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4.6. תרגול עצמי</a></li>
@@ -650,12 +650,12 @@
                   
   <section id="stack-concatenate">
 <h1><span class="section-number">9.4. </span>stack ו-concatenate — לאחד ריצות<a class="headerlink" href="#stack-concatenate" title="Link to this heading">#</a></h1>
-<p>בסעיף 9.1 בנינו את <code class="docutils literal notranslate"><span class="pre">Y</span></code> בלולאה מפורשת. בפועל, כשיש כבר כמה מערכים חד-ממדיים נפרדים (למשל, ריצה שנמדדה בנפרד בכל פעם), משלבים אותם עם:</p>
+<p>בסעיף 9.1 בנינו את ‎<code class="docutils literal notranslate"><span class="pre">Y</span></code>‎ בלולאה מפורשת. בפועל, כשיש כבר כמה מערכים חד-ממדיים נפרדים (למשל, ריצה שנמדדה בנפרד בכל פעם), משלבים אותם עם:</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">np.stack([a1,</span> <span class="pre">a2,</span> <span class="pre">...])</span></code></strong> — יוצר <strong>ציר חדש</strong> ומניח את כל המערכים זה לצד זה עליו. אם כל <code class="docutils literal notranslate"><span class="pre">a_i</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(60,)</span></code>, ו-5 מהם, <code class="docutils literal notranslate"><span class="pre">np.stack</span></code> נותן <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code>.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">np.concatenate([a1,</span> <span class="pre">a2,</span> <span class="pre">...])</span></code></strong> — מחבר לאורך ציר <strong>קיים</strong>, בלי ליצור ציר חדש. שני מערכים בצורה <code class="docutils literal notranslate"><span class="pre">(60,)</span></code> נותנים מערך אחד בצורה <code class="docutils literal notranslate"><span class="pre">(120,)</span></code>.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">np.stack([a1,</span> <span class="pre">a2,</span> <span class="pre">...])</span></code>‎</strong> — יוצר <strong>ציר חדש</strong> ומניח את כל המערכים זה לצד זה עליו. אם כל ‎<code class="docutils literal notranslate"><span class="pre">a_i</span></code>‎ בצורה ‎<code class="docutils literal notranslate"><span class="pre">(60,)</span></code>‎, ו-5 מהם, ‎<code class="docutils literal notranslate"><span class="pre">np.stack</span></code>‎ נותן ‎<code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code>‎.</p></li>
+<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">np.concatenate([a1,</span> <span class="pre">a2,</span> <span class="pre">...])</span></code>‎</strong> — מחבר לאורך ציר <strong>קיים</strong>, בלי ליצור ציר חדש. שני מערכים בצורה ‎<code class="docutils literal notranslate"><span class="pre">(60,)</span></code>‎ נותנים מערך אחד בצורה ‎<code class="docutils literal notranslate"><span class="pre">(120,)</span></code>‎.</p></li>
 </ul>
-<p>ההבדל הזה בדיוק: <code class="docutils literal notranslate"><span class="pre">stack</span></code> מוסיף ממד, <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> לא.</p>
+<p>ההבדל הזה בדיוק: ‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎ מוסיף ממד, ‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎ לא.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -663,29 +663,28 @@
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
 <span class="n">v0_nom</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="n">t_flight_nom</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0_nom</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight_nom</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>   <span class="c1"># the same time grid for every run</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">make_run</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">n_t</span><span class="o">=</span><span class="mi">60</span><span class="p">):</span>
-    <span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0_nom</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="n">n_t</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">height</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Height (m) of one run with launch speed v0 (m/s), at the times t (s)."""</span>
+    <span class="k">return</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="stack">
-<h2><span class="section-number">9.4.1. </span>דוגמה: איחוד ריצות נפרדות ל-<code class="docutils literal notranslate"><span class="pre">stack</span></code><a class="headerlink" href="#stack" title="Link to this heading">#</a></h2>
-<p>נניח שכל ריצה נמדדה בנפרד (כמו קובץ נתונים משלה), וקיבלנו 5 מערכי גובה נפרדים. <code class="docutils literal notranslate"><span class="pre">np.stack</span></code> מאחד אותם למערך “ריצה × זמן” אחד.</p>
+<h2><span class="section-number">9.4.1. </span>דוגמה: איחוד ריצות נפרדות ל-‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎<a class="headerlink" href="#stack" title="Link to this heading">#</a></h2>
+<p>נניח שכל ריצה נמדדה בנפרד (כמו קובץ נתונים משלה), וקיבלנו 5 מערכי גובה נפרדים. ‎<code class="docutils literal notranslate"><span class="pre">np.stack</span></code>‎ מאחד אותם למערך “ריצה × זמן” אחד.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">v0_runs</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">v0_nom</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v0_runs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">18.0</span><span class="p">,</span> <span class="mf">19.5</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">20.5</span><span class="p">,</span> <span class="mf">22.0</span><span class="p">])</span>   <span class="c1"># launch speeds (m/s)</span>
 
-<span class="n">t</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">make_run</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">make_run</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">make_run</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">y3</span> <span class="o">=</span> <span class="n">make_run</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">y4</span> <span class="o">=</span> <span class="n">make_run</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="n">height</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">height</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">height</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="n">height</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">y4</span> <span class="o">=</span> <span class="n">height</span><span class="p">(</span><span class="n">v0_runs</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">t</span><span class="p">)</span>
 
 <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">y4</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Y.shape:"</span><span class="p">,</span> <span class="n">Y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (5, 60)</span>
@@ -700,15 +699,16 @@
 </div>
 </section>
 <section id="concatenate">
-<h2><span class="section-number">9.4.2. </span>דוגמה: הוספת ריצה חדשה עם <code class="docutils literal notranslate"><span class="pre">concatenate</span></code><a class="headerlink" href="#concatenate" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.4.2. </span>דוגמה: הוספת ריצה חדשה עם ‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎<a class="headerlink" href="#concatenate" title="Link to this heading">#</a></h2>
 <p>בוצעה ריצה שישית. במקום לבנות הכול מחדש, מוסיפים אותה לאורך ציר הריצות הקיים.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v0_new</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">v0_nom</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">y_new</span> <span class="o">=</span> <span class="n">make_run</span><span class="p">(</span><span class="n">v0_new</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v0_new</span> <span class="o">=</span> <span class="mf">21.0</span>                 <span class="c1"># the launch speed of the sixth run (m/s)</span>
+<span class="n">y_new</span> <span class="o">=</span> <span class="n">height</span><span class="p">(</span><span class="n">v0_new</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 
-<span class="n">Y_extended</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">Y</span><span class="p">,</span> <span class="n">y_new</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]])</span>   <span class="c1"># y_new[None, :] הופך אותו לצורה (1, 60) - נעמיק ב-None בסעיף 9.6</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Y_extended.shape:"</span><span class="p">,</span> <span class="n">Y_extended</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (6, 60)</span>
+<span class="c1"># y_new[None, :] has shape (1, 60); None is explained in 9.6</span>
+<span class="n">Y_extended</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">Y</span><span class="p">,</span> <span class="n">y_new</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Y_extended.shape:"</span><span class="p">,</span> <span class="n">Y_extended</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>       <span class="c1"># (6, 60)</span>
 </pre></div>
 </div>
 </div>
@@ -720,60 +720,45 @@
 </div>
 </section>
 <section id="id1">
-<h2><span class="section-number">9.4.3. </span>באג נפוץ: <code class="docutils literal notranslate"><span class="pre">stack</span></code> במקום <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> (או להפך)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">np.stack([Y,</span> <span class="pre">y_new])</span></code> <strong>לא</strong> יעבוד ישירות כאן — <code class="docutils literal notranslate"><span class="pre">Y</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code> ו-<code class="docutils literal notranslate"><span class="pre">y_new</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(60,)</span></code> אינם “אותה צורה”, וזו בדיוק הדרישה של <code class="docutils literal notranslate"><span class="pre">stack</span></code>. השגיאה כאן <strong>כן</strong> מופיעה (<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>), בניגוד לבאגי הצירים השקטים שראינו — אבל כדאי לזהות אותה מייד: הפתרון הוא <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> עם <code class="docutils literal notranslate"><span class="pre">[None,</span> <span class="pre">:]</span></code>, לא <code class="docutils literal notranslate"><span class="pre">stack</span></code>.</p>
+<h2><span class="section-number">9.4.3. </span>באג נפוץ: ‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎ במקום ‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎ (או להפך)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>‎<code class="docutils literal notranslate"><span class="pre">np.stack([Y,</span> <span class="pre">y_new])</span></code>‎ <strong>לא</strong> יעבוד ישירות כאן — ‎<code class="docutils literal notranslate"><span class="pre">Y</span></code>‎ בצורה ‎<code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">y_new</span></code>‎ בצורה ‎<code class="docutils literal notranslate"><span class="pre">(60,)</span></code>‎ אינם “אותה צורה”, וזו בדיוק הדרישה של ‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎. השגיאה כאן <strong>כן</strong> מופיעה (‎<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>‎), בניגוד לבאגי הצירים השקטים שראינו — אבל כדאי לזהות אותה מייד: הפתרון הוא ‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎ עם ‎<code class="docutils literal notranslate"><span class="pre">[None,</span> <span class="pre">:]</span></code>‎, לא ‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎.</p>
 </section>
 <section id="id2">
 <h2><span class="section-number">9.4.4. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>בנו מערך <code class="docutils literal notranslate"><span class="pre">XY</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60,</span> <span class="pre">2)</span></code> (ריצה, זמן, קואורדינטה) מתוך <code class="docutils literal notranslate"><span class="pre">Y</span></code> (הגבהים) ומתוך מערך <code class="docutils literal notranslate"><span class="pre">X</span></code> דומה שתבנו לבד לקואורדינטת ה-<span class="math notranslate nohighlight">\(x\)</span>, בעזרת <code class="docutils literal notranslate"><span class="pre">np.stack</span></code> עם <code class="docutils literal notranslate"><span class="pre">axis=-1</span></code>.</p>
-<div class="cell docutils container">
+<p>לכל ריצה יש שתי קואורדינטות, <span class="math notranslate nohighlight">\(x\)</span> ו-<span class="math notranslate nohighlight">\(y\)</span>. הקוד בתא הבא מחבר אותן עם ‎<code class="docutils literal notranslate"><span class="pre">axis=-1</span></code>‎, כלומר עם ציר חדש <strong>בסוף</strong>.</p>
+<p><strong>לפני שמריצים:</strong> כתבו מה תדפיס שורת ההדפסה. כמה שורות יהיו, וכמה מספרים בכל שורה?</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># X = np.stack([...])  # בנו בדומה ל-Y, עם cos במקום sin</span>
-<span class="c1"># XY = np.stack([X, Y], axis=?)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>   <span class="c1"># x (m) at three times</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>   <span class="c1"># y (m) at the same times</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">v0_i</span> <span class="ow">in</span> <span class="n">v0_runs</span><span class="p">:</span>
-    <span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0_nom</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-    <span class="n">xs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v0_i</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
-
-<span class="n">XY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">XY</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (5, 60, 2)</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[[0.  0. ]
+ [1.  1.5]
+ [2.  2. ]]
 </pre></div>
 </div>
+<p>שלוש שורות, אחת לכל זמן, ובכל שורה שני מספרים: ה-<span class="math notranslate nohighlight">\(x\)</span> וה-<span class="math notranslate nohighlight">\(y\)</span> של אותו זמן. עם ‎<code class="docutils literal notranslate"><span class="pre">axis=-1</span></code>‎ הציר החדש, ציר הקואורדינטה, נוסף בסוף, ולכן הצורה היא ‎<code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">2)</span></code>‎. בלי ‎<code class="docutils literal notranslate"><span class="pre">axis</span></code>‎ היינו מקבלים את <span class="math notranslate nohighlight">\(x\)</span> ואת <span class="math notranslate nohighlight">\(y\)</span> כשתי שורות, בצורה ‎<code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">3)</span></code>‎.</p>
 </div>
 </section>
 <section id="id3">
 <h2><span class="section-number">9.4.5. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"יש 4 מערכים בצורה &lt;code&gt;(60,)&lt;/code&gt;. מה תחזיר &lt;code&gt;np.stack([a, b, c, d])&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"מערך בצורה (4, 60)"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון — stack יוצר ציר חדש."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"מערך בצורה (240,)"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"זו תוצאת concatenate, לא stack."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"שגיאה, כי אי אפשר לחבר 4 מערכים"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — זה בדיוק מקרה השימוש הנפוץ ביותר של stack."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"מערך בצורה (60, 4)"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — stack מוסיף את ציר הקיבוץ החדש כברירת מחדל בתור הציר הראשון (axis=0), כך שהצורה היא (4, 60), לא (60, 4)."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<p>שתי השאלות מתייחסות לקוד הבא:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>   <span class="c1"># run 1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span>   <span class="c1"># run 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]))</span>   <span class="c1"># line A</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]))</span>         <span class="c1"># line B</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="JTKsUDElumUy" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#JTKsUDElumUy {
+<div class="output text_html"><div id="AcpsKOwyxHTT" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#AcpsKOwyxHTT {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -996,7 +981,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsJTKsUDElumUy=[{"question": "\u05d9\u05e9 4 \u05de\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05e6\u05d5\u05e8\u05d4 <code>(60,)</code>. \u05de\u05d4 \u05ea\u05d7\u05d6\u05d9\u05e8 <code>np.stack([a, b, c, d])</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (4, 60)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 stack \u05d9\u05d5\u05e6\u05e8 \u05e6\u05d9\u05e8 \u05d7\u05d3\u05e9."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (240,)", "correct": false, "feedback": "\u05d6\u05d5 \u05ea\u05d5\u05e6\u05d0\u05ea concatenate, \u05dc\u05d0 stack."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4, \u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d7\u05d1\u05e8 4 \u05de\u05e2\u05e8\u05db\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05de\u05e7\u05e8\u05d4 \u05d4\u05e9\u05d9\u05de\u05d5\u05e9 \u05d4\u05e0\u05e4\u05d5\u05e5 \u05d1\u05d9\u05d5\u05ea\u05e8 \u05e9\u05dc stack."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (60, 4)", "correct": false, "feedback": "\u05dc\u05d0 \u2014 stack \u05de\u05d5\u05e1\u05d9\u05e3 \u05d0\u05ea \u05e6\u05d9\u05e8 \u05d4\u05e7\u05d9\u05d1\u05d5\u05e5 \u05d4\u05d7\u05d3\u05e9 \u05db\u05d1\u05e8\u05d9\u05e8\u05ea \u05de\u05d7\u05d3\u05dc \u05d1\u05ea\u05d5\u05e8 \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df (axis=0), \u05db\u05da \u05e9\u05d4\u05e6\u05d5\u05e8\u05d4 \u05d4\u05d9\u05d0 (4, 60), \u05dc\u05d0 (60, 4)."}]}];
+</style></div><script type="application/javascript">var questionsAcpsKOwyxHTT=[{"question": "\u05db\u05de\u05d4 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "6", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: concatenate \u05de\u05d7\u05d1\u05e8 \u05d0\u05ea \u05e9\u05e0\u05d9 \u05d4\u05de\u05e2\u05e8\u05db\u05d9\u05dd \u05dc\u05d0\u05d5\u05e8\u05da \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e7\u05d9\u05d9\u05dd, 3 \u05d5\u05e2\u05d5\u05d3 3."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: concatenate \u05dc\u05d0 \u05de\u05d7\u05dc\u05d9\u05e3 \u05de\u05e2\u05e8\u05da \u05d0\u05d7\u05d3 \u05d1\u05e9\u05e0\u05d9, \u05d4\u05d5\u05d0 \u05de\u05e6\u05e8\u05e3 \u05d0\u05d5\u05ea\u05dd."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05de\u05e2\u05e8\u05db\u05d9\u05dd, \u05dc\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd."}, {"answer": "9", "correct": false, "feedback": "\u05dc\u05d0: \u05d9\u05e9 \u05e8\u05e7 6 \u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05e9\u05e0\u05d9 \u05d4\u05de\u05e2\u05e8\u05db\u05d9\u05dd \u05d9\u05d7\u05d3."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "4.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: stack \u05e9\u05dd \u05db\u05dc \u05e8\u05d9\u05e6\u05d4 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05de\u05e9\u05dc\u05d4, \u05d5\u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2.0 \u05d4\u05d5\u05d0 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05dc \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4, \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4."}, {"answer": "2.5", "correct": false, "feedback": "\u05dc\u05d0: 2.5 \u05d4\u05d5\u05d0 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05de\u05e6\u05e2\u05d9 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4."}, {"answer": "0.0", "correct": false, "feedback": "\u05dc\u05d0: 0.0 \u05d4\u05d5\u05d0 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05db\u05dc \u05e9\u05d5\u05e8\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2058,8 +2043,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("JTKsUDElumUy")) {
-    show_questions(questionsJTKsUDElumUy, JTKsUDElumUy);
+  if (document.getElementById("AcpsKOwyxHTT")) {
+    show_questions(questionsAcpsKOwyxHTT, AcpsKOwyxHTT);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2074,24 +2059,33 @@ function try_show() {
 </section>
 <section id="id4">
 <h2><span class="section-number">9.4.6. </span>תרגול עצמי<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>יש לכם <code class="docutils literal notranslate"><span class="pre">Y</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">60)</span></code> ורוצים לחבר אליו <strong>שתי</strong> ריצות נוספות בבת אחת (לא אחת בכל פעם). בנו את שתי הריצות החדשות כמערך <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">60)</span></code> (עם <code class="docutils literal notranslate"><span class="pre">np.stack</span></code>), ואז השתמשו ב-<code class="docutils literal notranslate"><span class="pre">np.concatenate</span></code> כדי לקבל מערך סופי בצורה <code class="docutils literal notranslate"><span class="pre">(7,</span> <span class="pre">60)</span></code>.</p>
-<div class="cell docutils container">
+<p>בתא הבא ‎<code class="docutils literal notranslate"><span class="pre">Y2</span></code>‎ מכיל שתי ריצות, ו-‎<code class="docutils literal notranslate"><span class="pre">c</span></code>‎ ריצה שלישית.</p>
+<p><strong>לפני שמריצים:</strong> מה תדפיס השורה הראשונה? ומה יקרה בשורה האחרונה?</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># v0_new2 = rng.normal(v0_nom, 1.0, size=2)</span>
-<span class="c1"># ...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span>
+<span class="n">Y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>                 <span class="c1"># two runs: shape (2, 3)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">])</span>         <span class="c1"># a third run</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">Y2</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">Y2</span><span class="p">,</span> <span class="n">c</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v0_new2</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">v0_nom</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">new_runs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">make_run</span><span class="p">(</span><span class="n">v</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">v0_new2</span><span class="p">])</span>   <span class="c1"># (2, 60)</span>
-
-<span class="n">Y_final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">Y</span><span class="p">,</span> <span class="n">new_runs</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Y_final</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (7, 60)</span>
+<p>השורה הראשונה מדפיסה שלוש ריצות, אחת בכל שורה:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[[0.  1.5 2. ]
+ [0.  2.5 4. ]
+ [0.  3.5 6. ]]
 </pre></div>
 </div>
+<p>‎<code class="docutils literal notranslate"><span class="pre">c[None,</span> <span class="pre">:]</span></code>‎ הופך את ‎<code class="docutils literal notranslate"><span class="pre">c</span></code>‎ לצורה ‎<code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">3)</span></code>‎, ו-‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎ מוסיף אותו לאורך ציר הריצות הקיים. השורה האחרונה נעצרת בשגיאה:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ValueError: all input arrays must have the same shape
+</pre></div>
+</div>
+<p>‎<code class="docutils literal notranslate"><span class="pre">np.stack</span></code>‎ דורש מערכים באותה צורה, ו-‎<code class="docutils literal notranslate"><span class="pre">Y2</span></code>‎ בצורה ‎<code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">3)</span></code>‎, בעוד ‎<code class="docutils literal notranslate"><span class="pre">c</span></code>‎ בצורה ‎<code class="docutils literal notranslate"><span class="pre">(3,)</span></code>‎.</p>
 </div>
 </section>
 </section>
@@ -2162,9 +2156,9 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">9.4.1. דוגמה: איחוד ריצות נפרדות ל-<code class="docutils literal notranslate"><span class="pre">stack</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate">9.4.2. דוגמה: הוספת ריצה חדשה עם <code class="docutils literal notranslate"><span class="pre">concatenate</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.4.3. באג נפוץ: <code class="docutils literal notranslate"><span class="pre">stack</span></code> במקום <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> (או להפך)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">9.4.1. דוגמה: איחוד ריצות נפרדות ל-‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate">9.4.2. דוגמה: הוספת ריצה חדשה עם ‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.4.3. באג נפוץ: ‎<code class="docutils literal notranslate"><span class="pre">stack</span></code>‎ במקום ‎<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>‎ (או להפך)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4.4. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.4.5. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4.6. תרגול עצמי</a></li>

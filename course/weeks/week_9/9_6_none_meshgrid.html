@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.6. None ו-meshgrid (כלל 4) &#8212; Computers For physics</title>
+    <title>9.6. הוספת ציר עם None (כלל 4) &#8212; Computers For physics</title>
   
   
   
@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -621,7 +621,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>None ו-meshgrid (כלל 4)</h1>
+    <h1>הוספת ציר עם None (כלל 4)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -631,10 +631,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meshgrid">9.6.1. דוגמה: בניית רשת דו-ממדית עם <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.6.2. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.6.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.6.4. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.6.1. דוגמה: טבלת טווחים לכל מהירות ולכל זווית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.6.2. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.6.3. בדקו את עצמכם</a></li>
 </ul>
             </nav>
         </div>
@@ -646,97 +645,101 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="none-meshgrid-4">
-<h1><span class="section-number">9.6. </span>None ו-meshgrid (כלל 4)<a class="headerlink" href="#none-meshgrid-4" title="Link to this heading">#</a></h1>
-<p>בסעיף הקודם השתמשנו כבר ב-<code class="docutils literal notranslate"><span class="pre">v0_runs[:,</span> <span class="pre">None]</span></code> בלי להסביר לעומק. הגיע הזמן לכלל הרביעי:</p>
+  <section id="none-4">
+<h1><span class="section-number">9.6. </span>הוספת ציר עם None (כלל 4)<a class="headerlink" href="#none-4" title="Link to this heading">#</a></h1>
+<p>בסעיף הקודם השתמשנו כבר ב-‎<code class="docutils literal notranslate"><span class="pre">v0_runs[:,</span> <span class="pre">None]</span></code>‎ בלי להסביר לעומק. הגיע הזמן לכלל הרביעי:</p>
 <div class="tip admonition">
 <p class="admonition-title">כלל 4 — None</p>
-<p><code class="docutils literal notranslate"><span class="pre">None</span></code> בתוך פריסה מוסיף <strong>ציר חדש בגודל 1</strong> במיקום הזה — כלומר “המערך הזה קבוע (לא משתנה) לאורך הציר החדש”.</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">None</span></code>‎ בתוך פריסה מוסיף <strong>ציר חדש בגודל 1</strong> במיקום הזה — כלומר “המערך הזה קבוע (לא משתנה) לאורך הציר החדש”.</p>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">v0_runs[:,</span> <span class="pre">None]</span></code> הופך <code class="docutils literal notranslate"><span class="pre">(5,)</span></code> ל-<code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">1)</span></code>: “לכל אחת מ-5 הריצות, יש עמודה אחת (עדיין) — אבל אפשר להתאים אותה כנגד כל ציר נוסף”.</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">v0_runs[:,</span> <span class="pre">None]</span></code>‎ הופך ‎<code class="docutils literal notranslate"><span class="pre">(5,)</span></code>‎ ל-‎<code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">1)</span></code>‎: “לכל אחת מ-5 הריצות, יש עמודה אחת (עדיין) — אבל אפשר להתאים אותה כנגד כל ציר נוסף”.</p>
+<p>אפשר לשים ‎<code class="docutils literal notranslate"><span class="pre">None</span></code>‎ גם בהתחלה: ‎<code class="docutils literal notranslate"><span class="pre">a[None,</span> <span class="pre">:]</span></code>‎ הופך את ‎<code class="docutils literal notranslate"><span class="pre">a</span></code>‎ לשורה. התא הבא מדפיס את שתי האפשרויות:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="meshgrid">
-<h2><span class="section-number">9.6.1. </span>דוגמה: בניית רשת דו-ממדית עם <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code><a class="headerlink" href="#meshgrid" title="Link to this heading">#</a></h2>
-<p>לפעמים רוצים להעריך גודל פיזיקלי על פני <strong>רשת שלמה</strong> של שני פרמטרים בבת אחת — למשל הטווח <span class="math notranslate nohighlight">\(R(v_0,\theta)=v_0^2\sin(2\theta)/g\)</span>, על פני טווח של מהירויות <strong>וגם</strong> טווח של זוויות. <code class="docutils literal notranslate"><span class="pre">np.meshgrid</span></code> בונה משתי רשימות חד-ממדיות שתי רשתות דו-ממדיות תואמות.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v0_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>          <span class="c1"># 50 ערכי מהירות</span>
-<span class="n">theta_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>  <span class="c1"># 40 ערכי זווית</span>
-
-<span class="n">V0</span><span class="p">,</span> <span class="n">THETA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">v0_vals</span><span class="p">,</span> <span class="n">theta_vals</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s2">"ij"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"V0.shape:"</span><span class="p">,</span> <span class="n">V0</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">" THETA.shape:"</span><span class="p">,</span> <span class="n">THETA</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># שניהם (50, 40)</span>
-
-<span class="n">R</span> <span class="o">=</span> <span class="n">V0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">THETA</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"R.shape:"</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (50, 40) - טווח לכל צירוף (v0, theta)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span>    <span class="c1"># a column: shape (2, 1)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:])</span>    <span class="c1"># a row: shape (1, 2)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>V0.shape: (50, 40)  THETA.shape: (50, 40)
-R.shape: (50, 40)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.]
+ [2.]]
+[[1. 2.]]
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> בעצם עושה את מה ש-broadcasting היה עושה לבד (<code class="docutils literal notranslate"><span class="pre">v0_vals[:,</span> <span class="pre">None]</span></code> ו-<code class="docutils literal notranslate"><span class="pre">theta_vals[None,</span> <span class="pre">:]</span></code>) — אבל <strong>בונה את שני המערכים המלאים במפורש</strong>, מה שנוח כשרוצים גם לצייר אותם (heatmap/contour בשבוע 12) ולא רק לחשב איתם.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">indexing=&quot;ij&quot;</span></code> אומר שהציר הראשון של <code class="docutils literal notranslate"><span class="pre">V0</span></code>/<code class="docutils literal notranslate"><span class="pre">THETA</span></code> תואם לרשימה הראשונה (<code class="docutils literal notranslate"><span class="pre">v0_vals</span></code>). ברירת המחדל של NumPy היא <code class="docutils literal notranslate"><span class="pre">indexing=&quot;xy&quot;</span></code>, שמחליפה את סדר הצירים — מקור נפוץ לבלבול. בקורס הזה נשתמש תמיד ב-<code class="docutils literal notranslate"><span class="pre">&quot;ij&quot;</span></code> כדי שהציר הראשון יתאים תמיד למשתנה הראשון שהעברנו.</p>
-</div>
-</section>
 <section id="id1">
-<h2><span class="section-number">9.6.2. </span>נסו בעצמכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>בעזרת <code class="docutils literal notranslate"><span class="pre">None</span></code> (בלי <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>), בנו את אותו מערך <code class="docutils literal notranslate"><span class="pre">R</span></code> בצורה <code class="docutils literal notranslate"><span class="pre">(50,</span> <span class="pre">40)</span></code> ישירות מ-<code class="docutils literal notranslate"><span class="pre">v0_vals</span></code> ו-<code class="docutils literal notranslate"><span class="pre">theta_vals</span></code> בעזרת broadcasting.</p>
+<h2><span class="section-number">9.6.1. </span>דוגמה: טבלת טווחים לכל מהירות ולכל זווית<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>לפעמים רוצים לחשב גודל פיזיקלי לכל צירוף של שני פרמטרים, למשל את הטווח <span class="math notranslate nohighlight">\(R=v_0^2\sin(2\theta)/g\)</span> לכל מהירות שיגור <strong>ולכל</strong> זווית. מוסיפים ציר לכל אחד מהם: המהירויות הופכות לעמודה (‎<code class="docutils literal notranslate"><span class="pre">v0_vals[:,</span> <span class="pre">None]</span></code>‎), הזוויות לשורה (‎<code class="docutils literal notranslate"><span class="pre">theta[None,</span> <span class="pre">:]</span></code>‎), ו-broadcasting בונה את הטבלה כולה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># R_direct = v0_vals[:, None]**2 * np.sin(2 * theta_vals[None, :]) / g</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="mf">10.0</span>                                  <span class="c1"># m/s^2, rounded for round numbers</span>
+<span class="n">v0_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">])</span>          <span class="c1"># launch speeds (m/s)</span>
+<span class="n">angles_deg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">15.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">75.0</span><span class="p">])</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">)</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">v0_vals</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:])</span> <span class="o">/</span> <span class="n">g</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 5. 10.  5.]
+ [20. 40. 20.]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>בטבלה שורה לכל מהירות ועמודה לכל זווית. למשל, ‎<code class="docutils literal notranslate"><span class="pre">R[1,</span> <span class="pre">2]</span></code>‎ הוא הטווח במהירות של 20 מטר לשנייה ובזווית 75°: ‏20 מטרים. בכל שורה הטווח הגדול ביותר נמצא בעמודה האמצעית, של 45°.</p>
+</section>
+<section id="id2">
+<h2><span class="section-number">9.6.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>זמן המעוף של זריקה הוא <span class="math notranslate nohighlight">\(T=2v_0\sin\theta/g\)</span>. השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">flight_time_table</span></code>‎, שמחזירה טבלה של זמני מעוף: שורה לכל מהירות ועמודה לכל זווית. השתמשו ב-‎<code class="docutils literal notranslate"><span class="pre">None</span></code>‎, בלי לולאה.</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">flight_time_table</span><span class="p">(</span><span class="n">v0_vals</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Flight time (s): a row per launch speed, a column per angle (deg)."""</span>
+    <span class="k">pass</span>   <span class="c1"># replace with your code</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">flight_time_table</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">30.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">]),</span> <span class="mf">10.0</span><span class="p">))</span>
+<span class="c1"># expected:</span>
+<span class="c1"># [[1. 2.]</span>
+<span class="c1">#  [2. 4.]]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">R_direct</span> <span class="o">=</span> <span class="n">v0_vals</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta_vals</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:])</span> <span class="o">/</span> <span class="n">g</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">R_direct</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>               <span class="c1"># (50, 40)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">R_direct</span><span class="p">,</span> <span class="n">R</span><span class="p">))</span>     <span class="c1"># True - אותה תוצאה כמו meshgrid</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">flight_time_table</span><span class="p">(</span><span class="n">v0_vals</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Flight time (s): a row per launch speed, a column per angle (deg)."""</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0_vals</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:])</span> <span class="o">/</span> <span class="n">g</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">flight_time_table</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">30.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">]),</span> <span class="mf">10.0</span><span class="p">))</span>
 </pre></div>
 </div>
+<p>בזווית 30° הסינוס הוא 0.5: מהירות של 10 מטר לשנייה נותנת שנייה אחת, ו-20 מטר לשנייה נותנות שתיים. בזריקה אנכית (90°) הזמנים כפולים.</p>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">9.6.3. </span>בדקו את עצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מה עושה &lt;code&gt;a[:, None]&lt;/code&gt; על מערך &lt;code&gt;a&lt;/code&gt; בצורה &lt;code&gt;(5,)&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"מוחק ציר"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — None מוסיף ציר, לא מוחק."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"משכפל את a פי 2"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"מוסיף ציר חדש בגודל 1, נותן צורה (5, 1)"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"הופך את סדר האיברים במערך"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — None לא נוגע בסדר האיברים כלל, רק מוסיף מימד."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<section id="id3">
+<h2><span class="section-number">9.6.3. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>שתי השאלות מתייחסות לקוד הבא:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>       <span class="c1"># line A</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>    <span class="c1"># line B</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="DqwmknoPkdML" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#DqwmknoPkdML {
+<div class="output text_html"><div id="yzYjDADaszka" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#yzYjDADaszka {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -959,7 +962,7 @@ R.shape: (50, 40)
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsDqwmknoPkdML=[{"question": "\u05de\u05d4 \u05e2\u05d5\u05e9\u05d4 <code>a[:, None]</code> \u05e2\u05dc \u05de\u05e2\u05e8\u05da <code>a</code> \u05d1\u05e6\u05d5\u05e8\u05d4 <code>(5,)</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05de\u05d5\u05d7\u05e7 \u05e6\u05d9\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 None \u05de\u05d5\u05e1\u05d9\u05e3 \u05e6\u05d9\u05e8, \u05dc\u05d0 \u05de\u05d5\u05d7\u05e7."}, {"answer": "\u05de\u05e9\u05db\u05e4\u05dc \u05d0\u05ea a \u05e4\u05d9 2", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05de\u05d5\u05e1\u05d9\u05e3 \u05e6\u05d9\u05e8 \u05d7\u05d3\u05e9 \u05d1\u05d2\u05d5\u05d3\u05dc 1, \u05e0\u05d5\u05ea\u05df \u05e6\u05d5\u05e8\u05d4 (5, 1)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05d4\u05d5\u05e4\u05da \u05d0\u05ea \u05e1\u05d3\u05e8 \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d1\u05de\u05e2\u05e8\u05da", "correct": false, "feedback": "\u05dc\u05d0 \u2014 None \u05dc\u05d0 \u05e0\u05d5\u05d2\u05e2 \u05d1\u05e1\u05d3\u05e8 \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05db\u05dc\u05dc, \u05e8\u05e7 \u05de\u05d5\u05e1\u05d9\u05e3 \u05de\u05d9\u05de\u05d3."}]}];
+</style></div><script type="application/javascript">var questionsyzYjDADaszka=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "60.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05dc c \u05d4\u05d9\u05d0 2.0 \u05db\u05e4\u05d5\u05dc \u05db\u05dc \u05e2\u05e8\u05da \u05e9\u05dc b: 20, 40 \u05d5-60."}, {"answer": "30.0", "correct": false, "feedback": "\u05dc\u05d0: 30.0 \u05d4\u05d5\u05d0 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4, 1.0 \u05db\u05e4\u05d5\u05dc 30."}, {"answer": "40.0", "correct": false, "feedback": "\u05dc\u05d0: 40.0 \u05d4\u05d5\u05d0 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05de\u05e6\u05e2\u05d9 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4."}, {"answer": "20.0", "correct": false, "feedback": "\u05dc\u05d0: 20.0 \u05d4\u05d5\u05d0 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "10.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d4\u05d9\u05d0 \u05db\u05dc \u05e2\u05e8\u05da \u05e9\u05dc a \u05db\u05e4\u05d5\u05dc 10: 10 \u05d5-20."}, {"answer": "1.0", "correct": false, "feedback": "\u05dc\u05d0: \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05e9\u05dc c \u05d4\u05d5\u05d0 \u05de\u05db\u05e4\u05dc\u05d4 \u05e9\u05dc \u05e2\u05e8\u05da \u05de-a \u05d1\u05e2\u05e8\u05da \u05de-b."}, {"answer": "20.0", "correct": false, "feedback": "\u05dc\u05d0: 20.0 \u05d4\u05d5\u05d0 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4."}, {"answer": "30.0", "correct": false, "feedback": "\u05dc\u05d0: 30.0 \u05e0\u05de\u05e6\u05d0 \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4, \u05dc\u05d0 \u05d1\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2021,8 +2024,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("DqwmknoPkdML")) {
-    show_questions(questionsDqwmknoPkdML, DqwmknoPkdML);
+  if (document.getElementById("yzYjDADaszka")) {
+    show_questions(questionsyzYjDADaszka, yzYjDADaszka);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2034,25 +2037,25 @@ function try_show() {
 }
 </script></div>
 </div>
-</section>
-<section id="id3">
-<h2><span class="section-number">9.6.4. </span>תרגול עצמי<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>בנו רשת <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code> עבור 20 ערכי <span class="math notranslate nohighlight">\(v_0\)</span> בין 10 ל-25, ו-15 ערכי <span class="math notranslate nohighlight">\(\theta\)</span> בין 20° ל-70°, וחשבו את מערך הטווח <code class="docutils literal notranslate"><span class="pre">R</span></code> המתאים. מהי <code class="docutils literal notranslate"><span class="pre">R.shape</span></code>?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
+<p><strong>לפני שמריצים:</strong> מה תדפיס כל אחת משתי שורות ההדפסה? באיזו מהן יש שורה לכל ערך של ‎<code class="docutils literal notranslate"><span class="pre">b</span></code>‎?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v0_vals2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="n">theta_vals2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
-<span class="n">V0_2</span><span class="p">,</span> <span class="n">THETA_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">v0_vals2</span><span class="p">,</span> <span class="n">theta_vals2</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s2">"ij"</span><span class="p">)</span>
-<span class="n">R2</span> <span class="o">=</span> <span class="n">V0_2</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">THETA_2</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">R2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (20, 15)</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[[11 21 31]
+ [12 22 32]]
+[[11 12]
+ [21 22]
+ [31 32]]
 </pre></div>
+</div>
+<p>בשורה הראשונה ‎<code class="docutils literal notranslate"><span class="pre">a</span></code>‎ הוא העמודה, ולכן יש שורה לכל ערך של ‎<code class="docutils literal notranslate"><span class="pre">a</span></code>‎ ועמודה לכל ערך של ‎<code class="docutils literal notranslate"><span class="pre">b</span></code>‎. בשנייה ‎<code class="docutils literal notranslate"><span class="pre">b</span></code>‎ הוא העמודה, ולכן יש שורה לכל ערך של ‎<code class="docutils literal notranslate"><span class="pre">b</span></code>‎. אותם סכומים, בסידור הפוך.</p>
 </div>
 </div>
 </section>
@@ -2124,10 +2127,9 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meshgrid">9.6.1. דוגמה: בניית רשת דו-ממדית עם <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.6.2. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.6.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.6.4. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.6.1. דוגמה: טבלת טווחים לכל מהירות ולכל זווית</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.6.2. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.6.3. בדקו את עצמכם</a></li>
 </ul>
   </nav></div>
 

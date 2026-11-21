@@ -249,8 +249,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -324,7 +324,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -632,7 +632,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.6.1. דוגמה: פאנל נפרד לכל זווית שיגור</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.6.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.6.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.6.4. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -646,19 +645,19 @@
                   
   <section id="subplots">
 <h1><span class="section-number">8.6. </span>subplots<a class="headerlink" href="#subplots" title="Link to this heading">#</a></h1>
-<p>לפעמים רוצים כמה גרפים <strong>נפרדים</strong> באותו figure, לא כמה עקומות על אותו ציר. לכך נועד <code class="docutils literal notranslate"><span class="pre">plt.subplots(nrows,</span> <span class="pre">ncols)</span></code>: הוא מחזיר <code class="docutils literal notranslate"><span class="pre">fig</span></code> יחיד, ומערך <code class="docutils literal notranslate"><span class="pre">axs</span></code> של צירים בגודל <code class="docutils literal notranslate"><span class="pre">nrows</span> <span class="pre">×</span> <span class="pre">ncols</span></code>.</p>
+<p>לפעמים רוצים כמה גרפים <strong>נפרדים</strong> באותו figure, לא כמה עקומות על אותו ציר. לכך נועד ‎<code class="docutils literal notranslate"><span class="pre">plt.subplots(nrows,</span> <span class="pre">ncols)</span></code>‎: הוא מחזיר ‎<code class="docutils literal notranslate"><span class="pre">fig</span></code>‎ יחיד, ומערך ‎<code class="docutils literal notranslate"><span class="pre">axs</span></code>‎ של צירים בגודל ‎<code class="docutils literal notranslate"><span class="pre">nrows</span> <span class="pre">×</span> <span class="pre">ncols</span></code>‎.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="c1"># הציר הראשון</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="c1"># הציר השני</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="c1"># first axes</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="c1"># second axes</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>כאשר <code class="docutils literal notranslate"><span class="pre">nrows=1</span></code> (או <code class="docutils literal notranslate"><span class="pre">ncols=1</span></code>), <code class="docutils literal notranslate"><span class="pre">axs</span></code> הוא מערך <strong>חד-ממדי</strong> — גישה עם <code class="docutils literal notranslate"><span class="pre">axs[i]</span></code>. כאשר גם <code class="docutils literal notranslate"><span class="pre">nrows&gt;1</span></code> וגם <code class="docutils literal notranslate"><span class="pre">ncols&gt;1</span></code>, <code class="docutils literal notranslate"><span class="pre">axs</span></code> הוא מערך <strong>דו-ממדי</strong> — גישה עם <code class="docutils literal notranslate"><span class="pre">axs[row,</span> <span class="pre">col]</span></code>, בדיוק כמו אינדוקס מערך NumPy רגיל.</p>
+<p>כאשר ‎<code class="docutils literal notranslate"><span class="pre">nrows=1</span></code>‎ (או ‎<code class="docutils literal notranslate"><span class="pre">ncols=1</span></code>‎), ‎<code class="docutils literal notranslate"><span class="pre">axs</span></code>‎ הוא מערך <strong>חד-ממדי</strong> — גישה עם ‎<code class="docutils literal notranslate"><span class="pre">axs[i]</span></code>‎. כאשר גם ‎<code class="docutils literal notranslate"><span class="pre">nrows&gt;1</span></code>‎ וגם ‎<code class="docutils literal notranslate"><span class="pre">ncols&gt;1</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">axs</span></code>‎ הוא מערך <strong>דו-ממדי</strong> — גישה עם ‎<code class="docutils literal notranslate"><span class="pre">axs[row,</span> <span class="pre">col]</span></code>‎: קודם מספר השורה ואחריו מספר העמודה, שניהם מתחילים מ-0. למשל ‎<code class="docutils literal notranslate"><span class="pre">axs[0,</span> <span class="pre">0]</span></code>‎ הוא הציר השמאלי העליון, ו-‎<code class="docutils literal notranslate"><span class="pre">axs[1,</span> <span class="pre">0]</span></code>‎ הציר שמתחתיו.</p>
 </div>
 <section id="id1">
 <h2><span class="section-number">8.6.1. </span>דוגמה: פאנל נפרד לכל זווית שיגור<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>במקום לצייר את שלוש הזוויות על אותו גרף (כמו בסעיף 8.5), הפעם ניתן לכל זווית ציר משלה, עם <code class="docutils literal notranslate"><span class="pre">sharey=True</span></code> כדי שיהיה קל להשוות גבהים.</p>
+<p>במקום לצייר את שלוש הזוויות על אותו גרף (כמו בסעיף 8.5), הפעם ניתן לכל זווית ציר משלה, עם ‎<code class="docutils literal notranslate"><span class="pre">sharey=True</span></code>‎ כדי שיהיה קל להשוות גבהים. הלולאה עוברת על האינדקסים 0, 1 ו-2: בסיבוב ‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ היא לוקחת את הזווית ‎<code class="docutils literal notranslate"><span class="pre">angles_deg[i]</span></code>‎ ומציירת אותה על הציר ‎<code class="docutils literal notranslate"><span class="pre">axs[i]</span></code>‎.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -667,16 +666,18 @@
 <span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">20.0</span>          <span class="c1"># m/s^2, m/s</span>
 <span class="n">angles_deg</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">angle</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">):</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">)):</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">angles_deg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
     <span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">fr</span><span class="s2">"$\theta=</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">^\circ$"</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">fr</span><span class="s2">"$\theta=</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">^\circ$"</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
 
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -684,13 +685,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/3319836ae8971424eebc9e64fae4d15a64c7c1a9f2295c88d910ff65e66b650f.png" src="../../../_images/3319836ae8971424eebc9e64fae4d15a64c7c1a9f2295c88d910ff65e66b650f.png" />
+<img alt="../../../_images/717786910dc27c703206d28e4838db0a6dcfda614e5ac37712bfcbab6f0621b6.png" src="../../../_images/717786910dc27c703206d28e4838db0a6dcfda614e5ac37712bfcbab6f0621b6.png" />
 </div>
 </div>
 </section>
 <section id="id2">
 <h2><span class="section-number">8.6.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>שנו את הפריסה לרשת של 3 שורות על עמודה אחת (<code class="docutils literal notranslate"><span class="pre">plt.subplots(3,</span> <span class="pre">1,</span> <span class="pre">...)</span></code>), עם <code class="docutils literal notranslate"><span class="pre">sharex=True</span></code> במקום <code class="docutils literal notranslate"><span class="pre">sharey=True</span></code>.</p>
+<p>שנו את הפריסה לרשת של 3 שורות על עמודה אחת (‎<code class="docutils literal notranslate"><span class="pre">plt.subplots(3,</span> <span class="pre">1,</span> <span class="pre">...)</span></code>‎), עם ‎<code class="docutils literal notranslate"><span class="pre">sharex=True</span></code>‎ במקום ‎<code class="docutils literal notranslate"><span class="pre">sharey=True</span></code>‎.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig, axs = plt.subplots(3, 1, ...)</span>
@@ -701,16 +702,18 @@
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">angle</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="n">angles_deg</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">)):</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">angles_deg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
     <span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">fr</span><span class="s2">"$\theta=</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">^\circ$"</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">fr</span><span class="s2">"$\theta=</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">^\circ$"</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
 
 <span class="n">axs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -720,29 +723,17 @@
 </section>
 <section id="id3">
 <h2><span class="section-number">8.6.3. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"כאשר קוראים &lt;code&gt;fig, axs = plt.subplots(2, 2)&lt;/code&gt;, איך ניגשים לציר שבפינה השמאלית העליונה?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"axs[0, 0]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון — כש-nrows&gt;1 וגם ncols&gt;1, axs הוא מערך דו-ממדי."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"axs[0]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — axs כאן דו-ממדי."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"axs.first()"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"אין פונקציה כזו."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"axs[0][1]"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — זו הפינה הימנית העליונה (טור 1 בשורה 0), לא השמאלית."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"A"</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"B"</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"C"</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"D"</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="PRpaexJrlulR" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#PRpaexJrlulR {
+<div class="output text_html"><div id="SgLSsGpORVCk" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#SgLSsGpORVCk {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -965,7 +956,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsPRpaexJrlulR=[{"question": "\u05db\u05d0\u05e9\u05e8 \u05e7\u05d5\u05e8\u05d0\u05d9\u05dd <code>fig, axs = plt.subplots(2, 2)</code>, \u05d0\u05d9\u05da \u05e0\u05d9\u05d2\u05e9\u05d9\u05dd \u05dc\u05e6\u05d9\u05e8 \u05e9\u05d1\u05e4\u05d9\u05e0\u05d4 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "axs[0, 0]", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 \u05db\u05e9-nrows>1 \u05d5\u05d2\u05dd ncols>1, axs \u05d4\u05d5\u05d0 \u05de\u05e2\u05e8\u05da \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs[0]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 axs \u05db\u05d0\u05df \u05d3\u05d5-\u05de\u05de\u05d3\u05d9."}, {"answer": "axs.first()", "correct": false, "feedback": "\u05d0\u05d9\u05df \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05db\u05d6\u05d5."}, {"answer": "axs[0][1]", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d5 \u05d4\u05e4\u05d9\u05e0\u05d4 \u05d4\u05d9\u05de\u05e0\u05d9\u05ea \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4 (\u05d8\u05d5\u05e8 1 \u05d1\u05e9\u05d5\u05e8\u05d4 0), \u05dc\u05d0 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsSgLSsGpORVCk=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05db\u05d5\u05ea\u05e8\u05ea \u05ea\u05d5\u05e4\u05d9\u05e2 \u05e2\u05dc \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9 \u05d4\u05ea\u05d7\u05ea\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "C", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d4\u05d5\u05d0 \u05d4\u05e9\u05d5\u05e8\u05d4 (1 \u05d4\u05d9\u05d0 \u05d4\u05ea\u05d7\u05ea\u05d5\u05e0\u05d4), \u05d5\u05d4\u05e9\u05e0\u05d9 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 (0 \u05d4\u05d9\u05d0 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea)."}, {"answer": "B", "correct": false, "feedback": "\u05dc\u05d0: B \u05e0\u05de\u05e6\u05d0 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4 (0) \u05d5\u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d9\u05de\u05e0\u05d9\u05ea (1)."}, {"answer": "A", "correct": false, "feedback": "\u05dc\u05d0: A \u05d4\u05d5\u05d0 \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9 \u05d4\u05e2\u05dc\u05d9\u05d5\u05df, \u05e9\u05d5\u05e8\u05d4 0 \u05d5\u05e2\u05de\u05d5\u05d3\u05d4 0."}, {"answer": "D", "correct": false, "feedback": "\u05dc\u05d0: D \u05d4\u05d5\u05d0 \u05d4\u05e6\u05d9\u05e8 \u05d4\u05d9\u05de\u05e0\u05d9 \u05d4\u05ea\u05d7\u05ea\u05d5\u05df, \u05e9\u05d5\u05e8\u05d4 1 \u05d5\u05e2\u05de\u05d5\u05d3\u05d4 1."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2027,8 +2018,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("PRpaexJrlulR")) {
-    show_questions(questionsPRpaexJrlulR, PRpaexJrlulR);
+  if (document.getElementById("SgLSsGpORVCk")) {
+    show_questions(questionsSgLSsGpORVCk, SgLSsGpORVCk);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2040,45 +2031,34 @@ function try_show() {
 }
 </script></div>
 </div>
-</section>
-<section id="id4">
-<h2><span class="section-number">8.6.4. </span>תרגול עצמי<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>צרו רשת <code class="docutils literal notranslate"><span class="pre">2×2</span></code> של subplots (4 צירים). ב-3 מהם ציירו את מסלולי שלוש הזוויות (30°, 45°, 60°) בנפרד, ובציר הרביעי ציירו את כולן יחד (כמו בסעיף 8.5).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig, axs = plt.subplots(2, 2, ...)</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
+<p>צרו רשת ‎<code class="docutils literal notranslate"><span class="pre">2×2</span></code>‎ של subplots (4 צירים). ב-3 מהם ציירו את מסלולי שלוש הזוויות (30°, 45°, 60°) בנפרד, ובציר הרביעי ציירו את כולן יחד (כמו בסעיף 8.5).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig, axs = plt.subplots(2, 2, ...)</span>
 <span class="c1"># ...</span>
 </pre></div>
 </div>
-</div>
-</div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
+<p>הזווית שבמקום ‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ מצוירת על הציר ‎<code class="docutils literal notranslate"><span class="pre">axs[i</span> <span class="pre">//</span> <span class="pre">2,</span> <span class="pre">i</span> <span class="pre">%</span> <span class="pre">2]</span></code>‎: השורה היא ‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">//</span> <span class="pre">2</span></code>‎ והעמודה ‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">%</span> <span class="pre">2</span></code>‎. כך שלוש הזוויות ממלאות את ‎<code class="docutils literal notranslate"><span class="pre">axs[0,</span> <span class="pre">0]</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">axs[0,</span> <span class="pre">1]</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">axs[1,</span> <span class="pre">0]</span></code>‎, והציר ‎<code class="docutils literal notranslate"><span class="pre">axs[1,</span> <span class="pre">1]</span></code>‎ נשאר לשלושתן יחד.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">flat_axs</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">angle</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">flat_axs</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">angles_deg</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">angles_deg</span><span class="p">)):</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">angles_deg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
     <span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">i</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span>          <span class="c1"># i = 0, 1, 2 -&gt; [0, 0], [0, 1], [1, 0]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">fr</span><span class="s2">"$\theta=</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">^\circ$"</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">"$\theta=</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">^\circ$"</span><span class="p">)</span>
 
-<span class="n">ax_all</span> <span class="o">=</span> <span class="n">flat_axs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">angles_deg</span><span class="p">:</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-    <span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">ax_all</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">"$\theta=</span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2">^\circ$"</span><span class="p">)</span>
-<span class="n">ax_all</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"הכול יחד"</span><span class="p">)</span>
-<span class="n">ax_all</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"הכול יחד"</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2153,7 +2133,6 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.6.1. דוגמה: פאנל נפרד לכל זווית שיגור</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.6.2. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.6.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.6.4. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

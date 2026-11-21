@@ -249,8 +249,8 @@
 <li class="toctree-l2"><a class="reference internal" href="3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -324,7 +324,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -682,8 +682,8 @@
 זה רק הצעד הראשון – במהלך הקורס תריצו עוד הרבה תוכניות, וגם תכתבו בעצמכם המון קוד. ההרפתקה המלאה מתחילה עכשיו!</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="innECIYDYrwm" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#innECIYDYrwm {
+<div class="output text_html"><div id="sIqQmnphQrlm" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#sIqQmnphQrlm {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -906,7 +906,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsinnECIYDYrwm=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05d2\u05e8\u05e1\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d4\u05ea\u05e7\u05e0\u05ea\u05dd?", "type": "many_choice", "answers": [{"answer": "3.11", "correct": true, "feedback": "\u05d9\u05d0\u05e1\u05e1\u05e1"}, {"answer": "3.9", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.12", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.6", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}]}];
+</style></div><script type="application/javascript">var questionssIqQmnphQrlm=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05d2\u05e8\u05e1\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df \u05d4\u05ea\u05e7\u05e0\u05ea\u05dd?", "type": "many_choice", "answers": [{"answer": "3.11", "correct": true, "feedback": "\u05d9\u05d0\u05e1\u05e1\u05e1"}, {"answer": "3.9", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.12", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}, {"answer": "3.6", "correct": false, "feedback": "\u05e0\u05d5\u05e4"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1968,8 +1968,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("innECIYDYrwm")) {
-    show_questions(questionsinnECIYDYrwm, innECIYDYrwm);
+  if (document.getElementById("sIqQmnphQrlm")) {
+    show_questions(questionssIqQmnphQrlm, sIqQmnphQrlm);
   } else {
     setTimeout(try_show, 200);
   }

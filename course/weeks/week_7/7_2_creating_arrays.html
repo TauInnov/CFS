@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -632,10 +632,10 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2.1. דוגמה: וקטור זמן לזריקה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.2.2. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.2.2. איך NumPy מדפיס מערך</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange-linspace">7.2.3. arange מול linspace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.2.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.2.5. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.2.4. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.2.5. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -649,21 +649,20 @@
                   
   <section id="array-zeros-ones-arange-linspace">
 <h1><span class="section-number">7.2. </span>יצירת מערכים: array, zeros, ones, arange, linspace<a class="headerlink" href="#array-zeros-ones-arange-linspace" title="Link to this heading">#</a></h1>
-<p>מלבד בנייה מתוך רשימה קיימת (<code class="docutils literal notranslate"><span class="pre">np.array</span></code>), ל-NumPy יש כמה פונקציות ליצירת מערכים ישירות:</p>
+<p>מלבד בנייה מתוך רשימה קיימת (‎<code class="docutils literal notranslate"><span class="pre">np.array</span></code>‎), ל-NumPy יש כמה פונקציות ליצירת מערכים ישירות:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">np.zeros(n)</span></code> — מערך של n אפסים, שימושי כ”מכל” ריק שממלאים בהמשך.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.ones(n)</span></code> — מערך של n אחדים.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> — כמו <code class="docutils literal notranslate"><span class="pre">range</span></code> בפייתון, אך מחזיר מערך. <strong>הקצה העליון לא נכלל</strong>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop,</span> <span class="pre">num)</span></code> — num נקודות במרווחים שווים בין start ל-stop, <strong>כולל שתי הקצוות</strong>.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">np.zeros(n)</span></code>‎ — מערך של n אפסים, שימושי כ”מכל” ריק שממלאים בהמשך.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">np.ones(n)</span></code>‎ — מערך של n אחדים.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code>‎ — כמו ‎<code class="docutils literal notranslate"><span class="pre">range</span></code>‎ בפייתון, אך מחזיר מערך. <strong>הקצה העליון לא נכלל</strong>.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop,</span> <span class="pre">num)</span></code>‎ — num נקודות במרווחים שווים בין start ל-stop, <strong>כולל שתי הקצוות</strong>.</p></li>
 </ul>
-<p>ההבדל בין <code class="docutils literal notranslate"><span class="pre">arange</span></code> ל-<code class="docutils literal notranslate"><span class="pre">linspace</span></code> הוא מקור נפוץ לטעויות “בגובה אחד” (off-by-one).</p>
+<p>ההבדל בין ‎<code class="docutils literal notranslate"><span class="pre">arange</span></code>‎ ל-‎<code class="docutils literal notranslate"><span class="pre">linspace</span></code>‎ הוא מקור נפוץ לטעויות “בגובה אחד” (off-by-one).</p>
 <section id="id1">
 <h2><span class="section-number">7.2.1. </span>דוגמה: וקטור זמן לזריקה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>בסעיף הקודם בנינו את וקטור הזמן של הזריקה כרשימה קבועה מראש. הפעם נבנה אותו ישירות עם <code class="docutils literal notranslate"><span class="pre">linspace</span></code>, ונכין גם מערך ריק לאחסון תוצאה שנחשב בהמשך.</p>
+<p>בסעיף הקודם בנינו את וקטור הזמן של הזריקה כרשימה קבועה מראש. הפעם נבנה אותו ישירות עם ‎<code class="docutils literal notranslate"><span class="pre">linspace</span></code>‎, ונכין גם מערך ריק לאחסון תוצאה שנחשב בהמשך.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
 <span class="n">y0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">15.0</span>
@@ -687,85 +686,76 @@
 </div>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">7.2.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>בנו מערך של תשע זוויות שיגור אפשריות, במרווחים שווים בין 0 ל-90 מעלות (כולל שתי הקצוות):</p>
+<section id="numpy">
+<h2><span class="section-number">7.2.2. </span>איך NumPy מדפיס מערך<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
+<p>הפלט של ‎<code class="docutils literal notranslate"><span class="pre">print</span></code>‎ על מערך נראה אחרת מהפלט על רשימה, וכדאי להכיר אותו: בשאלות “מה יודפס” צריך לכתוב אותו בדיוק.</p>
+<ul class="simple">
+<li><p><strong>אין פסיקים</strong> בין האיברים, רק רווחים.</p></li>
+<li><p>מערך של מספרים <strong>שלמים</strong> מודפס בלי נקודה עשרונית.</p></li>
+<li><p>במערך של מספרים <strong>עשרוניים</strong> (‎<code class="docutils literal notranslate"><span class="pre">float</span></code>‎) כל מספר מודפס עם נקודה, גם מספר שלם: 1 מודפס כ-‎<code class="docutils literal notranslate"><span class="pre">1.</span></code>‎, עם נקודה ובלי אפס אחריה.</p></li>
+<li><p>NumPy מוסיף רווחים כדי שכל המספרים יתפסו אותו רוחב, ולכן לפעמים יש שני רווחים בין מספרים, או רווח אחרי הסוגר הפותח.</p></li>
+</ul>
+<p>שלוש דוגמאות:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># angles = ...</span>
-<span class="c1"># print(angles)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>          <span class="c1"># integers</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.25</span><span class="p">])</span>   <span class="c1"># floats</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>          <span class="c1"># integers again</span>
+<span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.7</span>                       <span class="c1"># a float stored in an integer array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+[0.5  1.   2.25]
+[2 2 3]
 </pre></div>
 </div>
 </div>
 </div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<p>השורה השלישית מפתיעה: ‎<code class="docutils literal notranslate"><span class="pre">c</span></code>‎ נוצר ממספרים שלמים, ולכן הוא נשאר מערך של שלמים גם אחרי ההשמה, ו-2.7 נשמר בו כ-2. נחזור לזה בסעיף הבא.</p>
 </section>
 <section id="arange-linspace">
 <h2><span class="section-number">7.2.3. </span>arange מול linspace<a class="headerlink" href="#arange-linspace" title="Link to this heading">#</a></h2>
 <p>נשווה ישירות בין שתי הפונקציות על אותו טווח, כדי לראות את ההבדל בהתנהגות בקצה העליון:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># לא כולל 10</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>    <span class="c1"># כולל 10</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"arange(0,10,2)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"linspace(0,10,5)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s2">"arange"</span><span class="p">,</span> <span class="s2">"linspace"</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Value"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"upper right"</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># 10 is not included</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>    <span class="c1"># 10 is included</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8979acd004ccaae0129c082f79342d047d34bec26e482640f4d944ccc0ff0c10.png" src="../../../_images/8979acd004ccaae0129c082f79342d047d34bec26e482640f4d944ccc0ff0c10.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 2 4 6 8]
+[ 0.   2.5  5.   7.5 10. ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/712a6bdafe5feaf5e72f34bd3100afd2f604f164879591fba1e0e1febc53617b.png" src="../../../_images/712a6bdafe5feaf5e72f34bd3100afd2f604f164879591fba1e0e1febc53617b.png" />
 </div>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">7.2.4. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מה האורך של המערך שמוחזר על ידי &lt;code&gt;np.arange(0, 10, 2)&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"6"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — arange אינו כולל את הקצה העליון."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון: 0, 2, 4, 6, 8 — חמישה איברים, 10 אינו נכלל."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"4"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — יש 5 איברים: 0, 2, 4, 6, 8."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"10"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — step=2 קובע קפיצה בין הערכים, לא מספר איברים."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"מה האורך של המערך שמוחזר על ידי &lt;code&gt;np.linspace(0, 10, 5)&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"4"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — linspace כולל את שתי הקצוות."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"50"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — זהו מספר הנקודות, לא צעד."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון: הפרמטר השלישי ב-linspace הוא מספר הנקודות עצמו, כולל שתי הקצוות."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — linspace עם תחום לא-אפס ו-5 נקודות בהחלט מחזיר איברים."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<section id="id2">
+<h2><span class="section-number">7.2.4. </span>בדקו את עצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>                     <span class="c1"># print 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>                     <span class="c1"># print 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># print 3</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="kMGvsEvPbciX" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#kMGvsEvPbciX {
+<div class="output text_html"><div id="ahgDmmerqDyS" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ahgDmmerqDyS {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -988,7 +978,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionskMGvsEvPbciX=[{"question": "\u05de\u05d4 \u05d4\u05d0\u05d5\u05e8\u05da \u05e9\u05dc \u05d4\u05de\u05e2\u05e8\u05da \u05e9\u05de\u05d5\u05d7\u05d6\u05e8 \u05e2\u05dc \u05d9\u05d3\u05d9 <code>np.arange(0, 10, 2)</code>?", "type": "multiple_choice", "answers": [{"answer": "6", "correct": false, "feedback": "\u05dc\u05d0 \u2014 arange \u05d0\u05d9\u05e0\u05d5 \u05db\u05d5\u05dc\u05dc \u05d0\u05ea \u05d4\u05e7\u05e6\u05d4 \u05d4\u05e2\u05dc\u05d9\u05d5\u05df."}, {"answer": "5", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: 0, 2, 4, 6, 8 \u2014 \u05d7\u05de\u05d9\u05e9\u05d4 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd, 10 \u05d0\u05d9\u05e0\u05d5 \u05e0\u05db\u05dc\u05dc."}, {"answer": "4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d9\u05e9 5 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd: 0, 2, 4, 6, 8."}, {"answer": "10", "correct": false, "feedback": "\u05dc\u05d0 \u2014 step=2 \u05e7\u05d5\u05d1\u05e2 \u05e7\u05e4\u05d9\u05e6\u05d4 \u05d1\u05d9\u05df \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05dc\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd."}]}, {"question": "\u05de\u05d4 \u05d4\u05d0\u05d5\u05e8\u05da \u05e9\u05dc \u05d4\u05de\u05e2\u05e8\u05da \u05e9\u05de\u05d5\u05d7\u05d6\u05e8 \u05e2\u05dc \u05d9\u05d3\u05d9 <code>np.linspace(0, 10, 5)</code>?", "type": "multiple_choice", "answers": [{"answer": "4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 linspace \u05db\u05d5\u05dc\u05dc \u05d0\u05ea \u05e9\u05ea\u05d9 \u05d4\u05e7\u05e6\u05d5\u05d5\u05ea."}, {"answer": "50", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4\u05d5 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea, \u05dc\u05d0 \u05e6\u05e2\u05d3."}, {"answer": "5", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e4\u05e8\u05de\u05d8\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d1-linspace \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05e2\u05e6\u05de\u05d5, \u05db\u05d5\u05dc\u05dc \u05e9\u05ea\u05d9 \u05d4\u05e7\u05e6\u05d5\u05d5\u05ea."}, {"answer": "0", "correct": false, "feedback": "\u05dc\u05d0 \u2014 linspace \u05e2\u05dd \u05ea\u05d7\u05d5\u05dd \u05dc\u05d0-\u05d0\u05e4\u05e1 \u05d5-5 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d1\u05d4\u05d7\u05dc\u05d8 \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd."}]}];
+</style></div><script type="application/javascript">var questionsahgDmmerqDyS=[{"question": "\u05db\u05de\u05d4 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "5", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: 0, 2, 4, 6 \u05d5-8. \u05d4\u05e7\u05e6\u05d4 \u05d4\u05e2\u05dc\u05d9\u05d5\u05df, 10, \u05dc\u05d0 \u05e0\u05db\u05dc\u05dc."}, {"answer": "6", "correct": false, "feedback": "\u05dc\u05d0: arange \u05dc\u05d0 \u05db\u05d5\u05dc\u05dc \u05d0\u05ea \u05d4\u05e7\u05e6\u05d4 \u05d4\u05e2\u05dc\u05d9\u05d5\u05df."}, {"answer": "4", "correct": false, "feedback": "\u05dc\u05d0: \u05d9\u05e9 \u05d7\u05de\u05d9\u05e9\u05d4 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd, \u05de-0 \u05e2\u05d3 8 \u05d1\u05e7\u05e4\u05d9\u05e6\u05d5\u05ea \u05e9\u05dc 2."}, {"answer": "10", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e4\u05e8\u05de\u05d8\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d4\u05d5\u05d0 \u05d2\u05d5\u05d3\u05dc \u05d4\u05e7\u05e4\u05d9\u05e6\u05d4, \u05dc\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd."}]}, {"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05de\u05d3\u05e4\u05d9\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "10", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: linspace \u05db\u05d5\u05dc\u05dc \u05d0\u05ea \u05e9\u05e0\u05d9 \u05d4\u05e7\u05e6\u05d5\u05d5\u05ea, \u05d5\u05dc\u05db\u05df \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05d4\u05d9\u05d0 10 \u05d1\u05d3\u05d9\u05d5\u05e7. \u05d4\u05d9\u05d0 \u05de\u05d5\u05d3\u05e4\u05e1\u05ea \u05e2\u05dd \u05e0\u05e7\u05d5\u05d3\u05d4, \u05db\u05d9 \u05d6\u05d4 \u05de\u05e2\u05e8\u05da \u05e9\u05dc \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd."}, {"answer": "8", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05dc arange; linspace \u05db\u05d5\u05dc\u05dc \u05d0\u05ea \u05d4\u05e7\u05e6\u05d4 \u05d4\u05e2\u05dc\u05d9\u05d5\u05df."}, {"answer": "7.5", "correct": false, "feedback": "\u05dc\u05d0: 7.5 \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05dc\u05e4\u05e0\u05d9 \u05d0\u05d7\u05e8\u05d5\u05df; \u05d2\u05dd \u05d4\u05e7\u05e6\u05d4 10 \u05e0\u05db\u05dc\u05dc."}, {"answer": "12.5", "correct": false, "feedback": "\u05dc\u05d0: linspace \u05dc\u05d0 \u05d9\u05d5\u05e6\u05d0 \u05de\u05d4\u05ea\u05d7\u05d5\u05dd \u05e9\u05d1\u05d9\u05df 0 \u05dc-10."}]}, {"question": "\u05db\u05de\u05d4 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d5\u05ea \u05de\u05d5\u05e4\u05d9\u05e2\u05d5\u05ea \u05d1\u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9\u05ea?", "type": "multiple_choice", "answers": [{"answer": "3", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05d7\u05d9\u05dc\u05d5\u05e7 \u05d1-2 \u05e0\u05d5\u05ea\u05df \u05de\u05e2\u05e8\u05da \u05e9\u05dc \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd, \u05d5\u05db\u05dc \u05d0\u05d7\u05d3 \u05de\u05d4\u05dd \u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dd \u05e0\u05e7\u05d5\u05d3\u05d4, \u05d2\u05dd 1."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: \u05d2\u05dd 1 \u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dd \u05e0\u05e7\u05d5\u05d3\u05d4, \u05db\u05d9 \u05db\u05dc \u05d4\u05de\u05e2\u05e8\u05da \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9."}, {"answer": "0", "correct": false, "feedback": "\u05dc\u05d0: \u05d7\u05d9\u05dc\u05d5\u05e7 \u05e2\u05dd \u05e7\u05d5 \u05e0\u05d8\u05d5\u05d9 \u05d0\u05d7\u05d3 \u05ea\u05de\u05d9\u05d3 \u05e0\u05d5\u05ea\u05df \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05db\u05dc \u05e9\u05dc\u05d5\u05e9\u05ea \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd, \u05d5\u05dc\u05db\u05dc \u05d0\u05d7\u05d3 \u05d9\u05e9 \u05e0\u05e7\u05d5\u05d3\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2050,8 +2040,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("kMGvsEvPbciX")) {
-    show_questions(questionskMGvsEvPbciX, kMGvsEvPbciX);
+  if (document.getElementById("ahgDmmerqDyS")) {
+    show_questions(questionsahgDmmerqDyS, ahgDmmerqDyS);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2064,24 +2054,41 @@ function try_show() {
 </script></div>
 </div>
 </section>
-<section id="id4">
-<h2><span class="section-number">7.2.5. </span>תרגול עצמי<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>רוצים לבדוק תשעה זמני מדידה בקצב קבוע של 0.25 שניות, החל מ-<span class="math notranslate nohighlight">\(t=0\)</span> (ועד תשעה איברים בסך הכול). בנו מערך כזה בעזרת <code class="docutils literal notranslate"><span class="pre">arange</span></code>, ובנפרד — מערך זהה בעזרת <code class="docutils literal notranslate"><span class="pre">linspace</span></code>, ובדקו שהם שווים.</p>
+<section id="id3">
+<h2><span class="section-number">7.2.5. </span>תרגול עצמי<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>רוצים לבדוק תשעה זמני מדידה בקצב קבוע של 0.25 שניות, החל מ-<span class="math notranslate nohighlight">\(t=0\)</span> (ועד תשעה איברים בסך הכול). בנו מערך כזה בעזרת ‎<code class="docutils literal notranslate"><span class="pre">arange</span></code>‎, ובנפרד — מערך זהה בעזרת ‎<code class="docutils literal notranslate"><span class="pre">linspace</span></code>‎, הדפיסו את שניהם ובדקו שהם זהים.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># t_a = ...   # בעזרת arange</span>
-<span class="c1"># t_b = ...   # בעזרת linspace</span>
-<span class="c1"># print(np.allclose(t_a, t_b))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># t_a = ...   # with arange</span>
+<span class="c1"># t_b = ...   # with linspace</span>
+<span class="c1"># print(t_a)</span>
+<span class="c1"># print(t_b)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
-<span class="n">t_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">t_a</span><span class="p">,</span> <span class="n">t_b</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>   <span class="c1"># stop is excluded, so it must be above 2</span>
+<span class="n">t_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>       <span class="c1"># nine points, both ends included</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t_a</span><span class="p">)</span>   <span class="c1"># [0.   0.25 0.5  0.75 1.   1.25 1.5  1.75 2.  ]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t_b</span><span class="p">)</span>   <span class="c1"># [0.   0.25 0.5  0.75 1.   1.25 1.5  1.75 2.  ]</span>
 </pre></div>
+</div>
+</div>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
+<p>בנו מערך של תשע זוויות שיגור אפשריות, במרווחים שווים בין 0 ל-90 מעלות (כולל שתי הקצוות):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># angles = ...</span>
+<span class="c1"># print(angles)</span>
+</pre></div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2154,10 +2161,10 @@ function try_show() {
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2.1. דוגמה: וקטור זמן לזריקה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.2.2. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">7.2.2. איך NumPy מדפיס מערך</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange-linspace">7.2.3. arange מול linspace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.2.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.2.5. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.2.4. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.2.5. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

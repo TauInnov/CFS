@@ -249,8 +249,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -324,7 +324,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week_9/9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -630,9 +630,8 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.5.1. דוגמה: “ניקוי” נתוני מדידה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.5.2. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.5.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.5.4. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.5.2. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.5.3. תרגול עצמי: מצאו את השגיאה</a></li>
 </ul>
             </nav>
         </div>
@@ -646,8 +645,8 @@
                   
   <section id="views-copies">
 <h1><span class="section-number">7.5. </span>views מול copies<a class="headerlink" href="#views-copies" title="Link to this heading">#</a></h1>
-<p>זהו אחד ממקורות הבאגים הנפוצים ביותר בעבודה עם NumPy. כאשר פורסים מערך (<code class="docutils literal notranslate"><span class="pre">a[2:5]</span></code>), NumPy <strong>לא</strong> יוצר מערך חדש בזיכרון — הוא מחזיר <strong>תצוגה (view)</strong> שמצביעה על אותו זיכרון. שינוי בתצוגה משנה גם את המערך המקורי, ולהיפך.</p>
-<p>זה שונה מרשימות פייתון, שבהן פריסה (<code class="docutils literal notranslate"><span class="pre">lst[2:5]</span></code>) תמיד יוצרת רשימה חדשה (עותק). כדי לקבל התנהגות דומה במערך NumPy יש לבקש עותק במפורש: <code class="docutils literal notranslate"><span class="pre">()a[2:5].copy</span></code>.</p>
+<p>זהו אחד ממקורות הבאגים הנפוצים ביותר בעבודה עם NumPy. כאשר פורסים מערך (‎<code class="docutils literal notranslate"><span class="pre">a[2:5]</span></code>‎), NumPy <strong>לא</strong> יוצר מערך חדש בזיכרון — הוא מחזיר <strong>תצוגה (view)</strong> שמצביעה על אותו זיכרון. שינוי בתצוגה משנה גם את המערך המקורי, ולהיפך.</p>
+<p>זה שונה מרשימות פייתון, שבהן פריסה (‎<code class="docutils literal notranslate"><span class="pre">lst[2:5]</span></code>‎) תמיד יוצרת רשימה חדשה (עותק). כדי לקבל התנהגות דומה במערך NumPy יש לבקש עותק במפורש: ‎<code class="docutils literal notranslate"><span class="pre">a[2:5].copy()</span></code>‎.</p>
 <section id="id1">
 <h2><span class="section-number">7.5.1. </span>דוגמה: “ניקוי” נתוני מדידה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>יש לנו יומן מדידות גובה גולמי מניסוי נפילה חופשית, וברצוננו לתקן רק את שלוש המדידות האמצעיות (שהיו שגויות עקב רעש רגעי במכשיר):</p>
@@ -672,7 +671,7 @@
 </div>
 </div>
 </div>
-<p>במקרה הזה זה בדיוק מה שרצינו — אבל אם המטרה הייתה לשמור עותק נקי לצד המקור לצורך השוואה, זו טעות שקטה. הפתרון: לבקש <code class="docutils literal notranslate"><span class="pre">().copy</span></code> באופן מפורש.</p>
+<p>במקרה הזה זה בדיוק מה שרצינו — אבל אם המטרה הייתה לשמור עותק נקי לצד המקור לצורך השוואה, זו טעות שקטה. הפתרון: לבקש ‎<code class="docutils literal notranslate"><span class="pre">.copy()</span></code>‎ באופן מפורש.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_log2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">18.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">999.0</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
@@ -693,53 +692,17 @@
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">7.5.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>נתון מערך <code class="docutils literal notranslate"><span class="pre">a</span></code>. שנו את שני האיברים הראשונים של תצוגה <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a[:2]</span></code> ל-<code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0]</span></code>, ובדקו בעצמכם אם <code class="docutils literal notranslate"><span class="pre">a</span></code> השתנה:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
-<span class="c1"># שנו את b כך שיהיה [0, 0], ואז הדפיסו את a</span>
-<span class="c1"># b[:] = ...</span>
-<span class="c1"># print(a)</span>
+<h2><span class="section-number">7.5.2. </span>בדקו את עצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>   <span class="c1"># [0, 0, 3, 4, 5] — a השתנה, כי b היא תצוגה של a</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="id3">
-<h2><span class="section-number">7.5.3. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"אחרי &lt;code&gt;a = np.array([1,2,3]); b = a[1:]; b[0] = 99&lt;/code&gt;, מה הערך של &lt;code&gt;a[1]&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"2 (a לא השתנה)"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — b היא תצוגה של a, לא עותק."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"99 (a השתנה)"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון. פריסה של מערך NumPy מחזירה תצוגה, ולכן שינוי ב-b משפיע גם על a."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"תיזרק שגיאה"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — זה קוד חוקי לחלוטין."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"רק b משתנה ל-99, ו-a[1] הופך ל-None"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — a לא הופך ל-None; פשוט האיבר המתאים בו גם הוא משתנה ל-99, כי b היא תצוגה (view) של a, לא עותק."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="PihsXtDQgAvd" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#PihsXtDQgAvd {
+<div class="output text_html"><div id="lSobWJptuJPy" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#lSobWJptuJPy {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -962,7 +925,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsPihsXtDQgAvd=[{"question": "\u05d0\u05d7\u05e8\u05d9 <code>a = np.array([1,2,3]); b = a[1:]; b[0] = 99</code>, \u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc <code>a[1]</code>?", "type": "multiple_choice", "answers": [{"answer": "2 (a \u05dc\u05d0 \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": false, "feedback": "\u05dc\u05d0 \u2014 b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}, {"answer": "99 (a \u05d4\u05e9\u05ea\u05e0\u05d4)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05e4\u05e8\u05d9\u05e1\u05d4 \u05e9\u05dc \u05de\u05e2\u05e8\u05da NumPy \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05ea\u05e6\u05d5\u05d2\u05d4, \u05d5\u05dc\u05db\u05df \u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1-b \u05de\u05e9\u05e4\u05d9\u05e2 \u05d2\u05dd \u05e2\u05dc a."}, {"answer": "\u05ea\u05d9\u05d6\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05d7\u05d5\u05e7\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df."}, {"answer": "\u05e8\u05e7 b \u05de\u05e9\u05ea\u05e0\u05d4 \u05dc-99, \u05d5-a[1] \u05d4\u05d5\u05e4\u05da \u05dc-None", "correct": false, "feedback": "\u05dc\u05d0 \u2014 a \u05dc\u05d0 \u05d4\u05d5\u05e4\u05da \u05dc-None; \u05e4\u05e9\u05d5\u05d8 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05de\u05ea\u05d0\u05d9\u05dd \u05d1\u05d5 \u05d2\u05dd \u05d4\u05d5\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4 \u05dc-99, \u05db\u05d9 b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 (view) \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}]}];
+</style></div><script type="application/javascript">var questionslSobWJptuJPy=[{"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e4\u05e8\u05d9\u05e1\u05d4 \u05e9\u05dc \u05de\u05e2\u05e8\u05da NumPy \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05ea\u05e6\u05d5\u05d2\u05d4, \u05d5\u05dc\u05db\u05df \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1-b \u05de\u05e9\u05e0\u05d4 \u05d2\u05dd \u05d0\u05ea a."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05dc b \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05e9\u05dc a, \u05d5\u05d0\u05d5\u05ea\u05d5 \u05e9\u05d9\u05e0\u05d9\u05e0\u05d5."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05d7\u05d5\u05e7\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2024,8 +1987,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("PihsXtDQgAvd")) {
-    show_questions(questionsPihsXtDQgAvd, PihsXtDQgAvd);
+  if (document.getElementById("lSobWJptuJPy")) {
+    show_questions(questionslSobWJptuJPy, lSobWJptuJPy);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2038,30 +2001,55 @@ function try_show() {
 </script></div>
 </div>
 </section>
-<section id="id4">
-<h2><span class="section-number">7.5.4. </span>תרגול עצמי<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>בקוד הבא יש כוונה ליצור גרסה “מנורמלת” של וקטור מהירויות, בלי לפגוע במקור — אבל יש בו באג. אתרו ותקנו אותו בעזרת <code class="docutils literal notranslate"><span class="pre">().copy</span></code>:</p>
-<div class="cell docutils container">
+<section id="id3">
+<h2><span class="section-number">7.5.3. </span>תרגול עצמי: מצאו את השגיאה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>הפעולה ‎<code class="docutils literal notranslate"><span class="pre">a.mean()</span></code>‎ מחזירה את הממוצע של איברי המערך ‎<code class="docutils literal notranslate"><span class="pre">a</span></code>‎; למשל, הממוצע של ארבע המהירויות בתא הבא הוא 14.35.</p>
+<p>הקוד בתא הבא נועד ליצור גרסה “מנורמלת” של וקטור המהירויות (כל מהירות פחות הממוצע), בלי לפגוע במקור. הציפייה הייתה ששורה 4 תדפיס את המדידות המקוריות:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">12.</span>  <span class="mf">15.5</span>  <span class="mf">9.8</span> <span class="mf">20.1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>אבל היא מדפיסה:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mf">2.35</span>  <span class="mf">1.15</span> <span class="o">-</span><span class="mf">4.55</span>  <span class="mf">5.75</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>קראו את הקוד לפני שאתם מריצים אותו: באיזו שורה השגיאה? תקנו אותה בעזרת ‎<code class="docutils literal notranslate"><span class="pre">.copy()</span></code>‎.</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v_measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">12.0</span><span class="p">,</span> <span class="mf">15.5</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">20.1</span><span class="p">])</span>
-<span class="n">v_normalized</span> <span class="o">=</span> <span class="n">v_measured</span><span class="p">[:]</span>     <span class="c1"># הכוונה הייתה ליצור עותק עצמאי</span>
-<span class="n">v_normalized</span> <span class="o">-=</span> <span class="n">v_normalized</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="c1"># print(v_measured)   # מה יודפס, ולמה זו בעיה?</span>
-<span class="c1"># תקנו כאן:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">v_measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">12.0</span><span class="p">,</span> <span class="mf">15.5</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">20.1</span><span class="p">])</span>   <span class="c1"># speeds (m/s)</span>
+<span class="linenos">2</span><span class="n">v_normalized</span> <span class="o">=</span> <span class="n">v_measured</span><span class="p">[:]</span>   <span class="c1"># meant as an independent copy</span>
+<span class="linenos">3</span><span class="n">v_normalized</span> <span class="o">-=</span> <span class="n">v_normalized</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">v_measured</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># הבאג: v_measured[:] היא תצוגה, לא עותק (בניגוד לכוונה).</span>
-<span class="n">v_measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">12.0</span><span class="p">,</span> <span class="mf">15.5</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">20.1</span><span class="p">])</span>
+<p>השגיאה בשורה 2: ‎<code class="docutils literal notranslate"><span class="pre">v_measured[:]</span></code>‎ היא תצוגה של אותו מערך, לא עותק, ולכן החיסור בשורה 3 משנה גם את ‎<code class="docutils literal notranslate"><span class="pre">v_measured</span></code>‎. מתקנים את שורה 2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v_measured</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">12.0</span><span class="p">,</span> <span class="mf">15.5</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">20.1</span><span class="p">])</span>
 <span class="n">v_normalized</span> <span class="o">=</span> <span class="n">v_measured</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">v_normalized</span> <span class="o">-=</span> <span class="n">v_normalized</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v_measured</span><span class="p">)</span>       <span class="c1"># נשאר ללא שינוי</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v_normalized</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v_measured</span><span class="p">)</span>     <span class="c1"># [12.  15.5  9.8 20.1]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v_normalized</span><span class="p">)</span>   <span class="c1"># [-2.35  1.15 -4.55  5.75]</span>
 </pre></div>
+</div>
+</div>
+<div class="dropdown note admonition">
+<p class="admonition-title">תרגול נוסף</p>
+<p>נתון מערך ‎<code class="docutils literal notranslate"><span class="pre">a</span></code>‎. שנו את שני האיברים הראשונים של תצוגה ‎<code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a[:2]</span></code>‎ ל-‎<code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0]</span></code>‎, ובדקו בעצמכם אם ‎<code class="docutils literal notranslate"><span class="pre">a</span></code>‎ השתנה:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1"># שנו את b כך שיהיה [0, 0], ואז הדפיסו את a</span>
+<span class="c1"># b[:] = ...</span>
+<span class="c1"># print(a)</span>
+</pre></div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>   <span class="c1"># [0 0 3 4 5]: a changed, because b is a view of a</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2134,9 +2122,8 @@ function try_show() {
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.5.1. דוגמה: “ניקוי” נתוני מדידה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.5.2. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.5.3. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.5.4. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.5.2. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.5.3. תרגול עצמי: מצאו את השגיאה</a></li>
 </ul>
   </nav></div>
 

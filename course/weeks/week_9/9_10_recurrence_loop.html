@@ -251,8 +251,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_7_axis_reductions.html">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -631,11 +631,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.10.1. דוגמה: סימולציית זריקה צעד-אחר-צעד (שיטת אוילר)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.10.2. באג נפוץ: ניסיון לוקטר יחס נסיגה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.10.3. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.10.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.10.5. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.10.1. דוגמה: זריקה צעד אחרי צעד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.10.2. מעקב אחרי לולאה בטבלה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.10.3. באג נפוץ: ניסיון לוקטר יחס נסיגה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.10.4. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.10.5. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.10.6. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -649,17 +650,16 @@
                   
   <section id="id1">
 <h1><span class="section-number">9.10. </span>יחס נסיגה ולולאת עדכון — מתי אי אפשר לוקטר<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>(המשך הסרטון מ-9.8.) לאורך כל הקורס עד כה, וקטוריזציה <strong>תמיד</strong> עבדה: כל איבר במערך התוצאה חושב מהנתונים המקוריים, בלי תלות באיברי תוצאה אחרים. הפעם יש מצב שבו זה נשבר: כאשר <strong>צעד <span class="math notranslate nohighlight">\(n\)</span> תלוי בתוצאה של צעד <span class="math notranslate nohighlight">\(n-1\)</span></strong> — יחס נסיגה. אז חייבים לולאת עדכון אמיתית.</p>
+<p>לאורך כל הקורס עד כה, וקטוריזציה <strong>תמיד</strong> עבדה: כל איבר במערך התוצאה חושב מהנתונים המקוריים, בלי תלות באיברי תוצאה אחרים. הפעם יש מצב שבו זה נשבר: כאשר <strong>צעד <span class="math notranslate nohighlight">\(n\)</span> תלוי בתוצאה של צעד <span class="math notranslate nohighlight">\(n-1\)</span></strong> — יחס נסיגה. אז חייבים לולאת עדכון אמיתית.</p>
 <section id="id2">
-<h2><span class="section-number">9.10.1. </span>דוגמה: סימולציית זריקה צעד-אחר-צעד (שיטת אוילר)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>עד עכשיו חישבנו את מסלול הזריקה מנוסחה סגורה. נבנה אותו הפעם <strong>צעד אחרי צעד</strong>: בכל צעד זמן <code class="docutils literal notranslate"><span class="pre">dt</span></code>, המהירות והמיקום מתעדכנים לפי ערכם ב<strong>צעד הקודם</strong>:</p>
+<h2><span class="section-number">9.10.1. </span>דוגמה: זריקה צעד אחרי צעד<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>עד עכשיו חישבנו את מסלול הזריקה מנוסחה סגורה. נבנה אותו הפעם <strong>צעד אחרי צעד</strong>: בכל צעד זמן ‎<code class="docutils literal notranslate"><span class="pre">dt</span></code>‎, המהירות והמיקום מתעדכנים לפי ערכם ב<strong>צעד הקודם</strong>:</p>
 <div class="math notranslate nohighlight">
 \[v_{n+1} = v_n - g\,dt \qquad y_{n+1} = y_n + v_n\, dt\]</div>
-<p>זו בדיוק השיטה שמשמשת בפועל לסימולציה נומרית כשאין נוסחה סגורה (ולמרות שכאן יש לנו נוסחה סגורה, זה תרגיל טוב להבנת ההבדל).</p>
+<p>כך מחשבים תנועה כשאין לה נוסחה סגורה. כאן יש נוסחה, ולכן אפשר להשוות אליה את תוצאת הלולאה: בגרף שמתחת לתא, הלולאה בקו מלא והנוסחה בקו מקווקו, והן כמעט מתלכדות.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
@@ -673,38 +673,94 @@
 <span class="n">vy_sim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">vy_sim</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">vy_sim</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">dt</span>        <span class="c1"># תלוי בערך הקודם - לא ניתן לוקטר</span>
-    <span class="n">y_sim</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_sim</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">vy_sim</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>   <span class="c1"># גם כאן</span>
+    <span class="n">vy_sim</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">vy_sim</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">dt</span>          <span class="c1"># needs the previous value</span>
+    <span class="n">y_sim</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_sim</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">vy_sim</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>     <span class="c1"># the same here</span>
 
 <span class="n">t_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_sim</span><span class="p">,</span> <span class="n">y_sim</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"סימולציה (לולאה)"</span><span class="p">)</span>
 <span class="n">y_exact</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t_sim</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_sim</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_sim</span><span class="p">,</span> <span class="n">y_exact</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"נוסחה סגורה"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"t (s)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../../_images/5bddb8d0f3eb0db7792800a1c66126826bfe8154b3bd2001b12f851bb9b01960.png" src="../../../_images/5bddb8d0f3eb0db7792800a1c66126826bfe8154b3bd2001b12f851bb9b01960.png" />
+<img alt="../../../_images/b670266f0badbcca8b7d83b2f5ac5d2fc6d0238ec60fb2b4b661ffe434ae6928.png" src="../../../_images/b670266f0badbcca8b7d83b2f5ac5d2fc6d0238ec60fb2b4b661ffe434ae6928.png" />
 </div>
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">9.10.2. </span>באג נפוץ: ניסיון לוקטר יחס נסיגה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>אפשר להתפתות לכתוב <code class="docutils literal notranslate"><span class="pre">vy_sim[1:]</span> <span class="pre">=</span> <span class="pre">vy_sim[:-1]</span> <span class="pre">-</span> <span class="pre">g</span> <span class="pre">*</span> <span class="pre">dt</span></code> בתקווה “לחסוך” את הלולאה — אבל זה <strong>לא</strong> עובד: הביטוי הזה מניח ש-<code class="docutils literal notranslate"><span class="pre">vy_sim[:-1]</span></code> כבר מכיל את הערכים הנכונים, אבל בזמן ההרצה כל האיברים עדיין אפסים (חוץ מהראשון) — אין “שרשור” אמיתי בין הצעדים כשכותבים את זה כפעולת מערך אחת.</p>
+<h2><span class="section-number">9.10.2. </span>מעקב אחרי לולאה בטבלה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>כשלולאת עדכון מדפיסה ערכים לא נכונים, הכלי הכי שימושי הוא טבלה: עמודה ל-‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ ועמודה לכל מערך שהלולאה ממלאת. ממלאים אותה שורה אחרי שורה, כל שורה מתוך השורה שלפניה, בדיוק כמו המחשב. ניקח לולאה קטנה עם מספרים עגולים: זריקה אנכית במהירות 10 מטר לשנייה, עם ‎<code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">10</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.1</span></code>‎, בארבעה צעדים.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="c1"># velocity (m/s)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="c1"># height (m)</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="mf">0.1</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10.  9.  8.  7.]
+[0.  1.  1.9 2.7]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎</p></th>
+<th class="head"><p>‎<code class="docutils literal notranslate"><span class="pre">v[i]</span></code>‎</p></th>
+<th class="head"><p>‎<code class="docutils literal notranslate"><span class="pre">y[i]</span></code>‎</p></th>
+<th class="head"><p>מה הסיבוב הזה מחשב</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>10</p></td>
+<td><p>0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v[1]</span> <span class="pre">=</span> <span class="pre">10</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">9</span></code>, <code class="docutils literal notranslate"><span class="pre">y[1]</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">+</span> <span class="pre">10</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>9</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v[2]</span> <span class="pre">=</span> <span class="pre">9</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">y[2]</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">9</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">1.9</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>8</p></td>
+<td><p>1.9</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v[3]</span> <span class="pre">=</span> <span class="pre">8</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">y[3]</span> <span class="pre">=</span> <span class="pre">1.9</span> <span class="pre">+</span> <span class="pre">8</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">2.7</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>7</p></td>
+<td><p>2.7</p></td>
+<td><p>אין סיבוב כזה: ‎<code class="docutils literal notranslate"><span class="pre">range(3)</span></code>‎ נעצר לפני 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>כך משתמשים בטבלה כשהפלט שגוי:</p>
+<ol class="arabic simple">
+<li><p>ממלאים אותה לפי מה שהקוד <strong>צריך</strong> לעשות, עוד לפני שמסתכלים על הפלט.</p></li>
+<li><p>משווים לפלט ומחפשים את הערך <strong>הראשון</strong> שיוצא שונה. כל ערך שאחריו כבר חושב מתוך ערך שגוי, ולכן הוא מלמד פחות.</p></li>
+<li><p>השורה בקוד שמחשבת את הערך הזה היא החשודה הראשונה. אם ‎<code class="docutils literal notranslate"><span class="pre">v</span></code>‎ נכון ו-‎<code class="docutils literal notranslate"><span class="pre">y</span></code>‎ שגוי, הבעיה בשורה של ‎<code class="docutils literal notranslate"><span class="pre">y</span></code>‎. אם הלולאה נעצרת ב-‎<code class="docutils literal notranslate"><span class="pre">IndexError</span></code>‎, בודקים מה ה-‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ האחרון ש-‎<code class="docutils literal notranslate"><span class="pre">range</span></code>‎ מייצר.</p></li>
+</ol>
+</section>
+<section id="id4">
+<h2><span class="section-number">9.10.3. </span>באג נפוץ: ניסיון לוקטר יחס נסיגה<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>אפשר להתפתות לכתוב ‎<code class="docutils literal notranslate"><span class="pre">vy_sim[1:]</span> <span class="pre">=</span> <span class="pre">vy_sim[:-1]</span> <span class="pre">-</span> <span class="pre">g</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎ בתקווה “לחסוך” את הלולאה — אבל זה <strong>לא</strong> עובד: הביטוי הזה מניח ש-‎<code class="docutils literal notranslate"><span class="pre">vy_sim[:-1]</span></code>‎ כבר מכיל את הערכים הנכונים, אבל בזמן ההרצה כל האיברים עדיין אפסים (חוץ מהראשון) — אין “שרשור” אמיתי בין הצעדים כשכותבים את זה כפעולת מערך אחת.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vy_wrong</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
 <span class="n">vy_wrong</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<span class="n">vy_wrong</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">vy_wrong</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">dt</span>    <span class="c1"># "וקטוריזציה" שגויה</span>
+<span class="n">vy_wrong</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">vy_wrong</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">dt</span>    <span class="c1"># a wrong attempt to vectorize</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">vy_wrong</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>   <span class="c1"># כל האיברים (מלבד הראשון) התעדכנו פעם אחת בלבד מהאפס ההתחלתי</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vy_sim</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>     <span class="c1"># הערכים הנכונים, מהלולאה</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vy_wrong</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>   <span class="c1"># from index 2 on, computed from the old zeros</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vy_sim</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>     <span class="c1"># the right values, from the loop</span>
 </pre></div>
 </div>
 </div>
@@ -715,67 +771,46 @@
 </div>
 </div>
 </div>
-<p>ה”וקטוריזציה” השגויה מחשבת <code class="docutils literal notranslate"><span class="pre">vy_wrong[:-1]</span> <span class="pre">-</span> <span class="pre">g*dt</span></code> <strong>פעם אחת</strong>, מתוך המערך כפי שהיה <em>לפני</em> ההרצה — כמעט כולו אפסים חוץ מהאיבר הראשון. לכן רק <code class="docutils literal notranslate"><span class="pre">vy_wrong[1]</span></code> יוצא נכון (הוא מחושב מ-<code class="docutils literal notranslate"><span class="pre">vy_wrong[0]</span></code>, שכבר היה נכון), אבל <code class="docutils literal notranslate"><span class="pre">vy_wrong[2]</span></code> ואילך כולם מחושבים מ-<strong>אפסים ישנים</strong> ולא מהערכים המעודכנים בפועל — בדיוק כפי שרואים בהדפסה למעלה. ההבדל בין <code class="docutils literal notranslate"><span class="pre">vy_wrong</span></code> ל-<code class="docutils literal notranslate"><span class="pre">vy_sim</span></code> הוא בדיוק ההבדל בין “כל האיברים בבת אחת, מהמצב הישן” לבין “כל איבר תלוי בערך המעודכן של קודמו”.</p>
+<p>ה”וקטוריזציה” השגויה מחשבת ‎<code class="docutils literal notranslate"><span class="pre">vy_wrong[:-1]</span> <span class="pre">-</span> <span class="pre">g*dt</span></code>‎ <strong>פעם אחת</strong>, מתוך המערך כפי שהיה <em>לפני</em> ההרצה — כמעט כולו אפסים חוץ מהאיבר הראשון. לכן רק ‎<code class="docutils literal notranslate"><span class="pre">vy_wrong[1]</span></code>‎ יוצא נכון (הוא מחושב מ-‎<code class="docutils literal notranslate"><span class="pre">vy_wrong[0]</span></code>‎, שכבר היה נכון), אבל ‎<code class="docutils literal notranslate"><span class="pre">vy_wrong[2]</span></code>‎ ואילך כולם מחושבים מ-<strong>אפסים ישנים</strong> ולא מהערכים המעודכנים בפועל — בדיוק כפי שרואים בהדפסה למעלה. ההבדל בין ‎<code class="docutils literal notranslate"><span class="pre">vy_wrong</span></code>‎ ל-‎<code class="docutils literal notranslate"><span class="pre">vy_sim</span></code>‎ הוא בדיוק ההבדל בין “כל האיברים בבת אחת, מהמצב הישן” לבין “כל איבר תלוי בערך המעודכן של קודמו”.</p>
+<p>בשפה של הטבלה: הערך הראשון ששונה הוא ‎<code class="docutils literal notranslate"><span class="pre">vy_wrong[2]</span></code>‎, וממנו והלאה כל הערכים שגויים.</p>
 </section>
-<section id="id4">
-<h2><span class="section-number">9.10.3. </span>נסו בעצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<p>הריצו את אותה סימולציה עם <code class="docutils literal notranslate"><span class="pre">dt=0.1</span></code> (גס יותר) והשוו חזותית לנוסחה הסגורה — מה קורה לדיוק?</p>
-<div class="cell docutils container">
+<section id="id5">
+<h2><span class="section-number">9.10.4. </span>נסו בעצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>הוסיפו לטבלה שורה: אם הלולאה הקטנה הייתה רצה 5 צעדים (‎<code class="docutils literal notranslate"><span class="pre">np.zeros(5)</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">range(4)</span></code>‎), מה היו ‎<code class="docutils literal notranslate"><span class="pre">v[4]</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">y[4]</span></code>‎? מלאו את השורה לפני שאתם מריצים את התא.</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dt2 = 0.1</span>
-<span class="c1"># ...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="mf">0.1</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dt2</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">n_steps2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span> <span class="o">/</span> <span class="n">dt2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="n">y_sim2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps2</span><span class="p">)</span>
-<span class="n">vy_sim2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps2</span><span class="p">)</span>
-<span class="n">vy_sim2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">vy_sim2</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">vy_sim2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">dt2</span>
-    <span class="n">y_sim2</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_sim2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">vy_sim2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt2</span>
-
-<span class="n">t_sim2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_steps2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt2</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_sim2</span><span class="p">,</span> <span class="n">y_sim2</span><span class="p">,</span> <span class="s2">"o-"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"סימולציה (dt גס)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_sim</span><span class="p">,</span> <span class="n">y_exact</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"נוסחה סגורה"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[10.  9.  8.  7.  6.]
+[0.  1.  1.9 2.7 3.4]
 </pre></div>
 </div>
-<p>עם <code class="docutils literal notranslate"><span class="pre">dt</span></code> גס יותר הסימולציה סוטה יותר מהפתרון המדויק — שגיאת הקירוב גדלה. זה בדיוק סוג האיזון (דיוק מול מהירות ריצה) שנדחה לקורס ההמשך.</p>
+<p>בסיבוב החדש, ‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">3</span></code>‎:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">v[4]</span> <span class="pre">=</span> <span class="pre">7</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y[4]</span> <span class="pre">=</span> <span class="pre">2.7</span> <span class="pre">+</span> <span class="pre">7</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">3.4</span></code></p></li>
+</ul>
 </div>
 </section>
-<section id="id5">
-<h2><span class="section-number">9.10.4. </span>בדקו את עצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"למה אי אפשר לוקטר את החישוב &lt;code&gt;v[n+1] = v[n] - g*dt&lt;/code&gt; בפעולת מערך אחת?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי NumPy לא תומך בחיסור"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — חיסור נתמך היטב."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"אפשר בהחלט לוקטר את זה - זו רק שאלה של סגנון"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — ראינו שהתוצאה שגויה כשמנסים."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי v[n] הוא תמיד מספר שלילי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא קשור — אין קשר בין סימן הערך לבין האפשרות לוקטר את החישוב."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"כי כל איבר תלוי בערך המעודכן של קודמו, וזה דורש שרשור צעד-אחר-צעד אמיתי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<section id="id6">
+<h2><span class="section-number">9.10.5. </span>בדקו את עצמכם<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>השאלה השנייה מתייחסת ללולאה הקטנה מהטבלה שלמעלה: ארבעה צעדים, ‎<code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">10</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.1</span></code>‎.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="XVRZpmRyfbIX" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#XVRZpmRyfbIX {
+<div class="output text_html"><div id="GpAaluMAZrzN" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#GpAaluMAZrzN {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -998,7 +1033,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsXVRZpmRyfbIX=[{"question": "\u05dc\u05de\u05d4 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d5\u05e7\u05d8\u05e8 \u05d0\u05ea \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1 <code>v[n+1] = v[n] - g*dt</code> \u05d1\u05e4\u05e2\u05d5\u05dc\u05ea \u05de\u05e2\u05e8\u05da \u05d0\u05d7\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 NumPy \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e1\u05d5\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d7\u05d9\u05e1\u05d5\u05e8 \u05e0\u05ea\u05de\u05da \u05d4\u05d9\u05d8\u05d1."}, {"answer": "\u05d0\u05e4\u05e9\u05e8 \u05d1\u05d4\u05d7\u05dc\u05d8 \u05dc\u05d5\u05e7\u05d8\u05e8 \u05d0\u05ea \u05d6\u05d4 - \u05d6\u05d5 \u05e8\u05e7 \u05e9\u05d0\u05dc\u05d4 \u05e9\u05dc \u05e1\u05d2\u05e0\u05d5\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05d2\u05d5\u05d9\u05d4 \u05db\u05e9\u05de\u05e0\u05e1\u05d9\u05dd."}, {"answer": "\u05db\u05d9 v[n] \u05d4\u05d5\u05d0 \u05ea\u05de\u05d9\u05d3 \u05de\u05e1\u05e4\u05e8 \u05e9\u05dc\u05d9\u05dc\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u2014 \u05d0\u05d9\u05df \u05e7\u05e9\u05e8 \u05d1\u05d9\u05df \u05e1\u05d9\u05de\u05df \u05d4\u05e2\u05e8\u05da \u05dc\u05d1\u05d9\u05df \u05d4\u05d0\u05e4\u05e9\u05e8\u05d5\u05ea \u05dc\u05d5\u05e7\u05d8\u05e8 \u05d0\u05ea \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1."}, {"answer": "\u05db\u05d9 \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05e2\u05e8\u05da \u05d4\u05de\u05e2\u05d5\u05d3\u05db\u05df \u05e9\u05dc \u05e7\u05d5\u05d3\u05de\u05d5, \u05d5\u05d6\u05d4 \u05d3\u05d5\u05e8\u05e9 \u05e9\u05e8\u05e9\u05d5\u05e8 \u05e6\u05e2\u05d3-\u05d0\u05d7\u05e8-\u05e6\u05e2\u05d3 \u05d0\u05de\u05d9\u05ea\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsGpAaluMAZrzN=[{"question": "\u05dc\u05de\u05d4 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d7\u05e9\u05d1 \u05d0\u05ea \u05db\u05dc \u05d4\u05de\u05d4\u05d9\u05e8\u05d5\u05d9\u05d5\u05ea \u05e9\u05dc \u05dc\u05d5\u05dc\u05d0\u05ea \u05d4\u05e2\u05d3\u05db\u05d5\u05df \u05d1\u05e4\u05e2\u05d5\u05dc\u05ea \u05de\u05e2\u05e8\u05da \u05d0\u05d7\u05ea?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 NumPy \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e1\u05d5\u05e8", "correct": false, "feedback": "\u05dc\u05d0: \u05d7\u05d9\u05e1\u05d5\u05e8 \u05e0\u05ea\u05de\u05da \u05d4\u05d9\u05d8\u05d1."}, {"answer": "\u05d0\u05e4\u05e9\u05e8 \u05d1\u05d4\u05d7\u05dc\u05d8, \u05d6\u05d5 \u05e8\u05e7 \u05e9\u05d0\u05dc\u05d4 \u05e9\u05dc \u05e1\u05d2\u05e0\u05d5\u05df", "correct": false, "feedback": "\u05dc\u05d0: \u05e8\u05d0\u05d9\u05e0\u05d5 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05d2\u05d5\u05d9\u05d4 \u05db\u05e9\u05de\u05e0\u05e1\u05d9\u05dd."}, {"answer": "\u05db\u05d9 \u05d4\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05ea\u05de\u05d9\u05d3 \u05e9\u05dc\u05d9\u05dc\u05d9\u05ea", "correct": false, "feedback": "\u05dc\u05d0: \u05d0\u05d9\u05df \u05e7\u05e9\u05e8 \u05d1\u05d9\u05df \u05e1\u05d9\u05de\u05df \u05d4\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05dc\u05d1\u05d9\u05df \u05d4\u05d0\u05e4\u05e9\u05e8\u05d5\u05ea \u05dc\u05d7\u05e9\u05d1 \u05d1\u05e4\u05e2\u05d5\u05dc\u05d4 \u05d0\u05d7\u05ea."}, {"answer": "\u05db\u05d9 \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05e2\u05e8\u05da \u05d4\u05de\u05e2\u05d5\u05d3\u05db\u05df \u05e9\u05dc \u05e7\u05d5\u05d3\u05de\u05d5, \u05d5\u05d6\u05d4 \u05d3\u05d5\u05e8\u05e9 \u05dc\u05d7\u05e9\u05d1 \u05e6\u05e2\u05d3 \u05d0\u05d7\u05e8\u05d9 \u05e6\u05e2\u05d3", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}, {"question": "\u05d1\u05dc\u05d5\u05dc\u05d0\u05d4 \u05de\u05d4\u05d8\u05d1\u05dc\u05d4, \u05de\u05d4 \u05d4\u05d2\u05d5\u05d1\u05d4 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2 \u05e9\u05dc \u05de\u05e2\u05e8\u05da \u05d4\u05d2\u05d1\u05d4\u05d9\u05dd?", "type": "multiple_choice", "answers": [{"answer": "1.9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05d2\u05d5\u05d1\u05d4 \u05d4\u05e7\u05d5\u05d3\u05dd, 1, \u05d5\u05e2\u05d5\u05d3 \u05d4\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05d4\u05e7\u05d5\u05d3\u05de\u05ea, 9, \u05db\u05e4\u05d5\u05dc 0.1."}, {"answer": "1.8", "correct": false, "feedback": "\u05dc\u05d0: \u05db\u05d0\u05df \u05d7\u05d5\u05e9\u05d1 \u05e2\u05dd \u05d4\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05d4\u05d7\u05d3\u05e9\u05d4, 8. \u05d4\u05e9\u05d5\u05e8\u05d4 \u05e9\u05dc y \u05de\u05e9\u05ea\u05de\u05e9\u05ea \u05d1\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05e9\u05dc \u05d4\u05e6\u05e2\u05d3 \u05d4\u05e7\u05d5\u05d3\u05dd."}, {"answer": "0.9", "correct": false, "feedback": "\u05dc\u05d0: 0.9 \u05d4\u05d5\u05d0 \u05e8\u05e7 \u05d4\u05ea\u05d5\u05e1\u05e4\u05ea \u05e9\u05dc \u05d4\u05e6\u05e2\u05d3 \u05d4\u05d6\u05d4; \u05e6\u05e8\u05d9\u05da \u05dc\u05d4\u05d5\u05e1\u05d9\u05e3 \u05d0\u05d5\u05ea\u05d4 \u05dc\u05d2\u05d5\u05d1\u05d4 \u05d4\u05e7\u05d5\u05d3\u05dd, 1."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05d2\u05d5\u05d1\u05d4 \u05dc\u05d0 \u05d2\u05d3\u05dc \u05d1\u05d0\u05d5\u05ea\u05d4 \u05db\u05de\u05d5\u05ea \u05d1\u05db\u05dc \u05e6\u05e2\u05d3, \u05db\u05d9 \u05d4\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05e7\u05d8\u05e0\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2060,8 +2095,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("XVRZpmRyfbIX")) {
-    show_questions(questionsXVRZpmRyfbIX, XVRZpmRyfbIX);
+  if (document.getElementById("GpAaluMAZrzN")) {
+    show_questions(questionsGpAaluMAZrzN, GpAaluMAZrzN);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2074,34 +2109,39 @@ function try_show() {
 </script></div>
 </div>
 </section>
-<section id="id6">
-<h2><span class="section-number">9.10.5. </span>תרגול עצמי<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<p>כתבו לולאת עדכון שמדמה זריקה עם <strong>חיכוך אוויר ליניארי</strong> פשוט: <span class="math notranslate nohighlight">\(v_{n+1}=v_n - (g + k v_n)\,dt\)</span> עבור <span class="math notranslate nohighlight">\(k=0.1\)</span> (מקדם חיכוך שרירותי). זו דוגמה שבה <strong>אין</strong> נוסחה סגורה פשוטה — בדיוק המקרה שבו לולאת עדכון היא לא רק נוחות, אלא הכרח.</p>
-<div class="cell docutils container">
+<section id="id7">
+<h2><span class="section-number">9.10.6. </span>תרגול עצמי<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>עם התנגדות אוויר ליניארית פשוטה, המהירות האנכית מתעדכנת לפי <span class="math notranslate nohighlight">\(v_{n+1}=v_n - (g + k v_n)\,dt\)</span>. לזה <strong>אין</strong> נוסחה סגורה פשוטה, ולכן כאן לולאת עדכון היא לא רק נוחות אלא הכרח. השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">drag_velocities</span></code>‎ ובדקו אותה על הדוגמה שבתא. חשבו את שני הצעדים בטבלה לפני שאתם מריצים.</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># k = 0.1</span>
-<span class="c1"># ...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">drag_velocities</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Vertical velocity (m/s) at each step, with air resistance k (1/s)."""</span>
+    <span class="k">pass</span>   <span class="c1"># replace with your code</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">drag_velocities</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="c1"># expected: [10.   8.   6.2]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">vy_drag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-<span class="n">vy_drag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">vy_drag</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">vy_drag</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">g</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">vy_drag</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">*</span> <span class="n">dt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">drag_velocities</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Vertical velocity (m/s) at each step, with air resistance k (1/s)."""</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">g</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="k">return</span> <span class="n">v</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_sim</span><span class="p">,</span> <span class="n">vy_drag</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"עם חיכוך"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_sim</span><span class="p">,</span> <span class="n">vy_sim</span><span class="p">,</span> <span class="s2">"--"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"בלי חיכוך"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"t (s)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$v_y$ (m/s)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">drag_velocities</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>בסיבוב ‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code>‎: ‎<code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">-</span> <span class="pre">(10</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">*</span> <span class="pre">10)</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">8</span></code>‎</p></li>
+<li><p>בסיבוב ‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">1</span></code>‎: ‎<code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">-</span> <span class="pre">(10</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">*</span> <span class="pre">8)</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">6.2</span></code>‎</p></li>
+</ul>
+<p>בלי התנגדות (‎<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">0</span></code>‎) היינו מקבלים 10, 9 ו-8: ההתנגדות מאטה את הגוף מהר יותר.</p>
 </div>
 </section>
 </section>
@@ -2172,11 +2212,12 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.10.1. דוגמה: סימולציית זריקה צעד-אחר-צעד (שיטת אוילר)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.10.2. באג נפוץ: ניסיון לוקטר יחס נסיגה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.10.3. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.10.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.10.5. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.10.1. דוגמה: זריקה צעד אחרי צעד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.10.2. מעקב אחרי לולאה בטבלה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.10.3. באג נפוץ: ניסיון לוקטר יחס נסיגה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.10.4. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">9.10.5. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">9.10.6. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

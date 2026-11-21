@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="9.8. diff ו-cumsum — נגזרת וסכום מצטבר" href="9_8_diff_cumsum.html" />
-    <link rel="prev" title="9.6. None ו-meshgrid (כלל 4)" href="9_6_none_meshgrid.html" />
+    <link rel="prev" title="9.6. הוספת ציר עם None (כלל 4)" href="9_6_none_meshgrid.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -249,8 +249,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_1_builtin-functions.html">2.7. פונקציות מובנות בפייתון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_2_building-functions.html">2.8. בניית פונקציות משלכם</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_3_formal-and-actual-variables.html">2.9. פרמטרים וארגומנטים</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.10. קריאה הדדית בין פונקציות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.11. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_4_advanced-examples.html">2.10. דוגמאות מתקדמות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/3_5_caller-callee.html">2.11. קריאה הדדית בין פונקציות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_3.html">3. שבוע 3 — רשימות</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -324,7 +324,7 @@
 <li class="toctree-l2"><a class="reference internal" href="9_3_reshape_transpose.html">9.3. reshape ו-transpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_4_stack_concatenate.html">9.4. stack ו-concatenate — לאחד ריצות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_5_broadcasting.html">9.5. התאמת צירים בין שני מערכים (Broadcasting)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. None ו-meshgrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_6_none_meshgrid.html">9.6. הוספת ציר עם None</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">9.7. צמצום לפי ציר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_8_diff_cumsum.html">9.8. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
 <li class="toctree-l2"><a class="reference internal" href="9_9_trapezoid_quad.html">9.9. אינטגרציה: trapezoid ו-quad</a></li>
@@ -631,7 +631,7 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.7.1. דוגמה: ממוצע וסטיית תקן על פני הריצות</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.7.2. דוגמה: הגובה המרבי שכל ריצה הגיעה אליו</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis">9.7.3. באג נפוץ: לשכוח <code class="docutils literal notranslate"><span class="pre">axis</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis">9.7.3. באג נפוץ: לשכוח ‎<code class="docutils literal notranslate"><span class="pre">axis</span></code>‎</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.7.4. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.7.5. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7.6. תרגול עצמי</a></li>
@@ -651,20 +651,18 @@
 <p>הכלל השני מארבעת הכללים:</p>
 <div class="tip admonition">
 <p class="admonition-title">כלל 2 — axis הוא הציר שנעלם</p>
-<p><code class="docutils literal notranslate"><span class="pre">axis=k</span></code> בפעולת צמצום (<code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">std</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">argmin</span></code>, <code class="docutils literal notranslate"><span class="pre">argmax</span></code>…) הוא הציר <strong>שנעלם</strong> מהתוצאה. <code class="docutils literal notranslate"><span class="pre">mean(axis=0)</span></code> על מערך <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">200)</span></code> מחזיר <code class="docutils literal notranslate"><span class="pre">(200,)</span></code> — ממוצע <strong>על פני הריצות</strong>, ציר הזמן נשאר.</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">axis=k</span></code>‎ בפעולת צמצום (‎<code class="docutils literal notranslate"><span class="pre">mean</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">std</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">sum</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">argmin</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">argmax</span></code>‎…) הוא הציר <strong>שנעלם</strong> מהתוצאה. ‎<code class="docutils literal notranslate"><span class="pre">mean(axis=0)</span></code>‎ על מערך ‎<code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">200)</span></code>‎ מחזיר ‎<code class="docutils literal notranslate"><span class="pre">(200,)</span></code>‎ — ממוצע <strong>על פני הריצות</strong>, ציר הזמן נשאר.</p>
 </div>
 <p>זה בדיוק הכלי שמאפשר לענות על שאלות כמו “מה הגובה הממוצע בכל רגע?” לעומת “מה הגובה המרבי שכל ריצה הגיעה אליו?” — אותו מערך, שני צירי צמצום שונים.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
 <span class="n">v0_nom</span> <span class="o">=</span> <span class="mf">20.0</span>
-<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">v0_runs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">18.0</span><span class="p">,</span> <span class="mf">19.5</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">20.5</span><span class="p">,</span> <span class="mf">22.0</span><span class="p">])</span>   <span class="c1"># launch speeds (m/s)</span>
 <span class="n">n_runs</span><span class="p">,</span> <span class="n">n_t</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">60</span>
-<span class="n">v0_runs</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">v0_nom</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_runs</span><span class="p">)</span>
 <span class="n">t_flight_nom</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0_nom</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight_nom</span><span class="p">,</span> <span class="n">n_t</span><span class="p">)</span>
 
@@ -675,34 +673,35 @@
 </div>
 <section id="id1">
 <h2><span class="section-number">9.7.1. </span>דוגמה: ממוצע וסטיית תקן על פני הריצות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>לכל נקודת זמן, מה הגובה הממוצע על פני 5 הריצות, ומה הפיזור סביבו? — זה בדיוק <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> (ציר הריצות נעלם, ציר הזמן נשאר). זו גם ההכנה הישירה לניתוח שגיאות בשבוע 11.</p>
+<p>לכל נקודת זמן, מה הגובה הממוצע על פני 5 הריצות, ומה הפיזור סביבו? — זה בדיוק ‎<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>‎ (ציר הריצות נעלם, ציר הזמן נשאר). זו גם ההכנה הישירה לניתוח שגיאות בשבוע 11.</p>
+<p>סטיית התקן (‎<code class="docutils literal notranslate"><span class="pre">std</span></code>‎) מודדת כמה הערכים מתפזרים סביב הממוצע שלהם: בערך, המרחק הטיפוסי של ערך מהממוצע. בסעיף 11.2 נראה איך מחשבים אותה ומתי משתמשים בה. בגרף שמתחת לתא: הממוצע בקו מלא, והממוצע פחות סטיית תקן ועוד סטיית תקן בקווים מקווקווים.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_mean</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>   <span class="c1"># shape (60,) - ממוצע על פני הריצות, לכל זמן</span>
-<span class="n">y_std</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>     <span class="c1"># shape (60,) - סטיית תקן על פני הריצות, לכל זמן</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y_mean</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"tab:blue"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"ממוצע"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y_mean</span> <span class="o">-</span> <span class="n">y_std</span><span class="p">,</span> <span class="n">y_mean</span> <span class="o">+</span> <span class="n">y_std</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"tab:blue"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"±1 סטיית תקן"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"t (s)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_mean</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>   <span class="c1"># shape (60,): the mean over the runs, at every time</span>
+<span class="n">y_std</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>     <span class="c1"># shape (60,): the spread over the runs</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_mean</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_std</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d07606d818b222de70498ad157955eea999996c870df0ed7739c5de0f4e97af7.png" src="../../../_images/d07606d818b222de70498ad157955eea999996c870df0ed7739c5de0f4e97af7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(60,) (60,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/70028090fe592cd4fae5609f63f2d94f0f78ee501bca6341529c3f2e15792a77.png" src="../../../_images/70028090fe592cd4fae5609f63f2d94f0f78ee501bca6341529c3f2e15792a77.png" />
 </div>
 </div>
 </section>
 <section id="id2">
 <h2><span class="section-number">9.7.2. </span>דוגמה: הגובה המרבי שכל ריצה הגיעה אליו<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>השאלה ההפוכה: לכל ריצה בנפרד, מהו הגובה המרבי לאורך הזמן שלה? כאן ציר הזמן הוא זה שנעלם — <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>.</p>
+<p>השאלה ההפוכה: לכל ריצה בנפרד, מהו הגובה המרבי לאורך הזמן שלה? כאן ציר הזמן הוא זה שנעלם — ‎<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>‎.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_height_per_run</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>              <span class="c1"># shape (5,) - גובה מרבי לכל ריצה</span>
-<span class="n">time_index_of_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>        <span class="c1"># shape (5,) - איזה אינדקס זמן זה קרה</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_height_per_run</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>        <span class="c1"># shape (5,): one per run</span>
+<span class="n">time_index_of_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># shape (5,): where it happened</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"גובה מרבי בכל ריצה:"</span><span class="p">,</span> <span class="n">max_height_per_run</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"אינדקס הזמן של השיא בכל ריצה:"</span><span class="p">,</span> <span class="n">time_index_of_max</span><span class="p">)</span>
@@ -710,25 +709,25 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>גובה מרבי בכל ריצה: [10.33162092 10.06863415 10.86571891 10.31000546  9.6638133 ]
-אינדקס הזמן של השיא בכל ריצה: [30 29 30 30 29]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>גובה מרבי בכל ריצה: [ 8.26293172  9.69959371 10.20115027 10.72000188 12.34456437]
+אינדקס הזמן של השיא בכל ריצה: [27 29 29 30 32]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="axis">
-<h2><span class="section-number">9.7.3. </span>באג נפוץ: לשכוח <code class="docutils literal notranslate"><span class="pre">axis</span></code><a class="headerlink" href="#axis" title="Link to this heading">#</a></h2>
-<p>בלי <code class="docutils literal notranslate"><span class="pre">axis=...</span></code>, פעולת הצמצום פועלת על <strong>כל המערך יחד</strong>, ומחזירה מספר בודד — לא וקטור. <code class="docutils literal notranslate"><span class="pre">()Y.mean</span></code> (בלי axis) מחזיר גובה ממוצע אחד, שמערבב זמנים מוקדמים (קרובים לקרקע) עם זמנים מאוחרים — תוצאה בלי שום פירוש פיזיקלי ברור.</p>
+<h2><span class="section-number">9.7.3. </span>באג נפוץ: לשכוח ‎<code class="docutils literal notranslate"><span class="pre">axis</span></code>‎<a class="headerlink" href="#axis" title="Link to this heading">#</a></h2>
+<p>בלי ‎<code class="docutils literal notranslate"><span class="pre">axis=...</span></code>‎, פעולת הצמצום פועלת על <strong>כל המערך יחד</strong>, ומחזירה מספר בודד — לא וקטור. ‎<code class="docutils literal notranslate"><span class="pre">Y.mean()</span></code>‎ (בלי axis) מחזיר גובה ממוצע אחד, שמערבב זמנים מוקדמים (קרובים לקרקע) עם זמנים מאוחרים — תוצאה בלי שום פירוש פיזיקלי ברור.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scalar_mean</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>          <span class="c1"># ממוצע על כל 300 הערכים ביחד - כמעט תמיד לא מה שרוצים</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scalar_mean</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>   <span class="c1"># all 300 values together: rarely what you want</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">scalar_mean</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">scalar_mean</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.72890619064453 &lt;class 'numpy.float64'&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.687420731004265 &lt;class 'numpy.float64'&gt;
 </pre></div>
 </div>
 </div>
@@ -736,50 +735,43 @@
 </section>
 <section id="id3">
 <h2><span class="section-number">9.7.4. </span>נסו בעצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>חשבו את <code class="docutils literal notranslate"><span class="pre">y_sum_over_time</span></code>, סכום הגובה לאורך הזמן בכל ריצה בנפרד (איזה axis נעלם?), ואת <code class="docutils literal notranslate"><span class="pre">y_std_per_run</span></code>, סטיית התקן של הגובה בתוך כל ריצה.</p>
-<div class="cell docutils container">
+<p>בתא הבא יש שתי ריצות קצרות, עם 3 נקודות זמן בכל אחת.</p>
+<p><strong>לפני שמריצים:</strong> כתבו מה תדפיס כל אחת משתי שורות ההדפסה. איזה ציר נעלם בכל אחת?</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># y_sum_over_time = Y.sum(axis=?)</span>
-<span class="c1"># y_std_per_run = Y.std(axis=?)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]])</span>   <span class="c1"># (run, time)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y2</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_sum_over_time</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>     <span class="c1"># axis=1 (זמן) נעלם -&gt; shape (5,), אחד לכל ריצה</span>
-<span class="n">y_std_per_run</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>       <span class="c1"># גם כאן axis=1 נעלם</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">y_sum_over_time</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_std_per_run</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[10.  4.]
+[0. 3. 4.]
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">sum(axis=1)</span></code>‎ מעלים את ציר הזמן: סכום אחד לכל ריצה, ‎<code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">6</span> <span class="pre">=</span> <span class="pre">10</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code>‎.</p></li>
+<li><p>‎<code class="docutils literal notranslate"><span class="pre">mean(axis=0)</span></code>‎ מעלים את ציר הריצות: ממוצע אחד לכל זמן, למשל ‎<code class="docutils literal notranslate"><span class="pre">(4</span> <span class="pre">+</span> <span class="pre">2)</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">3</span></code>‎.</p></li>
+</ul>
 </div>
 </section>
 <section id="id4">
 <h2><span class="section-number">9.7.5. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">jupyterquiz</span><span class="w"> </span><span class="kn">import</span> <span class="n">display_quiz</span>
-
-<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"עבור &lt;code&gt;Y&lt;/code&gt; בצורה &lt;code&gt;(5, 60)&lt;/code&gt; (ריצה, זמן), מה מחזיר &lt;code&gt;Y.mean(axis=0)&lt;/code&gt;?"</span><span class="p">,</span>
-        <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"multiple_choice"</span><span class="p">,</span>
-        <span class="s2">"answers"</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"מספר בודד"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — רק Y.mean() בלי axis מחזיר מספר בודד."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"מערך בצורה (5,) - ממוצע על פני הזמן, לכל ריצה"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"זו התוצאה של axis=1, לא axis=0."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"(5, 60) — אותה צורה, ללא שינוי"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"לא — axis=0 גורם לציר הריצות להיעלם מהתוצאה; הצורה קטנה מ-(5,60) ל-(60,)."</span><span class="p">},</span>
-            <span class="p">{</span><span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"מערך בצורה (60,) - ממוצע על פני הריצות, לכל זמן"</span><span class="p">,</span> <span class="s2">"correct"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"feedback"</span><span class="p">:</span> <span class="s2">"נכון — axis=0 (ציר הריצות) נעלם."</span><span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-<span class="n">display_quiz</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+<p>שתי השאלות מתייחסות לקוד הבא:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>          <span class="c1"># line A</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>    <span class="c1"># line B</span>
 </pre></div>
 </div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="fLjmfzrkLsEA" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#fLjmfzrkLsEA {
+<div class="output text_html"><div id="EuoRPJxpZZgj" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#EuoRPJxpZZgj {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1002,7 +994,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsfLjmfzrkLsEA=[{"question": "\u05e2\u05d1\u05d5\u05e8 <code>Y</code> \u05d1\u05e6\u05d5\u05e8\u05d4 <code>(5, 60)</code> (\u05e8\u05d9\u05e6\u05d4, \u05d6\u05de\u05df), \u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>Y.mean(axis=0)</code>?", "type": "multiple_choice", "answers": [{"answer": "\u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05e7 Y.mean() \u05d1\u05dc\u05d9 axis \u05de\u05d7\u05d6\u05d9\u05e8 \u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (5,) - \u05de\u05de\u05d5\u05e6\u05e2 \u05e2\u05dc \u05e4\u05e0\u05d9 \u05d4\u05d6\u05de\u05df, \u05dc\u05db\u05dc \u05e8\u05d9\u05e6\u05d4", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc axis=1, \u05dc\u05d0 axis=0."}, {"answer": "(5, 60) \u2014 \u05d0\u05d5\u05ea\u05d4 \u05e6\u05d5\u05e8\u05d4, \u05dc\u05dc\u05d0 \u05e9\u05d9\u05e0\u05d5\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 axis=0 \u05d2\u05d5\u05e8\u05dd \u05dc\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea \u05dc\u05d4\u05d9\u05e2\u05dc\u05dd \u05de\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4; \u05d4\u05e6\u05d5\u05e8\u05d4 \u05e7\u05d8\u05e0\u05d4 \u05de-(5,60) \u05dc-(60,)."}, {"answer": "\u05de\u05e2\u05e8\u05da \u05d1\u05e6\u05d5\u05e8\u05d4 (60,) - \u05de\u05de\u05d5\u05e6\u05e2 \u05e2\u05dc \u05e4\u05e0\u05d9 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05dc\u05db\u05dc \u05d6\u05de\u05df", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df \u2014 axis=0 (\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea) \u05e0\u05e2\u05dc\u05dd."}]}];
+</style></div><script type="application/javascript">var questionsEuoRPJxpZZgj=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "3.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: axis=0 \u05de\u05e2\u05dc\u05d9\u05dd \u05d0\u05ea \u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05d5\u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1, \u05dc\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d1\u05dc\u05d1\u05d3."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d0\u05de\u05e6\u05e2\u05d9\u05ea, 3 \u05d5-1."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8, 5, \u05e0\u05de\u05e6\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e2\u05e6\u05de\u05d5; argmax \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc\u05d5."}, {"answer": "0", "correct": false, "feedback": "\u05dc\u05d0: \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 0 \u05e0\u05de\u05e6\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e7\u05d8\u05df \u05d1\u05d9\u05d5\u05ea\u05e8, 0."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: 1 \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8 \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4, \u05e9\u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd \u05d4\u05e9\u05e0\u05d9 \u05d1\u05e4\u05dc\u05d8."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2064,8 +2056,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("fLjmfzrkLsEA")) {
-    show_questions(questionsfLjmfzrkLsEA, fLjmfzrkLsEA);
+  if (document.getElementById("EuoRPJxpZZgj")) {
+    show_questions(questionsEuoRPJxpZZgj, EuoRPJxpZZgj);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2080,23 +2072,32 @@ function try_show() {
 </section>
 <section id="id5">
 <h2><span class="section-number">9.7.6. </span>תרגול עצמי<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
-<p>מצאו איזו ריצה הגיעה לגובה המרבי הכי גבוה מכל 5 הריצות, ובאיזה זמן זה קרה. (רמז: קודם <code class="docutils literal notranslate"><span class="pre">max_height_per_run</span></code>, ואז <code class="docutils literal notranslate"><span class="pre">np.argmax</span></code> עליו.)</p>
-<div class="cell docutils container">
+<p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">peak_time</span></code>‎, שמקבלת את הגבהים של ריצה אחת ואת הזמנים, ומחזירה את הזמן שבו הגוף הגיע לגובה המרבי. בדקו אותה על הדוגמה שבתא, ואחר כך על הריצה הראשונה של ‎<code class="docutils literal notranslate"><span class="pre">Y</span></code>‎.</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">peak_time</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Time (s) at the highest point of one run."""</span>
+    <span class="k">pass</span>   <span class="c1"># replace with your code</span>
+
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+<span class="n">t_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">peak_time</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>
+<span class="c1"># expected: 1.0</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max_height_per_run</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">best_run</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">max_height_per_run</span><span class="p">)</span>
-<span class="n">best_time_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">best_run</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">peak_time</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Time (s) at the highest point of one run."""</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y</span><span class="p">)]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"הריצה הגבוהה ביותר: מספר </span><span class="si">{</span><span class="n">best_run</span><span class="si">}</span><span class="s2">, בזמן t=</span><span class="si">{</span><span class="n">t</span><span class="p">[</span><span class="n">best_time_index</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">peak_time</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>   <span class="c1"># 1.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">peak_time</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">))</span>
 </pre></div>
 </div>
+<p>‎<code class="docutils literal notranslate"><span class="pre">np.argmax(y)</span></code>‎ מחזיר את <strong>האינדקס</strong> של הגובה הגדול ביותר (בדוגמה 2), ו-‎<code class="docutils literal notranslate"><span class="pre">t</span></code>‎ באותו אינדקס הוא הזמן שלו.</p>
 </div>
 </section>
 </section>
@@ -2137,7 +2138,7 @@ function try_show() {
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.6. </span>None ו-meshgrid (כלל 4)</p>
+        <p class="prev-next-title"><span class="section-number">9.6. </span>הוספת ציר עם None (כלל 4)</p>
       </div>
     </a>
     <a class="right-next"
@@ -2169,7 +2170,7 @@ function try_show() {
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.7.1. דוגמה: ממוצע וסטיית תקן על פני הריצות</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.7.2. דוגמה: הגובה המרבי שכל ריצה הגיעה אליו</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis">9.7.3. באג נפוץ: לשכוח <code class="docutils literal notranslate"><span class="pre">axis</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis">9.7.3. באג נפוץ: לשכוח ‎<code class="docutils literal notranslate"><span class="pre">axis</span></code>‎</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.7.4. נסו בעצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.7.5. בדקו את עצמכם</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7.6. תרגול עצמי</a></li>
