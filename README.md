@@ -7,7 +7,7 @@ Self-study site for the course *Computers for Physics* (Tel Aviv University, 032
 | Path | What it is |
 |---|---|
 | `_toc.yml`, `_config.yml` | Table of contents (weeks and their pages) and build settings. Notebooks are executed again on every build. |
-| `course/weeks/` | One page per week (objectives and the list of topics), plus the sub-pages of weeks 7 to 12. |
+| `course/weeks/` | One page per week (objectives and the list of topics), plus the sub-pages of weeks 7 to 13. |
 | `vendor/virtual-pyprog/` | The teaching notebooks (lists, loops, functions, ...), originally a git subtree from the CS department. They are edited in place here. |
 | `exercises/` | Practice notebooks for download or Colab. They are not site pages. |
 | `tools/scripts/` | Helper scripts: `build.sh`, `clean.sh`, `commit_push.sh`, `publish.sh`, `update_and_build.sh`. |
@@ -28,7 +28,7 @@ Why the pins matter:
 - `jupyter-book<2`: Jupyter Book 2 is a different tool and cannot build this site.
 - `sphinx-external-toc==1.0.1`: version 1.1.0 crashes on the numbered table of contents.
 - `pandas<3`: pandas 3 changes the printed output that the pages show (for example dtype `object` becomes `str`).
-- `scipy`: used by the week 7 and week 9 pages and by the git pages of week 12.
+- `scipy`: used by the week 7 and week 9 pages and by the git pages of week 13.
 - `pydata-sphinx-theme`, `sphinx-book-theme`, `myst-nb`: the theme and notebook packages. Upgrade them together, on a separate branch, and compare every page with the live site before merging.
 
 ## Build

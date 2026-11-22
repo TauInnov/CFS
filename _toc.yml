@@ -230,7 +230,7 @@ parts:
             title: "תרגול"
 
       - file: course/weeks/week_11
-        title: "שבוע 11 — סטטיסטיקה והתאמת קווים"
+        title: "שבוע 11 — נתונים, סטטיסטיקה ושגיאות"
         sections:
           - file: course/weeks/week_11/11_1_clean_data
             title: "מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים"
@@ -242,37 +242,41 @@ parts:
             title: "סטטיסטיקה לכל ריצה: groupby מול צמצום לפי ציר"
           - file: course/weeks/week_11/11_5_error_propagation
             title: "הולכת שגיאות: אנליטית ומונטה-קרלו"
-          - file: course/weeks/week_11/11_6_linear_fit
-            title: "התאמה ליניארית: מהנוסחה לקוד"
-          - file: course/weeks/week_11/11_7_fit_errors_residuals
-            title: "תוצרי ההתאמה: שגיאות המקדמים ושאריות"
-          - file: course/weeks/week_11/11_8_chi2_r2
-            title: "טיב ההתאמה: חי בריבוע ו-R בריבוע"
-          - file: course/weeks/week_11/11_9_weighted_fit
-            title: "התאמה משוקללת"
-          - file: course/weeks/week_11/11_10_outlier_influence
-            title: "השפעת נקודה חריגה"
-          - file: course/weeks/week_11/11_11_linearization
-            title: "לינאריזציה: דעיכה מעריכית דרך ln"
-          - file: course/weeks/week_11/11_12_model_comparison
-            title: "השוואה בין שני מודלים"
-          - file: course/weeks/week_11/11_13_final_report_figure
-            title: "נתונים מול מודל — הגרף המלא, savetxt"
-          - file: course/weeks/week_11/11_14_practice
-            title: "תרגול מסכם"
 
       - file: course/weeks/week_12
-        title: "שבוע 12 — בקרת גרסאות עם Git"
+        title: "שבוע 12 — התאמת קווים"
         sections:
-          - file: course/weeks/week_12/12_1_why_version_control
+          - file: course/weeks/week_12/12_1_linear_fit
+            title: "התאמה ליניארית: מהנוסחה לקוד"
+          - file: course/weeks/week_12/12_2_fit_errors_residuals
+            title: "תוצרי ההתאמה: שגיאות המקדמים ושאריות"
+          - file: course/weeks/week_12/12_3_chi2_r2
+            title: "טיב ההתאמה: חי בריבוע ו-R בריבוע"
+          - file: course/weeks/week_12/12_4_weighted_fit
+            title: "התאמה משוקללת"
+          - file: course/weeks/week_12/12_5_outlier_influence
+            title: "השפעת נקודה חריגה"
+          - file: course/weeks/week_12/12_6_linearization
+            title: "לינאריזציה: דעיכה מעריכית דרך ln"
+          - file: course/weeks/week_12/12_7_model_comparison
+            title: "השוואה בין שני מודלים"
+          - file: course/weeks/week_12/12_8_final_report_figure
+            title: "נתונים מול מודל — הגרף המלא, savetxt"
+          - file: course/weeks/week_12/12_9_practice
+            title: "תרגול מסכם"
+
+      - file: course/weeks/week_13
+        title: "שבוע 13 — בקרת גרסאות עם Git"
+        sections:
+          - file: course/weeks/week_13/13_1_why_version_control
             title: "למה בקרת גרסאות"
-          - file: course/weeks/week_12/12_2_init_add_commit
+          - file: course/weeks/week_13/13_2_init_add_commit
             title: "snapshot אחד בכל פעם: git init, add, commit"
-          - file: course/weeks/week_12/12_3_log_diff_status
+          - file: course/weeks/week_13/13_3_log_diff_status
             title: "לקרוא את ההיסטוריה: git log, diff, status"
-          - file: course/weeks/week_12/12_4_gitignore
+          - file: course/weeks/week_13/13_4_gitignore
             title: ".gitignore — מה לא לשים ב-Git"
-          - file: course/weeks/week_12/12_5_github_remote
+          - file: course/weeks/week_13/13_5_github_remote
             title: "GitHub: remote, clone, push, pull"
-          - file: course/weeks/week_12/12_6_branch_merge
+          - file: course/weeks/week_13/13_6_branch_merge
             title: "branch ו-merge conflict"
