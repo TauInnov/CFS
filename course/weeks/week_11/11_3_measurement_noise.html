@@ -675,7 +675,7 @@
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">simulated_measurements</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"tab:blue"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">v0_true</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"ערך אמיתי"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">v0_true</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"True value"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$v_0$ measured (m/s)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Density"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -687,7 +687,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/0b5f053ff01ebaa8df8f78ce8d9fea6208bc4b09c1d0265e114c2dab727488b1.png" src="../../../_images/0b5f053ff01ebaa8df8f78ce8d9fea6208bc4b09c1d0265e114c2dab727488b1.png" />
+<img alt="../../../_images/e62e6ec1d8f9758e0cbf8d1ff7aed7966d5432c08d1e12fe4422b9f1b3b8a657.png" src="../../../_images/e62e6ec1d8f9758e0cbf8d1ff7aed7966d5432c08d1e12fe4422b9f1b3b8a657.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ממוצע 1000 המדידות: 19.951971723237012
 סטיית תקן: 0.9772417054261473
 </pre></div>
@@ -714,8 +714,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.39843484 -0.79350607  0.49663141]
-[-0.04910138 -0.26726113  0.78359936]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.30477589 -0.38650091 -1.10482519]
+[-1.71586895  0.78434262  0.4581202 ]
 [ 0.30471708 -1.03998411  0.7504512 ]
 [ 0.30471708 -1.03998411  0.7504512 ]
 </pre></div>
@@ -752,8 +752,8 @@
 <h2><span class="section-number">11.3.4. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="qxDwxVNrNnWQ" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#qxDwxVNrNnWQ {
+<div class="output text_html"><div id="FceZbfqReiki" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#FceZbfqReiki {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -976,7 +976,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsqxDwxVNrNnWQ=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05d7\u05e9\u05d5\u05d1 \u05dc\u05e7\u05d1\u05d5\u05e2 seed \u05e7\u05d1\u05d5\u05e2 \u05dc-default_rng \u05d1\u05e7\u05d5\u05d3 \u05e0\u05d9\u05ea\u05d5\u05d7 \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05d9\u05d4\u05d9\u05d5 \u05e0\u05d9\u05ea\u05e0\u05d5\u05ea \u05dc\u05e9\u05d7\u05d6\u05d5\u05e8 \u05d1\u05db\u05dc \u05d4\u05e8\u05e6\u05d4 \u05de\u05d7\u05d3\u05e9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05e7\u05d5\u05d3 \u05d9\u05e8\u05d5\u05e5 \u05de\u05d4\u05e8 \u05d9\u05d5\u05ea\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05de\u05d4\u05d9\u05e8\u05d5\u05ea."}, {"answer": "\u05d1\u05dc\u05d9 seed, \u05d4\u05e7\u05d5\u05d3 \u05dc\u05d0 \u05e8\u05e5 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05db\u05da \u05d9\u05ea\u05e7\u05d1\u05dc\u05d5 \u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea \u05d1\u05db\u05dc \u05d4\u05e8\u05e6\u05d4."}, {"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05ea\u05de\u05d9\u05d3 \u05ea\u05d4\u05d9\u05d4 \u05e7\u05e8\u05d5\u05d1\u05d4 \u05d9\u05d5\u05ea\u05e8 \u05dc\u05e2\u05e8\u05da \u05d4\u05ea\u05d9\u05d0\u05d5\u05e8\u05d8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 seed \u05dc\u05d0 \u05de\u05e9\u05e4\u05e8 \u05d0\u05ea \u05d4\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9 \u05e9\u05dc \u05d4\u05e1\u05d9\u05de\u05d5\u05dc\u05e6\u05d9\u05d4, \u05d4\u05d5\u05d0 \u05e8\u05e7 \u05e7\u05d5\u05d1\u05e2 \u05d0\u05d9\u05dc\u05d5 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05d0\u05e7\u05e8\u05d0\u05d9\u05d9\u05dd \u05e1\u05e4\u05e6\u05d9\u05e4\u05d9\u05d9\u05dd \u05d9\u05d9\u05d5\u05d5\u05e6\u05e8\u05d5."}]}];
+</style></div><script type="application/javascript">var questionsFceZbfqReiki=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05d7\u05e9\u05d5\u05d1 \u05dc\u05e7\u05d1\u05d5\u05e2 seed \u05e7\u05d1\u05d5\u05e2 \u05dc-default_rng \u05d1\u05e7\u05d5\u05d3 \u05e0\u05d9\u05ea\u05d5\u05d7 \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05d9\u05d4\u05d9\u05d5 \u05e0\u05d9\u05ea\u05e0\u05d5\u05ea \u05dc\u05e9\u05d7\u05d6\u05d5\u05e8 \u05d1\u05db\u05dc \u05d4\u05e8\u05e6\u05d4 \u05de\u05d7\u05d3\u05e9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05e7\u05d5\u05d3 \u05d9\u05e8\u05d5\u05e5 \u05de\u05d4\u05e8 \u05d9\u05d5\u05ea\u05e8", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05de\u05d4\u05d9\u05e8\u05d5\u05ea."}, {"answer": "\u05d1\u05dc\u05d9 seed, \u05d4\u05e7\u05d5\u05d3 \u05dc\u05d0 \u05e8\u05e5 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05db\u05da \u05d9\u05ea\u05e7\u05d1\u05dc\u05d5 \u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea \u05d1\u05db\u05dc \u05d4\u05e8\u05e6\u05d4."}, {"answer": "\u05db\u05d3\u05d9 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05ea\u05de\u05d9\u05d3 \u05ea\u05d4\u05d9\u05d4 \u05e7\u05e8\u05d5\u05d1\u05d4 \u05d9\u05d5\u05ea\u05e8 \u05dc\u05e2\u05e8\u05da \u05d4\u05ea\u05d9\u05d0\u05d5\u05e8\u05d8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u2014 seed \u05dc\u05d0 \u05de\u05e9\u05e4\u05e8 \u05d0\u05ea \u05d4\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9 \u05e9\u05dc \u05d4\u05e1\u05d9\u05de\u05d5\u05dc\u05e6\u05d9\u05d4, \u05d4\u05d5\u05d0 \u05e8\u05e7 \u05e7\u05d5\u05d1\u05e2 \u05d0\u05d9\u05dc\u05d5 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05d0\u05e7\u05e8\u05d0\u05d9\u05d9\u05dd \u05e1\u05e4\u05e6\u05d9\u05e4\u05d9\u05d9\u05dd \u05d9\u05d9\u05d5\u05d5\u05e6\u05e8\u05d5."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2038,8 +2038,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("qxDwxVNrNnWQ")) {
-    show_questions(questionsqxDwxVNrNnWQ, qxDwxVNrNnWQ);
+  if (document.getElementById("FceZbfqReiki")) {
+    show_questions(questionsFceZbfqReiki, FceZbfqReiki);
   } else {
     setTimeout(try_show, 200);
   }

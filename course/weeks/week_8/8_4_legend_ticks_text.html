@@ -679,7 +679,7 @@
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$\theta=45^\circ$"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"גובה מרבי"</span><span class="p">,</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"Maximum height"</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x_peak</span><span class="p">,</span> <span class="n">y_peak</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">x_peak</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y_peak</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span>
             <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"gray"</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
@@ -690,13 +690,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/004c75a782b99e16970a75909f436d5d4e5e1a13f4253cfb60d4483b5614b2c5.png" src="../../../_images/004c75a782b99e16970a75909f436d5d4e5e1a13f4253cfb60d4483b5614b2c5.png" />
+<img alt="../../../_images/0eb62c050abfdd43e61d78d7e43635f482c0c61198af1e3c8460d6dc12773c07.png" src="../../../_images/0eb62c050abfdd43e61d78d7e43635f482c0c61198af1e3c8460d6dc12773c07.png" />
 </div>
 </div>
 </section>
 <section id="id2">
 <h2><span class="section-number">8.4.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>בקוד הבא <span class="math notranslate nohighlight">\(v_0 = 20\)</span> מ’/ש’, הזווית 45° ו-<span class="math notranslate nohighlight">\(g = 10\)</span> מ’/ש², מספרים עגולים שאפשר לחשב איתם בראש. שורה 9 חסרה: השלימו אותה כך שחץ יצביע על <strong>נקודת הנחיתה</strong>, והמילה “נחיתה” תיכתב בנקודה ‎<code class="docutils literal notranslate"><span class="pre">(32,</span> <span class="pre">3)</span></code>‎. חשבו קודם את הטווח <span class="math notranslate nohighlight">\(R = v_0^2\sin(2\theta)/g\)</span>: באיזו נקודה החץ צריך לגעת בקרקע?</p>
+<p>בקוד הבא <span class="math notranslate nohighlight">\(v_0 = 20\)</span> מ’/ש’, הזווית 45° ו-<span class="math notranslate nohighlight">\(g = 10\)</span> מ’/ש², מספרים עגולים שאפשר לחשב איתם בראש. שורה 9 חסרה: השלימו אותה כך שחץ יצביע על <strong>נקודת הנחיתה</strong>, והמילה “Landing” תיכתב בנקודה ‎<code class="docutils literal notranslate"><span class="pre">(32,</span> <span class="pre">3)</span></code>‎. חשבו קודם את הטווח <span class="math notranslate nohighlight">\(R = v_0^2\sin(2\theta)/g\)</span>: באיזו נקודה החץ צריך לגעת בקרקע?</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span>
@@ -718,7 +718,7 @@
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <p>הטווח הוא <span class="math notranslate nohighlight">\(R = 20^2 \cdot \sin 90^\circ / 10 = 40\)</span> מ’, ולכן החץ מצביע על הנקודה ‎<code class="docutils literal notranslate"><span class="pre">(40,</span> <span class="pre">0)</span></code>‎:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"נחיתה"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"Landing"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
             <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"gray"</span><span class="p">})</span>
 </pre></div>
 </div>
@@ -729,14 +729,14 @@
 <h2><span class="section-number">8.4.3. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"שיא"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"Peak"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
             <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">})</span>
 </pre></div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="EzIGLIAaXIQj" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#EzIGLIAaXIQj {
+<div class="output text_html"><div id="vMHOZsAHBXDy" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#vMHOZsAHBXDy {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -959,7 +959,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsEzIGLIAaXIQj=[{"question": "\u05d1\u05d2\u05e8\u05e3 \u05e9\u05d4\u05e7\u05d5\u05d3 \u05de\u05e6\u05d9\u05d9\u05e8, \u05de\u05d4\u05d5 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-x \u05e9\u05dc \u05e7\u05e6\u05d4 \u05d4\u05d7\u05e5, \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05e9\u05d4\u05d7\u05e5 \u05de\u05e6\u05d1\u05d9\u05e2 \u05e2\u05dc\u05d9\u05d4?", "type": "multiple_choice", "answers": [{"answer": "20", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: xy \u05d4\u05d5\u05d0 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05e9\u05d4\u05d7\u05e5 \u05de\u05e6\u05d1\u05d9\u05e2 \u05e2\u05dc\u05d9\u05d4, \u05d5\u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-x \u05e9\u05dc\u05d4 \u05d4\u05d5\u05d0 20."}, {"answer": "26", "correct": false, "feedback": "\u05dc\u05d0: 26 \u05d4\u05d5\u05d0 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-x \u05e9\u05dc \u05d4\u05d8\u05e7\u05e1\u05d8 (xytext), \u05d4\u05de\u05e7\u05d5\u05dd \u05e9\u05de\u05de\u05e0\u05d5 \u05d4\u05d7\u05e5 \u05d9\u05d5\u05e6\u05d0."}, {"answer": "10", "correct": false, "feedback": "\u05dc\u05d0: 10 \u05d4\u05d5\u05d0 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-y \u05e9\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4, \u05d4\u05d2\u05d5\u05d1\u05d4 \u05e9\u05dc\u05d4."}, {"answer": "8", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-y \u05e9\u05dc \u05d4\u05d8\u05e7\u05e1\u05d8."}]}];
+</style></div><script type="application/javascript">var questionsvMHOZsAHBXDy=[{"question": "\u05d1\u05d2\u05e8\u05e3 \u05e9\u05d4\u05e7\u05d5\u05d3 \u05de\u05e6\u05d9\u05d9\u05e8, \u05de\u05d4\u05d5 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-x \u05e9\u05dc \u05e7\u05e6\u05d4 \u05d4\u05d7\u05e5, \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05e9\u05d4\u05d7\u05e5 \u05de\u05e6\u05d1\u05d9\u05e2 \u05e2\u05dc\u05d9\u05d4?", "type": "multiple_choice", "answers": [{"answer": "20", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: xy \u05d4\u05d5\u05d0 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4 \u05e9\u05d4\u05d7\u05e5 \u05de\u05e6\u05d1\u05d9\u05e2 \u05e2\u05dc\u05d9\u05d4, \u05d5\u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-x \u05e9\u05dc\u05d4 \u05d4\u05d5\u05d0 20."}, {"answer": "26", "correct": false, "feedback": "\u05dc\u05d0: 26 \u05d4\u05d5\u05d0 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-x \u05e9\u05dc \u05d4\u05d8\u05e7\u05e1\u05d8 (xytext), \u05d4\u05de\u05e7\u05d5\u05dd \u05e9\u05de\u05de\u05e0\u05d5 \u05d4\u05d7\u05e5 \u05d9\u05d5\u05e6\u05d0."}, {"answer": "10", "correct": false, "feedback": "\u05dc\u05d0: 10 \u05d4\u05d5\u05d0 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-y \u05e9\u05dc \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4, \u05d4\u05d2\u05d5\u05d1\u05d4 \u05e9\u05dc\u05d4."}, {"answer": "8", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4-y \u05e9\u05dc \u05d4\u05d8\u05e7\u05e1\u05d8."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2021,8 +2021,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("EzIGLIAaXIQj")) {
-    show_questions(questionsEzIGLIAaXIQj, EzIGLIAaXIQj);
+  if (document.getElementById("vMHOZsAHBXDy")) {
+    show_questions(questionsvMHOZsAHBXDy, vMHOZsAHBXDy);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2036,11 +2036,11 @@ function try_show() {
 </div>
 <div class="dropdown note admonition">
 <p class="admonition-title">תרגול נוסף: מצאו את הטעות</p>
-<p>הקוד הבא אמור לכתוב את המילה “שיא” בנקודה ‎<code class="docutils literal notranslate"><span class="pre">(26,</span> <span class="pre">8)</span></code>‎, עם חץ שמצביע על נקודת השיא ‎<code class="docutils literal notranslate"><span class="pre">(20,</span> <span class="pre">10)</span></code>‎ של אותה זריקה. הוא רץ בלי שגיאה, אבל המילה נכתבת על השיא עצמו, והחץ מצביע על מקום ריק בגרף.</p>
+<p>הקוד הבא אמור לכתוב את המילה “Peak” בנקודה ‎<code class="docutils literal notranslate"><span class="pre">(26,</span> <span class="pre">8)</span></code>‎, עם חץ שמצביע על נקודת השיא ‎<code class="docutils literal notranslate"><span class="pre">(20,</span> <span class="pre">10)</span></code>‎ של אותה זריקה. הוא רץ בלי שגיאה, אבל המילה נכתבת על השיא עצמו, והחץ מצביע על מקום ריק בגרף.</p>
 <p><strong>לפני שמריצים</strong>: באילו שורות הטעות? תקנו אותה והסבירו במשפט אחד.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"שיא"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"Peak"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
             <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"gray"</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
@@ -2050,7 +2050,7 @@ function try_show() {
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <p>הטעות בשורות 3 ו-4: ‎<code class="docutils literal notranslate"><span class="pre">xy</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">xytext</span></code>‎ הוחלפו. ‎<code class="docutils literal notranslate"><span class="pre">xy</span></code>‎ היא הנקודה שהחץ מצביע עליה, ו-‎<code class="docutils literal notranslate"><span class="pre">xytext</span></code>‎ היא המקום שבו נכתב הטקסט:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"שיא"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"Peak"</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
             <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s2">"arrowstyle"</span><span class="p">:</span> <span class="s2">"-&gt;"</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"gray"</span><span class="p">})</span>
 </pre></div>
 </div>

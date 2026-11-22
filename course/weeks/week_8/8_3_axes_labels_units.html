@@ -654,11 +654,12 @@
 <p>בדוח מעבדה, גרף בלי תוויות צירים עם יחידות הוא גרף לא קביל — גם אם הנתונים שבו נכונים. הפקודות המרכזיות:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$y(x)$ עבור $\theta=45^\circ$"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$y(x)$ for $\theta=45^\circ$"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>ה-‎<code class="docutils literal notranslate"><span class="pre">r</span></code>‎ שלפני מחרוזת הכותרת שומר את הלוכסן ההפוך של ‎<code class="docutils literal notranslate"><span class="pre">\theta</span></code>‎ כמו שהוא, וטקסט שבין שני סימני ‎<code class="docutils literal notranslate"><span class="pre">$</span></code>‎ מצויר כנוסחה: ‎<code class="docutils literal notranslate"><span class="pre">$\theta=45^\circ$</span></code>‎ מופיע בגרף כ-<span class="math notranslate nohighlight">\(\theta=45^\circ\)</span>.</p>
 <p>הכלל הפשוט: <strong>כל תווית ציר כוללת גם את היחידה בסוגריים</strong>, לא רק את שם המשתנה.</p>
+<p>את כל הכיתוב בגרף (כותרת, תוויות הצירים והמקרא) כותבים באנגלית, משום ש-Matplotlib מציג עברית פעמים רבות בסדר הפוך.</p>
 <section id="id2">
 <h2><span class="section-number">8.3.1. </span>דוגמה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -677,13 +678,13 @@
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"מסלול הזריקה ($\theta=45^\circ$, $v_0=20\,$m/s)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Throw trajectory ($\theta=45^\circ$, $v_0=20\,$m/s)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/4f508207229b353fc5e3010d4f84a6b71c0829415f75276014430f34b1734fc4.png" src="../../../_images/4f508207229b353fc5e3010d4f84a6b71c0829415f75276014430f34b1734fc4.png" />
+<img alt="../../../_images/b524f3793a116f1823024126e10591d06f2788373b898b42dedc155ffb151609.png" src="../../../_images/b524f3793a116f1823024126e10591d06f2788373b898b42dedc155ffb151609.png" />
 </div>
 </div>
 </section>
@@ -724,8 +725,8 @@
 <h2><span class="section-number">8.3.4. </span>בדקו את עצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="zXXMvYaQDCDK" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#zXXMvYaQDCDK {
+<div class="output text_html"><div id="grIpeRPbFtnl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#grIpeRPbFtnl {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -948,7 +949,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionszXXMvYaQDCDK=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05ea\u05d5\u05d5\u05d9\u05ea \u05e6\u05d9\u05e8 \u05d1\u05dc\u05d9 \u05d9\u05d7\u05d9\u05d3\u05d4 \u05e0\u05d7\u05e9\u05d1\u05ea \u05dc\u05d1\u05e2\u05d9\u05d4 \u05d1\u05d3\u05d5\u05d7 \u05de\u05e2\u05d1\u05d3\u05d4, \u05d2\u05dd \u05d0\u05dd \u05d4\u05d2\u05e8\u05e3 \u05e2\u05e6\u05de\u05d5 \u05e0\u05db\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 Matplotlib \u05dc\u05d0 \u05de\u05d0\u05e4\u05e9\u05e8 \u05dc\u05e9\u05de\u05d5\u05e8 \u05d2\u05e8\u05e3 \u05db\u05d6\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05de\u05d1\u05d7\u05d9\u05e0\u05d4 \u05d8\u05db\u05e0\u05d9\u05ea \u05d6\u05d4 \u05e2\u05d5\u05d1\u05d3."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d3\u05e2\u05ea \u05d1\u05e2\u05e8\u05db\u05d9\u05dd \u05de\u05d4\u05d5 \u05e1\u05d3\u05e8 \u05d4\u05d2\u05d5\u05d3\u05dc \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9 \u05d1\u05dc\u05d9 \u05d4\u05d9\u05d7\u05d9\u05d3\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d4\u05d2\u05e8\u05e3 \u05dc\u05d0 \u05d9\u05d5\u05e6\u05d2 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05d2\u05e8\u05e3 \u05db\u05df \u05d9\u05d5\u05e6\u05d2."}, {"answer": "\u05db\u05d9 \u05d6\u05d4 \u05e4\u05d5\u05d2\u05e2 \u05d1\u05d1\u05d9\u05e6\u05d5\u05e2\u05d9 \u05d4\u05e8\u05d9\u05e6\u05d4 \u05e9\u05dc \u05d4\u05e7\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05d1\u05d9\u05e6\u05d5\u05e2\u05d9\u05dd \u2014 \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05e9\u05dc \u05e7\u05e8\u05d9\u05d0\u05d5\u05ea \u05d5\u05e4\u05e8\u05e9\u05e0\u05d5\u05ea \u05de\u05d3\u05e2\u05d9\u05ea, \u05dc\u05d0 \u05e9\u05dc \u05de\u05d4\u05d9\u05e8\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsgrIpeRPbFtnl=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05ea\u05d5\u05d5\u05d9\u05ea \u05e6\u05d9\u05e8 \u05d1\u05dc\u05d9 \u05d9\u05d7\u05d9\u05d3\u05d4 \u05e0\u05d7\u05e9\u05d1\u05ea \u05dc\u05d1\u05e2\u05d9\u05d4 \u05d1\u05d3\u05d5\u05d7 \u05de\u05e2\u05d1\u05d3\u05d4, \u05d2\u05dd \u05d0\u05dd \u05d4\u05d2\u05e8\u05e3 \u05e2\u05e6\u05de\u05d5 \u05e0\u05db\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 Matplotlib \u05dc\u05d0 \u05de\u05d0\u05e4\u05e9\u05e8 \u05dc\u05e9\u05de\u05d5\u05e8 \u05d2\u05e8\u05e3 \u05db\u05d6\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05de\u05d1\u05d7\u05d9\u05e0\u05d4 \u05d8\u05db\u05e0\u05d9\u05ea \u05d6\u05d4 \u05e2\u05d5\u05d1\u05d3."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d3\u05e2\u05ea \u05d1\u05e2\u05e8\u05db\u05d9\u05dd \u05de\u05d4\u05d5 \u05e1\u05d3\u05e8 \u05d4\u05d2\u05d5\u05d3\u05dc \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9 \u05d1\u05dc\u05d9 \u05d4\u05d9\u05d7\u05d9\u05d3\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d4\u05d2\u05e8\u05e3 \u05dc\u05d0 \u05d9\u05d5\u05e6\u05d2 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d4\u05d2\u05e8\u05e3 \u05db\u05df \u05d9\u05d5\u05e6\u05d2."}, {"answer": "\u05db\u05d9 \u05d6\u05d4 \u05e4\u05d5\u05d2\u05e2 \u05d1\u05d1\u05d9\u05e6\u05d5\u05e2\u05d9 \u05d4\u05e8\u05d9\u05e6\u05d4 \u05e9\u05dc \u05d4\u05e7\u05d5\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05d1\u05d9\u05e6\u05d5\u05e2\u05d9\u05dd \u2014 \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05e9\u05dc \u05e7\u05e8\u05d9\u05d0\u05d5\u05ea \u05d5\u05e4\u05e8\u05e9\u05e0\u05d5\u05ea \u05de\u05d3\u05e2\u05d9\u05ea, \u05dc\u05d0 \u05e9\u05dc \u05de\u05d4\u05d9\u05e8\u05d5\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2010,8 +2011,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("zXXMvYaQDCDK")) {
-    show_questions(questionszXXMvYaQDCDK, zXXMvYaQDCDK);
+  if (document.getElementById("grIpeRPbFtnl")) {
+    show_questions(questionsgrIpeRPbFtnl, grIpeRPbFtnl);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2042,7 +2043,7 @@ function try_show() {
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"x (m)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"y (m)"</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"מסלול הזריקה ($\theta=60^\circ$)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Throw trajectory ($\theta=60^\circ$)"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
