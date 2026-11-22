@@ -167,11 +167,11 @@ parts:
           - file: course/weeks/week_8/8_4_legend_ticks_text
             title: "תיוג הגרף: legend, גבולות וסימוני ציר, טקסט וחצים"
           - file: course/weeks/week_8/8_5_multiple_curves
-            title: "כמה עקומות באותו גרף"
+            title: "עקומות מרובות באותו גרף"
           - file: course/weeks/week_8/8_6_subplots
             title: "subplots"
           - file: course/weeks/week_8/8_7_log_scales
-            title: "סקאלות לוגריתמיות — ומתי משתמשים בהן"
+            title: "סקאלות לוגריתמיות ושימושיהן"
           - file: course/weeks/week_8/8_8_histogram
             title: "היסטוגרמה: bins, density"
           - file: course/weeks/week_8/8_9_errorbar
@@ -211,7 +211,7 @@ parts:
         title: "שבוע 10 — pandas"
         sections:
           - file: course/weeks/week_10/10_1_why_pandas
-            title: "למה pandas — טבלה מול מערך"
+            title: "הצורך ב-pandas: טבלה מול מערך"
           - file: course/weeks/week_10/10_2_dataframe_series
             title: "DataFrame ו-Series"
           - file: course/weeks/week_10/10_3_read_csv
@@ -225,7 +225,7 @@ parts:
           - file: course/weeks/week_10/10_7_to_numpy
             title: "מעבר ל-NumPy: to_numpy()"
           - file: course/weeks/week_10/10_8_reading_agent_code
-            title: "קריאת קוד pandas שכתב אייג'נט"
+            title: "קריאת קוד pandas שכתב סוכן AI"
           - file: course/weeks/week_10/10_9_practice
             title: "תרגול"
 
@@ -235,7 +235,7 @@ parts:
           - file: course/weeks/week_11/11_1_clean_data
             title: "מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים"
           - file: course/weeks/week_11/11_2_mean_std_sem
-            title: "ממוצע, סטיית תקן ושגיאת הממוצע — ולמה 1/√N"
+            title: "ממוצע, סטיית תקן ושגיאת הממוצע: הגורם 1/√N"
           - file: course/weeks/week_11/11_3_measurement_noise
             title: "רעש מדידה: default_rng ו-normal"
           - file: course/weeks/week_11/11_4_stats_per_run
@@ -269,13 +269,13 @@ parts:
         title: "שבוע 13 — בקרת גרסאות עם Git"
         sections:
           - file: course/weeks/week_13/13_1_why_version_control
-            title: "למה בקרת גרסאות"
+            title: "הצורך בבקרת גרסאות"
           - file: course/weeks/week_13/13_2_init_add_commit
             title: "snapshot אחד בכל פעם: git init, add, commit"
           - file: course/weeks/week_13/13_3_log_diff_status
             title: "לקרוא את ההיסטוריה: git log, diff, status"
           - file: course/weeks/week_13/13_4_gitignore
-            title: ".gitignore — מה לא לשים ב-Git"
+            title: "קבצים שאין להכניס ל-Git: .gitignore"
           - file: course/weeks/week_13/13_5_github_remote
             title: "GitHub: remote, clone, push, pull"
           - file: course/weeks/week_13/13_6_branch_merge
