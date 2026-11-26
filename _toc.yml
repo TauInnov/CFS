@@ -189,7 +189,7 @@ parts:
           - file: course/weeks/week_9/9_3_reshape_transpose
             title: "reshape ו-transpose"
           - file: course/weeks/week_9/9_4_stack_concatenate
-            title: "stack ו-concatenate — לאחד ריצות"
+            title: "np.array ו-concatenate — לאחד ריצות"
           - file: course/weeks/week_9/9_5_broadcasting
             title: "התאמת צירים בין שני מערכים (Broadcasting)"
           - file: course/weeks/week_9/9_6_none_meshgrid
