@@ -221,7 +221,7 @@ parts:
           - file: course/weeks/week_11/11_4_selection_filtering
             title: "בחירה, סינון, מיון וערכים חסרים"
           - file: course/weeks/week_11/11_5_groupby
-            title: "groupby(...).mean()"
+            title: "groupby: צמצום לפי קבוצה"
           - file: course/weeks/week_11/11_6_describe
             title: "describe"
           - file: course/weeks/week_11/11_7_to_numpy
