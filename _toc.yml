@@ -168,8 +168,6 @@ parts:
             title: "עקומות מרובות באותו גרף"
           - file: course/weeks/week_8/8_6_subplots
             title: "subplots"
-          - file: course/weeks/week_8/8_7_log_scales
-            title: "סקאלות לוגריתמיות ושימושיהן"
           - file: course/weeks/week_8/8_8_histogram
             title: "היסטוגרמה: bins, density"
           - file: course/weeks/week_8/8_9_errorbar
@@ -180,7 +178,7 @@ parts:
             title: "תרגול מסכם"
 
       - file: course/weeks/week_9
-        title: "שבוע 9 — NumPy מתקדם ואינטגרציה"
+        title: "שבוע 9 — צירים: מערכים רב-ממדיים"
         sections:
           - file: course/weeks/week_9/9_1_multidim_arrays
             title: "מבנה נתונים רב-ממדי: דו-ממד ותלת-ממד"
@@ -188,93 +186,77 @@ parts:
             title: "פריסה לפי צירים"
           - file: course/weeks/week_9/9_3_reshape_transpose
             title: "reshape ו-transpose"
-          - file: course/weeks/week_9/9_4_stack_concatenate
-            title: "np.array ו-concatenate — לאחד ריצות"
-          - file: course/weeks/week_9/9_5_broadcasting
-            title: "התאמת צירים בין שני מערכים (Broadcasting)"
-          - file: course/weeks/week_9/9_6_none_meshgrid
-            title: "הוספת ציר עם None"
-          - file: course/weeks/week_9/9_7_axis_reductions
+          - file: course/weeks/week_9/9_4_concatenate
+            title: "concatenate — לאחד ריצות"
+          - file: course/weeks/week_9/9_5_broadcasting_none
+            title: "התאמת צירים: broadcasting והוספת ציר עם None"
+          - file: course/weeks/week_9/9_6_axis_reductions
             title: "צמצום לפי ציר"
-          - file: course/weeks/week_9/9_8_diff_cumsum
-            title: "diff ו-cumsum — נגזרת וסכום מצטבר"
-          - file: course/weeks/week_9/9_9_trapezoid_quad
-            title: "אינטגרציה: trapezoid ו-quad"
-          - file: course/weeks/week_9/9_10_recurrence_loop
-            title: "יחס נסיגה ולולאת עדכון"
-          - file: course/weeks/week_9/9_11_practice
+          - file: course/weeks/week_9/9_7_repeated_measurements
+            title: "מדידות חוזרות"
+          - file: course/weeks/week_9/9_8_practice
             title: "תרגול מסכם"
 
       - file: course/weeks/week_10
-        title: "שבוע 10 — pandas"
+        title: "שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל"
         sections:
-          - file: course/weeks/week_10/10_1_why_pandas
-            title: "הצורך ב-pandas: טבלה מול מערך"
-          - file: course/weeks/week_10/10_2_dataframe_series
-            title: "DataFrame ו-Series"
-          - file: course/weeks/week_10/10_3_read_csv
-            title: "read_csv"
-          - file: course/weeks/week_10/10_4_selection_filtering
-            title: "בחירה, סינון ומיון"
-          - file: course/weeks/week_10/10_5_groupby
-            title: "groupby(...).mean()"
-          - file: course/weeks/week_10/10_6_describe
-            title: "describe"
-          - file: course/weeks/week_10/10_7_to_numpy
-            title: "מעבר ל-NumPy: to_numpy()"
-          - file: course/weeks/week_10/10_8_reading_agent_code
-            title: "קריאת קוד pandas שכתב סוכן AI"
-          - file: course/weeks/week_10/10_9_practice
-            title: "תרגול"
+          - file: course/weeks/week_10/10_1_recurrence_loop
+            title: "יחס נסיגה ולולאת עדכון"
+          - file: course/weeks/week_10/10_2_diff_cumsum
+            title: "diff ו-cumsum — נגזרת וסכום מצטבר"
+          - file: course/weeks/week_10/10_3_trapezoid_quad
+            title: "אינטגרציה: trapezoid ו-quad"
+          - file: course/weeks/week_10/10_4_practice
+            title: "תרגול מסכם"
 
       - file: course/weeks/week_11
-        title: "שבוע 11 — נתונים, סטטיסטיקה ושגיאות"
+        title: "שבוע 11 — pandas"
         sections:
-          - file: course/weeks/week_11/11_1_clean_data
-            title: "מנתונים לניתוח: read_csv, to_numpy, NaN, סינון חריגים"
-          - file: course/weeks/week_11/11_2_mean_std_sem
-            title: "ממוצע, סטיית תקן ושגיאת הממוצע: הגורם 1/√N"
-          - file: course/weeks/week_11/11_3_measurement_noise
-            title: "רעש מדידה: default_rng ו-normal"
-          - file: course/weeks/week_11/11_4_stats_per_run
-            title: "סטטיסטיקה לכל ריצה: groupby מול צמצום לפי ציר"
-          - file: course/weeks/week_11/11_5_error_propagation
-            title: "הולכת שגיאות: אנליטית ומונטה-קרלו"
+          - file: course/weeks/week_11/11_1_why_pandas
+            title: "הצורך ב-pandas: טבלה מול מערך"
+          - file: course/weeks/week_11/11_2_dataframe_series
+            title: "DataFrame ו-Series"
+          - file: course/weeks/week_11/11_3_read_csv
+            title: "read_csv"
+          - file: course/weeks/week_11/11_4_selection_filtering
+            title: "בחירה, סינון, מיון וערכים חסרים"
+          - file: course/weeks/week_11/11_5_groupby
+            title: "groupby(...).mean()"
+          - file: course/weeks/week_11/11_6_describe
+            title: "describe"
+          - file: course/weeks/week_11/11_7_to_numpy
+            title: "מעבר ל-NumPy: to_numpy()"
+          - file: course/weeks/week_11/11_8_reading_agent_code
+            title: "קריאת קוד pandas שכתב סוכן AI"
+          - file: course/weeks/week_11/11_9_practice
+            title: "תרגול"
 
       - file: course/weeks/week_12
-        title: "שבוע 12 — התאמת קווים"
+        title: "שבוע 12 — התאמה לנתונים"
         sections:
-          - file: course/weeks/week_12/12_1_linear_fit
-            title: "התאמה ליניארית: מהנוסחה לקוד"
-          - file: course/weeks/week_12/12_2_fit_errors_residuals
-            title: "תוצרי ההתאמה: שגיאות המקדמים ושאריות"
-          - file: course/weeks/week_12/12_3_chi2_r2
-            title: "טיב ההתאמה: חי בריבוע ו-R בריבוע"
-          - file: course/weeks/week_12/12_4_weighted_fit
-            title: "התאמה משוקללת"
-          - file: course/weeks/week_12/12_5_outlier_influence
-            title: "השפעת נקודה חריגה"
-          - file: course/weeks/week_12/12_6_linearization
-            title: "לינאריזציה: דעיכה מעריכית דרך ln"
-          - file: course/weeks/week_12/12_7_model_comparison
-            title: "השוואה בין שני מודלים"
-          - file: course/weeks/week_12/12_8_final_report_figure
-            title: "נתונים מול מודל — הגרף המלא, savetxt"
-          - file: course/weeks/week_12/12_9_practice
+          - file: course/weeks/week_12/12_1_residuals_chi2
+            title: "שאריות ו-χ²"
+          - file: course/weeks/week_12/12_2_best_parameter
+            title: "הפרמטר הכי טוב"
+          - file: course/weeks/week_12/12_3_least_squares
+            title: "ריבועים פחותים: מהנוסחה לקוד"
+          - file: course/weeks/week_12/12_4_log_scale_linearization
+            title: "סקאלה לוגריתמית ולינאריזציה"
+          - file: course/weeks/week_12/12_5_full_figure
+            title: "נתונים, התאמה ושאריות — הגרף המלא"
+          - file: course/weeks/week_12/12_6_reading_fit_code
+            title: "קריאת קוד התאמה קיים"
+          - file: course/weeks/week_12/12_7_practice
             title: "תרגול מסכם"
 
       - file: course/weeks/week_13
         title: "שבוע 13 — בקרת גרסאות עם Git"
         sections:
-          - file: course/weeks/week_13/13_1_why_version_control
-            title: "הצורך בבקרת גרסאות"
-          - file: course/weeks/week_13/13_2_init_add_commit
-            title: "snapshot אחד בכל פעם: git init, add, commit"
-          - file: course/weeks/week_13/13_3_log_diff_status
+          - file: course/weeks/week_13/13_1_init_add_commit
+            title: "בקרת גרסאות: git init, add, commit"
+          - file: course/weeks/week_13/13_2_log_diff_status
             title: "לקרוא את ההיסטוריה: git log, diff, status"
-          - file: course/weeks/week_13/13_4_gitignore
-            title: "קבצים שאין להכניס ל-Git: .gitignore"
-          - file: course/weeks/week_13/13_5_github_remote
+          - file: course/weeks/week_13/13_3_github_remote
             title: "GitHub: remote, clone, push, pull"
-          - file: course/weeks/week_13/13_6_branch_merge
+          - file: course/weeks/week_13/13_4_branch_merge
             title: "branch ו-merge conflict"
