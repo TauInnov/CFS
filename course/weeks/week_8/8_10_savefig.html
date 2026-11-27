@@ -624,8 +624,8 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.9.1. דוגמה: שמירת גרף ההשוואה כקובץ לדוח</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure">8.9.2. דוגמה נוספת: שמירה של figure עם שני פאנלים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.9.3. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.9.2. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure">8.9.3. דוגמה נוספת: שמירה של figure עם שני פאנלים</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.9.4. באג נפוץ: שמירה <strong>אחרי</strong> הצגת הגרף</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.9.5. בדקו את עצמכם</a></li>
 </ul>
@@ -685,8 +685,26 @@
 </div>
 </div>
 </section>
+<section id="id2">
+<h2><span class="section-number">8.9.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>שמרו את גרף הטווח מול הזווית מהדוגמה שלמעלה גם כקובץ ‎<code class="docutils literal notranslate"><span class="pre">.pdf</span></code>‎ (וקטורי) בשם ‎<code class="docutils literal notranslate"><span class="pre">range_vs_angle.pdf</span></code>‎.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig.savefig("range_vs_angle.pdf", ...)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">פתרון</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"range_vs_angle.pdf"</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">"tight"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>לקבצים וקטוריים (‎<code class="docutils literal notranslate"><span class="pre">.pdf</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">.svg</span></code>‎) ‎<code class="docutils literal notranslate"><span class="pre">dpi</span></code>‎ לא רלוונטי באותו אופן — הם נשארים חדים בכל הגדלה, לא רק ברזולוציה קבועה.</p>
+</div>
+</section>
 <section id="figure">
-<h2><span class="section-number">8.9.2. </span>דוגמה נוספת: שמירה של figure עם שני פאנלים<a class="headerlink" href="#figure" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.9.3. </span>דוגמה נוספת: שמירה של figure עם שני פאנלים<a class="headerlink" href="#figure" title="Link to this heading">#</a></h2>
 <p>‎<code class="docutils literal notranslate"><span class="pre">fig.savefig</span></code>‎ שומר את כל ה-figure, כולל כל הפאנלים שבו. כאן נשמור את גרף הקירור בשני פאנלים מסעיף 8.6.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -711,24 +729,6 @@
 </div>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">8.9.3. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>שמרו את אותו גרף גם כקובץ ‎<code class="docutils literal notranslate"><span class="pre">.pdf</span></code>‎ (וקטורי) בשם ‎<code class="docutils literal notranslate"><span class="pre">range_vs_angle.pdf</span></code>‎.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig.savefig("range_vs_angle.pdf", ...)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"range_vs_angle.pdf"</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">"tight"</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>לקבצים וקטוריים (‎<code class="docutils literal notranslate"><span class="pre">.pdf</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">.svg</span></code>‎) ‎<code class="docutils literal notranslate"><span class="pre">dpi</span></code>‎ לא רלוונטי באותו אופן — הם נשארים חדים בכל הגדלה, לא רק ברזולוציה קבועה.</p>
-</div>
-</section>
 <section id="id3">
 <h2><span class="section-number">8.9.4. </span>באג נפוץ: שמירה <strong>אחרי</strong> הצגת הגרף<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>קריאה ל-‎<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>‎ יכולה, בסביבות מסוימות, “לנקות” את ה-figure מהזיכרון. הרגל בטוח: לקרוא ל-‎<code class="docutils literal notranslate"><span class="pre">fig.savefig(...)</span></code>‎ <strong>לפני</strong> ‎<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>‎, כמו בדוגמה למעלה — כך שאין תלות בסדר.</p>
@@ -737,8 +737,8 @@
 <h2><span class="section-number">8.9.5. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="jzQgRsQlJKBg" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#jzQgRsQlJKBg {
+<div class="output text_html"><div id="pPNPuRxEmynH" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#pPNPuRxEmynH {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -961,7 +961,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsjzQgRsQlJKBg=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05e2\u05d3\u05d9\u05e3 \u05dc\u05e9\u05de\u05d5\u05e8 \u05d2\u05e8\u05e3 \u05e2\u05dd savefig \u05d5\u05dc\u05d0 \u05dc\u05e6\u05dc\u05dd \u05d0\u05ea \u05d4\u05de\u05e1\u05da?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05d4\u05d1\u05d3\u05dc \u05de\u05e2\u05e9\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 \u05d4\u05d1\u05d3\u05dc \u05de\u05e9\u05de\u05e2\u05d5\u05ea\u05d9 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05d5\u05d1\u05e9\u05dc\u05de\u05d5\u05ea \u05d4\u05ea\u05d5\u05d5\u05d9\u05d5\u05ea."}, {"answer": "\u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05dc\u05d0 \u05e0\u05ea\u05de\u05da \u05d1\u05d2'\u05d5\u05e4\u05d9\u05d8\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4 \u2014 \u05d8\u05db\u05e0\u05d9\u05ea \u05d0\u05e4\u05e9\u05e8 \u05dc\u05e6\u05dc\u05dd \u05de\u05e1\u05da, \u05d0\u05da \u05d6\u05d5 \u05d0\u05d9\u05e0\u05d4 \u05d4\u05d3\u05e8\u05da \u05d4\u05e0\u05db\u05d5\u05e0\u05d4."}, {"answer": "savefig \u05e9\u05d5\u05de\u05e8 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05e0\u05e9\u05dc\u05d8\u05ea (dpi) \u05d5\u05d1\u05dc\u05d9 \u05d7\u05d9\u05ea\u05d5\u05da \u05ea\u05d5\u05d5\u05d9\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05e9\u05d5\u05de\u05e8 \u05e8\u05e7 \u05d1\u05e9\u05d7\u05d5\u05e8-\u05dc\u05d1\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05e9\u05d5\u05de\u05e8 \u05e6\u05d1\u05e2 \u05db\u05e8\u05d2\u05d9\u05dc; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05d5\u05d1\u05d7\u05d9\u05ea\u05d5\u05da \u05d4\u05ea\u05d5\u05d5\u05d9\u05d5\u05ea, \u05dc\u05d0 \u05d1\u05e6\u05d1\u05e2."}]}];
+</style></div><script type="application/javascript">var questionspPNPuRxEmynH=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05e2\u05d3\u05d9\u05e3 \u05dc\u05e9\u05de\u05d5\u05e8 \u05d2\u05e8\u05e3 \u05e2\u05dd savefig \u05d5\u05dc\u05d0 \u05dc\u05e6\u05dc\u05dd \u05d0\u05ea \u05d4\u05de\u05e1\u05da?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05e9\u05d5\u05dd \u05d4\u05d1\u05d3\u05dc \u05de\u05e2\u05e9\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05d9\u05e9 \u05d4\u05d1\u05d3\u05dc \u05de\u05e9\u05de\u05e2\u05d5\u05ea\u05d9 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05d5\u05d1\u05e9\u05dc\u05de\u05d5\u05ea \u05d4\u05ea\u05d5\u05d5\u05d9\u05d5\u05ea."}, {"answer": "\u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05dc\u05d0 \u05e0\u05ea\u05de\u05da \u05d1\u05d2'\u05d5\u05e4\u05d9\u05d8\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05d6\u05d5 \u05d4\u05e1\u05d9\u05d1\u05d4 \u2014 \u05d8\u05db\u05e0\u05d9\u05ea \u05d0\u05e4\u05e9\u05e8 \u05dc\u05e6\u05dc\u05dd \u05de\u05e1\u05da, \u05d0\u05da \u05d6\u05d5 \u05d0\u05d9\u05e0\u05d4 \u05d4\u05d3\u05e8\u05da \u05d4\u05e0\u05db\u05d5\u05e0\u05d4."}, {"answer": "savefig \u05e9\u05d5\u05de\u05e8 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05e0\u05e9\u05dc\u05d8\u05ea (dpi) \u05d5\u05d1\u05dc\u05d9 \u05d7\u05d9\u05ea\u05d5\u05da \u05ea\u05d5\u05d5\u05d9\u05d5\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05e9\u05d5\u05de\u05e8 \u05e8\u05e7 \u05d1\u05e9\u05d7\u05d5\u05e8-\u05dc\u05d1\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e6\u05d9\u05dc\u05d5\u05dd \u05de\u05e1\u05da \u05e9\u05d5\u05de\u05e8 \u05e6\u05d1\u05e2 \u05db\u05e8\u05d2\u05d9\u05dc; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05e8\u05d6\u05d5\u05dc\u05d5\u05e6\u05d9\u05d4 \u05d5\u05d1\u05d7\u05d9\u05ea\u05d5\u05da \u05d4\u05ea\u05d5\u05d5\u05d9\u05d5\u05ea, \u05dc\u05d0 \u05d1\u05e6\u05d1\u05e2."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2023,8 +2023,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("jzQgRsQlJKBg")) {
-    show_questions(questionsjzQgRsQlJKBg, jzQgRsQlJKBg);
+  if (document.getElementById("pPNPuRxEmynH")) {
+    show_questions(questionspPNPuRxEmynH, pPNPuRxEmynH);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2136,8 +2136,8 @@ function try_show() {
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.9.1. דוגמה: שמירת גרף ההשוואה כקובץ לדוח</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure">8.9.2. דוגמה נוספת: שמירה של figure עם שני פאנלים</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.9.3. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.9.2. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure">8.9.3. דוגמה נוספת: שמירה של figure עם שני פאנלים</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.9.4. באג נפוץ: שמירה <strong>אחרי</strong> הצגת הגרף</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.9.5. בדקו את עצמכם</a></li>
 </ul>

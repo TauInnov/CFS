@@ -725,6 +725,19 @@
 <p>התנאי הראשון במימוש המקורי (‎<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">lst_included</span></code>‎) נועד <strong>לסנן</strong> על אילו איברים ב<strong>רשימת הקלט</strong> נבצע את הפעולה יכללו ברשימה, והתנאי השני במימוש המקורי (‎<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">i%2==0:</span> <span class="pre">...</span> <span class="pre">else:</span></code>‎) <strong>קובע מה היה הערך</strong> שישמר <strong>ברשימת הפלט</strong>.</p>
 <p>במימוש החדש, מכיוון שחלקי הביטוי הקשורים לערך החדש שיתווסף לרשימה יופיעו תחילה, אנו מתחילים כי הכתיבה של ‎<code class="docutils literal notranslate"><span class="pre">i**2</span> <span class="pre">if</span> <span class="pre">i%2==0</span> <span class="pre">else</span> <span class="pre">i*2</span></code>‎ ולאחר מכן מופיעה פקודת ה<code class="docutils literal notranslate"><span class="pre">for</span></code> וה<code class="docutils literal notranslate"><span class="pre">if</span></code> שאחראי על הסינון (‎<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">lst_included</span></code>‎).</p>
 </div>
+<p>דוגמה נוספת לצורה הזו: ‎<code class="docutils literal notranslate"><span class="pre">if</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">else</span></code>‎ לפני ה-‎<code class="docutils literal notranslate"><span class="pre">for</span></code>‎ קובעים את הערך, ו-‎<code class="docutils literal notranslate"><span class="pre">if</span></code>‎ נוסף בסוף מסנן את האיברים.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">6</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 9, 64, 125, 343, 512, 81, 1000, 1331]
+</pre></div>
+</div>
+</div>
+</div>
 <section id="id1">
 <h2><span class="section-number">4.11.1. </span>דוגמאות נוספות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>נגדיר רשימת המחרוזות הבאה:</p>
@@ -761,18 +774,6 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">6</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 9, 64, 125, 343, 512, 81, 1000, 1331]
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="id2">
 <h2><span class="section-number">4.11.2. </span>בחנו את עצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
@@ -786,8 +787,8 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="dxGufnvKJMrg" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#dxGufnvKJMrg {
+<div class="output text_html"><div id="ZKrsNEefbHwv" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ZKrsNEefbHwv {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1010,7 +1011,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsdxGufnvKJMrg=[{"question": "\u05db\u05de\u05d4 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d9\u05e9 \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 hot?", "type": "numeric", "answers": [{"type": "value", "value": 3, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e8\u05e7 100.0, 80.0 \u05d5-70.0 \u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05de-68."}, {"type": "default", "feedback": "\u05d4\u05ea\u05e0\u05d0\u05d9 \u05e9\u05d1\u05e1\u05d5\u05e3 \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05de\u05e1\u05e0\u05df: \u05e8\u05e7 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e9\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05de-68 \u05e0\u05db\u05e0\u05e1\u05d9\u05dd \u05dc\u05e8\u05e9\u05d9\u05de\u05d4."}]}, {"question": "\u05db\u05de\u05d4 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d9\u05e9 \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 above?", "type": "numeric", "answers": [{"type": "value", "value": 4, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d0\u05d9\u05df \u05ea\u05e0\u05d0\u05d9, \u05d5\u05dc\u05db\u05df \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d1-history \u05e0\u05d5\u05ea\u05df \u05d0\u05d9\u05d1\u05e8 \u05d0\u05d7\u05d3 \u05d1-above."}, {"type": "default", "feedback": "\u05d1\u05d1\u05d9\u05d8\u05d5\u05d9 \u05d4\u05d6\u05d4 \u05d0\u05d9\u05df if, \u05d5\u05dc\u05db\u05df \u05d0\u05e3 \u05d0\u05d9\u05d1\u05e8 \u05dc\u05d0 \u05de\u05e1\u05d5\u05e0\u05df."}]}, {"question": "\u05de\u05d4 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 above?", "type": "many_choice", "answers": [{"answer": "5.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 65.0 - 60 \u05d4\u05d5\u05d0 5.0."}, {"answer": "5", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d1-history \u05d4\u05dd float, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4."}, {"answer": "65.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05e9\u05d1\u05ea\u05d7\u05d9\u05dc\u05ea \u05d4-comprehension \u05d4\u05d5\u05d0 T - 60, \u05d5\u05dc\u05d0 T."}, {"answer": "10.0", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05dc\u05e4\u05e0\u05d9 \u05d0\u05d7\u05e8\u05d5\u05df (70.0 - 60)."}]}];
+</style></div><script type="application/javascript">var questionsZKrsNEefbHwv=[{"question": "\u05db\u05de\u05d4 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d9\u05e9 \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 hot?", "type": "numeric", "answers": [{"type": "value", "value": 3, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e8\u05e7 100.0, 80.0 \u05d5-70.0 \u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05de-68."}, {"type": "default", "feedback": "\u05d4\u05ea\u05e0\u05d0\u05d9 \u05e9\u05d1\u05e1\u05d5\u05e3 \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05de\u05e1\u05e0\u05df: \u05e8\u05e7 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05e9\u05d2\u05d3\u05d5\u05dc\u05d9\u05dd \u05de-68 \u05e0\u05db\u05e0\u05e1\u05d9\u05dd \u05dc\u05e8\u05e9\u05d9\u05de\u05d4."}]}, {"question": "\u05db\u05de\u05d4 \u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d9\u05e9 \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 above?", "type": "numeric", "answers": [{"type": "value", "value": 4, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d0\u05d9\u05df \u05ea\u05e0\u05d0\u05d9, \u05d5\u05dc\u05db\u05df \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d1-history \u05e0\u05d5\u05ea\u05df \u05d0\u05d9\u05d1\u05e8 \u05d0\u05d7\u05d3 \u05d1-above."}, {"type": "default", "feedback": "\u05d1\u05d1\u05d9\u05d8\u05d5\u05d9 \u05d4\u05d6\u05d4 \u05d0\u05d9\u05df if, \u05d5\u05dc\u05db\u05df \u05d0\u05e3 \u05d0\u05d9\u05d1\u05e8 \u05dc\u05d0 \u05de\u05e1\u05d5\u05e0\u05df."}]}, {"question": "\u05de\u05d4 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 above?", "type": "many_choice", "answers": [{"answer": "5.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 65.0 - 60 \u05d4\u05d5\u05d0 5.0."}, {"answer": "5", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d1-history \u05d4\u05dd float, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4."}, {"answer": "65.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05d1\u05d9\u05d8\u05d5\u05d9 \u05e9\u05d1\u05ea\u05d7\u05d9\u05dc\u05ea \u05d4-comprehension \u05d4\u05d5\u05d0 T - 60, \u05d5\u05dc\u05d0 T."}, {"answer": "10.0", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05dc\u05e4\u05e0\u05d9 \u05d0\u05d7\u05e8\u05d5\u05df (70.0 - 60)."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2072,8 +2073,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("dxGufnvKJMrg")) {
-    show_questions(questionsdxGufnvKJMrg, dxGufnvKJMrg);
+  if (document.getElementById("ZKrsNEefbHwv")) {
+    show_questions(questionsZKrsNEefbHwv, ZKrsNEefbHwv);
   } else {
     setTimeout(try_show, 200);
   }

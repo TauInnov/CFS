@@ -676,8 +676,8 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">111111111111</span> <span class="o">*</span> <span class="mi">111111111111</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">12345679012308641986431</span> <span class="o">+</span> <span class="mi">12345667890</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">12345679110300785634118</span> <span class="err">–</span> <span class="mi">979797979797979</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">12345679110300785634118</span> <span class="err">–</span> <span class="mi">97979797979797</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">12345679110300785634118</span> <span class="o">-</span> <span class="mi">979797979797979</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">12345679110300785634118</span> <span class="o">-</span> <span class="mi">97979797979797</span>
 
 <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">==</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">==</span> <span class="n">d</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"All numbers are equal"</span><span class="p">)</span>
@@ -687,10 +687,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="mi">12345679110300785634118</span> <span class="err">–</span> <span class="mi">979797979797979</span>
-                                <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid character '–' (U+2013)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not all numbers are equal
 </pre></div>
 </div>
 </div>
@@ -705,6 +702,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Some of the numbers are equal
+</pre></div>
+</div>
+</div>
 </div>
 <p>שימו לב שכדי לבדוק אם יש שני ערכים שווים מבין <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code> היינו צריכים לבדוק את כל שלוש האפשרויות, כפי שרואים בקוד.</p>
 <p>הנה עוד דוגמה:</p>
@@ -713,6 +715,11 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">10</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">11</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">12</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">13</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"a is between 10-13"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a is between 10-13
 </pre></div>
 </div>
 </div>
@@ -734,9 +741,9 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="NYwhhEZMfvMA" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#NYwhhEZMfvMA {
-   --jq-multiple-choice-bg: #6f78ffff;
+<div class="output text_html"><div id="wflCXkWStJgz" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#wflCXkWStJgz {
+   --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
    --jq-mc-button-inset-shadow: #555555;
@@ -749,6 +756,7 @@
    --jq-incorrect-color: #c80202;
    --jq-correct-color: #009113;
    --jq-text-color: #fafafa;
+   --jq-link-color: #9abafa;
 }
 
 .Quiz {
@@ -795,6 +803,11 @@
     text-align: left;
 }
 
+
+.Quiz .JQLink {
+    color: var(--jq-link-color) !important;
+    text-decoration: underline;
+}
 
 
 
@@ -952,7 +965,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsNYwhhEZMfvMA=[{"question": "\u05de\u05d4 \u05d9\u05d3\u05e4\u05d9\u05e1 \u05e7\u05d8\u05e2 \u05d4\u05e7\u05d5\u05d3 \u05d0\u05dd \u05e0\u05d7\u05dc\u05d9\u05e3 \u05d0\u05ea \u05e1\u05d9\u05de\u05e0\u05d9 \u05d4\u05e9\u05d0\u05dc\u05d4 (???) \u05d1'abcde'?", "type": "many_choice", "answers": [{"answer": "\u05dc\u05d0 \u05d9\u05d5\u05d7\u05d6\u05e8 \u05db\u05dc\u05d5\u05dd (None)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "abcdeabcde", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "!what a nice day", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "abcde", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionswflCXkWStJgz=[{"question": "\u05de\u05d4 \u05d9\u05d3\u05e4\u05d9\u05e1 \u05e7\u05d8\u05e2 \u05d4\u05e7\u05d5\u05d3 \u05d0\u05dd \u05e0\u05d7\u05dc\u05d9\u05e3 \u05d0\u05ea \u05e1\u05d9\u05de\u05e0\u05d9 \u05d4\u05e9\u05d0\u05dc\u05d4 (???) \u05d1'abcde'?", "type": "many_choice", "answers": [{"answer": "\u05dc\u05d0 \u05d9\u05d5\u05d7\u05d6\u05e8 \u05db\u05dc\u05d5\u05dd (None)", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "abcdeabcde", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "!what a nice day", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "abcde", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -983,8 +996,8 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
     }
     // Replace markdown links
-    mystring = mystring.replace(/<http(.*?)>/g, '<a href="http$1" target="_blank" class="Link">http$1</a>');
-    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/<http(.*?)>/g, '<a href="http$1" target="_blank" class="Quiz JQLink">http$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="Quiz JQLink">$1</a>');
     return mystring;
 }
 
@@ -1322,31 +1335,31 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
 
-        // Make input element
-        var inp = document.createElement("input");
-        inp.type = "radio";
-        inp.id = "quizo" + id + index;
-        inp.style = "display:none;";
-        aDiv.append(inp);
-
-        //Make label for input element
+        // Make label for input element
         var lab = document.createElement("label");
         lab.className = "MCButton";
         lab.id = id + '-' + index;
         lab.onclick = check_mc;
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type = "radio";
+        inp.id = "quizo" + id + index;
+        inp.name = "mcgroup-" + id; // for grouping radios
+        inp.className = "sr-only"; // or "visually-hidden" or whatever you call it
+
+
+        lab.append(inp); // input is now inside the label
+
         var aSpan = document.createElement('span');
-        aSpan.classsName = "";
-        //qDiv.id="quizQn"+id+index;
         if ("answer" in item) {
             aSpan.innerHTML = jaxify(item.answer);
-            //aSpan.innerHTML=item.answer;
         }
         lab.append(aSpan);
 
         // Create div for code inside question
-        var codeSpan;
         if ("code" in item) {
-            codeSpan = document.createElement('span');
+            var codeSpan = document.createElement('span');
             codeSpan.id = "code" + id + index;
             codeSpan.className = "QuizCode";
             var codePre = document.createElement('pre');
@@ -1355,10 +1368,7 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
             codePre.append(codeCode);
             codeCode.innerHTML = item.code;
             lab.append(codeSpan);
-            //console.log(codeSpan);
         }
-
-        //lab.textContent=item.answer;
 
         // Set the data attributes for the answer
         lab.setAttribute('data-correct', item.correct);
@@ -1370,7 +1380,9 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
         }
         lab.setAttribute('data-answered', 0);
 
+        // Only append the label (input is inside)
         aDiv.append(lab);
+
 
     });
 
@@ -1421,7 +1433,7 @@ function check_numeric(ths, event) {
         }
         //console.log("Reader entered", submission);
 
-        if ("precision" in ths.dataset) {
+        if (("precision" in ths.dataset) && (ths.dataset.precision > 0)) {
             var precision = ths.dataset.precision;
             submission = Number(Number(submission).toPrecision(precision));
         }
@@ -2015,8 +2027,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("NYwhhEZMfvMA")) {
-    show_questions(questionsNYwhhEZMfvMA, NYwhhEZMfvMA);
+  if (document.getElementById("wflCXkWStJgz")) {
+    show_questions(questionswflCXkWStJgz, wflCXkWStJgz);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2030,9 +2042,9 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="OTEDBOOSqEDf" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#OTEDBOOSqEDf {
-   --jq-multiple-choice-bg: #6f78ffff;
+<div class="output text_html"><div id="QuZLacQTZKoY" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#QuZLacQTZKoY {
+   --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
    --jq-mc-button-inset-shadow: #555555;
@@ -2045,6 +2057,7 @@ function try_show() {
    --jq-incorrect-color: #c80202;
    --jq-correct-color: #009113;
    --jq-text-color: #fafafa;
+   --jq-link-color: #9abafa;
 }
 
 .Quiz {
@@ -2091,6 +2104,11 @@ function try_show() {
     text-align: left;
 }
 
+
+.Quiz .JQLink {
+    color: var(--jq-link-color) !important;
+    text-decoration: underline;
+}
 
 
 
@@ -2248,7 +2266,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsOTEDBOOSqEDf=[{"question": "\u05e2\u05d1\u05d5\u05e8 \u05e2\u05e8\u05da \u05db\u05dc\u05e9\u05d4\u05d5 \u05e9\u05dc st, \u05d4\u05d0\u05dd \u05d9\u05d9\u05ea\u05db\u05df \u05db\u05d9 \u05e0\u05d2\u05d9\u05e2 \u05dcelif \u05d5\u05d4\u05ea\u05e0\u05d0\u05d9 \u05d4\u05e9\u05e0\u05d9 \u05d1\u05d5 (\u05dc\u05d0\u05d7\u05e8 \u05d4or) \u05d9\u05d4\u05d9\u05d4 \u05e0\u05db\u05d5\u05df?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05d0\u05dd \u05e0\u05d2\u05d9\u05e2 \u05dcelif \u05d0\u05dd 'A' \u05d4\u05d5\u05d0 \u05d4\u05ea\u05d5 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea?"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d0\u05dd 'A' \u05d4\u05d5\u05d0 \u05d4\u05ea\u05d5 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea, \u05d0\u05d6 \u05d4\u05d5\u05d0 \u05d1\u05d5\u05d5\u05d3\u05d0\u05d9 \u05e0\u05de\u05e6\u05d0 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea. \u05dc\u05db\u05df \u05d4if \u05d9\u05ea\u05e7\u05d9\u05d9\u05dd \u05d5\u05dc\u05d0 \u05e0\u05d2\u05d9\u05e2 \u05dcelif."}]}];
+</style></div><script type="application/javascript">var questionsQuZLacQTZKoY=[{"question": "\u05e2\u05d1\u05d5\u05e8 \u05e2\u05e8\u05da \u05db\u05dc\u05e9\u05d4\u05d5 \u05e9\u05dc st, \u05d4\u05d0\u05dd \u05d9\u05d9\u05ea\u05db\u05df \u05db\u05d9 \u05e0\u05d2\u05d9\u05e2 \u05dcelif \u05d5\u05d4\u05ea\u05e0\u05d0\u05d9 \u05d4\u05e9\u05e0\u05d9 \u05d1\u05d5 (\u05dc\u05d0\u05d7\u05e8 \u05d4or) \u05d9\u05d4\u05d9\u05d4 \u05e0\u05db\u05d5\u05df?", "type": "many_choice", "answers": [{"answer": "\u05db\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d4\u05d0\u05dd \u05e0\u05d2\u05d9\u05e2 \u05dcelif \u05d0\u05dd 'A' \u05d4\u05d5\u05d0 \u05d4\u05ea\u05d5 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea?"}, {"answer": "\u05dc\u05d0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d0\u05dd 'A' \u05d4\u05d5\u05d0 \u05d4\u05ea\u05d5 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea, \u05d0\u05d6 \u05d4\u05d5\u05d0 \u05d1\u05d5\u05d5\u05d3\u05d0\u05d9 \u05e0\u05de\u05e6\u05d0 \u05d1\u05de\u05d7\u05e8\u05d5\u05d6\u05ea. \u05dc\u05db\u05df \u05d4if \u05d9\u05ea\u05e7\u05d9\u05d9\u05dd \u05d5\u05dc\u05d0 \u05e0\u05d2\u05d9\u05e2 \u05dcelif."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2279,8 +2297,8 @@ function jaxify(string) {
         loc2 = mystring.search(/([^\\]|^)(\$\$)/);
     }
     // Replace markdown links
-    mystring = mystring.replace(/<http(.*?)>/g, '<a href="http$1" target="_blank" class="Link">http$1</a>');
-    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="Link">$1</a>');
+    mystring = mystring.replace(/<http(.*?)>/g, '<a href="http$1" target="_blank" class="Quiz JQLink">http$1</a>');
+    mystring = mystring.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="Quiz JQLink">$1</a>');
     return mystring;
 }
 
@@ -2618,31 +2636,31 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
     shuffled.forEach((item, index, ans_array) => {
         //console.log(answer);
 
-        // Make input element
-        var inp = document.createElement("input");
-        inp.type = "radio";
-        inp.id = "quizo" + id + index;
-        inp.style = "display:none;";
-        aDiv.append(inp);
-
-        //Make label for input element
+        // Make label for input element
         var lab = document.createElement("label");
         lab.className = "MCButton";
         lab.id = id + '-' + index;
         lab.onclick = check_mc;
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type = "radio";
+        inp.id = "quizo" + id + index;
+        inp.name = "mcgroup-" + id; // for grouping radios
+        inp.className = "sr-only"; // or "visually-hidden" or whatever you call it
+
+
+        lab.append(inp); // input is now inside the label
+
         var aSpan = document.createElement('span');
-        aSpan.classsName = "";
-        //qDiv.id="quizQn"+id+index;
         if ("answer" in item) {
             aSpan.innerHTML = jaxify(item.answer);
-            //aSpan.innerHTML=item.answer;
         }
         lab.append(aSpan);
 
         // Create div for code inside question
-        var codeSpan;
         if ("code" in item) {
-            codeSpan = document.createElement('span');
+            var codeSpan = document.createElement('span');
             codeSpan.id = "code" + id + index;
             codeSpan.className = "QuizCode";
             var codePre = document.createElement('pre');
@@ -2651,10 +2669,7 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
             codePre.append(codeCode);
             codeCode.innerHTML = item.code;
             lab.append(codeSpan);
-            //console.log(codeSpan);
         }
-
-        //lab.textContent=item.answer;
 
         // Set the data attributes for the answer
         lab.setAttribute('data-correct', item.correct);
@@ -2666,7 +2681,9 @@ function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
         }
         lab.setAttribute('data-answered', 0);
 
+        // Only append the label (input is inside)
         aDiv.append(lab);
+
 
     });
 
@@ -2717,7 +2734,7 @@ function check_numeric(ths, event) {
         }
         //console.log("Reader entered", submission);
 
-        if ("precision" in ths.dataset) {
+        if (("precision" in ths.dataset) && (ths.dataset.precision > 0)) {
             var precision = ths.dataset.precision;
             submission = Number(Number(submission).toPrecision(precision));
         }
@@ -3311,8 +3328,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("OTEDBOOSqEDf")) {
-    show_questions(questionsOTEDBOOSqEDf, OTEDBOOSqEDf);
+  if (document.getElementById("QuZLacQTZKoY")) {
+    show_questions(questionsQuZLacQTZKoY, QuZLacQTZKoY);
   } else {
     setTimeout(try_show, 200);
   }

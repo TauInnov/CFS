@@ -646,7 +646,7 @@
 <h1><span class="section-number">11.4. </span>בחירה, סינון ומיון: עמודות, שורות, תנאים בוליאניים ו-sort_values<a class="headerlink" href="#sort-values" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>ל-pandas יש כלים עשירים יותר לבחירה (למשל ‎<code class="docutils literal notranslate"><span class="pre">loc</span></code>‎) — מעבר להיקף הקורס הזה. כאן מתמקדים בגישה הבסיסית: ‎<code class="docutils literal notranslate"><span class="pre">df[&quot;col&quot;]</span></code>‎ לעמודה, ו-‎<code class="docutils literal notranslate"><span class="pre">df[mask]</span></code>‎ לשורות — התבנית שתפגשו הכי הרבה בקוד pandas אמיתי.</p>
+<p>בעמוד הזה בוחרים עמודה ב-‎<code class="docutils literal notranslate"><span class="pre">df[&quot;col&quot;]</span></code>‎ ושורות ב-‎<code class="docutils literal notranslate"><span class="pre">df[mask]</span></code>‎, התבנית שתפגשו הכי הרבה בקוד pandas אמיתי. בדפים אחרים של השבוע מופיע גם ‎<code class="docutils literal notranslate"><span class="pre">df.loc[...]</span></code>‎: הוא בוחר שורה לפי <strong>התווית</strong> שלה, ואפשר לתת לו גם שם עמודה, למשל ‎<code class="docutils literal notranslate"><span class="pre">df.loc[3,</span> <span class="pre">&quot;angle_deg&quot;]</span></code>‎. לעומתו, ‎<code class="docutils literal notranslate"><span class="pre">df.iloc[...]</span></code>‎ (בהמשך העמוד) בוחר לפי <strong>מיקום</strong>.</p>
 </div>
 <ul class="simple">
 <li><p><strong>עמודה:</strong> ‎<code class="docutils literal notranslate"><span class="pre">df[&quot;col&quot;]</span></code>‎.</p></li>
@@ -750,7 +750,7 @@
 </section>
 <section id="id2">
 <h2><span class="section-number">11.4.2. </span>באג נפוץ: תנאים מחוברים בלי סוגריים<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>בפייתון רגיל, ‎<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">45</span> <span class="pre">and</span> <span class="pre">b</span> <span class="pre">&gt;</span> <span class="pre">30</span></code>‎ עובד. ב-pandas, כשמחברים שני תנאים בוליאניים על ‎<code class="docutils literal notranslate"><span class="pre">Series</span></code>‎, <strong>חובה</strong> להשתמש ב-‎<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>‎/‎<code class="docutils literal notranslate"><span class="pre">|</span></code>‎ (לא ‎<code class="docutils literal notranslate"><span class="pre">and</span></code>‎/‎<code class="docutils literal notranslate"><span class="pre">or</span></code>‎), <strong>וחובה</strong> לעטוף כל תנאי בסוגריים — אחרת סדר הפעולות (קדימויות) משתבש, בדיוק כמו הבאג מסעיף 7.9.</p>
+<p>בפייתון רגיל, ‎<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">45</span> <span class="pre">and</span> <span class="pre">b</span> <span class="pre">&gt;</span> <span class="pre">30</span></code>‎ עובד. ב-pandas, כשמחברים שני תנאים בוליאניים על ‎<code class="docutils literal notranslate"><span class="pre">Series</span></code>‎, <strong>חובה</strong> להשתמש ב-‎<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>‎/‎<code class="docutils literal notranslate"><span class="pre">|</span></code>‎ (לא ‎<code class="docutils literal notranslate"><span class="pre">and</span></code>‎/‎<code class="docutils literal notranslate"><span class="pre">or</span></code>‎), <strong>וחובה</strong> לעטוף כל תנאי בסוגריים — אחרת סדר הפעולות (קדימויות) משתבש, בדיוק כמו במסכות על מערכים בסעיף 7.7.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -873,8 +873,8 @@
 <h2><span class="section-number">11.4.4. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="vetSVEtlPWBE" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#vetSVEtlPWBE {
+<div class="output text_html"><div id="aWtWWWSLpoWx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#aWtWWWSLpoWx {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1097,7 +1097,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsvetSVEtlPWBE=[{"question": "\u05de\u05d3\u05d5\u05e2 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05de\u05e1\u05e4\u05e8 \u05e2\u05dd ==", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05e2\u05dd == \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05d5\u05d1\u05d3\u05ea \u05de\u05e6\u05d5\u05d9\u05df \u05d5\u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9\u05ea; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05d1-and."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsaWtWWWSLpoWx=[{"question": "\u05de\u05d3\u05d5\u05e2 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05de\u05e1\u05e4\u05e8 \u05e2\u05dd ==", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05e2\u05dd == \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05d5\u05d1\u05d3\u05ea \u05de\u05e6\u05d5\u05d9\u05df \u05d5\u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9\u05ea; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05d1-and."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2159,8 +2159,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("vetSVEtlPWBE")) {
-    show_questions(questionsvetSVEtlPWBE, vetSVEtlPWBE);
+  if (document.getElementById("aWtWWWSLpoWx")) {
+    show_questions(questionsaWtWWWSLpoWx, aWtWWWSLpoWx);
   } else {
     setTimeout(try_show, 200);
   }
