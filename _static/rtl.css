@@ -56,3 +56,12 @@ div.admonition > .admonition-title {
 div.admonition > .admonition-title strong {
     font-weight: inherit;
 }
+/* Code shows exactly the characters a student types. Some monospace fonts
+   (Cascadia Code, the default on Windows 11) join characters into
+   ligatures: >= is drawn as ≥, != as ≠, -> as an arrow, === as a double
+   line, and in right-to-left text the joined glyph can land in the wrong
+   place. Turn ligatures off in all code. */
+code, pre, kbd, samp, .highlight, .highlight * {
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "calt" 0;
+}
