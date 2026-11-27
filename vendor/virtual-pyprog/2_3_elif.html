@@ -327,10 +327,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_9/9_8_practice.html">9.8. תרגול מסכם</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_10.html">10. שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_10/10_1_recurrence_loop.html">10.1. יחס נסיגה ולולאת עדכון</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_10/10_2_diff_cumsum.html">10.2. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_10/10_3_trapezoid_quad.html">10.3. אינטגרציה: trapezoid ו-quad</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../course/weeks/week_10.html">10. שבוע 10 — סדרות עיתיות: מדידה, קצב שינוי ותחזית</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_10/10_1_measured_series.html">10.1. סדרה מדודה: קצב שינוי ואירועים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_10/10_2_accumulation.html">10.2. צבירה בזמן: cumsum ו-trapezoid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_10/10_3_update_loop.html">10.3. סדרה מחושבת: משוואת התנועה כלולאת עדכון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../course/weeks/week_10/10_4_practice.html">10.4. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -684,8 +684,8 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="uFJQJCtsntdD" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#uFJQJCtsntdD {
+<div class="output text_html"><div id="RJNYSCdtNibz" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#RJNYSCdtNibz {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -908,7 +908,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsuFJQJCtsntdD=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05e2\u05d1\u05d5\u05e8 word='abc'?", "type": "many_choice", "answers": [{"answer": "a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "a+b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "nothing", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsRJNYSCdtNibz=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05e2\u05d1\u05d5\u05e8 word='abc'?", "type": "many_choice", "answers": [{"answer": "a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "a+b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "nothing", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1970,8 +1970,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("uFJQJCtsntdD")) {
-    show_questions(questionsuFJQJCtsntdD, uFJQJCtsntdD);
+  if (document.getElementById("RJNYSCdtNibz")) {
+    show_questions(questionsRJNYSCdtNibz, RJNYSCdtNibz);
   } else {
     setTimeout(try_show, 200);
   }
@@ -1985,8 +1985,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="jicrizmsHCNM" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#jicrizmsHCNM {
+<div class="output text_html"><div id="ozkLTRZCLZkx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ozkLTRZCLZkx {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2209,7 +2209,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsjicrizmsHCNM=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05e2\u05d1\u05d5\u05e8 word='ac'?", "type": "many_choice", "answers": [{"answer": "a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "a+b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "nothing", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsozkLTRZCLZkx=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05e2\u05d1\u05d5\u05e8 word='ac'?", "type": "many_choice", "answers": [{"answer": "a", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "a+b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "nothing", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3271,8 +3271,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("jicrizmsHCNM")) {
-    show_questions(questionsjicrizmsHCNM, jicrizmsHCNM);
+  if (document.getElementById("ozkLTRZCLZkx")) {
+    show_questions(questionsozkLTRZCLZkx, ozkLTRZCLZkx);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3286,8 +3286,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="yDoXqnHNhadX" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#yDoXqnHNhadX {
+<div class="output text_html"><div id="JSHbSooxkczr" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#JSHbSooxkczr {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3510,7 +3510,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsyDoXqnHNhadX=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05e2\u05d1\u05d5\u05e8 word='bc'?", "type": "many_choice", "answers": [{"answer": "b", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "a+b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "nothing", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
+</style></div><script type="application/javascript">var questionsJSHbSooxkczr=[{"question": "\u05de\u05d4 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05e2\u05d1\u05d5\u05e8 word='bc'?", "type": "many_choice", "answers": [{"answer": "b", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"answer": "a+b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "b+c", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}, {"answer": "nothing", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -4572,8 +4572,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("yDoXqnHNhadX")) {
-    show_questions(questionsyDoXqnHNhadX, yDoXqnHNhadX);
+  if (document.getElementById("JSHbSooxkczr")) {
+    show_questions(questionsJSHbSooxkczr, JSHbSooxkczr);
   } else {
     setTimeout(try_show, 200);
   }

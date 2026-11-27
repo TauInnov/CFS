@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10.3. אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית) &#8212; Computers For physics</title>
+    <title>10.3. סדרה מחושבת: משוואת התנועה כלולאת עדכון &#8212; Computers For physics</title>
   
   
   
@@ -63,12 +63,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_3_trapezoid_quad';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_3_update_loop';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="10.4. תרגול מסכם" href="10_4_practice.html" />
-    <link rel="prev" title="10.2. diff ו-cumsum — נגזרת וסכום מצטבר" href="10_2_diff_cumsum.html" />
+    <link rel="prev" title="10.2. צבירה בזמן: cumsum ו-trapezoid" href="10_2_accumulation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -329,10 +329,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_practice.html">9.8. תרגול מסכם</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="10_1_recurrence_loop.html">10.1. יחס נסיגה ולולאת עדכון</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_2_diff_cumsum.html">10.2. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.3. אינטגרציה: trapezoid ו-quad</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — סדרות עיתיות: מדידה, קצב שינוי ותחזית</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="10_1_measured_series.html">10.1. סדרה מדודה: קצב שינוי ואירועים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_2_accumulation.html">10.2. צבירה בזמן: cumsum ו-trapezoid</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.3. סדרה מחושבת: משוואת התנועה כלולאת עדכון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_4_practice.html">10.4. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -425,7 +425,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/course/weeks/week_10/10_3_trapezoid_quad.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/course/weeks/week_10/10_3_update_loop.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -443,7 +443,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/course/weeks/week_10/10_3_trapezoid_quad.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/course/weeks/week_10/10_3_update_loop.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -509,7 +509,7 @@
       
       
       
-      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_10/10_3_trapezoid_quad.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_10/10_3_update_loop.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -539,7 +539,7 @@
       
       
       
-      <li><a href="../../../_sources/course/weeks/week_10/10_3_trapezoid_quad.ipynb" target="_blank"
+      <li><a href="../../../_sources/course/weeks/week_10/10_3_update_loop.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -615,7 +615,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)</h1>
+    <h1>סדרה מחושבת: משוואת התנועה כלולאת עדכון</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -625,11 +625,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid">10.3.1. דוגמה: טווח מתוך “מדידות” מהירות, עם ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quad">10.3.2. דוגמה: אותו טווח, עם ‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ על הנוסחה האנליטית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3.3. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.3.5. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3.1. דוגמה: זריקה אנכית צעד אחר צעד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.3.2. מעקב אחרי לולאה בטבלה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.3.3. כמה ריצות בכל צעד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">10.3.4. דוגמה נוספת: כדור שוקע בנוזל צמיג</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">10.3.5. באג נפוץ: ניסיון לוקטר יחס נסיגה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">10.3.6. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">10.3.7. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">10.3.8. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -641,119 +644,258 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="trapezoid-quad">
-<h1><span class="section-number">10.3. </span>אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)<a class="headerlink" href="#trapezoid-quad" title="Link to this heading">#</a></h1>
-<p>‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ נתן קירוב גס לאינטגרל. ל-SciPy יש שני כלים מדויקים יותר, לשני מצבים שונים:</p>
-<ul class="simple">
-<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">scipy.integrate.trapezoid(y,</span> <span class="pre">x)</span></code>‎</strong> — מקבל <strong>מדידות בדידות</strong> (<span class="math notranslate nohighlight">\(y\)</span> בנקודות <span class="math notranslate nohighlight">\(x\)</span>), ומחשב את השטח שמתחתן בשיטת הטרפזים. מתאים לנתוני ניסוי.</p></li>
-<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad(f,</span> <span class="pre">a,</span> <span class="pre">b)</span></code>‎</strong> — מקבל <strong>פונקציה אנליטית</strong> (callable) וגבולות אינטגרציה, ומחשב את האינטגרל שלה בשיטה נומרית מדויקת בהרבה. מתאים כשיש נוסחה סגורה.</p></li>
-</ul>
-<p>קריאה ל-‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎ או ל-‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ היא שימוש בכלי מוכן. בניית שיטות כאלה נלמדת בקורס אחר.</p>
+  <section id="id1">
+<h1><span class="section-number">10.3. </span>סדרה מחושבת: משוואת התנועה כלולאת עדכון<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>ב-10.1 וב-10.2 הסדרה נמדדה; כאן היא מחושבת. משוואת התנועה נותנת את קצב השינוי, ולכן גם כלל מצעד לצעד: אם <span class="math notranslate nohighlight">\(dv/dt = a\)</span>, אחרי צעד זמן ‎<code class="docutils literal notranslate"><span class="pre">dt</span></code>‎ המהירות היא <span class="math notranslate nohighlight">\(v_{n+1} = v_n + a\,dt\)</span>. כל ערך תלוי בקודמו (יחס נסיגה), ולכן לולאה ממלאת את המערך צעד אחר צעד, כמו ‎<code class="docutils literal notranslate"><span class="pre">simulate</span></code>‎ ורשימת ההיסטוריה שלה בחצי הראשון של הקורס.</p>
+<section id="id2">
+<h2><span class="section-number">10.3.1. </span>דוגמה: זריקה אנכית צעד אחר צעד<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>כדור נזרק ישר למעלה במהירות 15 מ’/ש’. בלי התנגדות אוויר:</p>
+<div class="math notranslate nohighlight">
+\[v_{n+1} = v_n - g\,dt \qquad y_{n+1} = y_n + v_n\,dt\]</div>
+<p>לזריקה הזו יש נוסחה, <span class="math notranslate nohighlight">\(y = v_0 t - \tfrac{1}{2} g t^2\)</span>, ולכן אפשר לבדוק את הלולאה מולה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">integrate</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
-<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">v0</span> <span class="o">=</span> <span class="mf">20.0</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="trapezoid">
-<h2><span class="section-number">10.3.1. </span>דוגמה: טווח מתוך “מדידות” מהירות, עם ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎<a class="headerlink" href="#trapezoid" title="Link to this heading">#</a></h2>
-<p>יש לנו מדגם של <span class="math notranslate nohighlight">\(v_x(t)\)</span> (בדידות, כמו נתוני ניסוי), ורוצים למצוא כמה מרחק הצטבר — האינטגרל של המהירות על הזמן.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-<span class="n">t_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>     <span class="c1"># sparse, like a real measurement</span>
-<span class="n">vx_samples</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">t_samples</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mf">15.0</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">n_steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">/</span> <span class="n">g</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="n">R_trapz</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">vx_samples</span><span class="p">,</span> <span class="n">t_samples</span><span class="p">)</span>
-<span class="n">R_theory</span> <span class="o">=</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
+<span class="n">v_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>          <span class="c1"># before the loop: empty arrays</span>
+<span class="n">y_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+<span class="n">v_sim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>                      <span class="c1"># and the starting velocity</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">v_sim</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_sim</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">dt</span>      <span class="c1"># every round: from the previous</span>
+    <span class="n">y_sim</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_sim</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">v_sim</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"trapezoid:"</span><span class="p">,</span> <span class="n">R_trapz</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"תיאוריה:  "</span><span class="p">,</span> <span class="n">R_theory</span><span class="p">)</span>
+<span class="n">t_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>    <span class="c1"># after the loop: the time of every step</span>
+<span class="n">y_formula</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">t_sim</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_sim</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">y_sim</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">y_formula</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trapezoid: 40.816326530612244
-תיאוריה:   40.816326530612244
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.55 11.48
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/b08afe5bac90852308e0f59ea086a80dd5454011392078584a61a5fa38826336.png" src="../../../_images/b08afe5bac90852308e0f59ea086a80dd5454011392078584a61a5fa38826336.png" />
+</div>
+</div>
+<p>השיא של הלולאה גבוה ב-0.07 מטר מזה של הנוסחה, כי הלולאה מניחה שבמשך כל צעד המהירות קבועה. עם ‎<code class="docutils literal notranslate"><span class="pre">dt</span></code>‎ קטן פי 10, ההפרש קטן פי 10.</p>
 </section>
-<section id="quad">
-<h2><span class="section-number">10.3.2. </span>דוגמה: אותו טווח, עם ‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ על הנוסחה האנליטית<a class="headerlink" href="#quad" title="Link to this heading">#</a></h2>
-<p>הפעם יש לנו את <span class="math notranslate nohighlight">\(v_x(t)=v_0\cos\theta\)</span> כפונקציה מפורשת (ולא כמדגם), אז אפשר להעביר אותה ישירות ל-‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎.</p>
+<section id="id3">
+<h2><span class="section-number">10.3.2. </span>מעקב אחרי לולאה בטבלה<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>כשלולאת עדכון מדפיסה ערכים לא נכונים, הכלי השימושי ביותר הוא טבלה: עמודה ל-‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ ועמודה לכל מערך שהלולאה ממלאת. ממלאים אותה שורה אחר שורה, כל שורה מתוך השורה שלפניה, בדיוק כמו המחשב. ניקח לולאה קטנה עם מספרים עגולים: זריקה אנכית במהירות 10 מטר לשנייה, עם ‎<code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">10</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.1</span></code>‎, בארבעה צעדים.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">vx_func</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-
-<span class="n">R_quad</span><span class="p">,</span> <span class="n">err_estimate</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">vx_func</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"quad:"</span><span class="p">,</span> <span class="n">R_quad</span><span class="p">,</span> <span class="s2">"  (שגיאת קירוב משוערת:"</span><span class="p">,</span> <span class="n">err_estimate</span><span class="p">,</span> <span class="s2">")"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="c1"># velocity (m/s)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="c1"># height (m)</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="mf">0.1</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quad: 40.81632653061225   (שגיאת קירוב משוערת: 4.5315225494904355e-13 )
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10.  9.  8.  7.]
+[0.  1.  1.9 2.7]
 </pre></div>
 </div>
 </div>
 </div>
-<p>‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ מחזיר <strong>זוג</strong>: הערך המשוער, והערכת שגיאת הקירוב שלו — כדאי תמיד לזרוק עין על הרכיב השני, גם בלי לנתח אותו לעומק.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎</p></th>
+<th class="head"><p>‎<code class="docutils literal notranslate"><span class="pre">v[i]</span></code>‎</p></th>
+<th class="head"><p>‎<code class="docutils literal notranslate"><span class="pre">y[i]</span></code>‎</p></th>
+<th class="head"><p>מה הסיבוב הזה מחשב</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>10</p></td>
+<td><p>0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v[1]</span> <span class="pre">=</span> <span class="pre">10</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">9</span></code>, <code class="docutils literal notranslate"><span class="pre">y[1]</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">+</span> <span class="pre">10</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>9</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v[2]</span> <span class="pre">=</span> <span class="pre">9</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">y[2]</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">9</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">1.9</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>8</p></td>
+<td><p>1.9</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v[3]</span> <span class="pre">=</span> <span class="pre">8</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">y[3]</span> <span class="pre">=</span> <span class="pre">1.9</span> <span class="pre">+</span> <span class="pre">8</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">2.7</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>7</p></td>
+<td><p>2.7</p></td>
+<td><p>אין סיבוב כזה: ‎<code class="docutils literal notranslate"><span class="pre">range(3)</span></code>‎ נעצר לפני 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>כך משתמשים בטבלה כשהפלט שגוי:</p>
+<ol class="arabic simple">
+<li><p>ממלאים אותה לפי מה שהקוד <strong>צריך</strong> לעשות, עוד לפני שמסתכלים על הפלט.</p></li>
+<li><p>משווים לפלט ומחפשים את הערך <strong>הראשון</strong> שיוצא שונה. כל ערך שאחריו כבר חושב מתוך ערך שגוי, ולכן הוא מלמד פחות.</p></li>
+<li><p>השורה בקוד שמחשבת את הערך הזה היא החשודה הראשונה. אם ‎<code class="docutils literal notranslate"><span class="pre">v</span></code>‎ נכון ו-‎<code class="docutils literal notranslate"><span class="pre">y</span></code>‎ שגוי, הבעיה בשורה של ‎<code class="docutils literal notranslate"><span class="pre">y</span></code>‎. אם הלולאה נעצרת ב-‎<code class="docutils literal notranslate"><span class="pre">IndexError</span></code>‎, בודקים מה ה-‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ האחרון ש-‎<code class="docutils literal notranslate"><span class="pre">range</span></code>‎ מייצר.</p></li>
+</ol>
 </section>
-<section id="id1">
-<h2><span class="section-number">10.3.3. </span>נסו בעצמכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">height_gain</span></code>‎, שמקבלת מדגם של המהירות האנכית <span class="math notranslate nohighlight">\(v_y\)</span> ואת זמני המדידה, ומחזירה את הגובה שהגוף צבר: האינטגרל של המהירות על הזמן. בדקו אותה על הדוגמה שבתא, והשוו לנוסחה <span class="math notranslate nohighlight">\(y_{max}=v_0^2/(2g)\)</span> לזריקה אנכית.</p>
+<section id="id4">
+<h2><span class="section-number">10.3.3. </span>כמה ריצות בכל צעד<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>כדי לחשב כמה ריצות בבת אחת, למשל כמה ערכים של קבוע ההתנגדות ‎<code class="docutils literal notranslate"><span class="pre">k</span></code>‎, המערך מקבל ציר ריצות. הלולאה עדיין רצה רק על הזמן, וכל צעד מעדכן עמודה שלמה:</p>
+<div class="math notranslate nohighlight">
+\[v_{n+1} = v_n - (g + k\,v_n)\,dt\]</div>
+<p>‎<code class="docutils literal notranslate"><span class="pre">v[:,</span> <span class="pre">n]</span></code>‎ היא המהירות בצעד ‎<code class="docutils literal notranslate"><span class="pre">n</span></code>‎ בכל הריצות, בצורה ‎<code class="docutils literal notranslate"><span class="pre">(3,)</span></code>‎, כמו ‎<code class="docutils literal notranslate"><span class="pre">k</span></code>‎, ולכן ‎<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">v[:,</span> <span class="pre">n]</span></code>‎ היא פעולה איבר-איבר.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>      <span class="c1"># drag constants (1/s)</span>
+<span class="n">n_steps</span> <span class="o">=</span> <span class="mi">401</span>                      <span class="c1"># 4 s</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">))</span>         <span class="c1"># (k value, step)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">))</span>
+<span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">[:,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">g</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">n</span><span class="p">])</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">y</span><span class="p">[:,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>               <span class="c1"># the highest point for every k</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 401)
+[11.55462     7.77755271  5.9467665 ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/64fb716bf0a341c2bf86d601aec77e48995cb844cee7d87d8c6872018a5c99fb.png" src="../../../_images/64fb716bf0a341c2bf86d601aec77e48995cb844cee7d87d8c6872018a5c99fb.png" />
+</div>
+</div>
+<p>בלי התנגדות המהירות יורדת בקו ישר. עם התנגדות הכדור עולה לגובה נמוך יותר, ובירידה המהירות מתקרבת לערך קבוע, <span class="math notranslate nohighlight">\(-g/k\)</span>, שבו ההתנגדות מאזנת את הכובד.</p>
+</section>
+<section id="id5">
+<h2><span class="section-number">10.3.4. </span>דוגמה נוספת: כדור שוקע בנוזל צמיג<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>כדור קטן משוחרר ממנוחה בתוך נוזל צמיג. כשהעומק ‎<code class="docutils literal notranslate"><span class="pre">z</span></code>‎ נמדד כלפי מטה, משוואת התנועה שלו היא</p>
+<div class="math notranslate nohighlight">
+\[\frac{dv}{dt} = g' - k\,v\]</div>
+<p>כאשר <span class="math notranslate nohighlight">\(g'\)</span> היא תאוצת הכובד אחרי ניכוי העילוי, ו-<span class="math notranslate nohighlight">\(k\)</span> תלוי בצמיגות. בניסוי הזה <span class="math notranslate nohighlight">\(g' = 2.0\)</span> מ’/ש² ו-<span class="math notranslate nohighlight">\(k = 8.0\)</span> לשנייה. מצלמה מדדה את העומק 50 פעמים בשנייה, במשך שנייה אחת (‎<code class="docutils literal notranslate"><span class="pre">t_ball</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">z_ball</span></code>‎, במטרים).</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_eff</span><span class="p">,</span> <span class="n">k_ball</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">8.0</span>                 <span class="c1"># m/s^2, 1/s</span>
+<span class="n">dt_ball</span> <span class="o">=</span> <span class="n">t_ball</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t_ball</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>          <span class="c1"># 0.02 s</span>
+<span class="n">v_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_ball</span><span class="p">))</span>           <span class="c1"># the prediction, from rest</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_ball</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">v_pred</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_pred</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">g_eff</span> <span class="o">-</span> <span class="n">k_ball</span> <span class="o">*</span> <span class="n">v_pred</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">*</span> <span class="n">dt_ball</span>
+
+<span class="n">v_meas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">z_ball</span><span class="p">)</span> <span class="o">/</span> <span class="n">dt_ball</span>       <span class="c1"># the measurement, as in 10.1</span>
+<span class="n">t_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">t_ball</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">t_ball</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">v_pred</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">v_meas</span><span class="p">[</span><span class="n">t_mid</span> <span class="o">&gt;</span> <span class="mf">0.6</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25
+0.25
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/93ddfa5ebc30d2990133b94a0ec19bc8e270b9d8bf866e2ebec8352ed074753b.png" src="../../../_images/93ddfa5ebc30d2990133b94a0ec19bc8e270b9d8bf866e2ebec8352ed074753b.png" />
+</div>
+</div>
+<p>התחזית מגיעה למהירות סופית, שבה <span class="math notranslate nohighlight">\(dv/dt = 0\)</span>, כלומר <span class="math notranslate nohighlight">\(v = g'/k = 0.25\)</span> מ’/ש’. הממוצע של המהירות שנמדדה אחרי 0.6 שניות זהה לה עד הספרה השלישית.</p>
+</section>
+<section id="id6">
+<h2><span class="section-number">10.3.5. </span>באג נפוץ: ניסיון לוקטר יחס נסיגה<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>אפשר להתפתות לכתוב ‎<code class="docutils literal notranslate"><span class="pre">v_wrong[1:]</span> <span class="pre">=</span> <span class="pre">v_wrong[:-1]</span> <span class="pre">-</span> <span class="pre">g</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎ כדי לחסוך את הלולאה, אבל זה <strong>לא</strong> עובד:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v_wrong</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v_sim</span><span class="p">))</span>
+<span class="n">v_wrong</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+<span class="n">v_wrong</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">v_wrong</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">dt</span>    <span class="c1"># a wrong attempt to vectorize</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">v_wrong</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>   <span class="c1"># from index 2 on, computed from the old zeros</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v_sim</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>     <span class="c1"># the right values, from the loop</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15.    14.902 -0.098 -0.098 -0.098]
+[15.    14.902 14.804 14.706 14.608]
+</pre></div>
+</div>
+</div>
+</div>
+<p>אגף ימין מחושב <strong>פעם אחת</strong>, מהמערך כפי שהיה לפני השורה: אפסים, חוץ מהאיבר הראשון. לכן רק ‎<code class="docutils literal notranslate"><span class="pre">v_wrong[1]</span></code>‎ יוצא נכון, ומ-‎<code class="docutils literal notranslate"><span class="pre">v_wrong[2]</span></code>‎ והלאה כל האיברים מחושבים מאפסים ישנים ולא מהערכים המעודכנים. בשפה של הטבלה, הערך הראשון ששונה הוא ‎<code class="docutils literal notranslate"><span class="pre">v_wrong[2]</span></code>‎.</p>
+</section>
+<section id="id7">
+<h2><span class="section-number">10.3.6. </span>נסו בעצמכם<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>גוף חם בחדר מתקרר לפי הכלל מהחצי הראשון של הקורס: בכל דקה <span class="math notranslate nohighlight">\(T_{n+1} = T_n - k\,(T_n - T_{room})\)</span>. השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">cool_steps</span></code>‎, שמחזירה מערך של הטמפרטורות בתחילת כל דקה, החל מ-‎<code class="docutils literal notranslate"><span class="pre">T0</span></code>‎. בדקו אותה על הדוגמה שבתא, ואחר כך השוו את הטמפרטורה אחרי 30 דקות לנוסחה מ-8.1, <span class="math notranslate nohighlight">\(T_n = 20 + (T_0 - 20)(1-k)^n\)</span>.</p>
 <div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">height_gain</span><span class="p">(</span><span class="n">vy</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Height (m) gained over the times t: the integral of vy over t."""</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cool_steps</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">T_room</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Temperature (°C) at the start of every minute, from T0 on."""</span>
     <span class="k">pass</span>   <span class="c1"># replace with your code</span>
 
-<span class="n">vy_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
-<span class="n">t_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">height_gain</span><span class="p">(</span><span class="n">vy_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>
-<span class="c1"># expected: 5.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cool_steps</span><span class="p">(</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="c1"># expected: [80.   74.   68.6  63.74]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">height_gain</span><span class="p">(</span><span class="n">vy</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Height (m) gained over the times t: the integral of vy over t."""</span>
-    <span class="k">return</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">vy</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cool_steps</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">T_room</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Temperature (°C) at the start of every minute, from T0 on."""</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>            <span class="c1"># before the loop: an empty array</span>
+    <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">T0</span>                        <span class="c1"># and the first value</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">T</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">T_room</span><span class="p">)</span>   <span class="c1"># from the previous value</span>
+    <span class="k">return</span> <span class="n">T</span>                         <span class="c1"># after the loop: all the values</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">height_gain</span><span class="p">(</span><span class="n">vy_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>   <span class="c1"># 5.0</span>
-
-<span class="c1"># the throw of this page, up to the top:</span>
-<span class="n">t_peak</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-<span class="n">t_up</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_peak</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-<span class="n">vy_up</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t_up</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">height_gain</span><span class="p">(</span><span class="n">vy_up</span><span class="p">,</span> <span class="n">t_up</span><span class="p">),</span> <span class="p">(</span><span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">g</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cool_steps</span><span class="p">(</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>     <span class="c1"># [80.   74.   68.6  63.74]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">cool_steps</span><span class="p">(</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>       <span class="c1"># minutes 0 to 30</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="mi">20</span> <span class="o">+</span> <span class="p">(</span><span class="mf">80.0</span> <span class="o">-</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.1</span><span class="p">)</span><span class="o">**</span><span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>הדוגמה היא זריקה אנכית במהירות 10 מטר לשנייה עם ‎<code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">10</span></code>‎: המהירות יורדת בקו ישר ל-0 תוך שנייה, ולכן כלל הטרפז מדויק כאן, 5.0, בדיוק <span class="math notranslate nohighlight">\(v_0^2/(2g)\)</span>.</p>
+<p>בסיבוב ‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code>‎: ‎<code class="docutils literal notranslate"><span class="pre">80</span> <span class="pre">-</span> <span class="pre">0.1</span> <span class="pre">*</span> <span class="pre">(80</span> <span class="pre">-</span> <span class="pre">20)</span> <span class="pre">=</span> <span class="pre">74</span></code>‎. אחרי 30 דקות הלולאה והנוסחה נותנות 22.543 מעלות: כאן אין שגיאת צעד, כי הכלל עצמו מוגדר לצעד של דקה.</p>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">10.3.4. </span>בדקו את עצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>השאלה השנייה מתייחסת לקוד הבא:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<section id="id8">
+<h2><span class="section-number">10.3.7. </span>בדקו את עצמכם<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p>השאלה הראשונה מתייחסת ללולאה הקטנה מהטבלה שלמעלה: ארבעה צעדים, ‎<code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">10</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.1</span></code>‎. השאלות האחרות מתייחסות לקוד הבא:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="mf">0.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>                  <span class="c1"># line A</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">]))</span>       <span class="c1"># line B</span>
 </pre></div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="GJnwaxGwhvze" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#GJnwaxGwhvze {
+<div class="output text_html"><div id="gLdyDJVgTpln" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#gLdyDJVgTpln {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -976,7 +1118,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsGJnwaxGwhvze=[{"question": "\u05de\u05ea\u05d9 \u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1-trapezoid \u05d5\u05de\u05ea\u05d9 \u05d1-quad?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05df \u05d6\u05d4\u05d5\u05ea \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df, \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05db\u05dc \u05d0\u05d7\u05ea \u05d1\u05db\u05dc \u05de\u05e6\u05d1", "correct": false, "feedback": "\u05dc\u05d0 \u2014 quad \u05d3\u05d5\u05e8\u05e9 \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05e8\u05d9\u05d0\u05d4, \u05dc\u05d0 \u05de\u05e2\u05e8\u05da \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd."}, {"answer": "trapezoid \u05dc\u05de\u05d4\u05d9\u05e8\u05d5\u05ea, quad \u05dc\u05ea\u05d0\u05d5\u05e6\u05d4 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05e7\u05dc\u05d8 (\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05de\u05d5\u05dc \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4), \u05dc\u05d0 \u05d1\u05d2\u05d5\u05d3\u05dc \u05d4\u05e4\u05d9\u05d6\u05d9\u05e7\u05dc\u05d9."}, {"answer": "trapezoid \u05dc\u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05d1\u05d3\u05d9\u05d3\u05d5\u05ea; quad \u05db\u05e9\u05d9\u05e9 \u05e0\u05d5\u05e1\u05d7\u05d4 \u05d0\u05e0\u05dc\u05d9\u05d8\u05d9\u05ea (\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d9\u05ea \u05e4\u05d9\u05d9\u05ea\u05d5\u05df)", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "trapezoid \u05dc\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05dc \u05de\u05d5\u05d2\u05d3\u05e8, quad \u05dc\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05dc \u05d1\u05dc\u05ea\u05d9 \u05de\u05d5\u05d2\u05d3\u05e8 \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u05de\u05d3\u05d5\u05d9\u05e7 \u2014 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05e7\u05dc\u05d8 (\u05de\u05e2\u05e8\u05da \u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05de\u05d5\u05dc \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05e8\u05d9\u05d0\u05d4), \u05dc\u05d0 \u05d1\u05e1\u05d5\u05d2 \u05d4\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05dc."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "4.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e9\u05d8\u05d7 \u05de\u05ea\u05d7\u05ea \u05dc\u05e7\u05d5 \u05e9\u05e2\u05d5\u05dc\u05d4 \u05de-0 \u05dc-4 \u05dc\u05d0\u05d5\u05e8\u05da 2 \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05d4\u05d5\u05d0 \u05de\u05e9\u05d5\u05dc\u05e9, 2 \u05db\u05e4\u05d5\u05dc 4 \u05d7\u05dc\u05e7\u05d9 2."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05e1\u05db\u05d5\u05dd \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05dc\u05d0 \u05d4\u05e9\u05d8\u05d7 \u05e9\u05de\u05ea\u05d7\u05ea\u05dd."}, {"answer": "8.0", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05e9\u05d8\u05d7 \u05e9\u05dc \u05de\u05dc\u05d1\u05df \u05d1\u05d2\u05d5\u05d1\u05d4 4; \u05d4\u05e7\u05d5 \u05de\u05ea\u05d7\u05d9\u05dc \u05d1-0."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d0\u05d5\u05e8\u05da \u05d4\u05e7\u05d8\u05e2 \u05e2\u05dc \u05e6\u05d9\u05e8 x, \u05dc\u05d0 \u05d4\u05e9\u05d8\u05d7. \u05d4\u05e9\u05d8\u05d7 \u05d4\u05d5\u05d0 1 \u05d1\u05de\u05e8\u05d5\u05d5\u05d7 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d5\u05e2\u05d5\u05d3 3 \u05d1\u05e9\u05e0\u05d9."}]}];
+</style></div><script type="application/javascript">var questionsgLdyDJVgTpln=[{"question": "\u05d1\u05dc\u05d5\u05dc\u05d0\u05d4 \u05de\u05d4\u05d8\u05d1\u05dc\u05d4, \u05de\u05d4 \u05d4\u05d2\u05d5\u05d1\u05d4 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2 \u05e9\u05dc \u05de\u05e2\u05e8\u05da \u05d4\u05d2\u05d1\u05d4\u05d9\u05dd?", "type": "multiple_choice", "answers": [{"answer": "1.9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05d2\u05d5\u05d1\u05d4 \u05d4\u05e7\u05d5\u05d3\u05dd, 1, \u05d5\u05e2\u05d5\u05d3 \u05d4\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05d4\u05e7\u05d5\u05d3\u05de\u05ea, 9, \u05db\u05e4\u05d5\u05dc 0.1."}, {"answer": "1.8", "correct": false, "feedback": "\u05dc\u05d0: \u05db\u05d0\u05df \u05d7\u05d5\u05e9\u05d1 \u05e2\u05dd \u05d4\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05d4\u05d7\u05d3\u05e9\u05d4, 8. \u05d4\u05e9\u05d5\u05e8\u05d4 \u05e9\u05dc y \u05de\u05e9\u05ea\u05de\u05e9\u05ea \u05d1\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05e9\u05dc \u05d4\u05e6\u05e2\u05d3 \u05d4\u05e7\u05d5\u05d3\u05dd."}, {"answer": "0.9", "correct": false, "feedback": "\u05dc\u05d0: 0.9 \u05d4\u05d5\u05d0 \u05e8\u05e7 \u05d4\u05ea\u05d5\u05e1\u05e4\u05ea \u05e9\u05dc \u05d4\u05e6\u05e2\u05d3 \u05d4\u05d6\u05d4; \u05e6\u05e8\u05d9\u05da \u05dc\u05d4\u05d5\u05e1\u05d9\u05e3 \u05d0\u05d5\u05ea\u05d4 \u05dc\u05d2\u05d5\u05d1\u05d4 \u05d4\u05e7\u05d5\u05d3\u05dd, 1."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05d2\u05d5\u05d1\u05d4 \u05dc\u05d0 \u05d2\u05d3\u05dc \u05d1\u05d0\u05d5\u05ea\u05d4 \u05db\u05de\u05d5\u05ea \u05d1\u05db\u05dc \u05e6\u05e2\u05d3, \u05db\u05d9 \u05d4\u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05e7\u05d8\u05e0\u05d4."}]}, {"question": "\u05db\u05de\u05d4 \u05de\u05d4\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05e9\u05d5\u05e8\u05d4 A \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05d5\u05d9\u05dd \u05dc\u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05de\u05d4\u05d8\u05d1\u05dc\u05d4 \u05de\u05d7\u05e9\u05d1\u05ea?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: 10 \u05d5-9. \u05de\u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d5\u05d4\u05dc\u05d0\u05d4 \u05d0\u05d2\u05e3 \u05d9\u05de\u05d9\u05df \u05d7\u05d5\u05e9\u05d1 \u05de\u05d0\u05e4\u05e1\u05d9\u05dd \u05d9\u05e9\u05e0\u05d9\u05dd."}, {"answer": "4", "correct": false, "feedback": "\u05dc\u05d0: \u05d0\u05d2\u05e3 \u05d9\u05de\u05d9\u05df \u05de\u05d7\u05d5\u05e9\u05d1 \u05e4\u05e2\u05dd \u05d0\u05d7\u05ea, \u05de\u05d4\u05de\u05e2\u05e8\u05da \u05d4\u05d9\u05e9\u05df, \u05e9\u05d1\u05d5 \u05e8\u05e7 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d0\u05d9\u05e0\u05d5 0."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05d2\u05dd \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05e0\u05db\u05d5\u05df, \u05db\u05d9 \u05d4\u05d5\u05d0 \u05de\u05d7\u05d5\u05e9\u05d1 \u05de\u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df, \u05e9\u05db\u05d1\u05e8 \u05d4\u05d9\u05d4 10."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05de\u05d7\u05d5\u05e9\u05d1 \u05de\u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05d4\u05d9\u05e9\u05df, 0, \u05d5\u05dc\u05d0 \u05de-9."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "3", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d6\u05d5 \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05e9\u05dc \u05e6\u05e2\u05d3 5, \u05de\u05d4\u05d9\u05e8\u05d5\u05ea \u05d0\u05d7\u05ea \u05dc\u05db\u05dc \u05d0\u05d7\u05d3 \u05de\u05e9\u05dc\u05d5\u05e9\u05ea \u05e2\u05e8\u05db\u05d9 k."}, {"answer": "200", "correct": false, "feedback": "\u05dc\u05d0: 200 \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e6\u05e2\u05d3\u05d9\u05dd, \u05d4\u05d0\u05d5\u05e8\u05da \u05e9\u05dc \u05e9\u05d5\u05e8\u05d4. \u05db\u05d0\u05df \u05e0\u05d1\u05d7\u05e8\u05d4 \u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e6\u05e2\u05d3 \u05e9\u05e0\u05d1\u05d7\u05e8, \u05dc\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d9\u05e9 \u05e2\u05e8\u05da \u05d0\u05d7\u05d3 \u05dc\u05db\u05dc \u05e8\u05d9\u05e6\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2038,8 +2180,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("GJnwaxGwhvze")) {
-    show_questions(questionsGJnwaxGwhvze, GJnwaxGwhvze);
+  if (document.getElementById("gLdyDJVgTpln")) {
+    show_questions(questionsgLdyDJVgTpln, gLdyDJVgTpln);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2052,31 +2194,41 @@ function try_show() {
 </script></div>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">10.3.5. </span>תרגול עצמי<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>חשבו את הטווח הכולל <span class="math notranslate nohighlight">\(R\)</span> בשתי הדרכים — ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎ על מדגם <span class="math notranslate nohighlight">\(v_x(t)\)</span> עם 100 נקודות, ו-‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ על הפונקציה האנליטית — והשוו את שתי התוצאות ביניהן. הפונקציות בעמוד הזה קבועות (<span class="math notranslate nohighlight">\(v_x\)</span>) או ליניאריות (<span class="math notranslate nohighlight">\(v_y\)</span>), וכלל הטרפז מדויק עבורן, ולכן כאן שתי התוצאות יוצאות כמעט זהות; היתרון של ‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ מופיע בפונקציות שאינן ליניאריות.</p>
-<div class="cell docutils container">
+<section id="id9">
+<h2><span class="section-number">10.3.8. </span>תרגול עצמי<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">drag_velocities</span></code>‎, שמחשבת את מהירות הכדור בנוזל לפי <span class="math notranslate nohighlight">\(v_{n+1} = v_n + (g' - k\,v_n)\,dt\)</span>, ובדקו אותה על הדוגמה שבתא. אחר כך חשבו בעזרתה, עם הנתונים של הדוגמה, את המהירות אחרי שנייה אחת: כשהכדור מתחיל במנוחה, וכשהוא נכנס לנוזל במהירות 0.5 מ’/ש’ כלפי מטה. מהי המהירות הסופית בכל מקרה?</p>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># t_fine = np.linspace(0, t_flight, 100)</span>
-<span class="c1"># vx_fine = ...</span>
-<span class="c1"># R_trapz_fine = integrate.trapezoid(...)</span>
-<span class="c1"># R_quad_fine, _ = integrate.quad(...)</span>
-<span class="c1"># print(R_trapz_fine, R_quad_fine)   # expected: both about 40.82</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">drag_velocities</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">g_eff</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Velocity (m/s) at each step, in a liquid with drag k (1/s)."""</span>
+    <span class="k">pass</span>   <span class="c1"># replace with your code</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">drag_velocities</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="c1"># expected: [0.  1.  1.9]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_fine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">vx_fine</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">t_fine</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">drag_velocities</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">g_eff</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Velocity (m/s) at each step, in a liquid with drag k (1/s)."""</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">g_eff</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="k">return</span> <span class="n">v</span>
 
-<span class="n">R_trapz_fine</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">vx_fine</span><span class="p">,</span> <span class="n">t_fine</span><span class="p">)</span>
-<span class="n">R_quad_fine</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">vx_func</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">R_trapz_fine</span><span class="p">,</span> <span class="n">R_quad_fine</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">drag_velocities</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>   <span class="c1"># [0.  1.  1.9]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">drag_velocities</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">51</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>   <span class="c1"># 0.25</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">drag_velocities</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">51</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">))</span>   <span class="c1"># 0.25</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>בסיבוב ‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code>‎: ‎<code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">+</span> <span class="pre">(10</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">*</span> <span class="pre">0)</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">1</span></code>‎</p></li>
+<li><p>בסיבוב ‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">1</span></code>‎: ‎<code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">(10</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">*</span> <span class="pre">1)</span> <span class="pre">*</span> <span class="pre">0.1</span> <span class="pre">=</span> <span class="pre">1.9</span></code>‎</p></li>
+</ul>
+<p>בשני המקרים המהירות הסופית היא <span class="math notranslate nohighlight">\(g'/k = 0.25\)</span> מ’/ש’: כשהכדור מהיר ממנה, ההתנגדות גדולה מהכובד והוא מאט.</p>
 </div>
 </section>
 </section>
@@ -2112,12 +2264,12 @@ function try_show() {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="10_2_diff_cumsum.html"
+       href="10_2_accumulation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10.2. </span>diff ו-cumsum — נגזרת וסכום מצטבר</p>
+        <p class="prev-next-title"><span class="section-number">10.2. </span>צבירה בזמן: cumsum ו-trapezoid</p>
       </div>
     </a>
     <a class="right-next"
@@ -2147,11 +2299,14 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid">10.3.1. דוגמה: טווח מתוך “מדידות” מהירות, עם ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quad">10.3.2. דוגמה: אותו טווח, עם ‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎ על הנוסחה האנליטית</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3.3. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3.4. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.3.5. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3.1. דוגמה: זריקה אנכית צעד אחר צעד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.3.2. מעקב אחרי לולאה בטבלה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.3.3. כמה ריצות בכל צעד</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">10.3.4. דוגמה נוספת: כדור שוקע בנוזל צמיג</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">10.3.5. באג נפוץ: ניסיון לוקטר יחס נסיגה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">10.3.6. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">10.3.7. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">10.3.8. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל &#8212; Computers For physics</title>
+    <title>10. שבוע 10 — סדרות עיתיות: מדידה, קצב שינוי ותחזית &#8212; Computers For physics</title>
   
   
   
@@ -67,7 +67,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10.1. יחס נסיגה ולולאת עדכון: מקרים שבהם לא ניתן לוקטר" href="week_10/10_1_recurrence_loop.html" />
+    <link rel="next" title="10.1. סדרה מדודה: קצב שינוי ואירועים" href="week_10/10_1_measured_series.html" />
     <link rel="prev" title="9.8. תרגול מסכם" href="week_9/9_8_practice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -325,10 +325,10 @@
 <li class="toctree-l2"><a class="reference internal" href="week_9/9_8_practice.html">9.8. תרגול מסכם</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">10. שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="week_10/10_1_recurrence_loop.html">10.1. יחס נסיגה ולולאת עדכון</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_10/10_2_diff_cumsum.html">10.2. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
-<li class="toctree-l2"><a class="reference internal" href="week_10/10_3_trapezoid_quad.html">10.3. אינטגרציה: trapezoid ו-quad</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">10. שבוע 10 — סדרות עיתיות: מדידה, קצב שינוי ותחזית</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_1_measured_series.html">10.1. סדרה מדודה: קצב שינוי ואירועים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_2_accumulation.html">10.2. צבירה בזמן: cumsum ו-trapezoid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_10/10_3_update_loop.html">10.3. סדרה מחושבת: משוואת התנועה כלולאת עדכון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week_10/10_4_practice.html">10.4. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -609,7 +609,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל</h1>
+    <h1>שבוע 10 — סדרות עיתיות: מדידה, קצב שינוי ותחזית</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -624,25 +624,25 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">10. </span>שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>השבוע עוסק בגדלים שמשתנים בזמן. בחצי הראשון של הקורס בנינו רשימת היסטוריה עם ‎<code class="docutils literal notranslate"><span class="pre">append</span></code>‎, חישבנו מרווחים בין מדידות סמוכות וסכמנו ערכים במצבר. השבוע אותם רעיונות עובדים על מערכים:</p>
+<h1><span class="section-number">10. </span>שבוע 10 — סדרות עיתיות: מדידה, קצב שינוי ותחזית<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>כמעט כל מדידה בניסוי היא סדרה בזמן: מיקום מתוך סרטון, קריאות של חיישן כוח, טמפרטורה של גוף מתקרר. השבוע עוסק בשלוש פעולות על סדרה כזו, וכל אחת ממשיכה דפוס מהחצי הראשון של הקורס:</p>
 <ol class="arabic simple">
-<li><p><strong>רשימת היסטוריה עם ‎<code class="docutils literal notranslate"><span class="pre">append</span></code>‎</strong> ← מערך שממלאים בלולאת עדכון, כשכל ערך מחושב מהערך הקודם (10.1).</p></li>
-<li><p><strong>מרווחים בין מדידות סמוכות</strong> ← ‎<code class="docutils literal notranslate"><span class="pre">np.diff</span></code>‎, קירוב לנגזרת (10.2).</p></li>
-<li><p><strong>מצבר</strong> ← ‎<code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎: סכום מצטבר ואינטגרל (10.2–10.3).</p></li>
+<li><p><strong>קצב שינוי ואירועים:</strong> הפרשים בין מדידות סמוכות, כמו המרווחים שחישבנו בלולאה, נותנים קצב שינוי, ומסכה מוצאת מתי קרה אירוע (10.1).</p></li>
+<li><p><strong>צבירה:</strong> סכום של ערך כפול ‎<code class="docutils literal notranslate"><span class="pre">dt</span></code>‎ נותן סך כולל, ו-‎<code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code>‎ שומר את הצבירה עד כל רגע, כמו מצבר ששומר את ההיסטוריה שלו (10.2).</p></li>
+<li><p><strong>תחזית:</strong> משוואת התנועה הופכת לכלל עדכון שממלא מערך צעד אחר צעד, כמו ‎<code class="docutils literal notranslate"><span class="pre">simulate</span></code>‎ ורשימת ההיסטוריה שלה, ומשווים את התחזית למדידה (10.3).</p></li>
 </ol>
-<p>הדוגמה לאורך השבוע היא עדיין מסלול הזריקה.</p>
+<p>הזמן הוא ציר: כמה ריצות של ניסוי הן מערך בצורה (ריצה, זמן), והפעולות של השבוע פועלות לאורך ציר הזמן, ‎<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>‎.</p>
 <p>בסוף השבוע תדעו:</p>
 <ul class="simple">
-<li><p>לזהות מתי לא ניתן לוקטר (יחס נסיגה), ולכתוב לולאת עדכון נכונה</p></li>
-<li><p>לעקוב אחרי לולאת עדכון בטבלה של ‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ והערכים, ולמצוא את השורה שגרמה לפלט שגוי</p></li>
-<li><p>לקרב נגזרת ואינטגרל עם ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">quad</span></code>‎</p></li>
+<li><p>לחשב קצב שינוי מתוך מדידות ולמצוא בהן אירועים</p></li>
+<li><p>לחשב צבירה, גם כמספר וגם כסדרה</p></li>
+<li><p>לכתוב משוואת תנועה כלולאת עדכון, לכמה ריצות בבת אחת, ולהשוות אותה למדידה</p></li>
 </ul>
 <p><strong>Materials</strong></p>
 <ul class="simple">
-<li><p><a class="reference internal" href="week_10/10_1_recurrence_loop.html"><span class="doc">10.1 • יחס נסיגה ולולאת עדכון</span></a></p></li>
-<li><p><a class="reference internal" href="week_10/10_2_diff_cumsum.html"><span class="doc">10.2 • diff ו-cumsum — נגזרת וסכום מצטבר</span></a></p></li>
-<li><p><a class="reference internal" href="week_10/10_3_trapezoid_quad.html"><span class="doc">10.3 • אינטגרציה: trapezoid ו-quad</span></a></p></li>
+<li><p><a class="reference internal" href="week_10/10_1_measured_series.html"><span class="doc">10.1 • סדרה מדודה: קצב שינוי ואירועים</span></a></p></li>
+<li><p><a class="reference internal" href="week_10/10_2_accumulation.html"><span class="doc">10.2 • צבירה בזמן: cumsum ו-trapezoid</span></a></p></li>
+<li><p><a class="reference internal" href="week_10/10_3_update_loop.html"><span class="doc">10.3 • סדרה מחושבת: משוואת התנועה כלולאת עדכון</span></a></p></li>
 <li><p><a class="reference internal" href="week_10/10_4_practice.html"><span class="doc">10.4 • תרגול מסכם</span></a></p></li>
 </ul>
 <div class="toctree-wrapper compound">
@@ -689,11 +689,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="week_10/10_1_recurrence_loop.html"
+       href="week_10/10_1_measured_series.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.1. </span>יחס נסיגה ולולאת עדכון: מקרים שבהם לא ניתן לוקטר</p>
+        <p class="prev-next-title"><span class="section-number">10.1. </span>סדרה מדודה: קצב שינוי ואירועים</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

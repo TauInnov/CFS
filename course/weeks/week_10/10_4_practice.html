@@ -61,12 +61,14 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_4_practice';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="11. שבוע 11 — pandas" href="../week_11.html" />
-    <link rel="prev" title="10.3. אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)" href="10_3_trapezoid_quad.html" />
+    <link rel="prev" title="10.3. סדרה מחושבת: משוואת התנועה כלולאת עדכון" href="10_3_update_loop.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -327,10 +329,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_practice.html">9.8. תרגול מסכם</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="10_1_recurrence_loop.html">10.1. יחס נסיגה ולולאת עדכון</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_2_diff_cumsum.html">10.2. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_3_trapezoid_quad.html">10.3. אינטגרציה: trapezoid ו-quad</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — סדרות עיתיות: מדידה, קצב שינוי ותחזית</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="10_1_measured_series.html">10.1. סדרה מדודה: קצב שינוי ואירועים</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_2_accumulation.html">10.2. צבירה בזמן: cumsum ו-trapezoid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_3_update_loop.html">10.3. סדרה מחושבת: משוואת התנועה כלולאת עדכון</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">10.4. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -625,6 +627,7 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.4.1. פריט 1: באגים בלולאת עדכון</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4.2. פריט 2: שאלה מלאה — מצאו את שלוש הטעויות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.4.3. פריט 3: תחזית מול מדידה (דוגמה פתורה)</a></li>
 </ul>
             </nav>
         </div>
@@ -638,60 +641,55 @@
                   
   <section id="id1">
 <h1><span class="section-number">10.4. </span>תרגול מסכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>בעמוד שני פריטים: באגים בלולאת עדכון, צעד אחרי צעד, ושאלה מלאה על ‎<code class="docutils literal notranslate"><span class="pre">np.diff</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code>‎. ענו על כל פריט לפני שאתם פותחים את הפתרון.</p>
+<p>בעמוד שלושה פריטים: באגים בלולאת עדכון, שאלה מלאה על ‎<code class="docutils literal notranslate"><span class="pre">np.diff</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code>‎, ודוגמה פתורה של תחזית מול מדידה. ענו על שני הפריטים הראשונים לפני שפותחים את הפתרון.</p>
 <section id="id2">
 <h2><span class="section-number">10.4.1. </span>פריט 1: באגים בלולאת עדכון<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">simulate_height</span></code>‎ אמורה לחשב, צעד אחרי צעד, את המהירות והגובה של כדור שנזרק ישר למעלה, כמו הלולאה של סעיף 10.1. הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">landing_index</span></code>‎ אמורה להחזיר את הצעד הראשון שבו הכדור מתחת לקרקע, או ‎<code class="docutils literal notranslate"><span class="pre">-1</span></code>‎ אם אין צעד כזה. בקוד יש ארבעה באגים: שלושה ב-‎<code class="docutils literal notranslate"><span class="pre">simulate_height</span></code>‎ ואחד ב-‎<code class="docutils literal notranslate"><span class="pre">landing_index</span></code>‎.</p>
+<p>הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">simulate_cooling</span></code>‎ אמורה לחשב, דקה אחר דקה, את הטמפרטורה של גוף מתקרר, לפי הכלל מסעיף 10.3: <span class="math notranslate nohighlight">\(T_{n+1} = T_n - k\,(T_n - T_{room})\)</span>. הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">first_below</span></code>‎ אמורה להחזיר את הדקה הראשונה שבה הטמפרטורה נמוכה מ-‎<code class="docutils literal notranslate"><span class="pre">T_limit</span></code>‎, או ‎<code class="docutils literal notranslate"><span class="pre">-1</span></code>‎ אם אין כזו. בקוד ארבעה באגים: שלושה ב-‎<code class="docutils literal notranslate"><span class="pre">simulate_cooling</span></code>‎ ואחד ב-‎<code class="docutils literal notranslate"><span class="pre">first_below</span></code>‎.</p>
 <p>הקוד, כפי שקיבלתם אותו:</p>
 <div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_height</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="sd">"""Velocity (m/s) and height (m) of a ball thrown up, step by step."""</span>
-<span class="linenos"> 5</span>    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-<span class="linenos"> 6</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-<span class="linenos"> 7</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
-<span class="linenos"> 8</span>        <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">dt</span>
-<span class="linenos"> 9</span>        <span class="n">y</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
-<span class="linenos">10</span>    <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">y</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="k">def</span><span class="w"> </span><span class="nf">landing_index</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-<span class="linenos">13</span><span class="w">    </span><span class="sd">"""First step with the ball below the ground, or -1 if there is none."""</span>
-<span class="linenos">14</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)):</span>
-<span class="linenos">15</span>        <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">16</span>            <span class="k">return</span> <span class="n">i</span>
-<span class="linenos">17</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-<span class="linenos">18</span>
-<span class="linenos">19</span><span class="n">v</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">simulate_height</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="linenos">20</span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-<span class="linenos">21</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="linenos">22</span><span class="nb">print</span><span class="p">(</span><span class="n">landing_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">])))</span>
+<span class="linenos"> 3</span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_cooling</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">T_room</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="sd">"""Temperature (°C) of a cooling body, minute by minute."""</span>
+<span class="linenos"> 5</span>    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
+<span class="linenos"> 7</span>        <span class="n">T</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">T_room</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="k">return</span> <span class="n">T</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">def</span><span class="w"> </span><span class="nf">first_below</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T_limit</span><span class="p">):</span>
+<span class="linenos">11</span><span class="w">    </span><span class="sd">"""First minute with T below T_limit, or -1 if there is none."""</span>
+<span class="linenos">12</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)):</span>
+<span class="linenos">13</span>        <span class="k">if</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">T_limit</span><span class="p">:</span>
+<span class="linenos">14</span>            <span class="k">return</span> <span class="n">i</span>
+<span class="linenos">15</span>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="n">T</span> <span class="o">=</span> <span class="n">simulate_cooling</span><span class="p">(</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos">18</span><span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="linenos">19</span><span class="nb">print</span><span class="p">(</span><span class="n">first_below</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">74.0</span><span class="p">,</span> <span class="mf">68.6</span><span class="p">,</span> <span class="mf">63.74</span><span class="p">]),</span> <span class="mf">70.0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>א.</strong> לפני שמחפשים באגים: מה <strong>צריכה</strong> להחזיר ‎<code class="docutils literal notranslate"><span class="pre">simulate_height(10.0,</span> <span class="pre">10.0,</span> <span class="pre">0.1,</span> <span class="pre">4)</span></code>‎? מלאו טבלה של ‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">v[i]</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">y[i]</span></code>‎, כמו בסעיף 10.1.</p>
+<p><strong>א.</strong> לפני שמחפשים באגים: מה <strong>צריכה</strong> להחזיר ‎<code class="docutils literal notranslate"><span class="pre">simulate_cooling(80.0,</span> <span class="pre">0.1,</span> <span class="pre">20.0,</span> <span class="pre">4)</span></code>‎? מלאו טבלה של ‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">T[i]</span></code>‎, כמו בסעיף 10.3.</p>
 <p><strong>ב.</strong> הריצה הראשונה נעצרת בשגיאה:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>IndexError: index 4 is out of bounds for axis 0 with size 4
 </pre></div>
 </div>
-<p>השגיאה מצביעה על שורה 8. באיזה ערך של ‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ היא קרתה? באיזו שורה הבאג, ומה התיקון?</p>
+<p>השגיאה מצביעה על שורה 7. באיזה ערך של ‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ היא קרתה? באיזו שורה הבאג, ומה התיקון?</p>
 <p><strong>ג.</strong> אחרי התיקון, הריצה השנייה מדפיסה:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[ 0. -1. -2. -3.]
-[ 0.   0.  -0.1 -0.2]
-0
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[0. 2. 4. 6.]
+-1
 </pre></div>
 </div>
 <p>השוו לטבלה מסעיף א. מהו הערך הראשון ששונה, ומה התיקון?</p>
 <p><strong>ד.</strong> אחרי התיקון השני, הריצה השלישית מדפיסה:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[10.  9.  8.  7.]
-[0.  1.  0.9 0.8]
-0
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[80. 82. 84. 86.]
+-1
 </pre></div>
 </div>
-<p>המהירויות נכונות עכשיו. איזו שורה מחשבת את הגובה לא נכון, ומה התיקון?</p>
-<p><strong>ה.</strong> ‎<code class="docutils literal notranslate"><span class="pre">landing_index</span></code>‎ מחזירה 0, אף שהכדור עובר מתחת לקרקע רק בצעד 3. מצאו את הבאג ותקנו אותו. מה תחזיר הפונקציה המתוקנת על הגבהים מסעיף א?</p>
+<p>הגוף מתחמם במקום להתקרר. מהו הערך הראשון ששונה, איזו שורה מחשבת אותו, ומה התיקון?</p>
+<p><strong>ה.</strong> ‎<code class="docutils literal notranslate"><span class="pre">first_below</span></code>‎ מחזירה ‎<code class="docutils literal notranslate"><span class="pre">-1</span></code>‎, אף שהטמפרטורות בשורה 19 יורדות מתחת ל-70 בדקה 2. מצאו את הבאג ותקנו אותו. מה תחזיר הפונקציה המתוקנת על הטמפרטורות מסעיף א, עם גבול של 60 מעלות?</p>
 <p>לכל תיקון, הסבירו במשפט אחד מה היה לא נכון.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
@@ -699,57 +697,49 @@
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">i</span></code></p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">v[i]</span></code></p></th>
-<th class="head"><p><code class="docutils literal notranslate"><span class="pre">y[i]</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">T[i]</span></code></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>0</p></td>
-<td><p>10</p></td>
-<td><p>0</p></td>
+<td><p>80</p></td>
 </tr>
 <tr class="row-odd"><td><p>1</p></td>
-<td><p>9</p></td>
-<td><p>1</p></td>
+<td><p>74</p></td>
 </tr>
 <tr class="row-even"><td><p>2</p></td>
-<td><p>8</p></td>
-<td><p>1.9</p></td>
+<td><p>68.6</p></td>
 </tr>
 <tr class="row-odd"><td><p>3</p></td>
-<td><p>7</p></td>
-<td><p>2.7</p></td>
+<td><p>63.74</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><strong>ב.</strong> השגיאה קרתה ב-‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">3</span></code>‎: ‎<code class="docutils literal notranslate"><span class="pre">range(n_steps)</span></code>‎ מגיע עד 3, ואז ‎<code class="docutils literal notranslate"><span class="pre">v[i</span> <span class="pre">+</span> <span class="pre">1]</span></code>‎ הוא ‎<code class="docutils literal notranslate"><span class="pre">v[4]</span></code>‎, שאין לו מקום במערך באורך 4. השגיאה מוצגת בשורה 8, אבל התיקון בשורה 7: ‎<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n_steps</span> <span class="pre">-</span> <span class="pre">1):</span></code>‎. בכל סיבוב הלולאה כותבת לאיבר הבא, ולכן הסיבוב האחרון צריך להיות זה שכותב לאיבר האחרון.</p>
-<p><strong>ג.</strong> הערך הראשון ששונה הוא ‎<code class="docutils literal notranslate"><span class="pre">v[0]</span></code>‎: ‏0 במקום 10. הפרמטר ‎<code class="docutils literal notranslate"><span class="pre">v0</span></code>‎ לא משמש באף שורה, ולכן המהירות ההתחלתית נשארת 0. התיקון: להוסיף אחרי שורה 6 את השורה ‎<code class="docutils literal notranslate"><span class="pre">v[0]</span> <span class="pre">=</span> <span class="pre">v0</span></code>‎.</p>
-<p><strong>ד.</strong> ‎<code class="docutils literal notranslate"><span class="pre">y[2]</span></code>‎ יוצא 0.9 במקום 1.9. שורה 9 מוסיפה את ‎<code class="docutils literal notranslate"><span class="pre">v[i]</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎ ל-‎<code class="docutils literal notranslate"><span class="pre">y[i</span> <span class="pre">+</span> <span class="pre">1]</span></code>‎, שעדיין 0, במקום לגובה הקודם. התיקון: ‎<code class="docutils literal notranslate"><span class="pre">y[i</span> <span class="pre">+</span> <span class="pre">1]</span> <span class="pre">=</span> <span class="pre">y[i]</span> <span class="pre">+</span> <span class="pre">v[i]</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎.</p>
-<p><strong>ה.</strong> שורה 15 בודקת ‎<code class="docutils literal notranslate"><span class="pre">y[i]</span> <span class="pre">&lt;=</span> <span class="pre">0</span></code>‎, והכדור מתחיל בגובה 0, ולכן כבר הצעד הראשון עונה על התנאי. התיקון: ‎<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">y[i]</span> <span class="pre">&lt;</span> <span class="pre">0:</span></code>‎. בגבהים של סעיף א הכדור לא יורד מתחת לקרקע, והפונקציה המתוקנת מחזירה ‎<code class="docutils literal notranslate"><span class="pre">-1</span></code>‎.</p>
+<p><strong>ב.</strong> השגיאה קרתה ב-‎<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">3</span></code>‎: אז ‎<code class="docutils literal notranslate"><span class="pre">T[i</span> <span class="pre">+</span> <span class="pre">1]</span></code>‎ הוא ‎<code class="docutils literal notranslate"><span class="pre">T[4]</span></code>‎, שאין לו מקום במערך באורך 4. השגיאה מוצגת בשורה 7, אבל התיקון בשורה 6: ‎<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n_steps</span> <span class="pre">-</span> <span class="pre">1):</span></code>‎, כי הסיבוב האחרון צריך לכתוב לאיבר האחרון.</p>
+<p><strong>ג.</strong> הערך הראשון ששונה הוא ‎<code class="docutils literal notranslate"><span class="pre">T[0]</span></code>‎: ‏0 במקום 80, כי הפרמטר ‎<code class="docutils literal notranslate"><span class="pre">T0</span></code>‎ לא משמש באף שורה. התיקון: להוסיף אחרי שורה 5 את השורה ‎<code class="docutils literal notranslate"><span class="pre">T[0]</span> <span class="pre">=</span> <span class="pre">T0</span></code>‎.</p>
+<p><strong>ד.</strong> ‎<code class="docutils literal notranslate"><span class="pre">T[1]</span></code>‎ יוצא 82 במקום 74. שורה 7 מחסירה את טמפרטורת החדר מ-‎<code class="docutils literal notranslate"><span class="pre">T[i</span> <span class="pre">+</span> <span class="pre">1]</span></code>‎, שעדיין 0, במקום מ-‎<code class="docutils literal notranslate"><span class="pre">T[i]</span></code>‎, ולכן הגוף מתחמם. התיקון: ‎<code class="docutils literal notranslate"><span class="pre">T[i</span> <span class="pre">+</span> <span class="pre">1]</span> <span class="pre">=</span> <span class="pre">T[i]</span> <span class="pre">-</span> <span class="pre">k</span> <span class="pre">*</span> <span class="pre">(T[i]</span> <span class="pre">-</span> <span class="pre">T_room)</span></code>‎.</p>
+<p><strong>ה.</strong> השורה ‎<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">-1</span></code>‎ (שורה 15) נמצאת בתוך הלולאה, ולכן הפונקציה מחזירה ‎<code class="docutils literal notranslate"><span class="pre">-1</span></code>‎ כבר אחרי ‎<code class="docutils literal notranslate"><span class="pre">T[0]</span></code>‎. התיקון: להזיח אותה אל מחוץ ללולאה. עם גבול של 60 מעלות הפונקציה המתוקנת מחזירה ‎<code class="docutils literal notranslate"><span class="pre">-1</span></code>‎: בארבע הדקות האלה הגוף לא מתקרר אל מתחת ל-60.</p>
 <p>הקוד המתוקן:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_height</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Velocity (m/s) and height (m) of a ball thrown up, step by step."""</span>
-    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
-    <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_cooling</span><span class="p">(</span><span class="n">T0</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">T_room</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Temperature (°C) of a cooling body, minute by minute."""</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">T0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">dt</span>
-        <span class="n">y</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
-    <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">y</span>
+        <span class="n">T</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">T_room</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">T</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">landing_index</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""First step with the ball below the ground, or -1 if there is none."""</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">first_below</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T_limit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""First minute with T below T_limit, or -1 if there is none."""</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">T_limit</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">i</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 
-<span class="n">v</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">simulate_height</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>                                                 <span class="c1"># [10.  9.  8.  7.]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>                                                 <span class="c1"># [0.  1.  1.9 2.7]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">landing_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">])))</span>    <span class="c1"># 3</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">landing_index</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>                                  <span class="c1"># -1</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">simulate_cooling</span><span class="p">(</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>                       <span class="c1"># [80.   74.   68.6  63.74]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_below</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">80.0</span><span class="p">,</span> <span class="mf">74.0</span><span class="p">,</span> <span class="mf">68.6</span><span class="p">,</span> <span class="mf">63.74</span><span class="p">]),</span> <span class="mf">70.0</span><span class="p">))</span>   <span class="c1"># 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_below</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="mf">60.0</span><span class="p">))</span>    <span class="c1"># -1</span>
 </pre></div>
 </div>
 </div>
@@ -810,6 +800,47 @@
 </div>
 </div>
 </section>
+<section id="id4">
+<h2><span class="section-number">10.4.3. </span>פריט 3: תחזית מול מדידה (דוגמה פתורה)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>כדור נזרק ישר למעלה במהירות 15 מ’/ש’, וגובהו נמדד בסרטון של 20 תמונות בשנייה, במשך 2.5 שניות (‎<code class="docutils literal notranslate"><span class="pre">t_video</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">y_video</span></code>‎, במטרים). קבוע ההתנגדות ‎<code class="docutils literal notranslate"><span class="pre">k</span></code>‎ לא ידוע, ולכן הקוד מחשב בלולאה של 10.3 תחזית לשלושה ערכים של ‎<code class="docutils literal notranslate"><span class="pre">k</span></code>‎ בבת אחת, ומשווה כל אחת למדידה. צעד הזמן של התחזית קטן פי 10 מהזמן שבין שתי תמונות, כדי ששגיאת הצעד תהיה קטנה, ו-‎<code class="docutils literal notranslate"><span class="pre">y[:,</span> <span class="pre">::10]</span></code>‎ לוקח כל ערך עשירי לאורך ציר הזמן: את התחזית ברגעי הצילום.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">15.0</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>          <span class="c1"># three guesses for k (1/s)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.005</span>                             <span class="c1"># 10 steps between two frames</span>
+<span class="n">n_steps</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_video</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">))</span>             <span class="c1"># (k value, step)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">))</span>
+<span class="n">v</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">[:,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">g</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">n</span><span class="p">])</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">y</span><span class="p">[:,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
+
+<span class="n">y_frames</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:,</span> <span class="p">::</span><span class="mi">10</span><span class="p">]</span>                  <span class="c1"># the prediction at the frame times</span>
+<span class="n">gap</span> <span class="o">=</span> <span class="n">y_frames</span> <span class="o">-</span> <span class="n">y_video</span>               <span class="c1"># prediction minus measurement</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_frames</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">gap</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gap</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>                      <span class="c1"># the gap at the last frame (m)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 51) (3, 51)
+[ 2.63625     0.71013456 -0.84126236]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/c4f7adaa2bce10f29c04e5cf90c545b90a95dfdba18917bde858ac33869447d6.png" src="../../../_images/c4f7adaa2bce10f29c04e5cf90c545b90a95dfdba18917bde858ac33869447d6.png" />
+</div>
+</div>
+<p>‎<code class="docutils literal notranslate"><span class="pre">y_video</span></code>‎, בצורה ‎<code class="docutils literal notranslate"><span class="pre">(51,)</span></code>‎, מותאם לכל שורה של ‎<code class="docutils literal notranslate"><span class="pre">y_frames</span></code>‎, ולכן ב-‎<code class="docutils literal notranslate"><span class="pre">gap</span></code>‎ יש פער לכל ערך של ‎<code class="docutils literal notranslate"><span class="pre">k</span></code>‎ ולכל רגע. בלי התנגדות התחזית גבוהה מהמדידה, והפער גדל עד 2.6 מטר. עם ‎<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">0.1</span></code>‎ היא גבוהה ב-0.7 מטר בסוף, ועם ‎<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">0.2</span></code>‎ נמוכה ב-0.8 מטר: המדידה נמצאת בין שתיהן.</p>
+<p>איזה ערך של ‎<code class="docutils literal notranslate"><span class="pre">k</span></code>‎ מתאים למדידה, וכיצד אפשר לבחור אותו בלי לנחש?</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -843,12 +874,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="10_3_trapezoid_quad.html"
+       href="10_3_update_loop.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10.3. </span>אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)</p>
+        <p class="prev-next-title"><span class="section-number">10.3. </span>סדרה מחושבת: משוואת התנועה כלולאת עדכון</p>
       </div>
     </a>
     <a class="right-next"
@@ -880,6 +911,7 @@
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.4.1. פריט 1: באגים בלולאת עדכון</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4.2. פריט 2: שאלה מלאה — מצאו את שלוש הטעויות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.4.3. פריט 3: תחזית מול מדידה (דוגמה פתורה)</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10.2. diff ו-cumsum — נגזרת וסכום מצטבר &#8212; Computers For physics</title>
+    <title>10.2. צבירה בזמן: cumsum ו-trapezoid &#8212; Computers For physics</title>
   
   
   
@@ -63,12 +63,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_2_diff_cumsum';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_10/10_2_accumulation';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="10.3. אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)" href="10_3_trapezoid_quad.html" />
-    <link rel="prev" title="10.1. יחס נסיגה ולולאת עדכון: מקרים שבהם לא ניתן לוקטר" href="10_1_recurrence_loop.html" />
+    <link rel="next" title="10.3. סדרה מחושבת: משוואת התנועה כלולאת עדכון" href="10_3_update_loop.html" />
+    <link rel="prev" title="10.1. סדרה מדודה: קצב שינוי ואירועים" href="10_1_measured_series.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -329,10 +329,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../week_9/9_8_practice.html">9.8. תרגול מסכם</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="10_1_recurrence_loop.html">10.1. יחס נסיגה ולולאת עדכון</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.2. diff ו-cumsum — נגזרת וסכום מצטבר</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10_3_trapezoid_quad.html">10.3. אינטגרציה: trapezoid ו-quad</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../week_10.html">10. שבוע 10 — סדרות עיתיות: מדידה, קצב שינוי ותחזית</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="10_1_measured_series.html">10.1. סדרה מדודה: קצב שינוי ואירועים</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.2. צבירה בזמן: cumsum ו-trapezoid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10_3_update_loop.html">10.3. סדרה מחושבת: משוואת התנועה כלולאת עדכון</a></li>
 <li class="toctree-l2"><a class="reference internal" href="10_4_practice.html">10.4. תרגול מסכם</a></li>
 </ul>
 </details></li>
@@ -425,7 +425,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/course/weeks/week_10/10_2_diff_cumsum.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/TauInnov/CFS/master?urlpath=lab/tree/course/weeks/week_10/10_2_accumulation.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -443,7 +443,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/course/weeks/week_10/10_2_diff_cumsum.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/TauInnov/CFS/blob/master/course/weeks/week_10/10_2_accumulation.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -509,7 +509,7 @@
       
       
       
-      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_10/10_2_diff_cumsum.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/TauInnov/CFS/issues/new?title=Issue%20on%20page%20%2Fcourse/weeks/week_10/10_2_accumulation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -539,7 +539,7 @@
       
       
       
-      <li><a href="../../../_sources/course/weeks/week_10/10_2_diff_cumsum.ipynb" target="_blank"
+      <li><a href="../../../_sources/course/weeks/week_10/10_2_accumulation.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -615,7 +615,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>diff ו-cumsum — נגזרת וסכום מצטבר</h1>
+    <h1>צבירה בזמן: cumsum ו-trapezoid</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -625,12 +625,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">10.2.1. דוגמה: מהירות מתוך מיקום, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff-1">10.2.2. באג נפוץ: אורך ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ קצר ב-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumsum">10.2.3. דוגמה: המרחק הכולל לאורך המסלול, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2.4. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.2.5. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.2.6. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2.1. דוגמה: מהמהירות חזרה לגובה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.2.2. דוגמה נוספת: דחף בהתנגשות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.2.3. באג נפוץ: צעד אחד יותר מדי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.2.4. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">10.2.5. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">10.2.6. תרגול עצמי</a></li>
 </ul>
             </nav>
         </div>
@@ -642,128 +642,182 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="diff-cumsum">
-<h1><span class="section-number">10.2. </span>diff ו-cumsum — נגזרת וסכום מצטבר<a class="headerlink" href="#diff-cumsum" title="Link to this heading">#</a></h1>
-<p>בסעיף 10.1 חישבנו מיקום צעד אחרי צעד. כאן הכיוון ההפוך: יש מדידות של מיקום, ורוצים מהן מהירות ומרחק. נגזרת ואינטגרל הם כאן שתי פעולות NumPy על מערך:</p>
+  <section id="cumsum-trapezoid">
+<h1><span class="section-number">10.2. </span>צבירה בזמן: cumsum ו-trapezoid<a class="headerlink" href="#cumsum-trapezoid" title="Link to this heading">#</a></h1>
+<p>צבירה היא סכום של ערך כפול ‎<code class="docutils literal notranslate"><span class="pre">dt</span></code>‎ לאורך הזמן: מהירות מצטברת למרחק, כוח לשינוי בתנע, הספק לאנרגיה. לצבירה יש שתי צורות:</p>
 <ul class="simple">
-<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">np.diff(a)</span></code>‎</strong> — ההפרש בין כל שני איברים סמוכים: קירוב לנגזרת. מערך באורך <span class="math notranslate nohighlight">\(n\)</span> נותן ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ באורך <span class="math notranslate nohighlight">\(n-1\)</span>.</p></li>
-<li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">np.cumsum(a)</span></code>‎</strong> — סכום מצטבר: קירוב לאינטגרל (הסכום ההולך וגדל). מערך באורך <span class="math notranslate nohighlight">\(n\)</span> נותן ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ <strong>גם</strong> באורך <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p><strong>הסך הכולל</strong>, מספר אחד: ‎<code class="docutils literal notranslate"><span class="pre">(v</span> <span class="pre">*</span> <span class="pre">dt).sum()</span></code>‎.</p></li>
+<li><p><strong>הצבירה עד כל רגע</strong>, סדרה: ‎<code class="docutils literal notranslate"><span class="pre">np.cumsum(v</span> <span class="pre">*</span> <span class="pre">dt)</span></code>‎. כל איבר הוא סכום האיברים עד אליו, כמו מצבר ששומר את ערכו אחרי כל סיבוב.</p></li>
 </ul>
-<section id="diff">
-<h2><span class="section-number">10.2.1. </span>דוגמה: מהירות מתוך מיקום, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎<a class="headerlink" href="#diff" title="Link to this heading">#</a></h2>
-<p>יש לנו את מיקום <span class="math notranslate nohighlight">\(x(t)\)</span> של הזריקה, אבל לא נתנו לנו את הנוסחה למהירות — רק את המדידות. ‎<code class="docutils literal notranslate"><span class="pre">np.diff</span></code>‎ מקרב את הנגזרת: <span class="math notranslate nohighlight">\(v_x \approx \Delta x/\Delta t\)</span>. בגרף שמתחת לתא: הנקודות הן הקירוב, והקו המקווקו הוא הערך המדויק.</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ הפוך ל-‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎: הסכום המצטבר של ההפרשים מחזיר את הערכים המקוריים, חוץ מהערך הראשון, ש-‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ מאבד ולכן מוסיפים אותו. בתא הבא מיקומים של כדור מתגלגל, החל מ-0.5 מטר:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">integrate</span>
 
-<span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
-<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">v0</span> <span class="o">=</span> <span class="mf">20.0</span>
-
-<span class="n">t_flight</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_flight</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
-
-<span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">vx_approx</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">/</span> <span class="n">dt</span>              <span class="c1"># length 59, not 60</span>
-<span class="n">t_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>     <span class="c1"># the times between the measurements: also 59</span>
-
-<span class="n">vx_exact</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>    <span class="c1"># constant, no air resistance</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">vx_approx</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">t_mid</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">])</span>    <span class="c1"># position (m)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                          <span class="c1"># three differences</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>                     <span class="c1"># x[1:] - x[0]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>              <span class="c1"># x[1:] itself</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60 59 59
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.25 1.   2.25]
+[0.75 1.5  2.75]
 </pre></div>
 </div>
 </div>
 </div>
+<p>כשהערכים נמדדים ברגעים עצמם, למשל בחיישן, n מדידות תוחמות n-1 מרווחים. הערך של כל מרווח הוא הממוצע של שתי המדידות שבקצותיו, כמו ‎<code class="docutils literal notranslate"><span class="pre">t_mid</span></code>‎ ב-10.1. ‎<code class="docutils literal notranslate"><span class="pre">integrate.trapezoid(F,</span> <span class="pre">t)</span></code>‎ מחשבת בדיוק את הסכום הזה, ולכן היא הכלי לסך כולל מתוך מדידות.</p>
+<section id="id1">
+<h2><span class="section-number">10.2.1. </span>דוגמה: מהמהירות חזרה לגובה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>אלה המדידות של שלוש הזריקות מ-10.1, והמהירויות מחושבות מהן כמו שם. הצבירה של ‎<code class="docutils literal notranslate"><span class="pre">vy</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎ לאורך ציר הזמן, ועוד הגובה ההתחלתי, מחזירה את הגבהים; הסכום של ‎<code class="docutils literal notranslate"><span class="pre">vx</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎ נותן את המרחק האופקי הכולל.</p>
 <div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<img alt="../../../_images/d8dd73cf21bb37ff241b5cd9cefa53e5958edad1f86a0f5e2587d201c4640070.png" src="../../../_images/d8dd73cf21bb37ff241b5cd9cefa53e5958edad1f86a0f5e2587d201c4640070.png" />
 </div>
-</div>
-</section>
-<section id="diff-1">
-<h2><span class="section-number">10.2.2. </span>באג נפוץ: אורך ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ קצר ב-1<a class="headerlink" href="#diff-1" title="Link to this heading">#</a></h2>
-<p>‎<code class="docutils literal notranslate"><span class="pre">np.diff(x)</span></code>‎ על מערך באורך 60 מחזיר מערך באורך <strong>59</strong>, לא 60. ציור שלו מול ‎<code class="docutils literal notranslate"><span class="pre">t</span></code>‎ המקורי, שאורכו 60, נעצר בשגיאה:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ValueError: x and y must have same first dimension, but have shapes (60,) and (59,)
-</pre></div>
-</div>
-<p>גרוע מזה: אם משתמשים בהיסח הדעת ב-‎<code class="docutils literal notranslate"><span class="pre">t[:-1]</span></code>‎, האורכים מתאימים ואין שגיאה, אבל ציר הזמן מוזז בחצי צעד ביחס למה שהמהירות מייצגת. ‎<code class="docutils literal notranslate"><span class="pre">t_mid</span></code>‎ שבדוגמה הוא הפתרון הנכון.</p>
-</section>
-<section id="cumsum">
-<h2><span class="section-number">10.2.3. </span>דוגמה: המרחק הכולל לאורך המסלול, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎<a class="headerlink" href="#cumsum" title="Link to this heading">#</a></h2>
-<p>‎<code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code>‎ על גודל המהירות, כפול צעד הזמן, נותן קירוב למרחק המצטבר שנסע הגוף (לא רק הטווח האופקי הסופי — האורך <strong>לאורך המסלול</strong>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">vx</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="n">vy</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span>
-<span class="n">speed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">vy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">vx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">dt</span>                 <span class="c1"># as in 10.1: shape (3, 64)</span>
+<span class="n">vy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">dt</span>
 
-<span class="n">dt_uniform</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">distance_traveled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">speed</span> <span class="o">*</span> <span class="n">dt_uniform</span><span class="p">)</span>   <span class="c1"># same length as t</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">distance_traveled</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>                                 <span class="c1"># the starting heights</span>
+<span class="n">y_back</span> <span class="o">=</span> <span class="n">y0</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">vy</span> <span class="o">*</span> <span class="n">dt</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># heights at t[1:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_back</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">y_back</span> <span class="o">-</span> <span class="n">y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:])</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>          <span class="c1"># compared with the measurement</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">vx</span> <span class="o">*</span> <span class="n">dt</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>                 <span class="c1"># total horizontal distance (m)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47.82983706703718
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 64)
+8.881784197001252e-16
+[42.985 45.254 47.518]
+[42.985 45.254 47.518]
+</pre></div>
+</div>
+</div>
+</div>
+<p>ההפרש מהמדידה קטן מ-<span class="math notranslate nohighlight">\(10^{-15}\)</span>, כלומר אפס עד כדי שגיאות העיגול של המחשב: ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ מבטל את ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎. ‎<code class="docutils literal notranslate"><span class="pre">y0[:,</span> <span class="pre">None]</span></code>‎ הוא עמודה, ולכן הגובה ההתחלתי של כל ריצה נוסף לכל השורה שלה. כל מהירות כאן שייכת למרווח, כי היא חושבה מהפרש, ולכן הסכום הפשוט מדויק.</p>
+</section>
+<section id="id2">
+<h2><span class="section-number">10.2.2. </span>דוגמה נוספת: דחף בהתנגשות<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>עגלה במסה 0.5 ק”ג נעה במהירות 0.8 מ’/ש’ לעבר חיישן כוח, פוגעת בו וחוזרת. החיישן מדד את הכוח על העגלה כל 5 מילישניות (‎<code class="docutils literal notranslate"><span class="pre">t_hit</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">F</span></code>‎, בניוטון). הכיוון החיובי הוא הכיוון שאליו העגלה חוזרת, ולכן התנע לפני הפגיעה הוא <span class="math notranslate nohighlight">\(p_0 = -0.4\)</span> ק”ג·מ’/ש’.</p>
+<p>הדחף, כלומר השינוי בתנע, הוא הצבירה של הכוח לאורך כל ההתנגשות: ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎. התנע בכל רגע הוא <span class="math notranslate nohighlight">\(p_0\)</span> ועוד הצבירה עד אותו רגע: ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ על הכוח של כל מרווח.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span>                                  <span class="c1"># mass of the cart (kg)</span>
+<span class="n">p0</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">)</span>                          <span class="c1"># momentum before the hit</span>
+<span class="n">dt_hit</span> <span class="o">=</span> <span class="n">t_hit</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t_hit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>             <span class="c1"># 0.005 s</span>
+
+<span class="n">J</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">t_hit</span><span class="p">)</span>        <span class="c1"># the impulse (N s)</span>
+<span class="n">F_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>             <span class="c1"># one force per interval</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">p0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">F_mid</span> <span class="o">*</span> <span class="n">dt_hit</span><span class="p">)</span>       <span class="c1"># momentum after each interval</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">p0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">m</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>               <span class="c1"># velocity after the hit (m/s)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.699 0.699
+0.6
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../../../_images/3773830953d7725a3a9b32ca599f077598bf98a9afb6e13de5dd02cd0c4bc00d.png" src="../../../_images/3773830953d7725a3a9b32ca599f077598bf98a9afb6e13de5dd02cd0c4bc00d.png" />
+<img alt="../../../_images/dc03a6eee71eb76ecc631625d8b5924a3b6850eb3761637d75747a33a5520565.png" src="../../../_images/dc03a6eee71eb76ecc631625d8b5924a3b6850eb3761637d75747a33a5520565.png" />
 </div>
 </div>
+<p>הצבירה עד הרגע האחרון שווה לדחף, כי ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎ מחשבת את אותו סכום של ממוצעים. העגלה חוזרת במהירות של כ-0.6 מ’/ש’, פחות מ-0.8: ההתנגשות אינה אלסטית לגמרי.</p>
 </section>
-<section id="id1">
-<h2><span class="section-number">10.2.4. </span>נסו בעצמכם<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">acceleration</span></code>‎, שמקבלת מהירויות ואת זמני המדידה, ומחזירה את התאוצה המקורבת <span class="math notranslate nohighlight">\(a\approx\Delta v/\Delta t\)</span> בכל מרווח. בדקו אותה על הדוגמה שבתא, ואחר כך על ‎<code class="docutils literal notranslate"><span class="pre">vy</span></code>‎ מהדוגמה: התוצאה צריכה להיות קרובה ל-<span class="math notranslate nohighlight">\(-g\)</span>.</p>
+<section id="id3">
+<h2><span class="section-number">10.2.3. </span>באג נפוץ: צעד אחד יותר מדי<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>n מדידות ברגעים תוחמות n-1 מרווחים. ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ או ‎<code class="docutils literal notranslate"><span class="pre">.sum()</span></code>‎ על כל n הערכים, כפול ‎<code class="docutils literal notranslate"><span class="pre">dt</span></code>‎, סופרים n פרוסות, ולכן מאריכים את זמן המדידה בצעד אחד. הדוגמה הפשוטה ביותר היא עגלה במהירות קבועה של 0.5 מ’/ש’, שנמדדת 11 פעמים במשך שנייה אחת: היא עברה 0.5 מטר.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v_const</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>              <span class="c1"># constant velocity (m/s)</span>
+<span class="n">t_const</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>          <span class="c1"># 11 readings in 1 s</span>
+<span class="n">dt_const</span> <span class="o">=</span> <span class="n">t_const</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t_const</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">v_const</span> <span class="o">*</span> <span class="n">dt_const</span><span class="p">))</span>     <span class="c1"># wrong: 11 slices</span>
+<span class="n">v_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">v_const</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">v_const</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>   <span class="c1"># one value per interval</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">v_mid</span> <span class="o">*</span> <span class="n">dt_const</span><span class="p">))</span>       <span class="c1"># right: 10 intervals</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">v_const</span><span class="p">,</span> <span class="n">t_const</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.05 0.1  0.15 0.2  0.25 0.3  0.35 0.4  0.45 0.5  0.55]
+[0.05 0.1  0.15 0.2  0.25 0.3  0.35 0.4  0.45 0.5 ]
+0.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>הסדרה הראשונה מסתיימת ב-0.55 מטר, כאילו העגלה נסעה 1.1 שניות: הערך הראשון שלה, 0.05, הוא כבר המרחק אחרי מרווח אחד. בסדרה הנכונה יש ערך אחד לכל מרווח, והיא שייכת לזמנים ‎<code class="docutils literal notranslate"><span class="pre">t_const[1:]</span></code>‎.</p>
+</section>
+<section id="id4">
+<h2><span class="section-number">10.2.4. </span>נסו בעצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>מנוע מרים משא. מד הספק מדד את ההספק שהמנוע צורך כל חצי שנייה, במשך 10 שניות (‎<code class="docutils literal notranslate"><span class="pre">t_motor</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">P</span></code>‎, בוואט). האנרגיה היא הצבירה של ההספק בזמן.</p>
+<p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">half_energy_time</span></code>‎: היא מחשבת את האנרגיה הכוללת עם ‎<code class="docutils literal notranslate"><span class="pre">trapezoid</span></code>‎, את האנרגיה עד סוף כל מרווח עם ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎, ומחזירה את הזמן הראשון שבו נמסרה לפחות מחצית האנרגיה הכוללת. בדקו אותה על הדוגמה שבתא, ואחר כך הפעילו אותה על המדידות של המנוע.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/24dbc72cf6762a2169df2a6c5a62e9b93912ffbe3466beeb8a440121250a90fe.png" src="../../../_images/24dbc72cf6762a2169df2a6c5a62e9b93912ffbe3466beeb8a440121250a90fe.png" />
+</div>
+</div>
 <div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">acceleration</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Approximate acceleration (m/s^2) in each interval: one fewer than v."""</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">half_energy_time</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""First time (s) by which half of the total energy was delivered."""</span>
     <span class="k">pass</span>   <span class="c1"># replace with your code</span>
 
-<span class="n">v_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">])</span>
-<span class="n">t_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">acceleration</span><span class="p">(</span><span class="n">v_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>
-<span class="c1"># expected: [-10. -10.]</span>
+<span class="n">P_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>   <span class="c1"># power (W)</span>
+<span class="n">t_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span>      <span class="c1"># time (s)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">P_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>        <span class="c1"># total energy (J)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">half_energy_time</span><span class="p">(</span><span class="n">P_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>
+<span class="c1"># expected: 30.0, then 2.0</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">acceleration</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Approximate acceleration (m/s^2) in each interval: one fewer than v."""</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">half_energy_time</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""First time (s) by which half of the total energy was delivered."""</span>
+    <span class="n">E_total</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">P_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">P</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>                 <span class="c1"># one power per interval</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">P_mid</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>            <span class="c1"># energy up to t[1:]</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:][</span><span class="n">E</span> <span class="o">&gt;=</span> <span class="n">E_total</span> <span class="o">/</span> <span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">acceleration</span><span class="p">(</span><span class="n">v_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>   <span class="c1"># [-10. -10.]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">acceleration</span><span class="p">(</span><span class="n">vy</span><span class="p">,</span> <span class="n">t</span><span class="p">)[:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">half_energy_time</span><span class="p">(</span><span class="n">P_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">))</span>            <span class="c1"># 2.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">t_motor</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>   <span class="c1"># 420.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">half_energy_time</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">t_motor</span><span class="p">))</span>                <span class="c1"># 4.5</span>
 </pre></div>
 </div>
-<p>שלוש מהירויות נותנות שני מרווחים, ולכן שתי תאוצות. ב-‎<code class="docutils literal notranslate"><span class="pre">vy</span></code>‎ של הדוגמה המהירות יורדת קווית, ולכן כל התאוצות שוות ל-<span class="math notranslate nohighlight">\(-g\)</span>.</p>
+<p>בדוגמה האנרגיה עד סוף כל מרווח היא 5, 15, 25 ו-30 ג’אול, ומחצית מ-30 נמסרה עד הזמן 2. המנוע צרך כ-420 ג’אול, ומחציתם נמסרה עד 4.5 שניות, לפני אמצע זמן המדידה: בגרף ההספק עולה מהר בהתחלה ויורד לאט בסוף.</p>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">10.2.5. </span>בדקו את עצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h2><span class="section-number">10.2.5. </span>בדקו את עצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>שתי השאלות מתייחסות לקוד הבא:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>      <span class="c1"># line A</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>    <span class="c1"># line B</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>                  <span class="c1"># line A</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>     <span class="c1"># line B</span>
 </pre></div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="FhXgjfgKUJdV" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#FhXgjfgKUJdV {
+<div class="output text_html"><div id="nXPpOfADzxsj" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#nXPpOfADzxsj {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -986,7 +1040,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsFhXgjfgKUJdV=[{"question": "\u05db\u05de\u05d4 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "3", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d1\u05d9\u05df 4 \u05e2\u05e8\u05db\u05d9\u05dd \u05d9\u05e9 3 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd: 3, 5 \u05d5-7."}, {"answer": "4", "correct": false, "feedback": "\u05dc\u05d0: diff \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05d4\u05e4\u05e8\u05e9\u05d9\u05dd \u05d1\u05d9\u05df \u05e2\u05e8\u05db\u05d9\u05dd \u05e1\u05de\u05d5\u05db\u05d9\u05dd, \u05d5\u05d9\u05e9 \u05d0\u05d7\u05d3 \u05e4\u05d7\u05d5\u05ea \u05de\u05d4\u05dd."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: diff \u05de\u05e7\u05e6\u05e8 \u05d0\u05ea \u05d4\u05de\u05e2\u05e8\u05da \u05d1\u05d0\u05d7\u05d3 \u05d1\u05dc\u05d1\u05d3."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e4\u05e8\u05e9 \u05d1\u05d5\u05d3\u05d3 \u05d1\u05d9\u05df \u05d4\u05e2\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05dc\u05d0\u05d7\u05e8\u05d5\u05df \u05dc\u05d0 \u05de\u05d7\u05d5\u05e9\u05d1 \u05db\u05d0\u05df."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "14.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d4\u05d5\u05d0 1 \u05d5\u05e2\u05d5\u05d3 4 \u05d5\u05e2\u05d5\u05d3 9."}, {"answer": "9.0", "correct": false, "feedback": "\u05dc\u05d0: 9.0 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e2\u05e6\u05de\u05d5; cumsum \u05de\u05d7\u05d1\u05e8 \u05d0\u05ea \u05db\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e2\u05d3 \u05d0\u05dc\u05d9\u05d5."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9, 1 \u05d5\u05e2\u05d5\u05d3 4."}, {"answer": "30.0", "correct": false, "feedback": "\u05dc\u05d0: 30.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc \u05db\u05dc \u05d0\u05e8\u05d1\u05e2\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsnXPpOfADzxsj=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "14.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d4\u05d5\u05d0 1 \u05d5\u05e2\u05d5\u05d3 4 \u05d5\u05e2\u05d5\u05d3 9."}, {"answer": "9.0", "correct": false, "feedback": "\u05dc\u05d0: 9.0 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e2\u05e6\u05de\u05d5; cumsum \u05de\u05d7\u05d1\u05e8 \u05d0\u05ea \u05db\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e2\u05d3 \u05d0\u05dc\u05d9\u05d5."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9, 1 \u05d5\u05e2\u05d5\u05d3 4."}, {"answer": "30.0", "correct": false, "feedback": "\u05dc\u05d0: 30.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc \u05db\u05dc \u05d0\u05e8\u05d1\u05e2\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "4.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e9\u05d8\u05d7 \u05de\u05ea\u05d7\u05ea \u05dc\u05e7\u05d5 \u05e9\u05e2\u05d5\u05dc\u05d4 \u05de-0 \u05dc-4 \u05dc\u05d0\u05d5\u05e8\u05da 2 \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05d4\u05d5\u05d0 \u05de\u05e9\u05d5\u05dc\u05e9, 2 \u05db\u05e4\u05d5\u05dc 4 \u05d7\u05dc\u05e7\u05d9 2."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05e1\u05db\u05d5\u05dd \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05dc\u05d0 \u05d4\u05e9\u05d8\u05d7 \u05e9\u05de\u05ea\u05d7\u05ea\u05dd."}, {"answer": "8.0", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05e9\u05d8\u05d7 \u05e9\u05dc \u05de\u05dc\u05d1\u05df \u05d1\u05d2\u05d5\u05d1\u05d4 4; \u05d4\u05e7\u05d5 \u05de\u05ea\u05d7\u05d9\u05dc \u05d1-0."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d0\u05d5\u05e8\u05da \u05d4\u05e7\u05d8\u05e2 \u05e2\u05dc \u05e6\u05d9\u05e8 x, \u05dc\u05d0 \u05d4\u05e9\u05d8\u05d7. \u05d4\u05e9\u05d8\u05d7 \u05d4\u05d5\u05d0 1 \u05d1\u05de\u05e8\u05d5\u05d5\u05d7 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d5\u05e2\u05d5\u05d3 3 \u05d1\u05e9\u05e0\u05d9."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2048,8 +2102,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("FhXgjfgKUJdV")) {
-    show_questions(questionsFhXgjfgKUJdV, FhXgjfgKUJdV);
+  if (document.getElementById("nXPpOfADzxsj")) {
+    show_questions(questionsnXPpOfADzxsj, nXPpOfADzxsj);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2062,12 +2116,21 @@ function try_show() {
 </script></div>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">10.2.6. </span>תרגול עצמי<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<p>חשבו מהו הטווח האופקי הכולל בעזרת ‎<code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code>‎ על ‎<code class="docutils literal notranslate"><span class="pre">vx</span></code>‎ (כפול ‎<code class="docutils literal notranslate"><span class="pre">dt_uniform</span></code>‎), והשוו לערך התיאורטי <span class="math notranslate nohighlight">\(R=v_0^2\sin(2\theta)/g\)</span>. מה ההפרש ביניהם, ומה מקורו?</p>
+<section id="id6">
+<h2><span class="section-number">10.2.6. </span>תרגול עצמי<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>אפליקציה בטלפון מדדה את התאוצה האנכית של מעלית כל 0.1 שניות, אחרי שהחסירה את תאוצת הכובד (‎<code class="docutils literal notranslate"><span class="pre">t_lift</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">a_lift</span></code>‎). המעלית מתחילה במנוחה. חשבו את מהירות המעלית בכל רגע בעזרת ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎, ומהמהירות את הגובה, שוב בעזרת ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎. מהי המהירות הגדולה ביותר, ולאיזה גובה עלתה המעלית?</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/ed31baae2a2e0526622d5b8ff01eee9b01f5875a9e41d7843eb087444bad9863.png" src="../../../_images/ed31baae2a2e0526622d5b8ff01eee9b01f5875a9e41d7843eb087444bad9863.png" />
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x_cumsum = np.cumsum(vx * dt_uniform)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dt_lift = ...</span>
+<span class="c1"># a_mid = ...</span>
+<span class="c1"># v_lift = np.concatenate([[0.0], ...])   # at rest at the start</span>
 <span class="c1"># ...</span>
 </pre></div>
 </div>
@@ -2075,15 +2138,15 @@ function try_show() {
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_cumsum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">vx</span> <span class="o">*</span> <span class="n">dt_uniform</span><span class="p">)</span>
-<span class="n">R_theory</span> <span class="o">=</span> <span class="n">v0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="n">g</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"קירוב cumsum:"</span><span class="p">,</span> <span class="n">x_cumsum</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"תיאוריה:"</span><span class="p">,</span> <span class="n">R_theory</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"59 מרווחים:"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">vx</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt_uniform</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dt_lift</span> <span class="o">=</span> <span class="n">t_lift</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t_lift</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">a_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">a_lift</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a_lift</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">v_lift</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">a_mid</span> <span class="o">*</span> <span class="n">dt_lift</span><span class="p">)])</span>
+<span class="n">v_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">v_lift</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">v_lift</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">z_lift</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">v_mid</span> <span class="o">*</span> <span class="n">dt_lift</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">v_lift</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">z_lift</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>   <span class="c1"># 2.01 16.0</span>
 </pre></div>
 </div>
-<p>הסכום המצטבר יוצא כ-41.5 מטרים, כ-0.7 מטר יותר מהתיאוריה (40.8). הסיבה: ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ מחבר 60 פרוסות של ‎<code class="docutils literal notranslate"><span class="pre">dt_uniform</span></code>‎, אבל בין 60 נקודות זמן יש רק 59 מרווחים, כך שהמעוף “מתארך” בצעד אחד. סכום של 59 פרוסות בלבד נותן את הערך התיאורטי.</p>
+<p>‎<code class="docutils literal notranslate"><span class="pre">np.concatenate</span></code>‎ מוסיף בהתחלה את הערך ההתחלתי, 0, ולכן למהירות יש ערך בכל רגע מדידה, כמו לתאוצה, ואפשר לצבור אותה שוב. המהירות הגדולה ביותר היא כ-2 מ’/ש’, והמעלית עלתה כ-16 מטר.</p>
 </div>
 </section>
 </section>
@@ -2119,20 +2182,20 @@ function try_show() {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="10_1_recurrence_loop.html"
+       href="10_1_measured_series.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10.1. </span>יחס נסיגה ולולאת עדכון: מקרים שבהם לא ניתן לוקטר</p>
+        <p class="prev-next-title"><span class="section-number">10.1. </span>סדרה מדודה: קצב שינוי ואירועים</p>
       </div>
     </a>
     <a class="right-next"
-       href="10_3_trapezoid_quad.html"
+       href="10_3_update_loop.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10.3. </span>אינטגרציה: trapezoid (מדידות) ו-quad (פונקציה אנליטית)</p>
+        <p class="prev-next-title"><span class="section-number">10.3. </span>סדרה מחושבת: משוואת התנועה כלולאת עדכון</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2154,12 +2217,12 @@ function try_show() {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">10.2.1. דוגמה: מהירות מתוך מיקום, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff-1">10.2.2. באג נפוץ: אורך ‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ קצר ב-1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cumsum">10.2.3. דוגמה: המרחק הכולל לאורך המסלול, בעזרת ‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2.4. נסו בעצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.2.5. בדקו את עצמכם</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.2.6. תרגול עצמי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2.1. דוגמה: מהמהירות חזרה לגובה</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.2.2. דוגמה נוספת: דחף בהתנגשות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.2.3. באג נפוץ: צעד אחד יותר מדי</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.2.4. נסו בעצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">10.2.5. בדקו את עצמכם</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">10.2.6. תרגול עצמי</a></li>
 </ul>
   </nav></div>
 
