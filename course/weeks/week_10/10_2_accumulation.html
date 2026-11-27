@@ -650,6 +650,7 @@
 <li><p><strong>הצבירה עד כל רגע</strong>, סדרה: ‎<code class="docutils literal notranslate"><span class="pre">np.cumsum(v</span> <span class="pre">*</span> <span class="pre">dt)</span></code>‎. כל איבר הוא סכום האיברים עד אליו, כמו מצבר ששומר את ערכו אחרי כל סיבוב.</p></li>
 </ul>
 <p>‎<code class="docutils literal notranslate"><span class="pre">cumsum</span></code>‎ הפוך ל-‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎: הסכום המצטבר של ההפרשים מחזיר את הערכים המקוריים, חוץ מהערך הראשון, ש-‎<code class="docutils literal notranslate"><span class="pre">diff</span></code>‎ מאבד ולכן מוסיפים אותו. בתא הבא מיקומים של כדור מתגלגל, החל מ-0.5 מטר:</p>
+<img alt="np.cumsum(d) stacks the steps: each element is the sum of the steps up to it" class="align-center" src="../../../_images/10_2_cumsum_steps.svg" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -670,6 +671,7 @@
 </div>
 </div>
 <p>כשהערכים נמדדים ברגעים עצמם, למשל בחיישן, n מדידות תוחמות n-1 מרווחים. הערך של כל מרווח הוא הממוצע של שתי המדידות שבקצותיו, כמו ‎<code class="docutils literal notranslate"><span class="pre">t_mid</span></code>‎ ב-10.1. ‎<code class="docutils literal notranslate"><span class="pre">integrate.trapezoid(F,</span> <span class="pre">t)</span></code>‎ מחשבת בדיוק את הסכום הזה, ולכן היא הכלי לסך כולל מתוך מדידות.</p>
+<img alt="Four force readings give three trapezoids; four slices of reading times dt run one step past the last reading" class="align-center" src="../../../_images/10_2_trapezoid_slices.svg" />
 <section id="id1">
 <h2><span class="section-number">10.2.1. </span>דוגמה: מהמהירות חזרה לגובה<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>אלה המדידות של שלוש הזריקות מ-10.1, והמהירויות מחושבות מהן כמו שם. הצבירה של ‎<code class="docutils literal notranslate"><span class="pre">vy</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎ לאורך ציר הזמן, ועוד הגובה ההתחלתי, מחזירה את הגבהים; הסכום של ‎<code class="docutils literal notranslate"><span class="pre">vx</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎ נותן את המרחק האופקי הכולל.</p>
@@ -816,8 +818,8 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="nXPpOfADzxsj" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#nXPpOfADzxsj {
+<div class="output text_html"><div id="QTokJxAwRnKb" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#QTokJxAwRnKb {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1040,7 +1042,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsnXPpOfADzxsj=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "14.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d4\u05d5\u05d0 1 \u05d5\u05e2\u05d5\u05d3 4 \u05d5\u05e2\u05d5\u05d3 9."}, {"answer": "9.0", "correct": false, "feedback": "\u05dc\u05d0: 9.0 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e2\u05e6\u05de\u05d5; cumsum \u05de\u05d7\u05d1\u05e8 \u05d0\u05ea \u05db\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e2\u05d3 \u05d0\u05dc\u05d9\u05d5."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9, 1 \u05d5\u05e2\u05d5\u05d3 4."}, {"answer": "30.0", "correct": false, "feedback": "\u05dc\u05d0: 30.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc \u05db\u05dc \u05d0\u05e8\u05d1\u05e2\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "4.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e9\u05d8\u05d7 \u05de\u05ea\u05d7\u05ea \u05dc\u05e7\u05d5 \u05e9\u05e2\u05d5\u05dc\u05d4 \u05de-0 \u05dc-4 \u05dc\u05d0\u05d5\u05e8\u05da 2 \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05d4\u05d5\u05d0 \u05de\u05e9\u05d5\u05dc\u05e9, 2 \u05db\u05e4\u05d5\u05dc 4 \u05d7\u05dc\u05e7\u05d9 2."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05e1\u05db\u05d5\u05dd \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05dc\u05d0 \u05d4\u05e9\u05d8\u05d7 \u05e9\u05de\u05ea\u05d7\u05ea\u05dd."}, {"answer": "8.0", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05e9\u05d8\u05d7 \u05e9\u05dc \u05de\u05dc\u05d1\u05df \u05d1\u05d2\u05d5\u05d1\u05d4 4; \u05d4\u05e7\u05d5 \u05de\u05ea\u05d7\u05d9\u05dc \u05d1-0."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d0\u05d5\u05e8\u05da \u05d4\u05e7\u05d8\u05e2 \u05e2\u05dc \u05e6\u05d9\u05e8 x, \u05dc\u05d0 \u05d4\u05e9\u05d8\u05d7. \u05d4\u05e9\u05d8\u05d7 \u05d4\u05d5\u05d0 1 \u05d1\u05de\u05e8\u05d5\u05d5\u05d7 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d5\u05e2\u05d5\u05d3 3 \u05d1\u05e9\u05e0\u05d9."}]}];
+</style></div><script type="application/javascript">var questionsQTokJxAwRnKb=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "14.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05e2\u05d3 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05d4\u05d5\u05d0 1 \u05d5\u05e2\u05d5\u05d3 4 \u05d5\u05e2\u05d5\u05d3 9."}, {"answer": "9.0", "correct": false, "feedback": "\u05dc\u05d0: 9.0 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e2\u05e6\u05de\u05d5; cumsum \u05de\u05d7\u05d1\u05e8 \u05d0\u05ea \u05db\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e2\u05d3 \u05d0\u05dc\u05d9\u05d5."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e6\u05d8\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9, 1 \u05d5\u05e2\u05d5\u05d3 4."}, {"answer": "30.0", "correct": false, "feedback": "\u05dc\u05d0: 30.0 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc \u05db\u05dc \u05d0\u05e8\u05d1\u05e2\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "4.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e9\u05d8\u05d7 \u05de\u05ea\u05d7\u05ea \u05dc\u05e7\u05d5 \u05e9\u05e2\u05d5\u05dc\u05d4 \u05de-0 \u05dc-4 \u05dc\u05d0\u05d5\u05e8\u05da 2 \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05d4\u05d5\u05d0 \u05de\u05e9\u05d5\u05dc\u05e9, 2 \u05db\u05e4\u05d5\u05dc 4 \u05d7\u05dc\u05e7\u05d9 2."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05e1\u05db\u05d5\u05dd \u05d4\u05e2\u05e8\u05db\u05d9\u05dd, \u05dc\u05d0 \u05d4\u05e9\u05d8\u05d7 \u05e9\u05de\u05ea\u05d7\u05ea\u05dd."}, {"answer": "8.0", "correct": false, "feedback": "\u05dc\u05d0: 8 \u05d4\u05d5\u05d0 \u05e9\u05d8\u05d7 \u05e9\u05dc \u05de\u05dc\u05d1\u05df \u05d1\u05d2\u05d5\u05d1\u05d4 4; \u05d4\u05e7\u05d5 \u05de\u05ea\u05d7\u05d9\u05dc \u05d1-0."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d0\u05d5\u05e8\u05da \u05d4\u05e7\u05d8\u05e2 \u05e2\u05dc \u05e6\u05d9\u05e8 x, \u05dc\u05d0 \u05d4\u05e9\u05d8\u05d7. \u05d4\u05e9\u05d8\u05d7 \u05d4\u05d5\u05d0 1 \u05d1\u05de\u05e8\u05d5\u05d5\u05d7 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d5\u05e2\u05d5\u05d3 3 \u05d1\u05e9\u05e0\u05d9."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2102,8 +2104,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("nXPpOfADzxsj")) {
-    show_questions(questionsnXPpOfADzxsj, nXPpOfADzxsj);
+  if (document.getElementById("QTokJxAwRnKb")) {
+    show_questions(questionsQTokJxAwRnKb, QTokJxAwRnKb);
   } else {
     setTimeout(try_show, 200);
   }

@@ -747,6 +747,7 @@
 </div></div></div>
 </div>
 <p>‎<code class="docutils literal notranslate"><span class="pre">df[&quot;angle_deg&quot;]</span> <span class="pre">==</span> <span class="pre">45</span></code>‎ בעצמו הוא ‎<code class="docutils literal notranslate"><span class="pre">Series</span></code>‎ של ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎/‎<code class="docutils literal notranslate"><span class="pre">False</span></code>‎ — בדיוק כמו מסכה על מערך NumPy. ‎<code class="docutils literal notranslate"><span class="pre">df[mask]</span></code>‎ משאיר רק את השורות שבהן המסכה ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎. אין הבדל מושגי מהמסכות שראינו בסעיף 7.7 — רק שכאן המסכה בוחרת <strong>שורות שלמות</strong>, לא איברים בודדים.</p>
+<img alt="The mask marks the rows with angle 45 as True, and df[mask_45] keeps those six rows" class="align-center" src="../../../_images/11_4_mask.svg" />
 </section>
 <section id="id2">
 <h2><span class="section-number">11.4.2. </span>באג נפוץ: תנאים מחוברים בלי סוגריים<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
@@ -874,8 +875,8 @@
 <h2><span class="section-number">11.4.4. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="VHrInZFmAWzu" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#VHrInZFmAWzu {
+<div class="output text_html"><div id="JzKSVBTbUxIi" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#JzKSVBTbUxIi {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1098,7 +1099,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsVHrInZFmAWzu=[{"question": "\u05de\u05d3\u05d5\u05e2 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05de\u05e1\u05e4\u05e8 \u05e2\u05dd ==", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05e2\u05dd == \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05d5\u05d1\u05d3\u05ea \u05de\u05e6\u05d5\u05d9\u05df \u05d5\u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9\u05ea; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05d1-and."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsJzKSVBTbUxIi=[{"question": "\u05de\u05d3\u05d5\u05e2 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05de\u05e1\u05e4\u05e8 \u05e2\u05dd ==", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05e2\u05dd == \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05d5\u05d1\u05d3\u05ea \u05de\u05e6\u05d5\u05d9\u05df \u05d5\u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9\u05ea; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05d1-and."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2160,8 +2161,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("VHrInZFmAWzu")) {
-    show_questions(questionsVHrInZFmAWzu, VHrInZFmAWzu);
+  if (document.getElementById("JzKSVBTbUxIi")) {
+    show_questions(questionsJzKSVBTbUxIi, JzKSVBTbUxIi);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2309,6 +2310,7 @@ dtype: int64
 </div>
 </div>
 </div>
+<img alt="runs.dropna() removes the row with NaN and keeps the index labels 0, 2 and 3" class="align-center" src="../../../_images/11_4_dropna.svg" />
 </section>
 <section id="id6">
 <h2><span class="section-number">11.4.8. </span>נסו בעצמכם<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>

@@ -648,8 +648,9 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>כאשר ‎<code class="docutils literal notranslate"><span class="pre">nrows=1</span></code>‎ (או ‎<code class="docutils literal notranslate"><span class="pre">ncols=1</span></code>‎), ‎<code class="docutils literal notranslate"><span class="pre">axs</span></code>‎ הוא מערך <strong>חד-ממדי</strong> — גישה עם ‎<code class="docutils literal notranslate"><span class="pre">axs[i]</span></code>‎. כאשר גם ‎<code class="docutils literal notranslate"><span class="pre">nrows&gt;1</span></code>‎ וגם ‎<code class="docutils literal notranslate"><span class="pre">ncols&gt;1</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">axs</span></code>‎ הוא מערך <strong>דו-ממדי</strong> — גישה עם ‎<code class="docutils literal notranslate"><span class="pre">axs[row,</span> <span class="pre">col]</span></code>‎: קודם מספר השורה ואחריו מספר העמודה, שניהם מתחילים מ-0. למשל ‎<code class="docutils literal notranslate"><span class="pre">axs[0,</span> <span class="pre">0]</span></code>‎ הוא הציר השמאלי העליון, ו-‎<code class="docutils literal notranslate"><span class="pre">axs[1,</span> <span class="pre">0]</span></code>‎ הציר שמתחתיו.</p>
+<p>כאשר ‎<code class="docutils literal notranslate"><span class="pre">nrows=1</span></code>‎ (או ‎<code class="docutils literal notranslate"><span class="pre">ncols=1</span></code>‎), ‎<code class="docutils literal notranslate"><span class="pre">axs</span></code>‎ הוא מערך <strong>חד-ממדי</strong> — גישה עם ‎<code class="docutils literal notranslate"><span class="pre">axs[i]</span></code>‎. כאשר גם ‎<code class="docutils literal notranslate"><span class="pre">nrows&gt;1</span></code>‎ וגם ‎<code class="docutils literal notranslate"><span class="pre">ncols&gt;1</span></code>‎, ‎<code class="docutils literal notranslate"><span class="pre">axs</span></code>‎ הוא מערך <strong>דו-ממדי</strong> — גישה עם ‎<code class="docutils literal notranslate"><span class="pre">axs[row,</span> <span class="pre">col]</span></code>‎: קודם מספר השורה ואחריו מספר העמודה, שניהם מתחילים מ-0.</p>
 </div>
+<img alt="plt.subplots(1, 3) gives axs[0] to axs[2]; plt.subplots(2, 2) gives axs[row, col]" class="align-center" src="../../../_images/8_6_subplots_grid.svg" />
 <section id="id1">
 <h2><span class="section-number">8.6.1. </span>דוגמה: פאנל נפרד לכל זווית שיגור<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>במקום לצייר את שלוש הזוויות על אותו גרף (כמו בסעיף 8.5), הפעם ניתן לכל זווית ציר משלה, עם ‎<code class="docutils literal notranslate"><span class="pre">sharey=True</span></code>‎ כדי שיהיה קל להשוות גבהים. הלולאה עוברת על האינדקסים 0, 1 ו-2: בסיבוב ‎<code class="docutils literal notranslate"><span class="pre">i</span></code>‎ היא לוקחת את הזווית ‎<code class="docutils literal notranslate"><span class="pre">angles_deg[i]</span></code>‎ ומציירת אותה על הציר ‎<code class="docutils literal notranslate"><span class="pre">axs[i]</span></code>‎. הפרמטר ‎<code class="docutils literal notranslate"><span class="pre">figsize=(12,</span> <span class="pre">4)</span></code>‎ קובע את רוחב התמונה ואת גובהה באינצ’ים; זהו פרמטר תצוגה, כמו אלה שבסעיף 8.2.</p>
@@ -750,8 +751,8 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="UknhTCZcxpQW" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#UknhTCZcxpQW {
+<div class="output text_html"><div id="lyhflIpjtKKY" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#lyhflIpjtKKY {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -974,7 +975,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsUknhTCZcxpQW=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05db\u05d5\u05ea\u05e8\u05ea \u05ea\u05d5\u05e4\u05d9\u05e2 \u05e2\u05dc \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9 \u05d4\u05ea\u05d7\u05ea\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "C", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d4\u05d5\u05d0 \u05d4\u05e9\u05d5\u05e8\u05d4 (1 \u05d4\u05d9\u05d0 \u05d4\u05ea\u05d7\u05ea\u05d5\u05e0\u05d4), \u05d5\u05d4\u05e9\u05e0\u05d9 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 (0 \u05d4\u05d9\u05d0 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea)."}, {"answer": "B", "correct": false, "feedback": "\u05dc\u05d0: B \u05e0\u05de\u05e6\u05d0 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4 (0) \u05d5\u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d9\u05de\u05e0\u05d9\u05ea (1)."}, {"answer": "A", "correct": false, "feedback": "\u05dc\u05d0: A \u05d4\u05d5\u05d0 \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9 \u05d4\u05e2\u05dc\u05d9\u05d5\u05df, \u05e9\u05d5\u05e8\u05d4 0 \u05d5\u05e2\u05de\u05d5\u05d3\u05d4 0."}, {"answer": "D", "correct": false, "feedback": "\u05dc\u05d0: D \u05d4\u05d5\u05d0 \u05d4\u05e6\u05d9\u05e8 \u05d4\u05d9\u05de\u05e0\u05d9 \u05d4\u05ea\u05d7\u05ea\u05d5\u05df, \u05e9\u05d5\u05e8\u05d4 1 \u05d5\u05e2\u05de\u05d5\u05d3\u05d4 1."}]}];
+</style></div><script type="application/javascript">var questionslyhflIpjtKKY=[{"question": "\u05d0\u05d9\u05d6\u05d5 \u05db\u05d5\u05ea\u05e8\u05ea \u05ea\u05d5\u05e4\u05d9\u05e2 \u05e2\u05dc \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9 \u05d4\u05ea\u05d7\u05ea\u05d5\u05df?", "type": "multiple_choice", "answers": [{"answer": "C", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d4\u05d5\u05d0 \u05d4\u05e9\u05d5\u05e8\u05d4 (1 \u05d4\u05d9\u05d0 \u05d4\u05ea\u05d7\u05ea\u05d5\u05e0\u05d4), \u05d5\u05d4\u05e9\u05e0\u05d9 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 (0 \u05d4\u05d9\u05d0 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9\u05ea)."}, {"answer": "B", "correct": false, "feedback": "\u05dc\u05d0: B \u05e0\u05de\u05e6\u05d0 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e2\u05dc\u05d9\u05d5\u05e0\u05d4 (0) \u05d5\u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d9\u05de\u05e0\u05d9\u05ea (1)."}, {"answer": "A", "correct": false, "feedback": "\u05dc\u05d0: A \u05d4\u05d5\u05d0 \u05d4\u05e6\u05d9\u05e8 \u05d4\u05e9\u05de\u05d0\u05dc\u05d9 \u05d4\u05e2\u05dc\u05d9\u05d5\u05df, \u05e9\u05d5\u05e8\u05d4 0 \u05d5\u05e2\u05de\u05d5\u05d3\u05d4 0."}, {"answer": "D", "correct": false, "feedback": "\u05dc\u05d0: D \u05d4\u05d5\u05d0 \u05d4\u05e6\u05d9\u05e8 \u05d4\u05d9\u05de\u05e0\u05d9 \u05d4\u05ea\u05d7\u05ea\u05d5\u05df, \u05e9\u05d5\u05e8\u05d4 1 \u05d5\u05e2\u05de\u05d5\u05d3\u05d4 1."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2036,8 +2037,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("UknhTCZcxpQW")) {
-    show_questions(questionsUknhTCZcxpQW, UknhTCZcxpQW);
+  if (document.getElementById("lyhflIpjtKKY")) {
+    show_questions(questionslyhflIpjtKKY, lyhflIpjtKKY);
   } else {
     setTimeout(try_show, 200);
   }
