@@ -198,14 +198,14 @@ parts:
             title: "תרגול מסכם"
 
       - file: course/weeks/week_10
-        title: "שבוע 10 — שינוי בזמן: לולאת עדכון, נגזרת ואינטגרל"
+        title: "שבוע 10 — סדרות עיתיות: מדידה, קצב שינוי ותחזית"
         sections:
-          - file: course/weeks/week_10/10_1_recurrence_loop
-            title: "יחס נסיגה ולולאת עדכון"
-          - file: course/weeks/week_10/10_2_diff_cumsum
-            title: "diff ו-cumsum — נגזרת וסכום מצטבר"
-          - file: course/weeks/week_10/10_3_trapezoid_quad
-            title: "אינטגרציה: trapezoid ו-quad"
+          - file: course/weeks/week_10/10_1_measured_series
+            title: "סדרה מדודה: קצב שינוי ואירועים"
+          - file: course/weeks/week_10/10_2_accumulation
+            title: "צבירה בזמן: cumsum ו-trapezoid"
+          - file: course/weeks/week_10/10_3_update_loop
+            title: "סדרה מחושבת: משוואת התנועה כלולאת עדכון"
           - file: course/weeks/week_10/10_4_practice
             title: "תרגול מסכם"
 
