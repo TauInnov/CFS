@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.4. פורמט מחרוזות (&#34;&#34;f) &#8212; Computers For physics</title>
+    <title>6.4. פורמט מחרוזות (f-strings) &#8212; Computers For physics</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=4b1b8121" />
@@ -613,7 +613,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>פורמט מחרוזות (""f)</h1>
+    <h1>פורמט מחרוזות (f-strings)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -639,8 +639,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="f">
-<h1><span class="section-number">6.4. </span>פורמט מחרוזות (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;f</span></code>)<a class="headerlink" href="#f" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="f-strings">
+<h1><span class="section-number">6.4. </span>פורמט מחרוזות (f-strings)<a class="headerlink" href="#f-strings" title="Link to this heading">#</a></h1>
 <section id="string-formatting">
 <h2><span class="section-number">6.4.1. </span>עריכת מחרוזות לפי פורמט (String Formatting)<a class="headerlink" href="#string-formatting" title="Link to this heading">#</a></h2>
 <p>לעיתים קרובות נרצה להדפיס הודעה שמשלבת טקסט עם ערכים של משתנים, למשל שם של סטודנט והציון שלו. דרך אחת היא לחבר מחרוזות בעזרת <code class="docutils literal notranslate"><span class="pre">+</span></code>, אבל אז צריך להמיר כל מספר למחרוזת בעזרת <code class="docutils literal notranslate"><span class="pre">str</span></code>:</p>
@@ -681,7 +681,7 @@ Adam-70
 <p>שימו לב שבסך הכול שמנו את המשתנים בתוך הסוגריים המסולסלים המתאימים, והString format כבר דאג לחבר אותם ביחד.</p>
 <div class="caution admonition">
 <p class="admonition-title"><strong>נסו בעצמכם</strong></p>
-<p>מה לגבי פעולות קוד יותר מורכבות בתוך הString format? נניח כעת כי נרצה להדפיס את הציון לאחר פקטור של תוספת 10 נקודות. על מנת לבצע זאת, הוסיפו <code class="docutils literal notranslate"><span class="pre">10+</span></code> בתוך הסוגריים המסולסלים המכילים את המשתנה grade.</p>
+<p>מה לגבי פעולות קוד יותר מורכבות בתוך הString format? נניח כעת כי נרצה להדפיס את הציון לאחר פקטור של תוספת 10 נקודות. על מנת לבצע זאת, הוסיפו ‎<code class="docutils literal notranslate"><span class="pre">+10</span></code>‎ בתוך הסוגריים המסולסלים המכילים את המשתנה grade.</p>
 <p>אחרי שהצלחתם, נסו “לשחק” עם הפורמט: להוסיף פעולות יותר מורכבות בתוך הסוגריים המסולסלים, להוסיף זוגות של סוגריים מסולסלים נוספים וכו’</p>
 </div>
 <p>כשמדפיסים תוצאה של חישוב, בדרך כלל לא רוצים לראות את כל הספרות שאחרי הנקודה העשרונית. ניקח לדוגמה את המספר פאי:</p>
@@ -699,7 +699,7 @@ Adam-70
 </div>
 </div>
 </div>
-<p>נרצה כעת “לקצץ” את הדיוק של מספר הפאי ל2 ספרות לאחר הנקודה. על מנת לממש זאת, נוכל להוסיף בסוף הסוגריים המסולסלים נקודותיים (<code class="docutils literal notranslate"><span class="pre">:</span></code>) עם רמת הדיוק הנדרשת (<code class="docutils literal notranslate"><span class="pre">2.</span></code>) והדרך בה נרצה שמספר יוצג (<code class="docutils literal notranslate"><span class="pre">f</span></code>, כמו <code class="docutils literal notranslate"><span class="pre">float</span></code>/עשרוני)</p>
+<p>נרצה כעת “לקצץ” את הדיוק של מספר הפאי ל2 ספרות לאחר הנקודה. על מנת לממש זאת, נוכל להוסיף בסוף הסוגריים המסולסלים נקודותיים (<code class="docutils literal notranslate"><span class="pre">:</span></code>) עם רמת הדיוק הנדרשת (‎<code class="docutils literal notranslate"><span class="pre">.2</span></code>‎) והדרך בה נרצה שמספר יוצג (<code class="docutils literal notranslate"><span class="pre">f</span></code>, כמו <code class="docutils literal notranslate"><span class="pre">float</span></code>/עשרוני)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I like </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -792,8 +792,8 @@ Adam-70
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="vVsaMSXQdvgJ" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#vVsaMSXQdvgJ {
+<div class="output text_html"><div id="tqutYTtnAOqw" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#tqutYTtnAOqw {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1016,7 +1016,7 @@ Adam-70
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsvVsaMSXQdvgJ=[{"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d3\u05e4\u05d9\u05e1 \u05d4\u05e7\u05d5\u05d3?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05dc\u05db\u05dc \u05d6\u05d5\u05d2 \u05e9\u05dc \u05de\u05e4\u05ea\u05d7 \u05d5\u05e2\u05e8\u05da \u05d1\u05de\u05d9\u05dc\u05d5\u05df."}, {"type": "default", "feedback": "\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05d1\u05e8\u05ea \u05e2\u05dc \u05d4\u05d6\u05d5\u05d2\u05d5\u05ea \u05d1\u05de\u05d9\u05dc\u05d5\u05df. \u05db\u05de\u05d4 \u05d6\u05d5\u05d2\u05d5\u05ea \u05d9\u05e9 \u05d1\u05d5?"}]}, {"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05ea\u05d5\u05d3\u05e4\u05e1?", "type": "many_choice", "answers": [{"answer": "fridge: 42.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 80.0 - 0.5 * (80.0 - 4.0) \u05d4\u05d5\u05d0 42.0, \u05d5-.1f \u05de\u05e6\u05d9\u05d2 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 42", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05e4\u05d5\u05e8\u05de\u05d8 .1f \u05de\u05e6\u05d9\u05d2 \u05ea\u05de\u05d9\u05d3 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 50.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05db\u05d0\u05df T_room \u05d4\u05d5\u05d0 4.0, \u05d4\u05e2\u05e8\u05da \u05e9\u05dc fridge \u05d1\u05de\u05d9\u05dc\u05d5\u05df, \u05d5\u05dc\u05d0 \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc 20.0."}, {"answer": "4.0: 42.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. name \u05de\u05e7\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e4\u05ea\u05d7 \u05d5-T_room \u05d0\u05ea \u05d4\u05e2\u05e8\u05da."}]}];
+</style></div><script type="application/javascript">var questionstqutYTtnAOqw=[{"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d3\u05e4\u05d9\u05e1 \u05d4\u05e7\u05d5\u05d3?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05dc\u05db\u05dc \u05d6\u05d5\u05d2 \u05e9\u05dc \u05de\u05e4\u05ea\u05d7 \u05d5\u05e2\u05e8\u05da \u05d1\u05de\u05d9\u05dc\u05d5\u05df."}, {"type": "default", "feedback": "\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05d1\u05e8\u05ea \u05e2\u05dc \u05d4\u05d6\u05d5\u05d2\u05d5\u05ea \u05d1\u05de\u05d9\u05dc\u05d5\u05df. \u05db\u05de\u05d4 \u05d6\u05d5\u05d2\u05d5\u05ea \u05d9\u05e9 \u05d1\u05d5?"}]}, {"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05ea\u05d5\u05d3\u05e4\u05e1?", "type": "many_choice", "answers": [{"answer": "fridge: 42.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 80.0 - 0.5 * (80.0 - 4.0) \u05d4\u05d5\u05d0 42.0, \u05d5-.1f \u05de\u05e6\u05d9\u05d2 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 42", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05e4\u05d5\u05e8\u05de\u05d8 .1f \u05de\u05e6\u05d9\u05d2 \u05ea\u05de\u05d9\u05d3 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 50.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05db\u05d0\u05df T_room \u05d4\u05d5\u05d0 4.0, \u05d4\u05e2\u05e8\u05da \u05e9\u05dc fridge \u05d1\u05de\u05d9\u05dc\u05d5\u05df, \u05d5\u05dc\u05d0 \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc 20.0."}, {"answer": "4.0: 42.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. name \u05de\u05e7\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e4\u05ea\u05d7 \u05d5-T_room \u05d0\u05ea \u05d4\u05e2\u05e8\u05da."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2078,8 +2078,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("vVsaMSXQdvgJ")) {
-    show_questions(questionsvVsaMSXQdvgJ, vVsaMSXQdvgJ);
+  if (document.getElementById("tqutYTtnAOqw")) {
+    show_questions(questionstqutYTtnAOqw, tqutYTtnAOqw);
   } else {
     setTimeout(try_show, 200);
   }
