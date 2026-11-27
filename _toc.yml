@@ -77,7 +77,7 @@ parts:
           - file: vendor/virtual-pyprog/4_4_nested_lists
             title: "רשימות מקוננות"
           - file: vendor/virtual-pyprog/4_5_list-examples
-            title: "דוגמאות מעשיות"
+            title: "תרגול מסכם: רשימות"
 
       - file: course/weeks/week_4
         title: "שבוע 4 — לולאות וזרימת בקרה"
@@ -89,13 +89,13 @@ parts:
           - file: vendor/virtual-pyprog/6_1_ranges-and-for
             title: "range ולולאות for"
           - file: vendor/virtual-pyprog/6_2_for-examples
-            title: "דוגמאות ל־for"
+            title: "תרגול מסכם: לולאות for"
           - file: vendor/virtual-pyprog/6_3_for-summary
             title: "סיכום לולאות for"
           - file: vendor/virtual-pyprog/7_0_while_loops
             title: "לולאות while"
           - file: vendor/virtual-pyprog/7_1_while-examples
-            title: "דוגמאות ל־while"
+            title: "תרגול מסכם: לולאות while"
           - file: vendor/virtual-pyprog/8_0_while_vs_for
             title: "while לעומת for"
           - file: vendor/virtual-pyprog/8_1_break_and_continue
