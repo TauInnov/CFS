@@ -691,14 +691,15 @@
 </div>
 <hr class="docutils" />
 <p>כתבו פונקציה <code class="docutils literal notranslate"><span class="pre">best_angle_by_mean_range(df)</span></code> שמקבלת DataFrame בפורמט של <code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code>, ומחזירה <strong>tuple</strong> של (הזווית עם הטווח הממוצע הגבוה ביותר, ערך הטווח הממוצע הזה).</p>
-<div class="cell docutils container">
+<div class="cell tag_raises-exception tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">best_angle_by_mean_range</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="c1"># כתבו כאן</span>
     <span class="k">pass</span>
 
-<span class="c1"># בדיקה:</span>
-<span class="c1"># best_angle_by_mean_range(pd.read_csv("launch_log.csv"))</span>
+<span class="n">angle</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">best_angle_by_mean_range</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"launch_log.csv"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>              <span class="c1"># expected: 45</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>     <span class="c1"># expected: 41.6</span>
 </pre></div>
 </div>
 </div>
@@ -711,7 +712,9 @@
     <span class="n">best_value</span> <span class="o">=</span> <span class="n">mean_by_angle</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">best_angle</span><span class="p">,</span> <span class="n">best_value</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">best_angle_by_mean_range</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"launch_log.csv"</span><span class="p">)))</span>
+<span class="n">angle</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">best_angle_by_mean_range</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"launch_log.csv"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>              <span class="c1"># expected: 45</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>     <span class="c1"># expected: 41.6</span>
 </pre></div>
 </div>
 </div>

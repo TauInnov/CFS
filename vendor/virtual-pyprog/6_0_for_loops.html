@@ -671,34 +671,34 @@
 <section id="id2">
 <h2><span class="section-number">4.2.2. </span>תרגול<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>ממשו באמצעות לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">count_spaces(s)</span></code>‎, אשר מקבלת מחרוזת s ומחזירה כמה פעמים מופיע התו רווח (‎<code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code>‎).</p></li>
+<li><p>השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">count_spaces(s)</span></code>‎, שמקבלת מחרוזת s ומחזירה כמה פעמים מופיע בה התו רווח (‎<code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code>‎). המבנה של הפונקציה כבר כתוב בתא: חסר רק מה שקורה בכל סיבוב, במקום <code class="docutils literal notranslate"><span class="pre">pass</span></code>. במחרוזת ‎<code class="docutils literal notranslate"><span class="pre">&quot;a</span> <span class="pre">b</span> <span class="pre">c&quot;</span></code>‎ יש 2 רווחים, וזו הבדיקה שבתחתית התא.</p></li>
 </ol>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_spaces</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="c1"># Add your code here</span>
-    <span class="k">pass</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>                         <span class="c1"># before the loop: the count starts at 0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="c1"># every round: add 1 to cnt if char is a space</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">cnt</span>                      <span class="c1"># after the loop: return the count</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count_spaces</span><span class="p">(</span><span class="s2">"a b c"</span><span class="p">))</span>   <span class="c1"># should print 2</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="dropdown tip admonition">
-<p class="admonition-title"><strong>רמז:</strong> מה היינו רוצים לעשות?</p>
-<ol class="arabic simple">
-<li><p>להתחיל ספירה כלשהיא באפס.</p></li>
-<li><p>לעבור על כל תו במחרוזת.</p></li>
-<li><p>כל פעם שאנחנו רואים את התו רווח, להוסיף 1 לספירה.</p></li>
-</ol>
-<p>כך, בסוף המחרוזת, נקבל את כמות הרווחים המופיעים במחרוזת.</p>
-</div>
-<div class="dropdown tip admonition">
 <p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">count_spaces</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>                         <span class="c1"># before the loop: the count starts at 0</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s2">" "</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s2">" "</span><span class="p">:</span>             <span class="c1"># every round: add 1 to cnt if char is a space</span>
             <span class="n">cnt</span> <span class="o">=</span> <span class="n">cnt</span><span class="o">+</span><span class="mi">1</span>
-    <span class="k">return</span> <span class="n">cnt</span>
+    <span class="k">return</span> <span class="n">cnt</span>                      <span class="c1"># after the loop: return the count</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count_spaces</span><span class="p">(</span><span class="s2">"a b c"</span><span class="p">))</span>   <span class="c1"># 2</span>
 </pre></div>
 </div>
 </div>
@@ -770,11 +770,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_max</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
-    <span class="n">maximum</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>        <span class="c1"># before the loop: the first element is the largest so far</span>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">maximum</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">maximum</span><span class="p">:</span>     <span class="c1"># every round: a larger element replaces it</span>
             <span class="n">maximum</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="k">return</span> <span class="n">maximum</span>
+    <span class="k">return</span> <span class="n">maximum</span>          <span class="c1"># after the loop: return the largest</span>
 </pre></div>
 </div>
 </div>
@@ -782,11 +782,11 @@
 <div class="dropdown tip admonition">
 <p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_min</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
-    <span class="n">minimum</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">minimum</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>        <span class="c1"># before the loop: the first element is the smallest so far</span>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">minimum</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">minimum</span><span class="p">:</span>     <span class="c1"># every round: a smaller element replaces it</span>
             <span class="n">minimum</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="k">return</span> <span class="n">minimum</span>
+    <span class="k">return</span> <span class="n">minimum</span>          <span class="c1"># after the loop: return the smallest</span>
 </pre></div>
 </div>
 <p>שינינו את שם הפונקציה ואת שם המשתנה, והפכנו את כיוון ההשוואה: ‎<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">minimum</span></code>‎.</p>

@@ -1036,74 +1036,8 @@ Tests concluded, add more tests of your own below!
 <p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
 <p>נשים לב שהפונקציה מחזירה ערך לפני שבדקה את כל התנאים - אם המחרוזת אינה ריקה, הפונקציה תחזיר <code class="docutils literal notranslate"><span class="pre">True</span></code> בלי לבדוק כלל אם שאר התנאים מתקיימים.</p>
 </div>
-<ol class="arabic" start="5">
-<li><p><strong>לאתגר:</strong> שני גופים בעלי אותו קיבול חום נמצאים במגע. בכל צעד זמן <code class="docutils literal notranslate"><span class="pre">dt</span></code> עובר חום מהגוף החם לגוף הקר. הכמות שעוברת בצעד אחד, <code class="docutils literal notranslate"><span class="pre">flow</span></code>, היא ‎<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">(T1</span> <span class="pre">-</span> <span class="pre">T2)</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎. הגוף הראשון מאבד אותה והשני מקבל אותה.</p>
-<p>א. השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">step(T1,</span> <span class="pre">T2,</span> <span class="pre">k,</span> <span class="pre">dt)</span></code>‎ שמחזירה רשימה ‎<code class="docutils literal notranslate"><span class="pre">[T1_new,</span> <span class="pre">T2_new]</span></code>‎ עם הטמפרטורות החדשות. לדוגמה, ‎<code class="docutils literal notranslate"><span class="pre">step(100.0,</span> <span class="pre">20.0,</span> <span class="pre">0.25,</span> <span class="pre">1)</span></code>‎ מחזירה ‎<code class="docutils literal notranslate"><span class="pre">[80.0,</span> <span class="pre">40.0]</span></code>‎.</p>
-<p>ב. השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">simulate(T1,</span> <span class="pre">T2,</span> <span class="pre">k,</span> <span class="pre">dt,</span> <span class="pre">n)</span></code>‎ שמחזירה שתי רשימות, <code class="docutils literal notranslate"><span class="pre">history1</span></code> ו-<code class="docutils literal notranslate"><span class="pre">history2</span></code>, ובהן הטמפרטורות של כל גוף: הערך ההתחלתי, ואחריו הערך אחרי כל אחד מ-<code class="docutils literal notranslate"><span class="pre">n</span></code> הצעדים. השתמשו בלולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> ובפונקציה <code class="docutils literal notranslate"><span class="pre">step</span></code>. את שתי הרשימות מחזירים בשורה ‎<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">history1,</span> <span class="pre">history2</span></code>‎, ומקבלים אותן באותה צורה: ‎<code class="docutils literal notranslate"><span class="pre">history1,</span> <span class="pre">history2</span> <span class="pre">=</span> <span class="pre">simulate(...)</span></code>‎. מה בדיוק מוחזר כאן נראה בשבוע 6, בדף על טאפלים.</p>
-<p>ג. בדקו שהסכום ‎<code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">+</span> <span class="pre">T2</span></code>‎ נשאר 120 אחרי כל צעד.</p>
-</li>
-</ol>
-<div class="cell tag_raises-exception tag_remove-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-    <span class="c1"># delete pass and fill in your code below</span>
-    <span class="k">pass</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">simulate</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="c1"># delete pass and fill in your code below</span>
-    <span class="k">pass</span>
-
-
-<span class="n">history1</span><span class="p">,</span> <span class="n">history2</span> <span class="o">=</span> <span class="n">simulate</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">history1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">history2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title"><strong>רמז:</strong> סדר הצעדים</p>
-<ol class="arabic simple">
-<li><p>לפני הלולאה צרו את שתי הרשימות, ובכל אחת רק הערך ההתחלתי: ‎<code class="docutils literal notranslate"><span class="pre">history1</span> <span class="pre">=</span> <span class="pre">[T1]</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">history2</span> <span class="pre">=</span> <span class="pre">[T2]</span></code>‎.</p></li>
-<li><p>הלולאה רצה <code class="docutils literal notranslate"><span class="pre">n</span></code> פעמים: ‎<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n):</span></code>‎.</p></li>
-<li><p>בכל סיבוב קראו ל-<code class="docutils literal notranslate"><span class="pre">step</span></code> עם הערכים האחרונים, ‎<code class="docutils literal notranslate"><span class="pre">history1[-1]</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">history2[-1]</span></code>‎, ושמרו את הרשימה שחזרה במשתנה.</p></li>
-<li><p>הוסיפו את שני הערכים החדשים לרשימות בעזרת <code class="docutils literal notranslate"><span class="pre">append</span></code>.</p></li>
-<li><p>אחרי הלולאה, ולא בתוכה, החזירו את שתי הרשימות.</p></li>
-</ol>
-</div>
-<div class="dropdown tip admonition">
-<p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-    <span class="n">flow</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">T1</span> <span class="o">-</span> <span class="n">flow</span><span class="p">,</span> <span class="n">T2</span> <span class="o">+</span> <span class="n">flow</span><span class="p">]</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">simulate</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">history1</span> <span class="o">=</span> <span class="p">[</span><span class="n">T1</span><span class="p">]</span>
-    <span class="n">history2</span> <span class="o">=</span> <span class="p">[</span><span class="n">T2</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">T</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span><span class="n">history1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">history2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
-        <span class="n">history1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="n">history2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">history1</span><span class="p">,</span> <span class="n">history2</span>
-
-
-<span class="n">history1</span><span class="p">,</span> <span class="n">history2</span> <span class="o">=</span> <span class="n">simulate</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">history1</span><span class="p">)</span>   <span class="c1"># [100.0, 80.0, 70.0, 65.0]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">history2</span><span class="p">)</span>   <span class="c1"># [20.0, 40.0, 50.0, 55.0]</span>
-</pre></div>
-</div>
-<p>לבדיקת הסעיף האחרון אפשר להדפיס ‎<code class="docutils literal notranslate"><span class="pre">history1[i]</span> <span class="pre">+</span> <span class="pre">history2[i]</span></code>‎ עבור כל <code class="docutils literal notranslate"><span class="pre">i</span></code>: הסכום תמיד 120.</p>
-<p>שימו לב לטעות נפוצה בתוך <code class="docutils literal notranslate"><span class="pre">step</span></code>: אם כותבים</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">T1</span> <span class="o">=</span> <span class="n">T1</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-<span class="n">T2</span> <span class="o">=</span> <span class="n">T2</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
-</pre></div>
-</div>
-<p>השורה השנייה משתמשת ב-<code class="docutils literal notranslate"><span class="pre">T1</span></code> אחרי שכבר עודכן, והפונקציה מחזירה ‎<code class="docutils literal notranslate"><span class="pre">[80.0,</span> <span class="pre">35.0]</span></code>‎. הסכום הוא 115 ולא 120, כלומר החום שיצא מהגוף הראשון גדול מהחום שנכנס לשני. בכל צעד צריך לחשב את שני הערכים החדשים מהערכים <strong>הישנים</strong>, ולכן מחשבים קודם את <code class="docutils literal notranslate"><span class="pre">flow</span></code>.</p>
-</div>
-<ol class="arabic simple" start="6">
-<li><p><strong>מה יודפס?</strong> אותם שני גופים כמו בתרגיל 5, עם הטמפרטורות 100 ו-20 מעלות ו-‎<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.25</span></code>‎. הקוד הבא מבצע שלושה צעדים ושומר את הטמפרטורות של הגוף החם ברשימה <code class="docutils literal notranslate"><span class="pre">history</span></code>. ענו לפני שאתם מריצים:</p></li>
+<ol class="arabic simple" start="5">
+<li><p><strong>מה יודפס?</strong> שני גופים בעלי אותו קיבול חום נמצאים במגע. בכל צעד זמן <code class="docutils literal notranslate"><span class="pre">dt</span></code> עובר חום מהגוף החם לגוף הקר. הכמות שעוברת בצעד אחד, <code class="docutils literal notranslate"><span class="pre">flow</span></code>, היא ‎<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">(T1</span> <span class="pre">-</span> <span class="pre">T2)</span> <span class="pre">*</span> <span class="pre">dt</span></code>‎. הגוף הראשון מאבד אותה והשני מקבל אותה. בקוד הבא הטמפרטורות הן 100 ו-20 מעלות ו-‎<code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.25</span></code>‎. הקוד מבצע שלושה צעדים ושומר את הטמפרטורות של הגוף החם ברשימה <code class="docutils literal notranslate"><span class="pre">history</span></code>. ענו לפני שאתם מריצים:</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">T1</span> <span class="o">=</span> <span class="mf">100.0</span>
 <span class="n">T2</span> <span class="o">=</span> <span class="mf">20.0</span>
@@ -1120,8 +1054,8 @@ Tests concluded, add more tests of your own below!
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="QZuqRMTEehzR" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#QZuqRMTEehzR {
+<div class="output text_html"><div id="NbZNFxVQnJlP" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#NbZNFxVQnJlP {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1344,7 +1278,7 @@ Tests concluded, add more tests of your own below!
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsQZuqRMTEehzR=[{"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 4, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05da \u05d4\u05d4\u05ea\u05d7\u05dc\u05ea\u05d9 \u05d5\u05e2\u05d5\u05d3 \u05e2\u05e8\u05da \u05d0\u05d7\u05d3 \u05d0\u05d7\u05e8\u05d9 \u05db\u05dc \u05d0\u05d7\u05d3 \u05de\u05e9\u05dc\u05d5\u05e9\u05ea \u05d4\u05e6\u05e2\u05d3\u05d9\u05dd."}, {"type": "default", "feedback": "\u05e9\u05d9\u05de\u05d5 \u05dc\u05d1 \u05e9-history \u05de\u05ea\u05d7\u05d9\u05dc\u05d4 \u05e2\u05dd \u05d0\u05d9\u05d1\u05e8 \u05d0\u05d7\u05d3, \u05d4\u05e2\u05e8\u05da \u05d4\u05d4\u05ea\u05d7\u05dc\u05ea\u05d9, \u05dc\u05e4\u05e0\u05d9 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4?", "type": "many_choice", "answers": [{"answer": "65.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d4\u05e4\u05e8\u05e9 \u05e7\u05d8\u05df \u05e4\u05d9 2 \u05d1\u05db\u05dc \u05e6\u05e2\u05d3: 100.0, 80.0, 70.0, 65.0."}, {"answer": "70.0", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05e2\u05e8\u05da \u05d0\u05d7\u05e8\u05d9 \u05e9\u05e0\u05d9 \u05e6\u05e2\u05d3\u05d9\u05dd. \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05de\u05d1\u05e6\u05e2\u05ea \u05e9\u05dc\u05d5\u05e9\u05d4."}, {"answer": "80.0", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05e2\u05e8\u05da \u05d0\u05d7\u05e8\u05d9 \u05e6\u05e2\u05d3 \u05d0\u05d7\u05d3. \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05de\u05d1\u05e6\u05e2\u05ea \u05e9\u05dc\u05d5\u05e9\u05d4."}, {"answer": "60.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d1\u05db\u05dc \u05e6\u05e2\u05d3 \u05e2\u05d5\u05d1\u05e8 \u05e8\u05d1\u05e2 \u05de\u05d4\u05d4\u05e4\u05e8\u05e9, \u05d5\u05d4\u05d4\u05e4\u05e8\u05e9 \u05e2\u05e6\u05de\u05d5 \u05e7\u05d8\u05df."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "120.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05de\u05d4 \u05e9\u05d4\u05d2\u05d5\u05e3 \u05d4\u05d7\u05dd \u05de\u05d0\u05d1\u05d3 \u05d4\u05d2\u05d5\u05e3 \u05d4\u05e7\u05e8 \u05de\u05e7\u05d1\u05dc, \u05d5\u05dc\u05db\u05df \u05d4\u05e1\u05db\u05d5\u05dd \u05dc\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4. T1 \u05d5-T2 \u05d4\u05dd float, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05e1\u05db\u05d5\u05dd."}, {"answer": "120", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. T1 \u05d5-T2 \u05d4\u05ea\u05d7\u05d9\u05dc\u05d5 \u05db-100.0 \u05d5-20.0, \u05e9\u05d4\u05dd float, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05e1\u05db\u05d5\u05dd \u05de\u05d5\u05d3\u05e4\u05e1 \u05db-float."}, {"answer": "115.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05db\u05d0\u05df flow \u05de\u05d7\u05d5\u05e9\u05d1 \u05e4\u05e2\u05dd \u05d0\u05d7\u05ea \u05d5\u05de\u05e9\u05de\u05e9 \u05dc\u05e9\u05e0\u05d9 \u05d4\u05e2\u05d3\u05db\u05d5\u05e0\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05d4\u05d7\u05d5\u05dd \u05e0\u05e9\u05de\u05e8."}, {"answer": "130.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05e0\u05e1\u05d5 \u05dc\u05e2\u05e7\u05d5\u05d1 \u05d0\u05d7\u05e8\u05d9 \u05e6\u05e2\u05d3 \u05d0\u05d7\u05d3: \u05db\u05de\u05d4 \u05de\u05d0\u05d1\u05d3 T1 \u05d5\u05db\u05de\u05d4 \u05de\u05e7\u05d1\u05dc T2?"}]}];
+</style></div><script type="application/javascript">var questionsNbZNFxVQnJlP=[{"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 4, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05da \u05d4\u05d4\u05ea\u05d7\u05dc\u05ea\u05d9 \u05d5\u05e2\u05d5\u05d3 \u05e2\u05e8\u05da \u05d0\u05d7\u05d3 \u05d0\u05d7\u05e8\u05d9 \u05db\u05dc \u05d0\u05d7\u05d3 \u05de\u05e9\u05dc\u05d5\u05e9\u05ea \u05d4\u05e6\u05e2\u05d3\u05d9\u05dd."}, {"type": "default", "feedback": "\u05e9\u05d9\u05de\u05d5 \u05dc\u05d1 \u05e9-history \u05de\u05ea\u05d7\u05d9\u05dc\u05d4 \u05e2\u05dd \u05d0\u05d9\u05d1\u05e8 \u05d0\u05d7\u05d3, \u05d4\u05e2\u05e8\u05da \u05d4\u05d4\u05ea\u05d7\u05dc\u05ea\u05d9, \u05dc\u05e4\u05e0\u05d9 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4?", "type": "many_choice", "answers": [{"answer": "65.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d4\u05e4\u05e8\u05e9 \u05e7\u05d8\u05df \u05e4\u05d9 2 \u05d1\u05db\u05dc \u05e6\u05e2\u05d3: 100.0, 80.0, 70.0, 65.0."}, {"answer": "70.0", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05e2\u05e8\u05da \u05d0\u05d7\u05e8\u05d9 \u05e9\u05e0\u05d9 \u05e6\u05e2\u05d3\u05d9\u05dd. \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05de\u05d1\u05e6\u05e2\u05ea \u05e9\u05dc\u05d5\u05e9\u05d4."}, {"answer": "80.0", "correct": false, "feedback": "\u05d6\u05d4 \u05d4\u05e2\u05e8\u05da \u05d0\u05d7\u05e8\u05d9 \u05e6\u05e2\u05d3 \u05d0\u05d7\u05d3. \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05de\u05d1\u05e6\u05e2\u05ea \u05e9\u05dc\u05d5\u05e9\u05d4."}, {"answer": "60.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d1\u05db\u05dc \u05e6\u05e2\u05d3 \u05e2\u05d5\u05d1\u05e8 \u05e8\u05d1\u05e2 \u05de\u05d4\u05d4\u05e4\u05e8\u05e9, \u05d5\u05d4\u05d4\u05e4\u05e8\u05e9 \u05e2\u05e6\u05de\u05d5 \u05e7\u05d8\u05df."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9\u05ea?", "type": "many_choice", "answers": [{"answer": "120.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05de\u05d4 \u05e9\u05d4\u05d2\u05d5\u05e3 \u05d4\u05d7\u05dd \u05de\u05d0\u05d1\u05d3 \u05d4\u05d2\u05d5\u05e3 \u05d4\u05e7\u05e8 \u05de\u05e7\u05d1\u05dc, \u05d5\u05dc\u05db\u05df \u05d4\u05e1\u05db\u05d5\u05dd \u05dc\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4. T1 \u05d5-T2 \u05d4\u05dd float, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05e1\u05db\u05d5\u05dd."}, {"answer": "120", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. T1 \u05d5-T2 \u05d4\u05ea\u05d7\u05d9\u05dc\u05d5 \u05db-100.0 \u05d5-20.0, \u05e9\u05d4\u05dd float, \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05e1\u05db\u05d5\u05dd \u05de\u05d5\u05d3\u05e4\u05e1 \u05db-float."}, {"answer": "115.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05db\u05d0\u05df flow \u05de\u05d7\u05d5\u05e9\u05d1 \u05e4\u05e2\u05dd \u05d0\u05d7\u05ea \u05d5\u05de\u05e9\u05de\u05e9 \u05dc\u05e9\u05e0\u05d9 \u05d4\u05e2\u05d3\u05db\u05d5\u05e0\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05d4\u05d7\u05d5\u05dd \u05e0\u05e9\u05de\u05e8."}, {"answer": "130.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05e0\u05e1\u05d5 \u05dc\u05e2\u05e7\u05d5\u05d1 \u05d0\u05d7\u05e8\u05d9 \u05e6\u05e2\u05d3 \u05d0\u05d7\u05d3: \u05db\u05de\u05d4 \u05de\u05d0\u05d1\u05d3 T1 \u05d5\u05db\u05de\u05d4 \u05de\u05e7\u05d1\u05dc T2?"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2406,8 +2340,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("QZuqRMTEehzR")) {
-    show_questions(questionsQZuqRMTEehzR, QZuqRMTEehzR);
+  if (document.getElementById("NbZNFxVQnJlP")) {
+    show_questions(questionsNbZNFxVQnJlP, NbZNFxVQnJlP);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2419,8 +2353,74 @@ function try_show() {
 }
 </script></div>
 </div>
+<ol class="arabic" start="6">
+<li><p><strong>לאתגר:</strong> עכשיו כתבו את החישוב של תרגיל 5 כפונקציות, ושמרו את הטמפרטורות של שני הגופים.</p>
+<p>א. השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">step(T1,</span> <span class="pre">T2,</span> <span class="pre">k,</span> <span class="pre">dt)</span></code>‎ שמחזירה רשימה ‎<code class="docutils literal notranslate"><span class="pre">[T1_new,</span> <span class="pre">T2_new]</span></code>‎ עם הטמפרטורות החדשות. לדוגמה, ‎<code class="docutils literal notranslate"><span class="pre">step(100.0,</span> <span class="pre">20.0,</span> <span class="pre">0.25,</span> <span class="pre">1)</span></code>‎ מחזירה ‎<code class="docutils literal notranslate"><span class="pre">[80.0,</span> <span class="pre">40.0]</span></code>‎.</p>
+<p>ב. השלימו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">simulate(T1,</span> <span class="pre">T2,</span> <span class="pre">k,</span> <span class="pre">dt,</span> <span class="pre">n)</span></code>‎ שמחזירה שתי רשימות, <code class="docutils literal notranslate"><span class="pre">history1</span></code> ו-<code class="docutils literal notranslate"><span class="pre">history2</span></code>, ובהן הטמפרטורות של כל גוף: הערך ההתחלתי, ואחריו הערך אחרי כל אחד מ-<code class="docutils literal notranslate"><span class="pre">n</span></code> הצעדים. השתמשו בלולאת <code class="docutils literal notranslate"><span class="pre">for</span></code> ובפונקציה <code class="docutils literal notranslate"><span class="pre">step</span></code>. את שתי הרשימות מחזירים בשורה ‎<code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">history1,</span> <span class="pre">history2</span></code>‎, ומקבלים אותן באותה צורה: ‎<code class="docutils literal notranslate"><span class="pre">history1,</span> <span class="pre">history2</span> <span class="pre">=</span> <span class="pre">simulate(...)</span></code>‎.</p>
+<p>ג. בדקו שהסכום ‎<code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">+</span> <span class="pre">T2</span></code>‎ נשאר 120 אחרי כל צעד.</p>
+</li>
+</ol>
+<div class="cell tag_raises-exception tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="c1"># delete pass and fill in your code below</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="c1"># delete pass and fill in your code below</span>
+    <span class="k">pass</span>
+
+
+<span class="n">history1</span><span class="p">,</span> <span class="n">history2</span> <span class="o">=</span> <span class="n">simulate</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">history1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">history2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"><strong>רמז:</strong> סדר הצעדים</p>
+<ol class="arabic simple">
+<li><p>לפני הלולאה צרו את שתי הרשימות, ובכל אחת רק הערך ההתחלתי: ‎<code class="docutils literal notranslate"><span class="pre">history1</span> <span class="pre">=</span> <span class="pre">[T1]</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">history2</span> <span class="pre">=</span> <span class="pre">[T2]</span></code>‎.</p></li>
+<li><p>הלולאה רצה <code class="docutils literal notranslate"><span class="pre">n</span></code> פעמים: ‎<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(n):</span></code>‎.</p></li>
+<li><p>בכל סיבוב קראו ל-<code class="docutils literal notranslate"><span class="pre">step</span></code> עם הערכים האחרונים, ‎<code class="docutils literal notranslate"><span class="pre">history1[-1]</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">history2[-1]</span></code>‎, ושמרו את הרשימה שחזרה במשתנה.</p></li>
+<li><p>הוסיפו את שני הערכים החדשים לרשימות בעזרת <code class="docutils literal notranslate"><span class="pre">append</span></code>.</p></li>
+<li><p>אחרי הלולאה, ולא בתוכה, החזירו את שתי הרשימות.</p></li>
+</ol>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="n">flow</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">T1</span> <span class="o">-</span> <span class="n">flow</span><span class="p">,</span> <span class="n">T2</span> <span class="o">+</span> <span class="n">flow</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">history1</span> <span class="o">=</span> <span class="p">[</span><span class="n">T1</span><span class="p">]</span>                 <span class="c1"># before the loop: the starting values</span>
+    <span class="n">history2</span> <span class="o">=</span> <span class="p">[</span><span class="n">T2</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span><span class="n">history1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">history2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">k</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>   <span class="c1"># every round: one step from the last values</span>
+        <span class="n">history1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">history2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">history1</span><span class="p">,</span> <span class="n">history2</span>       <span class="c1"># after the loop: return both lists</span>
+
+
+<span class="n">history1</span><span class="p">,</span> <span class="n">history2</span> <span class="o">=</span> <span class="n">simulate</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">history1</span><span class="p">)</span>   <span class="c1"># [100.0, 80.0, 70.0, 65.0]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">history2</span><span class="p">)</span>   <span class="c1"># [20.0, 40.0, 50.0, 55.0]</span>
+</pre></div>
+</div>
+<p>לבדיקת הסעיף האחרון אפשר להדפיס ‎<code class="docutils literal notranslate"><span class="pre">history1[i]</span> <span class="pre">+</span> <span class="pre">history2[i]</span></code>‎ עבור כל <code class="docutils literal notranslate"><span class="pre">i</span></code>: הסכום תמיד 120.</p>
+<p>שימו לב לטעות נפוצה בתוך <code class="docutils literal notranslate"><span class="pre">step</span></code>: אם כותבים</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">T1</span> <span class="o">=</span> <span class="n">T1</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+<span class="n">T2</span> <span class="o">=</span> <span class="n">T2</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="p">(</span><span class="n">T1</span> <span class="o">-</span> <span class="n">T2</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span>
+</pre></div>
+</div>
+<p>השורה השנייה משתמשת ב-<code class="docutils literal notranslate"><span class="pre">T1</span></code> אחרי שכבר עודכן, והפונקציה מחזירה ‎<code class="docutils literal notranslate"><span class="pre">[80.0,</span> <span class="pre">35.0]</span></code>‎. הסכום הוא 115 ולא 120, כלומר החום שיצא מהגוף הראשון גדול מהחום שנכנס לשני. בכל צעד צריך לחשב את שני הערכים החדשים מהערכים <strong>הישנים</strong>, ולכן מחשבים קודם את <code class="docutils literal notranslate"><span class="pre">flow</span></code>.</p>
+</div>
 <ol class="arabic simple" start="7">
-<li><p><strong>מצאו את 3 השגיאות.</strong> סטודנט כתב את <code class="docutils literal notranslate"><span class="pre">simulate</span></code> מתרגיל 5 בלי הפונקציה <code class="docutils literal notranslate"><span class="pre">step</span></code>. בהרצה שבתחתית החלונית הוא ציפה לקבל את הפלט:</p></li>
+<li><p><strong>מצאו את 3 השגיאות.</strong> סטודנט כתב את <code class="docutils literal notranslate"><span class="pre">simulate</span></code> מתרגיל 6 בלי הפונקציה <code class="docutils literal notranslate"><span class="pre">step</span></code>. בהרצה שבתחתית החלונית הוא ציפה לקבל את הפלט:</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">,</span> <span class="mf">70.0</span><span class="p">,</span> <span class="mf">65.0</span><span class="p">]</span>
 <span class="p">[</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">40.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="mf">55.0</span><span class="p">]</span>

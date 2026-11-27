@@ -632,8 +632,9 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.3.4. בחנו את עצמכם: מילון ופונקציה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.3.5. דוגמא מסכמת: מונה תדירות תווים</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.3.5.1. מונה תדירות תווים משופר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.3.5. כתבו בעצמכם: כיול המדחומים בכל המקומות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.3.6. דוגמא מסכמת: מונה תדירות תווים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.3.6.1. מונה תדירות תווים משופר</a></li>
 </ul>
 </li>
 </ul>
@@ -1039,7 +1040,7 @@ Adam : 70
 </section>
 <section id="id7">
 <h2><span class="section-number">6.3.4. </span>בחנו את עצמכם: מילון ופונקציה<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
-<p>נחזור לגוף המתקרר משבוע 5. הפעם נשמור במילון את טמפרטורת החדר במקומות שונים. הפונקציה <code class="docutils literal notranslate"><span class="pre">warm_up</span></code> מעלה את הטמפרטורה של מקום אחד:</p>
+<p>נשמור במילון את הטמפרטורה במקומות שונים. הפונקציה <code class="docutils literal notranslate"><span class="pre">warm_up</span></code> מעלה את הטמפרטורה של מקום אחד:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">warm_up</span><span class="p">(</span><span class="n">rooms</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">dT</span><span class="p">):</span>
     <span class="n">rooms</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">rooms</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+</span> <span class="n">dT</span>
 
@@ -1056,8 +1057,8 @@ Adam : 70
 <p>ענו על השאלות לפני שאתם מריצים את הקוד.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="fIAyGRSyGZtB" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#fIAyGRSyGZtB {
+<div class="output text_html"><div id="pMuFxevIVgnR" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#pMuFxevIVgnR {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1280,7 +1281,7 @@ Adam : 70
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsfIAyGRSyGZtB=[{"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 14.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! T \u05e7\u05d9\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e1\u05e4\u05e8 4.0 \u05dc\u05e4\u05e0\u05d9 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4. \u05de\u05e1\u05e4\u05e8 \u05d4\u05d5\u05d0 immutable, \u05d5\u05dc\u05db\u05df \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1\u05de\u05d9\u05dc\u05d5\u05df \u05dc\u05d0 \u05d4\u05e9\u05e4\u05d9\u05e2 \u05e2\u05dc T."}, {"type": "default", "feedback": "T \u05e7\u05d9\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e1\u05e4\u05e8 4.0 \u05dc\u05e4\u05e0\u05d9 \u05e9\u05d4\u05de\u05d9\u05dc\u05d5\u05df \u05d4\u05e9\u05ea\u05e0\u05d4, \u05d5\u05d0\u05d7\u05e8 \u05db\u05da \u05e0\u05d5\u05e1\u05e4\u05d5 \u05dc\u05d5 10.0."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 6.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05de\u05d9\u05dc\u05d5\u05df \u05d4\u05d5\u05d0 mutable. \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05db\u05ea\u05d1\u05d4 \u05dc\u05ea\u05d5\u05da \u05d4\u05de\u05d9\u05dc\u05d5\u05df \u05e9\u05e7\u05d9\u05d1\u05dc\u05d4, \u05d5\u05d6\u05d4 \u05d0\u05d5\u05ea\u05d5 \u05de\u05d9\u05dc\u05d5\u05df \u05e9\u05de\u05d7\u05d5\u05e5 \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4, \u05d5\u05dc\u05db\u05df \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05d2\u05dd \u05d1\u05dc\u05d9 return."}, {"type": "default", "feedback": "\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05d9\u05d1\u05dc\u05d4 \u05d0\u05ea \u05d4\u05de\u05d9\u05dc\u05d5\u05df \u05e2\u05e6\u05de\u05d5 \u05d5\u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7 \u05e9\u05dc\u05d5, \u05d5\u05dc\u05db\u05df \u05d4\u05d4\u05e9\u05de\u05d4 \u05e9\u05d1\u05ea\u05d5\u05da \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e9\u05d9\u05e0\u05ea\u05d4 \u05d0\u05d5\u05ea\u05d5."}]}, {"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05ea\u05d3\u05e4\u05d9\u05e1 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05dc \u05de\u05d9\u05dc\u05d5\u05df \u05e2\u05d5\u05d1\u05e8\u05ea \u05e2\u05dc \u05d4\u05de\u05e4\u05ea\u05d7\u05d5\u05ea \u05e9\u05dc\u05d5, \u05d5\u05d9\u05e9 \u05d1\u05de\u05d9\u05dc\u05d5\u05df \u05e9\u05e0\u05d9 \u05de\u05e4\u05ea\u05d7\u05d5\u05ea."}, {"type": "default", "feedback": "\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05d1\u05e8\u05ea \u05e4\u05e2\u05dd \u05d0\u05d7\u05ea \u05e2\u05dc \u05db\u05dc \u05de\u05e4\u05ea\u05d7 \u05d1\u05de\u05d9\u05dc\u05d5\u05df. \u05db\u05de\u05d4 \u05de\u05e4\u05ea\u05d7\u05d5\u05ea \u05d9\u05e9 \u05d1\u05d5?"}]}];
+</style></div><script type="application/javascript">var questionspMuFxevIVgnR=[{"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 14.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! T \u05e7\u05d9\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e1\u05e4\u05e8 4.0 \u05dc\u05e4\u05e0\u05d9 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4. \u05de\u05e1\u05e4\u05e8 \u05d4\u05d5\u05d0 immutable, \u05d5\u05dc\u05db\u05df \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1\u05de\u05d9\u05dc\u05d5\u05df \u05dc\u05d0 \u05d4\u05e9\u05e4\u05d9\u05e2 \u05e2\u05dc T."}, {"type": "default", "feedback": "T \u05e7\u05d9\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e1\u05e4\u05e8 4.0 \u05dc\u05e4\u05e0\u05d9 \u05e9\u05d4\u05de\u05d9\u05dc\u05d5\u05df \u05d4\u05e9\u05ea\u05e0\u05d4, \u05d5\u05d0\u05d7\u05e8 \u05db\u05da \u05e0\u05d5\u05e1\u05e4\u05d5 \u05dc\u05d5 10.0."}]}, {"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 6.0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05de\u05d9\u05dc\u05d5\u05df \u05d4\u05d5\u05d0 mutable. \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05db\u05ea\u05d1\u05d4 \u05dc\u05ea\u05d5\u05da \u05d4\u05de\u05d9\u05dc\u05d5\u05df \u05e9\u05e7\u05d9\u05d1\u05dc\u05d4, \u05d5\u05d6\u05d4 \u05d0\u05d5\u05ea\u05d5 \u05de\u05d9\u05dc\u05d5\u05df \u05e9\u05de\u05d7\u05d5\u05e5 \u05dc\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4, \u05d5\u05dc\u05db\u05df \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05e0\u05e9\u05d0\u05e8 \u05d2\u05dd \u05d1\u05dc\u05d9 return."}, {"type": "default", "feedback": "\u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e7\u05d9\u05d1\u05dc\u05d4 \u05d0\u05ea \u05d4\u05de\u05d9\u05dc\u05d5\u05df \u05e2\u05e6\u05de\u05d5 \u05d5\u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7 \u05e9\u05dc\u05d5, \u05d5\u05dc\u05db\u05df \u05d4\u05d4\u05e9\u05de\u05d4 \u05e9\u05d1\u05ea\u05d5\u05da \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 \u05e9\u05d9\u05e0\u05ea\u05d4 \u05d0\u05d5\u05ea\u05d5."}]}, {"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05ea\u05d3\u05e4\u05d9\u05e1 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05dc \u05de\u05d9\u05dc\u05d5\u05df \u05e2\u05d5\u05d1\u05e8\u05ea \u05e2\u05dc \u05d4\u05de\u05e4\u05ea\u05d7\u05d5\u05ea \u05e9\u05dc\u05d5, \u05d5\u05d9\u05e9 \u05d1\u05de\u05d9\u05dc\u05d5\u05df \u05e9\u05e0\u05d9 \u05de\u05e4\u05ea\u05d7\u05d5\u05ea."}, {"type": "default", "feedback": "\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05d1\u05e8\u05ea \u05e4\u05e2\u05dd \u05d0\u05d7\u05ea \u05e2\u05dc \u05db\u05dc \u05de\u05e4\u05ea\u05d7 \u05d1\u05de\u05d9\u05dc\u05d5\u05df. \u05db\u05de\u05d4 \u05de\u05e4\u05ea\u05d7\u05d5\u05ea \u05d9\u05e9 \u05d1\u05d5?"}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2342,8 +2343,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("fIAyGRSyGZtB")) {
-    show_questions(questionsfIAyGRSyGZtB, fIAyGRSyGZtB);
+  if (document.getElementById("pMuFxevIVgnR")) {
+    show_questions(questionspMuFxevIVgnR, pMuFxevIVgnR);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2357,7 +2358,39 @@ function try_show() {
 </div>
 </section>
 <section id="id8">
-<h2><span class="section-number">6.3.5. </span>דוגמא מסכמת: מונה תדירות תווים<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3.5. </span>כתבו בעצמכם: כיול המדחומים בכל המקומות<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p>גם המדחומים שבמילון <code class="docutils literal notranslate"><span class="pre">rooms</span></code> מראים 0.5 מעלות פחות מדי. כתבו את הפונקציה ‎<code class="docutils literal notranslate"><span class="pre">calibrate_rooms</span></code>‎, שמוסיפה <code class="docutils literal notranslate"><span class="pre">dT</span></code> לטמפרטורה של <strong>כל</strong> מקום במילון. היא שונה מ-<code class="docutils literal notranslate"><span class="pre">warm_up</span></code> שלמעלה בדבר אחד: היא מטפלת בכל המפתחות ולא במפתח אחד. הפונקציה משנה את המילון עצמו ולא מחזירה ערך.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calibrate_rooms</span><span class="p">(</span><span class="n">rooms</span><span class="p">,</span> <span class="n">dT</span><span class="p">):</span>
+    <span class="c1"># delete pass and fill in your code below</span>
+    <span class="k">pass</span>
+
+
+<span class="n">rooms</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"lab"</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">"fridge"</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">}</span>
+<span class="n">calibrate_rooms</span><span class="p">(</span><span class="n">rooms</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rooms</span><span class="p">)</span>   <span class="c1"># should print {'lab': 20.5, 'fridge': 4.5}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title"><strong>לחצו כאן כדי לצפות בפתרון</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calibrate_rooms</span><span class="p">(</span><span class="n">rooms</span><span class="p">,</span> <span class="n">dT</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">rooms</span><span class="p">:</span>
+        <span class="n">rooms</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">rooms</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+</span> <span class="n">dT</span>
+
+
+<span class="n">rooms</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"lab"</span><span class="p">:</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">"fridge"</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">}</span>
+<span class="n">calibrate_rooms</span><span class="p">(</span><span class="n">rooms</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rooms</span><span class="p">)</span>   <span class="c1"># {'lab': 20.5, 'fridge': 4.5}</span>
+</pre></div>
+</div>
+<p>לולאה על מילון עוברת על המפתחות שלו, ובעזרת כל מפתח כותבים ערך חדש. כמו ב-<code class="docutils literal notranslate"><span class="pre">warm_up</span></code>, הפונקציה כותבת לתוך המילון שקיבלה, ולכן השינוי נשאר גם בלי <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+</div>
+</section>
+<section id="id9">
+<h2><span class="section-number">6.3.6. </span>דוגמא מסכמת: מונה תדירות תווים<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <p>בדוגמה זו נתרגל את המתודות שלמדנו על שימוש מעניין של מילון.</p>
 <p>ממשו את הפונקציה <code class="docutils literal notranslate"><span class="pre">get_char_count</span></code> אשר מקבלת מחרוזת, ומחזירה מילון המקשר בין אות לכמות ההופעות שלה במחרוזת.</p>
 <div class="cell docutils container">
@@ -2409,8 +2442,8 @@ function try_show() {
 </pre></div>
 </div>
 </div>
-<section id="id9">
-<h3><span class="section-number">6.3.5.1. </span>מונה תדירות תווים משופר<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<section id="id10">
+<h3><span class="section-number">6.3.6.1. </span>מונה תדירות תווים משופר<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>נסו לממש את כל תוכן הפונקציה ב4 שורות קוד בלבד.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title"><strong>רמז</strong></p>
@@ -2547,8 +2580,9 @@ function try_show() {
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.3.4. בחנו את עצמכם: מילון ופונקציה</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.3.5. דוגמא מסכמת: מונה תדירות תווים</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.3.5.1. מונה תדירות תווים משופר</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.3.5. כתבו בעצמכם: כיול המדחומים בכל המקומות</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.3.6. דוגמא מסכמת: מונה תדירות תווים</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.3.6.1. מונה תדירות תווים משופר</a></li>
 </ul>
 </li>
 </ul>
