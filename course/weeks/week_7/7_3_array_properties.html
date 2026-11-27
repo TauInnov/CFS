@@ -261,17 +261,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_2_built-in-functions-in-list.html">3.3. פונקציות מובנות לרשימות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_3_list-methods.html">3.4. מתודות של רשימות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_4_nested_lists.html">3.5. רשימות מקוננות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_5_list-examples.html">3.6. דוגמאות מעשיות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_5_list-examples.html">3.6. תרגול מסכם: רשימות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/5_0_intro-loops.html">4.1. מבוא ללולאות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_0_for_loops.html">4.2. לולאות for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_1_ranges-and-for.html">4.3. range ולולאות for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_2_for-examples.html">4.4. דוגמאות ל־for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_2_for-examples.html">4.4. תרגול מסכם: לולאות for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_3_for-summary.html">4.5. סיכום לולאות for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_0_while_loops.html">4.6. לולאות while</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_1_while-examples.html">4.7. דוגמאות ל־while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_1_while-examples.html">4.7. תרגול מסכם: לולאות while</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_0_while_vs_for.html">4.8. while לעומת for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_1_break_and_continue.html">4.9. break ו־continue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_2_nested_loops.html">4.10. לולאות מקוננות</a></li>
@@ -655,6 +655,7 @@
 <p>נבנה מערך דו-ממדי: שורה לכל זווית שיגור, עמודה לכל נקודת זמן. הגובה נתון על ידי:</p>
 <div class="math notranslate nohighlight">
 \[y(t) = v_0 \sin(\theta)\, t - \tfrac{1}{2} g t^2\]</div>
+<p>בקוד, ‎<code class="docutils literal notranslate"><span class="pre">np.radians</span></code>‎ ממירה את הזוויות ממעלות לרדיאנים, ו-‎<code class="docutils literal notranslate"><span class="pre">np.sin</span></code>‎ מחשבת את הסינוס של כל איבר (שתיהן מוסברות בסעיף 7.6). הסימון ‎<code class="docutils literal notranslate"><span class="pre">[:,</span> <span class="pre">None]</span></code>‎ הופך את מערך הזוויות לעמודה, כך שכל זווית מקבלת שורה משלה במערך התוצאה.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -693,7 +694,7 @@ dtype: float64
 </section>
 <section id="id2">
 <h2><span class="section-number">7.3.2. </span>נסו בעצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>בתא הבא אותה נוסחה, אבל עם שתי זוויות בלבד, <span class="math notranslate nohighlight">\(0°\)</span> ו-<span class="math notranslate nohighlight">\(90°\)</span>, שלושה זמנים, ומספרים נוחים: <span class="math notranslate nohighlight">\(v_0 = 10\)</span> ו-<span class="math notranslate nohighlight">\(g = 10\)</span>. כל שורה של ‎<code class="docutils literal notranslate"><span class="pre">y2</span></code>‎ שייכת לזווית אחת וכל עמודה לזמן אחד. <strong>לפני שמריצים</strong>: מה תדפיס השורה ‎<code class="docutils literal notranslate"><span class="pre">print(y2[1])</span></code>‎? חשבו בעזרת הנוסחה, ורק אז הריצו.</p>
+<p>בתא הבא אותה נוסחה, אבל עם שתי זוויות בלבד, <span class="math notranslate nohighlight">\(0°\)</span> ו-<span class="math notranslate nohighlight">\(90°\)</span>, שלושה זמנים, ומספרים נוחים: <span class="math notranslate nohighlight">\(v_0 = 10\)</span> ו-<span class="math notranslate nohighlight">\(g = 10\)</span>. כל שורה של ‎<code class="docutils literal notranslate"><span class="pre">y2</span></code>‎ שייכת לזווית אחת (‎<code class="docutils literal notranslate"><span class="pre">y2[1]</span></code>‎ היא השורה של הזווית השנייה) וכל עמודה לזמן אחד. <strong>לפני שמריצים</strong>: מה תדפיס השורה ‎<code class="docutils literal notranslate"><span class="pre">print(y2[1])</span></code>‎? חשבו בעזרת הנוסחה, ורק אז הריצו.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">angles_deg2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">])</span>                 <span class="c1"># launch angles (degrees)</span>
@@ -749,8 +750,8 @@ dtype: float64
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="dVuZiMLzhHKR" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#dVuZiMLzhHKR {
+<div class="output text_html"><div id="UwqnCowmbUPO" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#UwqnCowmbUPO {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -973,7 +974,7 @@ dtype: float64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsdVuZiMLzhHKR=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05de\u05e2\u05e8\u05da \u05e0\u05d5\u05e6\u05e8 \u05de\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd, \u05d5\u05d4\u05d4\u05e9\u05de\u05d4 \u05d7\u05d5\u05ea\u05db\u05ea \u05d0\u05ea 2.7 \u05dc-2, \u05d1\u05dc\u05d9 \u05d0\u05d6\u05d4\u05e8\u05d4."}, {"answer": "2.7", "correct": false, "feedback": "\u05dc\u05d0: \u05de\u05e2\u05e8\u05da \u05e9\u05dc \u05e9\u05dc\u05de\u05d9\u05dd \u05dc\u05d0 \u05d9\u05db\u05d5\u05dc \u05dc\u05e9\u05de\u05d5\u05e8 2.7; \u05d4\u05d8\u05d9\u05e4\u05d5\u05e1 \u05e0\u05e7\u05d1\u05e2 \u05d1\u05d9\u05e6\u05d9\u05e8\u05d4 \u05d5\u05dc\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4 \u05d1\u05d4\u05e9\u05de\u05d4."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: NumPy \u05d7\u05d5\u05ea\u05da \u05d5\u05dc\u05d0 \u05de\u05e2\u05d2\u05dc, \u05d5\u05dc\u05db\u05df 2.7 \u05d4\u05d5\u05e4\u05da \u05dc-2."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: NumPy \u05dc\u05d0 \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05e2\u05dc \u05d4\u05e9\u05de\u05d4 \u05db\u05d6\u05d5, \u05d5\u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05db\u05e0\u05d4."}]}];
+</style></div><script type="application/javascript">var questionsUwqnCowmbUPO=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05de\u05e2\u05e8\u05da \u05e0\u05d5\u05e6\u05e8 \u05de\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd, \u05d5\u05d4\u05d4\u05e9\u05de\u05d4 \u05d7\u05d5\u05ea\u05db\u05ea \u05d0\u05ea 2.7 \u05dc-2, \u05d1\u05dc\u05d9 \u05d0\u05d6\u05d4\u05e8\u05d4."}, {"answer": "2.7", "correct": false, "feedback": "\u05dc\u05d0: \u05de\u05e2\u05e8\u05da \u05e9\u05dc \u05e9\u05dc\u05de\u05d9\u05dd \u05dc\u05d0 \u05d9\u05db\u05d5\u05dc \u05dc\u05e9\u05de\u05d5\u05e8 2.7; \u05d4\u05d8\u05d9\u05e4\u05d5\u05e1 \u05e0\u05e7\u05d1\u05e2 \u05d1\u05d9\u05e6\u05d9\u05e8\u05d4 \u05d5\u05dc\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4 \u05d1\u05d4\u05e9\u05de\u05d4."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: NumPy \u05d7\u05d5\u05ea\u05da \u05d5\u05dc\u05d0 \u05de\u05e2\u05d2\u05dc, \u05d5\u05dc\u05db\u05df 2.7 \u05d4\u05d5\u05e4\u05da \u05dc-2."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: NumPy \u05dc\u05d0 \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05e2\u05dc \u05d4\u05e9\u05de\u05d4 \u05db\u05d6\u05d5, \u05d5\u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05db\u05e0\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2035,8 +2036,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("dVuZiMLzhHKR")) {
-    show_questions(questionsdVuZiMLzhHKR, dVuZiMLzhHKR);
+  if (document.getElementById("UwqnCowmbUPO")) {
+    show_questions(questionsUwqnCowmbUPO, UwqnCowmbUPO);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2059,9 +2060,9 @@ function try_show() {
 </pre></div>
 </div>
 <p>קראו את הקוד לפני שאתם מריצים אותו: באיזו שורה השגיאה, ומדוע? תקנו אותה.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t_meas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>   <span class="c1"># measurement times (s)</span>
-<span class="n">t_meas</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.5</span>                      <span class="c1"># correct one measurement</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t_meas</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">t_meas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>   <span class="c1"># measurement times (s)</span>
+<span class="linenos">2</span><span class="n">t_meas</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.5</span>                      <span class="c1"># correct one measurement</span>
+<span class="linenos">3</span><span class="nb">print</span><span class="p">(</span><span class="n">t_meas</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="dropdown tip admonition">

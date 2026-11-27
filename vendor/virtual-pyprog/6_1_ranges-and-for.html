@@ -261,17 +261,17 @@
 <li class="toctree-l2"><a class="reference internal" href="4_2_built-in-functions-in-list.html">3.3. פונקציות מובנות לרשימות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_3_list-methods.html">3.4. מתודות של רשימות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_4_nested_lists.html">3.5. רשימות מקוננות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_5_list-examples.html">3.6. דוגמאות מעשיות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_5_list-examples.html">3.6. תרגול מסכם: רשימות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../course/weeks/week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="5_0_intro-loops.html">4.1. מבוא ללולאות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6_0_for_loops.html">4.2. לולאות for</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. range ולולאות for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_2_for-examples.html">4.4. דוגמאות ל־for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_2_for-examples.html">4.4. תרגול מסכם: לולאות for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6_3_for-summary.html">4.5. סיכום לולאות for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7_0_while_loops.html">4.6. לולאות while</a></li>
-<li class="toctree-l2"><a class="reference internal" href="7_1_while-examples.html">4.7. דוגמאות ל־while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7_1_while-examples.html">4.7. תרגול מסכם: לולאות while</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_0_while_vs_for.html">4.8. while לעומת for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_1_break_and_continue.html">4.9. break ו־continue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="8_2_nested_loops.html">4.10. לולאות מקוננות</a></li>
@@ -699,7 +699,7 @@
 </div>
 <section id="for-range">
 <h3><span class="section-number">4.3.2.1. </span>לולאות <code class="docutils literal notranslate"><span class="pre">for</span></code> על <code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#for-range" title="Link to this heading">#</a></h3>
-<p>בפרק הקודם ראינו איך משתמשים ב<code class="docutils literal notranslate"><span class="pre">range</span></code> כדי לייצג סדרה של מספרים.  בדומה לאובייקטים מטיפוסים <code class="docutils literal notranslate"><span class="pre">str</span></code> ו<code class="docutils literal notranslate"><span class="pre">list</span></code>, אפשר לעבור גם על איבריו של <code class="docutils literal notranslate"><span class="pre">range</span></code> באמצעות לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code>, בדיוק כפי שעשינו עם רשימות ומחרוזות. בחלק זה נראה כיצד.</p>
+<p>למעלה ראינו איך משתמשים ב<code class="docutils literal notranslate"><span class="pre">range</span></code> כדי לייצג סדרה של מספרים.  בדומה לאובייקטים מטיפוסים <code class="docutils literal notranslate"><span class="pre">str</span></code> ו<code class="docutils literal notranslate"><span class="pre">list</span></code>, אפשר לעבור גם על איבריו של <code class="docutils literal notranslate"><span class="pre">range</span></code> באמצעות לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code>, בדיוק כפי שעשינו עם רשימות ומחרוזות. בחלק זה נראה כיצד.</p>
 <p>הדוגמה שתלווה אותנו כאן היא הבעיה הבאה: אנחנו רוצים לחשב את סכום המספרים השלמים בין 1 לבין מיליון. חלקכם אולי יודעים שיש לזה נוסחה, וגם נציג אותה בהמשך, אבל כרגע “נשכח” ממנה כדי להדגים איך משתמשים בלולאות כדי לפתור את הבעיה.</p>
 </section>
 <section id="id2">
@@ -712,7 +712,7 @@
 <p>אבל לא סביר לפעול בגישה הזו לחישוב סכום המספרים בין 1 למיליון, אלא אם ממש משעמם לכם ואתם לעולם לא מתעייפים…</p>
 <div class="dropdown caution admonition">
 <p class="admonition-title"><strong>עצרו וחשבו:</strong> האם הפונקציה המובנית sum של פייתון לא מספיקה כדי לפתור את בעית סכימה המספרים מאחד למליון בקלות?</p>
-<p>לא. אמנם הפונקציה <code class="docutils literal notranslate"><span class="pre">sum</span></code> של פייתון מאפשרת לחשב בפקודה אחת סכום של רשימת מספרים, אבל איך נבנה רשימה כזאת? לכתוב lst = [1, 2, 3, …, 1000000] יהיה מאוד מסורבל ולא יעיל. פתרון טוב יותר יהיה להשתמש ב-iterables (כמו <code class="docutils literal notranslate"><span class="pre">range</span></code>), שמייצג את המספרים מבלי לכתוב אותם במפורש ולשמור בזכרון.</p>
+<p>לא, אם נכתוב את הרשימה בעצמנו. אמנם הפונקציה <code class="docutils literal notranslate"><span class="pre">sum</span></code> של פייתון מאפשרת לחשב בפקודה אחת סכום של רשימת מספרים, אבל איך נבנה רשימה כזאת? לכתוב lst = [1, 2, 3, …, 1000000] יהיה מאוד מסורבל ולא יעיל. פתרון טוב יותר יהיה להשתמש ב-iterables (כמו <code class="docutils literal notranslate"><span class="pre">range</span></code>), שמייצג את המספרים מבלי לכתוב אותם במפורש ולשמור בזכרון. בהמשך הדף נראה ש-‎<code class="docutils literal notranslate"><span class="pre">sum</span></code>‎ יודעת לסכם גם ‎<code class="docutils literal notranslate"><span class="pre">range</span></code>‎, וכך אפשר לפתור את הבעיה בשורה אחת.</p>
 </div>
 <p>כעת נדגים בקוד הבא שימוש ב<code class="docutils literal notranslate"><span class="pre">range</span></code> עם לולאת <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
 <div class="cell docutils container">
@@ -740,8 +740,8 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="kUvFjIhTFDNf" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#kUvFjIhTFDNf {
+<div class="output text_html"><div id="ceHaJtvHfuNf" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#ceHaJtvHfuNf {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -964,7 +964,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionskUvFjIhTFDNf=[{"question": "", "type": "numeric", "answers": [{"type": "value", "value": 24, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"type": "default", "feedback": "\u05e0\u05e1\u05d5 \u05e9\u05d5\u05d1. \u05d8\u05d9\u05e4: \u05de\u05d3\u05d5\u05d1\u05e8 \u05d1\u05de\u05db\u05e4\u05dc\u05d4 \u05e9\u05dc \u05d4\u05de\u05e1\u05e4\u05e8\u05d9\u05dd 1 \u05e2\u05d3 4."}]}];
+</style></div><script type="application/javascript">var questionsceHaJtvHfuNf=[{"question": "", "type": "numeric", "answers": [{"type": "value", "value": 24, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df!"}, {"type": "default", "feedback": "\u05e0\u05e1\u05d5 \u05e9\u05d5\u05d1. \u05d8\u05d9\u05e4: \u05de\u05d3\u05d5\u05d1\u05e8 \u05d1\u05de\u05db\u05e4\u05dc\u05d4 \u05e9\u05dc \u05d4\u05de\u05e1\u05e4\u05e8\u05d9\u05dd 1 \u05e2\u05d3 4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2026,8 +2026,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("kUvFjIhTFDNf")) {
-    show_questions(questionskUvFjIhTFDNf, kUvFjIhTFDNf);
+  if (document.getElementById("ceHaJtvHfuNf")) {
+    show_questions(questionsceHaJtvHfuNf, ceHaJtvHfuNf);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2158,8 +2158,8 @@ And the sum of all the integers between -45 and 45 is 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution of sum_range took 3.87 seconds. Returned value: 5000000050000000
-Execution of sum_range2 took 1.39 seconds. Returned value: 5000000050000000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution of sum_range took 5.84 seconds. Returned value: 5000000050000000
+Execution of sum_range2 took 2.35 seconds. Returned value: 5000000050000000
 </pre></div>
 </div>
 </div>
@@ -2271,8 +2271,8 @@ Execution of sum_range2 took 1.39 seconds. Returned value: 5000000050000000
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="bkQeJLkuaWEG" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#bkQeJLkuaWEG {
+<div class="output text_html"><div id="NtcbxLTXTxRF" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#NtcbxLTXTxRF {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2495,7 +2495,7 @@ Execution of sum_range2 took 1.39 seconds. Returned value: 5000000050000000
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsbkQeJLkuaWEG=[{"question": "\u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05e1\u05d5\u05e4\u05d9 \u05e9\u05dc x \u05dc\u05d0\u05d7\u05e8 \u05d1\u05d9\u05e6\u05d5\u05e2 \u05d4\u05e7\u05d5\u05d3? (x \u05de\u05ea\u05d7\u05d9\u05dc \u05de-0)", "type": "numeric", "answers": [{"type": "value", "value": 4, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e8\u05e6\u05d4 4 \u05e4\u05e2\u05de\u05d9\u05dd, \u05d5\u05db\u05dc \u05e4\u05e2\u05dd num > 5."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05e2\u05e7\u05d5\u05d1 \u05d0\u05d7\u05e8\u05d9 \u05ea\u05e0\u05d0\u05d9 if num > 5."}]}, {"question": "\u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05e1\u05d5\u05e4\u05d9 \u05e9\u05dc y \u05dc\u05d0\u05d7\u05e8 \u05d1\u05d9\u05e6\u05d5\u05e2 \u05d4\u05e7\u05d5\u05d3? (y \u05de\u05ea\u05d7\u05d9\u05dc \u05de-0)", "type": "numeric", "answers": [{"type": "value", "value": 0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! num \u05dc\u05e2\u05d5\u05dc\u05dd \u05dc\u05d0 \u05e9\u05d5\u05d5\u05d4 \u05dc-3, \u05d5\u05dc\u05db\u05df \u05d4\u05ea\u05e0\u05d0\u05d9 \u05dc\u05d0 \u05de\u05ea\u05e7\u05d9\u05d9\u05dd."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05dd num == 3 \u05d0\u05d9 \u05e4\u05e2\u05dd \u05de\u05ea\u05e7\u05d9\u05d9\u05dd."}]}, {"question": "\u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05e1\u05d5\u05e4\u05d9 \u05e9\u05dc z \u05dc\u05d0\u05d7\u05e8 \u05d1\u05d9\u05e6\u05d5\u05e2 \u05d4\u05e7\u05d5\u05d3? (z \u05de\u05ea\u05d7\u05d9\u05dc \u05de-0)", "type": "numeric", "answers": [{"type": "value", "value": 8, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05ea\u05e0\u05d0\u05d9 else \u05de\u05ea\u05d1\u05e6\u05e2 \u05db\u05dc \u05e4\u05e2\u05dd \u05d5\u05dc\u05db\u05df z += 2 \u05e8\u05e5 4 \u05e4\u05e2\u05de\u05d9\u05dd."}, {"type": "default", "feedback": "\u05d1\u05d3\u05d5\u05e7 \u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05de\u05ea\u05d1\u05e6\u05e2 else (\u05db\u05d0\u05e9\u05e8 num \u2260 3)."}]}];
+</style></div><script type="application/javascript">var questionsNtcbxLTXTxRF=[{"question": "\u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05e1\u05d5\u05e4\u05d9 \u05e9\u05dc x \u05dc\u05d0\u05d7\u05e8 \u05d1\u05d9\u05e6\u05d5\u05e2 \u05d4\u05e7\u05d5\u05d3? (x \u05de\u05ea\u05d7\u05d9\u05dc \u05de-0)", "type": "numeric", "answers": [{"type": "value", "value": 4, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e8\u05e6\u05d4 4 \u05e4\u05e2\u05de\u05d9\u05dd, \u05d5\u05db\u05dc \u05e4\u05e2\u05dd num > 5."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05e2\u05e7\u05d5\u05d1 \u05d0\u05d7\u05e8\u05d9 \u05ea\u05e0\u05d0\u05d9 if num > 5."}]}, {"question": "\u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05e1\u05d5\u05e4\u05d9 \u05e9\u05dc y \u05dc\u05d0\u05d7\u05e8 \u05d1\u05d9\u05e6\u05d5\u05e2 \u05d4\u05e7\u05d5\u05d3? (y \u05de\u05ea\u05d7\u05d9\u05dc \u05de-0)", "type": "numeric", "answers": [{"type": "value", "value": 0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! num \u05dc\u05e2\u05d5\u05dc\u05dd \u05dc\u05d0 \u05e9\u05d5\u05d5\u05d4 \u05dc-3, \u05d5\u05dc\u05db\u05df \u05d4\u05ea\u05e0\u05d0\u05d9 \u05dc\u05d0 \u05de\u05ea\u05e7\u05d9\u05d9\u05dd."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05dd num == 3 \u05d0\u05d9 \u05e4\u05e2\u05dd \u05de\u05ea\u05e7\u05d9\u05d9\u05dd."}]}, {"question": "\u05de\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05e1\u05d5\u05e4\u05d9 \u05e9\u05dc z \u05dc\u05d0\u05d7\u05e8 \u05d1\u05d9\u05e6\u05d5\u05e2 \u05d4\u05e7\u05d5\u05d3? (z \u05de\u05ea\u05d7\u05d9\u05dc \u05de-0)", "type": "numeric", "answers": [{"type": "value", "value": 8, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05ea\u05e0\u05d0\u05d9 else \u05de\u05ea\u05d1\u05e6\u05e2 \u05db\u05dc \u05e4\u05e2\u05dd, \u05d5\u05dc\u05db\u05df z \u05d2\u05d3\u05dc \u05d1-2 \u05d0\u05e8\u05d1\u05e2 \u05e4\u05e2\u05de\u05d9\u05dd."}, {"type": "default", "feedback": "\u05d1\u05d3\u05d5\u05e7 \u05db\u05de\u05d4 \u05e4\u05e2\u05de\u05d9\u05dd \u05de\u05ea\u05d1\u05e6\u05e2 else (\u05db\u05d0\u05e9\u05e8 num \u2260 3)."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -3557,8 +3557,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("bkQeJLkuaWEG")) {
-    show_questions(questionsbkQeJLkuaWEG, bkQeJLkuaWEG);
+  if (document.getElementById("NtcbxLTXTxRF")) {
+    show_questions(questionsNtcbxLTXTxRF, NtcbxLTXTxRF);
   } else {
     setTimeout(try_show, 200);
   }
@@ -3577,8 +3577,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="HndyREORSEac" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#HndyREORSEac {
+<div class="output text_html"><div id="FfNTaLgXcTdk" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#FfNTaLgXcTdk {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3801,7 +3801,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsHndyREORSEac=[{"question": "\u05db\u05de\u05d4 \u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05ea\u05d1\u05e6\u05e2 \u05dc\u05d5\u05dc\u05d0\u05ea \u05d4-for \u05d1\u05e7\u05d5\u05d3 \u05dc\u05e2\u05d9\u05dc?", "type": "numeric", "answers": [{"type": "value", "value": 0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! range(10, 20, -1) \u05dc\u05d0 \u05de\u05e4\u05d9\u05e7\u05d4 \u05d0\u05e3 \u05e2\u05e8\u05da \u05db\u05d9 \u05d4\u05db\u05d9\u05d5\u05d5\u05df \u05d4\u05e4\u05d5\u05da."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05dd \u05d4\u05db\u05d9\u05d5\u05d5\u05df \u05e9\u05dc \u05d4\u05d8\u05d5\u05d5\u05d7 (\u05de\u05d4-10 \u05e2\u05d3 20 \u05e2\u05dd \u05e6\u05e2\u05d3 \u05e9\u05dc\u05d9\u05dc\u05d9) \u05d0\u05e4\u05e9\u05e8\u05d9."}]}];
+</style></div><script type="application/javascript">var questionsFfNTaLgXcTdk=[{"question": "\u05db\u05de\u05d4 \u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05ea\u05d1\u05e6\u05e2 \u05dc\u05d5\u05dc\u05d0\u05ea \u05d4-for \u05d1\u05e7\u05d5\u05d3 \u05dc\u05e2\u05d9\u05dc?", "type": "numeric", "answers": [{"type": "value", "value": 0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! range(10, 20, -1) \u05dc\u05d0 \u05de\u05e4\u05d9\u05e7\u05d4 \u05d0\u05e3 \u05e2\u05e8\u05da \u05db\u05d9 \u05d4\u05db\u05d9\u05d5\u05d5\u05df \u05d4\u05e4\u05d5\u05da."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05dd \u05d4\u05db\u05d9\u05d5\u05d5\u05df \u05e9\u05dc \u05d4\u05d8\u05d5\u05d5\u05d7 (\u05de\u05d4-10 \u05e2\u05d3 20 \u05e2\u05dd \u05e6\u05e2\u05d3 \u05e9\u05dc\u05d9\u05dc\u05d9) \u05d0\u05e4\u05e9\u05e8\u05d9."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -4863,8 +4863,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("HndyREORSEac")) {
-    show_questions(questionsHndyREORSEac, HndyREORSEac);
+  if (document.getElementById("FfNTaLgXcTdk")) {
+    show_questions(questionsFfNTaLgXcTdk, FfNTaLgXcTdk);
   } else {
     setTimeout(try_show, 200);
   }
@@ -4902,8 +4902,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="EwhOIFYfPvWi" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#EwhOIFYfPvWi {
+<div class="output text_html"><div id="DfHyFdfxTYEl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#DfHyFdfxTYEl {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -5126,7 +5126,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsEwhOIFYfPvWi=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 what?", "type": "numeric", "answers": [{"type": "value", "value": 0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df (3) \u05d4\u05d5\u05d0 \u05d7\u05d9\u05d5\u05d1\u05d9 \u05d5\u05dc\u05db\u05df \u05d9\u05d5\u05d3\u05e4\u05e1 i=0."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05de\u05d4\u05d5 \u05d4\u05e2\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d4\u05d7\u05d9\u05d5\u05d1\u05d9 \u05d1\u05e8\u05e9\u05d9\u05de\u05d4."}]}, {"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05e9\u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 what?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05d7\u05d9\u05d5\u05d1\u05d9 \u05d4\u05d1\u05d0 \u05e0\u05de\u05e6\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05e2\u05e7\u05d5\u05d1 \u05d0\u05d7\u05e8\u05d9 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05d5\u05dc\u05d6\u05d4\u05d5\u05ea \u05de\u05ea\u05d9 lst[i] > 0."}]}, {"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e9\u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 what?", "type": "numeric", "answers": [{"type": "value", "value": 3, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d6\u05d4\u05d5 \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e0\u05d5\u05e1\u05e3 \u05e9\u05dc \u05e2\u05e8\u05da \u05d7\u05d9\u05d5\u05d1\u05d9 (6)."}, {"type": "default", "feedback": "\u05d1\u05d3\u05d5\u05e7 \u05d0\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 \u05dc\u05e4\u05d9 \u05d4\u05e1\u05d3\u05e8."}]}, {"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d1\u05d9\u05e2\u05d9 \u05e9\u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 what?", "type": "numeric", "answers": [{"type": "value", "value": 6, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05da \u05d4\u05d7\u05d9\u05d5\u05d1\u05d9 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d4\u05d5\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 6 (\u05d4\u05de\u05e1\u05e4\u05e8 1)."}, {"type": "default", "feedback": "\u05e2\u05d1\u05d5\u05e8 \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d1\u05e8\u05e9\u05d9\u05de\u05d4, \u05d1\u05d3\u05d5\u05e7 \u05d4\u05d0\u05dd \u05d4\u05d5\u05d0 \u05d7\u05d9\u05d5\u05d1\u05d9 \u05d5\u05d4\u05d5\u05e1\u05e3 \u05d0\u05ea \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc\u05d5."}]}];
+</style></div><script type="application/javascript">var questionsDfHyFdfxTYEl=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 what?", "type": "numeric", "answers": [{"type": "value", "value": 0, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df (3) \u05d4\u05d5\u05d0 \u05d7\u05d9\u05d5\u05d1\u05d9 \u05d5\u05dc\u05db\u05df \u05d9\u05d5\u05d3\u05e4\u05e1 i=0."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05de\u05d4\u05d5 \u05d4\u05e2\u05e8\u05da \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05d4\u05d7\u05d9\u05d5\u05d1\u05d9 \u05d1\u05e8\u05e9\u05d9\u05de\u05d4."}]}, {"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05e9\u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 what?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05d7\u05d9\u05d5\u05d1\u05d9 \u05d4\u05d1\u05d0 \u05e0\u05de\u05e6\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2."}, {"type": "default", "feedback": "\u05e0\u05e1\u05d4 \u05dc\u05e2\u05e7\u05d5\u05d1 \u05d0\u05d7\u05e8\u05d9 \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05d5\u05dc\u05d6\u05d4\u05d5\u05ea \u05de\u05ea\u05d9 lst[i] > 0."}]}, {"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05dc\u05d9\u05e9\u05d9 \u05e9\u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 what?", "type": "numeric", "answers": [{"type": "value", "value": 3, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d6\u05d4\u05d5 \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e0\u05d5\u05e1\u05e3 \u05e9\u05dc \u05e2\u05e8\u05da \u05d7\u05d9\u05d5\u05d1\u05d9 (6)."}, {"type": "default", "feedback": "\u05d1\u05d3\u05d5\u05e7 \u05d0\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 \u05dc\u05e4\u05d9 \u05d4\u05e1\u05d3\u05e8."}]}, {"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d1\u05d9\u05e2\u05d9 \u05e9\u05de\u05d5\u05d3\u05e4\u05e1 \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d4 what?", "type": "numeric", "answers": [{"type": "value", "value": 6, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05e2\u05e8\u05da \u05d4\u05d7\u05d9\u05d5\u05d1\u05d9 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d4\u05d5\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 6 (\u05d4\u05de\u05e1\u05e4\u05e8 1)."}, {"type": "default", "feedback": "\u05e2\u05d1\u05d5\u05e8 \u05db\u05dc \u05d0\u05d9\u05d1\u05e8 \u05d1\u05e8\u05e9\u05d9\u05de\u05d4, \u05d1\u05d3\u05d5\u05e7 \u05d4\u05d0\u05dd \u05d4\u05d5\u05d0 \u05d7\u05d9\u05d5\u05d1\u05d9 \u05d5\u05d4\u05d5\u05e1\u05e3 \u05d0\u05ea \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc\u05d5."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -6188,8 +6188,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("EwhOIFYfPvWi")) {
-    show_questions(questionsEwhOIFYfPvWi, EwhOIFYfPvWi);
+  if (document.getElementById("DfHyFdfxTYEl")) {
+    show_questions(questionsDfHyFdfxTYEl, DfHyFdfxTYEl);
   } else {
     setTimeout(try_show, 200);
   }
@@ -6213,8 +6213,8 @@ function try_show() {
 <p>ענו על השאלות לפני שאתם מריצים את הקוד.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="hGRaSCWPKRxP" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#hGRaSCWPKRxP {
+<div class="output text_html"><div id="KyXRpmGKBUTM" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#KyXRpmGKBUTM {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -6437,7 +6437,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionshGRaSCWPKRxP=[{"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d3\u05e4\u05d9\u05e1 \u05d4\u05e7\u05d5\u05d3?", "type": "numeric", "answers": [{"type": "value", "value": 3, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 4 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e0\u05d5\u05ea\u05e0\u05d5\u05ea 3 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e8\u05e6\u05d4 \u05e2\u05d3 len(T2) - 1."}, {"type": "default", "feedback": "\u05e9\u05d9\u05de\u05d5 \u05dc\u05d1 \u05dc\u05d8\u05d5\u05d5\u05d7: range(len(T2) - 1) \u05d4\u05d5\u05d0 range(3)."}]}, {"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05e9\u05ea\u05d5\u05d3\u05e4\u05e1?", "type": "many_choice", "answers": [{"answer": "5.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 55.0 - 50.0 \u05d4\u05d5\u05d0 5.0, \u05d5\u05d4\u05d7\u05d9\u05e1\u05d5\u05e8 \u05e9\u05dc \u05e9\u05e0\u05d9 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd \u05e0\u05d5\u05ea\u05df \u05de\u05e1\u05e4\u05e8 \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9."}, {"answer": "5", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 \u05d4\u05dd \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd (float), \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05d4\u05e4\u05e8\u05e9 \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9."}, {"answer": "55.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05de\u05d5\u05d3\u05e4\u05e1 \u05d4\u05d4\u05e4\u05e8\u05e9 \u05d1\u05d9\u05df \u05e9\u05ea\u05d9 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea, \u05dc\u05d0 \u05d4\u05de\u05d3\u05d9\u05d3\u05d4 \u05e2\u05e6\u05de\u05d4."}, {"answer": "15.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d1\u05db\u05dc \u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d4 \u05de\u05d7\u05e1\u05e8\u05d9\u05dd \u05e9\u05ea\u05d9 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e1\u05de\u05d5\u05db\u05d5\u05ea \u05d1\u05dc\u05d1\u05d3."}]}, {"question": "\u05de\u05d4 \u05d9\u05e7\u05e8\u05d4 \u05d0\u05dd \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05ea\u05e2\u05d1\u05d5\u05e8 \u05e2\u05dc \u05db\u05dc \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05e9\u05dc \u05d4\u05e8\u05e9\u05d9\u05de\u05d4, \u05db\u05dc\u05d5\u05de\u05e8 \u05d0\u05e8\u05d1\u05e2 \u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05d1\u05de\u05e7\u05d5\u05dd \u05e9\u05dc\u05d5\u05e9?", "type": "many_choice", "answers": [{"answer": "\u05d9\u05d5\u05d3\u05e4\u05e1\u05d5 \u05e9\u05dc\u05d5\u05e9 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d5\u05d0\u05d6 \u05ea\u05ea\u05e7\u05d1\u05dc \u05e9\u05d2\u05d9\u05d0\u05ea IndexError", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d1\u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 i \u05e9\u05d5\u05d5\u05d4 3, \u05d5-T2[i + 1] \u05d4\u05d5\u05d0 T2[4], \u05de\u05d7\u05d5\u05e5 \u05dc\u05e8\u05e9\u05d9\u05de\u05d4."}, {"answer": "\u05d9\u05d5\u05d3\u05e4\u05e1\u05d5 \u05d0\u05e8\u05d1\u05e2 \u05e9\u05d5\u05e8\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05e0\u05e1\u05d5 \u05dc\u05d7\u05e9\u05d1 \u05de\u05d4 \u05d6\u05d4 T2[i + 1] \u05db\u05e9-i \u05e9\u05d5\u05d5\u05d4 3."}, {"answer": "\u05d9\u05d5\u05d3\u05e4\u05e1\u05d5 \u05e9\u05dc\u05d5\u05e9 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d5\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05ea\u05e1\u05ea\u05d9\u05d9\u05dd \u05db\u05e8\u05d2\u05d9\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05e0\u05e1\u05d5 \u05dc\u05d7\u05e9\u05d1 \u05de\u05d4 \u05d6\u05d4 T2[i + 1] \u05db\u05e9-i \u05e9\u05d5\u05d5\u05d4 3."}, {"answer": "\u05dc\u05d0 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05db\u05dc\u05d5\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05e9\u05dc\u05d5\u05e9 \u05d4\u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d5\u05ea \u05ea\u05e7\u05d9\u05e0\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsKyXRpmGKBUTM=[{"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d3\u05e4\u05d9\u05e1 \u05d4\u05e7\u05d5\u05d3?", "type": "numeric", "answers": [{"type": "value", "value": 3, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 4 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e0\u05d5\u05ea\u05e0\u05d5\u05ea 3 \u05d4\u05e4\u05e8\u05e9\u05d9\u05dd, \u05d5\u05dc\u05db\u05df \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e8\u05e6\u05d4 \u05e2\u05d3 len(T2) - 1."}, {"type": "default", "feedback": "\u05e9\u05d9\u05de\u05d5 \u05dc\u05d1 \u05dc\u05d8\u05d5\u05d5\u05d7: range(len(T2) - 1) \u05d4\u05d5\u05d0 range(3)."}]}, {"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05e9\u05ea\u05d5\u05d3\u05e4\u05e1?", "type": "many_choice", "answers": [{"answer": "5.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 55.0 - 50.0 \u05d4\u05d5\u05d0 5.0, \u05d5\u05d4\u05d7\u05d9\u05e1\u05d5\u05e8 \u05e9\u05dc \u05e9\u05e0\u05d9 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd \u05e0\u05d5\u05ea\u05df \u05de\u05e1\u05e4\u05e8 \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9."}, {"answer": "5", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05d0\u05d9\u05d1\u05e8\u05d9\u05dd \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 \u05d4\u05dd \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd (float), \u05d5\u05dc\u05db\u05df \u05d2\u05dd \u05d4\u05d4\u05e4\u05e8\u05e9 \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9."}, {"answer": "55.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05de\u05d5\u05d3\u05e4\u05e1 \u05d4\u05d4\u05e4\u05e8\u05e9 \u05d1\u05d9\u05df \u05e9\u05ea\u05d9 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea, \u05dc\u05d0 \u05d4\u05de\u05d3\u05d9\u05d3\u05d4 \u05e2\u05e6\u05de\u05d4."}, {"answer": "15.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05d1\u05db\u05dc \u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d4 \u05de\u05d7\u05e1\u05e8\u05d9\u05dd \u05e9\u05ea\u05d9 \u05de\u05d3\u05d9\u05d3\u05d5\u05ea \u05e1\u05de\u05d5\u05db\u05d5\u05ea \u05d1\u05dc\u05d1\u05d3."}]}, {"question": "\u05de\u05d4 \u05d9\u05e7\u05e8\u05d4 \u05d0\u05dd \u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05ea\u05e2\u05d1\u05d5\u05e8 \u05e2\u05dc \u05db\u05dc \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd \u05e9\u05dc \u05d4\u05e8\u05e9\u05d9\u05de\u05d4, \u05db\u05dc\u05d5\u05de\u05e8 \u05d0\u05e8\u05d1\u05e2 \u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05d1\u05de\u05e7\u05d5\u05dd \u05e9\u05dc\u05d5\u05e9?", "type": "many_choice", "answers": [{"answer": "\u05d9\u05d5\u05d3\u05e4\u05e1\u05d5 \u05e9\u05dc\u05d5\u05e9 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d5\u05d0\u05d6 \u05ea\u05ea\u05e7\u05d1\u05dc \u05e9\u05d2\u05d9\u05d0\u05ea IndexError", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d1\u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 i \u05e9\u05d5\u05d5\u05d4 3, \u05d5-T2[i + 1] \u05d4\u05d5\u05d0 T2[4], \u05de\u05d7\u05d5\u05e5 \u05dc\u05e8\u05e9\u05d9\u05de\u05d4."}, {"answer": "\u05d9\u05d5\u05d3\u05e4\u05e1\u05d5 \u05d0\u05e8\u05d1\u05e2 \u05e9\u05d5\u05e8\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05e0\u05e1\u05d5 \u05dc\u05d7\u05e9\u05d1 \u05de\u05d4 \u05d6\u05d4 T2[i + 1] \u05db\u05e9-i \u05e9\u05d5\u05d5\u05d4 3."}, {"answer": "\u05d9\u05d5\u05d3\u05e4\u05e1\u05d5 \u05e9\u05dc\u05d5\u05e9 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d5\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05ea\u05e1\u05ea\u05d9\u05d9\u05dd \u05db\u05e8\u05d2\u05d9\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05e0\u05e1\u05d5 \u05dc\u05d7\u05e9\u05d1 \u05de\u05d4 \u05d6\u05d4 T2[i + 1] \u05db\u05e9-i \u05e9\u05d5\u05d5\u05d4 3."}, {"answer": "\u05dc\u05d0 \u05d9\u05d5\u05d3\u05e4\u05e1 \u05db\u05dc\u05d5\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05e9\u05dc\u05d5\u05e9 \u05d4\u05d0\u05d9\u05d8\u05e8\u05e6\u05d9\u05d5\u05ea \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d5\u05ea \u05ea\u05e7\u05d9\u05e0\u05d5\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -7499,8 +7499,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("hGRaSCWPKRxP")) {
-    show_questions(questionshGRaSCWPKRxP, hGRaSCWPKRxP);
+  if (document.getElementById("KyXRpmGKBUTM")) {
+    show_questions(questionsKyXRpmGKBUTM, KyXRpmGKBUTM);
   } else {
     setTimeout(try_show, 200);
   }
@@ -7575,8 +7575,8 @@ function try_show() {
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="LCjriiVUAxJk" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#LCjriiVUAxJk {
+<div class="output text_html"><div id="MdanPqufhYdx" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#MdanPqufhYdx {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -7799,7 +7799,7 @@ function try_show() {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsLCjriiVUAxJk=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05d9\u05d5\u05d3\u05e4\u05e1?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d8\u05de\u05e4\u05e8\u05d8\u05d5\u05e8\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05de\u05e2\u05dc 45 \u05d4\u05d9\u05d0 50.0, \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2."}, {"type": "default", "feedback": "\u05e9\u05d9\u05de\u05d5 \u05dc\u05d1: \u05de\u05d5\u05d3\u05e4\u05e1 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 i \u05d5\u05dc\u05d0 \u05d4\u05d8\u05de\u05e4\u05e8\u05d8\u05d5\u05e8\u05d4 T."}]}, {"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d5\u05d3\u05e4\u05e1\u05d5?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e8\u05e7 50.0 \u05d5-55.0 \u05d2\u05d3\u05d5\u05dc\u05d5\u05ea \u05de-45, \u05d5\u05dc\u05db\u05df \u05d9\u05d5\u05d3\u05e4\u05e1\u05d5 2 \u05d5-3."}, {"type": "default", "feedback": "\u05e1\u05e4\u05e8\u05d5 \u05db\u05de\u05d4 \u05d8\u05de\u05e4\u05e8\u05d8\u05d5\u05e8\u05d5\u05ea \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 \u05d2\u05d3\u05d5\u05dc\u05d5\u05ea \u05de-45."}]}];
+</style></div><script type="application/javascript">var questionsMdanPqufhYdx=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05d9\u05d5\u05d3\u05e4\u05e1?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05d4\u05d8\u05de\u05e4\u05e8\u05d8\u05d5\u05e8\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05de\u05e2\u05dc 45 \u05d4\u05d9\u05d0 50.0, \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2."}, {"type": "default", "feedback": "\u05e9\u05d9\u05de\u05d5 \u05dc\u05d1: \u05de\u05d5\u05d3\u05e4\u05e1 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 i \u05d5\u05dc\u05d0 \u05d4\u05d8\u05de\u05e4\u05e8\u05d8\u05d5\u05e8\u05d4 T."}]}, {"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d5\u05d3\u05e4\u05e1\u05d5?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e8\u05e7 50.0 \u05d5-55.0 \u05d2\u05d3\u05d5\u05dc\u05d5\u05ea \u05de-45, \u05d5\u05dc\u05db\u05df \u05d9\u05d5\u05d3\u05e4\u05e1\u05d5 2 \u05d5-3."}, {"type": "default", "feedback": "\u05e1\u05e4\u05e8\u05d5 \u05db\u05de\u05d4 \u05d8\u05de\u05e4\u05e8\u05d8\u05d5\u05e8\u05d5\u05ea \u05d1\u05e8\u05e9\u05d9\u05de\u05d4 \u05d2\u05d3\u05d5\u05dc\u05d5\u05ea \u05de-45."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -8861,8 +8861,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("LCjriiVUAxJk")) {
-    show_questions(questionsLCjriiVUAxJk, LCjriiVUAxJk);
+  if (document.getElementById("MdanPqufhYdx")) {
+    show_questions(questionsMdanPqufhYdx, MdanPqufhYdx);
   } else {
     setTimeout(try_show, 200);
   }

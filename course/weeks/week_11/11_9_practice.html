@@ -261,17 +261,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_2_built-in-functions-in-list.html">3.3. פונקציות מובנות לרשימות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_3_list-methods.html">3.4. מתודות של רשימות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_4_nested_lists.html">3.5. רשימות מקוננות</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_5_list-examples.html">3.6. דוגמאות מעשיות</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/4_5_list-examples.html">3.6. תרגול מסכם: רשימות</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../week_4.html">4. שבוע 4 — לולאות וזרימת בקרה</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/5_0_intro-loops.html">4.1. מבוא ללולאות</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_0_for_loops.html">4.2. לולאות for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_1_ranges-and-for.html">4.3. range ולולאות for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_2_for-examples.html">4.4. דוגמאות ל־for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_2_for-examples.html">4.4. תרגול מסכם: לולאות for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/6_3_for-summary.html">4.5. סיכום לולאות for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_0_while_loops.html">4.6. לולאות while</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_1_while-examples.html">4.7. דוגמאות ל־while</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/7_1_while-examples.html">4.7. תרגול מסכם: לולאות while</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_0_while_vs_for.html">4.8. while לעומת for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_1_break_and_continue.html">4.9. break ו־continue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../vendor/virtual-pyprog/8_2_nested_loops.html">4.10. לולאות מקוננות</a></li>
@@ -639,7 +639,7 @@
                   
   <section id="id1">
 <h1><span class="section-number">11.9. </span>תרגול<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>בלי להריץ, תארו במילים מה מחשב הקוד הבא, וכמה שורות תהיה לתוצאה <code class="docutils literal notranslate"><span class="pre">result</span></code>:</p>
+<p>בלי להריץ, תארו במילים מה מחשב הקוד הבא, וכמה שורות לכל היותר יהיו בתוצאה ‎<code class="docutils literal notranslate"><span class="pre">result</span></code>‎:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -654,7 +654,7 @@
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <p>השורה הראשונה מסננת רק ריצות שבהן <code class="docutils literal notranslate"><span class="pre">v0_measured</span></code> היה <strong>מעל הממוצע הכללי</strong> של כל 30 הריצות (לא ממוצע לפי זווית — ממוצע אחד, גלובלי, על כל הטבלה). השורה השנייה מקבצת את הריצות שנשארו לפי <code class="docutils literal notranslate"><span class="pre">angle_deg</span></code>, ומחשבת לכל קבוצה גם ממוצע וגם מונה (<code class="docutils literal notranslate"><span class="pre">count</span></code>) של <code class="docutils literal notranslate"><span class="pre">range_measured</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">result</span></code> היא <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> עם <strong>עמודה אחת לכל סטטיסטיקה</strong> (<code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>) ו<strong>שורה אחת לכל זווית שנותרה</strong> בנתונים המסוננים — לא בהכרח כל חמש הזוויות, כי ייתכן שבזווית מסוימת אף ריצה לא עברה את סף המהירות הממוצעת (במקרה זה, הזווית לא תופיע בתוצאה).</p>
+<p><code class="docutils literal notranslate"><span class="pre">result</span></code> היא <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> עם <strong>עמודה אחת לכל סטטיסטיקה</strong> (<code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>) ו<strong>שורה אחת לכל זווית שנותרה</strong> בנתונים המסוננים — לא בהכרח כל חמש הזוויות, כי ייתכן שבזווית מסוימת אף ריצה לא עברה את סף המהירות הממוצעת (במקרה זה, הזווית לא תופיע בתוצאה). לכן בתוצאה יש לכל היותר 5 שורות. בנתונים של ‎<code class="docutils literal notranslate"><span class="pre">launch_log.csv</span></code>‎ בכל זווית יש ריצות שבהן ‎<code class="docutils literal notranslate"><span class="pre">v0_measured</span></code>‎ מעל הממוצע, ולכן בתוצאה בדיוק 5 שורות.</p>
 </div>
 <hr class="docutils" />
 <p>הקוד הבא נועד להוסיף לטבלה עמודה חדשה <code class="docutils literal notranslate"><span class="pre">above_mean</span></code>, שמסמנת אילו ריצות היה בהן טווח מעל הממוצע. יש בו באג — אתרו ותקנו:</p>
@@ -685,7 +685,7 @@
 <p>הפתרון הנכון: לוותר על הלולאה ולהשתמש בהשוואה וקטורית ישירה על כל העמודה בבת אחת (בדיוק כמו מסכה בוליאנית מסעיף 7.7 / 11.4):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"launch_log.csv"</span><span class="p">)</span>
 <span class="n">df2</span><span class="p">[</span><span class="s2">"above_mean"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s2">"range_measured"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">df2</span><span class="p">[</span><span class="s2">"range_measured"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">"above_mean"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>   <span class="c1"># [True, False] - שני הערכים כצפוי</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s2">"above_mean"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>   <span class="c1"># [False  True] - שני הערכים כצפוי</span>
 </pre></div>
 </div>
 </div>
