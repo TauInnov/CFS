@@ -705,14 +705,14 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_height_per_run</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>        <span class="c1"># shape (5,): one per run</span>
 <span class="n">time_index_of_max</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>      <span class="c1"># shape (5,): where it happened</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"גובה מרבי בכל ריצה:"</span><span class="p">,</span> <span class="n">max_height_per_run</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"אינדקס הזמן של השיא בכל ריצה:"</span><span class="p">,</span> <span class="n">time_index_of_max</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"max height per run:"</span><span class="p">,</span> <span class="n">max_height_per_run</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"time index of the peak per run:"</span><span class="p">,</span> <span class="n">time_index_of_max</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>גובה מרבי בכל ריצה: [ 8.26293172  9.69959371 10.20115027 10.72000188 12.34456437]
-אינדקס הזמן של השיא בכל ריצה: [27 29 29 30 32]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height per run: [ 8.26293172  9.69959371 10.20115027 10.72000188 12.34456437]
+time index of the peak per run: [27 29 29 30 32]
 </pre></div>
 </div>
 </div>
@@ -772,8 +772,8 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="TWoTHMDdHoNO" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#TWoTHMDdHoNO {
+<div class="output text_html"><div id="jQLxbopLPXyd" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#jQLxbopLPXyd {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -996,7 +996,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsTWoTHMDdHoNO=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "3.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: axis=0 \u05de\u05e2\u05dc\u05d9\u05dd \u05d0\u05ea \u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05d5\u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1, \u05dc\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d1\u05dc\u05d1\u05d3."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d0\u05de\u05e6\u05e2\u05d9\u05ea, 3 \u05d5-1."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8, 5, \u05e0\u05de\u05e6\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e2\u05e6\u05de\u05d5; argmax \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc\u05d5."}, {"answer": "0", "correct": false, "feedback": "\u05dc\u05d0: \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 0 \u05e0\u05de\u05e6\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e7\u05d8\u05df \u05d1\u05d9\u05d5\u05ea\u05e8, 0."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: 1 \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8 \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4, \u05e9\u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd \u05d4\u05e9\u05e0\u05d9 \u05d1\u05e4\u05dc\u05d8."}]}];
+</style></div><script type="application/javascript">var questionsjQLxbopLPXyd=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "3.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: axis=0 \u05de\u05e2\u05dc\u05d9\u05dd \u05d0\u05ea \u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05d5\u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1, \u05dc\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d1\u05dc\u05d1\u05d3."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d0\u05de\u05e6\u05e2\u05d9\u05ea, 3 \u05d5-1."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8, 5, \u05e0\u05de\u05e6\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e2\u05e6\u05de\u05d5; argmax \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc\u05d5."}, {"answer": "0", "correct": false, "feedback": "\u05dc\u05d0: \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 0 \u05e0\u05de\u05e6\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e7\u05d8\u05df \u05d1\u05d9\u05d5\u05ea\u05e8, 0."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: 1 \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8 \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4, \u05e9\u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd \u05d4\u05e9\u05e0\u05d9 \u05d1\u05e4\u05dc\u05d8."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2058,8 +2058,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("TWoTHMDdHoNO")) {
-    show_questions(questionsTWoTHMDdHoNO, TWoTHMDdHoNO);
+  if (document.getElementById("jQLxbopLPXyd")) {
+    show_questions(questionsjQLxbopLPXyd, jQLxbopLPXyd);
   } else {
     setTimeout(try_show, 200);
   }

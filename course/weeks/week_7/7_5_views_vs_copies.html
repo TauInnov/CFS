@@ -651,23 +651,23 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">raw_log</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">18.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">999.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">999.0</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>  <span class="c1"># -999 = קריאה פגומה</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"לפני:"</span><span class="p">,</span> <span class="n">raw_log</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"before:"</span><span class="p">,</span> <span class="n">raw_log</span><span class="p">)</span>
 
 <span class="n">middle</span> <span class="o">=</span> <span class="n">raw_log</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>     <span class="c1"># זו תצוגה, לא עותק!</span>
 <span class="n">middle</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">17.6</span><span class="p">,</span> <span class="mf">12.4</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">]</span>   <span class="c1"># "מתקנים" את התצוגה</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"אחרי:"</span><span class="p">,</span> <span class="n">raw_log</span><span class="p">)</span>   <span class="c1"># היומן הגולמי עצמו השתנה, דרך התצוגה</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"after:"</span><span class="p">,</span> <span class="n">raw_log</span><span class="p">)</span>   <span class="c1"># היומן הגולמי עצמו השתנה, דרך התצוגה</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>לפני: [ 2.00e+01  1.88e+01 -9.99e+02 -9.99e+02 -9.99e+02  5.20e+00  1.00e-01]
-אחרי: [20.  18.8 17.6 12.4  8.9  5.2  0.1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before: [ 2.00e+01  1.88e+01 -9.99e+02 -9.99e+02 -9.99e+02  5.20e+00  1.00e-01]
+after: [20.  18.8 17.6 12.4  8.9  5.2  0.1]
 </pre></div>
 </div>
 </div>
 </div>
-<p>בשורת “לפני” NumPy הדפיס את המערך בכתיב מדעי, משום שיש בו מספרים בסדרי גודל שונים מאוד: ‎<code class="docutils literal notranslate"><span class="pre">2.00e+01</span></code>‎ פירושו 20, ו-‎<code class="docutils literal notranslate"><span class="pre">1.00e-01</span></code>‎ פירושו 0.1.</p>
+<p>בשורה הראשונה של הפלט, NumPy הדפיס את המערך בכתיב מדעי, משום שיש בו מספרים בסדרי גודל שונים מאוד: ‎<code class="docutils literal notranslate"><span class="pre">2.00e+01</span></code>‎ פירושו 20, ו-‎<code class="docutils literal notranslate"><span class="pre">1.00e-01</span></code>‎ פירושו 0.1.</p>
 <p>במקרה הזה זה בדיוק מה שרצינו — אבל אם המטרה הייתה לשמור עותק נקי לצד המקור לצורך השוואה, זו טעות שקטה. הפתרון: לבקש ‎<code class="docutils literal notranslate"><span class="pre">.copy()</span></code>‎ באופן מפורש.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -675,14 +675,14 @@
 <span class="n">cleaned</span> <span class="o">=</span> <span class="n">raw_log2</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>   <span class="c1"># עותק אמיתי</span>
 <span class="n">cleaned</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">17.6</span><span class="p">,</span> <span class="mf">12.4</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"גולמי (לא השתנה):"</span><span class="p">,</span> <span class="n">raw_log2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"מנוקה:"</span><span class="p">,</span> <span class="n">cleaned</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"raw (unchanged):"</span><span class="p">,</span> <span class="n">raw_log2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"cleaned:"</span><span class="p">,</span> <span class="n">cleaned</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>גולמי (לא השתנה): [ 2.00e+01  1.88e+01 -9.99e+02 -9.99e+02 -9.99e+02  5.20e+00  1.00e-01]
-מנוקה: [17.6 12.4  8.9]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>raw (unchanged): [ 2.00e+01  1.88e+01 -9.99e+02 -9.99e+02 -9.99e+02  5.20e+00  1.00e-01]
+cleaned: [17.6 12.4  8.9]
 </pre></div>
 </div>
 </div>
@@ -700,8 +700,8 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="vBLBcAUVnznM" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#vBLBcAUVnznM {
+<div class="output text_html"><div id="qKDWLacoVHba" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#qKDWLacoVHba {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -924,7 +924,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsvBLBcAUVnznM=[{"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e4\u05e8\u05d9\u05e1\u05d4 \u05e9\u05dc \u05de\u05e2\u05e8\u05da NumPy \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05ea\u05e6\u05d5\u05d2\u05d4, \u05d5\u05dc\u05db\u05df \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1-b \u05de\u05e9\u05e0\u05d4 \u05d2\u05dd \u05d0\u05ea a."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05dc b \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05e9\u05dc a, \u05d5\u05d0\u05d5\u05ea\u05d5 \u05e9\u05d9\u05e0\u05d9\u05e0\u05d5."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05d7\u05d5\u05e7\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df."}]}];
+</style></div><script type="application/javascript">var questionsqKDWLacoVHba=[{"question": "\u05de\u05d4 \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "99", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e4\u05e8\u05d9\u05e1\u05d4 \u05e9\u05dc \u05de\u05e2\u05e8\u05da NumPy \u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05ea\u05e6\u05d5\u05d2\u05d4, \u05d5\u05dc\u05db\u05df \u05d4\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d1-b \u05de\u05e9\u05e0\u05d4 \u05d2\u05dd \u05d0\u05ea a."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: b \u05d4\u05d9\u05d0 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05e9\u05dc a, \u05dc\u05d0 \u05e2\u05d5\u05ea\u05e7."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05dc b \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05d1\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05e9\u05dc a, \u05d5\u05d0\u05d5\u05ea\u05d5 \u05e9\u05d9\u05e0\u05d9\u05e0\u05d5."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05d7\u05d5\u05e7\u05d9 \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -1986,8 +1986,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("vBLBcAUVnznM")) {
-    show_questions(questionsvBLBcAUVnznM, vBLBcAUVnznM);
+  if (document.getElementById("qKDWLacoVHba")) {
+    show_questions(questionsqKDWLacoVHba, qKDWLacoVHba);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2038,7 +2038,7 @@ function try_show() {
 <p>נתון מערך ‎<code class="docutils literal notranslate"><span class="pre">a</span></code>‎. שנו את שני האיברים הראשונים של תצוגה ‎<code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a[:2]</span></code>‎ ל-‎<code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0]</span></code>‎, ובדקו בעצמכם אם ‎<code class="docutils literal notranslate"><span class="pre">a</span></code>‎ השתנה:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
-<span class="c1"># שנו את b כך שיהיה [0, 0], ואז הדפיסו את a</span>
+<span class="c1"># change b to [0, 0], then print a</span>
 <span class="c1"># b[:] = ...</span>
 <span class="c1"># print(a)</span>
 </pre></div>

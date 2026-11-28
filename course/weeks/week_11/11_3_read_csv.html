@@ -755,7 +755,7 @@ dtype: object
 
 <span class="n">bad_csv</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">"angle_deg,v0_measured</span><span class="se">\n</span><span class="s2">15,20.3</span><span class="se">\n</span><span class="s2">15,19.0?</span><span class="se">\n</span><span class="s2">15,20.8</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">df_bad</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">bad_csv</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_bad</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>   <span class="c1"># v0_measured יצא כטיפוס טקסטואלי, לא float64 - בגלל ה-"19.0?"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_bad</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>   <span class="c1"># v0_measured is text, not float64, because of "19.0?"</span>
 </pre></div>
 </div>
 </div>
@@ -797,8 +797,8 @@ dtype: object
 <h2><span class="section-number">11.3.4. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="ORIxMMSEkmSh" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#ORIxMMSEkmSh {
+<div class="output text_html"><div id="LRbrlEyYlTja" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#LRbrlEyYlTja {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1021,7 +1021,7 @@ dtype: object
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsORIxMMSEkmSh=[{"question": "\u05e2\u05de\u05d5\u05d3\u05d4 \u05e9\u05d0\u05de\u05d5\u05e8\u05d4 \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05e1\u05e4\u05e8\u05d9\u05ea \u05de\u05d2\u05d9\u05e2\u05d4 \u05db\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d8\u05e7\u05e1\u05d8\u05d5\u05d0\u05dc\u05d9 (object/str) \u05d0\u05d7\u05e8\u05d9 read_csv. \u05de\u05d4 \u05d6\u05d4 \u05d1\u05d3\u05e8\u05da \u05db\u05dc\u05dc \u05de\u05e8\u05de\u05d6?", "type": "multiple_choice", "answers": [{"answer": "\u05e9\u05d4\u05e7\u05d5\u05d1\u05e5 \u05e4\u05d2\u05d5\u05dd \u05dc\u05d2\u05de\u05e8\u05d9 \u05d5\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05e7\u05e8\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05db\u05df \u05d4\u05e6\u05dc\u05d9\u05d7\u05d4, \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05e2\u05d3\u05d9\u05e0\u05d4 \u05d9\u05d5\u05ea\u05e8."}, {"answer": "\u05e9\u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05e8\u05d9\u05e7\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7."}, {"answer": "\u05e9\u05d9\u05e9 \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05e8\u05da \u05e9\u05d0\u05d9\u05e0\u05d5 \u05de\u05e1\u05e4\u05e8 \u05d8\u05d4\u05d5\u05e8 (\u05d8\u05e7\u05e1\u05d8 \u05d7\u05d5\u05e8\u05d2, \u05ea\u05d0 \u05e8\u05d9\u05e7 \u05dc\u05d0 \u05de\u05d6\u05d5\u05d4\u05d4 \u05d5\u05db\u05d5')", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05e0\u05d8\u05e2\u05e0\u05d4 \u05d1\u05e1\u05d3\u05e8 \u05d4\u05e4\u05d5\u05da", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05e1\u05d3\u05e8 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd, \u05dc\u05d0 \u05d1\u05e1\u05d3\u05e8 \u05d4\u05e9\u05d5\u05e8\u05d5\u05ea."}]}];
+</style></div><script type="application/javascript">var questionsLRbrlEyYlTja=[{"question": "\u05e2\u05de\u05d5\u05d3\u05d4 \u05e9\u05d0\u05de\u05d5\u05e8\u05d4 \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05e1\u05e4\u05e8\u05d9\u05ea \u05de\u05d2\u05d9\u05e2\u05d4 \u05db\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d8\u05e7\u05e1\u05d8\u05d5\u05d0\u05dc\u05d9 (object/str) \u05d0\u05d7\u05e8\u05d9 read_csv. \u05de\u05d4 \u05d6\u05d4 \u05d1\u05d3\u05e8\u05da \u05db\u05dc\u05dc \u05de\u05e8\u05de\u05d6?", "type": "multiple_choice", "answers": [{"answer": "\u05e9\u05d4\u05e7\u05d5\u05d1\u05e5 \u05e4\u05d2\u05d5\u05dd \u05dc\u05d2\u05de\u05e8\u05d9 \u05d5\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05e7\u05e8\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e7\u05e8\u05d9\u05d0\u05d4 \u05db\u05df \u05d4\u05e6\u05dc\u05d9\u05d7\u05d4, \u05d6\u05d5 \u05d1\u05e2\u05d9\u05d4 \u05e2\u05d3\u05d9\u05e0\u05d4 \u05d9\u05d5\u05ea\u05e8."}, {"answer": "\u05e9\u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05e8\u05d9\u05e7\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05d1\u05d4\u05db\u05e8\u05d7."}, {"answer": "\u05e9\u05d9\u05e9 \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05e8\u05da \u05e9\u05d0\u05d9\u05e0\u05d5 \u05de\u05e1\u05e4\u05e8 \u05d8\u05d4\u05d5\u05e8 (\u05d8\u05e7\u05e1\u05d8 \u05d7\u05d5\u05e8\u05d2, \u05ea\u05d0 \u05e8\u05d9\u05e7 \u05dc\u05d0 \u05de\u05d6\u05d5\u05d4\u05d4 \u05d5\u05db\u05d5')", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05e0\u05d8\u05e2\u05e0\u05d4 \u05d1\u05e1\u05d3\u05e8 \u05d4\u05e4\u05d5\u05da", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u05dc\u05e1\u05d3\u05e8 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd, \u05dc\u05d0 \u05d1\u05e1\u05d3\u05e8 \u05d4\u05e9\u05d5\u05e8\u05d5\u05ea."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2083,8 +2083,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("ORIxMMSEkmSh")) {
-    show_questions(questionsORIxMMSEkmSh, ORIxMMSEkmSh);
+  if (document.getElementById("LRbrlEyYlTja")) {
+    show_questions(questionsLRbrlEyYlTja, LRbrlEyYlTja);
   } else {
     setTimeout(try_show, 200);
   }
