@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=b04159b3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cfs-widgets.css?v=80222981" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,6 +64,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/6_0_for_loops';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../../_static/cfs-widgets.js?v=2ef69a37"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.3. range ושימושיו בלולאת for" href="6_1_ranges-and-for.html" />
@@ -663,6 +665,8 @@
 <li><p>באיטרציה השנייה, יישמר האיבר השני במשתנה elem, ושוב ירוצו הפקודות.</p></li>
 <li><p>כך נמשיך עד שייגמרו האיברים, ואז הלולאה מסתיימת ועוברים להמשך הקוד (rest of code).</p></li>
 </ul>
+<img alt="count_spaces(&quot;a b c&quot;): char takes one character per round, and cnt grows by 1 at every space" class="only-light align-center" src="../../_images/w4_6_0_loop_trace.svg" />
+<img alt="count_spaces(&quot;a b c&quot;): char takes one character per round, and cnt grows by 1 at every space" class="only-dark align-center" src="../../_images/w4_6_0_loop_trace-dark.svg" />
 <div class="note admonition">
 <p class="admonition-title"><strong>כדאי לדעת!</strong>   .</p>
 <p>טיפוסים המייצגים אוסף איברים שניתן לעבור עליהם אחד לאחר השני נקראים גם iterables. בהמשך, נרחיב על המשמעות של iterables בהקשר של לולאות</p>
@@ -702,7 +706,9 @@
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="2">
+<div class="cfs-widget" data-widget="loopstate" dir="ltr" data-cfs='{"title":"נסו בעצמכם: `count_spaces` סיבוב אחר סיבוב","hint":"לחצו על \"הבא\" כדי לעבור לסיבוב הבא. בכל סיבוב `char` מקבל את התו הבא של `s`.","code":["def count_spaces(s):","    cnt = 0","    for char in s:","        if char == \" \":","            cnt = cnt+1","    return cnt","","print(count_spaces(\"a b c\"))"],"seq":{"name":"s","var":"char","items":["\"a\"","\" \"","\"b\"","\" \"","\"c\""],"trace":"cnt","traceNote":"cnt: its value after each round"},"output":"printed","steps":[{"lines":[1],"ptr":null,"vars":[["cnt","0",true]],"trace":[null,null,null,null,null],"output":[],"caption":"לפני הלולאה: `cnt = 0`. עוד אין סיבוב, ולכן ל-`char` אין עדיין ערך."},{"lines":[2,3],"ptr":0,"vars":[["char","\"a\"",true],["cnt","0",false]],"cond":["char == \" \"","\"a\" == \" \"",false],"trace":["0",null,null,null,null],"traceNew":0,"output":[],"caption":"סיבוב 1: `char` הוא `\"a\"`. זה אינו רווח, ולכן `cnt` נשאר 0."},{"lines":[2,3,4],"ptr":1,"vars":[["char","\" \"",true],["cnt","1",true]],"cond":["char == \" \"","\" \" == \" \"",true],"trace":["0","1",null,null,null],"traceNew":1,"output":[],"caption":"סיבוב 2: `char` הוא רווח, ולכן `cnt` גדל ל-1."},{"lines":[2,3],"ptr":2,"vars":[["char","\"b\"",true],["cnt","1",false]],"cond":["char == \" \"","\"b\" == \" \"",false],"trace":["0","1","1",null,null],"traceNew":2,"output":[],"caption":"סיבוב 3: `char` הוא `\"b\"`. זה אינו רווח, ולכן `cnt` נשאר 1."},{"lines":[2,3,4],"ptr":3,"vars":[["char","\" \"",true],["cnt","2",true]],"cond":["char == \" \"","\" \" == \" \"",true],"trace":["0","1","1","2",null],"traceNew":3,"output":[],"caption":"סיבוב 4: `char` הוא רווח, ולכן `cnt` גדל ל-2."},{"lines":[2,3],"ptr":4,"vars":[["char","\"c\"",true],["cnt","2",false]],"cond":["char == \" \"","\"c\" == \" \"",false],"trace":["0","1","1","2","2"],"traceNew":4,"output":[],"caption":"סיבוב 5: `char` הוא `\"c\"`. זה אינו רווח, ולכן `cnt` נשאר 2."},{"lines":[5,7],"ptr":null,"end":true,"vars":[["cnt","2",false]],"trace":["0","1","1","2","2"],"output":["2"],"outNew":true,"caption":"הלולאה עברה על כל 5 התווים, ו-`return cnt` מחזיר 2. `print` מדפיס 2."}]}'>
+<p dir="rtl"><strong>נסו בעצמכם: ‎<code dir="ltr">count_spaces</code>‎ סיבוב אחר סיבוב.</strong> באתר הקורס מופיע כאן רכיב אינטראקטיבי: מריצים את ‎<code dir="ltr">count_spaces("a b c")</code>‎ סיבוב אחר סיבוב, ורואים בכל סיבוב את ‎<code dir="ltr">char</code>‎ ואת ‎<code dir="ltr">cnt</code>‎.</p>
+</div><ol class="arabic simple" start="2">
 <li><p>ממשו את הפונקציה count_char המופיעה בחלונית הקוד. הפונקציה מקבלת כקלט מחרוזת s ותו c. הפונקציה תעבור על תווי המחרוזת s, תספור כמה פעמים מופיע בה התו c, ותחזיר את מספר זה.<br />
 רמז: ניתן להיעזר בפונקציה הקודמת.</p></li>
 </ol>

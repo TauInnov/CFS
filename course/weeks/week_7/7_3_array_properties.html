@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=b04159b3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cfs-widgets.css?v=80222981" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -65,6 +66,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_7/7_3_array_properties';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../../../_static/cfs-widgets.js?v=2ef69a37"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="7.4. אינדוקס ופריסה בציר אחד" href="7_4_indexing_slicing.html" />
@@ -685,7 +687,8 @@ dtype: float64
 </div>
 </div>
 </div>
-<img alt="The array y of shape (3, 30): one row per launch angle, one column per time" class="align-center" src="../../../_images/7_3_shape.svg" />
+<img alt="The array y of shape (3, 30): one row per launch angle, one column per time" class="only-light align-center" src="../../../_images/7_3_shape.svg" />
+<img alt="The array y of shape (3, 30): one row per launch angle, one column per time" class="only-dark align-center" src="../../../_images/7_3_shape-dark.svg" />
 <p>‎<code class="docutils literal notranslate"><span class="pre">y.shape</span></code>‎ הוא ‎<code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">30)</span></code>‎: שלוש זוויות שיגור, שלושים נקודות זמן לכל אחת. נצייר את שלושת המסלולים יחד — שורה אחת של המערך מייצגת עקומה שלמה:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -741,7 +744,8 @@ dtype: float64
 </div>
 </div>
 <p>השורה האחרונה היא הבאג: ‎<code class="docutils literal notranslate"><span class="pre">t_bug</span></code>‎ הוא מערך מטיפוס שלם, אז ההשמה ‎<code class="docutils literal notranslate"><span class="pre">t_bug[0]</span> <span class="pre">=</span> <span class="pre">0.75</span></code>‎ לא זורקת שגיאה — היא חותכת את הערך ל-0, בלי אזהרה. הפתרון: לבנות את המערך מראש עם ‎<code class="docutils literal notranslate"><span class="pre">dtype=float</span></code>‎, או לכתוב את הערכים כ-‎<code class="docutils literal notranslate"><span class="pre">0.0,</span> <span class="pre">1.0,</span> <span class="pre">2.0</span></code>‎ וכו’.</p>
-<img alt="Assigning 0.75 into an int array keeps only 0" class="align-center" src="../../../_images/7_3_int_dtype.svg" />
+<img alt="Assigning 0.75 into an int array keeps only 0" class="only-light align-center" src="../../../_images/7_3_int_dtype.svg" />
+<img alt="Assigning 0.75 into an int array keeps only 0" class="only-dark align-center" src="../../../_images/7_3_int_dtype-dark.svg" />
 </section>
 <section id="id3">
 <h2><span class="section-number">7.3.4. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
@@ -752,8 +756,8 @@ dtype: float64
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="mbYzLVgbBtij" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#mbYzLVgbBtij {
+<div class="output text_html"><div id="bjEHccRJzHIo" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#bjEHccRJzHIo {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -976,7 +980,7 @@ dtype: float64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsmbYzLVgbBtij=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05de\u05e2\u05e8\u05da \u05e0\u05d5\u05e6\u05e8 \u05de\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd, \u05d5\u05d4\u05d4\u05e9\u05de\u05d4 \u05d7\u05d5\u05ea\u05db\u05ea \u05d0\u05ea 2.7 \u05dc-2, \u05d1\u05dc\u05d9 \u05d0\u05d6\u05d4\u05e8\u05d4."}, {"answer": "2.7", "correct": false, "feedback": "\u05dc\u05d0: \u05de\u05e2\u05e8\u05da \u05e9\u05dc \u05e9\u05dc\u05de\u05d9\u05dd \u05dc\u05d0 \u05d9\u05db\u05d5\u05dc \u05dc\u05e9\u05de\u05d5\u05e8 2.7; \u05d4\u05d8\u05d9\u05e4\u05d5\u05e1 \u05e0\u05e7\u05d1\u05e2 \u05d1\u05d9\u05e6\u05d9\u05e8\u05d4 \u05d5\u05dc\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4 \u05d1\u05d4\u05e9\u05de\u05d4."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: NumPy \u05d7\u05d5\u05ea\u05da \u05d5\u05dc\u05d0 \u05de\u05e2\u05d2\u05dc, \u05d5\u05dc\u05db\u05df 2.7 \u05d4\u05d5\u05e4\u05da \u05dc-2."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: NumPy \u05dc\u05d0 \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05e2\u05dc \u05d4\u05e9\u05de\u05d4 \u05db\u05d6\u05d5, \u05d5\u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05db\u05e0\u05d4."}]}];
+</style></div><script type="application/javascript">var questionsbjEHccRJzHIo=[{"question": "\u05de\u05d4 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05de\u05e2\u05e8\u05da \u05e0\u05d5\u05e6\u05e8 \u05de\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd, \u05d5\u05d4\u05d4\u05e9\u05de\u05d4 \u05d7\u05d5\u05ea\u05db\u05ea \u05d0\u05ea 2.7 \u05dc-2, \u05d1\u05dc\u05d9 \u05d0\u05d6\u05d4\u05e8\u05d4."}, {"answer": "2.7", "correct": false, "feedback": "\u05dc\u05d0: \u05de\u05e2\u05e8\u05da \u05e9\u05dc \u05e9\u05dc\u05de\u05d9\u05dd \u05dc\u05d0 \u05d9\u05db\u05d5\u05dc \u05dc\u05e9\u05de\u05d5\u05e8 2.7; \u05d4\u05d8\u05d9\u05e4\u05d5\u05e1 \u05e0\u05e7\u05d1\u05e2 \u05d1\u05d9\u05e6\u05d9\u05e8\u05d4 \u05d5\u05dc\u05d0 \u05de\u05e9\u05ea\u05e0\u05d4 \u05d1\u05d4\u05e9\u05de\u05d4."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: NumPy \u05d7\u05d5\u05ea\u05da \u05d5\u05dc\u05d0 \u05de\u05e2\u05d2\u05dc, \u05d5\u05dc\u05db\u05df 2.7 \u05d4\u05d5\u05e4\u05da \u05dc-2."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0: NumPy \u05dc\u05d0 \u05d6\u05d5\u05e8\u05e7 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05e2\u05dc \u05d4\u05e9\u05de\u05d4 \u05db\u05d6\u05d5, \u05d5\u05d6\u05d5 \u05d1\u05d3\u05d9\u05d5\u05e7 \u05d4\u05e1\u05db\u05e0\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2038,8 +2042,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("mbYzLVgbBtij")) {
-    show_questions(questionsmbYzLVgbBtij, mbYzLVgbBtij);
+  if (document.getElementById("bjEHccRJzHIo")) {
+    show_questions(questionsbjEHccRJzHIo, bjEHccRJzHIo);
   } else {
     setTimeout(try_show, 200);
   }

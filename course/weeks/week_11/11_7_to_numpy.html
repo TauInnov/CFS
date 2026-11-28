@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=b04159b3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cfs-widgets.css?v=80222981" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,6 +64,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_7_to_numpy';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../../../_static/cfs-widgets.js?v=2ef69a37"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="11.8. קריאת קוד pandas: קוד שכתב סוכן AI ובאגים אופייניים" href="11_8_reading_agent_code.html" />
@@ -677,7 +679,8 @@
 <section id="index-alignment-series">
 <h2><span class="section-number">11.7.2. </span>באג נפוץ: התאמת אינדקסים (Index Alignment) בין שני <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#index-alignment-series" title="Link to this heading">#</a></h2>
 <p>זה ההבדל המושגי החשוב ביותר בין pandas ל-NumPy: כשמחסרים שני מערכי NumPy, ההתאמה היא <strong>לפי מיקום</strong>. כשמחסרים שני <code class="docutils literal notranslate"><span class="pre">Series</span></code> של pandas, ההתאמה היא <strong>לפי index</strong> — ואם שני ה-<code class="docutils literal notranslate"><span class="pre">Series</span></code> עברו סינון שונה (ויש להם index שונה), pandas “מיישר” אותם לפי תווית ה-index, לא לפי מיקום — והתוצאה מלאה ב-<code class="docutils literal notranslate"><span class="pre">NaN</span></code> איפה שאין התאמה.</p>
-<img alt="s1 - s2 lines up by index label and gives only NaN, while the NumPy arrays line up by position" class="align-center" src="../../../_images/11_7_index_alignment.svg" />
+<img alt="s1 - s2 lines up by index label and gives only NaN, while the NumPy arrays line up by position" class="only-light align-center" src="../../../_images/11_7_index_alignment.svg" />
+<img alt="s1 - s2 lines up by index label and gives only NaN, while the NumPy arrays line up by position" class="only-dark align-center" src="../../../_images/11_7_index_alignment-dark.svg" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">45</span><span class="p">][</span><span class="s2">"range_measured"</span><span class="p">]</span>   <span class="c1"># index: 12 ... 17</span>
@@ -738,8 +741,8 @@
 <h2><span class="section-number">11.7.4. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="UEdOpkGBNWBm" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#UEdOpkGBNWBm {
+<div class="output text_html"><div id="MXQLSeYSUodf" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#MXQLSeYSUodf {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -962,7 +965,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsUEdOpkGBNWBm=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05de\u05e2\u05e8\u05db\u05d9 NumPy \u05de\u05ea\u05e0\u05d4\u05d2 \u05e9\u05d5\u05e0\u05d4 \u05de\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 Series \u05e9\u05dc pandas \u05e9\u05e2\u05d1\u05e8\u05d5 \u05e1\u05d9\u05e0\u05d5\u05df \u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05d6\u05d5 \u05d0\u05d5\u05ea\u05d4 \u05d4\u05ea\u05e0\u05d4\u05d2\u05d5\u05ea \u05d1\u05d3\u05d9\u05d5\u05e7", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05d5\u05e0\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9 (NaN)."}, {"answer": "pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "NumPy \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 \u05de\u05d9\u05e7\u05d5\u05dd; pandas Series \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 index, \u05e9\u05e2\u05dc\u05d5\u05dc \u05dc\u05d4\u05d9\u05d5\u05ea \u05e9\u05d5\u05e0\u05d4 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05d4-Series", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 NumPy \u05ea\u05d5\u05de\u05da \u05e8\u05e7 \u05d1\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u2014 \u05e9\u05e0\u05d9 \u05d4\u05db\u05dc\u05d9\u05dd \u05ea\u05d5\u05de\u05db\u05d9\u05dd \u05d1\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd \u05dc\u05dc\u05d0 \u05d1\u05e2\u05d9\u05d4; \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e9\u05d9\u05d8\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4, \u05dc\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1\u05d9 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd."}]}];
+</style></div><script type="application/javascript">var questionsMXQLSeYSUodf=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05de\u05e2\u05e8\u05db\u05d9 NumPy \u05de\u05ea\u05e0\u05d4\u05d2 \u05e9\u05d5\u05e0\u05d4 \u05de\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 Series \u05e9\u05dc pandas \u05e9\u05e2\u05d1\u05e8\u05d5 \u05e1\u05d9\u05e0\u05d5\u05df \u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05d6\u05d5 \u05d0\u05d5\u05ea\u05d4 \u05d4\u05ea\u05e0\u05d4\u05d2\u05d5\u05ea \u05d1\u05d3\u05d9\u05d5\u05e7", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05d5\u05e0\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9 (NaN)."}, {"answer": "pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "NumPy \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 \u05de\u05d9\u05e7\u05d5\u05dd; pandas Series \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 index, \u05e9\u05e2\u05dc\u05d5\u05dc \u05dc\u05d4\u05d9\u05d5\u05ea \u05e9\u05d5\u05e0\u05d4 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05d4-Series", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 NumPy \u05ea\u05d5\u05de\u05da \u05e8\u05e7 \u05d1\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u2014 \u05e9\u05e0\u05d9 \u05d4\u05db\u05dc\u05d9\u05dd \u05ea\u05d5\u05de\u05db\u05d9\u05dd \u05d1\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd \u05dc\u05dc\u05d0 \u05d1\u05e2\u05d9\u05d4; \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e9\u05d9\u05d8\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4, \u05dc\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1\u05d9 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2024,8 +2027,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("UEdOpkGBNWBm")) {
-    show_questions(questionsUEdOpkGBNWBm, UEdOpkGBNWBm);
+  if (document.getElementById("MXQLSeYSUodf")) {
+    show_questions(questionsMXQLSeYSUodf, MXQLSeYSUodf);
   } else {
     setTimeout(try_show, 200);
   }

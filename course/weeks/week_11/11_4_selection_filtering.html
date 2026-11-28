@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=b04159b3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cfs-widgets.css?v=80222981" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,6 +64,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_4_selection_filtering';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../../../_static/cfs-widgets.js?v=2ef69a37"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="11.5. groupby: צמצום לפי קבוצה" href="11_5_groupby.html" />
@@ -747,7 +749,8 @@
 </div></div></div>
 </div>
 <p>‎<code class="docutils literal notranslate"><span class="pre">df[&quot;angle_deg&quot;]</span> <span class="pre">==</span> <span class="pre">45</span></code>‎ בעצמו הוא ‎<code class="docutils literal notranslate"><span class="pre">Series</span></code>‎ של ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎/‎<code class="docutils literal notranslate"><span class="pre">False</span></code>‎ — בדיוק כמו מסכה על מערך NumPy. ‎<code class="docutils literal notranslate"><span class="pre">df[mask]</span></code>‎ משאיר רק את השורות שבהן המסכה ‎<code class="docutils literal notranslate"><span class="pre">True</span></code>‎. אין הבדל מושגי מהמסכות שראינו בסעיף 7.7 — רק שכאן המסכה בוחרת <strong>שורות שלמות</strong>, לא איברים בודדים.</p>
-<img alt="The mask marks the rows with angle 45 as True, and df[mask_45] keeps those six rows" class="align-center" src="../../../_images/11_4_mask.svg" />
+<img alt="The mask marks the rows with angle 45 as True, and df[mask_45] keeps those six rows" class="only-light align-center" src="../../../_images/11_4_mask.svg" />
+<img alt="The mask marks the rows with angle 45 as True, and df[mask_45] keeps those six rows" class="only-dark align-center" src="../../../_images/11_4_mask-dark.svg" />
 </section>
 <section id="id2">
 <h2><span class="section-number">11.4.2. </span>באג נפוץ: תנאים מחוברים בלי סוגריים<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
@@ -875,8 +878,8 @@
 <h2><span class="section-number">11.4.4. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="zXrtZXwbPuSk" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#zXrtZXwbPuSk {
+<div class="output text_html"><div id="lHFmopJuKKnL" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#lHFmopJuKKnL {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1099,7 +1102,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionszXrtZXwbPuSk=[{"question": "\u05de\u05d3\u05d5\u05e2 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05de\u05e1\u05e4\u05e8 \u05e2\u05dd ==", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05e2\u05dd == \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05d5\u05d1\u05d3\u05ea \u05de\u05e6\u05d5\u05d9\u05df \u05d5\u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9\u05ea; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05d1-and."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionslHFmopJuKKnL=[{"question": "\u05de\u05d3\u05d5\u05e2 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05de\u05e1\u05e4\u05e8 \u05e2\u05dd ==", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05e2\u05dd == \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05d5\u05d1\u05d3\u05ea \u05de\u05e6\u05d5\u05d9\u05df \u05d5\u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9\u05ea; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05d1-and."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2161,8 +2164,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("zXrtZXwbPuSk")) {
-    show_questions(questionszXrtZXwbPuSk, zXrtZXwbPuSk);
+  if (document.getElementById("lHFmopJuKKnL")) {
+    show_questions(questionslHFmopJuKKnL, lHFmopJuKKnL);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2310,7 +2313,8 @@ dtype: int64
 </div>
 </div>
 </div>
-<img alt="runs.dropna() removes the row with NaN and keeps the index labels 0, 2 and 3" class="align-center" src="../../../_images/11_4_dropna.svg" />
+<img alt="runs.dropna() removes the row with NaN and keeps the index labels 0, 2 and 3" class="only-light align-center" src="../../../_images/11_4_dropna.svg" />
+<img alt="runs.dropna() removes the row with NaN and keeps the index labels 0, 2 and 3" class="only-dark align-center" src="../../../_images/11_4_dropna-dark.svg" />
 </section>
 <section id="id6">
 <h2><span class="section-number">11.4.8. </span>נסו בעצמכם<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>

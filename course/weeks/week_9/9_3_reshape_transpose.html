@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=b04159b3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cfs-widgets.css?v=80222981" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -65,6 +66,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_3_reshape_transpose';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../../../_static/cfs-widgets.js?v=2ef69a37"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="9.4. concatenate — לאחד ריצות" href="9_4_concatenate.html" />
@@ -671,7 +673,8 @@
 <section id="transpose">
 <h2><span class="section-number">9.3.1. </span>דוגמה: transpose לצורך תאימות לכלי חיצוני<a class="headerlink" href="#transpose" title="Link to this heading">#</a></h2>
 <p>נניח שכלי חיצוני (למשל טבלת pandas שנפגוש בשבוע 11) מצפה לקבל <strong>שורה לכל נקודת זמן ועמודה לכל ריצה</strong> — בדיוק ההפך מ-‎<code class="docutils literal notranslate"><span class="pre">Y</span></code>‎.</p>
-<img alt="Y.T swaps the axes: Y[2, 10] becomes Y_time_major[10, 2]" class="align-center" src="../../../_images/9_3_transpose.svg" />
+<img alt="Y.T swaps the axes: Y[2, 10] becomes Y_time_major[10, 2]" class="only-light align-center" src="../../../_images/9_3_transpose.svg" />
+<img alt="Y.T swaps the axes: Y[2, 10] becomes Y_time_major[10, 2]" class="only-dark align-center" src="../../../_images/9_3_transpose-dark.svg" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_time_major</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">T</span>
@@ -715,7 +718,8 @@ True
 <section id="reshape">
 <h2><span class="section-number">9.3.3. </span>באג נפוץ: ‎<code class="docutils literal notranslate"><span class="pre">reshape</span></code>‎ בהנחה שגויה על סדר הנתונים<a class="headerlink" href="#reshape" title="Link to this heading">#</a></h2>
 <p>‎<code class="docutils literal notranslate"><span class="pre">reshape</span></code>‎ <strong>לא</strong> מודע למשמעות הפיזיקלית של הצירים — הוא רק קורא את הזיכרון בסדר קבוע ומחלק אותו לצורה החדשה. אם משנים ‎<code class="docutils literal notranslate"><span class="pre">shape</span></code>‎ בלי לוודא שהמשמעות עדיין נכונה (למשל, ‎<code class="docutils literal notranslate"><span class="pre">reshape(n_t,</span> <span class="pre">n_runs)</span></code>‎ על ‎<code class="docutils literal notranslate"><span class="pre">Y</span></code>‎ שצורתו ‎<code class="docutils literal notranslate"><span class="pre">(n_runs,</span> <span class="pre">n_t)</span></code>‎, במקום ‎<code class="docutils literal notranslate"><span class="pre">Y.T</span></code>‎), מקבלים מערך <strong>באותה צורה שרצינו</strong>, אבל עם ערכים <strong>מעורבבים בין ריצות וזמנים</strong> — שגיאה שקטה לגמרי.</p>
-<img alt="reshape reads Y row by row, so row 0 of wrong is run 0 at five times" class="align-center" src="../../../_images/9_3_reshape_bug.svg" />
+<img alt="reshape reads Y row by row, so row 0 of wrong is run 0 at five times" class="only-light align-center" src="../../../_images/9_3_reshape_bug.svg" />
+<img alt="reshape reads Y row by row, so row 0 of wrong is run 0 at five times" class="only-dark align-center" src="../../../_images/9_3_reshape_bug-dark.svg" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wrong</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n_t</span><span class="p">,</span> <span class="n">n_runs</span><span class="p">)</span>     <span class="c1"># no error, but the values are mixed up</span>
@@ -770,8 +774,8 @@ True
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="zYbIfgyEkWTT" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#zYbIfgyEkWTT {
+<div class="output text_html"><div id="oWQdQTwtZUVo" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#oWQdQTwtZUVo {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -994,7 +998,7 @@ True
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionszYbIfgyEkWTT=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05de\u05d4\u05d5\u05ea\u05d9 \u05d1\u05d9\u05df reshape \u05dc\u05d1\u05d9\u05df T?", "type": "multiple_choice", "answers": [{"answer": "reshape \u05de\u05e9\u05e0\u05d4 \u05d0\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e2\u05e6\u05de\u05dd, T \u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05e3 \u05d0\u05d7\u05ea \u05de\u05d4\u05df \u05dc\u05d0 \u05de\u05e9\u05e0\u05d4 \u05e2\u05e8\u05db\u05d9\u05dd, \u05e8\u05e7 \u05d0\u05ea \u05e1\u05d9\u05d3\u05d5\u05e8\u05dd."}, {"answer": "\u05d4\u05df \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05d6\u05d4\u05d5\u05ea \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d1\u05d4 \u05d4\u05df \u05e0\u05d5\u05ea\u05e0\u05d5\u05ea \u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea."}, {"answer": "T \u05ea\u05de\u05d9\u05d3 \u05d9\u05d5\u05e6\u05e8 \u05e2\u05d5\u05ea\u05e7, \u05d5-reshape \u05ea\u05de\u05d9\u05d3 \u05d9\u05d5\u05e6\u05e8 \u05ea\u05e6\u05d5\u05d2\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05ea\u05d9 \u05d4\u05e4\u05e2\u05d5\u05dc\u05d5\u05ea \u05d9\u05db\u05d5\u05dc\u05d5\u05ea \u05dc\u05d4\u05d7\u05d6\u05d9\u05e8 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05d0\u05d5 \u05e2\u05d5\u05ea\u05e7 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05de\u05e7\u05e8\u05d4; \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05de\u05d4\u05d5\u05ea\u05d9 \u05d4\u05d5\u05d0 \u05d1\u05de\u05d4 \u05e9\u05d4\u05df \u05e2\u05d5\u05e9\u05d5\u05ea \u05dc\u05e6\u05d9\u05e8\u05d9\u05dd, \u05dc\u05d0 \u05d1\u05d6\u05d9\u05db\u05e8\u05d5\u05df."}, {"answer": "T \u05de\u05d7\u05dc\u05d9\u05e3 \u05d0\u05ea \u05ea\u05e4\u05e7\u05d9\u05d3\u05d9 \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd \u05ea\u05d5\u05da \u05e9\u05de\u05d9\u05e8\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4 \u05d4\u05e0\u05db\u05d5\u05e0\u05d4; reshape \u05e8\u05e7 \u05e7\u05d5\u05e8\u05d0 \u05de\u05d7\u05d3\u05e9 \u05d0\u05ea \u05d4\u05d6\u05d9\u05db\u05e8\u05d5\u05df \u05d1\u05e1\u05d3\u05e8 \u05e7\u05d1\u05d5\u05e2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05dc a.T \u05d4\u05d9\u05d0 \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05dc a, \u05db\u05dc\u05d5\u05de\u05e8 1 \u05d5-4."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: 1 \u05d5-2 \u05d4\u05dd \u05ea\u05d7\u05d9\u05dc\u05ea \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05dc a \u05dc\u05e4\u05e0\u05d9 \u05d4\u05d4\u05d7\u05dc\u05e4\u05d4. T \u05de\u05d7\u05dc\u05d9\u05e3 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d5\u05e2\u05de\u05d5\u05d3\u05d5\u05ea."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05e0\u05de\u05e6\u05d0 \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d0\u05de\u05e6\u05e2\u05d9\u05ea \u05e9\u05dc a, \u05d5\u05d4\u05d9\u05d0 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05dc a.T."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: a.T \u05de\u05ea\u05d7\u05d9\u05dc \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05dc a, 1 \u05d5-4."}]}];
+</style></div><script type="application/javascript">var questionsoWQdQTwtZUVo=[{"question": "\u05de\u05d4 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05de\u05d4\u05d5\u05ea\u05d9 \u05d1\u05d9\u05df reshape \u05dc\u05d1\u05d9\u05df T?", "type": "multiple_choice", "answers": [{"answer": "reshape \u05de\u05e9\u05e0\u05d4 \u05d0\u05ea \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e2\u05e6\u05de\u05dd, T \u05dc\u05d0", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d0\u05e3 \u05d0\u05d7\u05ea \u05de\u05d4\u05df \u05dc\u05d0 \u05de\u05e9\u05e0\u05d4 \u05e2\u05e8\u05db\u05d9\u05dd, \u05e8\u05e7 \u05d0\u05ea \u05e1\u05d9\u05d3\u05d5\u05e8\u05dd."}, {"answer": "\u05d4\u05df \u05e4\u05d5\u05e0\u05e7\u05e6\u05d9\u05d5\u05ea \u05d6\u05d4\u05d5\u05ea \u05dc\u05d7\u05dc\u05d5\u05d8\u05d9\u05df", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d1\u05d4 \u05d4\u05df \u05e0\u05d5\u05ea\u05e0\u05d5\u05ea \u05ea\u05d5\u05e6\u05d0\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea."}, {"answer": "T \u05ea\u05de\u05d9\u05d3 \u05d9\u05d5\u05e6\u05e8 \u05e2\u05d5\u05ea\u05e7, \u05d5-reshape \u05ea\u05de\u05d9\u05d3 \u05d9\u05d5\u05e6\u05e8 \u05ea\u05e6\u05d5\u05d2\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e9\u05ea\u05d9 \u05d4\u05e4\u05e2\u05d5\u05dc\u05d5\u05ea \u05d9\u05db\u05d5\u05dc\u05d5\u05ea \u05dc\u05d4\u05d7\u05d6\u05d9\u05e8 \u05ea\u05e6\u05d5\u05d2\u05d4 \u05d0\u05d5 \u05e2\u05d5\u05ea\u05e7 \u05ea\u05dc\u05d5\u05d9 \u05d1\u05de\u05e7\u05e8\u05d4; \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05de\u05d4\u05d5\u05ea\u05d9 \u05d4\u05d5\u05d0 \u05d1\u05de\u05d4 \u05e9\u05d4\u05df \u05e2\u05d5\u05e9\u05d5\u05ea \u05dc\u05e6\u05d9\u05e8\u05d9\u05dd, \u05dc\u05d0 \u05d1\u05d6\u05d9\u05db\u05e8\u05d5\u05df."}, {"answer": "T \u05de\u05d7\u05dc\u05d9\u05e3 \u05d0\u05ea \u05ea\u05e4\u05e7\u05d9\u05d3\u05d9 \u05d4\u05e6\u05d9\u05e8\u05d9\u05dd \u05ea\u05d5\u05da \u05e9\u05de\u05d9\u05e8\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4 \u05d4\u05e0\u05db\u05d5\u05e0\u05d4; reshape \u05e8\u05e7 \u05e7\u05d5\u05e8\u05d0 \u05de\u05d7\u05d3\u05e9 \u05d0\u05ea \u05d4\u05d6\u05d9\u05db\u05e8\u05d5\u05df \u05d1\u05e1\u05d3\u05e8 \u05e7\u05d1\u05d5\u05e2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05e0\u05d9 \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05ea \u05d4\u05d4\u05d3\u05e4\u05e1\u05d4?", "type": "multiple_choice", "answers": [{"answer": "4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05dc a.T \u05d4\u05d9\u05d0 \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05dc a, \u05db\u05dc\u05d5\u05de\u05e8 1 \u05d5-4."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: 1 \u05d5-2 \u05d4\u05dd \u05ea\u05d7\u05d9\u05dc\u05ea \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05dc a \u05dc\u05e4\u05e0\u05d9 \u05d4\u05d4\u05d7\u05dc\u05e4\u05d4. T \u05de\u05d7\u05dc\u05d9\u05e3 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d5\u05e2\u05de\u05d5\u05d3\u05d5\u05ea."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05e0\u05de\u05e6\u05d0 \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d0\u05de\u05e6\u05e2\u05d9\u05ea \u05e9\u05dc a, \u05d5\u05d4\u05d9\u05d0 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05dc a.T."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: a.T \u05de\u05ea\u05d7\u05d9\u05dc \u05d1\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05e9\u05dc a, 1 \u05d5-4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2056,8 +2060,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("zYbIfgyEkWTT")) {
-    show_questions(questionszYbIfgyEkWTT, zYbIfgyEkWTT);
+  if (document.getElementById("oWQdQTwtZUVo")) {
+    show_questions(questionsoWQdQTwtZUVo, oWQdQTwtZUVo);
   } else {
     setTimeout(try_show, 200);
   }

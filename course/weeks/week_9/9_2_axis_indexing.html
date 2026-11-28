@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=b04159b3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cfs-widgets.css?v=80222981" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -65,6 +66,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_2_axis_indexing';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../../../_static/cfs-widgets.js?v=2ef69a37"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="9.3. reshape ו-transpose" href="9_3_reshape_transpose.html" />
@@ -648,8 +650,11 @@
 <li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">a[:,</span> <span class="pre">2]</span></code>‎</strong> — כל הערכים בציר הראשון, אבל רק מיקום 2 בציר השני.</p></li>
 <li><p><strong>‎<code class="docutils literal notranslate"><span class="pre">a[:,</span> <span class="pre">:,</span> <span class="pre">0]</span></code>‎</strong> — במערך תלת-ממדי: כל הערכים בשני הצירים הראשונים, ורק מיקום 0 בציר <strong>האחרון</strong>.</p></li>
 </ul>
-<img alt="Y[1], Y[:, 2], Y[1, 2] and XY[:, :, 0], each with its cells and shape" class="align-center" src="../../../_images/9_2_slicing.svg" />
-<div class="cell docutils container">
+<img alt="Y[1], Y[:, 2], Y[1, 2] and XY[:, :, 0], each with its cells and shape" class="only-light align-center" src="../../../_images/9_2_slicing.svg" />
+<img alt="Y[1], Y[:, 2], Y[1, 2] and XY[:, :, 0], each with its cells and shape" class="only-dark align-center" src="../../../_images/9_2_slicing-dark.svg" />
+<div class="cfs-widget" data-widget="slice2d" dir="ltr" data-cfs='{"title":"נסו בעצמכם: פריסה של `Y` לפי צירים","hint":"כתבו לכל ציר אינדקס (`1`, `-1`) או פריסה (`:`, `1:3`), או בחרו אחת הדוגמאות. שדה ריק בציר 1 שקול ל-`:`.","name":"Y","shape":[5,60],"cols":[0,1,2,3,4,5,59],"values":[[0.0,0.6,1.2,1.8,2.3,2.8,3.3,3.8,4.2,4.7,5.1,5.4,5.8,6.1,6.4,6.7,7.0,7.2,7.4,7.6,7.8,7.9,8.0,8.1,8.2,8.2,8.3,8.3,8.2,8.2,8.1,8.0,7.9,7.8,7.6,7.4,7.2,7.0,6.7,6.4,6.1,5.8,5.5,5.1,4.7,4.3,3.8,3.4,2.9,2.4,1.8,1.3,0.7,0.1,-0.6,-1.2,-1.9,-2.6,-3.3,-4.1],[0.0,0.7,1.3,1.9,2.5,3.1,3.6,4.1,4.6,5.1,5.6,6.0,6.4,6.8,7.1,7.5,7.8,8.1,8.3,8.6,8.8,9.0,9.2,9.3,9.4,9.5,9.6,9.7,9.7,9.7,9.7,9.6,9.6,9.5,9.4,9.2,9.1,8.9,8.7,8.5,8.2,7.9,7.6,7.3,7.0,6.6,6.2,5.8,5.4,4.9,4.4,3.9,3.4,2.8,2.2,1.6,1.0,0.4,-0.3,-1.0],[0.0,0.7,1.3,2.0,2.6,3.2,3.7,4.3,4.8,5.3,5.7,6.2,6.6,7.0,7.4,7.7,8.1,8.4,8.7,8.9,9.1,9.4,9.5,9.7,9.8,10.0,10.1,10.1,10.2,10.2,10.2,10.2,10.1,10.1,10.0,9.8,9.7,9.5,9.4,9.1,8.9,8.7,8.4,8.1,7.7,7.4,7.0,6.6,6.2,5.7,5.3,4.8,4.3,3.7,3.2,2.6,2.0,1.3,0.7,0.0],[0.0,0.7,1.4,2.0,2.6,3.3,3.8,4.4,4.9,5.4,5.9,6.4,6.8,7.2,7.6,8.0,8.3,8.7,9.0,9.2,9.5,9.7,9.9,10.1,10.3,10.4,10.5,10.6,10.7,10.7,10.7,10.7,10.7,10.6,10.6,10.5,10.3,10.2,10.0,9.8,9.6,9.4,9.1,8.8,8.5,8.2,7.8,7.4,7.0,6.6,6.1,5.7,5.2,4.6,4.1,3.5,2.9,2.3,1.7,1.0],[0.0,0.7,1.5,2.2,2.9,3.5,4.1,4.8,5.3,5.9,6.4,7.0,7.4,7.9,8.4,8.8,9.2,9.5,9.9,10.2,10.5,10.8,11.1,11.3,11.5,11.7,11.9,12.0,12.1,12.2,12.3,12.3,12.3,12.3,12.3,12.3,12.2,12.1,12.0,11.8,11.7,11.5,11.3,11.0,10.8,10.5,10.2,9.9,9.5,9.1,8.7,8.3,7.9,7.4,6.9,6.4,5.8,5.3,4.7,4.1]],"decimals":1,"rowLabel":"run","colLabel":"time","init":["1",""],"presets":[["1",""],[":","2"],["1","2"],["0",""],[":","0"],["1:3",":3"],["-1","-1"]]}'>
+<p dir="rtl"><strong>נסו בעצמכם: פריסה של ‎<code dir="ltr">Y</code>‎ לפי צירים.</strong> באתר הקורס מופיע כאן רכיב אינטראקטיבי: כותבים אינדקס או פריסה לכל ציר של ‎<code dir="ltr">Y</code>‎ ורואים אילו תאים נבחרים ומה צורת התוצאה. במחברת אפשר לנסות זאת בתא קוד, למשל ‎<code dir="ltr">print(Y[1:3, :3].shape)</code>‎.</p>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
@@ -700,7 +705,8 @@ all_x_coords.shape: (5, 60)
 <section id="a-0-a-0">
 <h2><span class="section-number">9.2.2. </span>באג נפוץ: ‎<code class="docutils literal notranslate"><span class="pre">a[0]</span></code>‎ מול ‎<code class="docutils literal notranslate"><span class="pre">a[:,</span> <span class="pre">0]</span></code>‎<a class="headerlink" href="#a-0-a-0" title="Link to this heading">#</a></h2>
 <p>‎<code class="docutils literal notranslate"><span class="pre">Y[0]</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">Y[:,</span> <span class="pre">0]</span></code>‎ נראים דומים אך שונים לגמרי פיזיקלית: ‎<code class="docutils literal notranslate"><span class="pre">Y[0]</span></code>‎ הוא <strong>כל מסלול הריצה הראשונה</strong>, בעוד ‎<code class="docutils literal notranslate"><span class="pre">Y[:,</span> <span class="pre">0]</span></code>‎ הוא <strong>הגובה ההתחלתי של כל הריצות</strong> (שכולן מתחילות מ-<span class="math notranslate nohighlight">\(y=0\)</span>). הקוד רץ בלי שגיאה בשני המקרים, אבל מחזיר משהו אחר לגמרי.</p>
-<img alt="Y[0] is a row of shape (60,), Y[:, 0] is a column of shape (5,)" class="align-center" src="../../../_images/9_2_row_vs_column.svg" />
+<img alt="Y[0] is a row of shape (60,), Y[:, 0] is a column of shape (5,)" class="only-light align-center" src="../../../_images/9_2_row_vs_column.svg" />
+<img alt="Y[0] is a row of shape (60,), Y[:, 0] is a column of shape (5,)" class="only-dark align-center" src="../../../_images/9_2_row_vs_column-dark.svg" />
 </section>
 <section id="id3">
 <h2><span class="section-number">9.2.3. </span>נסו בעצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
@@ -731,8 +737,8 @@ all_x_coords.shape: (5, 60)
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="pgZqhYzmrPtH" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#pgZqhYzmrPtH {
+<div class="output text_html"><div id="vHHvhtRlldqM" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#vHHvhtRlldqM {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -955,7 +961,7 @@ all_x_coords.shape: (5, 60)
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionspgZqhYzmrPtH=[{"question": "\u05db\u05de\u05d4 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "3", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d0\u05d7\u05d3 \u05d1\u05d5\u05d7\u05e8 \u05d0\u05ea \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05db\u05d5\u05dc\u05d4, 3 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d6\u05de\u05df."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd, \u05d0\u05d7\u05d3 \u05dc\u05db\u05dc \u05e8\u05d9\u05e6\u05d4, \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05db\u05e9\u05d1\u05d5\u05d7\u05e8\u05d9\u05dd \u05d6\u05de\u05df \u05d0\u05d7\u05d3, \u05db\u05de\u05d5 \u05d1\u05e9\u05d5\u05e8\u05d4 B."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3 \u05d3\u05d5\u05e8\u05e9 \u05e9\u05e0\u05d9 \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd, \u05e8\u05d9\u05e6\u05d4 \u05d5\u05d6\u05de\u05df."}, {"answer": "6", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05db\u05dc \u05d4\u05de\u05e2\u05e8\u05da."}]}, {"question": "\u05db\u05de\u05d4 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e0\u05e7\u05d5\u05d3\u05ea\u05d9\u05d9\u05dd \u05d1\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05d5\u05de\u05e8\u05d5\u05ea \u05d0\u05ea \u05db\u05dc \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05d5-2 \u05d1\u05d5\u05d7\u05e8 \u05d6\u05de\u05df \u05d0\u05d7\u05d3. \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05d2\u05d5\u05d1\u05d4 \u05d0\u05d7\u05d3 \u05de\u05db\u05dc \u05e8\u05d9\u05e6\u05d4."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: 3 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05db\u05e9\u05d1\u05d5\u05d7\u05e8\u05d9\u05dd \u05e8\u05d9\u05e6\u05d4 \u05d0\u05d7\u05ea, \u05db\u05de\u05d5 \u05d1\u05e9\u05d5\u05e8\u05d4 A."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e0\u05e7\u05d5\u05d3\u05ea\u05d9\u05d9\u05dd \u05e9\u05d5\u05de\u05e8\u05d5\u05ea \u05d0\u05ea \u05db\u05dc \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05d5\u05dc\u05db\u05df \u05d9\u05e9 \u05d9\u05d5\u05ea\u05e8 \u05de\u05de\u05e1\u05e4\u05e8 \u05d0\u05d7\u05d3."}, {"answer": "6", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05db\u05dc \u05d4\u05de\u05e2\u05e8\u05da."}]}];
+</style></div><script type="application/javascript">var questionsvHHvhtRlldqM=[{"question": "\u05db\u05de\u05d4 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "3", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05d0\u05d7\u05d3 \u05d1\u05d5\u05d7\u05e8 \u05d0\u05ea \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05db\u05d5\u05dc\u05d4, 3 \u05e0\u05e7\u05d5\u05d3\u05d5\u05ea \u05d6\u05de\u05df."}, {"answer": "2", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd, \u05d0\u05d7\u05d3 \u05dc\u05db\u05dc \u05e8\u05d9\u05e6\u05d4, \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05db\u05e9\u05d1\u05d5\u05d7\u05e8\u05d9\u05dd \u05d6\u05de\u05df \u05d0\u05d7\u05d3, \u05db\u05de\u05d5 \u05d1\u05e9\u05d5\u05e8\u05d4 B."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3 \u05d3\u05d5\u05e8\u05e9 \u05e9\u05e0\u05d9 \u05d0\u05d9\u05e0\u05d3\u05e7\u05e1\u05d9\u05dd, \u05e8\u05d9\u05e6\u05d4 \u05d5\u05d6\u05de\u05df."}, {"answer": "6", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05db\u05dc \u05d4\u05de\u05e2\u05e8\u05da."}]}, {"question": "\u05db\u05de\u05d4 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05e0\u05e7\u05d5\u05d3\u05ea\u05d9\u05d9\u05dd \u05d1\u05e6\u05d9\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05d5\u05de\u05e8\u05d5\u05ea \u05d0\u05ea \u05db\u05dc \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05d5-2 \u05d1\u05d5\u05d7\u05e8 \u05d6\u05de\u05df \u05d0\u05d7\u05d3. \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05d2\u05d5\u05d1\u05d4 \u05d0\u05d7\u05d3 \u05de\u05db\u05dc \u05e8\u05d9\u05e6\u05d4."}, {"answer": "3", "correct": false, "feedback": "\u05dc\u05d0: 3 \u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05de\u05e7\u05d1\u05dc\u05d9\u05dd \u05db\u05e9\u05d1\u05d5\u05d7\u05e8\u05d9\u05dd \u05e8\u05d9\u05e6\u05d4 \u05d0\u05d7\u05ea, \u05db\u05de\u05d5 \u05d1\u05e9\u05d5\u05e8\u05d4 A."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: \u05d4\u05e0\u05e7\u05d5\u05d3\u05ea\u05d9\u05d9\u05dd \u05e9\u05d5\u05de\u05e8\u05d5\u05ea \u05d0\u05ea \u05db\u05dc \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05d5\u05dc\u05db\u05df \u05d9\u05e9 \u05d9\u05d5\u05ea\u05e8 \u05de\u05de\u05e1\u05e4\u05e8 \u05d0\u05d7\u05d3."}, {"answer": "6", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05de\u05e1\u05e4\u05e8 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05d1\u05db\u05dc \u05d4\u05de\u05e2\u05e8\u05da."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2017,8 +2023,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("pgZqhYzmrPtH")) {
-    show_questions(questionspgZqhYzmrPtH, pgZqhYzmrPtH);
+  if (document.getElementById("vHHvhtRlldqM")) {
+    show_questions(questionsvHHvhtRlldqM, vHHvhtRlldqM);
   } else {
     setTimeout(try_show, 200);
   }

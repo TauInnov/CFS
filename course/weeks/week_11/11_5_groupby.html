@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=b04159b3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cfs-widgets.css?v=80222981" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -65,6 +66,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_11/11_5_groupby';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../../../_static/cfs-widgets.js?v=2ef69a37"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="11.6. describe" href="11_6_describe.html" />
@@ -751,7 +753,8 @@ Name: range_measured, dtype: float64
 <h2><span class="section-number">11.5.2. </span>דוגמה: שגיאת הממוצע בכל קבוצה<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>בטבלה הקטנה שלהלן ארבע מדידות טווח בכל אחת משתי זוויות, ואת התוצאות אפשר לחשב בראש. ‎<code class="docutils literal notranslate"><span class="pre">agg([&quot;mean&quot;,</span> <span class="pre">&quot;std&quot;,</span> <span class="pre">&quot;count&quot;])</span></code>‎ מחזיר לכל זווית את הממוצע, את סטיית התקן ואת מספר המדידות. מהם מחשבים את שגיאת הממוצע, כמו בסעיף 9.7: סטיית התקן חלקי השורש של מספר המדידות.</p>
 <p>ב-pandas, ‎<code class="docutils literal notranslate"><span class="pre">std</span></code>‎ מחלק ב-<span class="math notranslate nohighlight">\(N-1\)</span> כברירת מחדל, כלומר מחשב את סטיית התקן המדגמית של סעיף 9.7. זה שונה מ-‎<code class="docutils literal notranslate"><span class="pre">std</span></code>‎ של NumPy, שבו צריך לכתוב ‎<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>‎.</p>
-<img alt="groupby splits the rows by angle, computes the mean, std and count of each group, and combines them into one table" class="align-center" src="../../../_images/11_5_groupby.svg" />
+<img alt="groupby splits the rows by angle, computes the mean, std and count of each group, and combines them into one table" class="only-light align-center" src="../../../_images/11_5_groupby.svg" />
+<img alt="groupby splits the rows by angle, computes the mean, std and count of each group, and combines them into one table" class="only-dark align-center" src="../../../_images/11_5_groupby-dark.svg" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -799,7 +802,7 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.groupby.generic.DataFrameGroupBy'&gt;
-&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x71806e187650&gt;
+&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f47a286b6d0&gt;
 </pre></div>
 </div>
 </div>
@@ -831,8 +834,8 @@ dtype: float64
 <h2><span class="section-number">11.5.5. </span>בדקו את עצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="rzMvvLwlefkY" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#rzMvvLwlefkY {
+<div class="output text_html"><div id="IpjQJeITwClr" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#IpjQJeITwClr {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1055,7 +1058,7 @@ dtype: float64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsrzMvvLwlefkY=[{"question": "\u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>df.groupby(\"angle_deg\")</code> \u05d1\u05dc\u05d9 \u05e9\u05d5\u05dd \u05e4\u05e2\u05d5\u05dc\u05ea \u05e6\u05d1\u05d9\u05e8\u05d4 \u05d1\u05e1\u05d5\u05e3 (\u05db\u05de\u05d5 mean())?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 DataFrameGroupBy - '\u05d4\u05d1\u05d8\u05d7\u05d4' \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e9\u05d8\u05e8\u05dd \u05d1\u05d5\u05e6\u05e2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df; \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e2\u05d3\u05d9\u05d9\u05df \u05dc\u05d0 \u05d4\u05ea\u05d1\u05e6\u05e2."}, {"answer": "\u05d0\u05ea \u05d4\u05d8\u05d1\u05dc\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea \u05dc\u05dc\u05d0 \u05e9\u05d9\u05e0\u05d5\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea \u05d4\u05e7\u05d1\u05d5\u05e6\u05d5\u05ea \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05d9\u05d0 \u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 GroupBy \u05e9\u05de\u05d0\u05e4\u05e9\u05e8 \u05d2\u05d9\u05e9\u05d4 \u05dc\u05e7\u05d1\u05d5\u05e6\u05d5\u05ea, \u05dc\u05d0 \u05e8\u05e7 \u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea\u05d9\u05d4\u05df."}]}];
+</style></div><script type="application/javascript">var questionsIpjQJeITwClr=[{"question": "\u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>df.groupby(\"angle_deg\")</code> \u05d1\u05dc\u05d9 \u05e9\u05d5\u05dd \u05e4\u05e2\u05d5\u05dc\u05ea \u05e6\u05d1\u05d9\u05e8\u05d4 \u05d1\u05e1\u05d5\u05e3 (\u05db\u05de\u05d5 mean())?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 DataFrameGroupBy - '\u05d4\u05d1\u05d8\u05d7\u05d4' \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e9\u05d8\u05e8\u05dd \u05d1\u05d5\u05e6\u05e2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df; \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e2\u05d3\u05d9\u05d9\u05df \u05dc\u05d0 \u05d4\u05ea\u05d1\u05e6\u05e2."}, {"answer": "\u05d0\u05ea \u05d4\u05d8\u05d1\u05dc\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea \u05dc\u05dc\u05d0 \u05e9\u05d9\u05e0\u05d5\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea \u05d4\u05e7\u05d1\u05d5\u05e6\u05d5\u05ea \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05d9\u05d0 \u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 GroupBy \u05e9\u05de\u05d0\u05e4\u05e9\u05e8 \u05d2\u05d9\u05e9\u05d4 \u05dc\u05e7\u05d1\u05d5\u05e6\u05d5\u05ea, \u05dc\u05d0 \u05e8\u05e7 \u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea\u05d9\u05d4\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2117,8 +2120,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("rzMvvLwlefkY")) {
-    show_questions(questionsrzMvvLwlefkY, rzMvvLwlefkY);
+  if (document.getElementById("IpjQJeITwClr")) {
+    show_questions(questionsIpjQJeITwClr, IpjQJeITwClr);
   } else {
     setTimeout(try_show, 200);
   }

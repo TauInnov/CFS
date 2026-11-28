@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../_static/rtl.css?v=b04159b3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cfs-widgets.css?v=80222981" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,6 +64,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'vendor/virtual-pyprog/13_0_string-formats';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../../_static/cfs-widgets.js?v=2ef69a37"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6.5. קריאה וכתיבה מקבצים" href="13_1_files.html" />
@@ -712,6 +714,8 @@ Adam-70
 </div>
 </div>
 </div>
+<img alt="The parts of an f-string: each field in braces is replaced by its value, and :.2f keeps 2 digits after the point" class="only-light align-center" src="../../_images/w6_13_0_fstring.svg" />
+<img alt="The parts of an f-string: each field in braces is replaced by its value, and :.2f keeps 2 digits after the point" class="only-dark align-center" src="../../_images/w6_13_0_fstring-dark.svg" />
 <p>באופן כללי, אחרי הערך כותבים נקודתיים, ואחריהן את צורת התצוגה:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">value</span><span class="p">:</span><span class="mf">.2</span><span class="n">f</span><span class="p">}</span>
 </pre></div>
@@ -792,8 +796,8 @@ Adam-70
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="WFdWFKbuuqSg" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#WFdWFKbuuqSg {
+<div class="output text_html"><div id="UaRDCOTwgkiW" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#UaRDCOTwgkiW {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1016,7 +1020,7 @@ Adam-70
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsWFdWFKbuuqSg=[{"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d3\u05e4\u05d9\u05e1 \u05d4\u05e7\u05d5\u05d3?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05dc\u05db\u05dc \u05d6\u05d5\u05d2 \u05e9\u05dc \u05de\u05e4\u05ea\u05d7 \u05d5\u05e2\u05e8\u05da \u05d1\u05de\u05d9\u05dc\u05d5\u05df."}, {"type": "default", "feedback": "\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05d1\u05e8\u05ea \u05e2\u05dc \u05d4\u05d6\u05d5\u05d2\u05d5\u05ea \u05d1\u05de\u05d9\u05dc\u05d5\u05df. \u05db\u05de\u05d4 \u05d6\u05d5\u05d2\u05d5\u05ea \u05d9\u05e9 \u05d1\u05d5?"}]}, {"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05ea\u05d5\u05d3\u05e4\u05e1?", "type": "many_choice", "answers": [{"answer": "fridge: 42.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 80.0 - 0.5 * (80.0 - 4.0) \u05d4\u05d5\u05d0 42.0, \u05d5-.1f \u05de\u05e6\u05d9\u05d2 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 42", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05e4\u05d5\u05e8\u05de\u05d8 .1f \u05de\u05e6\u05d9\u05d2 \u05ea\u05de\u05d9\u05d3 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 50.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05db\u05d0\u05df T_room \u05d4\u05d5\u05d0 4.0, \u05d4\u05e2\u05e8\u05da \u05e9\u05dc fridge \u05d1\u05de\u05d9\u05dc\u05d5\u05df, \u05d5\u05dc\u05d0 \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc 20.0."}, {"answer": "4.0: 42.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. name \u05de\u05e7\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e4\u05ea\u05d7 \u05d5-T_room \u05d0\u05ea \u05d4\u05e2\u05e8\u05da."}]}];
+</style></div><script type="application/javascript">var questionsUaRDCOTwgkiW=[{"question": "\u05db\u05de\u05d4 \u05e9\u05d5\u05e8\u05d5\u05ea \u05d9\u05d3\u05e4\u05d9\u05e1 \u05d4\u05e7\u05d5\u05d3?", "type": "numeric", "answers": [{"type": "value", "value": 2, "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! \u05e9\u05d5\u05e8\u05d4 \u05d0\u05d7\u05ea \u05dc\u05db\u05dc \u05d6\u05d5\u05d2 \u05e9\u05dc \u05de\u05e4\u05ea\u05d7 \u05d5\u05e2\u05e8\u05da \u05d1\u05de\u05d9\u05dc\u05d5\u05df."}, {"type": "default", "feedback": "\u05d4\u05dc\u05d5\u05dc\u05d0\u05d4 \u05e2\u05d5\u05d1\u05e8\u05ea \u05e2\u05dc \u05d4\u05d6\u05d5\u05d2\u05d5\u05ea \u05d1\u05de\u05d9\u05dc\u05d5\u05df. \u05db\u05de\u05d4 \u05d6\u05d5\u05d2\u05d5\u05ea \u05d9\u05e9 \u05d1\u05d5?"}]}, {"question": "\u05de\u05d4 \u05ea\u05d4\u05d9\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4 \u05e9\u05ea\u05d5\u05d3\u05e4\u05e1?", "type": "many_choice", "answers": [{"answer": "fridge: 42.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df! 80.0 - 0.5 * (80.0 - 4.0) \u05d4\u05d5\u05d0 42.0, \u05d5-.1f \u05de\u05e6\u05d9\u05d2 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 42", "correct": false, "feedback": "\u05db\u05de\u05e2\u05d8. \u05d4\u05e4\u05d5\u05e8\u05de\u05d8 .1f \u05de\u05e6\u05d9\u05d2 \u05ea\u05de\u05d9\u05d3 \u05e1\u05e4\u05e8\u05d4 \u05d0\u05d7\u05ea \u05d0\u05d7\u05e8\u05d9 \u05d4\u05e0\u05e7\u05d5\u05d3\u05d4."}, {"answer": "fridge: 50.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. \u05db\u05d0\u05df T_room \u05d4\u05d5\u05d0 4.0, \u05d4\u05e2\u05e8\u05da \u05e9\u05dc fridge \u05d1\u05de\u05d9\u05dc\u05d5\u05df, \u05d5\u05dc\u05d0 \u05d1\u05e8\u05d9\u05e8\u05ea \u05d4\u05de\u05d7\u05d3\u05dc 20.0."}, {"answer": "4.0: 42.0", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df. name \u05de\u05e7\u05d1\u05dc \u05d0\u05ea \u05d4\u05de\u05e4\u05ea\u05d7 \u05d5-T_room \u05d0\u05ea \u05d4\u05e2\u05e8\u05da."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2078,8 +2082,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("WFdWFKbuuqSg")) {
-    show_questions(questionsWFdWFKbuuqSg, WFdWFKbuuqSg);
+  if (document.getElementById("UaRDCOTwgkiW")) {
+    show_questions(questionsUaRDCOTwgkiW, UaRDCOTwgkiW);
   } else {
     setTimeout(try_show, 200);
   }

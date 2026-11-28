@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=6a604523" />
     <link rel="stylesheet" type="text/css" href="../../../_static/rtl.css?v=b04159b3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cfs-widgets.css?v=80222981" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -63,6 +64,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'course/weeks/week_9/9_6_axis_reductions';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../../../_static/cfs-widgets.js?v=2ef69a37"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="9.7. מדידות חוזרות: ממוצע ושגיאת ממוצע לאורך ציר" href="9_7_repeated_measurements.html" />
@@ -669,7 +671,8 @@
 <h2><span class="section-number">9.6.1. </span>דוגמה: ממוצע וסטיית תקן על פני הריצות<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>הגובה הממוצע בכל נקודת זמן על פני 5 הריצות, והפיזור סביבו, מחושבים עם ‎<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>‎ (ציר הריצות נעלם, ציר הזמן נשאר). זו גם ההכנה לסעיף 9.7, שעוסק במדידות חוזרות.</p>
 <p>סטיית התקן (‎<code class="docutils literal notranslate"><span class="pre">std</span></code>‎) מודדת כמה הערכים מתפזרים סביב הממוצע שלהם: בערך, המרחק הטיפוסי של ערך מהממוצע. בסעיף 9.7 נראה כיצד מחשבים אותה, מתי משתמשים בה, ומדוע במדידות חוזרות מוסיפים ל-‎<code class="docutils literal notranslate"><span class="pre">std</span></code>‎ את הפרמטר ‎<code class="docutils literal notranslate"><span class="pre">ddof=1</span></code>‎, שאינו מופיע בתא שלמטה. בגרף שמתחת לתא: הממוצע בקו מלא, והממוצע פחות סטיית תקן ועוד סטיית תקן בקווים מקווקווים.</p>
-<img alt="Y.mean(axis=0) collapses axis 0, the runs: one mean per time" class="align-center" src="../../../_images/9_6_mean_axis0.svg" />
+<img alt="Y.mean(axis=0) collapses axis 0, the runs: one mean per time" class="only-light align-center" src="../../../_images/9_6_mean_axis0.svg" />
+<img alt="Y.mean(axis=0) collapses axis 0, the runs: one mean per time" class="only-dark align-center" src="../../../_images/9_6_mean_axis0-dark.svg" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_mean</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>   <span class="c1"># shape (60,): the mean over the runs, at every time</span>
@@ -693,8 +696,11 @@
 <section id="id2">
 <h2><span class="section-number">9.6.2. </span>דוגמה: הגובה המרבי שכל ריצה הגיעה אליו<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>במקרה ההפוך מחפשים לכל ריצה בנפרד את הגובה המרבי לאורך הזמן שלה. כאן ציר הזמן הוא זה שנעלם — ‎<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>‎.</p>
-<img alt="Y.max(axis=1) collapses axis 1, the time: one maximum per run" class="align-center" src="../../../_images/9_6_max_axis1.svg" />
-<div class="cell docutils container">
+<img alt="Y.max(axis=1) collapses axis 1, the time: one maximum per run" class="only-light align-center" src="../../../_images/9_6_max_axis1.svg" />
+<img alt="Y.max(axis=1) collapses axis 1, the time: one maximum per run" class="only-dark align-center" src="../../../_images/9_6_max_axis1-dark.svg" />
+<div class="cfs-widget" data-widget="axis" dir="ltr" data-cfs='{"title":"נסו בעצמכם: פעולה וציר","hint":"בחרו פעולה וציר. `axis=0` מעלים את ציר הריצות, `axis=1` את ציר הזמן, ובלי `axis` מתקבל מספר אחד.","name":"Ys","def":"Ys = Y[:, ::11]   # the 5 runs at 6 of the 60 times","rowLabels":["run 0","run 1","run 2","run 3","run 4"],"colLabels":["t[0]","t[11]","t[22]","t[33]","t[44]","t[55]"],"values":[[0.0,5.430060562001302,8.022559785189571,7.777497669564811,4.694874215127019,-1.2253105781238034],[0.0,6.000797331285286,9.16403332375754,9.489707977416765,6.977821292262956,1.6283732682961158],[0.0,6.1910429210466145,9.544524503280197,10.060444746700748,7.73880365130827,2.5796012171027556],[0.0,6.381288510807943,9.925015682802854,10.631181515984737,8.499786010353585,3.5308291659094024],[0.0,6.952025280091927,11.066489221370825,12.343391823836688,10.782733087489525,6.384513012329322]],"decimals":1,"ops":["mean","std","max","sum"],"init":{"op":"mean","axis":0}}'>
+<p dir="rtl"><strong>נסו בעצמכם: פעולה וציר.</strong> באתר הקורס מופיע כאן רכיב אינטראקטיבי: בוחרים פעולה (‎<code dir="ltr">mean</code>‎, ‎<code dir="ltr">std</code>‎, ‎<code dir="ltr">max</code>‎, ‎<code dir="ltr">sum</code>‎) וציר, ורואים איזה ציר נעלם ומה צורת התוצאה. במחברת אפשר לנסות זאת בתא קוד, למשל ‎<code dir="ltr">print(Y.max(axis=1).shape)</code>‎.</p>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_height_per_run</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>        <span class="c1"># shape (5,): one per run</span>
 <span class="n">time_index_of_max</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>      <span class="c1"># shape (5,): where it happened</span>
@@ -766,8 +772,8 @@
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="OQELTgNxbCNt" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#OQELTgNxbCNt {
+<div class="output text_html"><div id="TWoTHMDdHoNO" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#TWoTHMDdHoNO {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -990,7 +996,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsOQELTgNxbCNt=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "3.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: axis=0 \u05de\u05e2\u05dc\u05d9\u05dd \u05d0\u05ea \u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05d5\u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1, \u05dc\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d1\u05dc\u05d1\u05d3."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d0\u05de\u05e6\u05e2\u05d9\u05ea, 3 \u05d5-1."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8, 5, \u05e0\u05de\u05e6\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e2\u05e6\u05de\u05d5; argmax \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc\u05d5."}, {"answer": "0", "correct": false, "feedback": "\u05dc\u05d0: \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 0 \u05e0\u05de\u05e6\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e7\u05d8\u05df \u05d1\u05d9\u05d5\u05ea\u05e8, 0."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: 1 \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8 \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4, \u05e9\u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd \u05d4\u05e9\u05e0\u05d9 \u05d1\u05e4\u05dc\u05d8."}]}];
+</style></div><script type="application/javascript">var questionsTWoTHMDdHoNO=[{"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 A?", "type": "multiple_choice", "answers": [{"answer": "3.0", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: axis=0 \u05de\u05e2\u05dc\u05d9\u05dd \u05d0\u05ea \u05e6\u05d9\u05e8 \u05d4\u05e8\u05d9\u05e6\u05d5\u05ea, \u05d5\u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1."}, {"answer": "6.0", "correct": false, "feedback": "\u05dc\u05d0: 6 \u05d4\u05d5\u05d0 \u05d4\u05e1\u05db\u05d5\u05dd \u05e9\u05dc 5 \u05d5\u05e9\u05dc 1, \u05dc\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2."}, {"answer": "5.0", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e9\u05dc \u05d4\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d1\u05dc\u05d1\u05d3."}, {"answer": "2.0", "correct": false, "feedback": "\u05dc\u05d0: 2 \u05d4\u05d5\u05d0 \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d4\u05d0\u05de\u05e6\u05e2\u05d9\u05ea, 3 \u05d5-1."}]}, {"question": "\u05de\u05d4\u05d5 \u05d4\u05de\u05e1\u05e4\u05e8 \u05d4\u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05ea\u05d3\u05e4\u05d9\u05e1 \u05e9\u05d5\u05e8\u05d4 B?", "type": "multiple_choice", "answers": [{"answer": "2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df: \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d4 \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8, 5, \u05e0\u05de\u05e6\u05d0 \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 2."}, {"answer": "5", "correct": false, "feedback": "\u05dc\u05d0: 5 \u05d4\u05d5\u05d0 \u05d4\u05e2\u05e8\u05da \u05e2\u05e6\u05de\u05d5; argmax \u05de\u05d7\u05d6\u05d9\u05e8 \u05d0\u05ea \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc\u05d5."}, {"answer": "0", "correct": false, "feedback": "\u05dc\u05d0: \u05d1\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 0 \u05e0\u05de\u05e6\u05d0 \u05d4\u05e2\u05e8\u05da \u05d4\u05e7\u05d8\u05df \u05d1\u05d9\u05d5\u05ea\u05e8, 0."}, {"answer": "1", "correct": false, "feedback": "\u05dc\u05d0: 1 \u05d4\u05d5\u05d0 \u05d4\u05d0\u05d9\u05e0\u05d3\u05e7\u05e1 \u05e9\u05dc \u05d4\u05e2\u05e8\u05da \u05d4\u05d2\u05d3\u05d5\u05dc \u05d1\u05d9\u05d5\u05ea\u05e8 \u05d1\u05e8\u05d9\u05e6\u05d4 \u05d4\u05e9\u05e0\u05d9\u05d9\u05d4, \u05e9\u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05d1\u05de\u05e7\u05d5\u05dd \u05d4\u05e9\u05e0\u05d9 \u05d1\u05e4\u05dc\u05d8."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2052,8 +2058,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("OQELTgNxbCNt")) {
-    show_questions(questionsOQELTgNxbCNt, OQELTgNxbCNt);
+  if (document.getElementById("TWoTHMDdHoNO")) {
+    show_questions(questionsTWoTHMDdHoNO, TWoTHMDdHoNO);
   } else {
     setTimeout(try_show, 200);
   }
