@@ -673,7 +673,7 @@
 <span class="nb">print</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1"># שלוש השורות הראשונות בלבד</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1"># only the first three rows</span>
 </pre></div>
 </div>
 </div>
@@ -789,8 +789,8 @@ Name: range_measured, dtype: float64
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">col_as_series</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">col_as_df</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">col_as_series</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (6,) - חד-ממדי</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">col_as_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>       <span class="c1"># (6, 1) - דו-ממדי</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">col_as_series</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>   <span class="c1"># (6,): one-dimensional</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">col_as_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>       <span class="c1"># (6, 1): two-dimensional</span>
 </pre></div>
 </div>
 </div>
@@ -809,7 +809,7 @@ Name: range_measured, dtype: float64
 <p>חזו מה יחזיר ‎<code class="docutils literal notranslate"><span class="pre">df[[&quot;angle_deg&quot;,</span> <span class="pre">&quot;v0_measured&quot;]]</span></code>‎ (עם רשימה של שני שמות עמודה) — ‎<code class="docutils literal notranslate"><span class="pre">Series</span></code>‎ או ‎<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>‎? ומה יהיה ה-‎<code class="docutils literal notranslate"><span class="pre">shape</span></code>‎?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># חזו, ואז בדקו:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predict, then check:</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">"angle_deg"</span><span class="p">,</span> <span class="s2">"v0_measured"</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
@@ -830,8 +830,8 @@ Name: range_measured, dtype: float64
 <h2><span class="section-number">11.2.5. </span>בדקו את עצמכם<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="sVjkZsCMqeFT" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#sVjkZsCMqeFT {
+<div class="output text_html"><div id="AaHqlinAJWvj" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#AaHqlinAJWvj {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1054,7 +1054,7 @@ Name: range_measured, dtype: float64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionssVjkZsCMqeFT=[{"question": "\u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>df[\"angle_deg\"]</code> (\u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05d1\u05d5\u05d3\u05d3\u05d9\u05dd)?", "type": "multiple_choice", "answers": [{"answer": "DataFrame \u05d1\u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05d0\u05d7\u05ea", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc df[[\"angle_deg\"]], \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05db\u05e4\u05d5\u05dc\u05d9\u05dd."}, {"answer": "Series \u2014 \u05e2\u05de\u05d5\u05d3\u05d4 \u05d1\u05d5\u05d3\u05d3\u05ea, \u05d7\u05d3-\u05de\u05de\u05d3\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d9\u05e9 6 \u05e9\u05d5\u05e8\u05d5\u05ea, \u05d0\u05d6 \u05d6\u05d5 \u05e1\u05d3\u05e8\u05d4 \u05e9\u05dc 6 \u05e2\u05e8\u05db\u05d9\u05dd."}, {"answer": "\u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea \u05db\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05de\u05d4 \u05e9-df.columns \u05de\u05d7\u05d6\u05d9\u05e8, \u05dc\u05d0 df[\"angle_deg\"]."}]}, {"question": "\u05db\u05e9\u05de\u05d3\u05e4\u05d9\u05e1\u05d9\u05dd \u05e2\u05de\u05d5\u05d3\u05d4 \u05d0\u05d7\u05ea \u05e9\u05dc \u05d8\u05d1\u05dc\u05d4, \u05de\u05d4 \u05de\u05d5\u05e4\u05d9\u05e2 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05e9\u05dc \u05d4\u05e4\u05dc\u05d8?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05e2\u05e8\u05da \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d1\u05e2\u05de\u05d5\u05d3\u05d4", "correct": false, "feedback": "\u05dc\u05d0. \u05db\u05dc \u05e2\u05e8\u05da \u05de\u05d5\u05d3\u05e4\u05e1 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05de\u05e9\u05dc\u05d5, \u05d9\u05d7\u05d3 \u05e2\u05dd \u05d4-index \u05e9\u05dc\u05d5, \u05d5\u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05d1\u05d0\u05d4 \u05d0\u05d7\u05e8\u05d9 \u05db\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd."}, {"answer": "\u05e9\u05d5\u05e8\u05ea \u05db\u05d5\u05ea\u05e8\u05ea \u05e2\u05dd \u05e9\u05de\u05d5\u05ea \u05db\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0. \u05e9\u05d5\u05e8\u05ea \u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05d5\u05d3\u05e4\u05e1\u05ea \u05d1\u05e8\u05d0\u05e9 \u05d4\u05e4\u05dc\u05d8 \u05e9\u05dc \u05d8\u05d1\u05dc\u05d4 \u05e9\u05dc\u05de\u05d4, \u05d5\u05dc\u05d0 \u05d1\u05e1\u05d5\u05e3 \u05d4\u05e4\u05dc\u05d8 \u05e9\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05d0\u05d7\u05ea."}, {"answer": "\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d5\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05d1\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05d1\u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d1\u05e2\u05de\u05d5\u05d3 \u05d6\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05d4\u05d9\u05d0 Name: range_measured, dtype: float64."}, {"answer": "\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05d5\u05e8\u05d5\u05ea \u05d1\u05e2\u05de\u05d5\u05d3\u05d4", "correct": false, "feedback": "\u05dc\u05d0. \u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05d5\u05e8\u05d5\u05ea \u05d0\u05d9\u05e0\u05d5 \u05de\u05d5\u05d3\u05e4\u05e1; \u05d0\u05ea \u05d4-index \u05e9\u05dc \u05db\u05dc \u05e9\u05d5\u05e8\u05d4 \u05e8\u05d5\u05d0\u05d9\u05dd \u05d1\u05ea\u05d7\u05d9\u05dc\u05ea \u05d4\u05e9\u05d5\u05e8\u05d4 \u05e9\u05dc\u05d4."}]}];
+</style></div><script type="application/javascript">var questionsAaHqlinAJWvj=[{"question": "\u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>df[\"angle_deg\"]</code> (\u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05d1\u05d5\u05d3\u05d3\u05d9\u05dd)?", "type": "multiple_choice", "answers": [{"answer": "DataFrame \u05d1\u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05d0\u05d7\u05ea", "correct": false, "feedback": "\u05d6\u05d5 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05dc df[[\"angle_deg\"]], \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05db\u05e4\u05d5\u05dc\u05d9\u05dd."}, {"answer": "Series \u2014 \u05e2\u05de\u05d5\u05d3\u05d4 \u05d1\u05d5\u05d3\u05d3\u05ea, \u05d7\u05d3-\u05de\u05de\u05d3\u05d9\u05ea", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05de\u05e1\u05e4\u05e8 \u05d1\u05d5\u05d3\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d9\u05e9 6 \u05e9\u05d5\u05e8\u05d5\u05ea, \u05d0\u05d6 \u05d6\u05d5 \u05e1\u05d3\u05e8\u05d4 \u05e9\u05dc 6 \u05e2\u05e8\u05db\u05d9\u05dd."}, {"answer": "\u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea \u05db\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d5\u05ea \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05de\u05d4 \u05e9-df.columns \u05de\u05d7\u05d6\u05d9\u05e8, \u05dc\u05d0 df[\"angle_deg\"]."}]}, {"question": "\u05db\u05e9\u05de\u05d3\u05e4\u05d9\u05e1\u05d9\u05dd \u05e2\u05de\u05d5\u05d3\u05d4 \u05d0\u05d7\u05ea \u05e9\u05dc \u05d8\u05d1\u05dc\u05d4, \u05de\u05d4 \u05de\u05d5\u05e4\u05d9\u05e2 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05e9\u05dc \u05d4\u05e4\u05dc\u05d8?", "type": "multiple_choice", "answers": [{"answer": "\u05d4\u05e2\u05e8\u05da \u05d4\u05d0\u05d7\u05e8\u05d5\u05df \u05d1\u05e2\u05de\u05d5\u05d3\u05d4", "correct": false, "feedback": "\u05dc\u05d0. \u05db\u05dc \u05e2\u05e8\u05da \u05de\u05d5\u05d3\u05e4\u05e1 \u05d1\u05e9\u05d5\u05e8\u05d4 \u05de\u05e9\u05dc\u05d5, \u05d9\u05d7\u05d3 \u05e2\u05dd \u05d4-index \u05e9\u05dc\u05d5, \u05d5\u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05d1\u05d0\u05d4 \u05d0\u05d7\u05e8\u05d9 \u05db\u05dc \u05d4\u05e2\u05e8\u05db\u05d9\u05dd."}, {"answer": "\u05e9\u05d5\u05e8\u05ea \u05db\u05d5\u05ea\u05e8\u05ea \u05e2\u05dd \u05e9\u05de\u05d5\u05ea \u05db\u05dc \u05d4\u05e2\u05de\u05d5\u05d3\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0. \u05e9\u05d5\u05e8\u05ea \u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05d5\u05d3\u05e4\u05e1\u05ea \u05d1\u05e8\u05d0\u05e9 \u05d4\u05e4\u05dc\u05d8 \u05e9\u05dc \u05d8\u05d1\u05dc\u05d4 \u05e9\u05dc\u05de\u05d4, \u05d5\u05dc\u05d0 \u05d1\u05e1\u05d5\u05e3 \u05d4\u05e4\u05dc\u05d8 \u05e9\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05d0\u05d7\u05ea."}, {"answer": "\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4 \u05d5\u05d8\u05d9\u05e4\u05d5\u05e1 \u05d4\u05e2\u05e8\u05db\u05d9\u05dd \u05e9\u05d1\u05d4", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df. \u05d1\u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d1\u05e2\u05de\u05d5\u05d3 \u05d6\u05d4 \u05d4\u05e9\u05d5\u05e8\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05d4\u05d9\u05d0 Name: range_measured, dtype: float64."}, {"answer": "\u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05d5\u05e8\u05d5\u05ea \u05d1\u05e2\u05de\u05d5\u05d3\u05d4", "correct": false, "feedback": "\u05dc\u05d0. \u05de\u05e1\u05e4\u05e8 \u05d4\u05e9\u05d5\u05e8\u05d5\u05ea \u05d0\u05d9\u05e0\u05d5 \u05de\u05d5\u05d3\u05e4\u05e1; \u05d0\u05ea \u05d4-index \u05e9\u05dc \u05db\u05dc \u05e9\u05d5\u05e8\u05d4 \u05e8\u05d5\u05d0\u05d9\u05dd \u05d1\u05ea\u05d7\u05d9\u05dc\u05ea \u05d4\u05e9\u05d5\u05e8\u05d4 \u05e9\u05dc\u05d4."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2116,8 +2116,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("sVjkZsCMqeFT")) {
-    show_questions(questionssVjkZsCMqeFT, sVjkZsCMqeFT);
+  if (document.getElementById("AaHqlinAJWvj")) {
+    show_questions(questionsAaHqlinAJWvj, AaHqlinAJWvj);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2135,7 +2135,7 @@ function try_show() {
 <p>חזו, ואז בדקו: מה ‎<code class="docutils literal notranslate"><span class="pre">type(df.index)</span></code>‎ מחזיר? ומה יקרה ל-‎<code class="docutils literal notranslate"><span class="pre">df.dtypes[&quot;run_id&quot;]</span></code>‎ — האם זה ‎<code class="docutils literal notranslate"><span class="pre">int</span></code>‎ או ‎<code class="docutils literal notranslate"><span class="pre">float</span></code>‎?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># חזו, ואז בדקו:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predict, then check:</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">[</span><span class="s2">"run_id"</span><span class="p">])</span>
 </pre></div>
@@ -2150,8 +2150,8 @@ int64
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>          <span class="c1"># pandas.core.indexes.range.RangeIndex (בברירת מחדל)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">[</span><span class="s2">"run_id"</span><span class="p">])</span>     <span class="c1"># int64 - כי כל הערכים בעמודה הזו הם מספרים שלמים</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>          <span class="c1"># RangeIndex (the default index)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">[</span><span class="s2">"run_id"</span><span class="p">])</span>     <span class="c1"># int64: all values here are whole numbers</span>
 </pre></div>
 </div>
 </div>

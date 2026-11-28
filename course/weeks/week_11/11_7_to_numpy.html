@@ -661,7 +661,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">range_45</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">45</span><span class="p">][</span><span class="s2">"range_measured"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">range_45</span><span class="p">),</span> <span class="n">range_45</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-<span class="c1"># עכשיו אפשר להשתמש בכל כלי NumPy שכבר מכירים:</span>
+<span class="c1"># now every NumPy tool you know works:</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"mean (NumPy):"</span><span class="p">,</span> <span class="n">range_45</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"mean (pandas directly, for comparison):"</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">45</span><span class="p">][</span><span class="s2">"range_measured"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
@@ -684,10 +684,10 @@ mean (pandas directly, for comparison): 41.59583333333333
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">45</span><span class="p">][</span><span class="s2">"range_measured"</span><span class="p">]</span>   <span class="c1"># index: 12 ... 17</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">60</span><span class="p">][</span><span class="s2">"range_measured"</span><span class="p">]</span>   <span class="c1"># index: 18 ... 23 - שונה!</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">60</span><span class="p">][</span><span class="s2">"range_measured"</span><span class="p">]</span>   <span class="c1"># index: 18 ... 23, different!</span>
 
 <span class="n">diff_wrong</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">diff_wrong</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span>   <span class="c1"># כולו NaN! אין אף index משותף בין שתי הקבוצות</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diff_wrong</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span>   <span class="c1"># all NaN! the two groups share no index</span>
 </pre></div>
 </div>
 </div>
@@ -700,7 +700,7 @@ mean (pandas directly, for comparison): 41.59583333333333
 <p>‎<code class="docutils literal notranslate"><span class="pre">s1</span></code>‎ ו-‎<code class="docutils literal notranslate"><span class="pre">s2</span></code>‎ מגיעות מקבוצות <strong>שונות לגמרי</strong> של שורות, כך שאין אף תווית index משותפת ביניהן — pandas לא “מוצא” זוגות תואמים, ולכן התוצאה מכילה את כל 12 התוויות של שתי הקבוצות, ובכל אחת מהן הערך ‎<code class="docutils literal notranslate"><span class="pre">NaN</span></code>‎. הפתרון: להמיר קודם ל-NumPy עם ‎<code class="docutils literal notranslate"><span class="pre">.to_numpy()</span></code>‎, ואז ההתאמה חוזרת להיות לפי מיקום (ואחריות המתכנת לוודא שהאורכים תואמים ומשמעותיים).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff_right</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="o">-</span> <span class="n">s2</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>   <span class="c1"># התאמה לפי מיקום, לא לפי index</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff_right</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="o">-</span> <span class="n">s2</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>   <span class="c1"># by position, not by index</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">diff_right</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -741,8 +741,8 @@ mean (pandas directly, for comparison): 41.59583333333333
 <h2><span class="section-number">11.7.4. </span>בדקו את עצמכם<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="dkGUGcYTTErE" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#dkGUGcYTTErE {
+<div class="output text_html"><div id="tfVXHJHqkKoB" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#tfVXHJHqkKoB {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -965,7 +965,7 @@ mean (pandas directly, for comparison): 41.59583333333333
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsdkGUGcYTTErE=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05de\u05e2\u05e8\u05db\u05d9 NumPy \u05de\u05ea\u05e0\u05d4\u05d2 \u05e9\u05d5\u05e0\u05d4 \u05de\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 Series \u05e9\u05dc pandas \u05e9\u05e2\u05d1\u05e8\u05d5 \u05e1\u05d9\u05e0\u05d5\u05df \u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05d6\u05d5 \u05d0\u05d5\u05ea\u05d4 \u05d4\u05ea\u05e0\u05d4\u05d2\u05d5\u05ea \u05d1\u05d3\u05d9\u05d5\u05e7", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05d5\u05e0\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9 (NaN)."}, {"answer": "pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "NumPy \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 \u05de\u05d9\u05e7\u05d5\u05dd; pandas Series \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 index, \u05e9\u05e2\u05dc\u05d5\u05dc \u05dc\u05d4\u05d9\u05d5\u05ea \u05e9\u05d5\u05e0\u05d4 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05d4-Series", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 NumPy \u05ea\u05d5\u05de\u05da \u05e8\u05e7 \u05d1\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u2014 \u05e9\u05e0\u05d9 \u05d4\u05db\u05dc\u05d9\u05dd \u05ea\u05d5\u05de\u05db\u05d9\u05dd \u05d1\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd \u05dc\u05dc\u05d0 \u05d1\u05e2\u05d9\u05d4; \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e9\u05d9\u05d8\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4, \u05dc\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1\u05d9 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd."}]}];
+</style></div><script type="application/javascript">var questionstfVXHJHqkKoB=[{"question": "\u05de\u05d3\u05d5\u05e2 \u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05de\u05e2\u05e8\u05db\u05d9 NumPy \u05de\u05ea\u05e0\u05d4\u05d2 \u05e9\u05d5\u05e0\u05d4 \u05de\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 Series \u05e9\u05dc pandas \u05e9\u05e2\u05d1\u05e8\u05d5 \u05e1\u05d9\u05e0\u05d5\u05df \u05e9\u05d5\u05e0\u05d4?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d9\u05df \u05d4\u05d1\u05d3\u05dc, \u05d6\u05d5 \u05d0\u05d5\u05ea\u05d4 \u05d4\u05ea\u05e0\u05d4\u05d2\u05d5\u05ea \u05d1\u05d3\u05d9\u05d5\u05e7", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05e8\u05d0\u05d9\u05e0\u05d5 \u05d3\u05d5\u05d2\u05de\u05d4 \u05e9\u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05e9\u05d5\u05e0\u05d4 \u05dc\u05d2\u05de\u05e8\u05d9 (NaN)."}, {"answer": "pandas \u05dc\u05d0 \u05ea\u05d5\u05de\u05da \u05d1\u05d7\u05d9\u05e1\u05d5\u05e8 \u05d1\u05db\u05dc\u05dc", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "NumPy \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 \u05de\u05d9\u05e7\u05d5\u05dd; pandas Series \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05e4\u05d9 index, \u05e9\u05e2\u05dc\u05d5\u05dc \u05dc\u05d4\u05d9\u05d5\u05ea \u05e9\u05d5\u05e0\u05d4 \u05d1\u05d9\u05df \u05e9\u05e0\u05d9 \u05d4-Series", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 NumPy \u05ea\u05d5\u05de\u05da \u05e8\u05e7 \u05d1\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e9\u05dc\u05de\u05d9\u05dd", "correct": false, "feedback": "\u05dc\u05d0 \u05e7\u05e9\u05d5\u05e8 \u2014 \u05e9\u05e0\u05d9 \u05d4\u05db\u05dc\u05d9\u05dd \u05ea\u05d5\u05de\u05db\u05d9\u05dd \u05d1\u05de\u05e1\u05e4\u05e8\u05d9\u05dd \u05e2\u05e9\u05e8\u05d5\u05e0\u05d9\u05d9\u05dd \u05dc\u05dc\u05d0 \u05d1\u05e2\u05d9\u05d4; \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05d5\u05d0 \u05d1\u05e9\u05d9\u05d8\u05ea \u05d4\u05d4\u05ea\u05d0\u05de\u05d4, \u05dc\u05d0 \u05d1\u05d8\u05d9\u05e4\u05d5\u05e1\u05d9 \u05d4\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2027,8 +2027,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("dkGUGcYTTErE")) {
-    show_questions(questionsdkGUGcYTTErE, dkGUGcYTTErE);
+  if (document.getElementById("tfVXHJHqkKoB")) {
+    show_questions(questionstfVXHJHqkKoB, tfVXHJHqkKoB);
   } else {
     setTimeout(try_show, 200);
   }

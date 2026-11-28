@@ -759,7 +759,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">bad</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">45</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s2">"range_measured"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span>   <span class="c1"># חסרים סוגריים!</span>
+    <span class="n">bad</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">45</span> <span class="o">&amp;</span> <span class="n">df</span><span class="p">[</span><span class="s2">"range_measured"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span>   <span class="c1"># missing parentheses!</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 </pre></div>
@@ -857,7 +857,7 @@
 <p>חזו: כמה שורות תחזיר הפריסה הבאה, לפני שתריצו — ‎<code class="docutils literal notranslate"><span class="pre">df[df[&quot;v0_measured&quot;]</span> <span class="pre">&gt;</span> <span class="pre">20]</span></code>‎?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># חזו, ואז בדקו:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predict, then check:</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"v0_measured"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 </pre></div>
@@ -878,8 +878,8 @@
 <h2><span class="section-number">11.4.4. </span>בדקו את עצמכם<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="lHFmopJuKKnL" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#lHFmopJuKKnL {
+<div class="output text_html"><div id="GzXkzeLOuIzl" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#GzXkzeLOuIzl {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1102,7 +1102,7 @@
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionslHFmopJuKKnL=[{"question": "\u05de\u05d3\u05d5\u05e2 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05de\u05e1\u05e4\u05e8 \u05e2\u05dd ==", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05e2\u05dd == \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05d5\u05d1\u05d3\u05ea \u05de\u05e6\u05d5\u05d9\u05df \u05d5\u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9\u05ea; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05d1-and."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
+</style></div><script type="application/javascript">var questionsGzXkzeLOuIzl=[{"question": "\u05de\u05d3\u05d5\u05e2 <code>df[df[\"angle_deg\"] == 45 and df[\"range_measured\"] > 30]</code> \u05e0\u05db\u05e9\u05dc?", "type": "multiple_choice", "answers": [{"answer": "\u05db\u05d9 angle_deg \u05dc\u05d0 \u05e7\u05d9\u05d9\u05dd \u05d1\u05d8\u05d1\u05dc\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05dc\u05d0 \u05d1\u05e9\u05dd \u05d4\u05e2\u05de\u05d5\u05d3\u05d4."}, {"answer": "\u05db\u05d9 45 \u05d5-30 \u05e6\u05e8\u05d9\u05db\u05d9\u05dd \u05dc\u05d4\u05d9\u05d5\u05ea \u05de\u05d7\u05e8\u05d5\u05d6\u05d5\u05ea", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05db\u05d9 \u05d0\u05d9 \u05d0\u05e4\u05e9\u05e8 \u05dc\u05d4\u05e9\u05d5\u05d5\u05ea \u05e2\u05de\u05d5\u05d3\u05d4 \u05dc\u05de\u05e1\u05e4\u05e8 \u05e2\u05dd ==", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05e2\u05dd == \u05e2\u05dc \u05e2\u05de\u05d5\u05d3\u05d4 \u05e2\u05d5\u05d1\u05d3\u05ea \u05de\u05e6\u05d5\u05d9\u05df \u05d5\u05de\u05d7\u05d6\u05d9\u05e8\u05d4 \u05de\u05e1\u05db\u05d4 \u05d1\u05d5\u05dc\u05d9\u05d0\u05e0\u05d9\u05ea; \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05d9\u05d0 \u05e8\u05e7 \u05d1-and."}, {"answer": "\u05db\u05d9 and \u05dc\u05d0 \u05e2\u05d5\u05d1\u05d3 \u05e2\u05dc Series \u05e9\u05dc\u05de\u05d9\u05dd \u05d1-pandas; \u05e6\u05e8\u05d9\u05da & \u05e2\u05dd \u05e1\u05d5\u05d2\u05e8\u05d9\u05d9\u05dd \u05e1\u05d1\u05d9\u05d1 \u05db\u05dc \u05ea\u05e0\u05d0\u05d9", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2164,8 +2164,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("lHFmopJuKKnL")) {
-    show_questions(questionslHFmopJuKKnL, lHFmopJuKKnL);
+  if (document.getElementById("GzXkzeLOuIzl")) {
+    show_questions(questionsGzXkzeLOuIzl, GzXkzeLOuIzl);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2193,7 +2193,7 @@ function try_show() {
 <div class="dropdown tip admonition">
 <p class="admonition-title">פתרון</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">30</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"angle_deg"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">60</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">))</span>   <span class="c1"># 12 - שש ריצות בכל אחת משתי הזוויות</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">))</span>   <span class="c1"># 12: six runs at each of the two angles</span>
 </pre></div>
 </div>
 </div>

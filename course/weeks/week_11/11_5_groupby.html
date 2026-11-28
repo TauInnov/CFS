@@ -667,7 +667,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_range_by_angle</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"angle_deg"</span><span class="p">)[</span><span class="s2">"range_measured"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mean_range_by_angle</span><span class="p">)</span>
 
-<span class="c1"># כמה עמודות סטטיסטיות בבת אחת:</span>
+<span class="c1"># several statistics at once:</span>
 <span class="n">summary</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"angle_deg"</span><span class="p">)[</span><span class="s2">"range_measured"</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">"mean"</span><span class="p">,</span> <span class="s2">"std"</span><span class="p">,</span> <span class="s2">"count"</span><span class="p">])</span>
 <span class="n">summary</span>
 </pre></div>
@@ -795,14 +795,14 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"angle_deg"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">grouped</span><span class="p">))</span>   <span class="c1"># DataFrameGroupBy - עדיין לא חושב שום דבר</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">grouped</span><span class="p">)</span>          <span class="c1"># הדפסה לא שימושית - רק כתובת האובייקט בזיכרון</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">grouped</span><span class="p">))</span>   <span class="c1"># DataFrameGroupBy: nothing computed yet</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grouped</span><span class="p">)</span>          <span class="c1"># not useful: only the address in memory</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.groupby.generic.DataFrameGroupBy'&gt;
-&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f47a286b6d0&gt;
+&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7c813c0f5b90&gt;
 </pre></div>
 </div>
 </div>
@@ -813,7 +813,7 @@ dtype: float64
 <p>חזו: ‎<code class="docutils literal notranslate"><span class="pre">df.groupby(&quot;angle_deg&quot;)[&quot;v0_measured&quot;].mean()</span></code>‎ — כמה שורות תהיה לתוצאה?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># חזו, ואז בדקו:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predict, then check:</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"angle_deg"</span><span class="p">)[</span><span class="s2">"v0_measured"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 </pre></div>
@@ -834,8 +834,8 @@ dtype: float64
 <h2><span class="section-number">11.5.5. </span>בדקו את עצמכם<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="IpjQJeITwClr" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#IpjQJeITwClr {
+<div class="output text_html"><div id="nWnlCZOaqmVS" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#nWnlCZOaqmVS {
    --jq-multiple-choice-bg: #392061;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1058,7 +1058,7 @@ dtype: float64
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsIpjQJeITwClr=[{"question": "\u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>df.groupby(\"angle_deg\")</code> \u05d1\u05dc\u05d9 \u05e9\u05d5\u05dd \u05e4\u05e2\u05d5\u05dc\u05ea \u05e6\u05d1\u05d9\u05e8\u05d4 \u05d1\u05e1\u05d5\u05e3 (\u05db\u05de\u05d5 mean())?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 DataFrameGroupBy - '\u05d4\u05d1\u05d8\u05d7\u05d4' \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e9\u05d8\u05e8\u05dd \u05d1\u05d5\u05e6\u05e2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df; \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e2\u05d3\u05d9\u05d9\u05df \u05dc\u05d0 \u05d4\u05ea\u05d1\u05e6\u05e2."}, {"answer": "\u05d0\u05ea \u05d4\u05d8\u05d1\u05dc\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea \u05dc\u05dc\u05d0 \u05e9\u05d9\u05e0\u05d5\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea \u05d4\u05e7\u05d1\u05d5\u05e6\u05d5\u05ea \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05d9\u05d0 \u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 GroupBy \u05e9\u05de\u05d0\u05e4\u05e9\u05e8 \u05d2\u05d9\u05e9\u05d4 \u05dc\u05e7\u05d1\u05d5\u05e6\u05d5\u05ea, \u05dc\u05d0 \u05e8\u05e7 \u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea\u05d9\u05d4\u05df."}]}];
+</style></div><script type="application/javascript">var questionsnWnlCZOaqmVS=[{"question": "\u05de\u05d4 \u05de\u05d7\u05d6\u05d9\u05e8 <code>df.groupby(\"angle_deg\")</code> \u05d1\u05dc\u05d9 \u05e9\u05d5\u05dd \u05e4\u05e2\u05d5\u05dc\u05ea \u05e6\u05d1\u05d9\u05e8\u05d4 \u05d1\u05e1\u05d5\u05e3 (\u05db\u05de\u05d5 mean())?", "type": "multiple_choice", "answers": [{"answer": "\u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 DataFrameGroupBy - '\u05d4\u05d1\u05d8\u05d7\u05d4' \u05dc\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e9\u05d8\u05e8\u05dd \u05d1\u05d5\u05e6\u05e2", "correct": true, "feedback": "\u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e9\u05d2\u05d9\u05d0\u05d4", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d6\u05d4 \u05e7\u05d5\u05d3 \u05ea\u05e7\u05d9\u05df; \u05d4\u05d7\u05d9\u05e9\u05d5\u05d1 \u05e2\u05d3\u05d9\u05d9\u05df \u05dc\u05d0 \u05d4\u05ea\u05d1\u05e6\u05e2."}, {"answer": "\u05d0\u05ea \u05d4\u05d8\u05d1\u05dc\u05d4 \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea \u05dc\u05dc\u05d0 \u05e9\u05d9\u05e0\u05d5\u05d9", "correct": false, "feedback": "\u05dc\u05d0 \u05e0\u05db\u05d5\u05df."}, {"answer": "\u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea \u05d4\u05e7\u05d1\u05d5\u05e6\u05d5\u05ea \u05d1\u05dc\u05d1\u05d3", "correct": false, "feedback": "\u05dc\u05d0 \u2014 \u05d4\u05ea\u05d5\u05e6\u05d0\u05d4 \u05d4\u05d9\u05d0 \u05d0\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8 GroupBy \u05e9\u05de\u05d0\u05e4\u05e9\u05e8 \u05d2\u05d9\u05e9\u05d4 \u05dc\u05e7\u05d1\u05d5\u05e6\u05d5\u05ea, \u05dc\u05d0 \u05e8\u05e7 \u05e8\u05e9\u05d9\u05de\u05ea \u05e9\u05de\u05d5\u05ea\u05d9\u05d4\u05df."}]}];
 
 if (typeof Question === 'undefined') {
 // Make a random ID
@@ -2120,8 +2120,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("IpjQJeITwClr")) {
-    show_questions(questionsIpjQJeITwClr, IpjQJeITwClr);
+  if (document.getElementById("nWnlCZOaqmVS")) {
+    show_questions(questionsnWnlCZOaqmVS, nWnlCZOaqmVS);
   } else {
     setTimeout(try_show, 200);
   }
