@@ -71,6 +71,9 @@ sphinx:
       tex:
         inlineMath: [["$", "$"], ["\\(", "\\)"]]
         processEscapes: true
+    # interactive widgets (weeks 4-13): replaces each <div class="cfs-widget">
+    html_js_files:
+      - cfs-widgets.js
 
 
 # Define the name of the latex output file for PDF builds
@@ -94,6 +97,7 @@ html:
   use_repository_button: true
   extra_css:
     - rtl.css
+    - cfs-widgets.css
 launch_buttons:
   notebook_interface: "jupyterlab"  # or "classic"
   binderhub_url: "https://mybinder.org"

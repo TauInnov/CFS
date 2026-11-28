@@ -2,11 +2,11 @@
 the update loop)."""
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.patches import Polygon, Rectangle
+from matplotlib.patches import FancyBboxPatch, Polygon
 
-from cfsfig import (AX0, AX1, AX1_FILL, BAD, BAD_FILL, EDGE, GREY,
-                    GREY_FILL, MONO, RES, RES_FILL, TEXT, arrow, new_fig,
-                    save, text)
+from cfsfig import (AX0, AX0_FILL, AX1, AX1_FILL, BAD, BAD_FILL, CELL, EDGE,
+                    GREY, GREY_FILL, MONO, RES, RES_FILL, TEXT, arrow, chip,
+                    new_fig, pill, rbox, save, text)
 
 
 def num(v, nd=3):
@@ -14,24 +14,71 @@ def num(v, nd=3):
     return str(round(float(v), nd))
 
 
-def grid(ax, x0, y0, values, fills=None, colors=None, edges=None, w=1.25,
-         h=0.6, fs=10):
-    """Cells like cfsfig.cells, with a text colour per cell.
+def grid(ax, x0, y0, values, fills=None, colors=None, w=1.25, h=0.6, fs=10,
+         gap=0.07):
+    """Rounded cells like cfsfig.cells, with a text colour per cell.
 
-    (x0, y0) is the top-left corner; values, fills, colors, edges are lists
-    of rows (None = white fill, dark text, grey edge).
+    (x0, y0) is the top-left corner; values, fills, colors are lists of
+    rows (None = the neutral cell, the default text colour).
     """
+    r = min(0.12, 0.18 * min(w, h))
     for i, row in enumerate(values):
         for j, s in enumerate(row):
-            fc = fills[i][j] if fills and fills[i][j] else 'white'
+            fc = fills[i][j] if fills and fills[i][j] else CELL
             tc = colors[i][j] if colors and colors[i][j] else TEXT
-            ec = edges[i][j] if edges and edges[i][j] else EDGE
-            elw = 1.8 if edges and edges[i][j] else 0.9
-            ax.add_patch(Rectangle((x0 + j * w, y0 - (i + 1) * h), w, h,
-                                   fc=fc, ec=ec, lw=elw, zorder=2))
+            rbox(ax, x0 + j * w + gap / 2, y0 - (i + 1) * h + gap / 2,
+                 w - gap, h - gap, fc, r=r)
             ax.text(x0 + j * w + w / 2, y0 - i * h - h / 2, s, ha='center',
                     va='center', fontsize=fs, color=tc, family=MONO,
                     zorder=3)
+
+
+PAD = {'chip': 0.42, 'pill': 0.32}           # the bbox pads of chip / pill
+
+
+def inline(ax, x, y, parts, ha='center', fs=10, gap=0.1):
+    """Chips, pills and text side by side on one line, measured.
+
+    parts: ('chip', code), ('pill', s, fg, bg), ('mono', s, color) or
+    ('text', s, color); x is the left end, the centre or the right end of
+    the line (ha); gap is the space between two parts, in inches.
+    """
+    fig = ax.figure
+    ax.apply_aspect()
+    ren = fig.canvas.get_renderer()
+    p0 = ax.transData.transform((0, 0))[0]
+    upx = 1 / (ax.transData.transform((1, 0))[0] - p0)     # units per pixel
+    made = []
+    for kind, s, *c in parts:
+        if kind == 'chip':
+            chip(ax, 0, y, s, fs=fs)
+        elif kind == 'pill':
+            pill(ax, 0, y, s, c[0], c[1], fs=fs, mono=True, ha='left')
+        else:
+            text(ax, 0, y, s, c[0], fs=fs, ha='left', mono=kind == 'mono')
+        t_ = ax.texts[-1]
+        pad = PAD.get(kind, 0) * fs * fig.dpi / 72 * upx
+        made.append((t_, pad, t_.get_window_extent(ren).width * upx))
+    sp = gap * fig.dpi * upx
+    total = sum(wd + 2 * p for _, p, wd in made) + sp * (len(made) - 1)
+    left = {'left': x, 'center': x - total / 2, 'right': x - total}[ha]
+    for t_, p, wd in made:
+        t_.set_x(left + p)
+        left += wd + 2 * p + sp
+
+
+def rrect(ax, x, y, w, h, fc, ec=None, lw=0.0, r_in=0.04, z=2):
+    """A rounded box in a plot whose x and y units differ: the corners
+    stay round (radius r_in inches). Set the axis limits first."""
+    p0 = ax.transData.transform((0, 0))
+    px = ax.transData.transform((1, 1)) - p0         # pixels per unit
+    dpi = ax.figure.dpi
+    ux, uy = dpi / px[0], dpi / px[1]                # units per inch
+    r = min(r_in * ux, w / 2, h / 2 * ux / uy)
+    ax.add_patch(FancyBboxPatch((x, y), w, h,
+                                boxstyle=f'round,pad=0,rounding_size={r}',
+                                mutation_aspect=uy / ux, fc=fc,
+                                ec=ec if ec else 'none', lw=lw, zorder=z))
 
 
 # ---------------------------------------------------------------- 10.1
@@ -44,14 +91,14 @@ def fig_10_1_diff_intervals():
     n = len(t)
 
     w, h = 1.3, 0.7
-    fig, ax = new_fig(6.4, 3.9, (-2.6, 7.9), (-5.2, 1.1))
+    fig, ax = new_fig(6.4, 4.0, (-2.6, 7.9), (-5.35, 1.15))
     text(ax, -0.15, -h / 2, 't', AX1, ha='right', mono=True)
     grid(ax, 0, 0, [[num(a) for a in t]], fills=[[AX1_FILL] * n], w=w, h=h,
          fs=11)
     text(ax, -0.15, -0.85 - h / 2, 'x', TEXT, ha='right', mono=True)
     grid(ax, 0, -0.85, [[num(a) for a in x]], w=w, h=h, fs=11)
-    arrow(ax, (0, 0.45), (n * w, 0.45), AX1, lw=2)
-    text(ax, n * w / 2, 0.8, 'time', AX1)
+    arrow(ax, (0, 0.4), (n * w, 0.4), AX1, lw=2)
+    pill(ax, n * w / 2, 0.8, 'time', AX1, AX1_FILL)
     text(ax, n * w + 0.3, -0.85, f'{n} points', TEXT, ha='left')
 
     # one interval between every two neighbours, its value at the middle
@@ -59,7 +106,8 @@ def fig_10_1_diff_intervals():
     for j in range(n - 1):
         a, b = j * w + w / 2 + 0.07, (j + 1) * w + w / 2 - 0.07
         ax.plot([a, a, b, b], [y_cells - 0.05, y_br, y_br, y_cells - 0.05],
-                color=AX1, lw=1.4, zorder=1)
+                color=AX1, lw=1.4, zorder=1, solid_joinstyle='round',
+                solid_capstyle='round')
         arrow(ax, ((a + b) / 2, y_br), ((a + b) / 2, -2.33), AX1, lw=1.4,
               ms=11)
     rows = [('np.diff(x)', [num(a) for a in np.diff(x)], RES_FILL),
@@ -73,8 +121,9 @@ def fig_10_1_diff_intervals():
         grid(ax, w / 2, y0, [vals], fills=[[fill] * (n - 1)], w=w, h=h,
              fs=11)
     text(ax, n * w + 0.3, top - 0.45, f'{n - 1} intervals', RES, ha='left')
-    text(ax, n * w / 2, top - 3 * (h + 0.12) - 0.25,
-         'np.diff(x): shape (4,) -> (3,)', RES, mono=True)
+    inline(ax, n * w / 2, top - 3 * (h + 0.12) - 0.5,
+           [('chip', 'np.diff(x)'),
+            ('pill', 'shape (4,) -> (3,)', RES, RES_FILL)])
     return save(fig, '10_1_diff_intervals')
 
 
@@ -88,31 +137,32 @@ def fig_10_2_cumsum_steps():
 
     w, h, s = 1.5, 0.6, 1.6                 # cell width, height, m -> units
     gap = 0.3                               # between two columns
+    ins = 0.035                             # half the gap between two steps
     fig, ax = new_fig(5.0, 4.9, (-2.9, 4.7), (-1.75, 3.75))
     for j in range(n):
         x0 = j * w + gap / 2
         for k in range(j + 1):
             y0 = c[k] * s - d[k] * s
             new = k == j
-            ax.add_patch(Rectangle((x0, y0), w - gap, d[k] * s,
-                                   fc=AX1_FILL if new else GREY_FILL,
-                                   ec=AX1 if new else EDGE,
-                                   lw=1.8 if new else 0.9, zorder=2))
+            rbox(ax, x0 + ins, y0 + ins, w - gap - 2 * ins,
+                 d[k] * s - 2 * ins, AX1_FILL if new else GREY_FILL, r=0.1)
             ax.text(x0 + (w - gap) / 2, y0 + d[k] * s / 2, num(d[k]),
                     ha='center', va='center', fontsize=10, family=MONO,
                     color=TEXT if new else GREY, zorder=3)
-        ax.add_patch(Rectangle((x0, 0), w - gap, c[j] * s, fill=False,
-                               ec=RES, lw=1.6, zorder=4))
+        # the running total: one outline around the column
+        rbox(ax, x0 - 0.03, -0.03, w - gap + 0.06, c[j] * s + 0.06, 'none',
+             ec=RES, lw=1.8, r=0.13, z=4)
         if j > 0:                           # the total so far, kept
-            ax.plot([x0 - gap, x0], [c[j - 1] * s] * 2, color=GREY,
-                    lw=1, ls='--', zorder=1)
-    ax.plot([-0.1, n * w + 0.1], [0, 0], color=EDGE, lw=1.2)
-    text(ax, -0.15, -0.15 - h / 2, 'd', AX1, ha='right', mono=True)
-    grid(ax, 0, -0.15, [[num(a) for a in d]], fills=[[AX1_FILL] * n], w=w,
+            ax.plot([x0 - gap + 0.06, x0 - 0.06], [c[j - 1] * s] * 2,
+                    color=GREY, lw=1, ls='--', zorder=1)
+    ax.plot([-0.1, n * w + 0.1], [-0.08, -0.08], color=EDGE, lw=1.2,
+            solid_capstyle='round')
+    text(ax, -0.15, -0.2 - h / 2, 'd', AX1, ha='right', mono=True)
+    grid(ax, 0, -0.2, [[num(a) for a in d]], fills=[[AX1_FILL] * n], w=w,
          h=h, fs=11)
-    text(ax, -0.15, -0.9 - h / 2, 'np.cumsum(d)', RES, ha='right',
+    text(ax, -0.15, -0.95 - h / 2, 'np.cumsum(d)', RES, ha='right',
          mono=True)
-    grid(ax, 0, -0.9, [[num(a) for a in c]], fills=[[RES_FILL] * n], w=w,
+    grid(ax, 0, -0.95, [[num(a) for a in c]], fills=[[RES_FILL] * n], w=w,
          h=h, fs=11)
     return save(fig, '10_2_cumsum_steps')
 
@@ -139,6 +189,7 @@ def fig_10_2_trapezoid():
 
     fig, (top, bot) = plt.subplots(2, 1, figsize=(6.4, 5.0), sharex=True,
                                    gridspec_kw={'hspace': 0.42})
+    bot.set_xlim(tt[0] - 4, tt[-1] + dt + 2)
     for a in (top, bot):
         a.plot(tt, FF, 'o', color=TEXT, ms=6, zorder=5)
         for x_, f_ in zip(tt, FF):
@@ -147,15 +198,13 @@ def fig_10_2_trapezoid():
         a.axvline(tt[-1], color=GREY, lw=1, ls=':', zorder=1)
         a.set_ylim(0, 8.4)
         a.set_ylabel('F (N)', fontsize=10)
-        a.tick_params(labelsize=9)
-        for side in ('right', 'top'):
-            a.spines[side].set_visible(False)
+        a.tick_params(labelsize=10)
 
     for j in range(m - 1):
         top.add_patch(Polygon([(tt[j], 0), (tt[j], FF[j]),
                                (tt[j + 1], FF[j + 1]), (tt[j + 1], 0)],
                               closed=True, fc=RES_FILL, ec=RES, lw=1.4,
-                              zorder=2))
+                              joinstyle='round', zorder=2))
         top.plot([tt[j], tt[j + 1]], [F_mid[j]] * 2, color=RES, lw=1.2,
                  ls='--', zorder=3)
     top.text(tt[0] + dt / 2, F_mid[0] - 0.35, 'F_mid', ha='center',
@@ -163,16 +212,15 @@ def fig_10_2_trapezoid():
     top.set_title(f'{m} readings bound {m - 1} intervals: '
                   'one trapezoid each', loc='left', fontsize=10, color=RES)
 
-    for j in range(m):
-        last = j == m - 1
-        bot.add_patch(Rectangle((tt[j], 0), dt, FF[j],
-                                fc=BAD_FILL if last else GREY_FILL,
-                                ec=BAD if last else EDGE, lw=1.4, zorder=2))
+    for j in range(m):              # from below 0: the axis clips the lower
+        last = j == m - 1           # corners, only the top ones are round
+        rrect(bot, tt[j] + 0.1, -0.4, dt - 0.2, FF[j] + 0.4,
+              BAD_FILL if last else GREY_FILL, ec=BAD if last else EDGE,
+              lw=1.4 if last else 1.0)
     bot.text(tt[-1] + dt / 2, FF[-1] / 2, 'past the\nlast reading',
-             ha='center', va='center', fontsize=9, color=BAD, zorder=4)
+             ha='center', va='center', fontsize=10, color=BAD, zorder=4)
     bot.set_title(f'every reading times dt: {m} slices, '
                   'one step too many', loc='left', fontsize=10, color=BAD)
-    bot.set_xlim(tt[0] - 4, tt[-1] + dt + 2)
     bot.set_xticks(np.append(tt, tt[-1] + dt))
     bot.set_xlabel('t (ms)', fontsize=10)
     return save(fig, '10_2_trapezoid_slices')
@@ -198,20 +246,21 @@ def fig_10_3_k_step_grid():
     k, v = drag_runs()
     cols = 4                           # steps drawn, then "..."
     w, h = 1.3, 0.55
-    fig, ax = new_fig(5.6, 6.0, (-3.3, 6.6), (-9.55, 0.95))
-    text(ax, -3.2, 0.75, 'for n in range(n_steps - 1):', TEXT, fs=10,
-         ha='left', mono=True)
-    text(ax, -3.2, 0.3, '    v[:, n + 1] = v[:, n] - (g + k * v[:, n]) * dt',
-         TEXT, fs=10, ha='left', mono=True)
+    fig, ax = new_fig(5.6, 6.2, (-3.3, 6.6), (-9.6, 1.35))
+    chip(ax, -3.2, 0.78, 'for n in range(n_steps - 1):\n'
+         '    v[:, n + 1] = v[:, n] - (g + k * v[:, n]) * dt', fs=10)
 
     heads = ['before the loop:', 'n = 0', 'n = 1']
     for p, head in enumerate(heads):
         y_top = -1.85 - p * 2.95       # top of the grid of this panel
-        y_head = y_top + (1.35 if p == 0 else 0.75)
-        text(ax, -3.2, y_head, head, TEXT, fs=10, ha='left', weight='bold')
+        y_head = y_top + (1.5 if p == 0 else 0.75)
         if p == 0:
-            text(ax, -0.3, y_head, 'v[:, 0] = v0', TEXT, fs=10, ha='left',
-                 mono=True)
+            text(ax, -3.2, y_head, head, TEXT, fs=10, ha='left',
+                 weight='bold')
+            chip(ax, -0.4, y_head, 'v[:, 0] = v0', fs=10)
+        else:
+            pill(ax, -3.1, y_head, head, RES, RES_FILL, mono=True,
+                 ha='left')
         vals, fills, colors = [], [], []
         for i in range(3):
             row, frow, crow = [], [], []
@@ -239,10 +288,9 @@ def fig_10_3_k_step_grid():
                   rad=-0.5)
     y0 = -1.85
     arrow(ax, (-2.35, y0), (-2.35, y0 - 3 * h), AX0, lw=2)
-    text(ax, -2.6, y0 - 1.5 * h, 'axis 0: k', AX0, fs=10, rotation=90,
-         ha='right')
+    pill(ax, -2.82, y0 - 1.5 * h, 'axis 0: k', AX0, AX0_FILL, rotation=90)
     arrow(ax, (0, y0 + 0.55), ((cols + 1) * w, y0 + 0.55), AX1, lw=2)
-    text(ax, (cols + 1) * w / 2, y0 + 0.85, 'axis 1: step n', AX1, fs=10)
+    pill(ax, (cols + 1) * w / 2, y0 + 0.93, 'axis 1: step n', AX1, AX1_FILL)
     return save(fig, '10_3_k_step_grid')
 
 
@@ -261,7 +309,7 @@ def fig_10_3_dependency_chain():
     shown = 5
     w, h = 1.3, 0.6
 
-    fig, ax = new_fig(6.2, 3.8, (-2.6, 8.0), (-5.75, 0.75))
+    fig, ax = new_fig(6.2, 3.9, (-2.6, 8.0), (-5.85, 0.75))
     text(ax, -2.5, 0.45, 'the loop: every value from the one just computed',
          TEXT, fs=10, ha='left', weight='bold')
     y1 = -0.75
@@ -273,9 +321,8 @@ def fig_10_3_dependency_chain():
               ((j + 1) * w + w / 2 - 0.1, y1 + 0.05), RES, lw=1.4, ms=11,
               rad=-0.6)
 
-    text(ax, -2.5, -2.05, 'v_wrong[1:] = v_wrong[:-1] - g * dt', TEXT,
-         fs=10, ha='left', mono=True)
-    y2, y3 = -2.6, -4.55
+    chip(ax, -2.5, -2.05, 'v_wrong[1:] = v_wrong[:-1] - g * dt', fs=10)
+    y2, y3 = -2.65, -4.6
     text(ax, -0.15, y2 - h / 2, 'before', GREY, fs=10, ha='right')
     zeros = [GREY_FILL if a == 0 else None for a in before[:shown]]
     grid(ax, 0, y2, [[num(a) for a in before[:shown]] + ['...']],

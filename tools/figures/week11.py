@@ -1,8 +1,9 @@
 """Week 11 figures: pandas tables (DataFrame, Series, masks, groupby, index).
 
 A pandas table is drawn as the arrays of weeks 7-10 with names added:
-the index column has a grey fill, column names are bold, values are
-monospace and written as pandas prints them. A NaN cell is red.
+rounded cells, an index column with a grey fill and muted labels, column
+names in bold above the cells, values monospace and written as pandas
+prints them. A NaN cell is red; a label with no value is a dashed slot.
 """
 import csv
 import io
@@ -10,15 +11,15 @@ import math
 import pathlib
 
 import numpy as np
-from matplotlib.patches import Rectangle
 
-from cfsfig import (AX0, AX0_FILL, AX1, BAD, BAD_FILL, EDGE, GREY, GREY_FILL,
-                    MONO, OUT, RES, RES_FILL, SEL, SEL_FILL, TEXT, arrow,
-                    new_fig, save, text)
+from cfsfig import (AX0, AX0_FILL, AX0_FILL2, AX1, AX1_FILL, BAD, BAD_FILL,
+                    CELL, FADED, GREY, GREY_FILL, MONO, MUTED, OUT, RES,
+                    RES_FILL, SEL, SEL_FILL, TEXT, arrow, cells, chip,
+                    new_fig, pill, rbox, save, text)
 
 WEEK = OUT.parent / 'weeks' / 'week_11'
 NAN = float('nan')
-AX0_FILL2 = '#b3cbea'      # a second, darker tint of the axis-0 blue
+GAP = 0.07          # the gap between two cells, as in cfsfig.cells
 
 
 def fig_for(xlim, ylim, width=6.3):
@@ -85,66 +86,78 @@ def table(ax, x0, y0, cols, widths, rows, index=None, index_w=0.9, h=0.55,
           fs=10, fills=None, colors=None, header=True, index_name=''):
     """A pandas-style table; (x0, y0) is the top-left of the first column.
 
-    cols: column names (bold); widths: their widths; rows: rows of strings;
-    index: the index labels (grey cells left of x0), or None.
-    fills / colors: per value cell, None = white / default ('NaN' is red).
+    cols: column names (bold, above the cells); widths: their widths;
+    rows: rows of strings; index: the index labels (grey cells left of
+    x0), or None. fills / colors: per value cell, None = neutral cell /
+    TEXT. 'NaN' is red, '...' has no cell, None is an empty dashed slot.
     Returns (xc, yc): column centres and row centres.
     """
     xs = list(np.cumsum([x0] + list(widths)))
     xc = [(a + b) / 2 for a, b in zip(xs, xs[1:])]
+    r = min(0.12, 0.18 * h)
+    xi = x0 - index_w                        # the index column's left edge
+
+    def cell(x, w, yt, fc, ec=None, lw=0.0, ls='-', inset=0.0):
+        rbox(ax, x + GAP / 2, yt - h + GAP / 2, w - GAP - inset, h - GAP,
+             fc, ec=ec, lw=lw, r=r, ls=ls)
+
+    def value(x, y, s, color, weight='normal'):
+        ax.text(x, y, s, ha='center', va='center', fontsize=fs,
+                family=MONO, color=color, weight=weight, zorder=3)
+
     top = y0
     if header:
         if index is not None and index_name:
-            ax.add_patch(Rectangle((x0 - index_w, y0 - h), index_w, h,
-                                   fc=GREY_FILL, ec=EDGE, lw=0.9, zorder=2))
-            ax.text(x0 - index_w / 2, y0 - h / 2, index_name, ha='center',
-                    va='center', fontsize=fs, family=MONO, color=TEXT,
-                    weight='bold', zorder=3)
+            value(xi + (index_w - 0.06) / 2, y0 - h / 2 - 0.03, index_name,
+                  TEXT, 'bold')
         for j, c in enumerate(cols):
-            ax.add_patch(Rectangle((xs[j], y0 - h), widths[j], h, fc='white',
-                                   ec=EDGE, lw=0.9, zorder=2))
-            ax.text(xc[j], y0 - h / 2, c, ha='center', va='center',
-                    fontsize=fs, family=MONO, weight='bold', color=TEXT,
-                    zorder=3)
+            value(xc[j], y0 - h / 2 - 0.03, c, TEXT, 'bold')
         top = y0 - h
     yc = []
     for i, row in enumerate(rows):
         yt = top - i * h
         yc.append(yt - h / 2)
         if index is not None:
-            ax.add_patch(Rectangle((x0 - index_w, yt - h), index_w, h,
-                                   fc=GREY_FILL, ec=EDGE, lw=0.9, zorder=2))
-            ax.text(x0 - index_w / 2, yt - h / 2, index[i], ha='center',
-                    va='center', fontsize=fs, family=MONO, color=TEXT,
-                    zorder=3)
+            if index[i] != '...':
+                cell(xi, index_w, yt, GREY_FILL, inset=0.06)
+            value(xi + (index_w - 0.06) / 2, yt - h / 2, index[i], MUTED)
         for j, v in enumerate(row):
-            fc = fills[i][j] if fills and fills[i][j] else 'white'
+            fc = fills[i][j] if fills and fills[i][j] else CELL
             col = colors[i][j] if colors and colors[i][j] else TEXT
             if v == 'NaN':
                 fc, col = BAD_FILL, BAD
-            if v is None:          # no value under this label: empty cell
-                ax.add_patch(Rectangle((xs[j], yt - h), widths[j], h,
-                                       fc='white', ec='#bbbbbb', lw=0.8,
-                                       ls=(0, (2, 2)), zorder=2))
+            if v is None:          # no value under this label: empty slot
+                cell(xs[j], widths[j], yt, 'none', ec=FADED, lw=0.9,
+                     ls=(0, (2, 2)))
                 continue
-            ax.add_patch(Rectangle((xs[j], yt - h), widths[j], h, fc=fc,
-                                   ec=EDGE, lw=0.9, zorder=2))
-            ax.text(xc[j], yt - h / 2, v, ha='center', va='center',
-                    fontsize=fs, family=MONO, color=col, zorder=3)
+            if v == '...':
+                value(xc[j], yt - h / 2, v, MUTED)
+                continue
+            cell(xs[j], widths[j], yt, fc)
+            value(xc[j], yt - h / 2, v, col)
     return xc, yc
 
 
-def outline(ax, x0, y0, x1, y1, color, lw=2.0, ls='-'):
-    """A coloured frame around the rectangle (x0, y0)-(x1, y1)."""
-    ax.add_patch(Rectangle((x0, y1), x1 - x0, y0 - y1, fill=False, ec=color,
-                           lw=lw, ls=ls, zorder=4))
+def outline(ax, x0, y0, x1, y1, color, lw=2.0):
+    """A rounded coloured frame around the cells (x0, y0)-(x1, y1)."""
+    rbox(ax, x0 + 0.01, y1 + 0.01, x1 - x0 - 0.02, y0 - y1 - 0.02, 'none',
+         ec=color, lw=lw, r=0.12, z=4)
 
 
 def vbracket(ax, x, y0, y1, color, right=True, d=0.15):
     """A square bracket along x from y0 (top) to y1 (bottom)."""
     s = d if right else -d
     ax.plot([x, x + s, x + s, x], [y0 - 0.05, y0 - 0.05, y1 + 0.05,
-                                   y1 + 0.05], color=color, lw=1.6, zorder=4)
+                                   y1 + 0.05], color=color, lw=1.6, zorder=4,
+            solid_capstyle='round', solid_joinstyle='round')
+
+
+def hbracket(ax, x0, x1, y, color, up=False, d=0.12):
+    """A square bracket along y from x0 to x1, its ends down (or up)."""
+    s = d if up else -d
+    ax.plot([x0 + 0.05, x0 + 0.05, x1 - 0.05, x1 - 0.05],
+            [y + s, y, y, y + s], color=color, lw=1.4, zorder=4,
+            solid_capstyle='round', solid_joinstyle='round')
 
 
 # ---------------------------------------------------------------- 11.1
@@ -163,18 +176,15 @@ def fig_11_1_arrays_vs_table():
     for name, wj in zip(names, w):
         text(ax, x + wj / 2, y0 + 0.22, name, mono=True, fs=10)
         vals = shown(TABLE6[name])
-        for i, v in enumerate(vals):
-            sel = i == 2
-            ax.add_patch(Rectangle((x, y0 - (i + 1) * h), wj, h,
-                                   fc=SEL_FILL if sel else 'white',
-                                   ec=SEL if sel else EDGE,
-                                   lw=2.0 if sel else 0.9, zorder=2))
-            text(ax, x + wj / 2, y0 - i * h - h / 2, v, mono=True, fs=10)
+        cells(ax, x, y0, [[v] for v in vals], w=wj, h=h, fs=10,
+              fills=[[SEL_FILL if i == 2 else None] for i in range(6)],
+              edges=[[SEL if i == 2 else None] for i in range(6)])
         x += wj + gap
     for i in range(6):
         text(ax, -0.15, y0 - i * h - h / 2, str(i), AX0 if i != 2 else SEL,
              ha='right', mono=True, fs=10)
-    text(ax, -1.2, y0 - 3 * h, 'position', AX0, fs=10, rotation=90)
+    pill(ax, -1.1, y0 - 3 * h, 'position', AX0, AX0_FILL, fs=10,
+         rotation=90)
     text(ax, 4.6, y0 - 6 * h - 0.35,
          'run_id[2], angle_deg[2], v0_measured[2], range_measured[2]', SEL,
          mono=True, fs=10)
@@ -208,12 +218,12 @@ def fig_11_2_anatomy():
     text(ax, -0.8, 1.3, 'DataFrame', ha='left', fs=11, weight='bold')
     text(ax, 1.65, 1.3, 'small', ha='left', mono=True, fs=11)
     # the three parts
-    ax.plot([0.05, W - 0.05], [0.12, 0.12], color=TEXT, lw=1.4)
+    hbracket(ax, 0, W, 0.14, MUTED)
     text(ax, W / 2, 0.42, 'columns', fs=10)
-    ax.plot([-0.75, -0.05], [-4 * h - 0.12] * 2, color=GREY, lw=1.4)
-    text(ax, -0.4, -4 * h - 0.42, 'index', GREY, fs=10)
-    ax.plot([0.05, W - 0.05], [-4 * h - 0.12] * 2, color=TEXT, lw=1.4)
-    text(ax, W / 2, -4 * h - 0.42, 'values', fs=10)
+    hbracket(ax, -0.8, -0.06, -4 * h - 0.17, MUTED, up=True)
+    text(ax, -0.43, -4 * h - 0.47, 'index', GREY, fs=10)
+    hbracket(ax, 0, W, -4 * h - 0.17, MUTED, up=True)
+    text(ax, W / 2, -4 * h - 0.47, 'values', fs=10)
     # the Series: one column with its index
     xs = W + 2.6
     arrow(ax, (W + 0.12, -2.5 * h), (xs - 0.95, -2.5 * h), SEL)
@@ -224,7 +234,7 @@ def fig_11_2_anatomy():
     text(ax, xs + 0.25, 0.75, 'small["range_measured"]', SEL, mono=True,
          fs=10)
     text(ax, xs + 1.3, -4 * h - 0.85, 'Name: range_measured, dtype: float64',
-         mono=True, fs=10, ha='right')
+         MUTED, mono=True, fs=10, ha='right')
     return save(fig, '11_2_anatomy')
 
 
@@ -234,29 +244,30 @@ def fig_11_2_col_vs_cols():
     vals = [[v] for v in shown(TABLE6['angle_deg'])]
     idx = [str(i) for i in range(6)]
     cw = 1.8
-    fig, ax = fig_for((-2.3, 10.6), (-5.35, 1.35), width=5.6)
+    fig, ax = fig_for((-2.3, 10.6), (-5.45, 1.35), width=5.6)
     # left: the Series, no header row; its name is kept apart
-    text(ax, 0.9, 1.0, 'df["angle_deg"]', mono=True, fs=11)
+    chip(ax, 0.45, 1.0, 'df["angle_deg"]', fs=11, ha='center')
     table(ax, 0, -h, ['angle_deg'], [cw], vals, index=idx, h=h,
           header=False)
     text(ax, 0.45, -7 * h - 0.35, 'Name: angle_deg', GREY, mono=True,
          fs=10)
-    arrow(ax, (-1.35, -h), (-1.35, -7 * h), AX0, lw=2)
-    text(ax, -1.6, -4 * h, 'axis 0', AX0, rotation=90, fs=10)
+    arrow(ax, (-1.25, -h), (-1.25, -7 * h), AX0, lw=2)
+    pill(ax, -1.75, -4 * h, 'axis 0', AX0, AX0_FILL, fs=10, rotation=90)
     text(ax, 0.45, -7 * h - 1.0, 'Series', RES, fs=11, weight='bold')
-    text(ax, 0.45, -7 * h - 1.55, 'shape (6,)', RES, mono=True, fs=11)
+    pill(ax, 0.45, -7 * h - 1.6, 'shape (6,)', RES, RES_FILL, fs=11,
+         mono=True)
     # right: the DataFrame, with a header row
     x0 = 7.2
-    text(ax, x0 + 0.9, 1.0, 'df[["angle_deg"]]', mono=True, fs=11)
+    chip(ax, x0 + 0.45, 1.0, 'df[["angle_deg"]]', fs=11, ha='center')
     table(ax, x0, 0, ['angle_deg'], [cw], vals, index=idx, h=h)
-    arrow(ax, (x0 - 1.35, -h), (x0 - 1.35, -7 * h), AX0, lw=2)
-    text(ax, x0 - 1.6, -4 * h, 'axis 0', AX0, rotation=90, fs=10)
+    arrow(ax, (x0 - 1.25, -h), (x0 - 1.25, -7 * h), AX0, lw=2)
+    pill(ax, x0 - 1.75, -4 * h, 'axis 0', AX0, AX0_FILL, fs=10, rotation=90)
     arrow(ax, (x0, 0.3), (x0 + cw, 0.3), AX1, lw=2)
-    text(ax, x0 + cw + 0.15, 0.3, 'axis 1', AX1, ha='left', fs=10)
+    pill(ax, x0 + cw + 0.2, 0.3, 'axis 1', AX1, AX1_FILL, fs=10, ha='left')
     text(ax, x0 + 0.45, -7 * h - 1.0, 'DataFrame', RES, fs=11,
          weight='bold')
-    text(ax, x0 + 0.45, -7 * h - 1.55, 'shape (6, 1)', RES, mono=True,
-         fs=11)
+    pill(ax, x0 + 0.45, -7 * h - 1.6, 'shape (6, 1)', RES, RES_FILL, fs=11,
+         mono=True)
     return save(fig, '11_2_col_vs_cols')
 
 
@@ -270,7 +281,7 @@ def fig_11_4_mask():
     col = {n: shown(LOG[n]) for n in names}
     mask = [a == 45 for a in LOG['angle_deg']]     # df["angle_deg"] == 45
     win = list(range(10, 20))                       # rows 10..19 of 30
-    fig, ax = fig_for((-2.7, 11.25), (-6.6, 0.75), width=6.3)
+    fig, ax = fig_for((-2.7, 11.25), (-6.6, 0.95), width=6.3)
     dots = [['...'] * 4]
     rows = dots + [[col[n][i] for n in names] for i in win] + dots
     idx = ['...'] + [str(i) for i in win] + ['...']
@@ -287,8 +298,7 @@ def fig_11_4_mask():
         + [[None]]
     mc = [[None]] + [[SEL if mask[i] else GREY] for i in win] + [[None]]
     table(ax, xm, 0, ['mask_45'], [1.5], mrows, h=h, fills=mf, colors=mc)
-    text(ax, xm, 0.45, 'mask_45 = df["angle_deg"] == 45', SEL, mono=True,
-         fs=10, ha='left')
+    chip(ax, xm + 0.04, 0.6, 'mask_45 = df["angle_deg"] == 45', fs=10)
     # the rows kept by df[mask_45]
     k0 = 1 + win.index(12)
     k1 = 1 + win.index(17)
@@ -321,12 +331,13 @@ def fig_11_4_dropna():
           h=h, fills=fills, colors=colors)
     for i in [k for k in range(len(rows)) if bad[k]]:
         yr = -h - i * h - h / 2
-        ax.plot([-0.95, W + 0.05], [yr, yr], color=BAD, lw=1.8, zorder=5)
+        ax.plot([-0.95, W + 0.05], [yr, yr], color=BAD, lw=1.8, zorder=5,
+                solid_capstyle='round')
     text(ax, W / 2 - 0.45, -5 * h - 0.4, f'{len(rows)} rows', GREY, fs=10)
     # the result
     x0 = 7.6
-    text(ax, x0 + W / 2 - 0.45, 0.6, 'runs_clean = runs.dropna()', RES,
-         mono=True, fs=10)
+    chip(ax, x0 + W / 2 - 0.45, 0.6, 'runs_clean = runs.dropna()', fs=10,
+         ha='center')
     table(ax, x0, 0, names, w, [rows[k] for k in keep],
           index=[str(k) for k in keep], h=h,
           fills=[[RES_FILL] * 2 for _ in keep])
@@ -352,7 +363,7 @@ def fig_11_5_groupby():
     h = 0.5
     w = [1.85, 2.95]
     W = sum(w)
-    fig, ax = fig_for((-0.9, 13.2), (-5.8, 1.3), width=6.3)
+    fig, ax = fig_for((-0.9, 13.2), (-6.05, 1.3), width=6.3)
     text(ax, W / 2 - 0.4, 1.0, 'small', mono=True, fs=11)
     rows = list(zip(shown(ang), shown(rng)))
     fills = [[tint[a]] * 2 for a in ang]
@@ -381,15 +392,14 @@ def fig_11_5_groupby():
          mono=True, fs=11)
     # the three steps
     xa = (xb + x0 - 1.9) / 2 + 0.2          # the middle of the arrows
-    text(ax, xb + 0.05, 1.0, 'split', GREY, fs=10)
-    text(ax, xa + 0.5, 1.0, 'apply', GREY, fs=10)
+    text(ax, xb + 0.05, 1.0, 'split', GREY, fs=10, weight='bold')
+    text(ax, xa + 0.5, 1.0, 'apply', GREY, fs=10, weight='bold')
     text(ax, xa + 0.45, mids[0] + 0.45, 'mean, std, count', RES, fs=10)
-    text(ax, x0 + sum(sw) / 2 - 0.95, 1.0, 'combine', GREY, fs=10)
-    text(ax, -0.8, -len(ang) * h - h - 0.6,
-         'stats = small.groupby("angle_deg")["range_measured"].agg(',
-         mono=True, fs=10, ha='left')
-    text(ax, -0.8, -len(ang) * h - h - 1.1, '    ["mean", "std", "count"])',
-         mono=True, fs=10, ha='left')
+    text(ax, x0 + sum(sw) / 2 - 0.95, 1.0, 'combine', GREY, fs=10,
+         weight='bold')
+    chip(ax, -0.75, -len(ang) * h - h - 0.95,
+         'stats = small.groupby("angle_deg")["range_measured"].agg(\n'
+         '    ["mean", "std", "count"])', fs=10)
     return save(fig, '11_5_groupby')
 
 
@@ -409,9 +419,9 @@ def fig_11_7_index_alignment():
         rows.append([a, b, 'NaN'])
     h = 0.5
     w = [1.5, 1.5, 1.7]
-    fig, ax = fig_for((-1.3, 13.4), (-6.7, 1.6), width=6.3)
-    text(ax, 1.85, 1.25, 'diff_wrong = s1 - s2', mono=True, fs=10)
-    text(ax, 1.85, 0.7, 'lines up by index label', BAD, fs=10)
+    fig, ax = fig_for((-1.3, 13.4), (-6.7, 1.75), width=6.3)
+    chip(ax, 1.85, 1.3, 'diff_wrong = s1 - s2', fs=10, ha='center')
+    text(ax, 1.85, 0.68, 'lines up by index label', BAD, fs=10)
     table(ax, 0, 0, ['s1', 's2', 's1 - s2'], w, rows,
           index=[str(k) for k in labels], h=h,
           fills=[[SEL_FILL if v and v != 'NaN' else None for v in rw]
@@ -420,9 +430,9 @@ def fig_11_7_index_alignment():
     x0 = 7.4
     d = np.array([rng[i] for i in lab1]) - np.array([rng[i] for i in lab2])
     prow = [[r[i], r[j], f'{v:.3f}'] for i, j, v in zip(lab1, lab2, d)]
-    text(ax, x0 + 2.3, 1.25, 's1.to_numpy() - s2.to_numpy()', mono=True,
-         fs=10)
-    text(ax, x0 + 2.3, 0.7, 'lines up by position', RES, fs=10)
+    chip(ax, x0 + 2.3, 1.3, 's1.to_numpy() - s2.to_numpy()', fs=10,
+         ha='center')
+    text(ax, x0 + 2.3, 0.68, 'lines up by position', RES, fs=10)
     xc, yc = table(ax, x0, 0, ['s1', 's2', 'diff_right'], [1.5, 1.5, 1.9],
                    prow, h=h,
                    fills=[[SEL_FILL, SEL_FILL, RES_FILL] for _ in prow])

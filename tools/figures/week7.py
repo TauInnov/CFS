@@ -3,8 +3,8 @@ import numpy as np
 from matplotlib.patches import Rectangle
 
 from cfsfig import (AX0, AX0_FILL, AX1, AX1_FILL, BAD, BAD_FILL, GREY,
-                    GREY_FILL, RES, RES_FILL, SEL, SEL_FILL, arrow, cells,
-                    new_fig, save, text)
+                    GREY_FILL, MUTED, RES, RES_FILL, SEL, SEL_FILL, TEXT,
+                    arrow, cells, chip, new_fig, pill, save, text)
 
 g = 9.8
 
@@ -65,9 +65,8 @@ def fig_7_1_loop_vs_array():
     for j in range(n):
         x = j * w + w / 2
         arrow(ax, (x, -5.15), (x, -6.25), RES)
-    text(ax, 3.7, -7.45,
-         'y_arr = y0 + v0 * t_arr - 0.5 * g * t_arr**2', RES, fs=10,
-         mono=True)
+    chip(ax, 3.7, -7.45, 'y_arr = y0 + v0 * t_arr - 0.5 * g * t_arr**2',
+         fs=10, ha='center')
     text(ax, 3.7, -8.05, 'the same numbers, without a loop', GREY, fs=10)
     return save(fig, '7_1_loop_vs_array')
 
@@ -91,9 +90,9 @@ def fig_7_3_shape():
     text(ax, shown + 0.5, 0.25, 't[29]', AX1, fs=10)
     # the two axes
     arrow(ax, (-2.0, 0), (-2.0, -2.1), AX0, lw=2)
-    text(ax, -2.25, -1.05, '3 angles', AX0, rotation=90, ha='right')
+    pill(ax, -2.45, -1.05, '3 angles', AX0, AX0_FILL, rotation=90)
     arrow(ax, (0, 0.75), (shown + 1, 0.75), AX1, lw=2)
-    text(ax, (shown + 1) / 2, 1.1, '30 times', AX1)
+    pill(ax, (shown + 1) / 2, 1.15, '30 times', AX1, AX1_FILL)
     # the properties
     x = 7.4
     text(ax, x, -0.2, 'y.shape = (3, 30)', mono=True, ha='left')
@@ -109,8 +108,8 @@ def fig_7_3_shape():
 def fig_7_3_int_dtype():
     """Assigning 0.75 into an int array keeps only 0."""
     fig, ax = fig_for((-2.0, 8.9), (-3.6, 1.0), width=5.6)
-    text(ax, -1.9, 0.6, 't_bug = np.array([0, 1, 2, 3])     dtype: int64',
-         ha='left', mono=True, fs=10)
+    chip(ax, -1.9, 0.62, 't_bug = np.array([0, 1, 2, 3])', fs=10)
+    text(ax, 5.3, 0.62, 'dtype: int64', MUTED, ha='left', mono=True, fs=10)
     cells(ax, 0, 0, [['0', '1', '2', '3']])
     text(ax, -0.15, -0.35, 't_bug', ha='right', mono=True)
     text(ax, 0.5, -1.25, 't_bug[0] = 0.75', BAD, mono=True, ha='left')
@@ -134,7 +133,7 @@ def fig_7_4_index_ruler():
     y = v0 * t - 0.5 * g * t**2
     n, w = len(y), 0.95
     vals = [f1(v) for v in y]
-    fig, ax = fig_for((-0.2, n * w + 0.2), (-6.9, 1.25), width=7.4)
+    fig, ax = fig_for((-0.2, n * w + 0.2), (-7.25, 1.25), width=7.4)
     # the array with its two index rows
     text(ax, 0, 1.05, 'y  (16 elements)', ha='left', mono=True)
     text(ax, n * w, 1.05, 'above: index    below: index from the end',
@@ -145,15 +144,18 @@ def fig_7_4_index_ruler():
     cells(ax, 0, 0, [vals], w=w, fs=8.5)
 
     def strip(top, picked, label):
+        code, desc = label.split('   ', 1)
         fills = [[SEL_FILL if j in picked else GREY_FILL for j in range(n)]]
         shown = [[vals[j] if j in picked else '' for j in range(n)]]
-        text(ax, 0, top + 0.3, label, SEL, ha='left', mono=True)
+        pill(ax, 0.05, top + 0.36, code.strip(), SEL, SEL_FILL, mono=True,
+             ha='left', fs=10)
+        text(ax, 1.75, top + 0.36, desc.strip(), MUTED, ha='left', fs=10)
         cells(ax, 0, top, shown, fills=fills, w=w, fs=8.5)
 
-    strip(-1.9, set(range(8)), 'y[:8]    indices 0..7 (8 is not included)')
-    strip(-3.4, set(range(0, n, 3)), 'y[::3]   every third, from index 0')
-    strip(-4.9, set(range(n - 3, n)), 'y[-3:]   the last three')
-    text(ax, 0, -6.4, 'slice [start:stop:step]: start included, '
+    strip(-2.1, set(range(8)), 'y[:8]    indices 0..7 (8 is not included)')
+    strip(-3.65, set(range(0, n, 3)), 'y[::3]   every third, from index 0')
+    strip(-5.2, set(range(n - 3, n)), 'y[-3:]   the last three')
+    text(ax, 0, -6.8, 'slice [start:stop:step]: start included, '
          'stop not included', GREY, ha='left', fs=10)
     return save(fig, '7_4_index_ruler')
 
@@ -170,8 +172,8 @@ def fig_7_5_view_copy():
     fig, ax = fig_for((-3.0, 10.1), (-10.3, 0.9), width=7.0)
 
     # view
-    text(ax, -2.9, 0.55, 'View:  middle = raw_log[2:5]', ha='left',
-         weight='bold', mono=True)
+    text(ax, -2.9, 0.6, 'View', ha='left', weight='bold')
+    chip(ax, -1.65, 0.6, 'middle = raw_log[2:5]', fs=10.5)
     cells(ax, 0, 0, [[f1(v) for v in raw]], w=w, edges=edg, fs=10)
     text(ax, -0.15, -0.35, 'raw_log', ha='right', mono=True)
     bracket(ax, 2 * w, 5 * w, -0.8, SEL, 'middle: the same 3 cells')
@@ -183,8 +185,8 @@ def fig_7_5_view_copy():
     text(ax, 4.9, -3.75, 'raw_log changed too', SEL, fs=10)
 
     # copy
-    text(ax, -2.9, -4.8, 'Copy:  cleaned = raw_log2[2:5].copy()',
-         ha='left', weight='bold', mono=True)
+    text(ax, -2.9, -4.75, 'Copy', ha='left', weight='bold')
+    chip(ax, -1.65, -4.75, 'cleaned = raw_log2[2:5].copy()', fs=10.5)
     cells(ax, 0, -5.35, [[f1(v) for v in raw]], w=w, fs=10)
     text(ax, -0.15, -5.7, 'raw_log2', ha='right', mono=True)
     arrow(ax, (4.2, -6.1), (4.2, -7.2), RES)
@@ -210,8 +212,7 @@ def fig_7_7_scalar_array():
     n, w = 5, 1.25
     sc = f'{v0 * np.sin(theta):.2f}'
     fig, ax = fig_for((-4.3, 8.9), (-4.2, 1.0), width=7.0)
-    text(ax, -4.2, 0.65, 'vy = v0 * np.sin(theta) - g * t', mono=True,
-         ha='left')
+    chip(ax, -4.2, 0.7, 'vy = v0 * np.sin(theta) - g * t', fs=10.5)
     # the scalar: one real cell, then dashed copies for every element
     cells(ax, 0, 0, [[sc]], w=w, fills=[[AX0_FILL]])
     for j in range(1, n):
@@ -232,7 +233,7 @@ def fig_7_7_scalar_array():
     text(ax, -0.15, -1.25, '-   g * t', AX1, ha='right', mono=True)
     text(ax, (n + 1) * w + 0.2, -1.25, '30 values', AX1, ha='left',
          fs=9.5)
-    ax.plot([0, (n + 1) * w], [-1.82, -1.82], color='#222222', lw=1.4)
+    ax.plot([0, (n + 1) * w], [-1.82, -1.82], color=TEXT, lw=1.4)
     # equals vy, element by element
     cells(ax, 0, -2.0, [[f'{v:.2f}' for v in vy[:n]] + ['...']], w=w,
           fills=[[RES_FILL] * n + [None]])
@@ -317,7 +318,7 @@ def fig_7_10_inside_out():
         hgt = 1.15 if k == len(steps) - 1 else 0.85
         cells(ax, 0, top, [['']], w=3.8, h=hgt, fills=[[fills[k]]])
         ax.text(1.9, top - hgt / 2, math, ha='center', va='center',
-                fontsize=12, color='#222222', zorder=5)
+                fontsize=12, color=TEXT, zorder=5)
         cells(ax, 4.6, top, [['']], w=8.6, h=hgt, fills=[[fills[k]]])
         text(ax, 4.8, top - hgt / 2, code, mono=True, ha='left', fs=10)
         arrow(ax, (3.85, top - hgt / 2), (4.55, top - hgt / 2), GREY)
